@@ -52,8 +52,8 @@ h2{
 
 
 /*Style images on people page*/
-/*.people{
-  max-width: 180px;
+.person{
+  width: 200px;
   height: auto;
   float: left;
   padding: 10px;
@@ -61,9 +61,13 @@ h2{
   margin-bottom: 20px;
   border: 2px solid #ddd;
   text-align: center;
-}*/
+}
 
-.person{
+.person img{
+  width: 180px;
+}
+
+.person-pi{
   width: 100%;
   height: auto;
   border: 2px solid #ddd;
@@ -73,7 +77,7 @@ h2{
 
 }
 
-.person img{
+.person-pi img{
   float: left;
   width: 180px;
   height: 240px;
@@ -81,7 +85,7 @@ h2{
   margin-right: 10px;
 }
 
-.person h3{
+.person-pi h3{
   margin: 0px;
   padding: 0px;
 }
