@@ -89,3 +89,14 @@ h2{
   margin: 0px;
   padding: 0px;
 }
+
+/* twitter */
+
+blockquote.twitter-tweet {
+    /*border-left: 0;*/
+    background: url(https://si0.twimg.com/images/dev/cms/intents/bird/bird_gray/bird_32_gray.png) 20px 10px no-repeat;
+}
+
+blockquote.twitter-tweet p{
+  padding-left: 40px;
+}
