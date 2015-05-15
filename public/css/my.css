@@ -100,3 +100,6 @@ blockquote.twitter-tweet {
 blockquote.twitter-tweet p{
   padding-left: 40px;
 }
+
+/* empty cells in table header */
+th:empty { display: none; }
