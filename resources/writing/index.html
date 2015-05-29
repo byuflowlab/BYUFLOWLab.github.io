@@ -229,6 +229,7 @@
 <li>Use hyperref in latex so that your document is properly hyperlinked</li>
 <li>Be sure to embed fonts before submitting your paper for publication.  pdflatex does not do this for you.  An easy way to do this on OS X is to open up the PDF then click on File &gt; Print.  In the print dialog click on the PDF dropdown menu and select &quot;Save as PDF...&quot;.  The resulting copy will have all of its fonts embedded.  To be clear, you only need to do this on the final version you submit for publication (particularly for a conference, journals will typeset your paper themselves).</li>
 <li>I recommend using version control for your papers.  Use an appropriate .gitignore file (see <a href="https://gist.github.com/kogakure/149016">here</a> for a good start) so that you only commit the source files and not intermediate build files.  Provide clear comments or tags on the important milestones (e.g., initial submission to journal) so that it will be easy to compare changes later.  You will need to detail changes in your response to reviewer comments.  <a href="https://www.ctan.org/pkg/latexdiff">latexdiff</a> is a useful tools for visualizing differences between LaTeX documents.</li>
+<li>Avoid using rainbow colorbars for contour plots.  The ordering of the colors is nonintuitive and does not vary continuously in luminance.  The result is an obscuring of details and the perception of artificial boundaries between hues.</li>
 </ul>
 
     </div>
