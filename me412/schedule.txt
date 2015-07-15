@@ -1,0 +1,63 @@
+Class Intro. Applications!
+Review: Kinematics (4.1, 4.2)
+Review: Control Volumes and RTT (4.3, 4.4)
+Review: Governing Equations (Ch 5)
+Review: Differential Analysis (6.1-6.3)
+Lab: Rockets!
+Review: Potential Flow  (6.4.3, 6.5, 6.6, 6.7)
+Review: Viscous Flow (1.6, 6.8, 6.9)
+Review: Dynamic Similarity and Dimensionless Quantities (Ch 7)
+External Flow: Lift and Drag intro (9.1)
+External Flow: Boundary Layers (9.2)
+External Flow: Boundary Layers (9.2)
+External Flow: Boundary Layers (examples with baseballs and tea leaves) and Friction Drag (9.2)
+External Flow: Pressure Drag (9.3)
+External Flow: Lift and Circulation  (Kutta condition, starting vortex) (9.1, 9.4)
+External Flow: Airfoils (handout)
+External Flow: Thin Airfoil Theory (handout)
+Lab: Wind Tunnel
+External Flow: Wakes
+External Flow: Downwash and Lifting Line Theory
+External Flow: Downwash and Lifting Line Theory (Fish, birds, insects, sailing against the wind)
+Midterm 1
+CFD: Overview (A.1)
+CFD: Discretization (A.2)
+CFD: Meshing (A.3)
+CFD: Boundary Conditions (A.4)
+CFD: Putting it all together.  Convergence and Post-processing (A.5-A.7)
+Compressible Flow: Ideal Gas Relationships (1.5,1.7)
+Compressible Flow: Sound Waves
+Compressible Flow: Nozzles--Quasi 1D flow
+Compressible Flow: Nozzles--Quasi 1D flow
+Compressible Flow: Normal Shock Waves
+Compressible Flow: External Compressible Flow
+Compressible Flow: Oblique Shock Waves and Compression Fans
+Lab: Something
+Turbomachines: Energy and Angular Momentum
+Turbomachines: Blade Element Momentum
+Turbomachines: Blade Element Momentum
+Turbomachines: Blade Element Momentum
+Turbomachines: Propellers
+Turbomachines: Wind Turbines
+Lab: Something
+Review for Final
+(42)
+
+CFD: Discretization
+CFD: Meshing
+CFD: Boundary Conditions
+CFD: Solution Methods
+CFD: Convergence and Post-processing
+
+
+Review: Bernoulli's Equation
+Review: Vorticity Dynamics
+Review: Equation Heirarchy
+
+Lab: Intro to StarCCM+
+
+External Flow: Potential Flow
+External Flow: Potential Flow
+External Flow: Cylinder
+External Flow: Panel Method
+External Flow: Panel Method
