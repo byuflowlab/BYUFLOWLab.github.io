@@ -61,3 +61,16 @@ External Flow: Potential Flow
 External Flow: Cylinder
 External Flow: Panel Method
 External Flow: Panel Method
+
+
+
+Getting Started:
+
+dynamic similarity and dimensionless groups
+mass
+momentum
+(save energy for compressible flow)
+equation heirarchy
+application: airfoils
+potential flow
+boundary layers

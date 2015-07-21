@@ -83,27 +83,27 @@
       
         
           
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
             <a class="sidebar-nav-item" href="/people/">People</a>
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
           
         
       
@@ -125,31 +125,31 @@
       
         
           
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
             <a class="sidebar-nav-item active" href="/research/">Research</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
           
         
       
@@ -202,59 +202,106 @@
 
 <h3 id="vawt-wake-model-development">VAWT Wake Model Development</h3>
 
-<p><img src="../images/vawt_wake.jpg" class="research-image img-left"></p>
+<p><img src="vawt_wake.jpg" class="research-image img-left"></p>
 
-<p>Vertical axis wind turbines (VAWTs) are a promising technology for offshore applications because their lower center of gravity reduces foundation costs and their simplified mechanical components reduce maintenance costs. VAWT wind farms will face similar challenges, but VAWTs have very different wake behavior that must be understood to effectively design their layout. The evolution of wakes behind wind turbines is a complex turbulent process that can be visualized with high-fidelity instrumentation or high-fidelity simulation. However, for performing layout optimization, which must broadly explore many configurations, simpler engineering wake models are needed. This research effort is focused on developing VAWT engineering wake models to enable effective VAWT wind farm layout optimization.</p>
+<p>Vertical axis wind turbines (VAWTs) are a promising technology for offshore applications and in the built environment.  Performance of wind farms is highly dependent on effective integration, and this research is focused on developing engineering wake models for VAWTs to enable farm optimization.</p>
+
+<!-- because their lower center of gravity reduces foundation costs and their simplified mechanical components reduce maintenance costs -->
+
+<!-- VAWT wind farms will face similar challenges, but VAWTs have very different wake behavior that must be understood to effectively design their layout. The evolution of wakes behind wind turbines is a complex turbulent process that can be visualized with high-fidelity instrumentation or high-fidelity simulation. However, for performing layout optimization, which must broadly explore many configurations, simpler engineering wake models are needed. This research effort is focused on developing VAWT engineering wake models to enable effective VAWT wind farm layout optimization. -->
+
+<ul>
+<li>Students: <a href="../people/eric">Eric Tingey</a>, Nick Bons (graduated), Dagan Pielstick</li>
+<li>Sponsors: Internal seed grant (<a href="https://orca.byu.edu/meg/">MEG Grant</a>)</li>
+</ul>
 
 <h3 id="integrated-wind-farm-layout-optimization">Integrated Wind Farm Layout Optimization</h3>
 
-<p><img src="../images/windRose.png" class="research-image img-right"></p>
+<p><img src="windRose.png" class="research-image img-right"></p>
 
-<p>Efficient layout design is a significant challenge, and today’s wind farms underperform energy capture expectations by around 10-20%.  Recent research has demonstrated exciting potential for wind plant control systems to improve the cost of energy of wind plants.  Wind plant controls seek to improve global wind plant performance over control systems in which each turbine optimizes only its individual performance by accounting for the way wind turbines interact through their wakes.  We seek to combine efficient turbine optimization, layout optimization, and controls optimization in an integrated manner.</p>
+<p>Efficient layout design is a significant challenge, and today’s wind farms underperform energy capture expectations by around 10-20%.  We seek to efficiently combine turbine, layout, and controls optimization in an integrated manner.  Recent work has compared the <a href="../publications/#Thomas2015">impact of two different wake models on optimization</a> and conducted initial studies in combined <a href="../publications/#Fleming2015">layout-yaw optimization</a></p>
 
-<p>This research is currently funded by the <a href="http://www.nrel.gov">National Renewable Energy Laboratory</a>. </p>
-
-<h3 id="wind-turbine-design-optimization">Wind Turbine Design Optimization</h3>
-
-<p><img src="../images/windfarm_illustration.jpg" class="research-image img-left">  Efficient extraction of wind energy is a complex, multidisciplinary process.  We have developed a number of open-source integrated wind turbine analysis tools as part of the <a href="https://nwtc.nrel.gov/WISDEM">WISDEM</a> toolset.  Many of these tools provide exact gradients through automatic differentiation and/or adjoint methods.  These capabilities have been used in studies to understand the <a href="../publications/#Ning2014c">impact of using different objectives</a> in wind turbine optimization, analyze the impact of <a href="../publications/#Ning2014d">high-tip speed rotors</a>, and compare optimized <a href="../publications/#Ning2014a">downwind and upwind turbines</a>.  Currently we are working in the area of free-form aero/structural rotor design.</p>
-
-<p>Open-source tools we have developed include:</p>
+<!-- Wind plant controls seek to improve global wind plant performance over control systems in which each turbine optimizes only its individual performance by accounting for the way wind turbines interact through their wakes.   -->
 
 <ul>
-<li><a href="https://github.com/WISDEM/CCBlade">CCBlade</a>: a blade-element momentum method with <a href="../publications/#Ning2014">guaranteed convergence behavior</a> (beneficial for gradient-based optimization).</li>
-<li><a href="https://github.com/WISDEM/pBEAM">pBEAM</a>: a beam finite element method.</li>
-<li><a href="https://github.com/WISDEM/AirfoilPreppy">AirfoilPreppy</a>: a set of utilities for preprocessing airfoil aerodynamic data.</li>
-<li><a href="https://github.com/WISDEM/pyFrame3DD">pyFrame3DD</a>: a wrapper to an existing finite element code with a few custom additions.</li>
-<li><a href="https://github.com/WISDEM/RotorSE">RotorSE</a>: a wind turbine rotor analysis module coupleing CCBlade, pBEAM, <a href="https://nwtc.nrel.gov/PreComp">PreComp</a> and other methods for rotor aero/structural analysis.</li>
-<li><a href="https://github.com/WISDEM/TowerSE">TowerSE</a>: a wind turbine tower analysis module using pBEAM, cylinder drag theory, linear wave theory, and methods from Eurocode and GL.</li>
-<li><a href="https://github.com/WISDEM/TurbineSE">TurbineSE</a>: a wind turbine module integrating RotorSE, NacelleSE, and TowerSE</li>
-<li><a href="https://github.com/WISDEM/LandBOS">LandBOS</a>: a C/Python implementation of a balance-of-station cost model.</li>
-<li><a href="https://github.com/WISDEM/CommonSE">CommonSE</a>: a collection of common utilities shared amongst the WISDEM modules.</li>
+<li>Students: <a href="../people/jared">Jared Thomas</a></li>
+<li>Sponsors: <a href="http://www.nrel.gov">National Renewable Energy Laboratory</a></li>
+<li>Collaborators: Pieter Gebraad, Paul Fleming, Katherine Dykes</li>
+</ul>
+
+<h3 id="free-form-aerostructural-rotor-design">Free-form Aerostructural Rotor Design</h3>
+
+<p><img src="clsurf.png" class="research-image img-left"></p>
+
+<p>By free-form design we mean simultaneous airfoil and blade design as opposed to the traditional sequential approach.  We are exploring free-form design through a range of fidelities.  <a href="../publications/Barrett2015">Initial studies</a> have been helpful in quantifying expected benefits.</p>
+
+<div style="clear: both;"></div>
+
+<ul>
+<li>Students: <a href="../people/ryan">Ryan Barrett</a></li>
+</ul>
+
+<h3 id="acoustic-impacts-on-wind-farm-layout">Acoustic Impacts on Wind Farm Layout</h3>
+
+<p><img src="SPL.png" class="research-image img-right"></p>
+
+<p>Acoustics can play an important role in wind farm design and we are interested in understanding its impact through <a href="../publications/#Tingey2015">optimization</a> and in developing better acoustic models for wind farms.</p>
+
+<div style="clear: both;"></div>
+
+<ul>
+<li>Students: <a href="../people/eric">Eric Tingey</a></li>
+</ul>
+
+<h3 id="passive-flow-control-devices-for-low-reynolds-number-propellers">Passive-Flow Control Devices for Low Reynolds Number Propellers</h3>
+
+<p>We are conducting wind tunnel tests to characterize performance of novel UAV propeller concepts.</p>
+
+<ul>
+<li>Students: Kevin Moore</li>
+</ul>
+
+<h3 id="unmanned-aerial-vehicle-trajectory-optimization">Unmanned Aerial Vehicle Trajectory Optimization</h3>
+
+<p>Robust UAV trajectory optimization is steeped with challenges including static and dynamic obstacles, performance variability, uncertain environmental conditions, component failures, etc.  We are exploring convex optimization approaches, exploratory gradient-based approaches, and UAV aerodynamic performance modeling.</p>
+
+<ul>
+<li>Students: Matt Duffield (Tim McLain is his primary advisor), Bryce Ingersoll, Taylor McDonnell</li>
+<li>Collaborators: Tim McLain</li>
+</ul>
+
+<h3 id="quantitative-characterization-of-essential-tremor-for-future-tremor-suppression">Quantitative Characterization of Essential Tremor for Future Tremor Suppression</h3>
+
+<p>Essential tremor (ET) is one of the most common movement disorders, estimated to affect 1 - 12 million people in the US.  We are developing optimization models in collaboration with the <a href="https://neuromechanics.byu.edu">BYU Neuromechanics Research Group</a> to help establish the mechanical origin of the tremor.</p>
+
+<ul>
+<li>PI: Steven Charles</li>
+<li>Collaborators: Jon Blotter, Andrew Ning, Mark Hallett</li>
+<li>Sponsor: National Institute of Health</li>
 </ul>
 
 <div style="clear: both;"></div>
 
 <h1 id="past-projects">Past Projects</h1>
 
-<h3 id="formation-flight">Formation Flight</h3>
+<h3 id="wind-turbine-design-optimization-and-tool-development-(postdoc-at-nrel)">Wind Turbine Design Optimization and Tool Development (Postdoc at NREL)</h3>
 
-<p><img src="../images/formflight_big.png" class="research-image img-right">  We explore a safer approach to formation flying of transport aircraft, which we term <em>extended formation flight</em>. Extended formations take advantage of the persistence of cruise wakes and extends the streamwise separation between the aircraft by at least five wingspans. At large distances, considerations such as wake rollup, atmospheric effects on circulation decay, and vortex motion become important to consider. We examine the wake rollup process in the context of extended formations and develop appropriate physics-based models. Our research address multiple aspects of formation flight: <a href="../publications/#Ning2011">longitudinally extended formations</a>, <a href="../publications/#Ning2014b">compressibility effects</a>, formations of <a href="../publications/#Ning2011b">heterogeneous aircraft</a>, and <a href="../publications/#Xu2014a">formation route optimization</a>.</p>
+<p><img src="windfarm_illustration.jpg" class="research-image img-left">
+Efficient extraction of wind energy is a complex, multidisciplinary process.  We have developed a number of open-source integrated wind turbine analysis tools as part of the <a href="https://nwtc.nrel.gov/WISDEM">WISDEM</a> toolset.  Many of these tools provide exact gradients through automatic differentiation and/or adjoint methods.  During the development a new methodology for solving the blade element momentum equations was developed with <a href="../publications/#Ning2014">guaranteed convergence</a>---useful for use with gradient-based optimization. These models have been in studies to understand the <a href="../publications/#Ning2014c">impact of using different objectives</a> in wind turbine optimization, analyze the impact of <a href="../publications/#Ning2014d">high-tip speed rotors</a>, compare optimized <a href="../publications/#Ning2014a">downwind and upwind turbines</a>, and study the benefits of <a href="../publications/#Gray2014">mixed-derivatives in wind turbine optimization</a>.</p>
 
-<p>This research was partially funded by <a href="http://www.airbus.com">Airbus</a> and included collaborations with the <a href="http://www.nas.nasa.gov">NASA Ames Advanced Supercomputing Division</a>.</p>
+<ul>
+<li>Collaborators: Katherine Dykes, Rick Damiani, many others ...</li>
+<li>Sponsor: Department of Energy (this work occurred while I was an NREL employee)</li>
+</ul>
 
-<!-- ## Multidisciplinary Design Optimization
+<h3 id="formation-flight-(ph.d.-at-stanford)">Formation Flight (Ph.D. at Stanford)</h3>
 
-say stuff
+<p><img src="formflight_big.png" class="research-image img-right">  We explore a safer approach to formation flying of transport aircraft, which we term <em>extended formation flight</em>. Extended formations take advantage of the persistence of cruise wakes and extends the streamwise separation between the aircraft by at least five wingspans. At large distances, considerations such as wake rollup, atmospheric effects on circulation decay, and vortex motion become important to consider. We examine the wake rollup process in the context of extended formations and develop appropriate physics-based models. Our research address multiple aspects of formation flight: <a href="../publications/#Ning2011">longitudinally extended formations</a>, <a href="../publications/#Ning2014b">compressibility effects</a>, formations of <a href="../publications/#Ning2011b">heterogeneous aircraft</a>, and <a href="../publications/#Xu2014a">formation route optimization</a>.</p>
 
-## Wind Energy
-
-say stuff
-
-Core developer of [WISDEM](https://nwtc.nrel.gov/WISDEM)
-
-## Aeronautics
-
-say stuff -->
+<ul>
+<li>Collaborators: Mike Aftosmis, Marian Nemec, James Kless</li>
+<li>Sponsors: <a href="https://ndseg.asee.org">NDSEG Fellowship</a>, <a href="http://www.airbus.com">Airbus</a></li>
+</ul>
 
 </div>
 
