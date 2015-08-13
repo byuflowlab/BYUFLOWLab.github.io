@@ -1,12 +1,12 @@
-Class Intro. Applications!
-Review: Kinematics (4.1, 4.2)
-Review: Control Volumes and RTT (4.3, 4.4)
-Review: Governing Equations (Ch 5)
-Review: Differential Analysis (6.1-6.3)
+Introduction
+Review: Dynamic Similarity and Dimensionless Quantities (7.1, 7.4.1, 7.5-7.8, 7.9.2, 7.10)
+Review: RTT and Conservation of Mass (4.3, 4.4, 5.1)
+Review: Conservation of Momentum (5.2)
+Review: Conservation of Energy (5.3)
 Lab: Rockets!
-Review: Potential Flow  (6.4.3, 6.5, 6.6, 6.7)
+Review: Differential Analysis (6.1-6.3)
+Review: Potential Flow  (6.4.3, 6.5-6.7)
 Review: Viscous Flow (1.6, 6.8, 6.9)
-Review: Dynamic Similarity and Dimensionless Quantities (Ch 7)
 External Flow: Lift and Drag intro (9.1)
 External Flow: Boundary Layers (9.2)
 External Flow: Boundary Layers (9.2)
@@ -42,6 +42,9 @@ Turbomachines: Wind Turbines
 Lab: Something
 Review for Final
 (42)
+9/12/5/8/7
+
+Each lecture needs a brief theory recap, applications (examples), and gospel connections (most of the time).
 
 CFD: Discretization
 CFD: Meshing
@@ -50,6 +53,7 @@ CFD: Solution Methods
 CFD: Convergence and Post-processing
 
 
+Review: Kinematics (4.1, 4.2)
 Review: Bernoulli's Equation
 Review: Vorticity Dynamics
 Review: Equation Heirarchy
