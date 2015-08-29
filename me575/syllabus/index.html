@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Syllabus &middot; ME 575
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me575">
+          ME 575
+        </a>
+      </h1>
+      <p class="lead">Optimization Techniques in Engineering</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me575/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me575/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me575/assignments">Assignments</a>
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Syllabus</h1> -->
+      <div id="toc-container">
+   <table class="toc" id="toc">
+      <tbody>
+         <tr>
+            <td>
+               <div id="toctitle">
+                  <h2>Contents</h2>
+               </div>
+               <ul>
+                  <li class="toc_level-1 toc_section-1">
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Syllabus</span></a>
+                     <ul>
+                        <li class="toc_level-2 toc_section-2">
+                           <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Overview</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-3">
+                           <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Prerequisites</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-4">
+                           <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Learning Outcomes</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-5">
+                           <a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">Course Content</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-6">
+                           <a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">Course Work</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-7">
+                           <a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">Textbooks</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-8">
+                           <a href="#tocAnchor-1-1-7"><span class="tocnumber">1.7</span> <span class="toctext">Schedule</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-9">
+                           <a href="#tocAnchor-1-1-8"><span class="tocnumber">1.8</span> <span class="toctext">University Policies</span></a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div><h1 id="tocAnchor-1-1">Syllabus</h1>
+
+<h2 id="tocAnchor-1-1-1">Overview</h2>
+
+<p>Optimization consists of finding the best feasible selection amongst competing alternatives.  Optimization methods are used in a wide range of applications including:</p>
+
+<ul>
+<li>design–designing the outer shape of a car for minimum drag</li>
+<li>trajectory planning–finding the best path for a UAV to maximize its observable area</li>
+<li>controls–selecting the best actuation sequence of a robot to minimize its expended energy</li>
+<li>resource allocation–deciding what quantities of material to send to which stores to maximize production</li>
+<li>regression–finding the best curve to describe your data</li>
+<li>physics simulation–finding the shape of a hanging chain (minimum potential energy)</li>
+<li>machine learning–finding the best model parameters to predict what Netflix movies you might be interested in based on past ratings</li>
+<li>and many other areas</li>
+</ul>
+
+<p>There is no one optimization algorithm to rule them all, so in this class we will learn about several different classes of algorithms.  You will learn the strengths and limitations of different approaches, and how to frame your analysis in a way that is "optimization-friendly".  Optimization almost always involves complicated tradeoffs, and computers are useful in managing this complexity and extracting insight.</p>
+
+<h2 id="tocAnchor-1-1-2">Prerequisites</h2>
+
+<ul>
+<li>multivariable calculus</li>
+<li>linear algebra</li>
+<li>computer programming</li>
+</ul>
+
+<p>
+   <strong>How much programming experience is needed?</strong>
+</p>
+
+<p>You should be familiar and comfortable with the basics: functions, loops, conditionals, variable types, arrays (vectors).  It does not matter too much what language(s) you have experience with as long as you understand the fundamentals.  You can use any language you want in this class, but most students elect to use Matlab because the syntax is simple and the optimization toolbox is easily accessible.  I will show examples in class using both Matlab and Python.  The concepts you learn in this course will translate to other programming languages or optimization packages.  </p>
+
+<p>Although the necessary programming concepts are basic, some of the algorithms we will implement are long and complex.  In addition, optimization methods are great at exploiting weaknesses in implementation.  You will need to develop and refine your skills in code debugging as well as in physical insight.  I <strong>do not</strong> recommend taking this class if you do not have any programming experience.  It will be very difficult to get up to speed with programming and stay on top of the optimization concepts at the same time.  Programming experience need not necessarily come from a formal course.  There are many other resources you can use to gain experience before taking this class.</p>
+
+<h2 id="tocAnchor-1-1-3">Learning Outcomes</h2>
+
+<p>See <a href="https://learningoutcomes.byu.edu/Instructors/course-instructors/06791/000/ME+EN+575/394998/1135">here</a> for a list of expected learning outcomes.</p>
+
+<h2 id="tocAnchor-1-1-4">Course Content</h2>
+
+<p>There will be 6 modules in the course each lasting 1-3 weeks. A overview of the topics is listed below.</p>
+
+<ol>
+<li>Introduction and 1D Optimization
+
+<ul>
+<li>Basic Concepts and Terminology</li>
+<li>Optimality Conditions</li>
+<li>Bisection</li>
+<li>Newton's Method</li>
+<li>Wolfe Conditions</li>
+</ul></li>
+<li>Unconstrained Optimization
+
+<ul>
+<li>Gradients and Hessians</li>
+<li>Optimality Conditions</li>
+<li>Steepest Descent</li>
+<li>Conjugate Gradient</li>
+<li>Newton and Quasi-Newton Methods</li>
+<li>Trust Region Methods</li>
+</ul></li>
+<li>Computing Gradients
+
+<ul>
+<li>Finite difference</li>
+<li>Complex step</li>
+<li>Automatic differentiation</li>
+<li>Adjoint and direct methods</li>
+</ul></li>
+<li>Constrained Optimization
+
+<ul>
+<li>Optimality Conditions</li>
+<li>Penalty Methods</li>
+<li>Sequential Quadratic Programming</li>
+<li>Interior Point Methods</li>
+</ul></li>
+<li>Gradient-Free Methods
+
+<ul>
+<li>Nelder-Mead Simplex</li>
+<li>Genetic Algorithms</li>
+<li>Particle Swarm Optimization</li>
+<li>Multiobjective optimization (for gradient and non-gradient based)</li>
+</ul></li>
+<li>Miscellaneous and Advanced Topics
+
+<ul>
+<li>Robust optimization</li>
+<li>Surrogate-based optimization</li>
+<li>MDO architectures</li>
+<li>Integer and mixed integer programming</li>
+</ul></li>
+</ol>
+
+<h2 id="tocAnchor-1-1-5">Course Work</h2>
+
+<p>
+   <strong>Homework (40%)</strong>
+</p>
+
+<p>There will be six homeworks designed to teach the important concepts in the class.  Homeworks will have a 2-week window and will be submitted in the form of a short report.  Late homework will not be accepted (except with prior approval for extreme extenuating circumstances).  Homework submission details are provided in a supplementary handout.</p>
+
+<p>
+   <strong>Project (33%)</strong>
+</p>
+
+<p>The main thrust of this course is a semester-long project that will allow you to dive deeper into an area or application that you are interested in.    The project is open-ended and you will work in small groups.  The end product will be a report (of typical journal paper length) appropriately formated and describing the problem, your methodology, the results, and your conclusions.  Excellent projects will result in publishable or nearly-publishable work.  Your project may supplement research/work you are doing outside of the classroom, but you will only receive credit for work done this semester for this class.  The milestones within the project will consist of a short abstract due early in the semester, a draft report due about a month before the end of the semester, an in-class presentation, and a final report due on the last day of class.  More details on the project are given in a supplementary handout.</p>
+
+<p>
+   <strong>Quizes and Exams (27%)</strong>
+</p>
+
+<p>This class will have a midterm and a final exam.  In addition there will be several unannounced in-class quizes.  The quizes will not be graded for correctness, but will provide you and me with ongoing feedback.  </p>
+
+<p>Partipcation includes asking questions and being engaged in the learning process.Don’t be afraid to ask what you think might be a simple question, chances are someone else is wondering the same thing. At the same time, be respectful of your peer's time. If there is a topic that will require a longer conversation seek out the TA or myself outside of class time.  I expect you to attend class, be punctual, and be attentive.  You may use electronic devices in the classroom only if they are being used appropriately for class activities (e.g., taking notes).  </p>
+
+<!--
+Homework: 300 points (6 X 50)
+Project: 250 points (20 abstract, 40 draft, 40 presentation, 150 final report)
+Exams: 200 points (50 Quizes, 50 Midterm, 100 Final)
+
+Homework: 300 points (6 X 50)
+Project: 300 points (20 abstract, 40 draft, 40 presentation, 200 final report)
+Exams: 300 points (25 Participation, 50 Quizes, 75 Midterm, 150 Final)
+ -->
+
+<h2 id="tocAnchor-1-1-6">Textbooks</h2>
+
+<p>Required reading will come from the course notes Multidisciplinary Design Optimization primarily developed by Joaquim R. R. A. Martins, Andrew Ning, and Jason Hicken.  The chapters from the text are posted under the "Content" section of Learning Suite.  If you notice errors in the text or have suggestions for improvement please let me know.</p>
+
+<p>The following textbooks are recommended as optional reading. These readings will add perspective and provide depth to your primary readings. The first is made available as PDFs under "Content" and the second is available for purchase in the BYU bookstore.</p>
+
+<ul>
+<li>Parkinson, A.R., Balling, R., and Hedengren, J.D., Optimization Methods for Engineering Design, Brigham Young University, 2013.</li>
+<li>D. Belegundu and T. Chandrupatla, Optimization Concepts and Applications in Engineering, 2nd ed., Cambridge University Press, 2014.</li>
+<li>J. Nocedal and S. Writing, Numerical Optimization, 2nd ed., Springer, 2006.</li>
+</ul>
+
+<h2 id="tocAnchor-1-1-7">Schedule</h2>
+
+<p>Please see Learning Suite for the current schedule and to turn in assignments.</p>
+
+<h2 id="tocAnchor-1-1-8">University Policies</h2>
+
+<h3 id="honor-code">Honor Code</h3>
+
+<p>In keeping with the principles of the BYU Honor Code, students are expected to be honest in all of their academic work. Academic honesty means, most fundamentally, that any work you present as your own must in fact be your own work and not that of another. Violations of this principle may result in a failing grade in the course and additional disciplinary action by the university. Students are also expected to adhere to the Dress and Grooming Standards. Adherence demonstrates respect for yourself and others and ensures an effective learning and working environment. It is the university's expectation, and every instructor's expectation in class, that each student will abide by all Honor Code standards. Please call the Honor Code Office at 422-2847 if you have questions about those standards.</p>
+
+<h3 id="sexual-harassment">Sexual Harassment</h3>
+
+<p>Title IX of the Education Amendments of 1972 prohibits sex discrimination against any participant in an educational program or activity that receives federal funds. The act is intended to eliminate sex discrimination in education and pertains to admissions, academic and athletic programs, and university-sponsored activities. Title IX also prohibits sexual harassment of students by university employees, other students, and visitors to campus. If you encounter sexual harassment or gender-based discrimination, please talk to your professor or contact one of the following: the Title IX Coordinator at 801-422-2130; the Honor Code Office at 801-422-2847; the Equal Employment Office at 801-422-5895; or Ethics Point at <a href="http://www.ethicspoint.com">http://www.ethicspoint.com</a>, or 1-888-238-1062 (24-hours).</p>
+
+<h3 id="student-disability">Student Disability</h3>
+
+<p>Brigham Young University is committed to providing a working and learning atmosphere that reasonably accommodates qualified persons with disabilities. If you have any disability which may impair your ability to complete this course successfully, please contact the University Accessibility Center (UAC), 2170 WSC or 422-2767. Reasonable academic accommodations are reviewed for all students who have qualified, documented disabilities. The UAC can also assess students for learning, attention, and emotional concerns. Services are coordinated with the student and instructor by the UAC. If you need assistance or if you feel you have been unlawfully discriminated against on the basis of disability, you may seek resolution through established grievance policy and procedures by contacting the Equal Employment Office at 422-5895, D-285 ASB.</p>
+
+<h3 id="academic-honesty">Academic Honesty</h3>
+
+<p>The first injunction of the Honor Code is the call to "be honest." Students come to the university not only to improve their minds, gain knowledge, and develop skills that will assist them in their life's work, but also to build character. "President David O. McKay taught that character is the highest aim of education" (The Aims of a BYU Education, p.6). It is the purpose of the BYU Academic Honesty Policy to assist in fulfilling that aim. BYU students should seek to be totally honest in their dealings with others. They should complete their own work and be evaluated based upon that work. They should avoid academic dishonesty and misconduct in all its forms, including but not limited to plagiarism, fabrication or falsification, cheating, and other academic misconduct.</p>
+
+<h3 id="devotional-attendance">Devotional Attendance</h3>
+
+<p>Brigham Young University's devotional and forum assemblies are an important part of your BYU experience. President Cecil O. Samuelson said, "We have special and enlightening series of devotional and forum assemblies...that will complement, supplement, and enrich what will also be a very productive period in your classrooms, laboratories, and libraries. We look forward to being with you each Tuesday...and hope that you will regularly attend and bring your friends and associates with you...A large part of what constitutes the unique 'BYU experience' is found in these gatherings where the Spirit has been invited and where we have the opportunity to discuss and consider things of ultimate worth and importance that are not afforded to the academic community on almost any other campus" (from the address "The Legacy of Learning", 30 August, 2005). Your attendance at each forum and devotional is strongly encouraged.</p>
+
+<h3 id="inappropriate-use-of-course-materials">Inappropriate Use Of Course Materials</h3>
+
+<p>All course materials (e.g., outlines, handouts, syllabi, exams, quizzes, PowerPoint presentations, lectures, audio and video recordings, etc.) are proprietary. Students are prohibited from posting or selling any such course materials without the express written permission of the professor teaching this course. To do so is a violation of the Brigham Young University Honor Code.</p>
+
+<h3 id="plagiarism">Plagiarism</h3>
+
+<p>Intentional plagiarism is a form of intellectual theft that violates widely recognized principles of academic integrity as well as the Honor Code. Such plagiarism may subject the student to appropriate disciplinary action administered through the university Honor Code Office, in addition to academic sanctions that may be applied by an instructor. Inadvertent plagiarism, which may not be a violation of the Honor Code, is nevertheless a form of intellectual carelessness that is unacceptable in the academic community. Plagiarism of any kind is completely contrary to the established practices of higher education where all members of the university are expected to acknowledge the original intellectual work of others that is included in their own work. In some cases, plagiarism may also involve violations of copyright law. Intentional Plagiarism-Intentional plagiarism is the deliberate act of representing the words, ideas, or data of another as one's own without providing proper attribution to the author through quotation, reference, or footnote. Inadvertent Plagiarism-Inadvertent plagiarism involves the inappropriate, but non-deliberate, use of another's words, ideas, or data without proper attribution. Inadvertent plagiarism usually results from an ignorant failure to follow established rules for documenting sources or from simply not being sufficiently careful in research and writing. Although not a violation of the Honor Code, inadvertent plagiarism is a form of academic misconduct for which an instructor can impose appropriate academic sanctions. Students who are in doubt as to whether they are providing proper attribution have the responsibility to consult with their instructor and obtain guidance. Examples of plagiarism include: Direct Plagiarism-The verbatim copying of an original source without acknowledging the source. Paraphrased Plagiarism-The paraphrasing, without acknowledgement, of ideas from another that the reader might mistake for the author's own. Plagiarism Mosaic-The borrowing of words, ideas, or data from an original source and blending this original material with one's own without acknowledging the source. Insufficient Acknowledgement-The partial or incomplete attribution of words, ideas, or data from an original source. Plagiarism may occur with respect to unpublished as well as published material. Copying another student's work and submitting it as one's own individual work without proper attribution is a serious form of plagiarism.</p>
+
+    </div>
+
+  </body>
+</html>

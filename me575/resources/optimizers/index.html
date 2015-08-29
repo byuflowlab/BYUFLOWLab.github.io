@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Optimizers &middot; ME 575
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me575">
+          ME 575
+        </a>
+      </h1>
+      <p class="lead">Optimization Techniques in Engineering</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me575/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me575/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me575/assignments">Assignments</a>
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Optimizers</h1> -->
+      <div id="toc-container">
+   <table class="toc" id="toc">
+      <tbody>
+         <tr>
+            <td>
+               <div id="toctitle">
+                  <h2>Contents</h2>
+               </div>
+               <ul>
+                  <li class="toc_level-1 toc_section-1">
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">A (Partial) List of Optimizers in Matlab and Python</span></a>
+                     <ul>
+                        <li class="toc_level-2 toc_section-2">
+                           <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Matlab</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-3">
+                           <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Python</span></a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div><h1 id="tocAnchor-1-1">A (Partial) List of Optimizers in Matlab and Python</h1>
+
+<h2 id="tocAnchor-1-1-1">Matlab</h2>
+
+<p>The go to optimizer in Matlab for most of our problems (nonlinear, differentiable) is <em>fmincon</em>.  It is easy to use, robust, and has a wide variety of options.  If your problem is failing with <em>fmincon</em> you can be pretty confident that the problem is with your formulation.  Other options for specific needs, including gradient-free options, are discussed below.</p>
+
+<h3 id="optimization-toolbox">Optimization Toolbox</h3>
+
+<p>We have university licenses to Matlab and the Optimization Toolbox.  This toolbox provides the following methods:</p>
+
+<ul>
+<li><em>fminsearch</em>, gradient-free, nonlinear unconstrained, Nelder-Mead simplex method.</li>
+<li><em>fminunc</em>, gradient-based, nonlinear unconstrained, includes a quasi-newton and a trust-region method.</li>
+<li><em>fmincon</em>, gradient-based, nonlinear constrained, includes an interior-point, sqp, active-set, and trust-region-reflective method.</li>
+<li><em>linprog</em>, linear programming problems.</li>
+<li><em>intlinprog</em>, mixed-integer linear programming problems.</li>
+<li><em>quadprog</em>, quadratic programming problems.</li>
+</ul>
+
+<h3 id="global-optimization-toolbox">Global Optimization Toolbox</h3>
+
+<p>We do not have a university license for this toolbox.  There are a few options for use:</p>
+
+<ul>
+<li>Mathworks offers a trial version of Matlab and any toolboxes, which will last for one month (long enough for the gradient-free assignments in this class).</li>
+<li>You can make a personal purchase.</li>
+<li>Use one of the third-party tools discussed in the next section.</li>
+</ul>
+
+<!-- ($50 for Matlab and $10 for the toolbox, at the time of this writing). -->
+
+<!--     \item For very limited testing there are 2 floating licenses on the CAEDM servers.  These are actually owned by the EE department, so \textbf{please do not take up those licenses if you plan to do more than a 1-off quick run.} 
+ -->
+
+<p>The global optimization toolbox has the following methods (all of these are gradient-free approaches):</p>
+
+<ul>
+<li><em>patternsearch</em>, pattern search solver for derivative-free optimization, constrained or unconstrained</li>
+<li><em>ga</em>, genetic algorithm solver for mixed-integer or continuous-variable optimization, constrained or unconstrained</li>
+<li><em>gamultiobj</em>, multiobjective genetic algorithm</li>
+<li><em>particleswarm</em>, particle swarm solver for derivative-free unconstrained optimization or optimization with bounds</li>
+<li><em>simulannealbnd</em>, simulated annealing solver for derivative-free unconstrained optimization or optimization with bounds</li>
+</ul>
+
+<h3 id="third-party-gradient-free-algorithms">Third Party Gradient-Free Algorithms</h3>
+
+<!-- \label{sec:thirdparty} -->
+
+<p>Because we don't have university-wide access to the Global Optimization Toolbox, I list here a number of third-party options contributed by the user community.  These are simplistic implementations.  Based on past experience, they should work just fine for the homework, but are probably not good options for your project.</p>
+
+<ul>
+<li><a href="http://www.mathworks.com/matlabcentral/fileexchange/31166-ngpm-a-nsga-ii-program-in-matlab-v1-4"><strong>NGPM</strong></a>.  NSGA-II is a well-known genetic algorithm, and this is a Matlab implementation of that methodology.</li>
+<li><a href="http://www.mathworks.com/matlabcentral/fileexchange/24838-godlike-a-robust-single---multi-objective-optimizer"><strong>GODLIKE</strong></a>, a basic genetic algorithm, differential evolution, particle swarm, and adaptive simulated annealing method</li>
+</ul>
+
+<h3 id="convex-optimization">Convex Optimization</h3>
+
+<ul>
+<li><a href="http://cvxr.com/cvx/"><strong>CVX</strong></a>, a nice modeling language for disciplined convex problem, includes some free solvers.  Developed at Stanford, works within Matlab.  Interfaces with some commercial solvers like Gurobi.
+<a name="gurobi" id="gurobi"></a></li>
+<li><a href="http://www.gurobi.com/products/gurobi-optimizer"><strong>Gurobi</strong></a>, an excellent commercial optimizer for disciplined convex problems, or mixed-integer ``convex'' problems.  Free for academic use.  Can be used with CVX or through other interfaces (Python, R, C, C++, etc.) </li>
+</ul>
+
+<h2 id="tocAnchor-1-1-2">Python</h2>
+
+<p>The easiest options to start out with are the ones in SciPy, because you already have them.  However, in our experience none of the optimizers in SciPy are very good.  They should be sufficient for the homework problems, and may even work well enough for some of your projects, but if you try to do problems of even modest complexity you will likely find them wanting.  Better options are discussed below, but they require more work to get setup.</p>
+
+<h3 id="scipy">SciPy</h3>
+
+<p>SciPy provides direct access to several optimizers, or you can can use the <em>minimize</em> function described below to more easily switch between different options.</p>
+
+<ul>
+<li><em>scipy.optimize.minimize</em> provides an interface to several optimization methods.  Some of the more useful ones are:
+
+<ul>
+<li>SLSQP, a simple SQP implementation.</li>
+<li>BFGS and CG, a simple BFGS Quasi-Newton, and Conjugate Gradient implementation (unconstrained)</li>
+<li>Nelder-Mead, a gradient-free Nelder-Mead simplex method.</li>
+<li>COBYLA, a gradient-free method using successive linear approximations.</li>
+</ul></li>
+<li><em>scipy.optimize.differential_evolution</em> a differential evolution method (effectively a real-encoded GA)</li>
+</ul>
+
+<h3 id="pyopt-or-pyoptsparse"><a href="http://www.pyopt.org">pyOpt</a> or pyOptSparse</h3>
+
+<p>pyOpt and pyOptSparse are not optimizers, but rather a wrapper to a dozen or so optimizers.  They allow you to define your problem once, and easily change between solvers without having the worry about the different conventions used by the various optimizers.  There are some solver options here that are much better than the ones in SciPy.  SNOPT, for example, is my go to optimizer.  Some of these, like SNOPT, are not freely available.  I have purchased or obtained department licenses where needed.  If you are a BYU student and want access to one of the optimizers in bold, please come see me.  \textbf{Please note that the optimizers SNOPT, NLPQLP, and our version of IPOPT are for academic use only, and you should cite the authors if used for any publications.}  Setup of pyOpt requires a C and a Fortran compiler.</p>
+
+<p>pyOptSparse is an updated version of pyOpt with a lot of useful improvements.  It is not yet publicly available, but will be soon.  In the meantime you can get a copy from me.  Some of the available optimizers include </p>
+
+<ul>
+<li><strong><em>SNOPT</em></strong>, SQP method, effective for small- and large-scale problems.  I have purchased a department license.</li>
+<li><strong><em>NLPQLP</em></strong>, quadratic Lagrangian approximation with linear constraints, non-monotone line search to help with numerical instabilities.  I have obtained an academic license.</li>
+<li><strong><em>IPOPT</em></strong>, an interior point method.  The source code is freely-available, but not the linear solver (there is a free one but it is not very good).  I have obtained academic licenses to the better linear solvers.</li>
+<li><em>PSQP</em>, another basic SQP implementation</li>
+<li><em>FSQP</em>, a feasible SQP implementation</li>
+<li><em>SLSQP</em>, same as in Scipy</li>
+<li><em>CONMIN</em>, a basic feasible direction method</li>
+<li><em>NSGA2</em>, a well-known genetic algorithm</li>
+<li><em>ALPSO</em>, particle swarm method</li>
+</ul>
+
+<h3 id="convex-optimization">Convex Optimization</h3>
+
+<p>See the notes above on <a href="#gurobi">Gurobi</a></p>
+
+    </div>
+
+  </body>
+</html>
