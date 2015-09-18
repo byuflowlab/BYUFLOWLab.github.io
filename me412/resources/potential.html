@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 5-6" />
+  <title>Potential Flow</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/mywhite.css" id="theme">
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Potential Flow</h1>
+    <h2 class="author">Lecture 5-6</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/potential-flow">Potential Flow</a></li>
+<li><a href="#/rankine-oval">Rankine Oval</a></li>
+<li><a href="#/panel-methods">Panel Methods</a></li>
+</ul>
+</section>
+
+<section class="slide level1">
+
+<section id="equation-hierarchy" class="level2">
+<h2>Equation Hierarchy</h2>
+<figure>
+<img src="images/hierarchy.png" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="when-or-where-is-an-inviscid-flow-assumption-valid" class="level2">
+<h2>When (or where) is an inviscid flow assumption valid?</h2>
+<video width="600px" controls>
+<source data-src="images/potential_viscous.mp4" type="video/mp4" />
+</video>
+<aside class="notes">
+<p>Discuss why boundary layer methods are important and where we are going.</p>
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="does-inviscid-flow-always-imply-irrotational-flow" class="level2">
+<h2>Does inviscid flow always imply irrotational flow?</h2>
+</section>
+</section>
+<section id="potential-flow" class="slide level1">
+<h1>Potential Flow</h1>
+<p>Irrotational: <span class="math inline">\(\nabla \times \vec{V} = 0\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[\Rightarrow \boxed{\vec{V} = \nabla \phi}\]</span></p>
+</div>
+<div class="fragment">
+<p>Incompressible: <span class="math inline">\(\nabla \cdot \vec{V} = 0\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\nabla \cdot \nabla \phi = 0\]</span> <span class="math display">\[\boxed{\nabla^2 \phi = 0}\]</span></p>
+</div>
+<div class="fragment">
+<p><em>This is Laplace's Equation!</em></p>
+</div>
+</section>
+<section class="slide level1">
+
+<section id="velocity-field" class="level2">
+<h2>Velocity Field</h2>
+<p><span class="math display">\[ \vec{V} = \nabla \phi \quad\Rightarrow\quad
+V_x = \frac{\partial \phi}{\partial x}, V_y = \frac{\partial \phi}{\partial y}, V_z = \frac{\partial \phi}{\partial z}
+\]</span></p>
+<p><span class="math display">\[ \vec{V} = \nabla \times \psi \hat{z} \quad\Rightarrow\quad
+V_x = \frac{\partial \psi}{\partial y}, V_y = -\frac{\partial \psi}{\partial x}, V_z = 0
+\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="uniform-flow" class="level2">
+<h2>Uniform Flow</h2>
+<!-- ![](images/uniform.svg) -->
+<figure>
+<img src="images/uniform.svg" width="450px">
+</figure>
+<p><span class="math display">\[ \phi = U \cos\alpha x + U \sin\alpha y \]</span></p>
+<p><span class="math display">\[ \psi = -U \sin\alpha x + U \cos\alpha y \]</span></p>
+<p><span class="math display">\[ V_x = U \cos\alpha\]</span></p>
+<p><span class="math display">\[ V_y = U \sin\alpha\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="sourcesink" class="level2">
+<h2>Source/Sink</h2>
+<figure>
+<img src="images/source.svg" alt="" />
+</figure>
+<p><span class="math display">\[ \phi = \frac{\Lambda}{2\pi}\ln r \]</span></p>
+<p><span class="math display">\[ \psi = \frac{\Lambda}{2\pi}\theta \]</span></p>
+<p><span class="math display">\[ V_r = \frac{\Lambda}{2\pi r}\]</span></p>
+<p><span class="math display">\[ V_\theta = 0\]</span></p>
+<aside class="notes">
+<p>Gospel Insight: Sources and Sinks. Are you a source or a sink. Stay close to sources. Sources and sinks look a lot alike! Two topics Elder Ballard discussed in Regional conference: social media and Sabbath day observance. Is social media a source or a sink? Sabbath Day observance: not enough to just avoid things (e.g., shopping, recreation), but actively do good. Be a source!</p>
+<p>Elder Bednar: As you find yourself scrolling through your news feed, I invite you to consider how you are using social media to build meaningful relationships and share your faith in the Savior. Let me be clear: there is nothing inherently wrong with using social media. In fact, many good and positive things can and do occur when social media is used in edifying ways. However, please also remember that the Lord has commanded us to not idle away thy time, neither shalt thou bury thy talent that it may not be known. So how do we know if we are using social media in appropriate ways? I would suggest that asking these two questions can help us to know: 1. Is my use of social media impeding or inviting the constant companionship of the Holy Ghost in my life? 2. Does the time I spend on social media restrict or enlarge my capacity to live, love, and serve in meaningful ways? Prayerfully pondering these questions will invite inspiration and instruction from the Holy Ghost suited to your individual circumstances and needs.</p>
+<p>Elder Nelson: With that understanding, I no longer needed lists of dos and dont's. When I had to make a decision whether or not an activity was appropriate for the Sabbath, I simply asked myself, What sign do I want to give to God? That question made my choices about the Sabbath day crystal clear.</p>
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="vortex" class="level2">
+<h2>Vortex</h2>
+<figure>
+<img src="images/vortex.svg" alt="" />
+</figure>
+<p><span class="math display">\[ \phi = \frac{\Gamma}{2\pi}\theta \]</span></p>
+<p><span class="math display">\[ \psi = -\frac{\Gamma}{2\pi}\ln r \]</span></p>
+<p><span class="math display">\[ V_r = 0\]</span></p>
+<p><span class="math display">\[ V_\theta = \frac{\Gamma}{2\pi r}\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="doublet" class="level2">
+<h2>Doublet</h2>
+<figure>
+<img src="images/doublet.svg" alt="" />
+</figure>
+<p><span class="math display">\[ \phi = \frac{\kappa \cos\theta}{r} \]</span></p>
+<p><span class="math display">\[ \psi = -\frac{\kappa \sin\theta}{r} \]</span></p>
+<p><span class="math display">\[ V_r = -\frac{\kappa \cos\theta}{r^2}\]</span></p>
+<p><span class="math display">\[ V_\theta = -\frac{\kappa \sin\theta}{r^2}\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="linearity" class="level2">
+<h2>Linearity</h2>
+<p>Laplace's equation is a linear PDE. This means be we can linearly <em>add solutions together</em>. Can create complex flows from the superposition of many elementary flows.</p>
+</section>
+</section>
+<section id="rankine-oval" class="slide level1">
+<h1>Rankine Oval</h1>
+<video width="700px" controls>
+<source data-src="images/half_body.mp4" type="video/mp4" />
+</video>
+<p>See <a href="http://nbviewer.ipython.org/github/BYUFLOWLab/ME412notebooks/blob/master/Rankine-Oval.ipynb">Rankine Oval Example</a></p>
+<aside class="notes">
+<p>Show Jupyter notebook: Rankine Oval Example</p>
+</aside>
+</section>
+<section id="panel-methods" class="slide level1">
+<h1>Panel Methods</h1>
+<p>We want to be able to simulate potential flow over arbitrary complex geometries (and not just spheres and ovals).</p>
+<div class="fragment">
+<p>How can we achieve this?</p>
+<ul>
+<li class="fragment">Place known solutions (e.g., vortices, doublets) on the surface of our geometry. This automatically satisfies the governing equation.</li>
+<li class="fragment">Only need to satisfy boundary condition. Freestream boundaries are satisfied automatically (why?). Our only task is to adjust strengths of singularities to satisfy flow tangency.</li>
+</ul>
+</div>
+</section>
+<section class="slide level1">
+
+<p>We can use either continuous or discontinuous singularities. Usually we discretize our geometry into panels, thus the name <em>panel methods</em>. The result is a linear system of equations, which is easily solvable.</p>
+<aside class="notes">
+<p>Describe how panel methods work. Show a discretization. Draw some doublets on the surface. Need to compute velocity contribution from every other panel. Need to satisfy flow tangency (e.g., sum of velocity from doublets cancels out frestream component).</p>
+</aside>
+</section>
+<section class="slide level1">
+
+<p><span class="math display">\[
+\begin{bmatrix}
+A_{11} &amp; A_{12} &amp; \ldots &amp; A_{1N}\\
+A_{21} &amp; A_{22} &amp; \ldots &amp; A_{2N}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+A_{N1} &amp; A_{N2} &amp; \ldots &amp; A_{NN}\\
+\end{bmatrix}
+\begin{bmatrix}
+q_1 \\ q_2 \\ \vdots \\ q_N \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+V_\infty\sin(\theta_1) \\ V_\infty\sin(\theta_2) \\ \vdots \\ V_\infty\sin(\theta_N) \\
+\end{bmatrix}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<section id="grid-based-cfd-vs-potential-flow" class="level2">
+<h2>Grid-based CFD vs Potential Flow</h2>
+</section>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'mywhite', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
