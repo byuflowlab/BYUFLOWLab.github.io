@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 7" />
+  <title>Lift and Drag</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/mywhite.css" id="theme">
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Lift and Drag</h1>
+    <h2 class="author">Lecture 7</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+<aside class="notes">
+<ul>
+<li>Valero</li>
+<li>HW length</li>
+<li>Quiz</li>
+<li>Project Guidelines</li>
+</ul>
+</aside>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/lift-and-drag-definition">Lift and Drag Definition</a></li>
+<li><a href="#/lift-and-drag-in-potential-flow">Lift and Drag in Potential Flow</a></li>
+<li><a href="#/drag-in-viscous-fluids">Drag in Viscous Fluids</a></li>
+</ul>
+</section>
+
+<section id="lift-and-drag-definition" class="slide level1">
+<h1>Lift and Drag Definition</h1>
+<p><img src="images/pressure-shear.jpg" width="70%"></p>
+<p>Define the normal force, tangential force, lift, and drag.</p>
+<aside class="notes">
+<p>Ask class to identify which is which. Draw chord flat with freestream at angle of attack so lift is tilted forward. 90% of the class mistakes vertical for lift.</p>
+<p>When integrating. Be careful of signs.</p>
+</aside>
+</section>
+<section class="slide level1">
+
+<section id="example" class="level2">
+<h2>Example</h2>
+<p>9.5: The figure below notes the average pressure and shear stress acting on the surface of the 1-m-square flat plate. Determine the lift and drag generated. How much does the shear stress contribute to each?</p>
+<figure>
+<img src="images/P9-5.jpg" alt="" />
+</figure>
+<aside class="notes">
+\begin{align*}
+L &amp;= A(-p_1 \cos\alpha + p_2 \cos\alpha - \tau_1 \sin\alpha - \tau_2 \sin\alpha)\\
+&amp;= A((p_2 - p_1) \cos\alpha - (\tau_1 + \tau_2)\sin\alpha\\
+&amp;= 3.47 kN - 0.0163 kN\\
+&amp;= 3.45 kN\\
+\\
+D &amp;= A((p_2 - p_1)\sin\alpha + (\tau_1 + \tau_2)\cos\alpha\\
+&amp;= 0.427 kN + 0.133 kN\\
+&amp;= 0.560 kN\\
+\end{align*}
+<p>Important points: - shear stress contiributes very little to drag, but significantly to drag - understanding differences between pressure drag and shear stress drag is very important for design - L/D is generally around 20 for an aircraft.</p>
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="important-definitions" class="level2">
+<h2>Important Definitions</h2>
+<p>Dynamic Pressure: <span class="math display">\[q_\infty = \frac{1}{2}\rho V_\infty^2\]</span></p>
+<p>Pressure coefficient: <span class="math display">\[C_P = \frac{P - P_\infty}{q_\infty}\]</span></p>
+<p>for <em>incompressible</em> flow: <span class="math display">\[C_P = 1 - \left(\frac{V}{V_\infty}\right)^2\]</span></p>
+<aside class="notes">
+<p>Derive <span class="math inline">\(C_P\)</span> for incompressible. Note that all we need to know is the velocity field, then we automatically know pressure.</p>
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<p>Lift coefficient: <span class="math display">\[C_L = \frac{L}{q_\infty S}\]</span></p>
+<p>Drag coefficient: <span class="math display">\[C_D = \frac{D}{q_\infty S}\]</span></p>
+<p>Moment coefficient: <span class="math display">\[C_M = \frac{M}{q_\infty S l}\]</span></p>
+<p>Positive moment is generally pitch up.</p>
+</section>
+<section class="slide level1">
+
+<p><em>Center of pressure</em>: Location where the distributed loads effective act on the body (e.g., zero moments about the center of pressure).</p>
+<p><em>Aerodynamic Center</em>: Point at which pitching moment is independent of angle of attack (e.g., <span class="math inline">\(d c_m / d\alpha = 0\)</span>)</p>
+</section>
+<section id="lift-and-drag-in-potential-flow" class="slide level1">
+<h1>Lift and Drag in Potential Flow</h1>
+</section>
+<section class="slide level1">
+
+<section id="circulation" class="level2">
+<h2>Circulation</h2>
+<p><span class="math display">\[\Gamma = \oint_C \vec{V} \cdot d\vec{s}\]</span></p>
+<figure>
+<img src="images/circulation.gif" alt="" />
+</figure>
+<aside class="notes">
+<p>Relate to last homework: - adding vortex created lift in our cylinder.<br />
+- same is true for an airfoil - Circulation for airfoil generated by pressure differences</p>
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="kutta-joukowski-theorem" class="level2">
+<h2>Kutta-Joukowski Theorem</h2>
+<p><span class="math display">\[\vec{L}^\prime = \rho_\infty \vec{V} \times \vec{\Gamma}\]</span></p>
+<!-- [picture of lift] -->
+<aside class="notes">
+<p>Explain right hand rule for circulation.</p>
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="dalmberts-paradox" class="level2">
+<h2>D'Almbert's Paradox</h2>
+<p>For potential flow, what is the drag around the cylinder?</p>
+<p>What about around an arbitrarily airfoil?</p>
+<aside class="notes">
+<ul>
+<li>For a cylinder the flow is symmetric so it is obviously zero.</li>
+<li>For the airfoil the flow is not symmetric...but it is still zero.</li>
+</ul>
+</aside>
+</section>
+</section>
+<section id="drag-in-viscous-fluids" class="slide level1">
+<h1>Drag in Viscous Fluids</h1>
+<p>Skin Friction Drag and Pressure Drag</p>
+<aside class="notes">
+<p>Discuss real flow around cylinder. Cp vs theta. Pressure difference, thus there is drag. Analogy of ball rolling down a hill.</p>
+</aside>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: false,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'mywhite', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
