@@ -1,0 +1,38 @@
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  text-transform: none;
+  text-align: left;
+}
+
+.reveal h1 {
+  font-size: 2.0em;
+}
+
+.reveal h2 {
+  font-size: 2.0em; }
+
+.reveal h3 {
+  font-size: 1.5em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
+.reveal p {
+  text-align: left;
+}
+
+.reveal em {
+  font-style: normal;
+  color: #3b759e;
+}
+
+.reveal a {
+  color: #3b759e;
+  text-decoration: underline;
+}
+
+.reveal section img {
+  margin: 0px 0px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}

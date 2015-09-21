@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 8" />
+  <title>Boundary Layers</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="my.css"/>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Boundary Layers</h1>
+    <h2 class="author">Lecture 8</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+<aside class="notes">
+<ul>
+<li>HW 2 review:</li>
+<li>added 10% if attempted all</li>
+<li>2.2 answer key was wrong</li>
+<li>CFD challenge</li>
+<li>lenient on 2.4</li>
+<li>overal presentation quality vastly improved</li>
+</ul>
+</aside>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/what-is-a-boundary-layer">What is a Boundary Layer?</a></li>
+<li><a href="#/boundary-layer-thickness">Boundary Layer Thickness</a></li>
+</ul>
+</section>
+
+<section id="what-is-a-boundary-layer" class="slide level1">
+<h1>What is a Boundary Layer?</h1>
+<figure>
+<img src="images/bl_section.png" alt="" />
+</figure>
+<!-- Laminar, Turbulent, Instabilities, Transition, Separation, Wake, Velocity Deficit -->
+</section>
+<section class="slide level1">
+
+<section id="no-slip-condition" class="level2">
+<h2>No Slip Condition</h2>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="boundary-layer-profiles" class="level2">
+<h2>Boundary Layer Profiles</h2>
+<figure>
+<img src="images/bl_profile.png" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<p><em>Laminar Boundary Layer</em>: little mixing, mixing at small scale (molecular), lower shear stress at the wall</p>
+<p><em>Turbulent Boundary Layer</em>: unsteady mixing at many scales, higher shear stress at the wall, thicker boundary layer</p>
+<p><em>Transition</em>: Generally occurs around Re = 1e5–1e6</p>
+</section>
+<section id="boundary-layer-thickness" class="slide level1">
+<h1>Boundary Layer Thickness</h1>
+<p><em>Boundary Layer Thickness</em> (<span class="math inline">\(\delta\)</span>): distance from wall at which velocity reaches 99% of freestream value.</p>
+<!-- [img] -->
+<aside class="notes">
+this is pretty arbirary
+</aside>
+<!-- ## Boundary Layer Displacement Thickness -->
+</section>
+<section class="slide level1">
+
+<p><em>Boundary Layer Displacement Thickness</em> (<span class="math inline">\(\delta^*\)</span>): Distance we would need to displace the wall so that an exterior inviscid flow (i.e., at <span class="math inline">\(U_e\)</span>) would have the same mass flux as that actual flow.</p>
+</section>
+<section class="slide level1">
+
+<p>Let <span class="math inline">\(h\)</span> be some distance far outside the boundary layer, and consider the mass flow rate per unit depth.</p>
+<p>Mass flow rate through fictitious inviscid flow: <span class="math display">\[\rho U_e (h - \delta^*)\]</span></p>
+<p>Mass flow rate through actual flow: <span class="math display">\[\int_0^h \rho u dy\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>Equate and solve: <span class="math display">\[\delta^* = \int_0^h \left(1 - \frac{\rho u}{\rho_e U_e}\right) dy\]</span></p>
+<p>The location <span class="math inline">\(h\)</span> was arbitrary so we let <span class="math inline">\(h \rightarrow \infty\)</span>: <span class="math display">\[
+\boxed{
+\delta^* = \int_0^\infty \left(1 - \frac{\rho u}{\rho_e U_e}\right) dy
+}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<section id="alternative-derivation" class="level3">
+<h3>Alternative derivation</h3>
+<p><span class="math inline">\(\delta^*\)</span> can also be interpreted as the distance streamlines outside the boundary layer are displaced due to the presence of the boundary layer.</p>
+</section>
+</section>
+<section class="slide level1">
+
+<p>For a flat plate</p>
+<p>upstream: <span class="math display">\[\int_0^h \rho_e U_e dy\]</span></p>
+<p>downstream: <span class="math display">\[\int_0^h \rho u dy + \rho_e U_e \delta^*\]</span></p>
+<p>Yields same solution.</p>
+<aside class="notes">
+keep in mind these are all definitions
+</aside>
+</section>
+<section class="slide level1">
+
+<section id="a-practical-use-of-delta" class="level2">
+<h2>A practical use of <span class="math inline">\(\delta^*\)</span></h2>
+<p><span class="math inline">\(\delta^*\)</span> defines an <em>effective body</em> shape.</p>
+<ol type="1">
+<li class="fragment">Analyze inviscid flow and find <span class="math inline">\(U_e\)</span> along surface.</li>
+<li class="fragment">Solve boundary layer equations and compute <span class="math inline">\(\delta^*\)</span>.</li>
+<li class="fragment">Reanalyze inviscid flow, but use <span class="math inline">\(\delta^*\)</span> in flow tangency boundary condition.</li>
+<li class="fragment">Repeat until convergence.</li>
+</ol>
+</section>
+</section>
+<section class="slide level1">
+
+<p><em>Boundary Layer Momentum Thickness</em> (<span class="math inline">\(\Theta\)</span>): Distance we would need to displace the wall so that an exterior inviscid flow (i.e., at <span class="math inline">\(U_e\)</span>) would have the same momentum flux as that actual flow.</p>
+</section>
+<section class="slide level1">
+
+<p>momentum deficit in fictitious flow: <span class="math display">\[
+\rho_e U_e^2 \Theta
+\]</span></p>
+<p>momentum deficit in actual flow: <span class="math display">\[
+\int_0^h \rho u (U_e- u) dy
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p><span class="math display">\[
+\Theta = \int_0^\infty \frac{\rho u}{\rho_e U_e} \left( 1 - \frac{u}{U_e} \right)dy
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<section id="why-is-this-useful" class="level3">
+<h3>Why is this useful?</h3>
+<p>Momentum thickness is useful in estimating skin friction drag coefficient (more on this later).</p>
+</section>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'sky', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
