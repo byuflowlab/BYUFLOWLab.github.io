@@ -8,13 +8,18 @@
 }
 
 .reveal h2 {
-  font-size: 2.0em; }
+  font-size: 1.5em; }
 
 .reveal h3 {
-  font-size: 1.5em; }
+  font-size: 1.25em; }
 
 .reveal h4 {
   font-size: 1em; }
+
+.reveal figcaption{
+    font-size: 0.7em;
+}
+
 
 .reveal p {
   text-align: left;
@@ -35,4 +40,9 @@
   background: none;
   border: none;
   box-shadow: none;
+}
+
+.reveal .MathJax_Display{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 9" />
+  <title>Integral Boundary Layer Equation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="my.css"/>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Integral Boundary Layer Equation</h1>
+    <h2 class="author">Lecture 9</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+<aside class="notes">
+<ul>
+<li>HW Questions. Glad Aaron asked last time.</li>
+<li>CFD Session. Also a CFD office hour?</li>
+<li>Office hours</li>
+<li>Employers main complaint: unable to solve open-ended problems</li>
+<li>Average grade</li>
+</ul>
+</aside>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/review">Review</a></li>
+<li><a href="#/blasius-solution">Blasius Solution</a></li>
+<li><a href="#/momentum-integral-boundary-layer-equation">Momentum Integral Boundary Layer Equation</a></li>
+</ul>
+</section>
+
+<section id="review" class="slide level1">
+<h1>Review</h1>
+<section id="displacment-thickness" class="level3">
+<h3>Displacment Thickness</h3>
+<p><span class="math display">\[
+\delta^* = \int_0^\infty \left(1 - \frac{\rho u}{\rho_e U_e}\right) dy
+\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="images/disp_thickness.png" alt="(Moran, Intro to Theoretical and Computational Aerodynamics)" /><figcaption>(Moran, Intro to Theoretical and Computational Aerodynamics)</figcaption>
+</figure>
+</section>
+<section class="slide level1">
+
+<section id="momentum-thickness" class="level3">
+<h3>Momentum Thickness</h3>
+<p><span class="math display">\[\theta = \int_0^\infty \frac{\rho u}{\rho_e U_e} \left( 1 - \frac{u}{U_e} \right)dy\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<p>Momentum Thickness is related to skin friction drag. For a <em>flat plate</em> there is an explicit analytic relationship:</p>
+<p><span class="math display">\[D_f^\prime = 2 q_\infty \theta_L\]</span></p>
+<p>For more general conditions, momentum thickness is sometimes used in empirical formulas for drag estimation.</p>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="images/golfball.jpg" alt="" />
+</figure>
+<aside class="notes">
+<p>should probably put with previous lecture or next. discuss turbulence is what makes the decrease in drag possible.</p>
+</aside>
+</section>
+<section id="blasius-solution" class="slide level1">
+<h1>Blasius Solution</h1>
+<p>An analytic solution for boundary layer flow over a flat plate (incompressible flow).</p>
+<figure>
+<img src="images/Boundary_Layer.png" alt="" />
+</figure>
+</section>
+<section class="slide level1">
+
+<section id="d-navier-stokes-equation-steady-no-gravity-laods" class="level2">
+<h2>2D Navier-Stokes Equation (steady, no gravity laods)</h2>
+<p><span class="math display">\[
+\frac{\partial (\rho u) }{\partial x} + \frac{\partial (\rho v)}{\partial y} = 0
+\]</span> <span class="math display">\[
+\begin{align*}
+\rho\left(u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y}\right) &amp;= -\frac{\partial p}{\partial x} + \mu\left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right)\\
+\rho\left(u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y}\right) &amp;= -\frac{\partial p}{\partial y} + \mu\left(\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2}\right)
+\end{align*}
+\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="within-a-boundary-layer-we-assume" class="level2">
+<h2>Within a boundary layer we assume:</h2>
+<p><span class="math display">\[\frac{\partial}{\partial y} \gg  \frac{\partial}{\partial x} \]</span> and <span class="math display">\[u \gg v \]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<p>Continuity is unchanged, but we can simplify momentum: <span class="math display">\[
+\begin{align*}
+\rho\left(u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y}\right) &amp;= -\frac{\partial p}{\partial x} + \mu\left(\cancelto{}{\frac{\partial^2 u}{\partial x^2}} + \frac{\partial^2 u}{\partial y^2}\right)\\
+\cancelto{}{\rho\left(u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y}\right)} &amp;= -\frac{\partial p}{\partial y} + \cancelto{}{\mu\left(\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2}\right)}
+\end{align*}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>The equation <span class="math display">\[\frac{\partial p}{\partial y} = 0 \]</span> is an important result that tells us that the pressure at the surface is (approximately) equal to that at the edge of the boundary layer—thus, the pressure solution from irrotational flow can be directly used.</p>
+<p>(recall: this assumes boundary layer flow on a flat surface, and thus is not valid for highly curved surfaces or for separated flows)</p>
+</section>
+<section class="slide level1">
+
+<p>Furthermore, for a flat plate, there is no pressure gradient in the x-direction. Additionally, we assume incompressibility for the Blasius solution, so the governing equations are: <span class="math display">\[
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
+\]</span> <span class="math display">\[
+u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} = \nu \frac{\partial^2 u}{\partial y^2}
+\]</span></p>
+<p>This can be solved by combining the two equations with two unknowns (u, v) into one equation, which leads to an ODE. Details can be found in any fluid mechanics textbook.</p>
+</section>
+<section class="slide level1">
+
+<section id="boundary-layer-thickness" class="level2">
+<h2>Boundary Layer Thickness:</h2>
+<p><span class="math display">\[
+\begin{align*}
+\delta &amp;= \frac{5 x}{\sqrt{Re_x}}\\
+\delta^* &amp;= \frac{1.72 x}{\sqrt{Re_x}}\\
+\theta &amp;= \frac{0.664 x}{\sqrt{Re_x}}\\
+\end{align*}
+\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="skin-friction" class="level2">
+<h2>Skin Friction</h2>
+<p><span class="math display">\[\tau_w = \mu \left.\frac{\partial u}{\partial y}\right|_{y=0}\]</span></p>
+<p><span class="math display">\[ c_f = \frac{\tau_w}{q_\infty}\]</span></p>
+<p><span class="math display">\[c_f = \frac{0.664}{\sqrt{Re_x}}\]</span></p>
+<p>Note that <span class="math inline">\(c_f\)</span> is proportional to <span class="math inline">\(\sqrt{x}\)</span> and thus, most of the skin friction occurs on the forward part of the plate (body).</p>
+</section>
+</section>
+<section class="slide level1">
+
+<p>We can integrate the skin friction across the plate to get the 2D viscous drag coefficient</p>
+<p><span class="math display">\[
+\begin{align*}
+{c_d}_f &amp;= \frac{D_f}{q_\infty L}\\
+ &amp;= \frac{\int_0^L \tau_w dx}{q_\infty L}\\
+ &amp;= \frac{1}{L}\int_0^L c_f dx\\
+\end{align*}
+\]</span></p>
+</section>
+<section class="slide level1">
+
+<p>For a flat plate this yields <span class="math display">\[{c_d}_f = \frac{1.328}{\sqrt{Re_L}}\]</span></p>
+<p>note: that integrating along the entire length is a bit suspect, because the boundary layer equations are not valid near the leading edge.</p>
+</section>
+<section class="slide level1">
+
+<p>For turbulent flow there is no analytic solution. But we have the following empirical relationships for a flat plate:</p>
+<p><span class="math display">\[\delta = \frac{0.37 x}{Re_x^{0.2}}\qquad\delta^* = \frac{0.046 x}{Re_x^{0.2}}\qquad\theta = \frac{0.036 x}{Re_x^{0.2}}\]</span> <span class="math display">\[c_f = \frac{0.0592}{Re_x^{0.2}}\]</span> <span class="math display">\[{c_d}_f = \frac{0.455}{(log Re_L)^{2.58}} \textrm{ or } {c_d}_f = \frac{0.074}{Re_L^{0.2}}\]</span></p>
+</section>
+<section id="momentum-integral-boundary-layer-equation" class="slide level1">
+<h1>Momentum Integral Boundary Layer Equation</h1>
+<p>Exact solutions are difficult to impossible in general cases. One of the main quantities we care about is drag. An integral approach allows us to approximate the skin friction drag in a boundary layer.</p>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="images/cv-mible.jpg" alt="" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>Von Karman Momentum Integral Equation</p>
+<p><span class="math display">\[\boxed{
+\frac{d \theta}{d x} + \frac{\theta}{U_e}(H + 2)\frac{d U_e}{dx} = \frac{1}{2}c_f}
+\]</span> where <span class="math inline">\(H = \delta^*/\theta\)</span></p>
+<p>if no velocity gradient: <span class="math display">\[\frac{d \theta}{d x}  = \frac{1}{2}c_f\]</span></p>
+</section>
+<section class="slide level1">
+
+<p><span class="math inline">\(H\)</span> is called the shape factor of the boundary layer. It can be used as a measure of the health of a boundary layer.</p>
+</section>
+<section class="slide level1">
+
+<p>This equation contains too many unknowns to solve by itself (<span class="math inline">\(\theta, H, c_f\)</span>), but can be solved connection with other equations for laminar or turbulent boundary layers. You will explore on of these in your homework.</p>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'sky', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+        cancel: ["Extension","cancel"],
+        bcancel: ["Extension","cancel"],
+        xcancel: ["Extension","cancel"],
+        cancelto: ["Extension","cancel"]
+      });
+    });
+    </script>
+    </body>
+</html>
