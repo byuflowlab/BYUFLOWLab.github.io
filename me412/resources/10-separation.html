@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 10" />
+  <title>Transition and Separation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="my.css"/>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Transition and Separation</h1>
+    <h2 class="author">Lecture 10</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+<aside class="notes">
+<ul>
+<li>Download latest HW</li>
+<li>StarCCM session</li>
+</ul>
+</aside>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/review">Review</a></li>
+<li><a href="#/blasius-solution">Blasius Solution</a></li>
+<li><a href="#/transition">Transition</a></li>
+<li><a href="#/separation">Separation</a></li>
+<li><a href="#/tennis-balls">Tennis Balls</a></li>
+</ul>
+</section>
+
+<section id="review" class="slide level1">
+<h1>Review</h1>
+</section>
+<section id="blasius-solution" class="slide level1">
+<h1>Blasius Solution</h1>
+<figure>
+<img src="images/Boundary_Layer.png" alt="" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>Von Karman Momentum Integral Equation</p>
+<p><span class="math display">\[\boxed{
+\frac{d \theta}{d x} + \frac{\theta}{U_e}(H + 2)\frac{d U_e}{dx} = \frac{1}{2}c_f}
+\]</span> where <span class="math inline">\(H = \delta^*/\theta\)</span></p>
+</section>
+<section id="transition" class="slide level1">
+<h1>Transition</h1>
+<iframe width="630" height="472.5" src="https://www.youtube.com/embed/XOLl2KeDiOg" frameborder="0" allowfullscreen>
+</iframe>
+</section>
+<section class="slide level1">
+
+<p>Instabilities in the boundary layer lead to transition.</p>
+<div class="fragment">
+<p>For low Reynolds numbers, instabilities are damped and the flow remains <em>laminar</em>.</p>
+</div>
+<div class="fragment">
+<p>At high Reynolds numbers, instabilities are amplified leading to <em>turbulent</em> flow.</p>
+</div>
+</section>
+<section class="slide level1">
+
+<p>We often think of transition occurring at a specific point, but it really occurs over a region.</p>
+</section>
+<section class="slide level1">
+
+<section id="how-can-we-predict-transition" class="level2">
+<h2>How can we predict transition?</h2>
+<section id="empirical-methods" class="level3">
+<h3>Empirical Methods</h3>
+<p>Michel's criteria (for airfoils in incompressible flow):</p>
+<p><span class="math display">\[Re_\theta &gt; 1.174 \left( 1 + \frac{22,400}{Re_x} Re_x^{0.46} \right)\]</span></p>
+</section>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="linear-stability-theory" class="level3">
+<h3>Linear Stability Theory</h3>
+<p>A popular approach is the <span class="math inline">\(e^n\)</span> method (used in XFOIL).</p>
+<p>Tracks frequencies in the Orr-Sommerfeld equation and sets transition when the fastest growing frequency is amplified by a factor of <span class="math inline">\(e^n\)</span> where <span class="math inline">\(n\)</span> is a user chosen constant.</p>
+<p><span class="math inline">\(n_{cric} = 9\)</span> is a typical value (but depends on the flow conditions) and means transition is predicted to occur when an initial perturbation has grown by a factor of <span class="math inline">\(e^9 = 8103\)</span>.</p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="d-transition" class="level2">
+<h2>3D transition</h2>
+<p>These 2D instabilities (called Tollmein-Schlichting instabilities) are not the only mechanism that cause transition. 3D affects are also important (attachment line instabilities, crossflow instabilities).</p>
+<aside class="notes">
+show example of pressure gradient along wing
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="what-factors-can-we-change-to-affect-transition" class="level2">
+<h2>What factors can we change to affect transition?</h2>
+<ul>
+<li class="fragment">Freestream turbulence and noise</li>
+<li class="fragment">Pressure gradients: even very small adverse pressure gradients can cause transition (more on this next)</li>
+<li class="fragment">Heat transfer: cooling can stabilize a boundary layer</li>
+<li class="fragment">Suction/blowing</li>
+<li class="fragment">Surface roughness: sometimes intentional trips are added</li>
+</ul>
+<aside class="notes">
+Laminar supersonic wind tunnel example. SS wind tunnels usually have turbulent boundary layers on wall. Acoustics from the turbulent boundary layers triggered transition on laminar flow supersonic wings. Thus they always showed poor performance compared to flight tests. &quot;Quiet&quot; supersonic tunnels have been build
+</aside>
+</section>
+</section>
+<section id="separation" class="slide level1">
+<h1>Separation</h1>
+<section id="pressure-gradients" class="level2">
+<h2>Pressure Gradients</h2>
+<p>Recall that the pressure gradient normal to the surface is small. However, in the streamwise direction the pressure gradient is generally nonzero.</p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="favorable-and-adverse-pressure-gradients" class="level2">
+<h2>Favorable and Adverse Pressure Gradients</h2>
+<p>An adverse pressure gradient decreases the fluid momentum (like coasting uphill). At some point the streamlines leave the surface and this causes separation. Downstream of separation there are flow reversals.</p>
+<figure>
+<img src="images/separation.png" alt="" />
+</figure>
+<p><span class="math display">\[\left(\frac{\partial u}{\partial y}\right)_{\text{wall}} = 0\]</span></p>
+</section>
+</section>
+<section class="slide level1">
+
+<p>Turbulent flows have higher velocities closer to the surface and thus are more resistant to separation.</p>
+<div class="fragment">
+<p>Separation generally leads to a massive increase in drag, and a decrease in lift.</p>
+</div>
+<div class="fragment">
+<p>Conversely, a favorable pressure gradient can stabilize a boundary layer.</p>
+</div>
+<div class="fragment">
+<p>Want to avoid stagnation points in an adverse gradient (hence fairings).</p>
+<aside class="notes">
+Once separation occurs, a flow may reattach.
+</aside>
+</div>
+</section>
+<section class="slide level1">
+
+<section id="circular-cylinder" class="level2">
+<h2>Circular Cylinder</h2>
+<figure>
+<img src="images/cylinder-separation.jpg" alt="" />
+</figure>
+<aside class="notes">
+This is the whole reason behind streamlining
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="images/cylinder-drag.jpg" alt="" />
+</figure>
+</section>
+<section id="tennis-balls" class="slide level1">
+<h1>Tennis Balls</h1>
+<p>If you hit a tennis ball with underspin is experiences a lifting force and thus a flatter trajectory. Why?</p>
+<div class="fragment">
+<p>What if I told you that a smoother ball would behave in the opposite manner (an underspin would cause a downward force)?</p>
+</div>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="images/tennis.png" alt="" />
+</figure>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'sky', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+        cancel: ["Extension","cancel"],
+        bcancel: ["Extension","cancel"],
+        xcancel: ["Extension","cancel"],
+        cancelto: ["Extension","cancel"]
+      });
+    });
+    </script>
+    </body>
+</html>
