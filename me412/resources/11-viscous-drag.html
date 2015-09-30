@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 11" />
+  <title>Drag</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="my.css"/>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Drag</h1>
+    <h2 class="author">Lecture 11</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+<aside class="notes">
+<ul>
+<li>HW Review (StarCCM)</li>
+<li>Quiz Review</li>
+<li>Midterm</li>
+<li>Office Hours (2-3) may run over a bit for thesis defense</li>
+<li>Next time meet in lab downstairs.</li>
+</ul>
+</aside>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/review">Review</a></li>
+<li><a href="#/computation-of-drag">Computation of Drag</a></li>
+<li><a href="#/factors-that-affect-drag">Factors that affect drag</a></li>
+</ul>
+</section>
+
+<section id="review" class="slide level1">
+<h1>Review</h1>
+<p>Transition</p>
+<p>Separation</p>
+</section>
+<section class="slide level1">
+
+<section id="from-the-quiz" class="level2">
+<h2>From the Quiz</h2>
+<p>True or False: A 2D inviscid flow around any body shape has zero drag, even if the flow is unsymmetric and even if lift is generated.</p>
+</section>
+</section>
+<section id="computation-of-drag" class="slide level1">
+<h1>Computation of Drag</h1>
+<figure>
+<img src="images/pressure-shear.jpg" alt="" />
+</figure>
+</section>
+<section class="slide level1">
+
+<p>Integration works well for skin friction drag, but less so for pressure drag (because of subtractive cancellations). Far-field methods are often more accurate for pressure drag and lift-dependent drag.</p>
+</section>
+<section id="factors-that-affect-drag" class="slide level1">
+<h1>Factors that affect drag</h1>
+</section>
+<section class="slide level1">
+
+<section id="shape" class="level2">
+<h2>Shape</h2>
+<figure>
+<img src="images/same-drag.jpg" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<video width="800px" controls data-autoplay src="videos/sky-diving.mp4">
+</video>
+</section>
+<section class="slide level1">
+
+<section id="what-reference-area-should-we-use" class="level3">
+<h3>What reference area should we use?</h3>
+<figure>
+<img src="images/ref-area.jpg" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="reynolds-number" class="level2">
+<h2>Reynolds Number</h2>
+<ul>
+<li class="fragment">For low Reynolds number flows, streamlining can have the opposite affect.</li>
+<li class="fragment">Higher Reynolds numbers often involves tradeoffs in skin friction and pressure drag depending on streamlined vs blunt bodies.</li>
+</ul>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="surface-roughness" class="level2">
+<h2>Surface Roughness</h2>
+<p>Surface roughness affects transition and wall shear stress</p>
+<aside class="notes">
+golf balls vs ping pong balls
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="compressibility-more-on-this-later" class="level2">
+<h2>Compressibility (more on this later)</h2>
+<figure>
+<img src="images/compressible-drag-rise.jpg" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<figure>
+<img src="images/supersonic-drag.jpg" alt="" />
+</figure>
+</section>
+<section class="slide level1">
+
+<section id="froude-number" class="level2">
+<h2>Froude Number</h2>
+<figure>
+<img src="images/froude-drag.jpg" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="lift" class="level2">
+<h2>Lift</h2>
+<p>(brief intro, more on this next time)</p>
+</section>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'sky', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+        cancel: ["Extension","cancel"],
+        bcancel: ["Extension","cancel"],
+        xcancel: ["Extension","cancel"],
+        cancelto: ["Extension","cancel"]
+      });
+    });
+    </script>
+    </body>
+</html>
