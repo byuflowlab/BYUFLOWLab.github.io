@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lecture 12" />
+  <title>Lift and Lift-Dependent Drag</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="my.css"/>
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'reveal.js/css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Lift and Lift-Dependent Drag</h1>
+    <h2 class="author">Lecture 12</h2>
+    <!-- <h3 class="date"></h3> -->
+
+<div style="float: left;">
+<img src="images/Airplane_vortex_edit.jpg", width="450px">
+</div>
+<p style="text-align: right;">
+</br>
+</br>
+</br>
+</br>
+ME EN 412
+</br>
+Andrew Ning
+</br>
+<a href="mailto:aning@byu.edu">aning@byu.edu</a>
+</p>
+
+<aside class="notes">
+<ul>
+<li>lab today</li>
+<li>briefly discuss project. goal is teaching not just doing stuff</li>
+<li>no academic whining.</li>
+<li>XFOIL issues</li>
+<li>wind tunnel issues</li>
+</ul>
+</aside>
+
+</section>
+
+
+<section id="TOC">
+<ul>
+<li><a href="#/review">Review</a></li>
+<li><a href="#/lift">Lift</a></li>
+<li><a href="#/lift-dependent-drag">Lift-Dependent Drag</a></li>
+</ul>
+</section>
+
+<section id="review" class="slide level1">
+<h1>Review</h1>
+<p><span class="math display">\[C_D = f(shape, Re, \epsilon/L, Fr, Ma, C_L)\]</span></p>
+<aside class="notes">
+lift is affected by the same considerations, but primarily shape. shear stress contributes little (except low Reynolds number or other odd situations), basically almost complete a pressure consideration
+</aside>
+</section>
+<section id="lift" class="slide level1">
+<h1>Lift</h1>
+</section>
+<section class="slide level1">
+
+<section id="circulation" class="level2">
+<h2>Circulation</h2>
+<p><span class="math display">\[\Gamma = \oint_C \vec{V} \cdot d\vec{s}\]</span></p>
+<figure>
+<img src="images/circulation.gif" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="kelvins-circulation-theorem" class="level2">
+<h2>Kelvin's Circulation Theorem</h2>
+<ul>
+<li>Starting Vortex</li>
+<li>Kutta Condition</li>
+</ul>
+<figure>
+<img src="images/starting-vortex.jpg" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="lift-curve-slope" class="level2">
+<h2>Lift curve slope</h2>
+<figure>
+<img src="images/lift-curve-slope.pdf" width=400px/>
+</figure>
+<aside class="notes">
+discuss stall
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="flaps-and-slats" class="level2">
+<h2>Flaps and Slats</h2>
+<figure>
+<img src="images/flaps-slats.pdf" width=400px/>
+</figure>
+</section>
+</section>
+<section id="lift-dependent-drag" class="slide level1">
+<h1>Lift-Dependent Drag</h1>
+<figure>
+<img src="images/wingtip_vortices.jpg" alt="" />
+</figure>
+</section>
+<section class="slide level1">
+
+<section id="downwash" class="level2">
+<h2>Downwash</h2>
+<figure>
+<img src="images/downwash.jpg" alt="" />
+</figure>
+<figure>
+<img src="images/downwash2.pdf" width=500px/>
+</figure>
+<ul>
+<li>Newton's third law</li>
+<li>Vortex rollup</li>
+<li>Horseshoe vortices</li>
+</ul>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="induced-drag" class="level2">
+<h2>Induced Drag</h2>
+<figure>
+<img src="images/induced-drag.pdf" width=500px/>
+</figure>
+<aside class="notes">
+Aspect Ratio
+</aside>
+</section>
+</section>
+<section class="slide level1">
+
+<p><span class="math display">\[ {C_D}_i = \frac{C_L^2}{\pi AR e} \]</span> <span class="math display">\[ D_i = \frac{L^2}{q_\infty \pi b^2 e} \]</span></p>
+<aside class="notes">
+Winglets: This is not just a tip effect, as discussed from a momentum point of view. It does alter the tip flow of course, but doesn't fundamentally change the generation of vortices, circulation, and induced drag. Winglets act as an effective span increase, but you know what else acts as an effective span increase? a span increase. Usually the main advantages of winglets are nonaerodynamic: lateral stability, gate or other span constraints, aesthetics and marketing.
+</aside>
+</section>
+<section class="slide level1">
+
+<section id="elliptic-lift-distribution" class="level2">
+<h2>Elliptic Lift Distribution</h2>
+<figure>
+<img src="images/elliptic.jpg" alt="" />
+</figure>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="total-drag-and-lift-to-drag-ratio" class="level2">
+<h2>Total Drag and Lift-to-drag ratio</h2>
+<p><span class="math display">\[C_D = {C_D}_p + {C_D}_i + {C_D}_c\]</span></p>
+<p>parasite drag + induced drag + compressibility drag</p>
+</section>
+</section>
+<section class="slide level1">
+
+<section id="vortex-lattice-and-lifting-line-methods" class="level2">
+<h2>Vortex Lattice and Lifting Line Methods</h2>
+</section>
+</section>
+<section class="slide level1">
+
+<ul>
+<li>Sailing upwind</li>
+<li>Sailing downwind faster than the wind</li>
+<li>Boat or vehicle moving directly downwind faster than the wind</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,         // Display controls in the bottom right corner
+        progress: true,         // Display a presentation progress bar
+        history: false,          // Push each slide change to the browser history
+        center: true,                       // Vertical centering of slides
+        maxScale: 1.5,                  // Bounds for smallest/largest possible content scale
+        slideNumber: false,                // Display the page number of the current slide
+        theme: 'sky', // available themes are in /css/theme
+        transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+        cancel: ["Extension","cancel"],
+        bcancel: ["Extension","cancel"],
+        xcancel: ["Extension","cancel"],
+        cancelto: ["Extension","cancel"]
+      });
+    });
+    </script>
+    </body>
+</html>

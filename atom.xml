@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2015-09-30T23:17:29-06:00</updated>
+ <updated>2015-10-05T10:16:45-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -81,6 +81,8 @@
 &lt;p&gt;I haven&amp;#39;t used Matlab for research work in several years (with one exception noted below).  My graduate students rarely use it either.  I do, however, often use it in undergraduate classes because it is widely available and easy for students to use.  I also have most of my undergraduate research assistants use Matlab.  It&amp;#39;s perfectly suited for their problems where high performance is not necessary, and familiarity and ease of use is much more important.  That&amp;#39;s not necessarily a deliberate choice, I&amp;#39;d be happy to use Python with them as well, but Matlab is what they already know from other classes.  For the level of time they have available and the complexity of their problems, it&amp;#39;s just not worth trying to teach them something else.&lt;/p&gt;
 
 &lt;p&gt;There is one exception for my usage, which is that I sometimes still use &lt;em&gt;fmincon&lt;/em&gt; from the Optimization Toolbox (which usually involves some sort of terrible hack to make the wrapping work).  I&amp;#39;ve used a lot of optimization packages for constrained nonconvex problems, and fmincon is still one of the most robust on the types of problems I solve.  These days I primarily use SNOPT through Python, but still find &lt;em&gt;fmincon&lt;/em&gt; useful from time to time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update (10/1/2015)&lt;/strong&gt;: With Mathworks relatively new &lt;a href=&quot;http://www.mathworks.com/help/matlab/matlab-engine-for-python.html&quot;&gt;Matlab Engine for Python&lt;/a&gt;, connected to fmincon from Python was relatively easy.  I posted an example &lt;a href=&quot;https://bitbucket.org/mdolab/pyoptsparse/pull-requests/13/an-example-bridge-to-fmincon/diff&quot;&gt;here&lt;/a&gt;, to hopefully be integrated with pyopt-sparse later.  Having access to fmincon is great, and makes me once again interested in keeping a Matlab license around.&lt;/p&gt;
 
 &lt;h3 id=&quot;c,-c++,-and-fortran&quot;&gt;C, C++, and Fortran&lt;/h3&gt;
 

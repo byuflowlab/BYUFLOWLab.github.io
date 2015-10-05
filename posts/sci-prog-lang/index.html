@@ -222,6 +222,8 @@
 
 <p>There is one exception for my usage, which is that I sometimes still use <em>fmincon</em> from the Optimization Toolbox (which usually involves some sort of terrible hack to make the wrapping work).  I&#39;ve used a lot of optimization packages for constrained nonconvex problems, and fmincon is still one of the most robust on the types of problems I solve.  These days I primarily use SNOPT through Python, but still find <em>fmincon</em> useful from time to time.</p>
 
+<p><strong>Update (10/1/2015)</strong>: With Mathworks relatively new <a href="http://www.mathworks.com/help/matlab/matlab-engine-for-python.html">Matlab Engine for Python</a>, connected to fmincon from Python was relatively easy.  I posted an example <a href="https://bitbucket.org/mdolab/pyoptsparse/pull-requests/13/an-example-bridge-to-fmincon/diff">here</a>, to hopefully be integrated with pyopt-sparse later.  Having access to fmincon is great, and makes me once again interested in keeping a Matlab license around.</p>
+
 <h3 id="c,-c++,-and-fortran">C, C++, and Fortran</h3>
 
 <p>If the end result is a re-write in a compiled language, why not just start there to begin with?  Good question.  I have done that on occasion. The problem is that while these languages have great run times, development time is usually much slower (even when accounting for the re-write), and re-writing may not be necessary.  Development time is usually a much bigger bottleneck as compared to run time, at least for my use cases.</p>
