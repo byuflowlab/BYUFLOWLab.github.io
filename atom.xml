@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2015-10-14T08:13:22-07:00</updated>
+ <updated>2015-10-19T11:45:39-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Julia First Impressions</title>
    <link href="http://flow.byu.edu/posts/julia-first-imp"/>
-   <updated>2015-08-26T00:00:00-07:00</updated>
+   <updated>2015-08-26T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/julia-first-imp</id>
    <content type="html">&lt;p&gt;I&amp;#39;m primarily a Python user, and my primary use is scientific computing.  Over the last few years, I&amp;#39;ve followed Julia&amp;#39;s development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it&amp;#39;s one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.&lt;/p&gt;
 
@@ -66,7 +66,7 @@
  <entry>
    <title>Scientific Programming Languages</title>
    <link href="http://flow.byu.edu/posts/sci-prog-lang"/>
-   <updated>2015-08-11T00:00:00-07:00</updated>
+   <updated>2015-08-11T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/sci-prog-lang</id>
    <content type="html">&lt;p&gt;I&amp;#39;ve used a number of scientific programming languages over the past 16 years: C++, C, Matlab, Java, Fortran, Python, and Julia, and I wouldn&amp;#39;t name any one as the &amp;quot;best&amp;quot; (I&amp;#39;ve also used Objective-C, JavaScript, and PHP quite a bit, but not for scientific computing).  Usually I try to pick the right tool for the job, not necessarily just the tool I happen to know best (as they say: if all you have is a hammer, everything looks like a nail).  However, my usage has evolved over the years from Matlab-centric, to Python-centric, and I&amp;#39;m contemplating a move to Julia-centric.  Before explaining why, let&amp;#39;s discuss some of the reasons why I might choose one language over the others.&lt;/p&gt;
 
