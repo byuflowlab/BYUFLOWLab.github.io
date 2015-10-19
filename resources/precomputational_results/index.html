@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Precomputational Parameterization Free-Form Approach Results &middot; FLOW Lab
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          FLOW Lab
+        </a>
+      </h1>
+      <p class="lead">Flight, Optimization, and Wind Laboratory</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <!-- 
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/people/">People</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/research/">Research</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/resources/">Resources</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/teaching/">Teaching</a>
+          
+        
+      
+        
+          
+        
+       -->
+      <a class="sidebar-nav-item" href="/publications">Publications</a>
+      <a class="sidebar-nav-item" href="/people">People</a>
+      <a class="sidebar-nav-item" href="/research">Research</a>
+      <a class="sidebar-nav-item" href="/teaching">Teaching</a>
+      <a class="sidebar-nav-item" href="/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/posts">Posts</a>
+
+      <!-- <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab/archive/v2.1.0.zip">Download</a>
+      <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v2.1.0</span> -->
+    </nav>
+
+    <p>&copy; 2015. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h1 id="precomputational-parameterization-free-form-approach-results">Precomputational Parameterization Free-Form Approach Results</h1>
+
+<h2 id="background">Background</h2>
+
+<p>These are the results from research into free-form approaches to wind turbine blade optimization. The tables are seperated by airfoil analysis technique and each contain the reference turbine, the conventional optimization with the airfoils fixed, using thickness-to-chord ratio, and using an airfoil family blend factor. </p>
+
+<h2 id="xfoil">XFOIL</h2>
+
+<table><thead>
+<tr>
+<th></th>
+<th style="text-align: center">units</th>
+<th style="text-align: center">Reference Turbine</th>
+<th style="text-align: center">Conventional</th>
+<th>t/c</th>
+<th>blended family</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chord</td>
+<td style="text-align: center">m</td>
+<td style="text-align: center">3.26, 4.57, 3.32, 1.46</td>
+<td style="text-align: center">3.08, 3.38, 2.63, 1.76</td>
+<td>3.08, 3.52, 2.59, 1.54</td>
+<td>3.08, 3.45, 2.73, 2.09</td>
+</tr>
+<tr>
+<td>twist</td>
+<td style="text-align: center">degree</td>
+<td style="text-align: center">13.28, 7.46, 2.89, -0.09</td>
+<td style="text-align: center">12.62, 3.37, 2.40, -0.33</td>
+<td>12.57, 2.72, 1.54, -0.49</td>
+<td>11.57, 3.53, 0.46, -3.46</td>
+</tr>
+<tr>
+<td>tip-speed ratio</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">7.55</td>
+<td style="text-align: center">8.47</td>
+<td>7.87</td>
+<td>8.10</td>
+</tr>
+<tr>
+<td>maximum chord location</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">0.236</td>
+<td style="text-align: center">0.228</td>
+<td>0.218</td>
+<td>0.257</td>
+</tr>
+<tr>
+<td>thickness-to-chord ratio</td>
+<td style="text-align: center">%</td>
+<td style="text-align: center">40.5, 35.0, 30.0, 25.0, 21.0, 18.0</td>
+<td style="text-align: center">-</td>
+<td>39.2, 33.7, 30.2, 25.4, 19.4, 15.6</td>
+<td>39.2, 32.4, 29.2, 25.6, 18.1, 15.0</td>
+</tr>
+<tr>
+<td>airfoil family blend factor</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">0.0, 0.0, 0.0, 0.00, 0.00, 1.00</td>
+<td style="text-align: center">-</td>
+<td>-</td>
+<td>0.02, 0.01, 0.01, 0.00, 0.75, 0.99</td>
+</tr>
+<tr>
+<td>blade mass</td>
+<td style="text-align: center">kg</td>
+<td style="text-align: center">54,675</td>
+<td style="text-align: center">40,822 (-25.3%)</td>
+<td>40,093 (-26.7%)</td>
+<td>41,429 (-24.2%)</td>
+</tr>
+<tr>
+<td>AEP</td>
+<td style="text-align: center">MWh/yr</td>
+<td style="text-align: center">23,470</td>
+<td style="text-align: center">23,290 (-0.8%)</td>
+<td>23,510 (+0.2%)</td>
+<td>23,960 (+2.1%)</td>
+</tr>
+<tr>
+<td>m/AEP</td>
+<td style="text-align: center">kg*yr/kWh</td>
+<td style="text-align: center">0.02743</td>
+<td style="text-align: center">0.02705 (-1.4%)</td>
+<td>0.02676 (-2.4%)</td>
+<td>0.02632 (-4.0%)</td>
+</tr>
+</tbody></table>
+
+<h2 id="rans-cfd">RANS CFD</h2>
+
+<table><thead>
+<tr>
+<th></th>
+<th style="text-align: center">units</th>
+<th style="text-align: center">Reference Turbine</th>
+<th style="text-align: center">Conventional</th>
+<th>t/c</th>
+<th>blended family</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chord</td>
+<td style="text-align: center">m</td>
+<td style="text-align: center">3.26, 4.57, 3.32, 1.46</td>
+<td style="text-align: center">3.08, 3.85, 3.19, 1.28</td>
+<td>3.08, 3.90, 3.02, 1.31</td>
+<td>3.08, 3.44, 3.22, 0.93</td>
+</tr>
+<tr>
+<td>twist</td>
+<td style="text-align: center">degree</td>
+<td style="text-align: center">13.28, 7.46, 2.89, -0.09</td>
+<td style="text-align: center">19.56, 4.54, 3.04, -2.11</td>
+<td>19.44, 3.96, 0.73, -1.83</td>
+<td>13.35, 3.91, 1.4, -1.29</td>
+</tr>
+<tr>
+<td>tip-speed ratio</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">7.55</td>
+<td style="text-align: center">7.38</td>
+<td>7.38</td>
+<td>7.03</td>
+</tr>
+<tr>
+<td>maximum chord location</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">0.236</td>
+<td style="text-align: center">0.426</td>
+<td>0.461</td>
+<td>0.434</td>
+</tr>
+<tr>
+<td>thickness-to-chord ratio</td>
+<td style="text-align: center">%</td>
+<td style="text-align: center">40.5, 35.0, 30.0, 25.0, 21.0, 18.0</td>
+<td style="text-align: center">-</td>
+<td>42.0, 33.9, 27.7, 24.5, 19.7, 18.2</td>
+<td>40.6, 36.7, 27.8, 24.8, 19.0, 17.5</td>
+</tr>
+<tr>
+<td>airfoil family blend factor</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">0.0, 0.0, 0.0, 0.00, 0.00, 1.00</td>
+<td style="text-align: center">-</td>
+<td>-</td>
+<td>0.33, 0.84, 0.12, 0.08, 0.00, 0.00</td>
+</tr>
+<tr>
+<td>blade mass</td>
+<td style="text-align: center">kg</td>
+<td style="text-align: center">54,675</td>
+<td style="text-align: center">48,317 (-11.6%)</td>
+<td>48,401 (-11.5%)</td>
+<td>43,748 (-20.0%)</td>
+</tr>
+<tr>
+<td>AEP</td>
+<td style="text-align: center">MWh/yr</td>
+<td style="text-align: center">21,120</td>
+<td style="text-align: center">21,770 (+3.1%)</td>
+<td>21,850 (+3.4%)</td>
+<td>21,880 (+3.6%)</td>
+</tr>
+<tr>
+<td>m/AEP</td>
+<td style="text-align: center">kg*yr/kWh</td>
+<td style="text-align: center">0.03048</td>
+<td style="text-align: center">0.02927 (-4.0%)</td>
+<td>0.02911 (-4.5%)</td>
+<td>0.02892 (-5.1%)</td>
+</tr>
+</tbody></table>
+
+<h2 id="wind-tunnel">Wind Tunnel</h2>
+
+<table><thead>
+<tr>
+<th></th>
+<th style="text-align: center">units</th>
+<th style="text-align: center">Reference Turbine</th>
+<th style="text-align: center">Conventional</th>
+<th>t/c</th>
+<th>blended family</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chord</td>
+<td style="text-align: center">m</td>
+<td style="text-align: center">3.26, 4.57, 3.32, 1.46</td>
+<td style="text-align: center">3.08, 3.38, 2.61, 1.79</td>
+<td>3.08, 3.58, 2.41, 1.84</td>
+<td>3.08, 3.28, 2.84, 1.66</td>
+</tr>
+<tr>
+<td>twist</td>
+<td style="text-align: center">degree</td>
+<td style="text-align: center">13.28, 7.46, 2.89, -0.09</td>
+<td style="text-align: center">6.19, 3.62, 1.98, -0.48</td>
+<td>12.27, 2.62, 1.42, 0.42</td>
+<td>11.28, 3.68, 2.80, -0.72</td>
+</tr>
+<tr>
+<td>tip-speed ratio</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">7.55</td>
+<td style="text-align: center">8.05</td>
+<td>8.02</td>
+<td>8.49</td>
+</tr>
+<tr>
+<td>maximum chord location</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">0.236</td>
+<td style="text-align: center">0.375</td>
+<td>0.331</td>
+<td>0.299</td>
+</tr>
+<tr>
+<td>thickness-to-chord ratio</td>
+<td style="text-align: center">%</td>
+<td style="text-align: center">40.5, 35.0, 30.0, 25.0, 21.0, 18.0</td>
+<td style="text-align: center">-</td>
+<td>40.3, 34.2, 29.5, 24.9, 17.8, 16.3</td>
+<td>40.2, 33.4, 29.3, 27.2, 18.8, 16.2</td>
+</tr>
+<tr>
+<td>airfoil family blend factor</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">0.0, 0.0, 0.0, 0.00, 0.00, 1.00</td>
+<td style="text-align: center">-</td>
+<td>-</td>
+<td>0.01, 0.00, 0.12, 0.31, 0.40, 1.0</td>
+</tr>
+<tr>
+<td>blade mass</td>
+<td style="text-align: center">kg</td>
+<td style="text-align: center">54,675</td>
+<td style="text-align: center">41,017 (-25.0%)</td>
+<td>40,364 (-26.2%)</td>
+<td>42,063 (-23.1%)</td>
+</tr>
+<tr>
+<td>AEP</td>
+<td style="text-align: center">MWh/yr</td>
+<td style="text-align: center">23,480</td>
+<td style="text-align: center">23,550 (+0.3%)</td>
+<td>23,770 (+1.2%)</td>
+<td>23,900 (+1.8%)</td>
+</tr>
+<tr>
+<td>m/AEP</td>
+<td style="text-align: center">kg*yr/kWh</td>
+<td style="text-align: center">0.02741</td>
+<td style="text-align: center">0.02675 (-2.4%)</td>
+<td>0.02649 (-3.3%)</td>
+<td>0.02641 (-3.7%)</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+  </body>
+</html>
