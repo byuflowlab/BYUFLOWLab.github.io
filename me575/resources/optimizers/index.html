@@ -107,7 +107,7 @@
 
 <h2 id="tocAnchor-1-1-1">Matlab</h2>
 
-<p>The go to optimizer in Matlab for most of our problems (nonlinear, differentiable) is <em>fmincon</em>.  It is easy to use, robust, and has a wide variety of options.  If your problem is failing with <em>fmincon</em> you can be pretty confident that the problem is with your formulation.  Other options for specific needs, including gradient-free options, are discussed below.</p>
+<p>The best optimizer in Matlab for most of our problems (nonlinear, differentiable) is <em>fmincon</em>.  It is easy to use, robust, and has a wide variety of options.  If you have a nonlinear differentiable problem that is failing with <em>fmincon</em> this usually means that you've formulated the problem poorly or incorrectly.  If you're problem is nondifferentiable then <em>ga</em> is one of the best options.  Other options for specific needs are discussed below.</p>
 
 <h3 id="optimization-toolbox">Optimization Toolbox</h3>
 
@@ -151,7 +151,7 @@
 
 <!-- \label{sec:thirdparty} -->
 
-<p>Because we don't have university-wide access to the Global Optimization Toolbox, I list here a number of third-party options contributed by the user community.  These are simplistic implementations.  Based on past experience, they should work just fine for the homework, but are probably not good options for your project.</p>
+<p>Because we don't have university-wide access to the Global Optimization Toolbox, I list here a number of third-party options contributed by the user community.  These are simplistic implementations.  Based on past experience, they should work fine for the homework, but are probably not good options for your project or anything of similar complexity.</p>
 
 <ul>
 <li><a href="http://www.mathworks.com/matlabcentral/fileexchange/31166-ngpm-a-nsga-ii-program-in-matlab-v1-4"><strong>NGPM</strong></a>.  NSGA-II is a well-known genetic algorithm, and this is a Matlab implementation of that methodology.</li>
@@ -168,7 +168,7 @@
 
 <h2 id="tocAnchor-1-1-2">Python</h2>
 
-<p>The easiest options to start out with are the ones in SciPy, because you already have them.  However, in our experience none of the optimizers in SciPy are very good.  They should be sufficient for the homework problems, and may even work well enough for some of your projects, but if you try to do problems of even modest complexity you will likely find them wanting.  Better options are discussed below, but they require more work to get setup.</p>
+<p>The easiest options to start out with are the ones in SciPy, because you already have them.  However, in my experience none of the optimizers in SciPy are particularly good.  They should be sufficient for the homework problems, and may even work well enough for some of your projects, but if you try to do problems of even modest complexity you will likely find them wanting.  Better options are discussed below, but they require more work to get setup.</p>
 
 <h3 id="scipy">SciPy</h3>
 
@@ -183,14 +183,16 @@
 <li>Nelder-Mead, a gradient-free Nelder-Mead simplex method.</li>
 <li>COBYLA, a gradient-free method using successive linear approximations.</li>
 </ul></li>
-<li><em>scipy.optimize.differential_evolution</em> a differential evolution method (effectively a real-encoded GA)</li>
+<li><em>scipy.optimize.differential_evolution</em> a differential evolution method (effectively a real-encoded genetic algorithm)</li>
 </ul>
 
-<h3 id="pyopt-or-pyoptsparse"><a href="http://www.pyopt.org">pyOpt</a> or pyOptSparse</h3>
+<h3 id="pyoptsparse">
+   <a href="https://bitbucket.org/mdolab/pyoptsparse">pyOptSparse</a>
+</h3>
 
-<p>pyOpt and pyOptSparse are not optimizers, but rather a wrapper to a dozen or so optimizers.  They allow you to define your problem once, and easily change between solvers without having the worry about the different conventions used by the various optimizers.  There are some solver options here that are much better than the ones in SciPy.  SNOPT, for example, is my go to optimizer.  Some of these, like SNOPT, are not freely available.  I have purchased or obtained department licenses where needed.  If you are a BYU student and want access to one of the optimizers in bold, please come see me.  \textbf{Please note that the optimizers SNOPT, NLPQLP, and our version of IPOPT are for academic use only, and you should cite the authors if used for any publications.}  Setup of pyOpt requires a C and a Fortran compiler.</p>
+<p>pyOptSparse is not an optimizer, but rather a wrapper to a dozen or so optimizers.  This allows you to define your problem once, and easily change between solvers without having the worry about the different conventions used by the various optimizers.  There are some solver options here that are much better than the ones in SciPy.  SNOPT, for example, is one we use a lot in our research problems.  Some of these, like SNOPT, are not freely available.  I have purchased or obtained department licenses where needed.  If you are a BYU student and want access to one of the optimizers in bold, please come see me.  <strong>Please note that the optimizers SNOPT, NLPQLP, and our version of IPOPT are for academic use only, and you should cite the authors if used for any publications.</strong>  Setup of pyOptSparse requires a C and a Fortran compiler.</p>
 
-<p>pyOptSparse is an updated version of pyOpt with a lot of useful improvements.  It is not yet publicly available, but will be soon.  In the meantime you can get a copy from me.  Some of the available optimizers include </p>
+<p>Some of the available optimizers include:</p>
 
 <ul>
 <li><strong><em>SNOPT</em></strong>, SQP method, effective for small- and large-scale problems.  I have purchased a department license.</li>
