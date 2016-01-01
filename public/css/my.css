@@ -21,13 +21,34 @@ h2{
 
 
 /* style images on reserach page */
-.research-image{
+/*.research-image{
   width: 100%;
   margin-top: 10px;
 }
 @media (min-width: 48em) {
   .research-image{
       width: 16em;
+  }
+}*/
+
+.width-full{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.width-half{
+  width: 45%;
+  float: right;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width: 48em) {
+  .width-half{
+      width: 100%;
+      margin-top: 10px;
+      margin-left: 0px;
+      float: none;
   }
 }
 
