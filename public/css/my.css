@@ -11,7 +11,7 @@ img.medallion {
 
 /* more space on h2*/
 h2{
- margin: 50px 0 10px 0;
+ margin: 50px 0 30px 0;
 }
 
 /* hide bibtex by default */
@@ -51,8 +51,38 @@ h2{
 }
 
 
+
 /*Style images on people page*/
+
 .person{
+  width: 180px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+}
+
+ul.icons{
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.icons li{
+  display: inline;
+}
+
+.textsquare{
+  width: 1.7em !important;
+  height: 2.9em !important;
+}
+
+.white{
+  color: white;
+}
+
+/*.person{
   width: 200px;
   height: auto;
   float: left;
@@ -65,9 +95,9 @@ h2{
 
 .person img{
   width: 180px;
-}
+}*/
 
-.person-pi{
+/*.person-pi{
   width: 100%;
   height: auto;
   border: 2px solid #ddd;
@@ -88,7 +118,7 @@ h2{
 .person-pi h3{
   margin: 0px;
   padding: 0px;
-}
+}*/
 
 /* twitter */
 
