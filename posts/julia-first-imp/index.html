@@ -208,7 +208,82 @@
       <div class="post">
   <h1 class="post-title">Julia First Impressions</h1>
   <span class="post-date">26 Aug 2015</span>
-  <p>I&#39;m primarily a Python user, and my primary use is scientific computing.  Over the last few years, I&#39;ve followed Julia&#39;s development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it&#39;s one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.</p>
+  <div id="toc-container">
+   <table class="toc" id="toc">
+      <tbody>
+         <tr>
+            <td>
+               <div id="toctitle">
+                  <h2>Contents</h2>
+               </div>
+               <ul>
+                  <li class="toc_level-1 toc_section-1">
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">TL;DR</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-2">
+                     <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">The Good</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-3">
+                     <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">The Not So Good</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-4">
+                     <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">The Bad</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-5">
+                     <a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Summary</span></a>
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div><p>I'm primarily a Python user, and my primary use is scientific computing.  Over the last few years, I've followed Julia's development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it's one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.</p>
+
+<p>I had been working on a new method in vertical axis wind turbine simulation, and thought developing the code for this paper would give me a good chance to try Julia.  I'll describe my impressions in working with Julia on a real project. This was not a large code, but not small either.  It was around 500 lines of code (not including some of the extra modules I needed to develop that are discussed later), and included reading data from a file, integration, forming matrices, multidimensional root finding, and multiple loops,  Once the journal paper is accepted somewhere, I'll open source the code. This was done over a month ago.  I updated my version of Julia once or twice during development.  The last version I used was 0.3.10.</p>
+
+<h1 id="tocAnchor-1-1">TL;DR</h1>
+
+<p>Julia was easy to use, and I liked the syntax a lot.  I didn't think it was quite ready for our usage.  I needed to write/wrap many libraries that are just available in Python or Matlab.  Using the plotting modules was a real pain.  Performance was not particularly impressive, but I spent no effort in optimizing for speed.  Despite the limitations, the future of Julia looks very promising.</p>
+
+<h1 id="tocAnchor-1-2">The Good</h1>
+
+<p>Julia's syntax is my favorite of any programming language I've used.  It's concise, simple, well-thought-out, and an improvement over both Matlab and Python in my opinion (although there is not a whole lot to complain about in those languages either).  Everything was pretty easy, even calling external Fortran code and reading files.</p>
+
+<p>Syntax was probably closest to Matlab.  One thing that drives me crazy with Matlab is the one function per file requirement (except for nested functions), which of course isn't an issue with pretty much any other language.</p>
+
+<p>Julia uses 1-based indexing.  Although it's a source of debate, and I've read some very good arguments for 0-based, I still prefer 1-based.  Python, C, and Java use 0-based and Matlab and Fortran use 1-based (although you could really use any base in Fortran if you wanted to).  I recognize that in many disciplines, algorithms are 0-based, but not so in my fields (generally).  I find 1-based much more intuitive.  I also like that Julia uses the <code>end</code> keyword for the end of the array, I never cared much for the <code>-1</code> syntax in Python.  Array slicing is similar to Matlab's, both of which I find superior to that of Python's (NumPy).  </p>
+
+<p>I thought that I liked Python's indentation-based grouping, but after using Julia, and going back and forth, I find having an explicit end statement makes code easier to read.  </p>
+
+<p>All of these points are relatively minor though.  What is different and exciting, although I didn't explore it much yet, is the ability to explicitly define types (or not) and for the compiler to take advantage of types.  The ability to optimize performance within a single language is very appealing.  For the purposes of this paper, optimizing performance wasn't necessary so I spent no time on it.  </p>
+
+<h1 id="tocAnchor-1-3">The Not So Good</h1>
+
+<p>Development time was hindered a fair amount just because a lot of the routines I'm used having in numpy/scipy or Matlab, weren't around in Julia.  The main detour for this project, was that there was no n-dimensional root solver.  I found <a href="https://github.com/JuliaLang/Roots.jl">Roots</a>, but unfortunately the only available implementations were for 1D problems.  Fortunately, a good solver exists in Fortran.  I grabbed the <code>hybrd</code> routines from minpack (which is also the default method that scipy.optimize.root uses).  </p>
+
+<p>The <a href="http://julia.readthedocs.org/en/latest/manual/calling-c-and-fortran-code/">documentation</a> for calling C and Fortran code wasn't that clear, in my opinion, but it was adequate enough that with a little trial and error I was able to make things work.  After I had done it once, I thought that calling Fortran or C from Julia was even easier than doing so in Python (which is already pretty easy).  </p>
+
+<p>While wrapping this external code wasn't terribly difficult, it did take some time to get the external code and build a fortran shared library, create a proper wrapper to hybrd, wrap a callback function in a generic way, and do a little testing.  In the end it took about 100 lines of code and a couple hours, instead of a one-liner using a built-in function in Matlab or Python.</p>
+
+<p>I developed a couple of other small functions as well that I normally wouldn't need to, but weren't available in any core Julia package (or at least I couldn't find them).  The added functions were a couple of linear interpolation methods, and a couple trapezoidal integration methods (I did use the built-in quadgk in another part of the code, but also needed a routine that didn't require a functional form for integration).  These were simple tasks, but did distract from the main development.  </p>
+
+<p>Performance was not impressive.  I had developed a previous version of the code in Python, with the computationally intensive parts written in Fortran and  called as a shared library using f2py.  The Julia code and the Python/Fortran code had different capabilities, but I setup a problem that utilized common capabilities so that the algorithms used in the test were effectively identical.  I did not do any profiling, or make any effort to optimize for speed in any of the languages, but I didn't try to make things slow either.  To run one simulation (a computation of turbine power) took 0.25 seconds in Python/Fortran and 2.5 seconds in Julia—an order of magnitude difference. I'm not sure why my implementation in Julia was so slow.  I'm not really counting this as a negative against Julia yet because I haven't explored performance improvements at all.  Once I open-source the code, and module caching in Julia is available, I'll be interested in exploring this in more detail (To be clear, I did not leave in any modules that I didn't need, like plotting, in the timing analysis).</p>
+
+<h1 id="tocAnchor-1-4">The Bad</h1>
+
+<p>Plotting data was horrendous.  Actually, it wasn't the plotting that was bad.  I mainly used PyPlot, which of course I was right at home with since it's just an interface to Python's matplotlib.pyplot.  The real problem was how Julia imports packages.  Apparently, Julia compiles each package every time the code is executed so just putting in <code>using PyPlot</code> would add 10 seconds or more to the run time.  This was ridiculously painful when I needed to iterate multiple times when trying to debug something.  I didn't even bother trying to create figures from Julia.  I'd dump the data and then tweak the plots to my liking in Python.  However, for debugging that process didn't work because the data kept changing so I was forced to do it in Julia.  I found myself avoiding plots and just printing results to the screen if possible, just because it was so painfully slow.</p>
+
+<p>This is not much of a problem if you use the Julia REPL.  For example, you can use Juno or JuliaBox and then you can execute portions of the code and not have to reload modules.  However, I can develop much faster in my own text editor of choice (was Sublime Text, recently switched to Atom).  There are a whole host of keyboard shortcuts, snippets, and the like that I am used to using.  For a while, I started inputting a bunch of these in Juno.  That mostly worked, but I found Juno a bit buggy at times with plotting and it was cumbersome to use a different editor just for Julia.</p>
+
+<p>It looks like this won't be a problem for long.  Following some of the issues on GitHub, you can see that a lot of discussion and work has gone on to allow static compilation and module caching, and it looks like it will be introduced in 0.4.  </p>
+
+<h1 id="tocAnchor-1-5">Summary</h1>
+
+<p>Julia is a pleasure to use.  The promise of developing code with speed comparable to C or Fortran, but with the ease of use of Matlab or Python, all within <em>one language</em> is incredibly appealing.  In my experience, it's not there yet.  Lots of important scientific libraries are not yet directly available, and module importing is horrendously slow.  I look forward to continued developments, and anticipate that I probably will move most of our work to Julia in the future, but that day is not today.</p>
+
+</div>
+
+<!-- <p>I&#39;m primarily a Python user, and my primary use is scientific computing.  Over the last few years, I&#39;ve followed Julia&#39;s development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it&#39;s one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.</p>
 
 <p>I had been working on a new method in vertical axis wind turbine simulation, and thought developing the code for this paper would give me a good chance to try Julia.  I&#39;ll describe my impressions in working with Julia on a real project. This was not a large code, but not small either.  It was around 500 lines of code (not including some of the extra modules I needed to develop that are discussed later), and included reading data from a file, integration, forming matrices, multidimensional root finding, and multiple loops,  Once the journal paper is accepted somewhere, I&#39;ll open source the code. This was done over a month ago.  I updated my version of Julia once or twice during development.  The last version I used was 0.3.10.</p>
 
@@ -251,9 +326,7 @@
 <h1 id="summary">Summary</h1>
 
 <p>Julia is a pleasure to use.  The promise of developing code with speed comparable to C or Fortran, but with the ease of use of Matlab or Python, all within <em>one language</em> is incredibly appealing.  In my experience, it&#39;s not there yet.  Lots of important scientific libraries are not yet directly available, and module importing is horrendously slow.  I look forward to continued developments, and anticipate that I probably will move most of our work to Julia in the future, but that day is not today.</p>
-
-</div>
-
+ -->
 <!-- 
 
 <div class="pagination">
@@ -268,6 +341,15 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/writing-sci-papers">
+            Writing Scientific Papers
+            <small>04 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
