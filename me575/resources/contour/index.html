@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Contour Plots &middot; ME 575
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me575">
+          ME 575
+        </a>
+      </h1>
+      <p class="lead">Optimization Techniques in Engineering</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me575/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me575/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me575/assignments">Assignments</a>
+      <a class="sidebar-nav-item" href="/me575/projects">Projects</a>
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Contour Plots</h1> -->
+      <h2 id="contour-plots">Contour Plots</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Contour_line">Contour plots</a> are useful for visualizing the functional space and iteration history for 2D optimization problems.  Optimization isn&#39;t really necessary for 2D problems (you can just plot it and see the optimum), but studying 2D optimization problems is helpful for our learning because they can be easily visualized.</p>
+
+<p>We will create contour plots for the simple function:</p>
+
+<p>$$z = 3(x - 2)^2 + (y+1)^2$$</p>
+
+<p>In both Python and Matlab this can be solved inline without any loops, but to represent what you would need to do with more complicated functions, we will make the computation of z a separate method.</p>
+
+<h2 id="matlab">Matlab</h2>
+
+<p>First we create a method for computing z in a separate file called func.m.</p>
+<div class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="k">function</span><span class="w"> </span>[z] <span class="p">=</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span>x, y<span class="p">)</span><span class="w"></span>
+<span class="n">z</span> <span class="p">=</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>^<span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>^<span class="mi">2</span><span class="p">;</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Next, we can create a contour plot across some chosen bounds and resolution</p>
+<div class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">clear</span><span class="p">;</span> <span class="n">close</span> <span class="n">all</span><span class="p">;</span>
+
+<span class="c">% --- setup grid ---</span>
+<span class="n">nx</span> <span class="p">=</span> <span class="mi">200</span><span class="p">;</span>  <span class="c">% number of points in x-direction</span>
+<span class="n">ny</span> <span class="p">=</span> <span class="mi">150</span><span class="p">;</span>  <span class="c">% number of points in y-direction</span>
+<span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">nx</span><span class="p">);</span>  <span class="c">% nx points equally spaced between -5...5</span>
+<span class="n">y</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">ny</span><span class="p">);</span>  <span class="c">% ny points equally spaced between -6...6</span>
+<span class="p">[</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">]</span> <span class="p">=</span> <span class="nb">ndgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>  <span class="c">% 2D array (matrix) of points across x and y</span>
+<span class="n">Z</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">);</span>  <span class="c">% initialize output of size (nx, ny)</span>
+
+<span class="c">% --- evaluate across grid ---</span>
+<span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nx</span>
+    <span class="k">for</span> <span class="nb">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">ny</span>
+        <span class="n">Z</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="nb">j</span><span class="p">)</span> <span class="p">=</span> <span class="n">func</span><span class="p">(</span><span class="n">X</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="nb">j</span><span class="p">),</span> <span class="n">Y</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="nb">j</span><span class="p">));</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c">% --- contour plot ---</span>
+<span class="n">figure</span><span class="p">();</span>  <span class="c">% start a new figure</span>
+<span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>  <span class="c">% using 50 contour lines.  </span>
+<span class="n">colorbar</span><span class="p">();</span>  <span class="c">% add a colorbar</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>  <span class="c">% labels for axes</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>Notes:</p>
+
+<ul>
+<li>In Matlab you can use either <code>meshgrid</code> or <code>ndgrid</code>.  <code>meshgrid</code> works exactly the same, except for the size of the array will be (ny, nx) (backwards from ndgrid) .  This is intended to mimic the physical space where the columns go along the x-direction.  I prefer ndgrid because I think it&#39;s clearer to use x as the first index and y as the second.</li>
+<li><code>contourf</code> is the same as contour, except for it creates filled colorbars.</li>
+</ul>
+
+<h2 id="python">Python</h2>
+
+<p>The corresponding Python looks very similar.  The main changes are:</p>
+
+<ul>
+<li>we can write the function (or any number of functions) in the same script. </li>
+<li>we need to explicitly import the modules we want to use (matlab imports everything automatically).  In Matlab everything built-in is known so there won&#39;t be name conflicts, but Python is expandable so to avoid name conflicts you need to explicitly import.</li>
+<li>use [] rather than () for indexing.</li>
+<li>no need for semicolons.</li>
+<li># instead of % for comments.</li>
+</ul>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c"># --- setup grid ---</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c"># number of points in x-direction</span>
+<span class="n">ny</span> <span class="o">=</span> <span class="mi">150</span>  <span class="c"># number of points in y-direction</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">nx</span><span class="p">)</span>  <span class="c"># nx points equally spaced between -5...5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">ny</span><span class="p">)</span>  <span class="c"># ny points equally spaced between -6...6</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s">&#39;ij&#39;</span><span class="p">)</span>  <span class="c"># 2D array (matrix) of points across x and y</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">))</span>  <span class="c"># initialize output of size (nx, ny)</span>
+
+<span class="c"># --- evaluate across grid ---</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
+        <span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+
+<span class="c"># --- contour plot ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>  <span class="c"># start a new figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>  <span class="c"># using 50 contour lines.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>  <span class="c"># add a colorbar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>  <span class="c"># labels for axes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c"># show plot</span>
+</code></pre></div>
+<p>Notes:</p>
+
+<ul>
+<li>I use the option indexing=&#39;ij&#39;, which does the same thing as ndgrid, making the output of size (nx, ny).  The default is indexing=&#39;xy&#39;, which creates an output of size (ny, nx).</li>
+<li>contourf is also available for matplotlib</li>
+<li>Depending on the version of matplotlib that you have, the default colormap may still be jet (a rainbow colormap).  I highly recommend <strong>not</strong> using rainbow colormaps. Jet does not vary continuously in luminance and consequently creates misleading results (you can read more about this <a href="https://bids.github.io/colormap/">for Python</a>, <a href="http://blogs.mathworks.com/steve/2014/10/20/a-new-colormap-for-matlab-part-2-troubles-with-rainbows/">for Matlab</a>, and in other discussions <a href="https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/">here</a>, and <a href="https://eagereyes.org/basics/rainbow-color-map">here</a>).  Both Matlab and Python have changed their default colorbars to much better options.  Here is a <a href="http://matplotlib.org/users/colormaps.html">list</a> of all the colormaps available in matplotlib.</li>
+</ul>
+
+    </div>
+
+  </body>
+</html>
