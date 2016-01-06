@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Python and LaTeX &middot; ME 575
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me575">
+          ME 575
+        </a>
+      </h1>
+      <p class="lead">Optimization Techniques in Engineering</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me575/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me575/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me575/assignments">Assignments</a>
+      <a class="sidebar-nav-item" href="/me575/projects">Projects</a>
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Python and LaTeX</h1> -->
+      <h2 id="choose-your-own-adventure">Choose Your Own Adventure</h2>
+
+<p>Python and Matlab are both excellent choices.  If you don&#39;t feel reasonably comfortable with your programming ability I suggest you stick with what you know.  I assume you&#39;ve been exposed to Matlab, so I won&#39;t elaborate on its advantages, but do brief discuss some of the advantageous of Python below.  </p>
+
+<p>LaTeX is widely used in scientific writing and if you are doing graduate work you will likely need to learn it at some point (but check with your advisor, I know that a few research groups prefer Word).  To be clear, there is nothing wrong with using Matlab for your code development, and Microsoft Word (or an equivalent) for your report preparation.  These are just tools, what&#39;s more important is learning the concepts and doing good work.</p>
+
+<h2 id="python">Python</h2>
+
+<p>Here is a brief <a href="http://nbviewer.ipython.org/url/flow.byu.edu/resources/PythonPrimer.ipynb">Python primer</a> I prepared for another venue.  If you want a broader perspective, see the post I wrote on <a href="../posts/sci-prog-lang">scientific programming languages</a>.  Tons of Python tutorials exist online, as do good IDEs that can support autocompletion, setting breakpoints, etc.</p>
+
+<h2 id="latex">LaTeX</h2>
+
+<p>Unless you already have a workflow you are comfortable with, I recommend you use <a href="https://www.overleaf.com">Overleaf</a>.  Think of it as Google Docs for LaTeX.  There isn&#39;t anything to install, and multiple people can work collaboratively (nice for your project).  It also provides a lot of starter templates.  Many LaTeX tutorials exist online.  You might find some of this post I wrote on <a href="http://flow.byu.edu/posts/writing-sci-papers/">Writing Scientific Papers</a> useful.  Below is a very simple starter example:</p>
+<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="na">[margin=1in]</span><span class="nb">{</span>geometry<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[colorlinks,bookmarks,bookmarksnumbered,allcolors=blue]</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>subfig<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>booktabs<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[capitalise]</span><span class="nb">{</span>cleveref<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="k">\author</span><span class="nb">{</span>Your Name<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span>Title of Report<span class="nb">}</span>
+<span class="k">\maketitle</span>
+
+<span class="k">\section</span><span class="nb">{</span>A Section Header<span class="nb">}</span>
+
+Text
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+    </div>
+
+  </body>
+</html>
