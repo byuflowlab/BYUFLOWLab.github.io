@@ -221,18 +221,54 @@
   <h1 class="page-title">Research</h1>
   <h2 id="current-projects">Current Projects</h2>
 
-<h3 id="wing/blade-aeroelastic-optimization-using-isogeometric-analysis-(iga)">Wing/Blade Aeroelastic Optimization Using Isogeometric Analysis (IGA)</h3>
+<h3 id="conceptual-design-of-high-altitude-long-endurance-aircraft-using-multidisciplinary-optimization">Conceptual Design of High Altitude Long Endurance Aircraft Using Multidisciplinary Optimization</h3>
 
-<p><img src="wing.png" class="width-half"></p>
+<p><span class="width-half">
+<img src="fbplane2.jpg">
+<span style="font-size: 70%;">Photo: Facebook</span>
+</span></p>
 
-<p>CAD formats provide a rich geometric description but usually require manual geometry repair and mesh generation steps that makes automating high-fidelity analyses difficult.  IGA generalizes finite element analysis to allow operation directly on an analysis-suitable geometry.  In addition, with IGA we can provide exact gradients of structural outputs.  This allows us to efficiently use optimization methods on rich geometries for applications in flexible aircraft wing and wind turbine blade aerostructural design.</p>
+<p>For high aerodynamic efficiency large wing spans are necessary, but the benefits of low induced drag creates strong tradeoffs against structural weight and cost. Similarly, increased energy storage capacity carries heavy weight penalties causing endurance tradeoffs. Because of the demanding performance requirements and the high interaction between disciplines, manual design solutions are highly unlikely to yield robust and effective solutions. Multidisciplinary design analysis and optimization is needed both to meet performance requirements effectively and to objectively compare alternative design concepts.</p>
 
 <div style="clear: both;"></div>
 
 <ul>
-<li>PI: <a href="http://isogeometric.et.byu.edu">Michael Scott</a> (Civil Eng.)</li>
-<li>Students: Bryce Ingersoll, Kyle Richardson (Civil Eng.)</li>
-<li>Sponsor: Internal Research Initiation Grant</li>
+<li>PI: Andrew Ning</li>
+<li>Co-PI: John Hedengren (Chem. Eng.), Tim McLain (Mech. Eng.)</li>
+<li>Students: Taylor McDonnell, Kevin Moore</li>
+<li>Sponsor: FCL Tech (Facebook)</li>
+</ul>
+
+<hr>
+
+<h3 id="efficient-high-fidelity-aeroelastic-analysis-and-design-of-long-endurance-aircraft">Efficient High-Fidelity Aeroelastic Analysis and Design of Long Endurance Aircraft</h3>
+
+<p><img src="wing.png" class="width-half"></p>
+
+<p>CAD formats provide a rich geometric description but usually require manual geometry repair and mesh generation steps that makes automating high-fidelity analyses difficult.  IGA generalizes finite element analysis to allow operation directly on an analysis-suitable geometry.  In addition, with IGA we can provide exact gradients of structural outputs.  By tightly coupling structural analyses with computational fluid dynamics, and deriving coupled gradients, we can perform efficient analysis and design of rich geometric descriptions with applications in flexible aircraft wing and wind turbine blade aeroelastic design.</p>
+
+<div style="clear: both;"></div>
+
+<ul>
+<li>PI: Andrew Ning</li>
+<li>Co-PI: <a href="http://isogeometric.et.byu.edu">Michael Scott</a> (Civil Eng.)</li>
+<li>Students: Pawan Yadav, Kyle Richardson</li>
+<li>Sponsor: FCL Tech (Facebook), Internal Research Initiation Grant</li>
+</ul>
+
+<hr>
+
+<h3 id="power-estimates-for-a-novel-vertical-axis-wind-turbine-design">Power Estimates for a Novel Vertical Axis Wind Turbine Design</h3>
+
+<p><img src="vawt-exp.jpg" class="width-half"></p>
+
+<p>Characterizing the performance of complex vertical axis wind turbine shapes cannot be done with textbook analysis methods.  We are investigating the performance of novel VAWT designs using a combination of wind tunnel testing with a custom-built torque sensor, and 3-dimensional unsteady RANS simulations.</p>
+
+<ul>
+<li>PI: Julie Crockett (Mech. Eng.)</li>
+<li>Co-PI: Andrew Ning</li>
+<li>Students: Kevin Moore, Jeffrey Carruth, Sam Hayden, Brandon Hunsaker</li>
+<li>Sponsor: Twig &amp; Wire</li>
 </ul>
 
 <hr>
@@ -241,14 +277,16 @@
 
 <p><img src="wind-rose2.png" class="width-half"></p>
 
-<p>Effective wind farm optimization involves a large number of design variables and contains many sources of uncertainty (e.g., wind direction, wind speed, turbulence levels, wake model parameters, etc.).  We are developing methodology for large-scale optimization under uncertainty with applications in improving the robustness of wind farm energy capture. </p>
+<p>Effective wind farm optimization involves a large number of design variables and contains many sources of uncertainty (e.g., wind direction, wind speed, turbulence levels, wake model parameters, etc.).  We are developing methodology for large-scale optimization under uncertainty with applications in improving the robustness of wind farm energy capture.</p>
 
 <div style="clear: both;"></div>
 
 <ul>
-<li>Students: P.J. Stanley, Jared Thomas</li>
-<li>Collaborators: Juan Alonso (Stanford), Santiago Padron (Stanford)</li>
+<li>PI: Andrew Ning</li>
+<li>Co-PI: Juan Alonso (Stanford)</li>
+<li>Students: Santiago Padron (Stanford), P.J. Stanley, Jared Thomas</li>
 <li>Sponsor: <a href="http://www.nsf.gov/awardsearch/showAward?AWD_ID=1539384">National Science Foundation</a></li>
+<li>Publications: <a href="../publications/#Thomas2015">Comparison of Two Wake Models</a></li>
 </ul>
 
 <hr>
@@ -266,6 +304,7 @@
 <!-- VAWT wind farms will face similar challenges, but VAWTs have very different wake behavior that must be understood to effectively design their layout. The evolution of wakes behind wind turbines is a complex turbulent process that can be visualized with high-fidelity instrumentation or high-fidelity simulation. However, for performing layout optimization, which must broadly explore many configurations, simpler engineering wake models are needed. This research effort is focused on developing VAWT engineering wake models to enable effective VAWT wind farm layout optimization. -->
 
 <ul>
+<li>PI: Andrew Ning</li>
 <li>Students: Eric Tingey, Dagan Pielstick, Nick Bons</li>
 <li>Sponsors: Internal seed grant (<a href="https://orca.byu.edu/meg/">MEG Grant</a>)</li>
 <li>Publications: <a href="../publications/#Tingey2016">Parametric VAWT Model</a></li>
@@ -284,10 +323,11 @@
 <div style="clear: both;"></div>
 
 <ul>
-<li>Students: Jared Thomas</li>
+<li>PI: Andrew Ning</li>
+<li>Students: Jared Thomas, P.J. Stanley</li>
 <li>Collaborators: Pieter Gebraad, Paul Fleming, Katherine Dykes</li>
 <li>Sponsors: <a href="http://www.nrel.gov">National Renewable Energy Laboratory</a></li>
-<li>Publications: <a href="../publications/#Gebraad2015">Impact on Annual Energy Production</a>, <a href="../publications/#Thomas2015">Comparison of Two Wake Models</a>, <a href="../publications/#Fleming2015">Combined Layout-Yaw Optimization</a></li>
+<li>Publications: <a href="../publications/#Thomas2016-Improving-FLORIS">Improving FLORIS model for Optimization</a>, <a href="../publications/#Gebraad2015">Impact on Annual Energy Production</a>, <a href="../publications/#Fleming2015">Combined Layout-Yaw Optimization</a></li>
 </ul>
 
 <hr>
@@ -307,20 +347,19 @@
 
 <hr>
 
-<h3 id="acoustic-impacts-on-wind-farm-layout">Acoustic Impacts on Wind Farm Layout</h3>
+<h3 id="quantitative-characterization-of-essential-tremor-for-future-tremor-suppression">Quantitative Characterization of Essential Tremor for Future Tremor Suppression</h3>
 
-<p><img src="SPL.png" class="width-half"></p>
-
-<p>Acoustics can play an important role in wind farm design and we are interested in understanding its impact through optimization and in developing better acoustic models for wind farms.</p>
-
-<div style="clear: both;"></div>
+<p>Essential tremor (ET) is one of the most common movement disorders, estimated to affect 1-12 million people in the US.  We are developing optimization models in collaboration with the <a href="https://neuromechanics.byu.edu">BYU Neuromechanics Research Group</a> to help establish the mechanical origin of the tremor.</p>
 
 <ul>
-<li>Students: <a href="../people/eric">Eric Tingey</a></li>
-<li>Publications: <a href="../publications/#Tingey2015">Layout Optimization with Acoustic Constraints</a></li>
+<li>PI: Steven Charles</li>
+<li>Co-PIs: Jon Blotter, Andrew Ning, Mark Hallett</li>
+<li>Sponsor: National Institute of Health</li>
 </ul>
 
 <hr>
+
+<h2 id="past-projects">Past Projects</h2>
 
 <h3 id="unmanned-aerial-vehicle-trajectory-optimization">Unmanned Aerial Vehicle Trajectory Optimization</h3>
 
@@ -338,19 +377,20 @@
 
 <hr>
 
-<h3 id="quantitative-characterization-of-essential-tremor-for-future-tremor-suppression">Quantitative Characterization of Essential Tremor for Future Tremor Suppression</h3>
+<h3 id="acoustic-impacts-on-wind-farm-layout">Acoustic Impacts on Wind Farm Layout</h3>
 
-<p>Essential tremor (ET) is one of the most common movement disorders, estimated to affect 1-12 million people in the US.  We are developing optimization models in collaboration with the <a href="https://neuromechanics.byu.edu">BYU Neuromechanics Research Group</a> to help establish the mechanical origin of the tremor.</p>
+<p><img src="SPL.png" class="width-half"></p>
+
+<p>Acoustics can play an important role in wind farm design and we are interested in understanding its impact through optimization and in developing better acoustic models for wind farms.</p>
+
+<div style="clear: both;"></div>
 
 <ul>
-<li>PI: Steven Charles</li>
-<li>Collaborators: Jon Blotter, Andrew Ning, Mark Hallett</li>
-<li>Sponsor: National Institute of Health</li>
+<li>Students: <a href="../people/eric">Eric Tingey</a></li>
+<li>Publications: <a href="../publications/#Tingey2015">Layout Optimization with Acoustic Constraints</a></li>
 </ul>
 
 <hr>
-
-<h2 id="past-projects">Past Projects</h2>
 
 <h3 id="passive-flow-control-devices-for-low-reynolds-number-propellers">Passive-Flow Control Devices for Low Reynolds Number Propellers</h3>
 
@@ -384,7 +424,7 @@ Efficient extraction of wind energy is a complex, multidisciplinary process.  We
 
 <p><img src="formflight.png" class="width-full">  </p>
 
-<p>We explore a safer approach to formation flying of transport aircraft, which we term <em>extended formation flight</em>. Extended formations take advantage of the persistence of cruise wakes and extends the streamwise separation between the aircraft by at least five wingspans. At large distances, considerations such as wake rollup, atmospheric effects on circulation decay, and vortex motion become important to consider. We examine the wake rollup process in the context of extended formations and develop appropriate physics-based models. </p>
+<p>We explore a safer approach to formation flying of transport aircraft, which we term <em>extended formation flight</em>. Extended formations take advantage of the persistence of cruise wakes and extends the streamwise separation between the aircraft by at least five wingspans. At large distances, considerations such as wake rollup, atmospheric effects on circulation decay, and vortex motion become important to consider. We examine the wake rollup process in the context of extended formations and develop appropriate physics-based models.</p>
 
 <ul>
 <li>Collaborators: Mike Aftosmis, Marian Nemec, James Kless</li>
