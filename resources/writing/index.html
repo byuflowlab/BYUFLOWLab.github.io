@@ -58,7 +58,8 @@
     <div class="sidebar-about">
       <h1>
         <a href="/">
-          FLOW Lab
+          <img src="/images/logo.svg" width="400px" color="white">
+          <!-- FLOW Lab -->
         </a>
       </h1>
       <p class="lead">Flight, Optimization, and Wind Laboratory</p>
@@ -125,6 +126,14 @@
       
         
           
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/research/">Research</a>
+          
         
       
         
@@ -134,14 +143,6 @@
         
       
         
-          
-            <a class="sidebar-nav-item" href="/publications/">Publications</a>
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/research/">Research</a>
           
         
       
@@ -206,9 +207,9 @@
       <a class="sidebar-nav-item" href="/resources">Resources</a>
       <a class="sidebar-nav-item" href="/posts">Posts</a>
 
-      <!-- <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab/archive/v2.1.0.zip">Download</a>
+      <!-- <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab/archive/v.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v2.1.0</span> -->
+      <span class="sidebar-nav-item">Currently v</span> -->
     </nav>
 
     <p>&copy; 2016. All rights reserved.</p>
@@ -220,45 +221,42 @@
       <h1 id="writing">Writing</h1>
 
 <h2 id="make-it-a-habit">Make it a Habit</h2>
-
 <ul>
-<li><strong>Write Daily.</strong>  Even if just for 15 minutes.  Regular short intervals are much more productive than irregular long intervals.</li>
-<li>Start writing from the beginning of your project.  Get in the habit of writing.</li>
-<li>Create an environment where you can focus (see <a href="../research/#distractions">distractions</a>).</li>
-<li>If you have a hard time getting into the habit, record the time you spent writing and share it with someone daily.<br>
-<blockquote>When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates.</blockquote> 
--- Thomas S. Monson</li>
+  <li><strong>Write Daily.</strong>  Even if just for 15 minutes.  Regular short intervals are much more productive than irregular long intervals.</li>
+  <li>Start writing from the beginning of your project.  Get in the habit of writing.</li>
+  <li>Create an environment where you can focus (see <a href="../research/#distractions">distractions</a>).</li>
+  <li>If you have a hard time getting into the habit, record the time you spent writing and share it with someone daily.
+    <blockquote>When performance is measured, performance improves. When performance is measured and reported, the rate of improvement accelerates.</blockquote>
+    <p>– Thomas S. Monson</p>
+  </li>
 </ul>
 
 <h2 id="writing-tips">Writing Tips</h2>
-
 <ul>
-<li>I like to start by editing what I wrote the previous day (about 5 mins), then continue with new writing from there.  This help me get started, which is often the hardest part, and quickly gets me reoriented to start writing new content.</li>
-<li>When starting a new paper it can be helpful to begin in bullet form.  Slowly add, reorder, and rephrase the bullets until you have a complete outline.  Once you have worked out the logical flow with well-written topic sentences, filling in the details is easy.</li>
-<li>When writing new paragraphs just put things down on paper.  Don&#39;t try to make it perfect.  This is not the time for editing, or jumping over to the web to get references.  If you know you need a references, just make a note of it and keep writing.</li>
-<li>Keep in mind the audience you are writing for.</li>
+  <li>I like to start by editing what I wrote the previous day (about 5 mins), then continue with new writing from there.  This help me get started, which is often the hardest part, and quickly gets me reoriented to start writing new content.</li>
+  <li>When starting a new paper it can be helpful to begin in bullet form.  Slowly add, reorder, and rephrase the bullets until you have a complete outline.  Once you have worked out the logical flow with well-written topic sentences, filling in the details is easy.</li>
+  <li>When writing new paragraphs just put things down on paper.  Don’t try to make it perfect.  This is not the time for editing, or jumping over to the web to get references.  If you know you need a references, just make a note of it and keep writing.</li>
+  <li>Keep in mind the audience you are writing for.</li>
 </ul>
 
 <h2 id="editing">Editing</h2>
-
 <ul>
-<li>Start getting feedback early from experts and non-experts.  I have found it effective to create a writing group with peers.  In a writing group you might meet once a week and each share and critique a paragraph or two that you wrote that week.<br></li>
-<li>When you receive feedback, just listen.  Don&#39;t try to explain what you meant, just listen.  If they didn&#39;t understand it, then it wasn&#39;t clear.</li>
-<li>Take advantage of BYU&#39;s Writing Center.</li>
-<li>Read your text out loud to yourself.</li>
+  <li>Start getting feedback early from experts and non-experts.  I have found it effective to create a writing group with peers.  In a writing group you might meet once a week and each share and critique a paragraph or two that you wrote that week.</li>
+  <li>When you receive feedback, just listen.  Don’t try to explain what you meant, just listen.  If they didn’t understand it, then it wasn’t clear.</li>
+  <li>Take advantage of BYU’s Writing Center.</li>
+  <li>Read your text out loud to yourself.</li>
 </ul>
 
 <h2 id="logistics">Logistics</h2>
-
 <ul>
-<li>Use LaTeX.</li>
-<li>Use vector graphics whenever possible (pdf, eps).  All plots that you create in Python, Matlab, etc. can be output in a vector format.  If you have an image that can not be vector-based, like a CFD screenshot, use a high-resolution bitmap.</li>
-<li>I mentioned this already in <a href="../research/#archive">research</a>, but be sure to save the data that produced your figures.  You will almost always need to change them later.</li>
-<li>Captions should be full, descriptive sentences.</li>
-<li>Use hyperref in latex so that your document is properly hyperlinked</li>
-<li>Be sure to embed fonts before submitting your paper for publication.  pdflatex does not do this for you.  An easy way to do this on OS X is to open up the PDF then click on File &gt; Print.  In the print dialog click on the PDF dropdown menu and select &quot;Save as PDF...&quot;.  The resulting copy will have all of its fonts embedded.  To be clear, you only need to do this on the final version you submit for publication (particularly for a conference, journals will typeset your paper themselves).</li>
-<li>I recommend using version control for your papers.  Use an appropriate .gitignore file (see <a href="https://gist.github.com/kogakure/149016">here</a> for a good start) so that you only commit the source files and not intermediate build files.  Provide clear comments or tags on the important milestones (e.g., initial submission to journal) so that it will be easy to compare changes later.  You will need to detail changes in your response to reviewer comments.  <a href="https://www.ctan.org/pkg/latexdiff">latexdiff</a> is a useful tools for visualizing differences between LaTeX documents.</li>
-<li>Avoid using rainbow colorbars for contour plots.  The ordering of the colors is nonintuitive and does not vary continuously in luminance.  The result is an obscuring of details and the perception of artificial boundaries between hues.</li>
+  <li>Use LaTeX.</li>
+  <li>Use vector graphics whenever possible (pdf, eps).  All plots that you create in Python, Matlab, etc. can be output in a vector format.  If you have an image that can not be vector-based, like a CFD screenshot, use a high-resolution bitmap.</li>
+  <li>I mentioned this already in <a href="../research/#archive">research</a>, but be sure to save the data that produced your figures.  You will almost always need to change them later.</li>
+  <li>Captions should be full, descriptive sentences.</li>
+  <li>Use hyperref in latex so that your document is properly hyperlinked</li>
+  <li>Be sure to embed fonts before submitting your paper for publication.  pdflatex does not do this for you.  An easy way to do this on OS X is to open up the PDF then click on File &gt; Print.  In the print dialog click on the PDF dropdown menu and select “Save as PDF…”.  The resulting copy will have all of its fonts embedded.  To be clear, you only need to do this on the final version you submit for publication (particularly for a conference, journals will typeset your paper themselves).</li>
+  <li>I recommend using version control for your papers.  Use an appropriate .gitignore file (see <a href="https://gist.github.com/kogakure/149016">here</a> for a good start) so that you only commit the source files and not intermediate build files.  Provide clear comments or tags on the important milestones (e.g., initial submission to journal) so that it will be easy to compare changes later.  You will need to detail changes in your response to reviewer comments.  <a href="https://www.ctan.org/pkg/latexdiff">latexdiff</a> is a useful tools for visualizing differences between LaTeX documents.</li>
+  <li>Avoid using rainbow colorbars for contour plots.  The ordering of the colors is nonintuitive and does not vary continuously in luminance.  The result is an obscuring of details and the perception of artificial boundaries between hues.</li>
 </ul>
 
     </div>

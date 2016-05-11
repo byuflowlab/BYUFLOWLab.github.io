@@ -110,109 +110,99 @@
 </div><h1 id="tocAnchor-1-1">A (Partial) List of Optimizers in Matlab and Python</h1>
 
 <h2 id="tocAnchor-1-1-1">Matlab</h2>
-
-<p>The best optimizer in Matlab for most of our problems (nonlinear, differentiable) is <em>fmincon</em>.  It is easy to use, robust, and has a wide variety of options.  If you have a nonlinear differentiable problem that is failing with <em>fmincon</em> this usually means that you've formulated the problem poorly or incorrectly.  If you're problem is nondifferentiable then <em>ga</em> is one of the best options.  Other options for specific needs are discussed below.</p>
+<p>The best optimizer in Matlab for most of our problems (nonlinear, differentiable) is <em>fmincon</em>.  It is easy to use, robust, and has a wide variety of options.  If you have a nonlinear differentiable problem that is failing with <em>fmincon</em> this usually means that you’ve formulated the problem poorly or incorrectly.  If you’re problem is nondifferentiable then <em>ga</em> is one of the best options.  Other options for specific needs are discussed below.</p>
 
 <h3 id="optimization-toolbox">Optimization Toolbox</h3>
-
 <p>We have university licenses to Matlab and the Optimization Toolbox.  This toolbox provides the following methods:</p>
 
 <ul>
-<li><em>fminsearch</em>, gradient-free, nonlinear unconstrained, Nelder-Mead simplex method.</li>
-<li><em>fminunc</em>, gradient-based, nonlinear unconstrained, includes a quasi-newton and a trust-region method.</li>
-<li><em>fmincon</em>, gradient-based, nonlinear constrained, includes an interior-point, sqp, active-set, and trust-region-reflective method.</li>
-<li><em>linprog</em>, linear programming problems.</li>
-<li><em>intlinprog</em>, mixed-integer linear programming problems.</li>
-<li><em>quadprog</em>, quadratic programming problems.</li>
+  <li><em>fminsearch</em>, gradient-free, nonlinear unconstrained, Nelder-Mead simplex method.</li>
+  <li><em>fminunc</em>, gradient-based, nonlinear unconstrained, includes a quasi-newton and a trust-region method.</li>
+  <li><em>fmincon</em>, gradient-based, nonlinear constrained, includes an interior-point, sqp, active-set, and trust-region-reflective method.</li>
+  <li><em>linprog</em>, linear programming problems.</li>
+  <li><em>intlinprog</em>, mixed-integer linear programming problems.</li>
+  <li><em>quadprog</em>, quadratic programming problems.</li>
 </ul>
 
 <h3 id="global-optimization-toolbox">Global Optimization Toolbox</h3>
-
 <p>We do not have a university license for this toolbox.  There are a few options for use:</p>
 
 <ul>
-<li>Mathworks offers a trial version of Matlab and any toolboxes, which will last for one month (long enough for the gradient-free assignments in this class).</li>
-<li>You can make a personal purchase.</li>
-<li>Use one of the third-party tools discussed in the next section.</li>
+  <li>Mathworks offers a trial version of Matlab and any toolboxes, which will last for one month (long enough for the gradient-free assignments in this class).</li>
+  <li>You can make a personal purchase.</li>
+  <li>Use one of the third-party tools discussed in the next section.</li>
 </ul>
 
 <!-- ($50 for Matlab and $10 for the toolbox, at the time of this writing). -->
-
 <!--     \item For very limited testing there are 2 floating licenses on the CAEDM servers.  These are actually owned by the EE department, so \textbf{please do not take up those licenses if you plan to do more than a 1-off quick run.} 
  -->
-
 <p>The global optimization toolbox has the following methods (all of these are gradient-free approaches):</p>
 
 <ul>
-<li><em>patternsearch</em>, pattern search solver for derivative-free optimization, constrained or unconstrained</li>
-<li><em>ga</em>, genetic algorithm solver for mixed-integer or continuous-variable optimization, constrained or unconstrained</li>
-<li><em>gamultiobj</em>, multiobjective genetic algorithm</li>
-<li><em>particleswarm</em>, particle swarm solver for derivative-free unconstrained optimization or optimization with bounds</li>
-<li><em>simulannealbnd</em>, simulated annealing solver for derivative-free unconstrained optimization or optimization with bounds</li>
+  <li><em>patternsearch</em>, pattern search solver for derivative-free optimization, constrained or unconstrained</li>
+  <li><em>ga</em>, genetic algorithm solver for mixed-integer or continuous-variable optimization, constrained or unconstrained</li>
+  <li><em>gamultiobj</em>, multiobjective genetic algorithm</li>
+  <li><em>particleswarm</em>, particle swarm solver for derivative-free unconstrained optimization or optimization with bounds</li>
+  <li><em>simulannealbnd</em>, simulated annealing solver for derivative-free unconstrained optimization or optimization with bounds</li>
 </ul>
 
 <h3 id="third-party-gradient-free-algorithms">Third Party Gradient-Free Algorithms</h3>
-
 <!-- \label{sec:thirdparty} -->
-
-<p>Because we don't have university-wide access to the Global Optimization Toolbox, I list here a number of third-party options contributed by the user community.  These are simplistic implementations.  Based on past experience, they should work fine for the homework, but are probably not good options for your project or anything of similar complexity.</p>
+<p>Because we don’t have university-wide access to the Global Optimization Toolbox, I list here a number of third-party options contributed by the user community.  These are simplistic implementations.  Based on past experience, they should work fine for the homework, but are probably not good options for your project or anything of similar complexity.</p>
 
 <ul>
-<li><a href="http://www.mathworks.com/matlabcentral/fileexchange/31166-ngpm-a-nsga-ii-program-in-matlab-v1-4"><strong>NGPM</strong></a>.  NSGA-II is a well-known genetic algorithm, and this is a Matlab implementation of that methodology.</li>
-<li><a href="http://www.mathworks.com/matlabcentral/fileexchange/24838-godlike-a-robust-single---multi-objective-optimizer"><strong>GODLIKE</strong></a>, a basic genetic algorithm, differential evolution, particle swarm, and adaptive simulated annealing method</li>
+  <li><a href="http://www.mathworks.com/matlabcentral/fileexchange/31166-ngpm-a-nsga-ii-program-in-matlab-v1-4"><strong>NGPM</strong></a>.  NSGA-II is a well-known genetic algorithm, and this is a Matlab implementation of that methodology.</li>
+  <li><a href="http://www.mathworks.com/matlabcentral/fileexchange/24838-godlike-a-robust-single---multi-objective-optimizer"><strong>GODLIKE</strong></a>, a basic genetic algorithm, differential evolution, particle swarm, and adaptive simulated annealing method</li>
 </ul>
 
 <h3 id="convex-optimization">Convex Optimization</h3>
 
 <ul>
-<li><a href="http://cvxr.com/cvx/"><strong>CVX</strong></a>, a nice modeling language for disciplined convex problem, includes some free solvers.  Developed at Stanford, works within Matlab.  Interfaces with some commercial solvers like Gurobi.
+  <li><a href="http://cvxr.com/cvx/"><strong>CVX</strong></a>, a nice modeling language for disciplined convex problem, includes some free solvers.  Developed at Stanford, works within Matlab.  Interfaces with some commercial solvers like Gurobi.
 <a name="gurobi" id="gurobi"></a></li>
-<li><a href="http://www.gurobi.com/products/gurobi-optimizer"><strong>Gurobi</strong></a>, an excellent commercial optimizer for disciplined convex problems, or mixed-integer ``convex'' problems.  Free for academic use.  Can be used with CVX or through other interfaces (Python, R, C, C++, etc.) </li>
+  <li><a href="http://www.gurobi.com/products/gurobi-optimizer"><strong>Gurobi</strong></a>, an excellent commercial optimizer for disciplined convex problems, or mixed-integer ``convex’’ problems.  Free for academic use.  Can be used with CVX or through other interfaces (Python, R, C, C++, etc.)</li>
 </ul>
 
 <h2 id="tocAnchor-1-1-2">Python</h2>
-
 <p>The easiest options to start out with are the ones in SciPy, because you already have them.  However, in my experience none of the optimizers in SciPy are particularly good.  They should be sufficient for the homework problems, and may even work well enough for some of your projects, but if you try to do problems of even modest complexity you will likely find them wanting.  Better options are discussed below, but they require more work to get setup.</p>
 
 <h3 id="scipy">SciPy</h3>
-
 <p>SciPy provides direct access to several optimizers, or you can can use the <em>minimize</em> function described below to more easily switch between different options.</p>
 
 <ul>
-<li><em>scipy.optimize.minimize</em> provides an interface to several optimization methods.  Some of the more useful ones are:
-
-<ul>
-<li>SLSQP, a simple SQP implementation.</li>
-<li>BFGS and CG, a simple BFGS Quasi-Newton, and Conjugate Gradient implementation (unconstrained)</li>
-<li>Nelder-Mead, a gradient-free Nelder-Mead simplex method.</li>
-<li>COBYLA, a gradient-free method using successive linear approximations.</li>
-</ul></li>
-<li><em>scipy.optimize.differential_evolution</em> a differential evolution method (effectively a real-encoded genetic algorithm)</li>
+  <li><em>scipy.optimize.minimize</em> provides an interface to several optimization methods.  Some of the more useful ones are:
+    <ul>
+      <li>SLSQP, a simple SQP implementation.</li>
+      <li>BFGS and CG, a simple BFGS Quasi-Newton, and Conjugate Gradient implementation (unconstrained)</li>
+      <li>Nelder-Mead, a gradient-free Nelder-Mead simplex method.</li>
+      <li>COBYLA, a gradient-free method using successive linear approximations.</li>
+    </ul>
+  </li>
+  <li><em>scipy.optimize.differential_evolution</em> a differential evolution method (effectively a real-encoded genetic algorithm)</li>
 </ul>
 
-<h3 id="pyoptsparse">
+<h3 id="pyoptsparsehttpsbitbucketorgmdolabpyoptsparse">
    <a href="https://bitbucket.org/mdolab/pyoptsparse">pyOptSparse</a>
 </h3>
-
 <p>pyOptSparse is not an optimizer, but rather a wrapper to a dozen or so optimizers.  This allows you to define your problem once, and easily change between solvers without having the worry about the different conventions used by the various optimizers.  There are some solver options here that are much better than the ones in SciPy.  SNOPT, for example, is one we use a lot in our research problems.  Some of these, like SNOPT, are not freely available.  I have purchased or obtained department licenses where needed.  If you are a BYU student and want access to one of the optimizers in bold, please come see me.  <strong>Please note that the optimizers SNOPT, NLPQLP, and our version of IPOPT are for academic use only, and you should cite the authors if used for any publications.</strong>  Setup of pyOptSparse requires a C and a Fortran compiler.</p>
 
 <p>Some of the available optimizers include:</p>
 
 <ul>
-<li><strong><em>SNOPT</em></strong>, SQP method, effective for small- and large-scale problems.  I have purchased a department license.</li>
-<li><strong><em>NLPQLP</em></strong>, quadratic Lagrangian approximation with linear constraints, non-monotone line search to help with numerical instabilities.  I have obtained an academic license.</li>
-<li><strong><em>IPOPT</em></strong>, an interior point method.  The source code is freely-available, but not the linear solver (there is a free one but it is not very good).  I have obtained academic licenses to the better linear solvers.</li>
-<li><em>PSQP</em>, another basic SQP implementation</li>
-<li><em>FSQP</em>, a feasible SQP implementation</li>
-<li><em>SLSQP</em>, same as in Scipy</li>
-<li><em>CONMIN</em>, a basic feasible direction method</li>
-<li><em>NSGA2</em>, a well-known genetic algorithm</li>
-<li><em>ALPSO</em>, particle swarm method</li>
+  <li><strong><em>SNOPT</em></strong>, SQP method, effective for small- and large-scale problems.  I have purchased a department license.</li>
+  <li><strong><em>NLPQLP</em></strong>, quadratic Lagrangian approximation with linear constraints, non-monotone line search to help with numerical instabilities.  I have obtained an academic license.</li>
+  <li><strong><em>IPOPT</em></strong>, an interior point method.  The source code is freely-available, but not the linear solver (there is a free one but it is not very good).  I have obtained academic licenses to the better linear solvers.</li>
+  <li><em>PSQP</em>, another basic SQP implementation</li>
+  <li><em>FSQP</em>, a feasible SQP implementation</li>
+  <li><em>SLSQP</em>, same as in Scipy</li>
+  <li><em>CONMIN</em>, a basic feasible direction method</li>
+  <li><em>NSGA2</em>, a well-known genetic algorithm</li>
+  <li><em>ALPSO</em>, particle swarm method</li>
 </ul>
 
-<h3 id="convex-optimization">Convex Optimization</h3>
-
+<h3 id="convex-optimization-1">Convex Optimization</h3>
 <p>See the notes above on <a href="#gurobi">Gurobi</a></p>
+
 
     </div>
 

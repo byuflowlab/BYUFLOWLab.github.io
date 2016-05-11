@@ -84,39 +84,42 @@
     <!-- <h1 class="page-title">Python and LaTeX</h1> -->
       <h2 id="choose-your-own-adventure">Choose Your Own Adventure</h2>
 
-<p>Python and Matlab are both excellent choices.  If you don&#39;t feel reasonably comfortable with your programming ability I suggest you stick with what you know.  I assume you&#39;ve been exposed to Matlab, so I won&#39;t elaborate on its advantages, but do brief discuss some of the advantageous of Python below.  </p>
+<p>Python and Matlab are both excellent choices.  If you don’t feel reasonably comfortable with your programming ability I suggest you stick with what you know.  I assume you’ve been exposed to Matlab, so I won’t elaborate on its advantages, but do brief discuss some of the advantageous of Python below.</p>
 
-<p>LaTeX is widely used in scientific writing and if you are doing graduate work you will likely need to learn it at some point (but check with your advisor, I know that a few research groups prefer Word).  To be clear, there is nothing wrong with using Matlab for your code development, and Microsoft Word (or an equivalent) for your report preparation.  These are just tools, what&#39;s more important is learning the concepts and doing good work.</p>
+<p>LaTeX is widely used in scientific writing and if you are doing graduate work you will likely need to learn it at some point (but check with your advisor, I know that a few research groups prefer Word).  To be clear, there is nothing wrong with using Matlab for your code development, and Microsoft Word (or an equivalent) for your report preparation.  These are just tools, what’s more important is learning the concepts and doing good work.</p>
 
 <h2 id="python">Python</h2>
 
-<p>Here is a brief <a href="http://nbviewer.ipython.org/url/flow.byu.edu/resources/PythonPrimer.ipynb">Python primer</a> I prepared for another venue.  It is the first half that is most relevant for this discussion.  The more advanced topics in the second half: object oriented programming, and connecting with Fortran/C won&#39;t be necessary in this class.  For a broader perspective, see the post I wrote on <a href="../posts/sci-prog-lang">scientific programming languages</a>.  Tons of Python tutorials exist online, as do good IDEs that can support autocompletion, setting breakpoints, etc.</p>
+<p>Here is a brief <a href="http://nbviewer.ipython.org/url/flow.byu.edu/resources/PythonPrimer.ipynb">Python primer</a> I prepared for another venue.  It is the first half that is most relevant for this discussion.  The more advanced topics in the second half: object oriented programming, and connecting with Fortran/C won’t be necessary in this class.  For a broader perspective, see the post I wrote on <a href="../posts/sci-prog-lang">scientific programming languages</a>.  Tons of Python tutorials exist online, as do good IDEs that can support autocompletion, setting breakpoints, etc.</p>
 
 <h2 id="latex">LaTeX</h2>
 
-<p>Unless you already have a workflow you are comfortable with, I recommend you use <a href="https://www.overleaf.com">Overleaf</a>.  Think of it as Google Docs for LaTeX.  There isn&#39;t anything to install, and multiple people can work collaboratively (nice for your project).  It also provides a lot of starter templates.  Many LaTeX tutorials exist online.  You might find some of this post I wrote on <a href="http://flow.byu.edu/posts/writing-sci-papers/">Writing Scientific Papers</a> useful.  Below is a very simple starter example:</p>
-<div class="highlight"><pre><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<p>Unless you already have a workflow you are comfortable with, I recommend you use <a href="https://www.overleaf.com">Overleaf</a>.  Think of it as Google Docs for LaTeX.  There isn’t anything to install, and multiple people can work collaboratively (nice for your project).  It also provides a lot of starter templates.  Many LaTeX tutorials exist online.  You might find some of this post I wrote on <a href="http://flow.byu.edu/posts/writing-sci-papers/">Writing Scientific Papers</a> useful.  Below is a very simple starter example:</p>
 
-<span class="k">\usepackage</span><span class="na">[margin=1in]</span><span class="nb">{</span>geometry<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="na">[colorlinks,bookmarks,bookmarksnumbered,allcolors=blue]</span><span class="nb">{</span>hyperref<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>subfig<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="nb">{</span>booktabs<span class="nb">}</span>
-<span class="k">\usepackage</span><span class="na">[capitalise]</span><span class="nb">{</span>cleveref<span class="nb">}</span>
+<div class="language-latex highlighter-rouge"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
 
-<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[margin=1in]</span><span class="p">{</span>geometry<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>amsmath<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[colorlinks,bookmarks,bookmarksnumbered,allcolors=blue]</span><span class="p">{</span>hyperref<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>subfig<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>booktabs<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[capitalise]</span><span class="p">{</span>cleveref<span class="p">}</span>
 
-<span class="k">\author</span><span class="nb">{</span>Your Name<span class="nb">}</span>
-<span class="k">\title</span><span class="nb">{</span>Title of Report<span class="nb">}</span>
+<span class="nt">\begin{document}</span>
+
+<span class="k">\author</span><span class="p">{</span>Your Name<span class="p">}</span>
+<span class="k">\title</span><span class="p">{</span>Title of Report<span class="p">}</span>
 <span class="k">\maketitle</span>
 
-<span class="k">\section</span><span class="nb">{</span>A Section Header<span class="nb">}</span>
+<span class="k">\section</span><span class="p">{</span>A Section Header<span class="p">}</span>
 
 Text
 
-<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+<span class="nt">\end{document}</span>
+</code></pre>
+</div>
+
     </div>
 
   </body>

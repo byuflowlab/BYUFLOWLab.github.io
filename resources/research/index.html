@@ -58,7 +58,8 @@
     <div class="sidebar-about">
       <h1>
         <a href="/">
-          FLOW Lab
+          <img src="/images/logo.svg" width="400px" color="white">
+          <!-- FLOW Lab -->
         </a>
       </h1>
       <p class="lead">Flight, Optimization, and Wind Laboratory</p>
@@ -125,6 +126,14 @@
       
         
           
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/research/">Research</a>
+          
         
       
         
@@ -134,14 +143,6 @@
         
       
         
-          
-            <a class="sidebar-nav-item" href="/publications/">Publications</a>
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/research/">Research</a>
           
         
       
@@ -206,9 +207,9 @@
       <a class="sidebar-nav-item" href="/resources">Resources</a>
       <a class="sidebar-nav-item" href="/posts">Posts</a>
 
-      <!-- <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab/archive/v2.1.0.zip">Download</a>
+      <!-- <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab/archive/v.zip">Download</a>
       <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v2.1.0</span> -->
+      <span class="sidebar-nav-item">Currently v</span> -->
     </nav>
 
     <p>&copy; 2016. All rights reserved.</p>
@@ -222,42 +223,40 @@
 <h2 id="data-management">Data Management</h2>
 
 <ul>
-<li>Use a lab notebook.<br></li>
-<li><a href="http://en.wikipedia.org/wiki/Revision_control">Version control</a> is important.  We use version control to develop code, to write papers, to collaborate, to rollback changes, etc.  Use good commit statements so that you have a useful version history.  Version control is helpful even on individual projects.</li>
-<li>Archive results in addition to the code that produced it. <a name="archive"></a> Also archive the code that you used to create plots.  This will save you a lot of time when regenerating plots.  Plot regeneration is often needed to create versions of your plots for your presentation, or in responding to peer-reviewer&#39;s suggestions on your publications.<br></li>
-<li>Backup.  You need to have your data, code, etc. backed-up in at least two separate locations (in addition to its main location).</li>
+  <li>Use a lab notebook.</li>
+  <li><a href="http://en.wikipedia.org/wiki/Revision_control">Version control</a> is important.  We use version control to develop code, to write papers, to collaborate, to rollback changes, etc.  Use good commit statements so that you have a useful version history.  Version control is helpful even on individual projects.</li>
+  <li>Archive results in addition to the code that produced it. <a name="archive"></a> Also archive the code that you used to create plots.  This will save you a lot of time when regenerating plots.  Plot regeneration is often needed to create versions of your plots for your presentation, or in responding to peer-reviewer’s suggestions on your publications.</li>
+  <li>Backup.  You need to have your data, code, etc. backed-up in at least two separate locations (in addition to its main location).</li>
 </ul>
 
 <h2 id="software">Software</h2>
 
 <ul>
-<li>Most of us are using Python (v2) as our primary programming language.  We also use Matlab, Julia, Fortran, and C/C++.  There is a useful online course on High Performance Scientific Computing that you can access for free: (<a href="https://www.coursera.org/course/scicomp">Coursera course</a>, <a href="http://faculty.washington.edu/rjl/classes/am583s2014/notes/index.html">course notes</a>). It covers many relevant topics like version control, Unix commands, Python, Fortran, and MPI.  These are all topics that will be useful to you.</li>
-<li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://bitbucket.org">Bitbucket</a> to host our repositories. If you are actively working in our research group, sign up for a Bitbucket account and send me your username so that I can add you to our team.<br></li>
-<li>For backup I use Dropbox (continuous cloud-based backup) and Time Machine (local hourly backup). You can also use BYU&#39;s J Drive if you like.  There is more space there, and it is backed up, but restoration of files is more cumbersome.</li>
-<li>We use LaTeX for technical writing.  All of our publications are written using LaTeX.</li>
-<li>For those interested in computational fluid dynamics, we are primarily using StarCCM+.  There are good tutorials available on the CAEDM computers.</li>
-<li>My text editor of choice is Sublime Text, but depending on the programming language you are using, you may prefer a dedicated IDE.</li>
-<li>For graduate students in our lab, there are instructions in the <a href="https://bitbucket.org/flowlab/setup">setup repo</a> for tools to download and configurations settings for your computer.</li>
+  <li>Most of us are using Python (v2) as our primary programming language.  We also use Matlab, Julia, Fortran, and C/C++.  There is a useful online course on High Performance Scientific Computing that you can access for free: (<a href="https://www.coursera.org/course/scicomp">Coursera course</a>, <a href="http://faculty.washington.edu/rjl/classes/am583s2014/notes/index.html">course notes</a>). It covers many relevant topics like version control, Unix commands, Python, Fortran, and MPI.  These are all topics that will be useful to you.</li>
+  <li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://bitbucket.org">Bitbucket</a> to host our repositories. If you are actively working in our research group, sign up for a Bitbucket account and send me your username so that I can add you to our team.</li>
+  <li>For backup I use Dropbox (continuous cloud-based backup) and Time Machine (local hourly backup). You can also use BYU’s J Drive if you like.  There is more space there, and it is backed up, but restoration of files is more cumbersome.</li>
+  <li>We use LaTeX for technical writing.  All of our publications are written using LaTeX.</li>
+  <li>For those interested in computational fluid dynamics, we are primarily using StarCCM+.  There are good tutorials available on the CAEDM computers.</li>
+  <li>My text editor of choice is Sublime Text, but depending on the programming language you are using, you may prefer a dedicated IDE.</li>
+  <li>For graduate students in our lab, there are instructions in the <a href="https://bitbucket.org/flowlab/setup">setup repo</a> for tools to download and configurations settings for your computer.</li>
 </ul>
 
 <h2 id="code-development">Code Development</h2>
-
 <ul>
-<li>Document your code in detail as you go.  It may feel cumbersome at times, but it will save you time in the long run.</li>
-<li>Use descriptive variable names</li>
-<li>If you find yourself writing a very similar piece of code more than once, you should refactor the code to create one function used in multiple places.  Having duplicate code opens up additional opportunities for bugs with version mismatches.</li>
-<li>Use version control.</li>
-<li>Create unit tests as you go.  You will need to check the validity of your code anyway.  When you perform those checks encapsulate them in unit tests.  As you update code be sure to update your unit tests as well.</li>
+  <li>Document your code in detail as you go.  It may feel cumbersome at times, but it will save you time in the long run.</li>
+  <li>Use descriptive variable names</li>
+  <li>If you find yourself writing a very similar piece of code more than once, you should refactor the code to create one function used in multiple places.  Having duplicate code opens up additional opportunities for bugs with version mismatches.</li>
+  <li>Use version control.</li>
+  <li>Create unit tests as you go.  You will need to check the validity of your code anyway.  When you perform those checks encapsulate them in unit tests.  As you update code be sure to update your unit tests as well.</li>
 </ul>
 
 <h2 id="productivity">Productivity</h2>
-
 <ul>
-<li>Eliminate distractions (e.g., email, facebook, etc.).<a name="distractions"></a>  Don&#39;t try to &quot;multitask&quot;.  Research studies suggests it can take up to 20 minutes to get back into your task once you are distracted.  At the same time you should also take planned breaks.  Those are the times to check email, etc.  You can get <strong>a lot</strong> more done with focused periods of works followed by short breaks, as compared to longer sessions with distractions.  The same applies generally in life&mdash;try to be present with the people you are with.</li>
-<li>Set and enforce your own deadlines.  If you&#39;re not careful, work will expand to fill the time allotted.</li>
-<li>Tackle hard things first, don&#39;t put them off.  At the same time don&#39;t try to tackle the hard things in marathon sessions.  First, you&#39;ll have a harder time finding a huge block of contiguous time.  Second, you&#39;ll get burned out and procrastinate starting it up again. You&#39;ll be amazed at what you can accomplish with short but consistent efforts.</li>
-<li>Be results oriented.  It is easy in research to let irrelevant pursuits consume too much attention (because they are easier).</li>
-<li>Network.  Most people underestimate the importance of networking.  It is vitally important.  Get to know the other students and faculty members around you.  Don&#39;t be afraid to email or approach people whose names are on the research papers you are reading.  More often than not they will be flattered to talk to you about their work.  At the same time, look for opportunities to mentor and help others.</li>
+  <li>Eliminate distractions (e.g., email, facebook, etc.).<a name="distractions"></a>  Don’t try to “multitask”.  Research studies suggests it can take up to 20 minutes to get back into your task once you are distracted.  At the same time you should also take planned breaks.  Those are the times to check email, etc.  You can get <strong>a lot</strong> more done with focused periods of works followed by short breaks, as compared to longer sessions with distractions.  The same applies generally in life—try to be present with the people you are with.</li>
+  <li>Set and enforce your own deadlines.  If you’re not careful, work will expand to fill the time allotted.</li>
+  <li>Tackle hard things first, don’t put them off.  At the same time don’t try to tackle the hard things in marathon sessions.  First, you’ll have a harder time finding a huge block of contiguous time.  Second, you’ll get burned out and procrastinate starting it up again. You’ll be amazed at what you can accomplish with short but consistent efforts.</li>
+  <li>Be results oriented.  It is easy in research to let irrelevant pursuits consume too much attention (because they are easier).</li>
+  <li>Network.  Most people underestimate the importance of networking.  It is vitally important.  Get to know the other students and faculty members around you.  Don’t be afraid to email or approach people whose names are on the research papers you are reading.  More often than not they will be flattered to talk to you about their work.  At the same time, look for opportunities to mentor and help others.</li>
 </ul>
 
     </div>
