@@ -4,13 +4,36 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2016-05-11T00:08:33-06:00</updated>
+ <updated>2016-05-16T12:40:27-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Julia for the Win</title>
+   <link href="http://flow.byu.edu/posts/julia-first-imp"/>
+   <updated>2016-05-16T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/julia-ftw</id>
+   <content type="html">&lt;p&gt;In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see &lt;a href=&quot;http://flow.byu.edu/posts/julia-first-imp&quot;&gt;first impressions&lt;/a&gt;).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.&lt;/p&gt;
+
+&lt;p&gt;The original version was mostly Fortran so I wasn’t necessarily seeking a speed improvement.  For the benefits of working in one language I would be ok with a 20-30% slowdown.  However, an order of magnitude slow down was a lot and it really bogged things down when creating figures and data for the paper.  I had about given up on performance, but two separate encounters with Julia-using colleagues made me revisit the topic once again.  I sent my code to a colleague who had been using Julia for some time.  His PhD student pointed out some suggestions, which I tried, but the impact was negligible.&lt;/p&gt;
+
+&lt;p&gt;Profiling suggested that a lot of time was spent in conversion between PyCall and scipy.  I tried using the lower-level calls in PyCall to be more explicit in the types, but it didn’t help.  I was using PyCall because I needed an N-dimensional root solver and nothing was available in native Julia.  Roots.jl was available, but it only solves 1-dimensional root finding problems.  PyCall allowed me to call Python’s scipy.optimize.root, which was quite convenient.&lt;/p&gt;
+
+&lt;p&gt;When I first wrote this code a year or so ago I directly wrapped the Fortran code hybrd from minpack (using Julia 0.2.x and 0.3.x), which is what is used in Scipy’s root finder.  I later discovered PyCall and that was way more convenient with no real change in computation time.  However, I noted that a lot of improvements were made to ccall and cfunction in 0.4.x so I thought I’d try the direct route again.  I reverted to my direct wrapper of hybrd (with a few minor updates to comply with 0.4.x), to eliminate the Python middleman.  Performance problem solved!   After that change I found that the Julia code was actually 3X faster than the Python/Fortran version!&lt;/p&gt;
+
+&lt;p&gt;The other problem I had was that plotting and just running Julia in general was painfully slow.  I was using a Python-like workflow where I would just run the full script each time (using Sublime Text or the terminal).  I knew that Julia had a REPL, but I couldn’t stand working in the browser as opposed to a text editor.  Sometimes with plotting I would use the REPL, but it was a real pain switching back and forth.  My colleague informed me about &lt;a href=&quot;https://github.com/JunoLab/atom-ink&quot;&gt;Ink&lt;/a&gt; and the &lt;a href=&quot;https://github.com/JunoLab/atom-julia-client&quot;&gt;Julia Client in Atom&lt;/a&gt; and it changed everything.  With this tool I could avoid the recompilation of packages and code that before was occurring on every run.&lt;/p&gt;
+
+&lt;p&gt;I’m now very happy with using Julia and for one of our new major research projects we are going all in.  Everything isn’t perfect.  Some libraries are nonexistent (although wrapping Fortran/C libraries is pretty easy), and the Atom Julia Client is still a bit rough around the edges and could use a debugger.  But overall, working within one language that is both performant and is very easy to work with is a big win for us.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-size: 80%;&quot;&gt;
+P.S. If interested in the mentioned code, I have open-sourced it and it is available on &lt;a href=&quot;https://github.com/byuflowlab/vawt-ac&quot;&gt;GitHub&lt;/a&gt;.  It computes aerodynamic loading for multiple vertical axis wind turbines using an extended version of actuator cylinder theory.  A preprint of the accompanying theory is available on &lt;a href=&quot;/publications&quot;&gt;this website&lt;/a&gt; under “Actuator Cylinder Theory for Multiple Vertical Axis Wind Turbines”.
+&lt;/span&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Writing Scientific Papers</title>
