@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2016-05-16T12:40:27-06:00</updated>
+ <updated>2016-05-16T12:43:22-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -14,7 +14,7 @@
  
  <entry>
    <title>Julia for the Win</title>
-   <link href="http://flow.byu.edu/posts/julia-first-imp"/>
+   <link href="http://flow.byu.edu/posts/julia-ftw"/>
    <updated>2016-05-16T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/julia-ftw</id>
    <content type="html">&lt;p&gt;In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see &lt;a href=&quot;http://flow.byu.edu/posts/julia-first-imp&quot;&gt;first impressions&lt;/a&gt;).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.&lt;/p&gt;

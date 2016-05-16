@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Julia for the Win &middot; FLOW Lab
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          <img src="/images/logo.svg" width="400px" color="white">
+          <!-- FLOW Lab -->
+        </a>
+      </h1>
+      <p class="lead">Flight, Optimization, and Wind Laboratory</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <!-- 
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/people/">People</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/research/">Research</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/resources/">Resources</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/oldernews/">Older News</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/teaching/">Teaching</a>
+          
+        
+      
+        
+          
+        
+       -->
+      <a class="sidebar-nav-item" href="/publications">Publications</a>
+      <a class="sidebar-nav-item" href="/people">People</a>
+      <a class="sidebar-nav-item" href="/research">Research</a>
+      <a class="sidebar-nav-item" href="/teaching">Teaching</a>
+      <a class="sidebar-nav-item" href="/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/posts">Posts</a>
+
+      <!-- <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab/archive/v.zip">Download</a>
+      <a class="sidebar-nav-item" href="https://github.com/BYUFLOWLab">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v</span> -->
+    </nav>
+
+    <p>&copy; 2016. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Julia for the Win</h1>
+  <span class="post-date">16 May 2016</span>
+  <p>In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see <a href="http://flow.byu.edu/posts/julia-first-imp">first impressions</a>).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.</p>
+
+<p>The original version was mostly Fortran so I wasn’t necessarily seeking a speed improvement.  For the benefits of working in one language I would be ok with a 20-30% slowdown.  However, an order of magnitude slow down was a lot and it really bogged things down when creating figures and data for the paper.  I had about given up on performance, but two separate encounters with Julia-using colleagues made me revisit the topic once again.  I sent my code to a colleague who had been using Julia for some time.  His PhD student pointed out some suggestions, which I tried, but the impact was negligible.</p>
+
+<p>Profiling suggested that a lot of time was spent in conversion between PyCall and scipy.  I tried using the lower-level calls in PyCall to be more explicit in the types, but it didn’t help.  I was using PyCall because I needed an N-dimensional root solver and nothing was available in native Julia.  Roots.jl was available, but it only solves 1-dimensional root finding problems.  PyCall allowed me to call Python’s scipy.optimize.root, which was quite convenient.</p>
+
+<p>When I first wrote this code a year or so ago I directly wrapped the Fortran code hybrd from minpack (using Julia 0.2.x and 0.3.x), which is what is used in Scipy’s root finder.  I later discovered PyCall and that was way more convenient with no real change in computation time.  However, I noted that a lot of improvements were made to ccall and cfunction in 0.4.x so I thought I’d try the direct route again.  I reverted to my direct wrapper of hybrd (with a few minor updates to comply with 0.4.x), to eliminate the Python middleman.  Performance problem solved!   After that change I found that the Julia code was actually 3X faster than the Python/Fortran version!</p>
+
+<p>The other problem I had was that plotting and just running Julia in general was painfully slow.  I was using a Python-like workflow where I would just run the full script each time (using Sublime Text or the terminal).  I knew that Julia had a REPL, but I couldn’t stand working in the browser as opposed to a text editor.  Sometimes with plotting I would use the REPL, but it was a real pain switching back and forth.  My colleague informed me about <a href="https://github.com/JunoLab/atom-ink">Ink</a> and the <a href="https://github.com/JunoLab/atom-julia-client">Julia Client in Atom</a> and it changed everything.  With this tool I could avoid the recompilation of packages and code that before was occurring on every run.</p>
+
+<p>I’m now very happy with using Julia and for one of our new major research projects we are going all in.  Everything isn’t perfect.  Some libraries are nonexistent (although wrapping Fortran/C libraries is pretty easy), and the Atom Julia Client is still a bit rough around the edges and could use a debugger.  But overall, working within one language that is both performant and is very easy to work with is a big win for us.</p>
+
+<p><span style="font-size: 80%;">
+P.S. If interested in the mentioned code, I have open-sourced it and it is available on <a href="https://github.com/byuflowlab/vawt-ac">GitHub</a>.  It computes aerodynamic loading for multiple vertical axis wind turbines using an extended version of actuator cylinder theory.  A preprint of the accompanying theory is available on <a href="/publications">this website</a> under “Actuator Cylinder Theory for Multiple Vertical Axis Wind Turbines”.
+</span></p>
+
+</div>
+
+<!-- <p>In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see <a href="http://flow.byu.edu/posts/julia-first-imp">first impressions</a>).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.</p>
+
+<p>The original version was mostly Fortran so I wasn’t necessarily seeking a speed improvement.  For the benefits of working in one language I would be ok with a 20-30% slowdown.  However, an order of magnitude slow down was a lot and it really bogged things down when creating figures and data for the paper.  I had about given up on performance, but two separate encounters with Julia-using colleagues made me revisit the topic once again.  I sent my code to a colleague who had been using Julia for some time.  His PhD student pointed out some suggestions, which I tried, but the impact was negligible.</p>
+
+<p>Profiling suggested that a lot of time was spent in conversion between PyCall and scipy.  I tried using the lower-level calls in PyCall to be more explicit in the types, but it didn’t help.  I was using PyCall because I needed an N-dimensional root solver and nothing was available in native Julia.  Roots.jl was available, but it only solves 1-dimensional root finding problems.  PyCall allowed me to call Python’s scipy.optimize.root, which was quite convenient.</p>
+
+<p>When I first wrote this code a year or so ago I directly wrapped the Fortran code hybrd from minpack (using Julia 0.2.x and 0.3.x), which is what is used in Scipy’s root finder.  I later discovered PyCall and that was way more convenient with no real change in computation time.  However, I noted that a lot of improvements were made to ccall and cfunction in 0.4.x so I thought I’d try the direct route again.  I reverted to my direct wrapper of hybrd (with a few minor updates to comply with 0.4.x), to eliminate the Python middleman.  Performance problem solved!   After that change I found that the Julia code was actually 3X faster than the Python/Fortran version!</p>
+
+<p>The other problem I had was that plotting and just running Julia in general was painfully slow.  I was using a Python-like workflow where I would just run the full script each time (using Sublime Text or the terminal).  I knew that Julia had a REPL, but I couldn’t stand working in the browser as opposed to a text editor.  Sometimes with plotting I would use the REPL, but it was a real pain switching back and forth.  My colleague informed me about <a href="https://github.com/JunoLab/atom-ink">Ink</a> and the <a href="https://github.com/JunoLab/atom-julia-client">Julia Client in Atom</a> and it changed everything.  With this tool I could avoid the recompilation of packages and code that before was occurring on every run.</p>
+
+<p>I’m now very happy with using Julia and for one of our new major research projects we are going all in.  Everything isn’t perfect.  Some libraries are nonexistent (although wrapping Fortran/C libraries is pretty easy), and the Atom Julia Client is still a bit rough around the edges and could use a debugger.  But overall, working within one language that is both performant and is very easy to work with is a big win for us.</p>
+
+<p><span style="font-size: 80%;">
+P.S. If interested in the mentioned code, I have open-sourced it and it is available on <a href="https://github.com/byuflowlab/vawt-ac">GitHub</a>.  It computes aerodynamic loading for multiple vertical axis wind turbines using an extended version of actuator cylinder theory.  A preprint of the accompanying theory is available on <a href="/publications">this website</a> under “Actuator Cylinder Theory for Multiple Vertical Axis Wind Turbines”.
+</span></p>
+ -->
+<!-- 
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/writing-sci-papers">
+            Writing Scientific Papers
+            <small>04 Jan 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/julia-first-imp">
+            Julia First Impressions
+            <small>26 Aug 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/sci-prog-lang">
+            Scientific Programming Languages
+            <small>11 Aug 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+  </body>
+</html>
