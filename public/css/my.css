@@ -61,6 +61,11 @@ h2{
     float: right;
 }
 
+.img-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (min-width: 48em) {
   .img-left{
       margin-right: 20px;
@@ -154,3 +159,81 @@ blockquote.twitter-tweet p{
 
 /* empty cells in table header */
 th:empty { display: none; }
+
+
+/* ---- top bar ----- */
+
+/* undo sidebar changes */
+.layout-top .sidebar {
+    position: static;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    text-align: center;
+    max-width: none;
+    padding: 1rem 1rem;  /* shorten padding */
+}
+
+/* undo content changes */
+.layout-top .content {
+  /*max-width: none;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 48em) {
+  .layout-top .content {
+    max-width: 58rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  /* change nav to horizontal  */
+  .layout-top .sidebar-nav-item {
+      display: inline;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-right: 1px solid #bbbbbb;
+  }
+
+  .layout-top .sidebar-nav-item:last-child {
+      border-right: none;
+  }
+
+}
+
+
+/* fix table column widths for course page */
+.class-schedule{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.class-schedule th:nth-of-type(1) {
+    width:10%;
+}
+
+.class-schedule th:nth-of-type(2) {
+    width:45%;
+}
+
+.class-schedule th:nth-of-type(3) {
+    width:22.5%;
+}
+
+.class-schedule th:nth-of-type(4) {
+    width:22.5%;
+}
+
+/* change table coloring for course pages*/
+
+.class-schedule tbody tr td,
+.class-schedule tbody tr th {
+  background-color: #ffffff;
+}
+
+.class-schedule tbody tr:nth-child(4n+1) td,
+.class-schedule tbody tr:nth-child(4n+1) th {
+  background-color: #f9f9f9;
+}
