@@ -233,7 +233,12 @@ th:empty { display: none; }
   background-color: #ffffff;
 }
 
-.class-schedule tbody tr:nth-child(4n+1) td,
-.class-schedule tbody tr:nth-child(4n+1) th {
+.three-class tbody tr:nth-child(4n+1) td,
+.three-class tbody tr:nth-child(4n+1) th {
+  background-color: #f9f9f9;
+}
+
+.four-class tbody tr:nth-child(5n+1) td,
+.four-class tbody tr:nth-child(5n+1) th {
   background-color: #f9f9f9;
 }
