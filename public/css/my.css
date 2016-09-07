@@ -242,3 +242,30 @@ th:empty { display: none; }
 .four-class tbody tr:nth-child(5n+1) th {
   background-color: #f9f9f9;
 }
+
+
+/* TA photo */
+
+/*.ta{
+  width: 100px;
+  height: auto;
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+}*/
+
+div.ta {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    width: 120px;
+}
+ta img {
+    width: 100px;
+    height: auto;
+    /*background-color: grey;*/
+}
+ta .caption {
+    display: block;
+}
