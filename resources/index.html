@@ -294,11 +294,15 @@
 
 <ul>
   <li><a href="#nowhere" onclick="toggle_visibility('judd1');">
-High Altitude Wind Data Organization, Visualization, and Modeling
-</a></li>
+High Altitude Wind Data Organization, Visualization, and Modeling</a></li>
+  <li><a href="#nowhere" onclick="toggle_visibility('eric1');">
+CFD VAWT Interaction</a></li>
+  <li><a href="#nowhere" onclick="toggle_visibility('eric2');">
+VAWT Aerodynamics</a></li>
 </ul>
 
-<!-- <pre > -->
+<!-- -------------- -->
+
 <div id="judd1" class="bibtex message">
 
   <p><strong>Project Description</strong>:  The NOAA and ESRL have compiled Radiosonde Data into a database to be used for research with the disclaimer that the data is “recent, research-quality data that has not been subjected to production quality control procedures.”
@@ -313,7 +317,9 @@ The project is to:</p>
     <li>Similarly, create a model for 99th percentile winds at relevant altitudes.</li>
   </ol>
 
-  <p><strong>Time Expected</strong>: 5-15 hours depending on programming ability.</p>
+  <p><strong>Time Expected</strong>: 5-10 hours depending on programming ability.</p>
+
+  <p><strong>Prerequisites</strong>: ME 273</p>
 
   <p><strong>Resources</strong>:</p>
 
@@ -326,7 +332,64 @@ The project is to:</p>
   <p><strong>Point of Contact</strong>: Judd Mehr</p>
 
 </div>
-<!-- </pre> -->
+
+<!-- -------------- -->
+
+<div id="eric1" class="bibtex message">
+
+  <p><strong>Project Description</strong>:  Our lab is currently developing a reduced-order wake model for vertical-axis wind turbines (VAWTs) that will allow an optimizer to position VAWTs in a wind farm to minimizes wake interference. We have currently developed an initial wake model based on computational fluid dynamic (CFD) data from several VAWT simulations that is capable of predicting with reasonable accuracy the wake behavior of a single VAWT. We are looking to expand this wake model to include multiple wind turbines and their interacting wakes, exploring effects of various blade quantities and shapes, and better understand the three-dimensional nature of VAWT wakes. For this project, we are look for an individual to complete the following tasks:</p>
+
+  <ol>
+    <li>Learn how to use and becoming familiar with Star-CCM+</li>
+    <li>Work with lower fidelity models to gain a basic understanding of wake interaction and guide decisions on where to focus CFD simulations.</li>
+    <li>Obtain additional VAWT wake data of single and multiple turbines</li>
+  </ol>
+
+  <p><strong>Time Expected</strong>: 5-10 hours</p>
+
+  <p><strong>Prerequisites</strong>: ME EN 312.  Prior experience with Star-CCM+ preferred. Prior or current enrollment in ME EN 412 preferred.</p>
+
+  <p><strong>Resources</strong>:</p>
+
+  <ul>
+    <li><a href="http://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=2741&amp;context=facpub">Paper</a> on initial wake model.</li>
+  </ul>
+
+  <p><strong>Point of Contact</strong>: Eric Tingey</p>
+
+</div>
+
+<!-- -------------- -->
+
+<div id="eric2" class="bibtex message">
+
+  <p><strong>Project Description</strong>:  Sandia has developed a simulation code called CACTUS (Code for Axial and Cross-flow TUrbine Simulation) which allows a user to model turbines and obtain information about aerodynamic forces and wake velocity deficits in a matter of minutes. This allows for optimization of turbines in a reasonable amount of time due to the speed of the code. Currently, Sandia is in need of wake validation of a 34-meter vertical-axis wind turbine (VAWT) using the CACTUS code to ensure that the numerical methods match experimental behavior. This project entails:</p>
+
+  <ol>
+    <li>Obtaining experimental VAWT data from Sandia documentation.</li>
+    <li>Running CACTUS with the correct parameters identified to reflect the VAWT geometry and speed.</li>
+    <li>Comparing the results of the CACTUS code to the Sandia data and report on the findings between the two.</li>
+  </ol>
+
+  <p><strong>Time Expected</strong>: 5-10 hours</p>
+
+  <p><strong>Prerequisites</strong>: ME EN 273. ME EN 312.</p>
+
+  <p><strong>Notes</strong>:
+The use of the CACTUS code could be expanded to explore novel configurations, parked and tilted VAWTs, and modify the code to handle multiple turbines.</p>
+
+  <p><strong>Resources</strong>:</p>
+
+  <ul>
+    <li><a href="http://energy.sandia.gov/sandia-releases-open-source-hydrokinetic-turbine-design-model-cactus/">Information on CACTUS</a></li>
+    <li><a href="http://energy.sandia.gov/energy/renewable-energy/wind-power/wind-resources/wind-software-downloads/cactus-software-download/">Downloading CACTUS</a></li>
+  </ul>
+
+  <p><strong>Point of Contact</strong>: Kevin Moore and Eric Tingey</p>
+
+</div>
+
+<!-- -------------- -->
 
 <!-- Below are some suggestions on how to get involved in our lab, and links to current openings.  
 
