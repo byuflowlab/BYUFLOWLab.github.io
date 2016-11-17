@@ -268,19 +268,19 @@
   <li>Use a lab notebook.</li>
   <li><a href="http://en.wikipedia.org/wiki/Revision_control">Version control</a> is important.  We use version control to develop code, to write papers, to collaborate, to rollback changes, etc.  Use good commit statements so that you have a useful version history.  Version control is helpful even on individual projects.</li>
   <li>Archive results in addition to the code that produced it. <a name="archive"></a> Also archive the code that you used to create plots.  This will save you a lot of time when regenerating plots.  Plot regeneration is often needed to create versions of your plots for your presentation, or in responding to peer-reviewer’s suggestions on your publications.</li>
-  <li>Backup.  You need to have your data, code, etc. backed-up in at least two separate locations (in addition to its main location).</li>
+  <li>Backup.  You need to have your data, code, etc. backed-up in at least two separate locations (in addition to its main location).  This is a must!  At some point you will lose data if you do not have backups.</li>
 </ul>
 
 <h2 id="software">Software</h2>
 
 <ul>
-  <li>Most of us are using Python (v2) as our primary programming language.  We also use Matlab, Julia, Fortran, and C/C++.  There is a useful online course on High Performance Scientific Computing that you can access for free: (<a href="https://www.coursera.org/course/scicomp">Coursera course</a>, <a href="http://faculty.washington.edu/rjl/classes/am583s2014/notes/index.html">course notes</a>). It covers many relevant topics like version control, Unix commands, Python, Fortran, and MPI.  These are all topics that will be useful to you.</li>
-  <li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://bitbucket.org">Bitbucket</a> to host our repositories. If you are actively working in our research group, sign up for a Bitbucket account and send me your username so that I can add you to our team.</li>
-  <li>For backup I use Dropbox (continuous cloud-based backup) and Time Machine (local hourly backup). You can also use BYU’s J Drive if you like.  There is more space there, and it is backed up, but restoration of files is more cumbersome.</li>
+  <li>Python (v2) and Julia are our primary programming language.  We also use Matlab, Fortran, and C/C++.  There is a useful online course on High Performance Scientific Computing that you can access for free: (<a href="https://www.coursera.org/course/scicomp">Coursera course</a>, <a href="http://faculty.washington.edu/rjl/classes/am583s2014/notes/index.html">course notes</a>). It covers many relevant topics like version control, Unix commands, Python, Fortran, and MPI.  These are all topics that will be useful to you.</li>
+  <li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://github.com/byuflowlab">GitHub</a> to host our repositories. If you are actively working in our research group, sign up for a GitHub account and send me your username so that I can add you to our team.</li>
+  <li>For backup I use Dropbox (continuous cloud-based backup) and Time Machine (local hourly backup). You may want to store larger files on BYU’s J Drive.  There is more space there, and it is backed up, but restoration of files is more cumbersome.  We also have university subscriptions to CrashPlan.</li>
   <li>We use LaTeX for technical writing.  All of our publications are written using LaTeX.</li>
-  <li>For those interested in computational fluid dynamics, we are primarily using StarCCM+.  There are good tutorials available on the CAEDM computers.</li>
-  <li>My text editor of choice is Sublime Text, but depending on the programming language you are using, you may prefer a dedicated IDE.</li>
-  <li>For graduate students in our lab, there are instructions in the <a href="https://bitbucket.org/flowlab/setup">setup repo</a> for tools to download and configurations settings for your computer.</li>
+  <li>For those interested in computational fluid dynamics, we are primarily using StarCCM+ and SU2.  For the former, there are good tutorials available on the CAEDM computers, and I teach quite a bit on its usage in ME 412.</li>
+  <li>My current text editor of choice is Atom, but depending on the programming language you are using, you may prefer a dedicated IDE.  Some of the main packages I use include: script, uber-juno, latex, and zen.</li>
+  <li>For graduate students in our lab, there are instructions on our <a href="https://github.com/byuflowlab/lab-internal/wiki">wiki</a> for tools to download and configurations settings for your computer.</li>
 </ul>
 
 <h2 id="code-development">Code Development</h2>
@@ -290,6 +290,7 @@
   <li>If you find yourself writing a very similar piece of code more than once, you should refactor the code to create one function used in multiple places.  Having duplicate code opens up additional opportunities for bugs with version mismatches.</li>
   <li>Use version control.</li>
   <li>Create unit tests as you go.  You will need to check the validity of your code anyway.  When you perform those checks encapsulate them in unit tests.  As you update code be sure to update your unit tests as well.</li>
+  <li>IT 515R, Scientific Computing, would be a good class for you to take.</li>
 </ul>
 
 <!-- ## Productivity
