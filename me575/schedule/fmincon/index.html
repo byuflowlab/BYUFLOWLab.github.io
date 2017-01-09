@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      using fmincon &middot; ME 575
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me575">
+          ME 575
+        </a>
+      </h1>
+      <p class="lead">Optimization Techniques in Engineering</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me575/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me575/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me575/resources">Resources</a>
+      <!-- <a class="sidebar-nav-item" href="/me575/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me575/assignments">Assignments</a>
+      <a class="sidebar-nav-item" href="/me575/projects">Projects</a> -->
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">using fmincon</h1> -->
+      <h1 id="optimization-problem-definition">Optimization Problem Definition</h1>
+
+<p>An optimization problem has three main elements:</p>
+
+<ul>
+  <li>design variables</li>
+  <li>objective</li>
+  <li>constraints</li>
+</ul>
+
+<p><strong>Design variables</strong> are the variables that we allow the optimizer to change.  We denote these variables as <script type="math/tex">x</script>, where <script type="math/tex">x</script> is an array (i.e., there can be many design variables).  For example if we were designing the shape of the spoiler on a car, the design variables might be things like the length of the spoiler, the distance away from the car body, and parameters that define its curved profile.</p>
+
+<p>The <strong>objective</strong> is the metric we want to minimize.  We usually denote this function by <script type="math/tex">J</script> or sometimes <script type="math/tex">f</script>.  It is a scalar, meaning a single value (at times it makes sense to have multiple objectives, but the approach is different—we will explore this later in the semester).  By convention we say minimize because we often minimize things in engineering, but in other disciplines, like finance, the default convention may be to maximize.  This does not mean that the algorithms we explore can can only perform minimization, to maximize you simply minimize the negative of the function (<script type="math/tex">-J(x)</script>).  In our car example, the objective of our spoiler design may be to maximize (downward) lift.</p>
+
+<p><strong>Constraints</strong> exist in almost any engineering problem, they are conditions that we require the optimizer to satisfy.  We denote them with <script type="math/tex">c</script>, where <script type="math/tex">c</script> is an array because we may have many constraints.  By convention we will define constraints in this form: <script type="math/tex">c(x) \le 0</script>.  This is completely general as a constraint of the form <script type="math/tex">q(x) \ge 0</script> could be rewritten as <script type="math/tex">c(x) = -q(x) \le 0</script>.  In our car example the constraints may be things like a constraint on bending stress, manufacturing tolerances, etc.  Without these constraints, our spoiler may produce a lot of lift but may snap in half or be too difficult to manufacture.</p>
+
+<p>In short, we can write all of our optimization problems in this form:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\text{minimize} \quad & J(x) \\
+\text{with respect to} \quad & x \\
+\text{subject to} \quad & c(x) \le 0 \\
+\end{align} %]]></script>
+
+<p>There are various types of optimization algorithms that you can use to solve this problem, depending on the classification of the problem.  One of our most common scenarios in engineering is problems that are</p>
+
+<ul>
+  <li>nonlinear (meaning that <script type="math/tex">J</script> and <script type="math/tex">c</script> are nonlinear functions of <script type="math/tex">x</script>),</li>
+  <li>have constraints,</li>
+  <li>and are differentiable (meaning that <script type="math/tex">\frac{\partial J}{\partial x_j}</script>, and <script type="math/tex">\frac{\partial c_i}{\partial x_j}</script> exist).</li>
+</ul>
+
+<p>For these types of problems we use <em>fmincon</em> (in Matlab).  This is the solver we will use the most, but if your problem does not meet these criteria there are other solvers you should use.  For example, if the problem has no constraints, while still being nonlinear and differentiable, you should use <em>fminunc</em>.  If the problem is linear then you should use <em>linprog</em> (or <em>quadprog</em> if there is a quadratic objective and linear constraints).  And if your problem is fundamentally discrete or discontinuous (i.e., not differentiable), there are a variety of other algorithms you can try—we will discuss some of these later in the semester.</p>
+
+<p>Let’s illustrate how to use <em>fmincon</em> with a basic example.  To keep things simple we will use a purely mathematical problem rather than an engineering one.</p>
+
+<h2 id="mass-minimization">Mass minimization</h2>
+
+<div class="language-matlab highlighter-rouge"><pre class="highlight"><code><span class="c1">% yo</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="p">[</span><span class="n">xopt</span><span class="p">,</span> <span class="n">fopt</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span> <span class="o">=</span> <span class="n">fmincon</span><span class="p">(</span><span class="o">@</span><span class="n">obj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">Aeq</span><span class="p">,</span> <span class="n">beq</span><span class="p">,</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">,</span> <span class="o">@</span><span class="n">con</span><span class="p">,</span> <span class="n">options</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<div class="language-matlab highlighter-rouge"><pre class="highlight"><code>
+<span class="k">function</span> <span class="p">[</span><span class="n">xopt</span><span class="p">,</span> <span class="n">fopt</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span> <span class="o">=</span> <span class="n">optimize</span><span class="p">()</span>
+
+    <span class="c1">% -------- starting point and bounds ----------</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="n">lb</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="c1">% ---------------------------------------------</span>
+
+    <span class="c1">% ------ linear constraints ----------------</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="n">Aeq</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="n">beq</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="c1">% ------------------------------------------</span>
+
+    <span class="c1">% ------- shared variables -----------</span>
+    <span class="n">xlast</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="n">Jlast</span> <span class="o">=</span> <span class="p">[];</span>  <span class="c1">% last objective</span>
+    <span class="n">clast</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">% last nonlinear inequality constraint</span>
+    <span class="n">ceqlast</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">% last nonlinear equality constraint</span>
+    <span class="c1">% may add others as necessary</span>
+    <span class="c1">% --------------------------------------</span>
+
+    <span class="c1">% ---------------- options ----------------    </span>
+    <span class="n">options</span> <span class="o">=</span> <span class="nb">optimset</span><span class="p">(</span><span class="k">...</span>
+        <span class="s1">'Algorithm'</span><span class="p">,</span> <span class="s1">'active-set'</span><span class="p">,</span> <span class="k">...</span><span class="c">  % 'interior-point', 'sqp', 'active-set', 'trust-region-reflective'</span>
+        <span class="s1">'AlwaysHonorConstraints'</span><span class="p">,</span> <span class="s1">'bounds'</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'display'</span><span class="p">,</span> <span class="s1">'iter-detailed'</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'MaxIter'</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'MaxFunEvals'</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'TolCon'</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'TolFun'</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'FinDiffType'</span><span class="p">,</span> <span class="s1">'forward'</span><span class="p">,</span> <span class="k">...</span>
+        <span class="s1">'Diagnostics'</span><span class="p">,</span> <span class="s1">'on'</span><span class="p">);</span>
+    <span class="c1">% -------------------------------------------</span>
+
+    <span class="c1">% ---- Objective and Constraints -------------</span>
+    <span class="k">function</span> <span class="p">[</span><span class="n">J</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">ceq</span><span class="p">]</span> <span class="o">=</span> <span class="n">objcon</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="c1">% set objective/constraints here</span>
+
+    <span class="k">end</span>
+    <span class="c1">% -------------------------------------------</span>
+
+
+    <span class="c1">% -- NOTE: no need to change anything below) --</span>
+
+
+    <span class="c1">% ------ separate obj/con  --------</span>
+    <span class="k">function</span> <span class="p">[</span><span class="n">J</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="c1">% check if computation is necessary</span>
+        <span class="k">if</span> <span class="o">~</span><span class="nb">isequal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xlast</span><span class="p">)</span>
+            <span class="p">[</span><span class="n">Jlast</span><span class="p">,</span> <span class="n">clast</span><span class="p">,</span> <span class="n">ceqlast</span><span class="p">]</span> <span class="o">=</span> <span class="n">objcon</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+            <span class="n">xlast</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">end</span>
+
+        <span class="n">J</span> <span class="o">=</span> <span class="n">Jlast</span><span class="p">;</span>
+    <span class="k">end</span>
+
+    <span class="k">function</span> <span class="p">[</span><span class="n">c</span><span class="p">,</span> <span class="n">ceq</span><span class="p">]</span> <span class="o">=</span> <span class="n">con</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="c1">% check if computation is necessary</span>
+        <span class="k">if</span> <span class="o">~</span><span class="nb">isequal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xlast</span><span class="p">)</span>
+            <span class="p">[</span><span class="n">Jlast</span><span class="p">,</span> <span class="n">clast</span><span class="p">,</span> <span class="n">ceqlast</span><span class="p">]</span> <span class="o">=</span> <span class="n">objcon</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+            <span class="n">xlast</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">end</span>
+
+        <span class="c1">% set constraints</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">clast</span><span class="p">;</span>
+        <span class="n">ceq</span> <span class="o">=</span> <span class="n">ceqlast</span><span class="p">;</span>
+    <span class="k">end</span>
+    <span class="c1">% ------------------------------------------------</span>
+
+    <span class="c1">% call fmincon</span>
+    <span class="p">[</span><span class="n">xopt</span><span class="p">,</span> <span class="n">fopt</span><span class="p">,</span> <span class="n">exitflag</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span> <span class="o">=</span> <span class="n">fmincon</span><span class="p">(</span><span class="o">@</span><span class="n">obj</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">Aeq</span><span class="p">,</span> <span class="n">beq</span><span class="p">,</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">,</span> <span class="o">@</span><span class="n">con</span><span class="p">,</span> <span class="n">options</span><span class="p">);</span>
+
+<span class="k">end</span>
+</code></pre>
+</div>
+
+    </div>
+
+  </body>
+</html>
