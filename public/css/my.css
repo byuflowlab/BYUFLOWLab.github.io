@@ -215,7 +215,11 @@ th:empty { display: none; }
 }
 
 .class-schedule th:nth-of-type(2) {
-    width:45%;
+    width:20%;
+}
+
+.class-schedule th:nth-of-type(2) {
+    width:25%;
 }
 
 .class-schedule th:nth-of-type(3) {
