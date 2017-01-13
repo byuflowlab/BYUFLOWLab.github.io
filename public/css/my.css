@@ -215,11 +215,7 @@ th:empty { display: none; }
 }
 
 .class-schedule th:nth-of-type(2) {
-    width:20%;
-}
-
-.class-schedule th:nth-of-type(2) {
-    width:25%;
+    width:45%;
 }
 
 .class-schedule th:nth-of-type(3) {
@@ -230,12 +226,45 @@ th:empty { display: none; }
     width:24%;
 }
 
+
+/* fix table column widths for course page */
+.class-schedulefive{
+    table-layout: fixed;
+    width: 100%;
+}
+
+.class-schedulefive th:nth-of-type(1) {
+    width:11%;
+}
+
+.class-schedulefive th:nth-of-type(2) {
+    width:20%;
+}
+
+.class-schedulefive th:nth-of-type(2) {
+    width:25%;
+}
+
+.class-schedulefive th:nth-of-type(3) {
+    width:20%;
+}
+
+.class-schedulefive th:nth-of-type(4) {
+    width:24%;
+}
+
 /* change table coloring for course pages*/
 
 .class-schedule tbody tr td,
 .class-schedule tbody tr th {
   background-color: #ffffff;
 }
+
+.class-schedulefive tbody tr td,
+.class-schedulefive tbody tr th {
+  background-color: #ffffff;
+}
+
 
 .three-class tbody tr:nth-child(4n+1) td,
 .three-class tbody tr:nth-child(4n+1) th {
