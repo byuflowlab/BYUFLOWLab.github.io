@@ -116,6 +116,12 @@
       
         
           
+            <a class="sidebar-nav-item" href="/people/">People</a>
+          
+        
+      
+        
+          
         
       
         
@@ -149,8 +155,6 @@
         
       
         
-          
-            <a class="sidebar-nav-item" href="/people/">People</a>
           
         
       
@@ -290,7 +294,7 @@
       <li><a href="http://docs.julialang.org/en/latest/">Julia Docs</a></li>
     </ul>
   </li>
-  <li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://github.com/byuflowlab">GitHub</a> to host our repositories. If you are actively working in our research group, sign up for a GitHub account and send me your username so that I can add you to our team.</li>
+  <li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://github.com/byuflowlab">GitHub</a> to host our repositories. If you are actively working in our research group, sign up for a GitHub account and send me your username so that I can add you to our team.  Our naming convention for repositories is all lowercase.  Avoid separators where possible, but if it will help readability use a dash to separate words, not an underscore.</li>
   <li>For backup I use Dropbox (continuous cloud-based backup) and Time Machine (local hourly backup). You may want to store larger files on BYU’s J Drive.  There is more space there, and it is backed up, but restoration of files is more cumbersome.  We also have university subscriptions to CrashPlan.</li>
   <li>We use LaTeX for technical writing.  All of our publications are written using LaTeX.</li>
   <li>For those interested in computational fluid dynamics, we are primarily using StarCCM+ and SU2.  For the former, there are good tutorials available on the CAEDM computers, and I teach quite a bit on its usage in ME 412.</li>
@@ -306,12 +310,13 @@
 
 <h2 id="code-development">Code Development</h2>
 <ul>
-  <li>Document your code in detail as you go.  It may feel cumbersome at times, but it will save you time in the long run.</li>
+  <li>Comment your code in detail as you go.  It may feel cumbersome at times, but it will save you time in the long run.  Also provide some <a href="https://guides.github.com/features/wikis/">documentation</a>, at least a README.  Having details of a derivation will be really helpful to you later.</li>
   <li>Use descriptive variable names</li>
   <li>If you find yourself writing a very similar piece of code more than once, you should refactor the code to create one function used in multiple places.  Having duplicate code opens up additional opportunities for bugs with version mismatches.</li>
   <li>Use version control.</li>
   <li>Create unit tests as you go.  You will need to check the validity of your code anyway.  When you perform those checks encapsulate them in unit tests.  As you update code be sure to update your unit tests as well.</li>
   <li>IT 515R, Scientific Computing, would be a good class for you to take.</li>
+  <li>Do code reviews, just like we do with paper reviews.  In other words, when a model is more or less complete, ask a couple peers to review and offer feedback on correctness as well as clarity and style.  Then let me know and I’ll review the code as well. Sometimes a hard to find bug or missing concept goes unnoticed and ends up surfacing us much later when we are putting results together.  Frequent code reviews can help alleviate this issue.</li>
 </ul>
 
 <!-- ## Productivity
