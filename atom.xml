@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2017-04-05T13:40:56-06:00</updated>
+ <updated>2017-04-06T09:34:33-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -141,6 +141,17 @@ For example:
   &lt;li&gt;If using an inline equation, rather than a displayed equation, use “/” instead of “\frac”.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h1 id=&quot;proposals&quot;&gt;Proposals&lt;/h1&gt;
+
+&lt;p&gt;Writing a proposal is different than writing a scientific paper.  A proposal is intended to be a persuasive argument (rather than a presentation of results and an illumination of their implications).  You will need to write a prospectus during your graduate work, which is essentially a short proposal.  Make sure you answer the following questions in any proposal (these are criteria an evaluator will use to judge its merit):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Is the problem important?  (clearly define what the problem is and convince the reader that it is important)&lt;/li&gt;
+  &lt;li&gt;Is the proposed solution innovative and impactful? (clearly describe the outcomes and how they will be impactful)&lt;/li&gt;
+  &lt;li&gt;Is this person/team uniquely qualified to perform this work and is it likely to lead to a successful outcome? (you need a well-defined &lt;em&gt;specific&lt;/em&gt; work plan, a reasonable scope, and ideally some preliminary results that lend confidence that this is feasible)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A strong beginning is critical.  Read this excellent &lt;a href=&quot;http://rapids.ucsd.edu/documents/PorterSalesPitch2011.pdf&quot;&gt;summary&lt;/a&gt; on how to put together a strong introduction.&lt;/p&gt;
 </content>
  </entry>
  
