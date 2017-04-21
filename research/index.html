@@ -276,6 +276,19 @@
   <h1 class="page-title">Research</h1>
   <h2 id="current-projects">Current Projects</h2>
 
+<h3 id="uas-trajectory-optimization-with-multiple-mission-level-objectives">UAS Trajectory Optimization with Multiple Mission-Level Objectives</h3>
+
+<p><img src="missions.png" class="width-half" /></p>
+
+<p>Many UAS missions have competing objectives and may be approached with multiple types of vehicles.  For example, consider a public service unit that needs to simultaneously monitor a wildfire, track a moving suspect, and search for a lost hiker.  We are working on methods to optimally fulfill multiple objectives, that are dynamic (e.g., priorities and tasks may change), and utilize a heterogenous fleet (e.g., fixed wing and rotorcraft).</p>
+
+<ul>
+  <li>PI: Cammy Peterson (Elec. Eng.)</li>
+  <li>Co-PI: Andrew Ning</li>
+  <li>Students: Jenna Newcomb</li>
+  <li>Sponsor: NSF Center for Unmanned Aircraft Systems</li>
+</ul>
+
 <h3 id="conceptual-design-of-high-altitude-long-endurance-aircraft-using-multidisciplinary-optimization">Conceptual Design of High Altitude Long Endurance Aircraft Using Multidisciplinary Optimization</h3>
 
 <p><span class="width-half">
@@ -283,14 +296,16 @@
 <span style="font-size: 70%;">Photo: Facebook</span>
 </span></p>
 
-<p>For high aerodynamic efficiency large wing spans are necessary, but the benefits of low induced drag creates strong tradeoffs against structural weight and cost. Similarly, increased energy storage capacity carries heavy weight penalties causing endurance tradeoffs. Because of the demanding performance requirements and the high interaction between disciplines, manual design solutions are highly unlikely to yield robust and effective solutions. Multidisciplinary design analysis and optimization is needed both to meet performance requirements effectively and to objectively compare alternative design concepts.</p>
+<p>Aircraft can be used to provide internet in developing areas of the world at a lower cost than deploying new satellites.  The challenge is that such aircraft need to be persistent (i.e., stay airborne for months at a time).  This drives the aircraft design to very large wing spans in order to reduce lift-dependent drag, and to very high altitudes where wind speeds are low.  The performance requirements are demanding necessitating a multidisciplinary design optimization approach considering tradeoffs in aerodynamic performance, structural dynamics, weight, solar energy capture, battery storage, electric propulsion, and cost.  We are developing design tools and methodologies, and working on different aircraft design concepts and strategies to help make telecommunication access available in more parts of the world.</p>
+
+<!-- The electric propulsion system is driven by energy harvested by on-wing solar panels and stored in batteries.   -->
 
 <div style="clear: both;"></div>
 
 <ul>
   <li>PI: Andrew Ning</li>
   <li>Co-PI: John Hedengren (Chem. Eng.), Tim McLain (Mech. Eng.)</li>
-  <li>Students: Judd Mehr, Kevin Moore</li>
+  <li>Students: Judd Mehr, Taylor McDonnell, Kevin Moore</li>
   <li>Sponsor: FCL Tech (Facebook)</li>
 </ul>
 
@@ -300,14 +315,16 @@
 
 <p><img src="wing.png" class="width-half" /></p>
 
-<p>CAD formats provide a rich geometric description but usually require manual geometry repair and mesh generation steps that makes automating high-fidelity analyses difficult.  IGA generalizes finite element analysis to allow operation directly on an analysis-suitable geometry.  In addition, with IGA we can provide exact gradients of structural outputs.  By tightly coupling structural analyses with computational fluid dynamics, and deriving coupled gradients, we can perform efficient analysis and design of rich geometric descriptions with applications in flexible aircraft wing and wind turbine blade aeroelastic design.</p>
+<p>Related to the above project, ultra-efficient wings that are simultaneously lightweight and large in span, are highly flexible and create unique unsteady aerodynamic and structural dynamic challenges.  We are working on high-fidelity approaches to analyze and design such configurations.  These challenges are applicable not only to flexible aircraft wings, but also to wind turbine blades and other aeroelastic applications.</p>
+
+<p>High fidelity design often require some manual steps translating between CAD, FEA meshes, and CFD meshes.  Isogeometric analysis (IGA) is a generalization of finite element analysis that allows us to operate directly on the geometry without translation from CAD.  In addition, with IGA we can provide exact gradients of structural outputs.  By tightly coupling structural analyses with computational fluid dynamics, and deriving coupled gradients, we can perform efficient analysis and design of flexible aircraft.</p>
 
 <div style="clear: both;"></div>
 
 <ul>
   <li>PI: Andrew Ning</li>
   <li>Co-PI: <a href="http://isogeometric.et.byu.edu">Michael Scott</a> (Civil Eng.)</li>
-  <li>Students: Taylor McDonnell</li>
+  <li>Students: Taylor McDonnell, Tyler Eggleston</li>
   <li>Sponsor: FCL Tech (Facebook), Internal Research Initiation Grant</li>
 </ul>
 
@@ -378,24 +395,24 @@
 
 <ul>
   <li>PI: Andrew Ning</li>
-  <li>Students: Jared Thomas, P.J. Stanley</li>
-  <li>Collaborators: Pieter Gebraad, Paul Fleming, Katherine Dykes</li>
+  <li>Students: P.J. Stanley, Jared Thomas
+<!-- - Collaborators: Pieter Gebraad, Paul Fleming, Katherine Dykes --></li>
   <li>Sponsors: <a href="http://www.nrel.gov">National Renewable Energy Laboratory</a></li>
   <li>Publications: <a href="../publications/#Thomas2016-Improving-FLORIS">Improving FLORIS model for Optimization</a>, <a href="../publications/#Gebraad2015">Impact on Annual Energy Production</a>, <a href="../publications/#Fleming2015">Combined Layout-Yaw Optimization</a></li>
 </ul>
 
 <hr />
 
-<h3 id="free-form-aerostructural-rotor-design">Free-form Aerostructural Rotor Design</h3>
+<h3 id="aeroelastic-rotor-design">Aeroelastic Rotor Design</h3>
 
 <p><img src="blade.png" class="width-half" /></p>
 
-<p>Free-form design means simultaneous airfoil and blade design as opposed to the traditional sequential approach.  We are exploring free-form design through a range of fidelities including pretabulated data, panel methods, 2D CFD, and 3D CFD.</p>
+<p>We are exploring simultaneous airfoil and blade design through a range of fidelities including pretabulated data, panel methods, 2D CFD, and 3D CFD.  We are also exploring full turbine design (rotor, drivetrain, tower, etc.) with coupled aeroelastic models.</p>
 
 <div style="clear: both;"></div>
 
 <ul>
-  <li>Students: <a href="../people/ryan">Ryan Barrett</a></li>
+  <li>Students: Bryce Ingersoll, <a href="../people/ryan">Ryan Barrett</a></li>
   <li>Publications: <a href="../publications/#Barrett2015a">Precomputational Methods</a>, <a href="../publications/#Barrett2015">Aerostructural Blade Optimization</a>.</li>
 </ul>
 
