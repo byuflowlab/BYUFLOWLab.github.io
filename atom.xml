@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2017-07-03T10:19:40-06:00</updated>
+ <updated>2017-07-10T16:04:36-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -97,10 +97,10 @@ For example:
     &lt;p&gt;&lt;strong&gt;Use &lt;a href=&quot;https://en.wikipedia.org/wiki/LaTeX&quot;&gt;LaTeX&lt;/a&gt;&lt;/strong&gt;.  LaTeX is a typesetting program widely used in STEM fields.  It produces nicely typeset documents while allowing you to focus on the content.  There is a learning curve, but it’s well worth it.  LaTeX really shines with formatting mathematical content, making it easy to cross-reference figures/tables/equations/citations, and allowing quick document-wide style changes (i.e., for a different journal).  Additionally, it is a plain text format meaning that version control is easy and effective. Some people can work wonders with programs like Microsoft Word, and if that works for you that’s great—except if you are a student in my lab, then you must use LaTeX :)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;I recommend &lt;a href=&quot;https://www.overleaf.com&quot;&gt;Overleaf&lt;/a&gt; for beginning LaTeX users&lt;/strong&gt;.  It’s like Google Docs for LaTeX.  It allows you to edit your documents on the web without installing anything, and allows you to do so collaboratively.  Personally, I just use a  text editor with git for version control because I don’t like the lag of web-based systems, and I use a lot of keyboard shortcuts and macros.  However, one of the nice features in Overleaf is &lt;a href=&quot;https://www.overleaf.com/blog/195-new-collaborate-online-and-offline-with-overleaf-and-git-beta&quot;&gt;git integration&lt;/a&gt;.  This allows the best of both worlds where some collaborators can edit with a git/text-editor workflow, while others can edit directly online through Overleaf.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.overleaf.com&quot;&gt;Overleaf&lt;/a&gt; is useful for beginning LaTeX users&lt;/strong&gt;.  It’s like Google Docs for LaTeX.  It allows you to edit your documents on the web without installing anything, and allows you to do so collaboratively.  Personally, I just use a text editor with git for version control because I don’t like the lag of web-based systems, and I use a lot of keyboard shortcuts and macros.  However, one of the nice features in Overleaf is &lt;a href=&quot;https://www.overleaf.com/blog/195-new-collaborate-online-and-offline-with-overleaf-and-git-beta&quot;&gt;git integration&lt;/a&gt;.  This allows the best of both worlds where some collaborators can edit with a git/text-editor workflow, while others can edit directly online through Overleaf.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Use version control for your paper and tag important milestones.&lt;/strong&gt; If you use Overleaf this is mostly taken care of (although I would suggest pushing to another location when done for long term storage).  At a minimum use a local git repo, but even better use GitHub or GitLab or Bitbucket.  Each will allow you enough private repositories that you can write your paper and then make it public after submitting for publication.  Use an appropriate .gitignore file (see &lt;a href=&quot;https://gist.github.com/kogakure/149016&quot;&gt;here&lt;/a&gt; for a good start) so that you only commit the source files and not intermediate build files. The one exception is that I recommend committing the pdf for submitted versions (conference submission, journal preprint, journal final version).  These won’t change so they won’t cause your git repo to blow up in size, but having them easily accessible will be quite convenient. Provide clear comments or tags on the important milestones (e.g., initial submission to journal) so that it will be easy to compare changes later. You will need to detail changes in your response to reviewer comments.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Use version control for your paper and tag important milestones.&lt;/strong&gt; Every paper should correspond to a repo in our Github organization.  Use this naming convention lastnameYear-short-description.  Most papers will start private, and then be made public after publication.  Your repo should contain not just the latex and figures files, but all the code that is used to generate the data and figures.  Sometimes you will use an external code (or another code that we maintain separately in our organization).  If so, keep a text file called codes.txt that notes the version (or commit ID) of the code(s) you used.  Use an appropriate .gitignore file (see &lt;a href=&quot;https://gist.github.com/kogakure/149016&quot;&gt;here&lt;/a&gt; for a good start) so that you only commit the source files and not intermediate build files. The one exception is that I recommend committing the pdf for submitted versions (conference submission, journal preprint, journal final version).  These won’t change so they won’t cause your git repo to blow up in size, but having them easily accessible will be quite convenient (now you can use Git LFS, which avoids this issue). Provide clear comments or tags on the important milestones (e.g., initial submission to journal) so that it will be easy to compare changes later. You will need to detail changes in your response to reviewer comments.  If you use Overleaf you can still sync with a GitHub repo.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;strong&gt;Use &lt;a href=&quot;https://www.ctan.org/tex-archive/support/latexdiff?lang=en&quot;&gt;latexdiff&lt;/a&gt; when sending a revised version of your paper&lt;/strong&gt;.  latexdiff is a diff for latex files (shows changes between two versions).  If your advisor or other reader sends you suggested edits, it can be helpful to send a diff’ed version back in addition to the full text so that the reviewer can more quickly focus on what has changed.  This is also useful when submitting a revision during the journal review process.  Obviously, if you completely overhaul your paper then a diff isn’t going to be very helpful.&lt;/p&gt;
@@ -152,6 +152,19 @@ For example:
 &lt;/ol&gt;
 
 &lt;p&gt;A strong beginning is critical.  Read this excellent &lt;a href=&quot;http://rapids.ucsd.edu/documents/PorterSalesPitch2011.pdf&quot;&gt;summary&lt;/a&gt; on how to put together a strong introduction.&lt;/p&gt;
+
+&lt;p&gt;Another good way to assess a proposal is to go through the &lt;a href=&quot;http://www.darpa.mil/work-with-us/heilmeier-catechism&quot;&gt;Heilmeier questions&lt;/a&gt; (George H. Heilmeier was a former DARPA director):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What are you trying to do? Articulate your objectives using absolutely no jargon.&lt;/li&gt;
+  &lt;li&gt;How is it done today, and what are the limits of current practice?&lt;/li&gt;
+  &lt;li&gt;What is new in your approach and why do you think it will be successful?&lt;/li&gt;
+  &lt;li&gt;Who cares? If you succeed, what difference will it make?&lt;/li&gt;
+  &lt;li&gt;What are the risks?&lt;/li&gt;
+  &lt;li&gt;How much will it cost?&lt;/li&gt;
+  &lt;li&gt;How long will it take?&lt;/li&gt;
+  &lt;li&gt;What are the mid-term and final “exams” to check for success?&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  
