@@ -11,7 +11,7 @@
 
   <title>
     
-      Research &middot; FLOW Lab
+      Scientific Computing &middot; FLOW Lab
     
   </title>
 
@@ -324,59 +324,52 @@
 
 
     <div class="content container">
-      <h1 id="research">Research</h1>
+      <h1 id="scientific-computing">Scientific Computing</h1>
 
-<h2 id="data-management">Data Management</h2>
+<h2 id="document-as-you-go">Document as You Go</h2>
 
 <ul>
-  <li>Use a lab notebook.  This can be a hard bound book or a digital notebook (i.e., <a href="http://jupyter.org">Jupyter</a>).</li>
-  <li><a href="http://en.wikipedia.org/wiki/Revision_control">Version control</a> is important.  We use version control to develop code, to write papers, to collaborate, to rollback changes, etc.  Use good commit statements so that you have a useful version history.  Version control is helpful even on individual projects.</li>
-  <li>Archive results in addition to the code that produced it. <a name="archive"></a> Also archive the code that you used to create plots.  This will save you a lot of time when regenerating plots.  Plot regeneration is often needed to create versions of your plots for your presentation, or in responding to peer-reviewer’s suggestions on your publications.</li>
-  <li>Backup.  You need to have your data, code, etc. backed-up in at least two separate locations (in addition to its main location).  This is a must!  At some point you will lose data if you do not have backups.</li>
+  <li>Consistently use a lab notebook.  This can be a hard bound book or a digital notebook (e.g., <a href="http://jupyter.org">Jupyter</a>).  For important derivations consider transferring to a LaTeX document.  A clear derivation will save you time later when you are describing methodology in a paper or when you make changes to your code and need to remember what you did.</li>
+  <li>Comment your code.  A lot.  It’s hard to overdo this.</li>
+  <li>Provide a README, and if appropriate more detailed  <a href="https://guides.github.com/features/wikis/">documentation</a>.</li>
 </ul>
 
-<h2 id="software">Software</h2>
+<h2 id="version-control-and-backup">Version Control and Backup</h2>
 
 <ul>
-  <li>Julia and Python (v2) are our primary programming language.  We also use Matlab, Fortran, and C/C++.  Here are some learning resources:
-    <ul>
-      <li><a href="https://www.coursera.org/course/scicomp">High Performance Scientific Computing Coursera course</a>, <a href="http://faculty.washington.edu/rjl/classes/am583s2014/notes/index.html">course notes</a>, this course covers many relevant topics like version control, Unix commands, Python, Fortran, and MPI</li>
-      <li><a href="https://learnpythonthehardway.org/book/">Learn Python the Hard Way</a></li>
-      <li><a href="https://docs.python.org/2.7/tutorial/index.html">Python 2.7 Docs</a></li>
-      <li><a href="http://docs.julialang.org/en/latest/">Julia Docs</a></li>
-    </ul>
-  </li>
-  <li>We use Git for version control.  Become comfortable with the basic commands: init, clone, add, commit, checkout, status, log, push, pull.  We use <a href="https://github.com/byuflowlab">GitHub</a> to host our repositories. If you are actively working in our research group, sign up for a GitHub account and send me your username so that I can add you to our team.  Our naming convention for repositories is all lowercase.  Avoid separators where possible, but if it will help readability use a dash to separate words, not an underscore.</li>
-  <li>For backup I use Dropbox (continuous cloud-based backup) and Time Machine (local hourly backup). You may want to store larger files on BYU’s J Drive.  There is more space there, and it is backed up, but restoration of files is more cumbersome.  We also have university subscriptions to CrashPlan.</li>
-  <li>We use LaTeX for technical writing.  All of our publications are written using LaTeX.</li>
-  <li>For those interested in computational fluid dynamics, we are primarily using StarCCM+ and SU2.  For the former, there are good tutorials available on the CAEDM computers, and I teach quite a bit on its usage in ME 412.</li>
-  <li>My current text editor of choice is Atom, but depending on the programming language you are using, you may prefer a dedicated IDE.  Some of the main packages I use include: script, uber-juno, latex, and zen.</li>
-  <li>Become comfortable using the Command Line.
-    <ul>
-      <li><a href="https://www.codecademy.com/learn/learn-the-command-line">Code Academy Command Line</a></li>
-      <li><a href="http://lifehacker.com/5743814/become-a-command-line-ninja-with-these-time-saving-shortcuts">Command Line Ninja</a></li>
-    </ul>
-  </li>
-  <li>For graduate students in our lab, there are instructions on our <a href="https://github.com/byuflowlab/lab-internal/wiki">wiki</a> for tools to download and configurations settings for your computer.</li>
+  <li><a href="http://en.wikipedia.org/wiki/Revision_control">Version control</a> is essential.  We use version control to develop code, to write papers, to collaborate, to rollback changes, etc.  Use good commit statements so that you have a useful version history.  Version control is helpful even on individual projects.</li>
+  <li>Our lab uses <a href="https://github.com/byuflowlab">GitHub</a> to host our repositories. If you are actively working in our research group, sign up for a GitHub account and send me your username so that I can add you to our team.</li>
+  <li>For stand alone codes, our repository naming convention is all lowercase.  Avoid separators where possible, but if it will help readability use a dash to separate words, not an underscore.</li>
+  <li>For a paper and associated code, our naming convention is leadauthorlastname[year]-shortdescription (i.e., ning2017-airfoil).</li>
+  <li>Archive results in addition to the code that produced it. <a name="archive"></a> Also archive the code that you used to create plots.  This will save you a lot of time when regenerating plots.  Plot regeneration is often needed to create versions of your plots for your presentation, or in responding to peer-reviewer’s suggestions on your publications.</li>
+  <li>Backup.  You <strong>must</strong> have your data, code, etc. backed-up in at least one other location and preferably two other locations.  At some point you will lose data if you do not have backups.  I recommend Dropbox (continuous cloud-based backup).  As a secondary back or for large files you can use Time Machine if you have an external drive, BYU’s J Drive, or a CAEDM group.  These later two network volumes have a large amount of space with nighty backup.</li>
 </ul>
 
 <h2 id="code-development">Code Development</h2>
+
 <ul>
-  <li>Comment your code in detail as you go.  It may feel cumbersome at times, but it will save you time in the long run.  Also provide some <a href="https://guides.github.com/features/wikis/">documentation</a>, at least a README.  Having details of a derivation will be really helpful to you later.</li>
-  <li>Use descriptive variable names</li>
+  <li>Comment your code in detail as you go.  I said this already, but it is important and rarely done enough!</li>
+  <li>Make effective use of whitespace and other delimiters to group logical sections together and make your code easier to read.</li>
+  <li>Use descriptive variable names.</li>
   <li>If you find yourself writing a very similar piece of code more than once, you should refactor the code to create one function used in multiple places.  Having duplicate code opens up additional opportunities for bugs with version mismatches.</li>
-  <li>Use version control.</li>
-  <li>Create unit tests as you go.  You will need to check the validity of your code anyway.  When you perform those checks encapsulate them in unit tests.  As you update code be sure to update your unit tests as well.</li>
-  <li>IT 515R, Scientific Computing, would be a good class for you to take.</li>
-  <li>Do code reviews, just like we do with paper reviews.  In other words, when a model is more or less complete, ask a couple peers to review and offer feedback on correctness as well as clarity and style.  Then let me know and I’ll review the code as well. Sometimes a hard to find bug or missing concept goes unnoticed and ends up surfacing us much later when we are putting results together.  Frequent code reviews can help alleviate this issue.</li>
+  <li>Don’t try to write a large program all at once.  Break it down into small pieces. For each small piece be sure to thoroughly verify and validate (V&amp;V) it before moving on.  In this way you can build up large complex codes.</li>
+  <li>When you are performing V&amp;V, encapsulate your testing in a formal unit test go. As you update code be sure to update your unit tests as well.</li>
+  <li>Take this course: IT 515R Scientific Computing.</li>
+  <li>Do code reviews, just like we do with paper reviews.  In other words, when a model is more or less complete, ask a couple peers to review and offer feedback on correctness as well as clarity and style.  Schedule a session with me to review code as well.</li>
 </ul>
 
-<!-- ## Productivity
-- Eliminate distractions (e.g., email, facebook, etc.).<a name="distractions"></a>  Don't try to "multitask".  Research studies suggests it can take up to 20 minutes to get back into your task once you are distracted.  At the same time you should also take planned breaks.  Those are the times to check email, etc.  You can get **a lot** more done with focused periods of works followed by short breaks, as compared to longer sessions with distractions.  The same applies generally in life&mdash;try to be present with the people you are with.
-- Set and enforce your own deadlines.  If you're not careful, work will expand to fill the time allotted.
-- Tackle hard things first, don't put them off.  At the same time don't try to tackle the hard things in marathon sessions.  First, you'll have a harder time finding a huge block of contiguous time.  Second, you'll get burned out and procrastinate starting it up again. You'll be amazed at what you can accomplish with short but consistent efforts.
-- Be results oriented.  It is easy in research to let irrelevant pursuits consume too much attention (because they are easier).
-- Network.  Most people underestimate the importance of networking.  It is vitally important.  Get to know the other students and faculty members around you.  Don't be afraid to email or approach people whose names are on the research papers you are reading.  More often than not they will be flattered to talk to you about their work.  At the same time, look for opportunities to mentor and help others. -->
+<h2 id="project-management">Project Management</h2>
+
+<ul>
+  <li>We use GitHub for more than just version control.  We also use it to track and discuss tasks and bugs through <a href="https://guides.github.com/features/issues/">Issues</a>, organize and visualize <a href="https://www.youtube.com/watch?v=C6MGKHkNtxU">project progress</a>, perform <a href="https://github.com/features/code-review">code reviews</a>, and <a href="https://guides.github.com/features/wikis/">document</a>.</li>
+</ul>
+
+<!-- Sometimes a hard-to-find bug or missing concept goes unnoticed and ends up surfacing us much later when we are putting results together.  Frequent code reviews can help alleviate this issue.   -->
+
+<!-- - For those interested in computational fluid dynamics, we primarily use StarCCM+ and SU2.  For the former, there are good tutorials available on the CAEDM computers.  
+- My current text editor of choice is Atom, but depending on the programming language you are using, you may prefer a dedicated IDE.   -->
+
+<!-- Some of the main packages I use include: script, uber-juno, latex, and zen. -->
 
     </div>
 
