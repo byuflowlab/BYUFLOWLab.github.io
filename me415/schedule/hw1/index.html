@@ -102,19 +102,19 @@
     <p>Choose your team and create a team name.  Report your team name, the team leader, and the names of all members of the team.</p>
   </li>
   <li>
-    <p>Choose the configuration for your aircraft (you aren’t locked in).  In making your selection, evaluate at least three different aircraft configurations, and provide justification for your choice.  You aren’t expected to know all the pros and cons of the various design choices, but do some  research to help you understand some of the high-level tradeoffs.  Some design choices to think about include, but are not limited to: tail vs canard vs flying wing, tail type, pusher vs tractor, fuselage type, materials, basic wing sizing (at least the wingspan), use of winglets or not, etc.  Provide a top view (or even better a 3-view) of the design and some of the primary dimensions.</p>
+    <p>Choose the configuration for your aircraft (you aren’t locked in).  In making your selection, evaluate at least three different aircraft configurations, and provide justification for your choice.  You aren’t expected to know all the pros and cons of the various design choices, but do some  research to help you understand some of the high-level tradeoffs.  Some design choices to think about include, but are not limited to: tail vs canard vs flying wing, tail type (H, V, T, etc.), pusher vs tractor, fuselage type, materials, basic wing sizing (at least the wingspan), use of winglets or not, etc.  Provide a top view (or even better a 3-view) of the design and some of the primary dimensions.</p>
   </li>
   <li>
     <p>Estimate the total mass of your aircraft in grams, including all electronic components.  At this stage there are some things you can measure directly and others that you will need to estimate.  Electrical components will all be (more or less) the same for all teams, but the airframe mass will differ depending on your specific design.  Make estimates for each component (i.e., wing, horizontal tail, etc.), as opposed to the airframe all at once.  Rough estimates are ok at this stage, but there needs to be a rational basis for the estimates.</p>
   </li>
   <li>
-    <p>Setup a routine to compute the total drag of your aircraft during steady, level flight.  We have not yet learned about induced drag (lift-dependent drag), but at this stage you can use a simple formula:</p>
+    <p>Setup a routine to compute the total drag of your aircraft during steady, level flight.  Depending on when you start this problem we may not have yet learned about induced drag, but at this stage you can use a simple formula that includes both induced drag and viscous lift-dependent drag:</p>
 
     <script type="math/tex; mode=display">D_i = \frac{L^2}{q_\infty \pi b^2 e}</script>
 
-    <p>where <script type="math/tex">b</script> the projected wing span, and <script type="math/tex">e</script> is the Oswald efficiency factor (which you can assume is equal to 0.8 <em>for now</em>).</p>
+    <p>where <script type="math/tex">b</script> the projected wing span, and <script type="math/tex">e</script> is the Oswald efficiency factor (which you can assume is equal to 0.75 <em>for now</em>).</p>
 
-    <p>Create a plot of the lift-to-drag ratio (L/D) as a function of flight speed.  Find the speed that maximizes L/D (note this is probably not the best long-term metric, but it uses what you know at this stage to provide a rough estimate of the optimal flight speed). Report the design <script type="math/tex">C_L</script> of your aircraft and its max L/D.</p>
+    <p>Create a plot of the lift-to-drag ratio (L/D) as a function of flight speed.  Find the speed that maximizes L/D (note this is probably not the best long-term metric, but it uses what you know at this stage to provide a rough estimate of the optimal flight speed). Report the design flight speed (speed that maximizes L/D), the corresponding lift coefficient, and the max L/D.  Check that your numbers are reasonable.</p>
 
     <p>Aside: It may be instructive to visualize the two main components of drag as a function of flight speed.</p>
   </li>
@@ -161,13 +161,12 @@
 
     <p>where <script type="math/tex">V</script> is the flight speed.  Plot this metric as a function of altitude (interpretation of altitude is often more intuitive if plotted on the y-axis), and determine the optimal altitude.</p>
 
-    <p>During the flight the aircraft will become lighter as it burns fuel.  How would the optimal altitude change over time (stay the same, increase, decrease)?</p>
+    <p>During the flight the aircraft will become lighter as it burns fuel.  How would the optimal altitude change over time (stay the same, increase, decrease)?  Why (provide a physical explanation)?</p>
   </li>
 </ol>
 
 <!-- 1.  Repeat the same calculations (i.e., in the optimal altitude), but for the  supersonic business jet proposed by [Aerion](http://www.aerionsupersonic.com/) at its supersonic cruise speed.  Remember to include compressibility drag!
 <!-- as a function of Mach number (supersonic speeds only).   -->
-<p>–&gt;</p>
 
 <!-- Show also the time of flight as a function of Mach number, assuming cruise the entire time, for a 4500 nmi flight (i.e., San Fransisco to Tokyo).   -->
 
