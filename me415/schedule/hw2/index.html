@@ -95,22 +95,36 @@
   <li>
     <p>Setup a routine to compute the total drag of your aircraft during steady, level flight.</p>
 
-    <p>Create a plot of the lift-to-drag ratio (L/D) as a function of flight speed.  Find the speed that maximizes L/D (note this is probably not the best long-term metric, but it uses what you know at this stage to provide a rough estimate of the optimal flight speed). Report the design flight speed (speed that maximizes L/D), the corresponding lift coefficient, and the max L/D.  Check that your numbers are reasonable.</p>
+    <p>Create a plot of the lift-to-drag ratio (L/D) as a function of flight speed.  Find the speed that maximizes L/D (note this may not the best long-term metric, but it uses what you know at this stage to provide a rough estimate of the optimal flight speed). Report the design flight speed (speed that maximizes L/D), the corresponding Reynolds number, the corresponding lift coefficient, and the max L/D.  Check that your numbers are reasonable.</p>
 
     <p>Aside: It may be instructive to visualize the two main components of drag as a function of flight speed.</p>
   </li>
-  <li>
-    <p>Report the design Reynolds number and lift coefficient for your airfoil (note that the wing coefficient and airfoil coefficient are not generally the same).  Compare the performance of at least three different airfoils designed for your Reynolds number using XFOIL.  Plot their performance on drag polars and lift curves.  Select (or design) an airfoil that is appropriate for your aircraft and plot it.</p>
+  <li>Derive an analytic expression in terms of AR, e, CDp for:
+    <ul>
+      <li>the lift coefficient that maximizes L/D</li>
+      <li>the corresponding max L/D</li>
+    </ul>
+
+    <p>(Note that the same expression could work for an aircraft with compressibility drag if you broke up the compressibility drag into a parasitic component and a lift-dependent component with a redefined e).</p>
+
+    <p>Using the values for AR, e, and CDp for your aircraft and its design speed, compare what you found numerically for both CL and L/D with what you find in this simple analytic expression.  If the values are different explain why.</p>
   </li>
+  <li>Using XFOIL, compare the performance of <em>at least</em> three different appropriate airfoils.  Plot their performance on drag polars and lift curves.  Select (or design) an airfoil that is appropriate for your aircraft’s Reynolds number and lift coefficient range.  Plot the geometry.  Describe the rationale for your design decisions.</li>
 </ol>
+
+<!-- Use CloudFoil -->
 
 <!-- Some important considerations include: drag, weight, and stall speed. -->
 
-<h4 start="3" id="general">General</h4>
+<!-- Report the design Reynolds number and lift coefficient for your airfoil (note that the wing coefficient and airfoil coefficient are not generally the same).   -->
 
-<ol>
-  <li>Repeat the same calculations (i.e., in the optimal altitude), but for the  supersonic business jet proposed by <a href="http://www.aerionsupersonic.com/">Aerion</a> at its supersonic cruise speed.  Remember to include compressibility drag!</li>
+<h4 id="general">General</h4>
+
+<ol start="4">
+  <li>Repeat the optimal altitude problem from the previous homework, but this time for the supersonic business jet proposed by <a href="http://www.aerionsupersonic.com/">Aerion</a>.  Remember to include compressibility drag!</li>
 </ol>
+
+<p><!-- at its supersonic cruise speed --></p>
 
     </div>
 
