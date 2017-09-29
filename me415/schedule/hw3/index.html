@@ -90,28 +90,33 @@
 <span style="float:right;">50 possible points</span></p>
 
 <ol>
-  <li>Design an appropriate wing for your project.  Make sure the lift distribution provides a high inviscid span efficiency, and the cl distribution provides favorable stall characteristics.  Provide the following:
+  <li>
+    <p>Design an appropriate wing for your project.  Make sure the lift distribution provides a high inviscid span efficiency, and the cl distribution provides favorable stall characteristics.  Make sure that is adequate margin between your design CL and the wing CLmax (or equivalently between your design speed and stall speed).  As you resize the wing your drag will change, and thus the optimal CL for maximum L/D will also change.  You may wish to iterate using the analyses you’ve developed in the previous homework.</p>
+
+    <p>Provide the following:</p>
+
     <ul>
-      <li>A to-scale planform view of the wing.</li>
-      <li>A detailed description of the wing (enough detail that someone could build it from your specs alone).</li>
       <li>A description and justification of how design choices were made.</li>
+      <li>A to-scale planform view of the wing along with the rest of the aircraft (even if fuselage/tail sizing is still notional still).</li>
+      <li>A detailed description of the wing (enough detail that someone could build it from your specs alone).</li>
       <li>The inviscid span efficiency at your design CL.</li>
-      <li>The wing CLmax (not the airfoil section clmax).
-<!-- - The approximate location of the wing aerodynamic center using the mean aerodynamic chord. --></li>
+      <li>The wing CLmax (not the airfoil section clmax).</li>
+      <li>The L/D at your design speed.</li>
+      <li>The design speed and stall speed.
+ <!-- - The approximate location of the wing aerodynamic center using the mean aerodynamic chord. --></li>
     </ul>
   </li>
   <li>
     <p>Cut your wing using the foam cutter (group effort: one wing per project group).  Take a picture of it and include it in the assignment.  Describe any lessons learned or important details needed to reproduce.</p>
   </li>
-  <li>
-    <p>Perform a more detailed <strong>parasitic</strong> drag anaylsis using strip theory.  For this assignment you only need to analyze your wing and only need to look at parasitic drag (but eventually you will want to analyze the total drag of the full aircraft).  Compare your drag at the design CL with that predicted by the simpler wetted area methods from HW 2.</p>
-
-    <p>I recommend using <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a>, which has a GUI and some helpful video tutorials <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">here</a>.  To get started I’d look at videos 1, 2, 6, 7, 8.</p>
-
-    <p>You could also do this manually.  For a basic wing this is actually probably quicker, but it would be harder to extend for more complete analyses later.  Basically you just run XFOIL at multiple angles of attack, which you’ve already done (and ideally at multiple Reynolds numbers although for your application this variation will be quite small).  You then integrate the drag across the wing by looking up the precomputed section parasitic drag values as a function of the local lift coefficient.</p>
-  </li>
 </ol>
 
+<!-- 3. Perform a more detailed **parasitic** drag anaylsis using strip theory.  For this assignment you only need to analyze your wing and only need to look at parasitic drag (but eventually you will want to analyze the total drag of the full aircraft).  Compare your drag at the design CL with that predicted by the simpler wetted area methods from HW 2.  
+
+    I recommend using [XFLR5](http://www.xflr5.com/xflr5.htm), which has a GUI and some helpful video tutorials [here](https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg).  To get started I'd look at videos 1, 2, 6, 7, 8.
+
+    You could also do this manually.  For a basic wing this is actually probably quicker, but it would be harder to extend for more complete analyses later.  Basically you just run XFOIL at multiple angles of attack, which you've already done (and ideally at multiple Reynolds numbers although for your application this variation will be quite small).  You then integrate the drag across the wing by looking up the precomputed section parasitic drag values as a function of the local lift coefficient.  
+    
 <!-- - Use [AVL](http://web.mit.edu/drela/Public/web/avl/).  Less user friendly but more powerful.  Interface is text file based like XFOIL (both developed by Mark Drela). -->
 
 <!-- 3. Supersonic drag altitude.  Repeat the optimal altitude problem from the previous homework, but this time for the supersonic business jet proposed by [Aerion](http://www.aerionsupersonic.com/).  Remember to include compressibility drag! -->
