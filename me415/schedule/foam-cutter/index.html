@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Foam Cutter &middot; ME 415
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me415">
+          ME 415
+        </a>
+      </h1>
+      <p class="lead">Flight Vehicle Design</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me415/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me415/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me415/resources">Resources</a>
+      <!-- <a class="sidebar-nav-item" href="/me415/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me415/assignments">Assignments</a>
+      <a class="sidebar-nav-item" href="/me415/projects">Projects</a> -->
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Foam Cutter</h1> -->
+      <p>Steps for using the foam cutter:</p>
+
+<ol>
+  <li>Create geometry in Profili Pro 2</li>
+  <li>Output G-Code that generates geometry</li>
+  <li>Run G-Code on foam cutter using Mach3</li>
+</ol>
+
+<p>This guide is written to document this process and expedite the learning process.  Note that you are not likely to get the right setup the first time, but hopefully with the help presented here some common mistakes can be avoided.</p>
+
+<h1 id="generate-g-code-using-profili-pro-2">Generate G-Code using Profili Pro 2</h1>
+
+<p>First load Profili Pro 2.  Make sure that the version is the Pro version, otherwise you won’t be able to export your G-code.</p>
+
+<p>Profili Pro has a lot of capabilities which we will not use.  All that we want to do is create a wing.  In the top menu go to the Panels drop-down and select Wing Panels Management.</p>
+
+<p>This will pull up a window with a bunch of wing panels that have been developed previously.  Once you have created a wing panel you double click your wing panel in this menu to edit and/or inspect input parameters.  To create a new wing panel in the “Panels Management” drop down choose “New foam panel for 4-axis CNC hot wire cutting…”.  Enter an appropriate name. Chances are you will be creating several wing panel sections so it is best to name wing panels similarly (e.g. “YourName-leftwing”,”YourName-rightwing”,”YourName-htail”,”YourName-vtail”).  Once your wing panel is created you will be taken through a series of windows defining your wing panel geometry.  Notes regarding each window can be found in the following sections</p>
+
+<h2 id="general-data-and-wing-plan-settings">General data and Wing Plan Settings</h2>
+<p>Panel length: The length of the wing section you would like to cut. 
+Root and Tip Chord: Root and tip chord values
+Root and Tip Incidence Angle:  Positive twist is equivalent to a negative incidence angle, you can and should check if this setting is right in a later window.
+Leading Edge Sweep Back: Used for sweep, with the help of the graphical interface this should be pretty simple to set correctly.</p>
+
+<h2 id="airfoil-selection">Airfoil Selection</h2>
+<p>Root and tip rib: Here is where you choose your airfoil.  Chances are, your airfoil will already be loaded with the software.  If you wish to import your own airfoil you can do so from the main screen.</p>
+
+<p>If you are cutting out a slot for a spar it is wise to invert the airfoil so that the foam cutter can move down through the bottom surface of the airfoil on its way to the spar location rather than through the top surface.</p>
+
+<h2 id="sheeting-and-kerf-settings">Sheeting and Kerf Settings</h2>
+<p>Sheeting parameters are used if you would like to remove extra material from the outside of the airfoil.  In the case of adding extra material, such as a composite layup, this would preserve the final airfoil thickness.  Chances are you probably won’t need this option enabled.
+The tangential lengthening option should be set at about 20 mm.  This tells the wire cutter to advance into the foam a certain distance before beginning to cut the profile shape. 
+The default kerf values are probably fine, but appropriate values will largely depend on the amount of taper in your wing (one side will move more slowly than the other),  the amps that the wire cutter is set at, and the cutting speed.</p>
+
+<h2 id="spars-setting">Spars Setting</h2>
+<p>The main key in this menu is using the three drawing views at the bottom to visualize the result. Otherwise this menu should be pretty self-explanatory.  The only thing to note is that an upward hot wire cut should probably be used.  This tells the hot wire cutter to come in from the top of the foam block.</p>
+
+<h2 id="lightening-holes-setting">Lightening Holes Setting</h2>
+<p>This menu is very similar to the previous menu.  If lightening holes are used it might be necessary to stiffen the final wing panel in some way to make up for the cuts made by the hot wire cutter entering to hollow out the inside of the airfoil.</p>
+
+<h2 id="foam-block-placement-and-setting">Foam Block Placement and Setting</h2>
+<p>The 4-Axis CNC Machine Settings will likely need to be modified.  We measured a distance of 835mm from the left to the right carriage.  The maximum horizontal and vertical runs should be set to reasonable values, but unless your wing is extra-normal you shouldn’t have any need to approach the bounds of the machine and these bounds should not matter.
+Make sure to enter an appropriate foam block thickness and then modify the wing panel height settings to place your root and tip sections solidly inside your foam block.  Measure the distance from the left wire pulley to your foam block and enter that value for the root section distance between carriage and block. Centering your part on the machine is probably wise.</p>
+
+<p>Now switch to the wing planform view and take note of the value shown for Dx.  Move your foam block away from the your zero reference position by that amount. Otherwise you will end up wasting a decent amount of foam, or you might run out of foam.  When rerunning your G-code you will probably need to return to this window to check this value and place your foam accordingly.</p>
+
+<h2 id="leading-edge-and-trailing-edge-cutting">Leading Edge and Trailing Edge Cutting</h2>
+<p>Here you can slice off your leading or trailing edge.  You can also choose the height above your foam which the wire cutter will move to when re-positioning itself.  If you are using a weight, remember to move it out of the wire cutters way so you don’t break the machine.  The defaults here should be fine.</p>
+
+<h2 id="latest-section-cutting-path-simulation-and-printing-format-settings">Latest section: Cutting Path Simulation and Printing Format Settings</h2>
+<p>The one thing worth doing here is playing the 3D simulation of your G-Code.  You should always do this to make sure that at least theoretically, your code will do what you want it to do. Otherwise just click finish</p>
+
+<h2 id="output-g-code">Output G-Code</h2>
+<p>In the wing panels management window in Profili select your wing panel and under the “4-axis CNC” drop down choose the “Export G-Code for 4-axes CNC (foam cutting)” option.  You should modify the speed which is given as mm/min to an appropriate speed (the default is 200mm/min) for your foam and current settings.  There is also choose whether the panel root should be on the left (default) or right side of the foam cutter (as seen from the computer stations).</p>
+
+<h1 id="run-g-code-using-mach3">Run G-Code using Mach3</h1>
+
+
+    </div>
+
+  </body>
+</html>
