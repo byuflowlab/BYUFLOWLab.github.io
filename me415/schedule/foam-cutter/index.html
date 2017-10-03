@@ -141,6 +141,33 @@ Make sure to enter an appropriate foam block thickness and then modify the wing 
 
 <h1 id="run-g-code-using-mach3">Run G-Code using Mach3</h1>
 
+<p>Before you start a few notes:</p>
+
+<ul>
+  <li>Make sure that you set your foam block on the base foam block.  This is a precaution to avoid running the wire into the base of the table.</li>
+  <li>Make sure your foam block is positioned correctly in relation to where you will be zeroing the wire.  Refer to your Profili Pro file for reference.  While this isn’t really a concern with a constant chord, taper and twist can make life a bit more difficult.</li>
+  <li>You’ll notice some foam blocks near the ends of the runs of the motor.  These are simply to prevent the motors from running into the ends of the machine.  If you are even close to hitting the ends of the machine, you are likely doing something wrong.</li>
+  <li>Sometimes you’ll need weights in order to prevent the foam cutter from pushing your piece of foam around.  Just be cautious because depending on what you’re cutting your G-code could involve moving above the surface of the foam to cut lightening holes or a spar hole.  This is where a second person that can move weights out of the way of the wire can come in handy.</li>
+  <li>It’s good practice to do a practice run with a expendable small block of foam before your main run to make sure you are going to get what you want. Also don’t forget that there is a simulator in Profili Pro that will simulate the wire cutter in action so you know what is going to happen.</li>
+</ul>
+
+<p>Mach 3 is the program that loads your G-CODE once you have generated it from Profili Pro.  The arrow keys and the wasd keys control the motion of the foam cutter manually.  If the foam cutter does not respond to these inputs make sure that the foam cutter has power (turn the power strip on) and then hit the reset button on Mach 3.  You should now be good to go.</p>
+
+<p>Before starting your run you will need to zero all axes.  Move the foam cutter manually where you want (with the arrow keys and wasd) and zero all axes.  If you click go to home the foam cutter will rapidly proceed to this location now.</p>
+
+<p>Tape on the wire temperature nob marks the temperature region where you should probably be operating.  I think the yellow tape is about where you want to be.  It might take some trial and error, which is why we recommend cutting a test section before cutting your final part.  As a safety measure, only power the wire when the wire is actively cutting a part. Please don’t burn yourself (or catch the building on fire (e.g. PERL)).  And in case the reference to the PERL didn’t remind you, please stay with the foam cutter while it is running in case of problems.</p>
+
+<p>Note that the wire can takes around 15 seconds to heat up so don’t get too trigger happy once you turn the power on.</p>
+
+<p>When you’re ready you can hit the button that says RUN G-CODE or something like that.  Then watch and be ready to stop the run with that red STOP button in case something happens that you don’t like.  Also stop the run if you’re going to break the wire or the machine.  The wire cutter is not cheap.  Neither is the wire for the wire cutter.</p>
+
+<p>Some advanced tips:</p>
+
+<ul>
+  <li>You can use the foam cutter as a sort of a manual wire cutter by turning on power to the wire cutter and moving the wire cutter down with the arrow keys.  You should probably use a slightly higher wire temperature if doing this.</li>
+  <li>If you need to make on the fly adjustments to the speed that your G-Code is run, in addition to modifying the option when exporting from Profili there is a button that can be pressed in Mach 3 as well.</li>
+</ul>
+
 
     </div>
 
