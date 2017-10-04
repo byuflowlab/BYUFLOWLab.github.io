@@ -89,33 +89,93 @@
 <p>due 10/11/2017 before midnight via Learning Suite
 <span style="float:right;">50 possible points</span></p>
 
+<p><strong>(In Progress)</strong></p>
+
+<p>For this assignment your group is going to divide and conquer.  Form subgroups (1 or 2 people from your group) and choose one of the following tasks.  Your subgroup only needs to complete and report on one of the three tasks, but your team collectively needs to complete all of them.  The tasks are mostly independent, but do require some coordination across subgroups.  All groups will use at least some functionality within <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a>.  The referenced tutorial videos are available <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">here</a>.</p>
+
+<h3 id="subgroup-1-layout-and-sizing">Subgroup 1: Layout and Sizing</h3>
+
 <ol>
-  <li>Perform some <em>initial</em> sizing of your tail surfaces.  Report (preferably with a dimensioned drawing):
+  <li>Perform initial sizing of your tail surfaces.  Report the following (just a sketch is fine for this initial rough sizing):
     <ul>
       <li>The dimensions of the tails.</li>
       <li>Placement on the aircraft.</li>
       <li>Design rationale used.</li>
     </ul>
   </li>
-  <li>Build a CAD model of your aircraft to estimate mass properties.  Don’t forget to put in the electronic components.
-    <ul>
-      <li>Report total mass (1), center of mass (3), moments of inertia (6)</li>
-      <li>Include a few views of your CAD model</li>
-    </ul>
-
-    <p>Note: I know you all know how to use CAD already so you can work together to create one model rather than having every team member create their own.  However, you will want to consult together to determine whether to place heavy components like the battery.</p>
+  <li>
+    <p>Layout all components of your aircraft in order to estimate mass properties that will be input into XFLR5.  I’d recommend doing this in CAD because it will provide more accurate mass properties and you’ll likely want to have a CAD model anyway for your final report.  However, you’re welcome to do the layout entirely within XFLR5 if you prefer (if so, the relevant tutorial video is #7).  Work with subgroup 3 to input mass properties.  The easiest way to is to go to “Define an Analysis (advanced users)” and input the mass properties from CAD.  Alternatively, you can work with a manual layout, using the methods shown in the video, and iterate until you achieve a reasonable match with the known mass properties.</p>
   </li>
-  <li>Use <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a> or <a href="http://web.mit.edu/drela/Public/web/avl/">AVL</a> to analyze the dynamic stability of your aircraft and perform better sizing of your tail and cg placement.
+  <li>Work with subgroup 3 to iterate on the placement of components in order to achieve the desired stability behavior.  After a satisfactory stable layout is determined:
     <ul>
-      <li>Report the static margin</li>
-      <li>Plot the open loop eigenvalues and label each mode.</li>
-      <li>Report the following stability derivatives: <script type="math/tex">C_{L,\alpha}, C_{m,\alpha}, C_{n,\beta}, C_{roll,\beta}</script></li>
-      <li>Discuss and show drawings of any changes in aircraft sizing.</li>
+      <li>Report total mass (<script type="math/tex">m</script>), center of mass relative to the leading edge of the main wing (<script type="math/tex">x_{cg}</script> and <script type="math/tex">z_{cg}</script>), and the nonzero moments of inertia (<script type="math/tex">I_{xx}, I_{yy}, I_{zz}, I_{xz}</script>).  The other two moments of inertia will be zero for a symmetric aircraft.</li>
+      <li>Include views of the aircraft model (either CAD or XFLR5 with the lumped masses).</li>
     </ul>
-
-    <p>XFLR5 has some helpful video tutorials <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">here</a>.  To most relevant ones are videos 1, 2, 6, 7, 8, 12, 13, 14, 15, 16, 16.1.</p>
   </li>
 </ol>
+
+<!-- Note: I know you all know how to use CAD already so you can work together to create one model rather than having every team member create their own.  However, you will want to consult together to determine whether to place heavy components like the battery. -->
+
+<h3 id="subgroup-2-more-detailed-aerodynamic-analysis">Subgroup 2: More Detailed Aerodynamic Analysis</h3>
+
+<ol>
+  <li>
+    <p>Perform a more detailed drag analysis of the full aircraft using XFLR5.  The most relevant tutorial videos for this task are: 1, 2, 6, 7 (you can ignore the mass properties part for your task), and 8. A few points to keep in mind:</p>
+
+    <ul>
+      <li>For the airfoil analyses, be sure to sweep across the full range of Reynolds numbers for your aircraft, otherwise you’ll get an error “Point is out of the flight envelope”.</li>
+      <li>XFLR5 doesn’t perform well with bodies of revolution (i.e., fuselage, etc.), so you may need to stick with hand calculations for those components and add those drag contributions manually in “Define an Analysis”</li>
+      <li>Make sure you use consistent reference values when comparing with your hw2 results.</li>
+      <li>Pay attention to the transition locations on your airfoil (transition from laminar to turbulent flow).  By default XFOIL assumes a clean wing and ideal inflow and so you may need to put in a forced transition to get more realistic results (given the likely surface finish of your model aircraft and atmospheric turbulence).</li>
+      <li>Set the altitude if you want to look at absolute data (i.e., not just coefficients).</li>
+    </ul>
+
+    <p>Contrast the following results as compared to those from homework 2:</p>
+
+    <ul>
+      <li>lift-to-drag ratio (L/D) as a function of flight speed</li>
+      <li>the CL that maximizes L/D</li>
+      <li>the corresponding flight speed</li>
+    </ul>
+  </li>
+  <li>
+    <p>XFLR5 makes it easy to evaluate the impact of various airfoils and wing configurations (see for example video 10).  Based on the performance you observe, you may want to consider making changes to your airfoil and/or wing.  Discuss any changes you made and the rationale for doing so, or if no changes are made discuss the rationale for why that is unwarranted.</p>
+  </li>
+  <li>
+    <p>Determine the incidence of your tail so that it is trimmed in pitch (<script type="math/tex">C_m = 0</script>) at the design angle of attack.  You can always adjust your elevator to provide pitch trim, but it generally helps to get the tail set so that the nominal position requires zero elevator. Report the incidence of the tail.</p>
+  </li>
+</ol>
+
+<p>Coordinate with group 3 so that they can build on your file.</p>
+
+<!-- - induced drag coefficient as a function of flight speed
+    - parasitic drag coefficient as a function of flight speed -->
+
+<!-- 1. Compare your lift-to-drag plot from homework 2, and the lift coefficient and speed for maximum L/D.  Make any design changes if desired (either geometry or design operating condition like $$C_L$$) and describe your rationale.  Coordinate with group 3 so that they can build on your file. -->
+
+<!-- Communicate the new design $$C_L$$ (if changed) to subgroup 3. -->
+
+<!-- r this assignment you only need to analyze your wing and only need to look at parasitic drag (but eventually you will want to analyze the total drag of the full aircraft).  Compare your drag at the design CL with that predicted by the simpler wetted area methods from HW 2.   -->
+
+<h3 id="subgroup-3-stability">Subgroup 3: Stability</h3>
+
+<p>Use <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a> to analyze the static and dynamic stability of your aircraft and perform better sizing of your tail and cg placement.  Coordinate with the other subgroups as needed.</p>
+
+<ul>
+  <li>Report the static margin</li>
+  <li>Plot the open loop eigenvalues and label each mode.</li>
+  <li>Report the following stability derivatives: <script type="math/tex">C_{L,\alpha}, C_{m,\alpha}, C_{n,\beta}, C_{roll,\beta}</script>
+<!-- - Discuss and show drawings of any changes in aircraft sizing. --></li>
+  <li>Report (preferably with a dimensioned drawing):
+    <ul>
+      <li>The dimensions of the tails.</li>
+      <li>Placement on the aircraft.</li>
+      <li>Design rationale used.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The most relevant tutorial videos are: 12, 13, 14, 15, 16, 16.1.</p>
 
 
     </div>
