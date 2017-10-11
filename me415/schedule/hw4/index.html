@@ -95,7 +95,7 @@
 
 <p>Even though you are only responsible for one area, it would be beneficial to learn from the other subgroups so that you have a reasonable understanding of all the tasks.  Provide clear detail on your design analysis.  That will help the rest of your team understand and will make it easier at the end of the semester when you work on your final reports.</p>
 
-<p>All groups will use at least some functionality within <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a>.  The referenced tutorial videos for XFLR5 are available <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">here</a>.  You may want to share one XFLR5 file team-wide to make sure you stay consistent.  For each task I note the minimum set of tutorial videos that will help you complete task at hand, but those of you who want to go deeper are encouraged to view the other tutorials.</p>
+<p>All groups will use at least some functionality within <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a>.  The referenced tutorial videos for XFLR5 are available <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">here</a>.  You may want to share one XFLR5 file team-wide to make sure you stay consistent.  For each task I note the minimum set of tutorial videos that will help you complete the task at hand, but you may some of the other videos helpful especially those of you who want to go deeper.</p>
 
 <h3 id="subgroup-1-layout-and-sizing">Subgroup 1: Layout and Sizing</h3>
 
@@ -125,11 +125,12 @@
     <p>Perform a more detailed drag analysis of the full aircraft using XFLR5.  The most relevant tutorial videos for this task are: 1, 2, 6, 7 (you can ignore the mass properties part for your task), and 8. A few points to keep in mind:</p>
 
     <ul>
-      <li>For the airfoil analyses, be sure to sweep across the full range of Reynolds numbers for your aircraft, otherwise you’ll get an error “Point is out of the flight envelope”.</li>
+      <li>For the airfoil analyses, be sure to sweep across the full range of Reynolds numbers and lift coefficients for your aircraft, otherwise you’ll get an error “Point is out of the flight envelope” (see video 11 if running into this problem).</li>
       <li>XFLR5 doesn’t perform well with bodies of revolution (i.e., fuselage, etc.), so you may need to stick with hand calculations for those components and add those drag contributions manually in “Define an Analysis”.  I’ve noticed that this extra drag term doesn’t seem to be saved if you quit and reload your analysis.  You may have to reenter this number every time you restart the program.</li>
       <li>Make sure you use consistent reference values when comparing with your hw2 results.</li>
       <li>Pay attention to the transition locations on your airfoil (transition from laminar to turbulent flow).  By default XFOIL assumes a clean wing and ideal inflow and so you may need to put in a forced transition to get more realistic results (given the likely surface finish of your model aircraft and atmospheric conditions).</li>
       <li>Set the altitude if you want to look at absolute data (i.e., not just coefficients).</li>
+      <li>XFLR5 defines the taper ratio backwards from the typical convention for some reason.</li>
     </ul>
 
     <p>Contrast the following results as compared to those from homework 2:</p>
