@@ -302,3 +302,11 @@ ta img {
 ta .caption {
     display: block;
 }
+
+
+/* banner */
+
+img.banner {
+  border-radius: 0px;
+  margin: 0;
+}
