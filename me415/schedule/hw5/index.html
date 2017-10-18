@@ -89,24 +89,53 @@
 <p>due 10/25/2017 before midnight via Learning Suite
 <span style="float:right;">50 possible points</span></p>
 
+<h3 id="motorprop-analysis-and-design">Motor/Prop Analysis and Design</h3>
+
 <ol>
-  <li>Work on building your aircraft.  The amount you accomplish this week is up to you (of course doing less now means more work later).  A good goal would be to get it ready for RC flight.  However far you get, for the purpose of this assignment you just need to:
-    <ul>
-      <li>Provide a detailed description of progress made, lessons learned, and any design changes.</li>
-      <li>Provide a few photos of the plane/process.</li>
-    </ul>
-
-    <p>Where do I get the electronic components?</p>
-
-    <ul>
-      <li>The autopilot we provide, but they are still being assembled.  Fortunately, you don’t need them to get started with RC testing.  In the meantime we will provide you with a pod that is roughly the same size and weight.  One thing to keep in mind is that one autopilot will be shared with two teams so you will need to design your plane to allow easy access to attach/detach the autopilot.  You’ll want easy access for your batteries anyway.  Note: the computers allow multiple profiles so you are just sharing hardware, not software instructions.</li>
-      <li>We will provide you with a receiver that pairs with our transmitters.</li>
-      <li>We have assembled a kit of electronics that you will purchase.  Go the <a href="https://ece.byu.edu/shop">ECE Shop</a> and tell them you want to purchase an ME 415 Airplane Kit.  Bring the receipt to the TAs and they will give you your kit.  The cost per team is $35.  This kit includes 2 motors, 4 propellers (some spares), 2 electronic speed controllers, 2 batteries (one spare for swapping in field), a pack of O-rings for mounting the props to the motors, and a pack of bullet connectors.</li>
-      <li>While at the ECE Shop purchase some of the 9 gram servos.  These are not included in the kit because the ECE Shop already carries them.  You’ll probably want 3, depending on what control surfaces you intend to use.</li>
-    </ul>
+  <li>
+    <p>Characterize your motor performance.  Measure the no-load current, resistance, and Kv value and report these values.  As a sanity check I’d suggest comparing to manufacture specifications for yours and similar motors, but keep in mind that manufacturer data, particularly for small motors, is sometimes unreliable.</p>
   </li>
-  <li>Characterize your motor performance.  Measure the no load current and resistance and compare with values supplied</li>
+  <li>
+    <p>Compute and plot the efficiency of the motor and propeller as a function of rotation speed.  The analysis tool I provided can already do this, but you should write your own implementation for this part so that you understand what is happening (although you are welcome to look at my code if you get stuck).  Explore a few different flight speeds around your design speed, as well as a few different voltage levels.  Comment on the results.</p>
+
+    <p>Note: we did not measure the data for your exact propeller but there are some props from the same manufacturer and of similar size that will work for this assignment available here: <a href="http://m-selig.ae.illinois.edu/props/propDB.html">UIUC Propeller Data Site</a>.</p>
+
+    <p><!-- We do have a test stand designed to measure motor/prop performance in the wind tunnel, but for the purposes of this assignment the differences will be quite small and so we . --></p>
+  </li>
+  <li>
+    <p>Use the simulation tool I provided to characterize the propulsive efficiency of your setup for steady level flight across a range of flight speeds.  Comment on the results.</p>
+  </li>
+  <li>
+    <p>Choose a better motor/prop combination and clearly show through analysis and clear discussion why this is a superior choice.  You can change one, some, or all of the motor, propeller, speed controller, and battery.  <a href="http://www.drivecalc.de">DriveCalc</a> and <a href="http://www.motocalc.com">MotorCalc</a> contain data for a large database of various existing components that you might find useful in your design process.</p>
+
+    <p>Note: you don’t need to actually change your motor, propeller, or battery for your design (although you could if you really wanted to).  The provided components are more than adequate to complete the mission.  The main purpose of this exercise is to help you learn how you might choose your own components for future projects.</p>
+  </li>
 </ol>
+
+<h3 id="build">Build</h3>
+
+<p>Work on building your aircraft.  The amount you accomplish this week is up to you (of course doing less now means more work later).  You’ll want to get it ready for RC flight within a week or two.  However far you get, for the purpose of this assignment you just need to:</p>
+
+<ul>
+  <li>Describe your contributions to the build process (not everyone needs to contribute equally to the build as some may be doing more work on the analysis side, but everyone does need to contribute).</li>
+  <li>Provide a detailed description of overall progress made, lessons learned, and any design changes.</li>
+  <li>Provide a few photos of the plane/process.</li>
+</ul>
+
+<hr />
+
+<p><strong>Where do I get the electronic components?</strong></p>
+
+<ul>
+  <li>The autopilot we provide, but they are still being assembled.  You won’t need them to get started with RC testing.  In the meantime we will provide you with a pod that is roughly the same size and weight.  One thing to keep in mind is that one autopilot will be shared with two teams so you will need to design your plane to allow easy access to attach/detach the autopilot (you need easy access for your batteries anyway so this shouldn’t be prohibitive).  Note: the computers allow multiple profiles so you are just sharing hardware, not software instructions.</li>
+  <li>We will provide you with a receiver that pairs with our transmitters.  These will be passed out to the team leaders in class.</li>
+  <li>We have assembled a kit of electronics that you will purchase.  Go the <a href="https://ece.byu.edu/shop">ECE Shop</a> and tell them you want to purchase an ME 415 Kit.  Bring the receipt to the TAs and they will give you your kit.  The cost per team is $70.  This kit includes 2 motors<script type="math/tex">^*</script>, 4 propellers (some spares), 2 electronic speed controllers, 2 batteries (one spare for swapping in field), O-rings for mounting the props to the motors, and some bullet connectors for the battery.</li>
+  <li>
+    <p>While at the ECE Shop purchase some of the 9 gram servos.  These are not included in the kit because the ECE Shop already carries them.  You’ll probably want 3, depending on what control surfaces you intend to use.</p>
+
+    <p><script type="math/tex">^*</script>You don’t need to use two motors just because we provided two.  That is a design choice.  The motors were sized such that one should do the job just fine unless your plane is overly heavy.  Alternatively you can use two at a lower throttle setting.</p>
+  </li>
+</ul>
 
     </div>
 
