@@ -727,18 +727,16 @@ For example:
 
 <p>As an aside: one thing that drives me crazy in Fortran is how it handles double precision constants.  If you define a variable like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>real(8) :: x
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real(8) :: x
 x = 1.0
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: <code class="highlighter-rouge">x = 1.0d0</code>.  In practice I actually use something like below for portability:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>integer, parameter :: dp = selected_real_kind(15, 307)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integer, parameter :: dp = selected_real_kind(15, 307)
 real(dp) :: x
 x = 1.0_dp
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Littering <code class="highlighter-rouge">_dp</code> or <code class="highlighter-rouge">d0</code> all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.</p>
 

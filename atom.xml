@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2017-11-02T23:04:12-06:00</updated>
+ <updated>2017-11-03T08:50:02-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -256,18 +256,16 @@ For example:
 
 &lt;p&gt;As an aside: one thing that drives me crazy in Fortran is how it handles double precision constants.  If you define a variable like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;real(8) :: x
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;real(8) :: x
 x = 1.0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: &lt;code class=&quot;highlighter-rouge&quot;&gt;x = 1.0d0&lt;/code&gt;.  In practice I actually use something like below for portability:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;integer, parameter :: dp = selected_real_kind(15, 307)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;integer, parameter :: dp = selected_real_kind(15, 307)
 real(dp) :: x
 x = 1.0_dp
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Littering &lt;code class=&quot;highlighter-rouge&quot;&gt;_dp&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;d0&lt;/code&gt; all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.&lt;/p&gt;
 
