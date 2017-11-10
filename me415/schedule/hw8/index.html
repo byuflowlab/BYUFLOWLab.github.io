@@ -104,6 +104,10 @@
 <ol>
   <li>
     <p>Provide a <strong>detailed</strong> description of your control strategy.  We don’t want to look through your raw code, but words alone won’t be clear enough either.  You might consider using psuedocode, flowcharts, or other types of diagrams (along with words) to clearly describe your control strategy.  If you have multiple controllers then describe each (i.e., one for altitude, one for navigation).  For each controller, describe the parameter you will target and exactly how will you compute this parameter from your sensors (if it is not directly given by the sensors).  Describe the logic of your controller.  Describe any filters, limiters, or other strategies you will use.</p>
+
+    <blockquote>
+      <p>A template for your controller is available here: <a href="https://github.com/byuflowlab/autopilot-me415">https://github.com/byuflowlab/autopilot-me415</a> in autopilot.py (Python).</p>
+    </blockquote>
   </li>
   <li>Provide a <strong>detailed</strong> description of the testing strategy you have employed to date.  Some suggested testing approaches include:
     <ul>
@@ -115,6 +119,15 @@
     </ul>
 
     <p>Show your test data and clearly describe the results.  Describe what you’ve learned and the improvements you have made.</p>
+
+    <blockquote>
+      <p>To use Gazebo you’ll need to modify the plane_params.yaml file available at the same link <a href="https://github.com/byuflowlab/autopilot-me415">https://github.com/byuflowlab/autopilot-me415</a>.  You should have all the information already except for the control derivatives.  These are like the stability derivatives except they are the derivatives of the forces/moments with respect to control inputs (rudder, elevator, etc.).  You can estimate these with XFLR5 also.  The relevant tutorials are:</p>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=xmalG5VS47g&amp;index=4&amp;list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">Flapped foil starting at 4:00</a></li>
+        <li><a href="https://www.youtube.com/watch?v=uUQhFh0d4uM&amp;index=11&amp;list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">Flapped wing</a></li>
+        <li><a href="https://www.youtube.com/watch?v=rBkaaNJH7AI&amp;index=19&amp;list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">Control derivatives</a></li>
+      </ul>
+    </blockquote>
   </li>
   <li>Report:
     <ul>
