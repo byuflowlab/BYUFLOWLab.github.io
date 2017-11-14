@@ -137,10 +137,52 @@
 <p>The autopilots are the most expensive component, and building your plane took a lot of time and effort.  You reduce the risk of damaging either through a careful progressive testing process.</p>
 
 <ul>
-  <li>Fly new designs RC first for several flights.  Don’t put the autopilot on board.  Use the dummy pod (similar size and weight).</li>
+  <li>Fly new designs RC first for several flights.  Don’t put the autopilot on board.  Use the dummy pod (same size and weight).</li>
+  <li>Simulate RC flights using Gazebo.  Gazebo will allow you to run your autopilot with the same software, but in a simulated environment.</li>
   <li>Test new autopilot algorithms on the ground first.  Walk around with your plane and observe control surfaces and throttle settings.  Make sure it does what you expect.</li>
-  <li>Simulate RC flights onboard the autopilot.  You can record an RC flight and “playback” the flight onboard the computer to observe what the autopilot would do.</li>
 </ul>
+
+<h2 id="transmitter">Transmitter</h2>
+
+<p>Download the <a href="https://img.banggood.com/file/products/20170105005757X7%E8%AF%B4%E6%98%8E%E4%B9%A6.pdf">manual</a>.</p>
+
+<p><strong>Binding Receivers</strong>.  This <a href="https://www.youtube.com/watch?v=ngzWn0WlxLE">video</a> has instructions for binding our receivers in ppm mode (don’t worry that it’s a different transmitter, the firmware is exactly the same).  You should only have to do this once, and the TA will probably be there, but the video is there just for your reference.</p>
+
+<p><strong>Switches</strong>.  See the first figure in the manual.  For the instructions below “up” is away from you or up, “down” is toward you or down, center is between up and down (for 3 position switches).</p>
+<ul>
+  <li>Autopilot Override: SF 2-position switch
+    <ul>
+      <li>Up gives autopilot control (you can still give inputs on the sticks though, so be careful)</li>
+      <li>Down gives you total RC control</li>
+    </ul>
+  </li>
+  <li>Motor Arm/Disarm: SA 3-position switch
+    <ul>
+      <li>Up/Center: Disarmed</li>
+      <li>Down: Armed</li>
+    </ul>
+
+    <p>*note: neither you nor the autopilot can use the throttle until you arm it.</p>
+
+    <p>*note: for the autopilot to have control of throttle, the motor must be armed, the autopilot must be engaged, and the throttle stick must be at maximum (all the way up).</p>
+  </li>
+  <li>Dual Rates (well, there are 3 settings, so Tri Rates?): SD 3-position switch
+    <ul>
+      <li>Up: 100% throw</li>
+      <li>Center: 67% throw</li>
+      <li>Down: 34% throw</li>
+    </ul>
+
+    <p>*note: throttle is unaffected by this switch, but everything else is.</p>
+  </li>
+  <li>Battery Voltage Indicator: SH 2-position toggle switch
+    <ul>
+      <li>this may or may not happen, but if it does, it will announce your battery voltage.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>*note: all flight modes are set to “exponential.”  You probably won’t notice, but basically it’s designed to make it easier for you to fly.  If you’re curious what’s going on in the background, <a href="https://www.youtube.com/watch?v=skU51E5ilG0">this video</a> explains it.</p>
 
     </div>
 
