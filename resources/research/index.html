@@ -184,6 +184,24 @@
       
         
           
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
         
       
         
@@ -222,17 +240,7 @@
       
         
           
-        
-      
-        
-          
             <a class="sidebar-nav-item" href="/research/">Research</a>
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/publications/">Publications</a>
           
         
       
@@ -260,15 +268,11 @@
       
         
           
-        
-      
-        
-          
-        
-      
-        
-          
             <a class="sidebar-nav-item" href="/oldernews/">Older News</a>
+          
+        
+      
+        
           
         
       
@@ -393,9 +397,17 @@
 <h2 id="document-as-you-go">Document as You Go</h2>
 
 <ul>
-  <li>Consistently use a lab notebook.  This can be a hard bound book or a digital notebook (e.g., <a href="http://jupyter.org">Jupyter</a>).  For important derivations consider transferring to a LaTeX document.  A clear derivation will save you time later when you are describing methodology in a paper or when you make changes to your code and need to remember what you did.</li>
-  <li>Comment your code.  A lot.  It’s hard to overdo this.</li>
-  <li>Provide a README, and if appropriate more detailed  <a href="https://guides.github.com/features/wikis/">documentation</a>.</li>
+  <li>Consistently use a lab notebook.  This can be a hard bound book or a digital notebook (e.g., <a href="http://jupyter.org">Jupyter</a>).</li>
+  <li><strong>Create theory documentation (in addition to usage documentation) for any code you write</strong>.  Any derivation you do in your notebook that is used in your code, should be transferred to an electronic format attached with the code.  It is very common to revisit your code later, or for someone else to want to build on it.  If the theory isn’t carefully documented it’s going to be very hard to remember what you did or for someone else to try to figure it out.  A few minutes now will save you hours later (both for modifying code later, and for writing the methodology in your papers).  Here are some suggested formats:
+    <ul>
+      <li>Jupyter notebooks: this would be the most common default.  Easy to use and allows you to combine math/text/code, which is great for including examples or demonstrating usage.</li>
+      <li>README: if the module is very simple and only requires a short amount of documentation (e.g., a wrapper module) a README file will suffice.  (Even with other documentation options you still  always have README to provide some a basic explanation of what the module does and how to get started).</li>
+      <li>LaTeX PDF: If the theory is extensive a LaTeX document is often better because you can cross-reference equations, references, etc.  I’ll often use a combination of LaTeX for the theory and Jupyter for a tutorial.</li>
+      <li>Read The Docs: This approach allows for professional-quality documentation.  It’s overkill for most of our needs, but if we are developing something for extensive public collaboration, then we would want to go this route.</li>
+    </ul>
+  </li>
+  <li>Use Docstrings and learn what the expected format is for your programming language.</li>
+  <li>Comment your code.  Refer to where you found equations/values (e.g., reference your documentation or a textbook/paper).</li>
 </ul>
 
 <h2 id="version-control-and-backup">Version Control and Backup</h2>
@@ -412,14 +424,14 @@
 <h2 id="code-development">Code Development</h2>
 
 <ul>
-  <li>Comment your code in detail as you go.  I said this already, but it is important and rarely done enough!</li>
+  <li>Document and comment your code in detail as you go.  I said this already, but it is important and rarely done enough!</li>
+  <li><strong>Unit Test!</strong>  All major programming languages have easy to use unit test frameworks.  You need to test your code anyway so encapsulate the tests so you can run them later and help ensure correctness as you refactor later.  As you update code be sure to update your unit tests as well.</li>
   <li>Make effective use of whitespace and other delimiters to group logical sections together and make your code easier to read.</li>
   <li>Use descriptive variable names.</li>
   <li>If you find yourself writing a very similar piece of code more than once, you should refactor the code to create one function used in multiple places.  Having duplicate code opens up additional opportunities for bugs with version mismatches.</li>
   <li>Don’t try to write a large program all at once.  Break it down into small pieces. For each small piece be sure to thoroughly verify and validate (V&amp;V) it before moving on.  In this way you can build up large complex codes.</li>
-  <li>When you are performing V&amp;V, encapsulate your testing in a formal unit test go. As you update code be sure to update your unit tests as well.</li>
-  <li>Take this course: IT 515R Scientific Computing.</li>
-  <li>Do code reviews, just like we do with paper reviews.  In other words, when a model is more or less complete, ask a couple peers to review and offer feedback on correctness as well as clarity and style.  Schedule a session with me to review code as well.</li>
+  <li>Take this course: IT 515R Scientific Computing.
+<!-- - Do code reviews, just like we do with paper reviews.  In other words, when a model is more or less complete, ask a couple peers to review and offer feedback on correctness as well as clarity and style.  Schedule a session with me to review code as well. --></li>
 </ul>
 
 <h2 id="project-management">Project Management</h2>
