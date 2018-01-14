@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW 1 &middot; ME 515
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me515">
+          ME 515
+        </a>
+      </h1>
+      <p class="lead">Aerodynamics</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me515/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me515/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me515/resources">Resources</a>
+      <!-- <a class="sidebar-nav-item" href="/me515/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me515/assignments">Assignments</a>
+      <a class="sidebar-nav-item" href="/me515/projects">Projects</a> -->
+
+      <!-- <a class="sidebar-nav-item" href="/">FLOW Lab</a> -->
+
+    </nav>
+
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW 1</h1> -->
+      <h1 id="hw-1-fundamentals">HW 1: Fundamentals</h1>
+
+<p>due 1/31/2018 before midnight via Learning Suite
+<span style="float:right;">75 possible points</span></p>
+
+<ol>
+  <li>
+    <p>Determine the drag of a cylinder in a very large wind tunnel (so that we can ignore wall effects).  Effectively the flow is unconfined.  The Reynolds number is large enough such that the wake width is reasonably steady.  One approach to determine the drag is to use a force-balance.  An alternative approach is to use a wake-survey.  In this approach we just need to measure the velocity profile in the wake.  You should assume 2-dimensional, incompressible flow with the wake velocity profile shown below:</p>
+
+    <p><img src="../wakedrag.png" width="800px" /></p>
+
+    <p>What is the drag coefficient of the cylinder based on projected area (i.e., 2D drag coefficient based on diameter)?  Is this a reasonable value (why or why not)?  Solve the problem using one of the two control volumes shown above: 1) a control volume that follows streamlines (blue volume <script type="math/tex">CV_1</script>), or 2) a rectangular control volume (red volume <script type="math/tex">CV_2</script>).</p>
+  </li>
+  <li>
+    <p>Complete this <a href="https://thesteveportal.plm.automation.siemens.com/articles/en_US/FAQ/Class-Supplements-for-CFD-Fluids-and-Heat-Transfer-Courses-2D-airfoil-CFD-Workflow-and-Validation">guided tutorial</a> for an airfoil analysis and validation with StarCCM+.  Again, don’t expect to understand everything, but do try to familiarize yourself with the workflow.  In future lectures we will have more discussion on how to setup CFD simulations effectively.</p>
+  </li>
+  <li>
+    <p>By combining uniform flow and a doublet you can simulate potential flow over a cylinder.  Complete the following tasks for a cylinder with unit radius:</p>
+
+    <ul>
+      <li>Derive an expression for the pressure coefficient and create a contour plot of the pressure coefficient for the flow around the <strong>outside</strong> of the cylinder.  Use a a domain 4 radii wide and 4 radii high.</li>
+      <li>Plot the pressure coefficient along the cylinder surface as you move from the front of the cylinder to the back.</li>
+      <li>Add a vortex to the center of the cylinder.  Adjust the circulation strength and observe the effect on the streamlines.  Discuss what you find and include a plot of the streamlines for one case.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Vortex rings are pretty interesting.  Read this <a href="https://en.wikipedia.org/wiki/Vortex_ring">wikipedia article</a> to get an idea of what they are.  They can propel themselves quite far when moving through a quiescent fluid.  See some fun videos of vortex rings formed by <a href="https://www.youtube.com/watch?v=VbV98Z0QP-k">a volcano</a>, <a href="https://www.youtube.com/watch?v=ks3aQhEohTE">dolphins</a>, and <a href="https://www.youtube.com/watch?v=72LWr7BU8Ao">a plate in a pool</a>.  They can also be dangerous, for example with helicopters that <a href="https://www.youtube.com/watch?v=wddpsnvu0PM">descend too quickly</a> (skip to 1:15).</p>
+
+    <p>If you’re really careful, and put one vortex ring right behind another you can have leapfrogging vortices!  Check out this video of a <a href="https://youtu.be/Yydb9Mqg9TY">real-life visualization</a> of the phenomenon, a <a href="https://youtu.be/0LP-MgrXtIM">2D simulation</a>, and a neat <a href="https://www.youtube.com/watch?v=SPBMEXX5xBI">3D simulation</a>.</p>
+
+    <p>We are going to simulate the leapfrogging vortices in 2D.  If you picture a toroidal vortex intersecting a 2D plane you will have two vortices (like the left pair shown below).  From our understanding of vortices we can see how it is self-propelling.  Consider the left pair of vortices (e.g., one ring vortex).  The top vortex induces a velocity on the bottom vortex towards the right.  Simultaneously, the top vortex induces a velocity on the top vortex to the right.  Thus, it pushes itself forward.  With two vortices next to each other, things become even more interesting.</p>
+
+    <p>In this example, make all vortices of equal strength (<script type="math/tex">\Gamma</script>).  Each vortex is free to move, and would move with the local fluid velocity.  Plot the trajectory of each vortex.  You need to use a small enough time step to ensure stability.  You may need to try smaller time steps to make sure that your simulation is accurate.</p>
+
+    <p><!-- Turn in a copy of your code as well. --></p>
+
+    <p><img src="../vortices.png" width="300px" /></p>
+
+    <p><!-- Hint: In vector form, the induced velocity from a vortex is:
+ \begin{equation}
+     \begin{aligned}
+         \vec{V} &= \frac{\vec{\Gamma} \times \hat{r}}{2 \pi r}\\
+         &= \frac{\vec{\Gamma} \times \vec{r}}{2 \pi r^2}
+     \end{aligned}
+ \end{equation} --></p>
+
+    <p>If you just look at trajectories it is hard to tell that they are leapfrogging.  Though not required, you might like to create an animation so that you can actually watch the movement in time.  You might also like to draw a line between the vortex pairs to better visualize them as a connected ring.</p>
+  </li>
+</ol>
+
+
+    </div>
+
+  </body>
+</html>
