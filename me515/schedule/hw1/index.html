@@ -101,17 +101,19 @@
     <p>What is the drag coefficient of the cylinder based on projected area (i.e., 2D drag coefficient based on diameter)?  Is this a reasonable value (why or why not)?  Solve the problem using one of the two control volumes shown above: 1) a control volume that follows streamlines (blue volume <script type="math/tex">CV_1</script>), or 2) a rectangular control volume (red volume <script type="math/tex">CV_2</script>).</p>
   </li>
   <li>
-    <p>Complete this <a href="https://thesteveportal.plm.automation.siemens.com/articles/en_US/FAQ/Class-Supplements-for-CFD-Fluids-and-Heat-Transfer-Courses-2D-airfoil-CFD-Workflow-and-Validation">guided tutorial</a> for an airfoil analysis and validation with StarCCM+.  Again, don’t expect to understand everything, but do try to familiarize yourself with the workflow.  In future lectures we will have more discussion on how to setup CFD simulations effectively.</p>
+    <p>Complete this <a href="https://thesteveportal.plm.automation.siemens.com/articles/en_US/FAQ/Class-Supplements-for-CFD-Fluids-and-Heat-Transfer-Courses-2D-airfoil-CFD-Workflow-and-Validation">guided tutorial</a> for an airfoil analysis and validation with StarCCM+. Note that step 17 should read Wing (not Domain). On our resources page watch the videos on Import 3D curve, Create 2D mesh, and Meshing.  Turn in a plot of your pressure distribution compared to the experimental data.</p>
   </li>
-  <li>
-    <p>By combining uniform flow and a doublet you can simulate potential flow over a cylinder.  Complete the following tasks for a cylinder with unit radius:</p>
+</ol>
 
-    <ul>
-      <li>Derive an expression for the pressure coefficient and create a contour plot of the pressure coefficient for the flow around the <strong>outside</strong> of the cylinder.  Use a a domain 4 radii wide and 4 radii high.</li>
-      <li>Plot the pressure coefficient along the cylinder surface as you move from the front of the cylinder to the back.</li>
-      <li>Add a vortex to the center of the cylinder.  Adjust the circulation strength and observe the effect on the streamlines.  Discuss what you find and include a plot of the streamlines for one case.</li>
-    </ul>
-  </li>
+<!-- Again, don't expect to understand everything, but do try to familiarize yourself with the workflow.  In future lectures we will have more discussion on how to setup CFD simulations effectively. -->
+
+<!-- 2. By combining uniform flow and a doublet you can simulate potential flow over a cylinder.  Complete the following tasks for a cylinder with unit radius:
+
+    - Derive an expression for the pressure coefficient and create a contour plot of the pressure coefficient for the flow around the **outside** of the cylinder.  Use a a domain 4 radii wide and 4 radii high.
+    - Plot the pressure coefficient along the cylinder surface as you move from the front of the cylinder to the back.
+    - Add a vortex to the center of the cylinder.  Adjust the circulation strength and observe the effect on the streamlines.  Discuss what you find and include a plot of the streamlines for one case. -->
+
+<ol>
   <li>
     <p>Vortex rings are pretty interesting.  Read this <a href="https://en.wikipedia.org/wiki/Vortex_ring">wikipedia article</a> to get an idea of what they are.  They can propel themselves quite far when moving through a quiescent fluid.  See some fun videos of vortex rings formed by <a href="https://www.youtube.com/watch?v=VbV98Z0QP-k">a volcano</a>, <a href="https://www.youtube.com/watch?v=ks3aQhEohTE">dolphins</a>, and <a href="https://www.youtube.com/watch?v=72LWr7BU8Ao">a plate in a pool</a>.  They can also be dangerous, for example with helicopters that <a href="https://www.youtube.com/watch?v=wddpsnvu0PM">descend too quickly</a> (skip to 1:15).</p>
 
@@ -137,6 +139,16 @@
   </li>
 </ol>
 
+<!-- 4. In class we reconstructed the flow over a cylinder using a doublet.  In this assignment you need to reconstruct the flow (as closely as possible) over a unit-chord NACA 0012 airfoil using sources and sinks.  Use a freestream velocity aligned with the chord of 10 m/s and determine the best placement and strength for 10 sources/sinks along the x-axis.
+
+The thickness distribution of the NACA-4 family of airfoils is given by:
+$$
+	\frac{t(x)}{c} = 10 \tau \left[ 0.2969 \sqrt{x/c} - 0.126 (x/c) -
+	0.3537 (x/c)^2 + 0.2843 (x/c)^3 - 0.1015 (x/c)^4\right]
+$$
+where for a NACA 0012 airfoil $$\tau$$ = 0.12 -->
+
+<!-- You may want to solve this problem by creating a MATLAB program, finding the location of the stagnation point, and integrating the location of the upper (or lower) surface of the airfoil.  How close to a NACA 0012 can you get?  -->
 
     </div>
 
