@@ -94,28 +94,41 @@
 
 <ol>
   <li>
-    <p>Determine the drag of a cylinder in a very large wind tunnel (so that we can ignore wall effects).  Effectively the flow is unconfined.  The Reynolds number is large enough such that the wake width is reasonably steady.  One approach to determine the drag is to use a force-balance.  An alternative approach is to use a wake-survey.  In this approach we just need to measure the velocity profile in the wake.  You should assume 2-dimensional, incompressible flow with the wake velocity profile shown below:</p>
+    <p><em>Control Volume Analysis</em>.  Determine the drag of a cylinder in a very large wind tunnel (so that we can ignore wall effects).  Effectively the flow is unconfined.  The Reynolds number is large enough such that the wake width is reasonably steady.  One approach to determine the drag is to use a force-balance.  An alternative approach is to use a wake-survey.  In this approach we just need to measure the velocity profile in the wake.  You should assume 2-dimensional, incompressible flow with the wake velocity profile shown below:</p>
 
-    <p><img src="../wakedrag.png" width="800px" /></p>
+    <p><img src="../wakedrag.png" width="600px" /></p>
 
     <p>What is the drag coefficient of the cylinder based on projected area (i.e., 2D drag coefficient based on diameter)?  Is this a reasonable value (why or why not)?  Solve the problem using one of the two control volumes shown above: 1) a control volume that follows streamlines (blue volume <script type="math/tex">CV_1</script>), or 2) a rectangular control volume (red volume <script type="math/tex">CV_2</script>).</p>
   </li>
   <li>
-    <p>Complete this <a href="https://thesteveportal.plm.automation.siemens.com/articles/en_US/FAQ/Class-Supplements-for-CFD-Fluids-and-Heat-Transfer-Courses-2D-airfoil-CFD-Workflow-and-Validation">guided tutorial</a> for an airfoil analysis and validation with StarCCM+. Note that step 17 should read Wing (not Domain). On our resources page watch the videos on Import 3D curve, Create 2D mesh, and Meshing.  Turn in a plot of your pressure distribution compared to the experimental data.</p>
+    <p><em>Control Volume Analysis</em>.  Consider the side view of propeller and bounding streamlines below.  Use a quasi-one-dimensional approximation (i.e., assume that the velocity is uniform across each circular cross-section).  Station 1 is far upstream, station 2 is just in front of the rotor disk, station 3 is just behind the rotor disk, and station 4 is far downstream.  The freestream velocity at disk 1 is <script type="math/tex">V_\infty</script>.  The velocity at station 2 will be higher than freestream: <script type="math/tex">V_2 = V_\infty + u</script> where <script type="math/tex">u</script> is some unknown velocity increment.  By convention, we define a nondimensional number called the axial induction factor, which is the ratio of this velocity increment to the freestream velocity: <script type="math/tex">a = u/V_\infty</script>.  In terms of <script type="math/tex">a</script>, the velocity at station 2 is thus <script type="math/tex">V_2 = V_\infty(1 + a)</script> (by definition).  Complete the following:</p>
+
+    <p><img src="../adisk.png" width="450px" /></p>
+
+    <ul>
+      <li>Find a expression for the far-field velocity <script type="math/tex">V_4</script> in terms of <script type="math/tex">V_\infty</script> and <script type="math/tex">a</script> (note: the same behavior occurs for the downwash of a lifting wing).  You may need to use more than one control volume to solve this problem.</li>
+      <li>Derive an expression for the thrust coefficient (normalized by the freestream dynamic pressure and the disk area) in terms of <script type="math/tex">a</script>.</li>
+      <li>Derive an expression for the induced (or propulsive) efficiency in terms of <script type="math/tex">a</script>.  The induced efficiency is an ideal efficiency, that ignores viscous flow losses and rotational energy losses.  The efficiency is <script type="math/tex">P_{out}/P_{in}</script>.  The useful power out of the system is <script type="math/tex">T V_\infty</script>.  The power into the system, using a reference frame moving with the propeller, is due to the net kinetic energy imparted into the system:
+ <script type="math/tex">P_{in} = \frac{1}{2}\dot{m}(V_4^2 - V_\infty^2)</script></li>
+      <li>Draw (qualitatively) the velocity and pressure distribution along the axis from station 1 to station 4 and explain the behavior.</li>
+    </ul>
   </li>
-</ol>
-
-<!-- Again, don't expect to understand everything, but do try to familiarize yourself with the workflow.  In future lectures we will have more discussion on how to setup CFD simulations effectively. -->
-
-<!-- 2. By combining uniform flow and a doublet you can simulate potential flow over a cylinder.  Complete the following tasks for a cylinder with unit radius:
-
-    - Derive an expression for the pressure coefficient and create a contour plot of the pressure coefficient for the flow around the **outside** of the cylinder.  Use a a domain 4 radii wide and 4 radii high.
-    - Plot the pressure coefficient along the cylinder surface as you move from the front of the cylinder to the back.
-    - Add a vortex to the center of the cylinder.  Adjust the circulation strength and observe the effect on the streamlines.  Discuss what you find and include a plot of the streamlines for one case. -->
-
-<ol>
   <li>
-    <p>Vortex rings are pretty interesting.  Read this <a href="https://en.wikipedia.org/wiki/Vortex_ring">wikipedia article</a> to get an idea of what they are.  They can propel themselves quite far when moving through a quiescent fluid.  See some fun videos of vortex rings formed by <a href="https://www.youtube.com/watch?v=VbV98Z0QP-k">a volcano</a>, <a href="https://www.youtube.com/watch?v=ks3aQhEohTE">dolphins</a>, and <a href="https://www.youtube.com/watch?v=72LWr7BU8Ao">a plate in a pool</a>.  They can also be dangerous, for example with helicopters that <a href="https://www.youtube.com/watch?v=wddpsnvu0PM">descend too quickly</a> (skip to 1:15).</p>
+    <p><em>CFD</em>.</p>
+
+    <p>Background (optional, as much as needed):</p>
+    <ul>
+      <li>Complete this <a href="https://thesteveportal.plm.automation.siemens.com/articles/en_US/FAQ/Class-Supplements-for-CFD-Fluids-and-Heat-Transfer-Courses-2D-airfoil-CFD-Workflow-and-Validation">guided tutorial</a> for an airfoil analysis and validation with StarCCM+. Note that step 17 should read Wing (not Domain).</li>
+      <li>Read the <a href="https://documentation.thesteveportal.plm.automation.siemens.com/starccmplus_latest_en/index.html?param=97pe9&amp;authLoc=https://thesteveportal.plm.automation.siemens.com/AuthoriseRedirect#page/STARCCMP%2FGUID-DFC37503-1D0C-480F-9D36-4DAA821A54B7%3Den%3D.html%23">best practices guide</a> for incompressible aerodynamics in StarCCM+.</li>
+      <li>Watch these videos on our resources page: Import 3D curve, Create 2D mesh, and Meshing.</li>
+    </ul>
+
+    <p>Actual problem (required):</p>
+
+    <p>Perform a grid convergence study for an <em>inviscid</em> airfoil analysis.  You can use the same setup as in the tutorial, or pick a different airfoil and freestream conditions if you like.  Turn in a plot showing convergence in lift coefficient and drag coefficient (separate plots) as a function of some mesh parameter (e.g., base size, number of cells, etc.).  Note: that because this is an inviscid solution the drag is just the pressure drag.</p>
+  </li>
+  <li>
+    <p><em>Potential Flow</em>.  Vortex rings are pretty interesting.  Read this <a href="https://en.wikipedia.org/wiki/Vortex_ring">wikipedia article</a> to get an idea of what they are.  They can propel themselves quite far when moving through a quiescent fluid.  See some fun videos of vortex rings formed by <a href="https://www.youtube.com/watch?v=VbV98Z0QP-k">a volcano</a>, <a href="https://www.youtube.com/watch?v=ks3aQhEohTE">dolphins</a>, and <a href="https://www.youtube.com/watch?v=72LWr7BU8Ao">a plate in a pool</a>.  They can also be dangerous, for example with helicopters that <a href="https://www.youtube.com/watch?v=wddpsnvu0PM">descend too quickly</a> (skip to 1:15).</p>
 
     <p>If you’re really careful, and put one vortex ring right behind another you can have leapfrogging vortices!  Check out this video of a <a href="https://youtu.be/Yydb9Mqg9TY">real-life visualization</a> of the phenomenon, a <a href="https://youtu.be/0LP-MgrXtIM">2D simulation</a>, and a neat <a href="https://www.youtube.com/watch?v=SPBMEXX5xBI">3D simulation</a>.</p>
 
@@ -138,6 +151,12 @@
     <p>If you just look at trajectories it is hard to tell that they are leapfrogging.  Though not required, you might like to create an animation so that you can actually watch the movement in time.  You might also like to draw a line between the vortex pairs to better visualize them as a connected ring.</p>
   </li>
 </ol>
+
+<!-- 2. By combining uniform flow and a doublet you can simulate potential flow over a cylinder.  Complete the following tasks for a cylinder with unit radius:
+
+    - Derive an expression for the pressure coefficient and create a contour plot of the pressure coefficient for the flow around the **outside** of the cylinder.  Use a a domain 4 radii wide and 4 radii high.
+    - Plot the pressure coefficient along the cylinder surface as you move from the front of the cylinder to the back.
+    - Add a vortex to the center of the cylinder.  Adjust the circulation strength and observe the effect on the streamlines.  Discuss what you find and include a plot of the streamlines for one case. -->
 
 <!-- 4. In class we reconstructed the flow over a cylinder using a doublet.  In this assignment you need to reconstruct the flow (as closely as possible) over a unit-chord NACA 0012 airfoil using sources and sinks.  Use a freestream velocity aligned with the chord of 10 m/s and determine the best placement and strength for 10 sources/sinks along the x-axis.
 
