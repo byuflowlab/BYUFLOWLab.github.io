@@ -94,7 +94,7 @@
 
 <p>A NACA 4-series airfoil is defined by four numbers, which we will call ABCC.  The first number is the maximum amount of camber as a percentage of chord.  In the formulas below we define <script type="math/tex">\epsilon = A/100</script>.  The second number gives the location of the maximum camber in tenths of a chord.  In the formulas below we define <script type="math/tex">p = B/10</script>.  Finally, the last two numbers give the thickness of the airfoil as a percentage of chord.  We define <script type="math/tex">\tau = CC/100</script>.  The airfoil is defined on a unit chord (<script type="math/tex">0 \le x \le 1</script>).  With these definitions we can compute the thickness distribution:</p>
 
-<script type="math/tex; mode=display">y_t(x) = 5 \tau \left[ 0.2969 \sqrt{x} - 0.1260 {x} - 0.3516 {x}^2 + 0.2843 {x}^3 -0.1015 {x}^4 \right]</script>
+<script type="math/tex; mode=display">y_t(x) = 10 \tau \left[ 0.2969 \sqrt{x} - 0.1260 {x} - 0.3516 {x}^2 + 0.2843 {x}^3 -0.1015 {x}^4 \right]</script>
 
 <p>and the camber line distribution:</p>
 
@@ -108,8 +108,8 @@ y_c(x) = \begin{cases}
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align}
-y_u(x) &= y_c(x) + y_t(x) \\
-y_l(x) &= y_c(x) - y_t(x) \\
+y_u(x) &= y_c(x) + y_t(x)/2 \\
+y_l(x) &= y_c(x) - y_t(x)/2 \\
 \end{align} %]]></script>
 
 <ol>
