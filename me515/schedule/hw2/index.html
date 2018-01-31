@@ -113,23 +113,23 @@ y_l(x) &= \bar{y}(x) - T(x)/2 \\
 \end{align} %]]></script>
 
 <ol>
-  <li>
-    <p><em>Thin Airfoil Theory</em>: Using thin airfoil theory, plot <script type="math/tex">c_l</script> and <script type="math/tex">c_{mac}</script> as a function of angle of attack for a NACA 4412 airfoil.  Show all work.  Also plot the <script type="math/tex">C_p</script> distribution for both the ideal angle of attack and for the case where <script type="math/tex">c_l = 1.0</script>.</p>
-  </li>
-  <li>
-    <p><em>Panel Method</em>: Write a computer program that implements a surface panel method and compare the results from the previous problem (lift and moment coefficient plot, <script type="math/tex">C_p</script> distributions at both angles of attack).</p>
-  </li>
-  <li>
-    <p><em>Computational Fluid Dynamics</em>: Use StarCCM+ to compare the same set of results (lift and moment coefficient plot, <script type="math/tex">C_p</script> distributions at both angles of attack) for inviscid flow.</p>
-  </li>
-  <li>
-    <p><em>Discussion</em>:</p>
+  <li><em>Thin Airfoil Theory</em>: Using thin airfoil theory with a NACA 4412 airfoil (be sure to show all work):
     <ul>
-      <li>Plot the error in <script type="math/tex">c_l</script>, <script type="math/tex">c_d</script>, and <script type="math/tex">c_{mac}</script> as a function of the number of panels.  How many panels are needed to produce reasonable results?</li>
-      <li>Discuss the primary sources of error in the panel method.</li>
-      <li>How well do the three methods compare and what are the limitations of each?</li>
+      <li>report the first three Fourier coefficients</li>
+      <li>plot <script type="math/tex">c_l</script> and <script type="math/tex">c_{mac}</script> as a function of angle of attack</li>
+      <li>Plot the <script type="math/tex">C_p</script> distribution for both the ideal angle of attack and for the angle of attack where <script type="math/tex">c_l = 1.0</script>.</li>
     </ul>
   </li>
+  <li><em>Panel Method</em>: Write a computer program that implements a surface panel method.
+    <ul>
+      <li>compare the results from the previous problem (lift and moment curves, <script type="math/tex">C_p</script> distributions at both angles of attack).</li>
+      <li>plot the error in <script type="math/tex">c_l</script>, <script type="math/tex">c_d</script>, and <script type="math/tex">c_{mac}</script> as a function of the number of panels (using both surface integration and the Kutta-Joukowski theorem).  How many panels are needed to produce reasonable results?</li>
+    </ul>
+  </li>
+  <li>
+    <p><em>Computational Fluid Dynamics</em>: Use StarCCM+ to compare the same set of results (lift and moment at just two angles of attack is sufficient, <script type="math/tex">C_p</script> distributions at both angles of attack) for inviscid flow.  You should be able to reuse your same simulation from last week, just change the angle of attack (note that if you did not use the NACA 4412 from last week’s tutorial in your CFD simulation you can perform this comparison with any airfoil, however you must use the NACA 4412 for parts 1 and 2.)</p>
+  </li>
+  <li><em>Discussion</em>: Provide a brief discussion on how well the methods compare, and the limitations and sources of error for each.</li>
 </ol>
 
     </div>
