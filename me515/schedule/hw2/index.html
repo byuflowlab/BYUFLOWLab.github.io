@@ -96,6 +96,8 @@
 
 <script type="math/tex; mode=display">T(x) = 10 \tau \left[ 0.2969 \sqrt{x} - 0.1260 {x} - 0.3516 {x}^2 + 0.2843 {x}^3 -0.1015 {x}^4 \right]</script>
 
+<p>(note: if you want a sharp-tailed airfoil change 0.3516 with 0.3537)</p>
+
 <p>and the camber line distribution:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
@@ -117,7 +119,7 @@ y_l(x) &= \bar{y}(x) - T(x)/2 \\
     <ul>
       <li>report the first three Fourier coefficients</li>
       <li>plot <script type="math/tex">c_l</script> and <script type="math/tex">c_{mac}</script> as a function of angle of attack</li>
-      <li>Plot the <script type="math/tex">C_p</script> distribution for both the ideal angle of attack and for the angle of attack where <script type="math/tex">c_l = 1.0</script>.</li>
+      <li>Plot the <script type="math/tex">C_p</script> distribution for both the ideal angle of attack and for the angle of attack where <script type="math/tex">c_l = 1.0</script> (note you will most likely need more than 3 Fourier coefficients for this part).</li>
     </ul>
   </li>
   <li><em>Panel Method</em>: Write a computer program that implements a surface panel method.
