@@ -91,8 +91,40 @@
 
 
     <div class="content container">
-      <div class="post">
-  <h1 class="post-title">Scientific Programming Languages</h1>
+      <div id="toc-container">
+   <table class="toc" id="toc">
+      <tbody>
+         <tr>
+            <td>
+               <div id="toctitle">
+                  <h2>Contents</h2>
+               </div>
+               <ul>
+                  <li class="toc_level-1 toc_section-1">
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Scientific Programming Languages</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-2">
+                     <a href="#tocAnchor-1-2"><span class="tocnumber">2</span> <span class="toctext">Matlab</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-3">
+                     <a href="#tocAnchor-1-3"><span class="tocnumber">3</span> <span class="toctext">C, C++, and Fortran</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-4">
+                     <a href="#tocAnchor-1-4"><span class="tocnumber">4</span> <span class="toctext">Java</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-5">
+                     <a href="#tocAnchor-1-5"><span class="tocnumber">5</span> <span class="toctext">Python</span></a>
+                  </li>
+                  <li class="toc_level-1 toc_section-6">
+                     <a href="#tocAnchor-1-6"><span class="tocnumber">6</span> <span class="toctext">Julia</span></a>
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div><div class="post">
+  <h1 class="post-title" id="tocAnchor-1-1">Scientific Programming Languages</h1>
   <span class="post-date">11 Aug 2015</span>
   <div id="toc-container">
    <table class="toc" id="toc">
@@ -125,7 +157,7 @@
    </table>
 </div><p>I’ve used a number of scientific programming languages over the past 16 years: C++, C, Matlab, Java, Fortran, Python, and Julia, and I wouldn’t name any one as the “best” (I’ve also used Objective-C, JavaScript, and PHP quite a bit, but not for scientific computing).  Usually I try to pick the right tool for the job, not necessarily just the tool I happen to know best (as they say: if all you have is a hammer, everything looks like a nail).  However, my usage has evolved over the years from Matlab-centric, to Python-centric, and I’m contemplating a move to Julia-centric.  Before explaining why, let’s discuss some of the reasons why I might choose one language over the others.</p>
 
-<h1 id="tocAnchor-1-1">Matlab</h1>
+<h1 id="tocAnchor-1-2">Matlab</h1>
 
 <p>Matlab is widely used in university settings.  For students it is very affordable, and it is very easy to use.  Matlab is oriented towards scientific computing and it comes pre-packaged with a built-in IDE, debugger, and a large collection of built-in methods and toolboxes.  I did much of my graduate work and PhD Dissertation using Matlab. Most students like it a lot.</p>
 
@@ -139,7 +171,7 @@
 
 <p><strong>Update (10/1/2015)</strong>: With Mathworks relatively new <a href="http://www.mathworks.com/help/matlab/matlab-engine-for-python.html">Matlab Engine for Python</a>, connected to fmincon from Python was relatively easy.  I posted an example <a href="https://bitbucket.org/mdolab/pyoptsparse/pull-requests/13/an-example-bridge-to-fmincon/diff">here</a>, to hopefully be integrated with pyopt-sparse later.  Having access to fmincon is great, and makes me once again interested in keeping a Matlab license around.</p>
 
-<h1 id="tocAnchor-1-2">C, C++, and Fortran</h1>
+<h1 id="tocAnchor-1-3">C, C++, and Fortran</h1>
 
 <p>If the end result is a re-write in a compiled language, why not just start there to begin with?  Good question.  I have done that on occasion. The problem is that while these languages have great run times, development time is usually much slower (even when accounting for the re-write), and re-writing may not be necessary.  Development time is usually a much bigger bottleneck as compared to run time, at least for my use cases.</p>
 
@@ -180,7 +212,7 @@ x = 1.0_dp
 
 <p>If I needed speed, but didn’t need OO, how would I decide between Fortran and C?  Usually just by what packages I needed, and which language I thought would be easier to do the integration in.  I still use both Fortran and C quite a bit, but almost always only in connection with Python as I’ll discuss below.  I don’t use C++ very much anymore, unless I want something that can stand alone without Python.  Otherwise, the combination of Python with C I find to be much easier to develop in and just as fast to run (more on this later).</p>
 
-<h1 id="tocAnchor-1-3">Java</h1>
+<h1 id="tocAnchor-1-4">Java</h1>
 
 <p>I used Java quite a bit during graduate school.  Most folks don’t think of Java as a scientific langauge.  My advisor liked Java.  He was ahead of his time in developing interactive modules for teaching.  His course notes (e.g., <a href="http://adg.stanford.edu/aa241">http://adg.stanford.edu/aa241</a>) contained Java applets that allowed you to run interactive examples on wing design, etc., which were super helpful.  Recently, there has been a lot of interest in the scientific community to do similar things with Jupyter notebooks.</p>
 
@@ -192,7 +224,7 @@ x = 1.0_dp
 
 <p>Java was pretty nice to work with, but I haven’t used it in years.  After diving into Python I found it superior in every way.  It is an even easier language to work with and has great scientific support.  Its only disadvantage is performance, but this is remedied through its easy connections to C/Fortran.</p>
 
-<h1 id="tocAnchor-1-4">Python</h1>
+<h1 id="tocAnchor-1-5">Python</h1>
 
 <p>I dabbled in Python a bit during graduate school, but really only for random fun side projects (like this <a href="https://code.google.com/p/movie-content-editor/">movie filter project</a> we made as a proof of concept).  As a postdoc I started using Python for everything.  Python is pretty great.  It is a very easy language to use.  It has simplistic syntax like Matlab, but unlike Matlab it allows for objected oriented programming (I know Matlab has some OO features, but they are pretty weak), functional programming, or procedural programming.</p>
 
@@ -208,7 +240,7 @@ x = 1.0_dp
 
 <p>I should say of course that your mileage may vary.  I don’t work in controls, but as far as I’m aware there is nothing as capable as Simulink and I don’t think the support for controls is as strong in Python as compared to Matlab.  But that’s not my area, just my impression.  For the types of things I do, the only thing I’ve missed are optimization algorithms.  The Optimization Toolbox in Matlab is pretty capable and robust.  Conversely, the optimization tools built into scipy are not very good in my opinion.  Fortunately, this is remedied through the use of <a href="http://www.pyopt.org">pyOpt</a> and now <a href="https://bitbucket.org/mdolab/pyoptsparse">pyOptSparse</a>.</p>
 
-<h1 id="tocAnchor-1-5">Julia</h1>
+<h1 id="tocAnchor-1-6">Julia</h1>
 
 <p>Julia appears to be the holy-grail of scientific programming languages.  An interpreted, easy-to-use language, <em>and</em> with speeds comparable to those of C.  In addition, its designed for mathematical computing, including parallelism and cloud computing, and if needed it makes it even easier to call C or Fortran code (no wrappers needed).</p>
 
@@ -323,15 +355,6 @@ x = 1.0_dp
           <a href="/posts/julia-ftw">
             Julia for the Win
             <small>16 May 2016</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/posts/writing-sci-papers">
-            Writing Scientific Papers
-            <small>04 Jan 2016</small>
           </a>
         </h3>
       </li>
