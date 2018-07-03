@@ -121,9 +121,6 @@
                         <li class="toc_level-2 toc_section-7">
                            <a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">LaTeX Logistics</span></a>
                         </li>
-                        <li class="toc_level-2 toc_section-8">
-                           <a href="#tocAnchor-1-1-7"><span class="tocnumber">1.7</span> <span class="toctext">Proposals</span></a>
-                        </li>
                      </ul>
                   </li>
                </ul>
@@ -212,6 +209,8 @@ For example:
   <li><strong>Don’t use rainbow colormaps for contour plots.</strong>  The ordering of the rainbow colormap is nonintuitive and does not vary continuously in luminance. The result is an obscuring of details and the perception of artificial boundaries between hues.  This is especially problematic because the default for many contour plots is the rainbow colormap.  Recently, both <a href="http://blogs.mathworks.com/steve/2014/10/20/a-new-colormap-for-matlab-part-2-troubles-with-rainbows/">Matlab</a> and <a href="http://matplotlib.org/users/colormaps.html">matplotlib</a> have changed the default to a colormap that is more perceptually uniform.</li>
   <li><strong>Don’t accept the defaults of your plotting program, rarely are they well suited for publication-quality plots</strong>.  It’s worth creating some nice defaults and saving them either as a Matlab style in Export Setup or for Python in your .matplotlibrc file.  Usually I try to optimize my figures to a 3.5 inch size, which is a typical column size in a scientific journal.  Make sure to set the font size is large enough so that all labels are readable.</li>
   <li><strong>Save the script and the data you used to generate your figures</strong>.  You <em>will</em> need to regenerate them again later, either for revisions, or for a presentation in which you may want different fonts/colors. Taking a few minutes to do this now will save your hours later.</li>
+  <li><strong>Each figure should have a clear message—remove anything extraneous</strong>.  Favor direct labels over legends when possible.  Don’t put in background grids unless there is a clear justification.  Often, the top and right border lines just add unnecessary clutter.</li>
+  <li><strong>Save figures with a transparent background in case you or I need to reuse them in a presentation later</strong>.  In matplotlib you just add <code class="highlighter-rouge">transparent=true</code> or even better, put <code class="highlighter-rouge">savefig.transparent : True</code> in your matplotlibrc file so you don’t have to remember.</li>
 </ul>
 
 <h2 id="tocAnchor-1-1-6">LaTeX Logistics</h2>
@@ -231,40 +230,6 @@ For example:
   <li>Actual words or units in equations should be typeset with \text (i.e., $V = 30 \text{m/s}$).</li>
   <li>If using an inline equation, rather than a displayed equation, use “/” instead of “\frac”.</li>
 </ul>
-
-<h2 id="tocAnchor-1-1-7">Proposals</h2>
-
-<p>Writing a proposal is different than writing a scientific paper.  A proposal is intended to be a persuasive argument (rather than a presentation of results and an illumination of their implications).  You will need to write a prospectus during your graduate work, which is essentially a short proposal.  A strong beginning is critical.</p>
-
-<p>Make sure you <em>explicitly</em> answer the following questions in any proposal, as these are the criteria an evaluator will use to judge its merit.  <a href="http://www.darpa.mil/work-with-us/heilmeier-catechism">These questions</a> come from George H. Heilmeier, a former DARPA director:</p>
-
-<ul>
-  <li>What are you trying to do? Articulate your objectives using absolutely no jargon.</li>
-  <li>How is it done today, and what are the limits of current practice?</li>
-  <li>What is new in your approach and why do you think it will be successful?</li>
-  <li>Who cares? If you succeed, what difference will it make?</li>
-  <li>What are the risks?</li>
-  <li>How much will it cost?</li>
-  <li>How long will it take?</li>
-  <li>What are the mid-term and final “exams” to check for success?</li>
-</ul>
-
-<!-- 1. Is the problem important?  (clearly define what the problem is and convince the reader that it is important)
-2. Is the proposed solution innovative and impactful? (clearly describe the outcomes and how they will be impactful)
-3. Is this person/team uniquely qualified to perform this work and is it likely to lead to a successful outcome? (you need a well-defined *specific* work plan, a reasonable scope, and ideally some preliminary results that lend confidence that this is feasible) -->
-
-<p>Other advice related to addressing these questions in your prospectus:</p>
-
-<ul>
-  <li>Read this excellent <a href="http://rapids.ucsd.edu/documents/PorterSalesPitch2011.pdf">summary</a> on how to put together a strong introduction.</li>
-  <li>Usually the weakest part I see is the work plan, and that should be the primary focus of the prospectus.  A vague work plan won’t help you at all.  If you take this process seriously you will save yourself a lot of time and headache later.  I’ve gone through the process of writing a proposal on an idea I thought was promising, but after carefully writing it out I realized it wasn’t worth pursuing and needed to change direction.  Better to figure that out now instead of later!  A good work plan will provide a blueprint for your research.  Blueprints can change of cousre, but no one would start building a house with only a vague plan in mind.</li>
-  <li>Create a timeline.  Plan out how long each step will reasonably take, and make sure you have an appropriate scope.</li>
-  <li>How will you know you succeeded?  What are the metrics?  If you don’t know what success looks like, it will be hard to get there.</li>
-  <li>Think about contingencies (especially for a PhD).  Your first and second paper should have a pretty solid plan, but papers 3 and 4 may be dependent on what happens in the first two stages.  Have a backup plan in case your results in those early stages don’t follow what you hypothesized.</li>
-</ul>
-
-<!-- Another great resource are these two short documents from George Hazelrigg, a longtime program director at the National Science Foundation.  Not everything in that paper applies to you, but there are still several important points for your work: [one](https://poole.ncsu.edu/i/com/weblogs/research-development/Honing-Proposal-Skillls-1.pdf), [two](http://www.cs.rpi.edu/~trink/HazelriggWinningResearchProposal.pdf) -->
-
 
     </div>
 
