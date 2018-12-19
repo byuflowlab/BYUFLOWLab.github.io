@@ -19,6 +19,9 @@ h2{
     display: none;
 }
 
+.nonum{
+  list-style-type: none;
+}
 
 /* style images on reserach page */
 /*.research-image{
