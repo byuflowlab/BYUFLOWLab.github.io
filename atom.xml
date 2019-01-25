@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-01-07T08:57:17-08:00</updated>
+ <updated>2019-01-24T18:53:47-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -15,24 +15,24 @@
  <entry>
    <title>Trajectory Optimization for High Altitude Long Endurance Aircraft</title>
    <link href="http://flow.byu.edu/posts/hale-trajectory"/>
-   <updated>2018-12-18T00:00:00-08:00</updated>
+   <updated>2018-12-18T00:00:00-07:00</updated>
    <id>http://flow.byu.edu/posts/traj-martin</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;helios.jpg&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Our lab has been studying solar powered high altitude long endurance aircraft (HALE) for the past couple of years.  HALE aircraft are intended to fly persistently, or at least for very long periods of time, with various applications including telecommunications (replacing more expensive satellites), surveillance, and weather monitoring.  Persistent flight is challenging and requires high altitudes (where wind speeds are reduced), large wingspans and lightweight structures (both of which reduce induced drag, the dominant source of drag at low speeds), and efficient solar capture.  A well known example from a decade ago was the &lt;a href=&quot;https://www.nasa.gov/centers/dryden/history/pastprojects/Helios/index.html&quot;&gt;NASA Helios&lt;/a&gt; prototype pictured above.  More recent commercial examples include &lt;a href=&quot;https://www.airbus.com/defence/uav/zephyr.html&quot;&gt;Airbus’ Zephyr&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/notes/mark-zuckerberg/the-technology-behind-aquila/10153916136506634/&quot;&gt;Facebook’s Aquila&lt;/a&gt;, and &lt;a href=&quot;https://www.aurora.aero/odysseus-high-altitude-pseudo-satellite-haps/&quot;&gt;Aurora’s Odysseus&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To remain aerodynamically efficient, aircraft have a minimal amount of forward projected area, in other words most of the area available for solar panels faces upward.  That works well when the sun is straight overhead, but during the winter solstice the sun is low in the sky reducing the amount of incident solar energy.  Furthermore, the days are shorter in the winter, which further reduces the amount of solar energy available.  Thus, winter solstice ends up being a limiting case for the design and operation of these aircraft.&lt;/p&gt;
+&lt;p&gt;To remain aerodynamically efficient, aircraft have a minimal amount of forward projected area, in other words most of the area available for solar panels faces upward.  That works well when the sun is straight overhead, but during the winter solstice the sun is low in the sky (and is never straight overhead) reducing the amount of incident solar energy.  Furthermore, the days are shorter in the winter, which further reduces the amount of solar energy available.  Thus, winter solstice ends up being a limiting case for the design and operation of these aircraft.&lt;/p&gt;
 
 &lt;p&gt;In a collaboration between our lab and the &lt;a href=&quot;https://apm.byu.edu/prism/index.php&quot;&gt;PRISM Group&lt;/a&gt; we began exploring how much additional energy could be captured, for a given aircraft, just by changing how the aircraft is flown. To explore this question we solved for optimal trajectories, using nonlinear model predictive control, with models for aircraft dynamics, aerodynamics, solar capture, atmosphere, and propulsion.  Trajectories were modeled for a full day with an eight-second time step resolution.  This was a much finer resolution than existing studies, which ended up being important to uncover some interesting behavior.  One major constraint in the problem was that the aircraft needed to stay within a fixed radius, as would be necessary for a telecommunications application.  We hypothesized that the aircraft would try to bank to orient the panels more towards the sun, at least for part of the trajectory, but this did not happen.&lt;/p&gt;
 
-&lt;p&gt;The optimal trajectories during the day looked like the fabiform (bean shape) shown below, with the major axis oriented towards the sun (the yellow line in the middle of the figure points towards the sun).  The outer circle is the radius constraint that the airplane must stay in.  When flying away from the sun, points 4 to 7 in the figure, the aircraft increased its angle of attack, which results in slower flight speeds and increased incidence towards the sun.  In other words, it increased its energy capture and increased the time during increased energy capture.  On the return trip the angle of attack was lowered to quickly return back to the start.  As the sun moved through the day, the bean shape would precess so as to remain oriented towards the sun.  By flying these optimal paths the total energy capture at the end of the day was found to increase by about 8%, over conventional paths, without any change in the aircraft (just changes in the way it is flown).&lt;/p&gt;
+&lt;p&gt;The optimal trajectories during the day looked like the bean shape shown below, with the major axis oriented towards the sun (the yellow line in the middle of the figure points towards the sun).  The outer circle is the radius constraint that the airplane must stay in.  When flying away from the sun, points 4 to 7 in the figure, the aircraft increased its angle of attack, which results in slower flight speeds and increased incidence towards the sun.  In other words, it increased its energy capture and increased the time during increased energy capture.  On the return trip the angle of attack was lowered to quickly return back to the start.  As the sun moved through the day, the bean shape would precess so as to remain oriented towards the sun.  By flying these optimal paths the total energy capture at the end of the day was found to increase by about 8%, over conventional paths, without any change in the aircraft (just changes in the way it is flown).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;fabiform.png&quot; alt=&quot;optimal trajectory&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This summary is a bit of an oversimplification.  Other important details were explored including the effect of storing potential energy through altitude changes, orbit changes throughout the day, and seasonal changes.  The journal paper was recently published with relevant information below.  We’ve been working on several fronts related to HALE aircraft and will discuss those in the future including trajectories with wind, HALE aircraft configuration design, and aeroelastic modeling methods.&lt;/p&gt;
 
 &lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Martin2018&quot;&gt;Martin, R. A., Gates, N. S., Ning, A., and Hedengren, J. D., “Dynamic Optimization of High-Altitude Solar Aircraft Trajectories Under Station-Keeping Constraints,” &lt;i&gt;Journal of Guidance, Control, and Dynamics&lt;/i&gt;, Nov. 2018. doi:10.2514/1.G003737&lt;/span&gt;
-&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Martin2018-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/1.G003737&quot;&gt;[DOI]&lt;/a&gt;  &lt;a href=&quot;https://github.com/BYU-PRISM/hale-trajectory&quot;&gt;[Code]&lt;/a&gt; 
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Martin2018-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/1.G003737&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=3890&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt; &lt;a href=&quot;https://github.com/BYU-PRISM/hale-trajectory&quot;&gt;[Code]&lt;/a&gt; 
 
 &lt;pre id=&quot;Martin2018-bibtex&quot; class=&quot;bibtex&quot;&gt;@article{Martin2018,
   author = {Martin, R. Abraham and Gates, Nathaniel S. and Ning, Andrew and Hedengren, John D.},
@@ -52,7 +52,7 @@
  <entry>
    <title>Julia for the Win</title>
    <link href="http://flow.byu.edu/posts/julia-ftw"/>
-   <updated>2016-05-16T00:00:00-07:00</updated>
+   <updated>2016-05-16T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/julia-ftw</id>
    <content type="html">&lt;p&gt;In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see &lt;a href=&quot;http://flow.byu.edu/posts/julia-first-imp&quot;&gt;first impressions&lt;/a&gt;).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.&lt;/p&gt;
 
@@ -75,7 +75,7 @@ P.S. If interested in the mentioned code, I have open-sourced it and it is avail
  <entry>
    <title>Julia First Impressions</title>
    <link href="http://flow.byu.edu/posts/julia-first-imp"/>
-   <updated>2015-08-26T00:00:00-07:00</updated>
+   <updated>2015-08-26T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/julia-first-imp</id>
    <content type="html">&lt;p&gt;I’m primarily a Python user, and my primary use is scientific computing.  Over the last few years, I’ve followed Julia’s development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it’s one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.&lt;/p&gt;
 
@@ -126,7 +126,7 @@ P.S. If interested in the mentioned code, I have open-sourced it and it is avail
  <entry>
    <title>Scientific Programming Languages</title>
    <link href="http://flow.byu.edu/posts/sci-prog-lang"/>
-   <updated>2015-08-11T00:00:00-07:00</updated>
+   <updated>2015-08-11T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/sci-prog-lang</id>
    <content type="html">&lt;p&gt;I’ve used a number of scientific programming languages over the past 16 years: C++, C, Matlab, Java, Fortran, Python, and Julia, and I wouldn’t name any one as the “best” (I’ve also used Objective-C, JavaScript, and PHP quite a bit, but not for scientific computing).  Usually I try to pick the right tool for the job, not necessarily just the tool I happen to know best (as they say: if all you have is a hammer, everything looks like a nail).  However, my usage has evolved over the years from Matlab-centric, to Python-centric, and I’m contemplating a move to Julia-centric.  Before explaining why, let’s discuss some of the reasons why I might choose one language over the others.&lt;/p&gt;
 
