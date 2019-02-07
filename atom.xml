@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-02-07T13:56:53-07:00</updated>
+ <updated>2019-02-07T15:20:45-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -17,7 +17,7 @@
    <link href="http://flow.byu.edu/posts/hale-trajectory"/>
    <updated>2018-12-18T00:00:00-07:00</updated>
    <id>http://flow.byu.edu/posts/traj-martin</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;helios.jpg&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;solar.png&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Our lab has been studying solar powered high altitude long endurance aircraft (HALE) for the past couple of years.  HALE aircraft are intended to fly persistently, or at least for very long periods of time, with various applications including telecommunications (replacing more expensive satellites), surveillance, and weather monitoring.  Persistent flight is challenging and requires high altitudes where wind speeds are reduced, large wingspans and lightweight structures (both of which reduce induced drag, the dominant source of drag at low speeds), and efficient solar capture.  A well known example from a decade ago was the &lt;a href=&quot;https://www.nasa.gov/centers/dryden/history/pastprojects/Helios/index.html&quot;&gt;NASA Helios&lt;/a&gt; prototype pictured above.  More recent commercial examples include &lt;a href=&quot;https://www.airbus.com/defence/uav/zephyr.html&quot;&gt;Airbus’ Zephyr&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/notes/mark-zuckerberg/the-technology-behind-aquila/10153916136506634/&quot;&gt;Facebook’s Aquila&lt;/a&gt;, and &lt;a href=&quot;https://www.aurora.aero/odysseus-high-altitude-pseudo-satellite-haps/&quot;&gt;Aurora’s Odysseus&lt;/a&gt;.&lt;/p&gt;
 
