@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-01-30T08:21:36-07:00</updated>
+ <updated>2019-02-07T13:56:53-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -19,17 +19,17 @@
    <id>http://flow.byu.edu/posts/traj-martin</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;helios.jpg&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Our lab has been studying solar powered high altitude long endurance aircraft (HALE) for the past couple of years.  HALE aircraft are intended to fly persistently, or at least for very long periods of time, with various applications including telecommunications (replacing more expensive satellites), surveillance, and weather monitoring.  Persistent flight is challenging and requires high altitudes (where wind speeds are reduced), large wingspans and lightweight structures (both of which reduce induced drag, the dominant source of drag at low speeds), and efficient solar capture.  A well known example from a decade ago was the &lt;a href=&quot;https://www.nasa.gov/centers/dryden/history/pastprojects/Helios/index.html&quot;&gt;NASA Helios&lt;/a&gt; prototype pictured above.  More recent commercial examples include &lt;a href=&quot;https://www.airbus.com/defence/uav/zephyr.html&quot;&gt;Airbus’ Zephyr&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/notes/mark-zuckerberg/the-technology-behind-aquila/10153916136506634/&quot;&gt;Facebook’s Aquila&lt;/a&gt;, and &lt;a href=&quot;https://www.aurora.aero/odysseus-high-altitude-pseudo-satellite-haps/&quot;&gt;Aurora’s Odysseus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our lab has been studying solar powered high altitude long endurance aircraft (HALE) for the past couple of years.  HALE aircraft are intended to fly persistently, or at least for very long periods of time, with various applications including telecommunications (replacing more expensive satellites), surveillance, and weather monitoring.  Persistent flight is challenging and requires high altitudes where wind speeds are reduced, large wingspans and lightweight structures (both of which reduce induced drag, the dominant source of drag at low speeds), and efficient solar capture.  A well known example from a decade ago was the &lt;a href=&quot;https://www.nasa.gov/centers/dryden/history/pastprojects/Helios/index.html&quot;&gt;NASA Helios&lt;/a&gt; prototype pictured above.  More recent commercial examples include &lt;a href=&quot;https://www.airbus.com/defence/uav/zephyr.html&quot;&gt;Airbus’ Zephyr&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/notes/mark-zuckerberg/the-technology-behind-aquila/10153916136506634/&quot;&gt;Facebook’s Aquila&lt;/a&gt;, and &lt;a href=&quot;https://www.aurora.aero/odysseus-high-altitude-pseudo-satellite-haps/&quot;&gt;Aurora’s Odysseus&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To remain aerodynamically efficient, aircraft have a minimal amount of forward projected area, in other words most of the area available for solar panels faces upward.  That works well when the sun is straight overhead, but during the winter solstice the sun is low in the sky (and is never straight overhead) reducing the amount of incident solar energy.  Furthermore, the days are shorter in the winter, which further reduces the amount of solar energy available.  Thus, winter solstice ends up being a limiting case for the design and operation of these aircraft.&lt;/p&gt;
 
 &lt;p&gt;In a collaboration between our lab and the &lt;a href=&quot;https://apm.byu.edu/prism/index.php&quot;&gt;PRISM Group&lt;/a&gt; we began exploring how much additional energy could be captured, for a given aircraft, just by changing how the aircraft is flown. To explore this question we solved for optimal trajectories, using nonlinear model predictive control, with models for aircraft dynamics, aerodynamics, solar capture, atmosphere, and propulsion.  Trajectories were modeled for a full day with an eight-second time step resolution.  This was a much finer resolution than existing studies, which ended up being important to uncover some interesting behavior.  One major constraint in the problem was that the aircraft needed to stay within a fixed radius, as would be necessary for a telecommunications application.  We hypothesized that the aircraft would try to bank to orient the panels more towards the sun, at least for part of the trajectory, but this did not happen.&lt;/p&gt;
 
-&lt;p&gt;The optimal trajectories during the day looked like the bean shape shown below, with the major axis oriented towards the sun (the yellow line in the middle of the figure points towards the sun).  The outer circle is the radius constraint that the airplane must stay in.  When flying away from the sun, points 4 to 7 in the figure, the aircraft increased its angle of attack, which results in slower flight speeds and increased incidence towards the sun.  In other words, it increased its energy capture and increased the time during increased energy capture.  On the return trip the angle of attack was lowered to quickly return back to the start.  As the sun moved through the day, the bean shape would precess so as to remain oriented towards the sun.  By flying these optimal paths the total energy capture at the end of the day was found to increase by about 8%, over conventional paths, without any change in the aircraft (just changes in the way it is flown).&lt;/p&gt;
+&lt;p&gt;The optimal trajectories during the day looked like the bean shape shown below, with the major axis oriented towards the sun (the yellow line in the middle of the figure points towards the sun).  The outer circle is the radius constraint that the airplane must stay in.  When flying away from the sun, points 4 to 7 in the figure, the aircraft increased its angle of attack, which results in slower flight speeds and increased incidence towards the sun.  In other words, it increased its energy capture and increased the time during increased energy capture.  On the return trip the angle of attack was lowered to quickly return back to the start.  As the sun moved through the day, the bean shape would precess so as to remain oriented towards the sun.  By flying these optimal paths the total energy capture at the end of the day was found to increase by about 8%, over conventional optimal circular paths, without any change in the aircraft (just changes in the way it is flown).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;fabiform.png&quot; alt=&quot;optimal trajectory&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This summary is a bit of an oversimplification.  Other important details were explored including the effect of storing potential energy through altitude changes, orbit changes throughout the day, and seasonal changes.  The journal paper was recently published with relevant information below.  We’ve been working on several fronts related to HALE aircraft and will discuss those in the future including trajectories with wind, HALE aircraft configuration design, and aeroelastic modeling methods.&lt;/p&gt;
+&lt;p&gt;Other important details were explored including the effect of storing potential energy through altitude changes, orbit changes throughout the day, and seasonal changes.  The journal paper was recently published and the postprint can be accessed here:&lt;/p&gt;
 
 &lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Martin2018&quot;&gt;Martin, R. A., Gates, N. S., Ning, A., and Hedengren, J. D., “Dynamic Optimization of High-Altitude Solar Aircraft Trajectories Under Station-Keeping Constraints,” &lt;i&gt;Journal of Guidance, Control, and Dynamics&lt;/i&gt;, Nov. 2018. doi:10.2514/1.G003737&lt;/span&gt;
 &lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Martin2018-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/1.G003737&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=3890&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt; &lt;a href=&quot;https://github.com/BYU-PRISM/hale-trajectory&quot;&gt;[Code]&lt;/a&gt; 
@@ -41,6 +41,40 @@
   month = nov,
   title = {Dynamic Optimization of High-Altitude Solar Aircraft Trajectories Under Station-Keeping Constraints},
   year = {2018}
+}
+&lt;/pre&gt;
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;In related work, we did a study on optimal HALE vehicle design (which is still ongoing):&lt;/p&gt;
+
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;McDonnell2018&quot;&gt;McDonnell, T., Mehr, J., and Ning, A., “Multidisciplinary Design Optimization of Flexible Solar-Regenerative High-Altitude Long-Endurance Aircraft,” &lt;i&gt;AIAA Structures, Structural Dynamics, and Materials Conference&lt;/i&gt;, Kissimmee, FL, Jan. 2018. doi:10.2514/6.2018-0107&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('McDonnell2018-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/6.2018-0107&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=3086&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt;  
+
+&lt;pre id=&quot;McDonnell2018-bibtex&quot; class=&quot;bibtex&quot;&gt;@inproceedings{McDonnell2018,
+  address = {Kissimmee, FL},
+  author = {McDonnell, Taylor and Mehr, Judd and Ning, Andrew},
+  booktitle = {{AIAA} Structures, Structural Dynamics, and Materials Conference},
+  doi = {10.2514/6.2018-0107},
+  month = jan,
+  title = {Multidisciplinary Design Optimization of Flexible Solar-Regenerative High-Altitude Long-Endurance Aircraft},
+  year = {2018}
+}
+&lt;/pre&gt;
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;More recently we combined our efforts on trajectory optimization with some aspects of aircraft design.  As the trajectory changes, the optimal operating conditions for the propulsion system change as well. By coupling these design decisions we can increase end of day energy capture by over 10% as compared to optimizing these systems separately.  These latter findings are still preliminary as this was a conference paper, but will be discussed in more detail once they become journal ready.&lt;/p&gt;
+
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Gates2019&quot;&gt;Gates, N. S., Moore, K. R., Ning, A., and Hedengren, J. D., “Combined Trajectory, Propulsion, and Battery Mass Optimization for Solar-Regenerative High-Altitude Long Endurance Unmanned Aircraft,” &lt;i&gt;AIAA Scitech 2019 Forum&lt;/i&gt;, San Diego, CA, Jan. 2019. doi:10.2514/6.2019-1221&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Gates2019-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/6.2019-1221&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=3932&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt;  
+
+&lt;pre id=&quot;Gates2019-bibtex&quot; class=&quot;bibtex&quot;&gt;@inproceedings{Gates2019,
+  address = {San Diego, CA},
+  author = {Gates, Nathaniel S. and Moore, Kevin R. and Ning, Andrew and Hedengren, John D.},
+  booktitle = {AIAA Scitech 2019 Forum},
+  doi = {10.2514/6.2019-1221},
+  month = jan,
+  title = {Combined Trajectory, Propulsion, and Battery Mass Optimization for Solar-Regenerative High-Altitude Long Endurance Unmanned Aircraft},
+  year = {2019}
 }
 &lt;/pre&gt;
 &lt;/li&gt;&lt;/ol&gt;

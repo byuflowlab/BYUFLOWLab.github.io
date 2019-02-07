@@ -110,7 +110,7 @@
    </table>
 </div><div class="post">
   <h1 class="post-title" id="tocAnchor-1-1">Julia for the Win</h1>
-  <span class="post-date">16 May 2016, </span>
+  <span class="post-date">16 May 2016, Andrew Ning</span>
   <p>In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see <a href="http://flow.byu.edu/posts/julia-first-imp">first impressions</a>).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.</p>
 
 <p>The original version was mostly Fortran so I wasn’t necessarily seeking a speed improvement.  For the benefits of working in one language I would be ok with a 20-30% slowdown.  However, an order of magnitude slow down was a lot and it really bogged things down when creating figures and data for the paper.  I had about given up on performance, but two separate encounters with Julia-using colleagues made me revisit the topic once again.  I sent my code to a colleague who had been using Julia for some time.  His PhD student pointed out some suggestions, which I tried, but the impact was negligible.</p>
