@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Coupled Wind Turbine Design and Layout Optimization &middot; FLOW Lab
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          <img src="/images/logo.png" width="400px" color="white">
+          <!-- FLOW Lab -->
+        </a>
+      </h1>
+      <p class="lead">Flight, Optimization, and Wind Laboratory</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <a class="sidebar-nav-item" href="/publications">Publications</a>
+      <a class="sidebar-nav-item" href="/people">People</a>
+      <a class="sidebar-nav-item" href="/research">Research</a>
+      <a class="sidebar-nav-item" href="/teaching">Teaching</a>
+      <a class="sidebar-nav-item" href="/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/posts">Posts</a>
+      
+    </nav>
+
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Coupled Wind Turbine Design and Layout Optimization</h1>
+  <span class="post-date">13 Feb 2019, P.J. Stanley and Andrew Ning</span>
+  <p><img src="https://byu.box.com/shared/static/7xo4q510sevyikhyt7rxibtfm7tuqlca.gif" alt="animation" /></p>
+
+<p>As wind turbines extract momentum from the air they leave behind wakes of slower moving air. Downstream turbines interact with these wakes decreasing their power production.  Wake interference is unavoidable (a wind farm has many wind turbines, and wind frequently changes direction), but we would like to minimize it.  Over the past several years, our lab and other researchers, have conducted a variety of studies to try to minimize the power loss from wake effects.  One approach is to use layout optimization (repositioning turbines to reduce wake interference).  Another approach is with turbine control optimization (dynamically reorienting the way the turbines face to leave more momentum behind in the wakes).</p>
+
+<p>More recently, we have been exploring a third approach: changing the wind farm layout and the wind turbine design simultaneously.  This differs from the current sequential design approach.  In a collaboration with NREL we started by optimizing turbine heights while also optimizing positions (Stanley, Ning, Dykes, doi:10.1002/we.2310).  Effectively, this added a third dimension where turbines can avoid wakes by using vertical separation.  Changing the turbine heights has multiple consequences that must be considered.  Turbines that shrink in size operate closer to the ground where wind speeds are reduced and thus produce less power.  Taller turbines can take advantage of higher wind speeds, but require more mass both because of the increased height but also because taller towers require extra stiffness to resist bending loads.  A system-level study combining multiple disciplines was necessary to understand whether the increased power could significantly offset the increased capital costs for the towers.</p>
+
+<p>Following that initial study, we starting looking at adding many more degrees of freedom to the wind turbine design.  In the recent paper below, we found that the cost of energy in a wind farm can be significantly decreased by optimizing the wind turbine design at the same time as the wind farm layout. Furthermore, we found that if we didn’t force all of the turbines to be exactly the same we could reduce the cost to produce energy even further. In many cases, it is better for some turbines to be tall with large rotors, and for some turbines to be short with smaller rotors. For wind farms with closely spaced turbines, a wind farm with different turbine designs can have a cost of energy that is 7-10% lower than the same wind farm optimized with all the same turbines.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Stanley2018a">Stanley, A. P. J., and Ning, A., “Coupled Wind Turbine Design and Layout Optimization with Non-Homogeneous Wind Turbines,” <i>Wind Energy Science</i>, Vol. 4, No. 1, pp. 99–114, Jan. 2019. doi:10.5194/wes-2018-54</span>
+<a href="#nowhere" onclick="toggle_visibility('Stanley2018a-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.5194/wes-2018-54">[DOI]</a> <a href="https://www.wind-energ-sci.net/4/99/2019/wes-4-99-2019.pdf">[PDF]</a> <a href="https://github.com/byuflowlab/stanley2018-turbine-design">[Code]</a> 
+
+<pre id="Stanley2018a-bibtex" class="bibtex">@article{Stanley2018a,
+  author = {Stanley, Andrew P.J. and Ning, Andrew},
+  doi = {10.5194/wes-2018-54},
+  journal = {Wind Energy Science},
+  month = jan,
+  number = {1},
+  pages = {99-114},
+  title = {Coupled Wind Turbine Design and Layout Optimization with Non-Homogeneous Wind Turbines},
+  volume = {4},
+  year = {2019}
+}
+</pre>
+</li></ol>
+
+<p>The animation above shows an accelerated example of one optimization from our paper. In this example, you can see reductions in the cost of energy as the turbine locations change (top left) and the turbine designs change (top middle). While not apparent from the visual, in addition to tower height and rotor diameter, we also change the tower diameter and thickness distributions, turbine rating, and blade chord and twist distributions. The bottom left frame shows the wind direction probabilities that were used for this example, and the bottom middle frame shows the power that the wind farm produces for each incoming wind direction. Near the end of the optimization, there is increased power production from all of the wind directions.</p>
+
+</div>
+
+<!-- <p><img src="https://byu.box.com/shared/static/7xo4q510sevyikhyt7rxibtfm7tuqlca.gif" alt="animation" /></p>
+
+<p>As wind turbines extract momentum from the air they leave behind wakes of slower moving air. Downstream turbines interact with these wakes decreasing their power production.  Wake interference is unavoidable (a wind farm has many wind turbines, and wind frequently changes direction), but we would like to minimize it.  Over the past several years, our lab and other researchers, have conducted a variety of studies to try to minimize the power loss from wake effects.  One approach is to use layout optimization (repositioning turbines to reduce wake interference).  Another approach is with turbine control optimization (dynamically reorienting the way the turbines face to leave more momentum behind in the wakes).</p>
+
+<p>More recently, we have been exploring a third approach: changing the wind farm layout and the wind turbine design simultaneously.  This differs from the current sequential design approach.  In a collaboration with NREL we started by optimizing turbine heights while also optimizing positions (Stanley, Ning, Dykes, doi:10.1002/we.2310).  Effectively, this added a third dimension where turbines can avoid wakes by using vertical separation.  Changing the turbine heights has multiple consequences that must be considered.  Turbines that shrink in size operate closer to the ground where wind speeds are reduced and thus produce less power.  Taller turbines can take advantage of higher wind speeds, but require more mass both because of the increased height but also because taller towers require extra stiffness to resist bending loads.  A system-level study combining multiple disciplines was necessary to understand whether the increased power could significantly offset the increased capital costs for the towers.</p>
+
+<p>Following that initial study, we starting looking at adding many more degrees of freedom to the wind turbine design.  In the recent paper below, we found that the cost of energy in a wind farm can be significantly decreased by optimizing the wind turbine design at the same time as the wind farm layout. Furthermore, we found that if we didn’t force all of the turbines to be exactly the same we could reduce the cost to produce energy even further. In many cases, it is better for some turbines to be tall with large rotors, and for some turbines to be short with smaller rotors. For wind farms with closely spaced turbines, a wind farm with different turbine designs can have a cost of energy that is 7-10% lower than the same wind farm optimized with all the same turbines.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Stanley2018a">Stanley, A. P. J., and Ning, A., “Coupled Wind Turbine Design and Layout Optimization with Non-Homogeneous Wind Turbines,” <i>Wind Energy Science</i>, Vol. 4, No. 1, pp. 99–114, Jan. 2019. doi:10.5194/wes-2018-54</span>
+<a href="#nowhere" onclick="toggle_visibility('Stanley2018a-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.5194/wes-2018-54">[DOI]</a> <a href="https://www.wind-energ-sci.net/4/99/2019/wes-4-99-2019.pdf">[PDF]</a> <a href="https://github.com/byuflowlab/stanley2018-turbine-design">[Code]</a> 
+
+<pre id="Stanley2018a-bibtex" class="bibtex">@article{Stanley2018a,
+  author = {Stanley, Andrew P.J. and Ning, Andrew},
+  doi = {10.5194/wes-2018-54},
+  journal = {Wind Energy Science},
+  month = jan,
+  number = {1},
+  pages = {99-114},
+  title = {Coupled Wind Turbine Design and Layout Optimization with Non-Homogeneous Wind Turbines},
+  volume = {4},
+  year = {2019}
+}
+</pre>
+</li></ol>
+
+<p>The animation above shows an accelerated example of one optimization from our paper. In this example, you can see reductions in the cost of energy as the turbine locations change (top left) and the turbine designs change (top middle). While not apparent from the visual, in addition to tower height and rotor diameter, we also change the tower diameter and thickness distributions, turbine rating, and blade chord and twist distributions. The bottom left frame shows the wind direction probabilities that were used for this example, and the bottom middle frame shows the power that the wind farm produces for each incoming wind direction. Near the end of the optimization, there is increased power production from all of the wind directions.</p>
+ -->
+<!-- 
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/hale-trajectory">
+            Trajectory Optimization for High Altitude Long Endurance Aircraft
+            <small>18 Dec 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/julia-ftw">
+            Julia for the Win
+            <small>16 May 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/julia-first-imp">
+            Julia First Impressions
+            <small>26 Aug 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+  </body>
+</html>
