@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-02-13T17:07:36-07:00</updated>
+ <updated>2019-02-13T20:15:31-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -17,7 +17,7 @@
    <link href="http://flow.byu.edu/posts/coupled-turbine-farm"/>
    <updated>2019-02-13T00:00:00-07:00</updated>
    <id>http://flow.byu.edu/posts/coupled-turbine.farm</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/7xo4q510sevyikhyt7rxibtfm7tuqlca.gif&quot; alt=&quot;animation&quot; /&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/prvuhcsgo0qdnwm4zbqugzxhl0wcxols.gif&quot; alt=&quot;animation&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As wind turbines extract momentum from the air they leave behind wakes of slower moving air. Downstream turbines interact with these wakes decreasing their power production.  Wake interference is unavoidable (a wind farm has many wind turbines, and wind frequently changes direction), but we would like to minimize it.  Over the past several years, our lab and other researchers, have conducted a variety of studies to try to minimize the power loss from wake effects.  One approach is to use layout optimization (repositioning turbines to reduce wake interference).  Another approach is with turbine control optimization (dynamically reorienting the way the turbines face to leave more momentum behind in the wakes).&lt;/p&gt;
 
