@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-02-13T20:15:31-07:00</updated>
+ <updated>2019-02-13T20:19:42-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -25,12 +25,12 @@
 
 &lt;p&gt;Following that initial study, we starting looking at adding many more degrees of freedom to the wind turbine design.  In the recent paper below, we found that the cost of energy in a wind farm can be significantly decreased by optimizing the wind turbine design at the same time as the wind farm layout. Furthermore, we found that if we didn’t force all of the turbines to be exactly the same we could reduce the cost to produce energy even further. In many cases, it is better for some turbines to be tall with large rotors, and for some turbines to be short with smaller rotors. For wind farms with closely spaced turbines, a wind farm with different turbine designs can have a cost of energy that is 7-10% lower than the same wind farm optimized with all the same turbines.&lt;/p&gt;
 
-&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Stanley2018a&quot;&gt;Stanley, A. P. J., and Ning, A., “Coupled Wind Turbine Design and Layout Optimization with Non-Homogeneous Wind Turbines,” &lt;i&gt;Wind Energy Science&lt;/i&gt;, Vol. 4, No. 1, pp. 99–114, Jan. 2019. doi:10.5194/wes-2018-54&lt;/span&gt;
-&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Stanley2018a-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.5194/wes-2018-54&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://www.wind-energ-sci.net/4/99/2019/wes-4-99-2019.pdf&quot;&gt;[PDF]&lt;/a&gt; &lt;a href=&quot;https://github.com/byuflowlab/stanley2018-turbine-design&quot;&gt;[Code]&lt;/a&gt; 
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Stanley2018a&quot;&gt;Stanley, A. P. J., and Ning, A., “Coupled Wind Turbine Design and Layout Optimization with Non-Homogeneous Wind Turbines,” &lt;i&gt;Wind Energy Science&lt;/i&gt;, Vol. 4, No. 1, pp. 99–114, Jan. 2019. doi:10.5194/wes-4-99-2019&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Stanley2018a-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.5194/wes-4-99-2019&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://www.wind-energ-sci.net/4/99/2019/wes-4-99-2019.pdf&quot;&gt;[PDF]&lt;/a&gt; &lt;a href=&quot;https://github.com/byuflowlab/stanley2018-turbine-design&quot;&gt;[Code]&lt;/a&gt; 
 
 &lt;pre id=&quot;Stanley2018a-bibtex&quot; class=&quot;bibtex&quot;&gt;@article{Stanley2018a,
   author = {Stanley, Andrew P.J. and Ning, Andrew},
-  doi = {10.5194/wes-2018-54},
+  doi = {10.5194/wes-4-99-2019},
   journal = {Wind Energy Science},
   month = jan,
   number = {1},
