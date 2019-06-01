@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-05-24T14:04:18-06:00</updated>
+ <updated>2019-05-31T22:24:46-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -13,12 +13,55 @@
 
  
  <entry>
+   <title>Polynomial Chaos for Wind Farm Power Prediction</title>
+   <link href="http://flow.byu.edu/posts/pc-windfarm"/>
+   <updated>2019-05-28T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/pc-windfarm</id>
+   <content type="html">&lt;center&gt;
+&lt;img src=&quot;/posts/binned.png&quot; alt=&quot;convergence of AEP&quot; width=&quot;300px&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;In a wind farm, it is important to understand how both the wind speed and wind direction varies.  The variability in wind direction is captured in what is called a wind rose (see above).  The longer bars in the wind rose indicate directions from which wind is more likely to come from.  The power produced by the wind farm can change dramatically as the wind direction changes.  This variation in power is often reduced to a single number—the expected value of power (an average).  In the wind energy field, a common metric of interest is the annual energy production (AEP), which is the expected value of power (multiplied by time in a year and availability).&lt;/p&gt;
+
+&lt;p&gt;The wind rose is really a continuous distribution, but we often discretize it into bins like shown above.  This discretization provides a convenient way to compute average power production.  This is done by dividing the uncertain variable (wind direction in this example) into discrete bins, multiplying the power for each direction by its probability, then summing up over all bins.  This approach is the familiar rectangle rule.  It’s a simple approach and is almost always the approach used in wind farm analysis.&lt;/p&gt;
+
+&lt;p&gt;In a collaboration between our lab and the &lt;a href=&quot;http://adl.stanford.edu&quot;&gt;Aerospace Design Laboratory&lt;/a&gt; at Stanford we’ve been exploring an alternative approach based on polynomial chaos.  Polynomial chaos is not a new method.  It is widely known and used in applications of uncertainty quantification, but has not yet been applied to wind farm analysis.  The main idea is that rather than discretize into bins, we can use polynomials to approximate the continuous power response, allowing us to use fewer samples to approximate the AEP.&lt;/p&gt;
+
+&lt;p&gt;Santiago led a recent study where we explored using polynomial chaos, with uncertainty in both wind direction and wind speed, to predict AEP.  We explored using both quadrature approaches and regression approaches and found the latter to be more effective.  On average, polynomial chaos reduced the number of simulations required by a factor of 5 as compared to the rectangle rule. For example, the figure below shows how AEP varies with the number of samples with polynomial chaos based on regression to the left, and the rectangle rule to the right.  We see that polynomial chaos converges with fewer samples and produces less variability in the AEP estimates from starting the quadrature at different points.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/posts/uq.png&quot; alt=&quot;convergence of AEP&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Additionally, we applied polynomial chaos to optimizing wind farm layouts.  We found that using polynomial chaos with regression allowed for about 1/3 of the simulations required for the rectangle rule (while producing a slightly better AEP).  One such case is shown below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/posts/pc-opt.png&quot; alt=&quot;optimization using PC&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Further details are available in the open-access paper and data linked below.&lt;/p&gt;
+
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Padron2019&quot;&gt;Padrón, A. S., Thomas, J., Stanley, A. P. J., Alonso, J. J., and Ning, A., “Polynomial Chaos to Efficiently Compute the Annual Energy Production in Wind Farm Layout Optimization,” &lt;i&gt;Wind Energy Science&lt;/i&gt;, Vol. 4, pp. 211–231, May 2019. doi:10.5194/wes-4-211-2019&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Padron2019-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.5194/wes-4-211-2019&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://www.wind-energ-sci.net/4/211/2019/wes-4-211-2019.pdf&quot;&gt;[PDF]&lt;/a&gt; &lt;a href=&quot;https://github.com/byuflowlab/windfarm-ouu&quot;&gt;[Code]&lt;/a&gt; 
+
+&lt;pre id=&quot;Padron2019-bibtex&quot; class=&quot;bibtex&quot;&gt;@article{Padron2019,
+  author = {Padr\'{o}n, A. Santiago and Thomas, Jared and Stanley, Andrew P. J. and Alonso, Juan J. and Ning, Andrew},
+  doi = {10.5194/wes-4-211-2019},
+  journal = {Wind Energy Science},
+  month = may,
+  pages = {211-231},
+  title = {Polynomial Chaos to Efficiently Compute the Annual Energy Production in Wind Farm Layout Optimization},
+  volume = {4},
+  year = {2019}
+}
+&lt;/pre&gt;
+&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Making Julia as Fast as C++</title>
    <link href="http://flow.byu.edu/posts/julia-c++"/>
    <updated>2019-04-18T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/juliacpp</id>
    <content type="html">&lt;center&gt;
-&lt;img src=&quot;vortex00.gif&quot; alt=&quot;Vid here&quot; width=&quot;500px&quot; /&gt;
+&lt;img src=&quot;/posts/vortex00.gif&quot; alt=&quot;Vid here&quot; width=&quot;500px&quot; /&gt;
 &lt;/center&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
@@ -147,12 +190,12 @@ complexity &lt;script type=&quot;math/tex&quot;&gt;\mathcal{O}(N^2)&lt;/script&g
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The following is a simulation of a 6x6x6 box of particles with vorticity
+&lt;p&gt;The figure at the top of the page is a simulation of a 6x6x6 box of particles with vorticity
 initially concentrated at its center, diffusing as the simulation progresses due
-to viscous effects:&lt;/p&gt;
-&lt;center&gt;
-&lt;img src=&quot;vortex00.gif&quot; alt=&quot;Vid here&quot; width=&quot;500px&quot; /&gt;
-&lt;/center&gt;
+to viscous effects:
+&lt;!-- &lt;center&gt;
+&lt;img src=&quot;vortex00.gif&quot; alt=&quot;Vid here&quot; width=&quot;500px&quot;&gt;
+&lt;/center&gt; --&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;c-benchmark&quot;&gt;C++ Benchmark&lt;/h2&gt;
 
@@ -1522,6 +1565,32 @@ Available&lt;/a&gt;&lt;/li&gt;
 &lt;/li&gt;&lt;/ol&gt;
 
 &lt;p&gt;P.S. For fun, here is a &lt;a href=&quot;http://prismweb.groups.et.byu.net/360/&quot;&gt;3D visualization&lt;/a&gt; Abe put together based on an Aquila-like configuration at winter solstice.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Multirotor - Vortex Particle Method</title>
+   <link href="http://flow.byu.edu/posts/multirotor-vpm"/>
+   <updated>2018-07-12T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/multirotor-vpm</id>
+   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CP4jI7lLags&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Counter-rotating APC 10x7 propellers ramping up from 0 to 9400 RPM with a constant freestream (advance ratio of 0.35 at 9400 RPM) modeled with a viscous vortex particle method. From the following paper:&lt;/p&gt;
+
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Alvarez2018&quot;&gt;Alvarez, E. J., and Ning, A., “Development of a Vortex Particle Code for the Modeling of Wake Interaction in Distributed Propulsion,” &lt;i&gt;AIAA Applied Aerodynamics Conference&lt;/i&gt;, Atlanta, GA, Jun. 2018. doi:10.2514/6.2018-3646&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Alvarez2018-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/6.2018-3646&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=3148&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt;  
+
+&lt;pre id=&quot;Alvarez2018-bibtex&quot; class=&quot;bibtex&quot;&gt;@inproceedings{Alvarez2018,
+  address = {Atlanta, GA},
+  author = {Alvarez, Eduardo J. and Ning, Andrew},
+  booktitle = {{AIAA} Applied Aerodynamics Conference},
+  doi = {10.2514/6.2018-3646},
+  month = jun,
+  title = {Development of a Vortex Particle Code for the Modeling of Wake Interaction in Distributed Propulsion},
+  year = {2018}
+}
+&lt;/pre&gt;
+&lt;/li&gt;&lt;/ol&gt;
 </content>
  </entry>
  

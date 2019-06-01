@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Polynomial Chaos for Wind Farm Power Prediction &middot; FLOW Lab
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134508820-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134508820-1');
+  </script>
+  
+
+
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          <img src="/images/logo.png" width="400px" color="white">
+          <!-- FLOW Lab -->
+        </a>
+      </h1>
+      <p class="lead">Flight, Optimization, and Wind Laboratory</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <a class="sidebar-nav-item" href="/publications">Publications</a>
+      <a class="sidebar-nav-item" href="/posts">Posts</a>
+      <a class="sidebar-nav-item" href="/people">People</a>
+      <a class="sidebar-nav-item" href="/research">Research</a>
+      <a class="sidebar-nav-item" href="/teaching">Teaching</a>
+      <a class="sidebar-nav-item" href="/resources">Resources</a>
+      
+    </nav>
+
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Polynomial Chaos for Wind Farm Power Prediction</h1>
+  <span class="post-date">28 May 2019, Andrew Ning</span>
+  <center>
+<img src="/posts/binned.png" alt="convergence of AEP" width="300px" />
+</center>
+
+<p>In a wind farm, it is important to understand how both the wind speed and wind direction varies.  The variability in wind direction is captured in what is called a wind rose (see above).  The longer bars in the wind rose indicate directions from which wind is more likely to come from.  The power produced by the wind farm can change dramatically as the wind direction changes.  This variation in power is often reduced to a single number—the expected value of power (an average).  In the wind energy field, a common metric of interest is the annual energy production (AEP), which is the expected value of power (multiplied by time in a year and availability).</p>
+
+<p>The wind rose is really a continuous distribution, but we often discretize it into bins like shown above.  This discretization provides a convenient way to compute average power production.  This is done by dividing the uncertain variable (wind direction in this example) into discrete bins, multiplying the power for each direction by its probability, then summing up over all bins.  This approach is the familiar rectangle rule.  It’s a simple approach and is almost always the approach used in wind farm analysis.</p>
+
+<p>In a collaboration between our lab and the <a href="http://adl.stanford.edu">Aerospace Design Laboratory</a> at Stanford we’ve been exploring an alternative approach based on polynomial chaos.  Polynomial chaos is not a new method.  It is widely known and used in applications of uncertainty quantification, but has not yet been applied to wind farm analysis.  The main idea is that rather than discretize into bins, we can use polynomials to approximate the continuous power response, allowing us to use fewer samples to approximate the AEP.</p>
+
+<p>Santiago led a recent study where we explored using polynomial chaos, with uncertainty in both wind direction and wind speed, to predict AEP.  We explored using both quadrature approaches and regression approaches and found the latter to be more effective.  On average, polynomial chaos reduced the number of simulations required by a factor of 5 as compared to the rectangle rule. For example, the figure below shows how AEP varies with the number of samples with polynomial chaos based on regression to the left, and the rectangle rule to the right.  We see that polynomial chaos converges with fewer samples and produces less variability in the AEP estimates from starting the quadrature at different points.</p>
+
+<p><img src="/posts/uq.png" alt="convergence of AEP" /></p>
+
+<p>Additionally, we applied polynomial chaos to optimizing wind farm layouts.  We found that using polynomial chaos with regression allowed for about 1/3 of the simulations required for the rectangle rule (while producing a slightly better AEP).  One such case is shown below.</p>
+
+<p><img src="/posts/pc-opt.png" alt="optimization using PC" /></p>
+
+<p>Further details are available in the open-access paper and data linked below.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Padron2019">Padrón, A. S., Thomas, J., Stanley, A. P. J., Alonso, J. J., and Ning, A., “Polynomial Chaos to Efficiently Compute the Annual Energy Production in Wind Farm Layout Optimization,” <i>Wind Energy Science</i>, Vol. 4, pp. 211–231, May 2019. doi:10.5194/wes-4-211-2019</span>
+<a href="#nowhere" onclick="toggle_visibility('Padron2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.5194/wes-4-211-2019">[DOI]</a> <a href="https://www.wind-energ-sci.net/4/211/2019/wes-4-211-2019.pdf">[PDF]</a> <a href="https://github.com/byuflowlab/windfarm-ouu">[Code]</a> 
+
+<pre id="Padron2019-bibtex" class="bibtex">@article{Padron2019,
+  author = {Padr\'{o}n, A. Santiago and Thomas, Jared and Stanley, Andrew P. J. and Alonso, Juan J. and Ning, Andrew},
+  doi = {10.5194/wes-4-211-2019},
+  journal = {Wind Energy Science},
+  month = may,
+  pages = {211-231},
+  title = {Polynomial Chaos to Efficiently Compute the Annual Energy Production in Wind Farm Layout Optimization},
+  volume = {4},
+  year = {2019}
+}
+</pre>
+</li></ol>
+
+</div>
+
+<!-- <center>
+<img src="/posts/binned.png" alt="convergence of AEP" width="300px" />
+</center>
+
+<p>In a wind farm, it is important to understand how both the wind speed and wind direction varies.  The variability in wind direction is captured in what is called a wind rose (see above).  The longer bars in the wind rose indicate directions from which wind is more likely to come from.  The power produced by the wind farm can change dramatically as the wind direction changes.  This variation in power is often reduced to a single number—the expected value of power (an average).  In the wind energy field, a common metric of interest is the annual energy production (AEP), which is the expected value of power (multiplied by time in a year and availability).</p>
+
+<p>The wind rose is really a continuous distribution, but we often discretize it into bins like shown above.  This discretization provides a convenient way to compute average power production.  This is done by dividing the uncertain variable (wind direction in this example) into discrete bins, multiplying the power for each direction by its probability, then summing up over all bins.  This approach is the familiar rectangle rule.  It’s a simple approach and is almost always the approach used in wind farm analysis.</p>
+
+<p>In a collaboration between our lab and the <a href="http://adl.stanford.edu">Aerospace Design Laboratory</a> at Stanford we’ve been exploring an alternative approach based on polynomial chaos.  Polynomial chaos is not a new method.  It is widely known and used in applications of uncertainty quantification, but has not yet been applied to wind farm analysis.  The main idea is that rather than discretize into bins, we can use polynomials to approximate the continuous power response, allowing us to use fewer samples to approximate the AEP.</p>
+
+<p>Santiago led a recent study where we explored using polynomial chaos, with uncertainty in both wind direction and wind speed, to predict AEP.  We explored using both quadrature approaches and regression approaches and found the latter to be more effective.  On average, polynomial chaos reduced the number of simulations required by a factor of 5 as compared to the rectangle rule. For example, the figure below shows how AEP varies with the number of samples with polynomial chaos based on regression to the left, and the rectangle rule to the right.  We see that polynomial chaos converges with fewer samples and produces less variability in the AEP estimates from starting the quadrature at different points.</p>
+
+<p><img src="/posts/uq.png" alt="convergence of AEP" /></p>
+
+<p>Additionally, we applied polynomial chaos to optimizing wind farm layouts.  We found that using polynomial chaos with regression allowed for about 1/3 of the simulations required for the rectangle rule (while producing a slightly better AEP).  One such case is shown below.</p>
+
+<p><img src="/posts/pc-opt.png" alt="optimization using PC" /></p>
+
+<p>Further details are available in the open-access paper and data linked below.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Padron2019">Padrón, A. S., Thomas, J., Stanley, A. P. J., Alonso, J. J., and Ning, A., “Polynomial Chaos to Efficiently Compute the Annual Energy Production in Wind Farm Layout Optimization,” <i>Wind Energy Science</i>, Vol. 4, pp. 211–231, May 2019. doi:10.5194/wes-4-211-2019</span>
+<a href="#nowhere" onclick="toggle_visibility('Padron2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.5194/wes-4-211-2019">[DOI]</a> <a href="https://www.wind-energ-sci.net/4/211/2019/wes-4-211-2019.pdf">[PDF]</a> <a href="https://github.com/byuflowlab/windfarm-ouu">[Code]</a> 
+
+<pre id="Padron2019-bibtex" class="bibtex">@article{Padron2019,
+  author = {Padr\'{o}n, A. Santiago and Thomas, Jared and Stanley, Andrew P. J. and Alonso, Juan J. and Ning, Andrew},
+  doi = {10.5194/wes-4-211-2019},
+  journal = {Wind Energy Science},
+  month = may,
+  pages = {211-231},
+  title = {Polynomial Chaos to Efficiently Compute the Annual Energy Production in Wind Farm Layout Optimization},
+  volume = {4},
+  year = {2019}
+}
+</pre>
+</li></ol>
+ -->
+<!-- 
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/julia-c++">
+            Making Julia as Fast as C++
+            <small>18 Apr 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/coupled-turbine-farm">
+            Coupled Wind Turbine Design and Layout Optimization
+            <small>13 Feb 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/hale-trajectory">
+            Trajectory Optimization for High Altitude Long Endurance Aircraft
+            <small>18 Dec 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+  </body>
+</html>
