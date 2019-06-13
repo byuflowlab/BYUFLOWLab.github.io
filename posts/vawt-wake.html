@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Development of a Vertical-Axis Wind Turbine Wake Model &middot; FLOW Lab
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134508820-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134508820-1');
+  </script>
+  
+
+
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          <img src="/images/logo.png" width="400px" color="white">
+          <!-- FLOW Lab -->
+        </a>
+      </h1>
+      <p class="lead">Flight, Optimization, and Wind Laboratory</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <a class="sidebar-nav-item" href="/publications">Publications</a>
+      <a class="sidebar-nav-item" href="/posts">Posts</a>
+      <a class="sidebar-nav-item" href="/people">People</a>
+      <a class="sidebar-nav-item" href="/research">Research</a>
+      <a class="sidebar-nav-item" href="/teaching">Teaching</a>
+      <a class="sidebar-nav-item" href="/resources">Resources</a>
+      
+    </nav>
+
+    <p>&copy; 2019. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Development of a Vertical-Axis Wind Turbine Wake Model</h1>
+  <span class="post-date">05 Jun 2019, Eric Tingey</span>
+  <p><img src="/posts/vawtV.gif" alt="Wake Visualization" /></p>
+
+<p>Wind farm designers use mathematical models to describe turbine wakes, and through optimization, turbines can be positioned to minimize the negative wake interference of the wind farm. This method has been conducted by numerous researchers for the well-known horizontal-axis wind turbine, but the same type of research has been much more limited for a vertical-axis wind turbine (VAWT), as shown below. VAWT wake behavior is quite different from that of a horizontal axis turbine.  Preliminary research has shown that VAWTs are capable of being placed closer together and even increasing their overall power production by harnessing the slight wind velocity increases of neighboring turbines.</p>
+
+<p><img src="/posts/vawt.png" width="250px" class="img-left" /></p>
+
+<p>We developed a wake model that computes the wind velocity profile around a VAWT from input parameters such as rotation speed, turbine blade size, and wind speed. To establish a foundation for the wake model, we ran hundreds of computer simulations of a two-dimensional VAWT at many different speed and geometry configurations, as shown by the example at the top of the post. Using the wake behavior obtained from these simulations, we used statistical analysis to simply the complex behavior down to fundamental nondimensional relationships between turbine speed and geometry that influence the wake’s profile both downstream and to the sides of the turbine. This predictive ability is important to take advantage of closely spaced VAWT pairs. Typical horizontal axis turbine wake models predict wake velocities behind a turbine, but to take advantage of the unique behavior of VAWTs, we needed to predict velocities <em>around</em> the turbine (there is often a speedup around the sides).</p>
+
+<p>The new wake model runs in about a tenth of second, as compared to the original CFD simulation that takes several hours, and shows reasonable agreement against experimental wake studies.  The VAWT wake model was further combined with the aerodynamic loading of turbine blades to translate wind velocity speeds around the turbine to turbine power production. While this wake model is a preliminary attempt to parametrically define VAWT wakes, it does show promise in its use for wind farm analysis and optimization.</p>
+
+<p>The journal paper describing the wake model development and access to the wake model code can be found in the links below.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Tingey2019">Tingey, E., and Ning, A., “Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model,” <i>Wind Engineering</i>, Jun. 2019. doi:10.1177/0309524X19849864</span>
+<a href="#nowhere" onclick="toggle_visibility('Tingey2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.1177/0309524X19849864">[DOI]</a>  <a href="https://github.com/byuflowlab/vawt-wake-model">[Code]</a> 
+
+<pre id="Tingey2019-bibtex" class="bibtex">@article{Tingey2019,
+  author = {Tingey, Eric and Ning, Andrew},
+  doi = {10.1177/0309524X19849864},
+  journal = {Wind Engineering},
+  month = jun,
+  title = {Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model},
+  year = {2019}
+}
+</pre>
+</li></ol>
+
+</div>
+
+<!-- <p><img src="/posts/vawtV.gif" alt="Wake Visualization" /></p>
+
+<p>Wind farm designers use mathematical models to describe turbine wakes, and through optimization, turbines can be positioned to minimize the negative wake interference of the wind farm. This method has been conducted by numerous researchers for the well-known horizontal-axis wind turbine, but the same type of research has been much more limited for a vertical-axis wind turbine (VAWT), as shown below. VAWT wake behavior is quite different from that of a horizontal axis turbine.  Preliminary research has shown that VAWTs are capable of being placed closer together and even increasing their overall power production by harnessing the slight wind velocity increases of neighboring turbines.</p>
+
+<p><img src="/posts/vawt.png" width="250px" class="img-left" /></p>
+
+<p>We developed a wake model that computes the wind velocity profile around a VAWT from input parameters such as rotation speed, turbine blade size, and wind speed. To establish a foundation for the wake model, we ran hundreds of computer simulations of a two-dimensional VAWT at many different speed and geometry configurations, as shown by the example at the top of the post. Using the wake behavior obtained from these simulations, we used statistical analysis to simply the complex behavior down to fundamental nondimensional relationships between turbine speed and geometry that influence the wake’s profile both downstream and to the sides of the turbine. This predictive ability is important to take advantage of closely spaced VAWT pairs. Typical horizontal axis turbine wake models predict wake velocities behind a turbine, but to take advantage of the unique behavior of VAWTs, we needed to predict velocities <em>around</em> the turbine (there is often a speedup around the sides).</p>
+
+<p>The new wake model runs in about a tenth of second, as compared to the original CFD simulation that takes several hours, and shows reasonable agreement against experimental wake studies.  The VAWT wake model was further combined with the aerodynamic loading of turbine blades to translate wind velocity speeds around the turbine to turbine power production. While this wake model is a preliminary attempt to parametrically define VAWT wakes, it does show promise in its use for wind farm analysis and optimization.</p>
+
+<p>The journal paper describing the wake model development and access to the wake model code can be found in the links below.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Tingey2019">Tingey, E., and Ning, A., “Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model,” <i>Wind Engineering</i>, Jun. 2019. doi:10.1177/0309524X19849864</span>
+<a href="#nowhere" onclick="toggle_visibility('Tingey2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.1177/0309524X19849864">[DOI]</a>  <a href="https://github.com/byuflowlab/vawt-wake-model">[Code]</a> 
+
+<pre id="Tingey2019-bibtex" class="bibtex">@article{Tingey2019,
+  author = {Tingey, Eric and Ning, Andrew},
+  doi = {10.1177/0309524X19849864},
+  journal = {Wind Engineering},
+  month = jun,
+  title = {Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model},
+  year = {2019}
+}
+</pre>
+</li></ol>
+ -->
+<!-- 
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/posts/pc-windfarm">
+            Polynomial Chaos for Wind Farm Power Prediction
+            <small>28 May 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/julia-c++">
+            Making Julia as Fast as C++
+            <small>18 Apr 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/posts/coupled-turbine-farm">
+            Coupled Wind Turbine Design and Layout Optimization
+            <small>13 Feb 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+    </div>
+
+  </body>
+</html>

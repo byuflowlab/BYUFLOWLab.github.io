@@ -4,13 +4,46 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-06-03T12:31:18-06:00</updated>
+ <updated>2019-06-13T14:39:30-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Development of a Vertical-Axis Wind Turbine Wake Model</title>
+   <link href="http://flow.byu.edu/posts/vawt-wake"/>
+   <updated>2019-06-05T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/vawt-wake</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/posts/vawtV.gif&quot; alt=&quot;Wake Visualization&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wind farm designers use mathematical models to describe turbine wakes, and through optimization, turbines can be positioned to minimize the negative wake interference of the wind farm. This method has been conducted by numerous researchers for the well-known horizontal-axis wind turbine, but the same type of research has been much more limited for a vertical-axis wind turbine (VAWT), as shown below. VAWT wake behavior is quite different from that of a horizontal axis turbine.  Preliminary research has shown that VAWTs are capable of being placed closer together and even increasing their overall power production by harnessing the slight wind velocity increases of neighboring turbines.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/posts/vawt.png&quot; width=&quot;250px&quot; class=&quot;img-left&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We developed a wake model that computes the wind velocity profile around a VAWT from input parameters such as rotation speed, turbine blade size, and wind speed. To establish a foundation for the wake model, we ran hundreds of computer simulations of a two-dimensional VAWT at many different speed and geometry configurations, as shown by the example at the top of the post. Using the wake behavior obtained from these simulations, we used statistical analysis to simply the complex behavior down to fundamental nondimensional relationships between turbine speed and geometry that influence the wake’s profile both downstream and to the sides of the turbine. This predictive ability is important to take advantage of closely spaced VAWT pairs. Typical horizontal axis turbine wake models predict wake velocities behind a turbine, but to take advantage of the unique behavior of VAWTs, we needed to predict velocities &lt;em&gt;around&lt;/em&gt; the turbine (there is often a speedup around the sides).&lt;/p&gt;
+
+&lt;p&gt;The new wake model runs in about a tenth of second, as compared to the original CFD simulation that takes several hours, and shows reasonable agreement against experimental wake studies.  The VAWT wake model was further combined with the aerodynamic loading of turbine blades to translate wind velocity speeds around the turbine to turbine power production. While this wake model is a preliminary attempt to parametrically define VAWT wakes, it does show promise in its use for wind farm analysis and optimization.&lt;/p&gt;
+
+&lt;p&gt;The journal paper describing the wake model development and access to the wake model code can be found in the links below.&lt;/p&gt;
+
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Tingey2019&quot;&gt;Tingey, E., and Ning, A., “Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model,” &lt;i&gt;Wind Engineering&lt;/i&gt;, Jun. 2019. doi:10.1177/0309524X19849864&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Tingey2019-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.1177/0309524X19849864&quot;&gt;[DOI]&lt;/a&gt;  &lt;a href=&quot;https://github.com/byuflowlab/vawt-wake-model&quot;&gt;[Code]&lt;/a&gt; 
+
+&lt;pre id=&quot;Tingey2019-bibtex&quot; class=&quot;bibtex&quot;&gt;@article{Tingey2019,
+  author = {Tingey, Eric and Ning, Andrew},
+  doi = {10.1177/0309524X19849864},
+  journal = {Wind Engineering},
+  month = jun,
+  title = {Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model},
+  year = {2019}
+}
+&lt;/pre&gt;
+&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Polynomial Chaos for Wind Farm Power Prediction</title>
