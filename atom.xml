@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-06-13T14:39:30-06:00</updated>
+ <updated>2019-06-14T17:12:55-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -30,7 +30,7 @@
 &lt;p&gt;The journal paper describing the wake model development and access to the wake model code can be found in the links below.&lt;/p&gt;
 
 &lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Tingey2019&quot;&gt;Tingey, E., and Ning, A., “Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model,” &lt;i&gt;Wind Engineering&lt;/i&gt;, Jun. 2019. doi:10.1177/0309524X19849864&lt;/span&gt;
-&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Tingey2019-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.1177/0309524X19849864&quot;&gt;[DOI]&lt;/a&gt;  &lt;a href=&quot;https://github.com/byuflowlab/vawt-wake-model&quot;&gt;[Code]&lt;/a&gt; 
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Tingey2019-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.1177/0309524X19849864&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=4122&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt; &lt;a href=&quot;https://github.com/byuflowlab/vawt-wake-model&quot;&gt;[Code]&lt;/a&gt; 
 
 &lt;pre id=&quot;Tingey2019-bibtex&quot; class=&quot;bibtex&quot;&gt;@article{Tingey2019,
   author = {Tingey, Eric and Ning, Andrew},
