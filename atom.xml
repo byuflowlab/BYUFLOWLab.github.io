@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-09-05T23:50:43-06:00</updated>
+ <updated>2019-09-06T00:15:44-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -14,7 +14,7 @@
  
  <entry>
    <title>Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport</title>
-   <link href="http://flow.byu.edu/posts/vawt-wake"/>
+   <link href="http://flow.byu.edu/posts/electric-stol"/>
    <updated>2019-09-05T00:00:00-06:00</updated>
    <id>http://flow.byu.edu/posts/electric-stol</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/2ilze6i6aq4srqita1xqdu2sd6m62cqb.gif&quot; alt=&quot;Electric Aircraft Optimization&quot; /&gt;&lt;/p&gt;

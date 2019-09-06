@@ -11,7 +11,7 @@
 
   <title>
     
-      Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport &middot; FLOW Lab
+      Development of a Vertical-Axis Wind Turbine Wake Model &middot; FLOW Lab
     
   </title>
 
@@ -105,30 +105,29 @@
 
     <div class="content container">
       <div class="post">
-  <h1 class="post-title">Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport</h1>
-  <span class="post-date">05 Sep 2019, Kevin Moore</span>
-  <p><img src="https://byu.box.com/shared/static/2ilze6i6aq4srqita1xqdu2sd6m62cqb.gif" alt="Electric Aircraft Optimization" /></p>
+  <h1 class="post-title">Development of a Vertical-Axis Wind Turbine Wake Model</h1>
+  <span class="post-date">05 Jun 2019, Eric Tingey</span>
+  <p><img src="/posts/vawtV.gif" alt="Wake Visualization" /></p>
 
-<p>A trade study investigating the use of distributed electric propulsion on fixed-wing aircraft to shorten takeoff distance. This aircraft configuration could potentially compete with VTOL aircraft in urban air transportation.  The trade study was done using a MDO framework including blade element momentum method, vortex lattice method, linear-beam finite element analysis, classical laminate theory, composite failure, empirically-based blade noise modeling, motor and motor-controller mass models, and gradient-based optimization.</p>
+<p>Wind farm designers use mathematical models to describe turbine wakes, and through optimization, turbines can be positioned to minimize the negative wake interference of the wind farm. This method has been conducted by numerous researchers for the well-known horizontal-axis wind turbine, but the same type of research has been much more limited for a vertical-axis wind turbine (VAWT), as shown below. VAWT wake behavior is quite different from that of a horizontal axis turbine.  Preliminary research has shown that VAWTs are capable of being placed closer together and even increasing their overall power production by harnessing the slight wind velocity increases of neighboring turbines.</p>
 
-<p>Summary:</p>
-<ul>
-  <li>Validation of propeller-on-wing modeling, propeller performance, noise, and motor performance</li>
-  <li>New method for smoothly evaluating propeller effects on discrete VLM</li>
-  <li>Retrofit application maintaining the P2006T airframe, maximum takeoff weight, and balance</li>
-  <li>Pareto fronts of takeoff distance for varying cruise speeds and noise levels</li>
-  <li>System performance tradeoff evaluation including augmented lift, thrust, and takeoff profile</li>
-</ul>
+<p><img src="/posts/vawt.png" width="250px" class="img-left" /></p>
 
-<ol class="bibliography nonum" reversed=""><li><span id="Moore2019">Moore, K., and Ning, A., “Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport,” <i>Journal of Aircraft</i>, Aug. 2019. doi:10.2514/1.C035321</span>
-<a href="#nowhere" onclick="toggle_visibility('Moore2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.2514/1.C035321">[DOI]</a> <a href="https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=4204&amp;context=facpub">[PDF]</a>  
+<p>We developed a wake model that computes the wind velocity profile around a VAWT from input parameters such as rotation speed, turbine blade size, and wind speed. To establish a foundation for the wake model, we ran hundreds of computer simulations of a two-dimensional VAWT at many different speed and geometry configurations, as shown by the example at the top of the post. Using the wake behavior obtained from these simulations, we used statistical analysis to simply the complex behavior down to fundamental nondimensional relationships between turbine speed and geometry that influence the wake’s profile both downstream and to the sides of the turbine. This predictive ability is important to take advantage of closely spaced VAWT pairs. Typical horizontal axis turbine wake models predict wake velocities behind a turbine, but to take advantage of the unique behavior of VAWTs, we needed to predict velocities <em>around</em> the turbine (there is often a speedup around the sides).</p>
 
-<pre id="Moore2019-bibtex" class="bibtex">@article{Moore2019,
-  author = {Moore, Kevin and Ning, Andrew},
-  doi = {10.2514/1.C035321},
-  journal = {Journal of Aircraft},
-  month = aug,
-  title = {Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport},
+<p>The new wake model runs in about a tenth of second, as compared to the original CFD simulation that takes several hours, and shows reasonable agreement against experimental wake studies.  The VAWT wake model was further combined with the aerodynamic loading of turbine blades to translate wind velocity speeds around the turbine to turbine power production. While this wake model is a preliminary attempt to parametrically define VAWT wakes, it does show promise in its use for wind farm analysis and optimization.</p>
+
+<p>The journal paper describing the wake model development and access to the wake model code can be found in the links below.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Tingey2019">Tingey, E., and Ning, A., “Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model,” <i>Wind Engineering</i>, Jun. 2019. doi:10.1177/0309524X19849864</span>
+<a href="#nowhere" onclick="toggle_visibility('Tingey2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.1177/0309524X19849864">[DOI]</a> <a href="https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=4122&amp;context=facpub">[PDF]</a> <a href="https://github.com/byuflowlab/vawt-wake-model">[Code]</a> 
+
+<pre id="Tingey2019-bibtex" class="bibtex">@article{Tingey2019,
+  author = {Tingey, Eric and Ning, Andrew},
+  doi = {10.1177/0309524X19849864},
+  journal = {Wind Engineering},
+  month = jun,
+  title = {Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model},
   year = {2019}
 }
 </pre>
@@ -136,28 +135,27 @@
 
 </div>
 
-<!-- <p><img src="https://byu.box.com/shared/static/2ilze6i6aq4srqita1xqdu2sd6m62cqb.gif" alt="Electric Aircraft Optimization" /></p>
+<!-- <p><img src="/posts/vawtV.gif" alt="Wake Visualization" /></p>
 
-<p>A trade study investigating the use of distributed electric propulsion on fixed-wing aircraft to shorten takeoff distance. This aircraft configuration could potentially compete with VTOL aircraft in urban air transportation.  The trade study was done using a MDO framework including blade element momentum method, vortex lattice method, linear-beam finite element analysis, classical laminate theory, composite failure, empirically-based blade noise modeling, motor and motor-controller mass models, and gradient-based optimization.</p>
+<p>Wind farm designers use mathematical models to describe turbine wakes, and through optimization, turbines can be positioned to minimize the negative wake interference of the wind farm. This method has been conducted by numerous researchers for the well-known horizontal-axis wind turbine, but the same type of research has been much more limited for a vertical-axis wind turbine (VAWT), as shown below. VAWT wake behavior is quite different from that of a horizontal axis turbine.  Preliminary research has shown that VAWTs are capable of being placed closer together and even increasing their overall power production by harnessing the slight wind velocity increases of neighboring turbines.</p>
 
-<p>Summary:</p>
-<ul>
-  <li>Validation of propeller-on-wing modeling, propeller performance, noise, and motor performance</li>
-  <li>New method for smoothly evaluating propeller effects on discrete VLM</li>
-  <li>Retrofit application maintaining the P2006T airframe, maximum takeoff weight, and balance</li>
-  <li>Pareto fronts of takeoff distance for varying cruise speeds and noise levels</li>
-  <li>System performance tradeoff evaluation including augmented lift, thrust, and takeoff profile</li>
-</ul>
+<p><img src="/posts/vawt.png" width="250px" class="img-left" /></p>
 
-<ol class="bibliography nonum" reversed=""><li><span id="Moore2019">Moore, K., and Ning, A., “Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport,” <i>Journal of Aircraft</i>, Aug. 2019. doi:10.2514/1.C035321</span>
-<a href="#nowhere" onclick="toggle_visibility('Moore2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.2514/1.C035321">[DOI]</a> <a href="https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=4204&amp;context=facpub">[PDF]</a>  
+<p>We developed a wake model that computes the wind velocity profile around a VAWT from input parameters such as rotation speed, turbine blade size, and wind speed. To establish a foundation for the wake model, we ran hundreds of computer simulations of a two-dimensional VAWT at many different speed and geometry configurations, as shown by the example at the top of the post. Using the wake behavior obtained from these simulations, we used statistical analysis to simply the complex behavior down to fundamental nondimensional relationships between turbine speed and geometry that influence the wake’s profile both downstream and to the sides of the turbine. This predictive ability is important to take advantage of closely spaced VAWT pairs. Typical horizontal axis turbine wake models predict wake velocities behind a turbine, but to take advantage of the unique behavior of VAWTs, we needed to predict velocities <em>around</em> the turbine (there is often a speedup around the sides).</p>
 
-<pre id="Moore2019-bibtex" class="bibtex">@article{Moore2019,
-  author = {Moore, Kevin and Ning, Andrew},
-  doi = {10.2514/1.C035321},
-  journal = {Journal of Aircraft},
-  month = aug,
-  title = {Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport},
+<p>The new wake model runs in about a tenth of second, as compared to the original CFD simulation that takes several hours, and shows reasonable agreement against experimental wake studies.  The VAWT wake model was further combined with the aerodynamic loading of turbine blades to translate wind velocity speeds around the turbine to turbine power production. While this wake model is a preliminary attempt to parametrically define VAWT wakes, it does show promise in its use for wind farm analysis and optimization.</p>
+
+<p>The journal paper describing the wake model development and access to the wake model code can be found in the links below.</p>
+
+<ol class="bibliography nonum" reversed=""><li><span id="Tingey2019">Tingey, E., and Ning, A., “Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model,” <i>Wind Engineering</i>, Jun. 2019. doi:10.1177/0309524X19849864</span>
+<a href="#nowhere" onclick="toggle_visibility('Tingey2019-bibtex');">[BibTeX]</a> <a href="http://dx.doi.org/10.1177/0309524X19849864">[DOI]</a> <a href="https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=4122&amp;context=facpub">[PDF]</a> <a href="https://github.com/byuflowlab/vawt-wake-model">[Code]</a> 
+
+<pre id="Tingey2019-bibtex" class="bibtex">@article{Tingey2019,
+  author = {Tingey, Eric and Ning, Andrew},
+  doi = {10.1177/0309524X19849864},
+  journal = {Wind Engineering},
+  month = jun,
+  title = {Development of a Parameterized Reduced-Order Vertical-Axis Wind Turbine Wake Model},
   year = {2019}
 }
 </pre>
@@ -180,9 +178,9 @@
     
       <li>
         <h3>
-          <a href="/posts/vawt-wake">
-            Development of a Vertical-Axis Wind Turbine Wake Model
-            <small>05 Jun 2019</small>
+          <a href="/posts/electric-stol">
+            Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport
+            <small>05 Sep 2019</small>
           </a>
         </h3>
       </li>
