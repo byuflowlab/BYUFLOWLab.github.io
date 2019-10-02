@@ -110,82 +110,79 @@
   <li>Run G-Code on foam cutter using Mach3</li>
 </ol>
 
-<p>This guide is written to document this process and expedite the learning process.  Note that you are not likely to get the right setup the first time, but hopefully with the help presented here some common mistakes can be avoided.</p>
+<p>This guide is written to document this process and expedite the learning process. Note that you are not likely to get the right setup the first time, but hopefully with the help presented here some common mistakes can be avoided.</p>
 
 <h1 id="generate-g-code-using-profili-pro-2">Generate G-Code using Profili Pro 2</h1>
 
-<p>First load Profili Pro 2.  Make sure that the version is the Pro version, otherwise you won’t be able to export your G-code.</p>
+<p>First load Profili Pro 2. Make sure that the version is the Pro version, otherwise you won’t be able to export your G-code.</p>
 
-<p>Profili Pro has a lot of capabilities which we will not use.  All that we want to do is create a wing.  In the top menu go to the Panels drop-down and select Wing Panels Management.</p>
+<p>Profili Pro has a lot of capabilities which we will not use. All that we want to do is create a wing. In the top menu go to the Panels drop-down and select Wing Panels Management.</p>
 
-<p>This will pull up a window with a bunch of wing panels that have been developed previously.  Once you have created a wing panel you double click your wing panel in this menu to edit and/or inspect input parameters.  To create a new wing panel in the “Panels Management” drop down choose “New foam panel for 4-axis CNC hot wire cutting…”.  Enter an appropriate name. Chances are you will be creating several wing panel sections so it is best to name wing panels similarly (e.g. “YourName-leftwing”,”YourName-rightwing”,”YourName-htail”,”YourName-vtail”).  Once your wing panel is created you will be taken through a series of windows defining your wing panel geometry.  Notes regarding each window can be found in the following sections</p>
+<p>This will pull up a window with a bunch of wing panels that have been developed previously. Once you have created a wing panel you double click your wing panel in this menu to edit and/or inspect input parameters. To create a new wing panel in the “Panels Management” drop down choose “New foam panel for 4-axis CNC hot wire cutting…”. Enter an appropriate name. Chances are you will be creating several wing panel sections so it is best to name wing panels similarly (e.g. “YourName-leftwing”, “YourName-rightwing”, “YourName-htail”, “YourName-vtail”). Once your wing panel is created you will be taken through a series of windows defining your wing panel geometry. Notes regarding each window can be found in the following sections</p>
 
 <h2 id="general-data-and-wing-plan-settings">General data and Wing Plan Settings</h2>
-<p>Panel length: The length of the wing section you would like to cut. 
+<p>Panel length: The length of the wing section you would like to cut.
 Root and Tip Chord: Root and tip chord values
-Root and Tip Incidence Angle:  Positive twist is equivalent to a negative incidence angle, you can and should check if this setting is right in a later window.
+Root and Tip Incidence Angle: Positive twist is equivalent to a negative incidence angle, you can and should check if this setting is right in a later window.
 Leading Edge Sweep Back: Used for sweep, with the help of the graphical interface this should be pretty simple to set correctly.</p>
 
 <h2 id="airfoil-selection">Airfoil Selection</h2>
-<p>Root and tip rib: Here is where you choose your airfoil.  Chances are, your airfoil will already be loaded with the software.  If you wish to import your own airfoil you can do so from the main screen.</p>
-
-<p>If you are cutting out a slot for a spar it is wise to invert the airfoil so that the foam cutter can move down through the bottom surface of the airfoil on its way to the spar location rather than through the top surface.</p>
+<p>Root and tip rib: Here is where you choose your airfoil. Chances are, your airfoil will already be loaded with the software. If you wish to import your own airfoil you can do so from the main screen.</p>
 
 <h2 id="sheeting-and-kerf-settings">Sheeting and Kerf Settings</h2>
-<p>Sheeting parameters are used if you would like to remove extra material from the outside of the airfoil.  In the case of adding extra material, such as a composite layup, this would preserve the final airfoil thickness.  Chances are you probably won’t need this option enabled.
-The tangential lengthening option should be set at about 20 mm.  This tells the wire cutter to advance into the foam a certain distance before beginning to cut the profile shape. 
-The default kerf values are probably fine, but appropriate values will largely depend on the amount of taper in your wing (one side will move more slowly than the other),  the amps that the wire cutter is set at, and the cutting speed.</p>
+<p>Sheeting parameters are used if you would like to remove extra material from the outside of the airfoil. In the case of adding extra material, such as a composite layup, this would preserve the final airfoil thickness. Chances are you probably won’t need this option enabled. The tangential lengthening option should be set at about 20 mm. This tells the wire cutter to advance into the foam a certain distance before beginning to cut the profile shape. The default kerf values are probably fine, but appropriate values will largely depend on the amount of taper in your wing (due to one side moving more slowly than the other), the temperature the wire cutter is set at, and the cutting speed.</p>
 
 <h2 id="spars-setting">Spars Setting</h2>
-<p>The main key in this menu is using the three drawing views at the bottom to visualize the result. Otherwise this menu should be pretty self-explanatory.  The only thing to note is that an upward hot wire cut should probably be used.  This tells the hot wire cutter to come in from the top of the foam block.</p>
+<p>Spar holes may be pre-cut to assist in assembly of your wing. The main key in this menu is using the three drawing views at the bottom to visualize the result. Otherwise this menu should be pretty self-explanatory. The only thing to note is that an upward hot wire cut should probably be used. This tells the hot wire cutter to cut the spar holes in the middle of cutting the airfoil, rather than at the beginning.</p>
 
 <h2 id="lightening-holes-setting">Lightening Holes Setting</h2>
-<p>This menu is very similar to the previous menu.  If lightening holes are used it might be necessary to stiffen the final wing panel in some way to make up for the cuts made by the hot wire cutter entering to hollow out the inside of the airfoil.</p>
+<p>Lightening holes may also be added to your wing to reduce weight. This is not recommended, however, as it compromises the structural integrity of the wing when working with foam. Stiffening of this weakness often leads to a heavier wing than you began with.</p>
 
 <h2 id="foam-block-placement-and-setting">Foam Block Placement and Setting</h2>
-<p>The 4-Axis CNC Machine Settings will likely need to be modified.  We measured a distance of 835mm from the left to the right carriage.  The maximum horizontal and vertical runs should be set to reasonable values, but unless your wing is extra-normal you shouldn’t have any need to approach the bounds of the machine and these bounds should not matter.
-Make sure to enter an appropriate foam block thickness and then modify the wing panel height settings to place your root and tip sections solidly inside your foam block.  Measure the distance from the left wire pulley to your foam block and enter that value for the root section distance between carriage and block. Centering your part on the machine is probably wise.</p>
-
-<p>Now switch to the wing planform view and take note of the value shown for Dx.  Move your foam block away from the your zero reference position by that amount. Otherwise you will end up wasting a decent amount of foam, or you might run out of foam.  When rerunning your G-code you will probably need to return to this window to check this value and place your foam accordingly.</p>
+<p>Double check that the 4-Axis CNC Machine Settings are set to the proper bounds of movement for the left and right carriages. The maximum horizontal and vertical runs should be set to reasonable values, but unless your wing is extra-normal you shouldn’t have any need to approach the bounds of the machine and these bounds should not matter. Make sure to enter an appropriate foam block thickness and then modify the wing panel height settings to place your root and tip sections solidly inside your foam block. Center your part between the carriages and measure the distance from the left wire pulley to your foam block. Enter that value for the root section distance between carriage and block. 
+Now switch to the wing planform view and take note of the value shown for Dx. Move your foam block away from the zero reference position by that amount. Otherwise you will end up wasting a decent amount of foam, or you might run out of foam. When rerunning your G-code you will probably need to return to this window to check this value and place your foam accordingly.</p>
 
 <h2 id="leading-edge-and-trailing-edge-cutting">Leading Edge and Trailing Edge Cutting</h2>
-<p>Here you can slice off your leading or trailing edge.  You can also choose the height above your foam which the wire cutter will move to when re-positioning itself.  If you are using a weight, remember to move it out of the wire cutters way so you don’t break the machine.  The defaults here should be fine.</p>
+<p>Here you can slice off your leading or trailing edge. You can also choose the height above your foam which the wire cutter will move to when re-positioning itself. If you are using a weight, remember to move it out of the wire cutters way so you don’t break the machine. The defaults here should be fine.</p>
 
 <h2 id="latest-section-cutting-path-simulation-and-printing-format-settings">Latest section: Cutting Path Simulation and Printing Format Settings</h2>
-<p>The one thing worth doing here is playing the 3D simulation of your G-Code.  You should always do this to make sure that at least theoretically, your code will do what you want it to do. Otherwise just click finish</p>
+<p>Click the 3D Simulation button. A window will appear similar to that which you will see when you export your G-Code, click ok. Here you may view a 3D simulation of your G-Code. You should always do this to make sure that at least theoretically, your code will do what you want it to do. Click the door to exit the simulation and then click finish.</p>
 
 <h2 id="output-g-code">Output G-Code</h2>
-<p>In the wing panels management window in Profili select your wing panel and under the “4-axis CNC” drop down choose the “Export G-Code for 4-axes CNC (foam cutting)” option.  You should modify the speed which is given as mm/min to an appropriate speed (the default is 200mm/min) for your foam and current settings.  There is also choose whether the panel root should be on the left (default) or right side of the foam cutter (as seen from the computer stations).</p>
+<p>In the wing panels management window in Profili select your wing panel and under the “4-axis CNC” drop down choose the “Export G-Code for 4-axes CNC (foam cutting)” option. Here there is a choice whether the panel root should be on the left (default) or right side of the foam cutter (choosing the right side will flip your measured distance between the foam and carriage). You may also modify the speed if needed (the default should be fine for your foam and current settings). Save your G-Code in the proper class folder with a descriptive name (e.g. TeamName_leftwing.nc).</p>
 
 <h1 id="run-g-code-using-mach3">Run G-Code using Mach3</h1>
 
 <p>Before you start a few notes:</p>
 
 <ul>
-  <li>Make sure that you set your foam block on the base foam block.  This is a precaution to avoid running the wire into the base of the table.</li>
-  <li>Make sure your foam block is positioned correctly in relation to where you will be zeroing the wire.  Refer to your Profili Pro file for reference.  While this isn’t really a concern with a constant chord, taper and twist can make life a bit more difficult.</li>
-  <li>You’ll notice some foam blocks near the ends of the runs of the motor.  These are simply to prevent the motors from running into the ends of the machine.  If you are even close to hitting the ends of the machine, you are likely doing something wrong.</li>
-  <li>Sometimes you’ll need weights in order to prevent the foam cutter from pushing your piece of foam around.  Just be cautious because depending on what you’re cutting your G-code could involve moving above the surface of the foam to cut lightening holes or a spar hole.  This is where a second person that can move weights out of the way of the wire can come in handy.</li>
-  <li>It’s good practice to do a practice run with a expendable small block of foam before your main run to make sure you are going to get what you want. Also don’t forget that there is a simulator in Profili Pro that will simulate the wire cutter in action so you know what is going to happen.</li>
+  <li>ALWAYS TURN OFF THE WIRE unless actively cutting foam. This includes between practice runs and once you’re done.</li>
+  <li>Make sure that you set your foam block on the sacrificial base foam block. This is a precaution to avoid running the wire into the base or exceeding the lower vertical run limit.</li>
+  <li>Make sure your foam block is positioned correctly in relation to where you will be zeroing the wire (zero the wire first). Refer to your Profili Pro file for reference. While this isn’t really a concern with a constant chord, taper and twist can make life a bit more difficult.</li>
+  <li>Pay attention to the location of the carriages on their tracks. If you are even close to hitting the ends of the machine, you are likely doing something wrong.</li>
+  <li>Sometimes you’ll need weights in order to prevent the foam cutter from pushing your piece of foam around (provided in a drawer near the foam cutters). Just be cautious because depending on what you’re cutting your G-code could involve moving the wire above the surface of the foam to cut lightening holes or a spar hole. This is where a second person that can move weights out of the way of the wire can come in handy.</li>
+  <li>It’s good practice to do several practice runs before cutting your wing. The first should be a “cold” run with no foam to watch for the carriages getting close to their limits or the wire running into the sacrificial foam (it’s sacrificial, but if you’re running into it you’re doing something wrong). The second should be done with an expendable small block of foam before your main run to make sure you are going to get what you want in geometry and surface finish. Also don’t forget that there is a simulator in Profili Pro that will simulate the wire cutter in action so you know what is going to happen.</li>
 </ul>
 
-<p>Mach 3 is the program that loads your G-CODE once you have generated it from Profili Pro.  The arrow keys and the wasd keys control the motion of the foam cutter manually.  If the foam cutter does not respond to these inputs make sure that the foam cutter has power (turn the power strip on) and then hit the reset button on Mach 3.  You should now be good to go.</p>
+<p>Mach 3 is the program that loads your G-CODE once you have generated it from Profili Pro. The arrow keys and the wasd keys control the motion of the foam cutter manually. If the foam cutter does not respond to these inputs make sure that the foam cutter has power (turn the power strip on) and then hit the reset button on Mach 3. You should now be good to go.</p>
 
-<p>Before starting your run you will need to zero all axes.  Move the foam cutter manually where you want (with the arrow keys and wasd) and zero all axes.  If you click go to home the foam cutter will rapidly proceed to this location now.</p>
+<p>Before starting your run you will need to zero all axes. Move the foam cutter manually where you want (with the arrow keys and wasd) and zero all axes. The best practice for this is to measure the distances between the carriages and their lower limits and make sure the measurements are equal. Click “Zero (x, y, z, or 4)” to zero the respective axis. If you click “GOTO ZERO” the foam cutter will rapidly proceed to this location now.</p>
 
-<p>Tape on the wire temperature nob marks the temperature region where you should probably be operating.  I think the yellow tape is about where you want to be.  It might take some trial and error, which is why we recommend cutting a test section before cutting your final part.  As a safety measure, only power the wire when the wire is actively cutting a part. Please don’t burn yourself (or catch the building on fire (e.g. PERL)).  And in case the reference to the PERL didn’t remind you, please stay with the foam cutter while it is running in case of problems.</p>
+<p>Load your G-Code simply by clicking File &gt; Load G-Code. You should now see a list of coordinates and a preview of your airfoil.</p>
+
+<p>The temperature of the wire should not usually need to be adjusted. If it becomes necessary, however, you may change the temperature by controlling the voltage on the power supply. Note that very minor adjustments to voltage will make a large difference in temperature. It might take some trial and error, which is why it is recommended to cut a test section (or several) before cutting your final part. As a safety measure, only power the wire when the wire is actively cutting a part. Never leave the foam cutters unattended when the wire or power strip is on.</p>
 
 <p>Note that the wire can takes around 15 seconds to heat up so don’t get too trigger happy once you turn the power on.</p>
 
-<p>When you’re ready you can hit the button that says RUN G-CODE or something like that.  Then watch and be ready to stop the run with that red STOP button in case something happens that you don’t like.  Also stop the run if you’re going to break the wire or the machine.  The wire cutter is not cheap.  Neither is the wire for the wire cutter.</p>
+<p>When you’re ready you can hit the green button that says “Cycle Start”. Then watch and be ready to stop the run with the red “Stop” button in case something happens that you don’t like (not the Reset button). Also stop the run if you’re going to break the wire or the machine. The foam cutters are not cheap. Neither is the wire for the wire cutter. Make sure to turn off the wire as well before it melts a large hole in your wing. Stop the foam cutter before turning off the wire as you could break the wire if it cools, but is still being dragged through the foam.
+After doing a practice run you may click “Rewind” to start your G-Code over again. Make sure to also click “GOTO ZERO” if it is not already there.</p>
 
 <p>Some advanced tips:</p>
 
 <ul>
-  <li>You can use the foam cutter as a sort of a manual wire cutter by turning on power to the wire cutter and moving the wire cutter down with the arrow keys.  You should probably use a slightly higher wire temperature if doing this.</li>
+  <li>You can use the foam cutter as a sort of a manual wire cutter by turning on power to the wire cutter and moving the wire cutter down with the arrow keys. Tap the keys rapidly when cutting as holding them down will move the wire faster than it can cut. Never drag the wire through the foam.</li>
   <li>If you need to make on the fly adjustments to the speed that your G-Code is run, in addition to modifying the option when exporting from Profili there is a button that can be pressed in Mach 3 as well.</li>
 </ul>
-
 
     </div>
 
