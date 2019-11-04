@@ -100,7 +100,22 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">GPS</h1> -->
-      <p>[more to come here]</p>
+      <p>Steps to get started:</p>
+
+<ol>
+  <li>
+    <p>Install Python v3: <a href="https://www.anaconda.com/distribution/">https://www.anaconda.com/distribution/</a></p>
+  </li>
+  <li>
+    <p>Install the <code class="highlighter-rouge">pyserial</code> package.  From the command line (terminal on mac/linux, command prompt on windows), type <code class="highlighter-rouge">python install pyserial</code>.  If you’d prefer a GUI you can do this in Anaconda Navigator, which was installed in the prior step.</p>
+  </li>
+  <li>
+    <p>Connect your battery, via the ESC, to the GPS and one radio transmitter.  Plug the other radio transmitter into one of your USB ports.</p>
+  </li>
+  <li>
+    <p>Download, or clone if you know what that means, this package: <a href="https://github.com/byuflowlab/415gps">https://github.com/byuflowlab/415gps</a> (see the big green button).  Read the description on that webpage to learn how to find your serial port and run the script.</p>
+  </li>
+</ol>
 
 <p>If you’re seeing NaNs being outputted for your latitude and longitude, that’s because you don’t have a GPS fix.  Getting a GPS fix generally requires being outside.  The first time you are getting a fix may take up to a minute of the GPS being powered.  In our experience the GPS and radio need to be at least 4 inches apart to get a fix due to signal interference, even outdoors.</p>
 
