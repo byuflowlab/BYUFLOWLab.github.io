@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2019-11-26T17:16:33-07:00</updated>
+ <updated>2019-11-26T17:40:24-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -39,6 +39,47 @@
   journal = {Journal of Aircraft},
   month = aug,
   title = {Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport},
+  year = {2019}
+}
+&lt;/pre&gt;
+&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Multirotor - Vortex Particle Method</title>
+   <link href="http://flow.byu.edu/posts/multirotor-vpm2"/>
+   <updated>2019-07-01T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/multirotor-vpm2</id>
+   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/SLpnVIBpkps&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The viscous vortex particle method is a mesh-free Lagrangian CFD method for the numerical solution of Navier-Stokes in their vorticity form. It’s about two orders of magnitude faster than mesh-based CFD (RANS or LES). We are exploring its potential for modeling the complicated aerodynamics interactions in eVTOL aircraft design. All codes are in-house developed at BYU’s FLOW Lab,&lt;/p&gt;
+
+&lt;p&gt;Slides available &lt;a href=&quot;https://lnkd.in/gEDYPch&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;SUMMARY:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Validation of predicted multirotor interactions in both hover and forward flight, at both low and high Reynolds numbers.&lt;/li&gt;
+  &lt;li&gt;We ran a parametric study with 1152 simulations taking ~3.5 days in a desktop computer (~4 mins per simulation).&lt;/li&gt;
+  &lt;li&gt;We built response surfaces of unsteady loading and performance drop during rotor-on-rotor interactions of the APC 10x7 propeller.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;FUTURE WORK&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Coupling with noise code for prediction of acoustic interactions.&lt;/li&gt;
+  &lt;li&gt;Automatic derivatives for gradient-based design optimization.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Alvarez2019&quot;&gt;Alvarez, E. J., and Ning, A., “Modeling Multirotor Aerodynamic Interactions Through the Vortex Particle Method,” &lt;i&gt;AIAA Aviation Forum&lt;/i&gt;, Dallas, TX, Jun. 2019. doi:10.2514/6.2019-2827&lt;/span&gt;
+&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility('Alvarez2019-bibtex');&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/6.2019-2827&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=4145&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt;  
+
+&lt;pre id=&quot;Alvarez2019-bibtex&quot; class=&quot;bibtex&quot;&gt;@inproceedings{Alvarez2019,
+  address = {Dallas, TX},
+  author = {Alvarez, Eduardo J. and Ning, Andrew},
+  booktitle = {{AIAA} Aviation Forum},
+  doi = {10.2514/6.2019-2827},
+  month = jun,
+  title = {Modeling Multirotor Aerodynamic Interactions Through the Vortex Particle Method},
   year = {2019}
 }
 &lt;/pre&gt;
