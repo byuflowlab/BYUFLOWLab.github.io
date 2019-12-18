@@ -110,13 +110,16 @@
                </div>
                <ul>
                   <li class="toc_level-1 toc_section-1">
-                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">A (Partial) List of Optimizers in Matlab and Python</span></a>
+                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">A (Partial) List of Optimizers in Matlab, Python, and Julia</span></a>
                      <ul>
                         <li class="toc_level-2 toc_section-2">
                            <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Matlab</span></a>
                         </li>
                         <li class="toc_level-2 toc_section-3">
                            <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Python</span></a>
+                        </li>
+                        <li class="toc_level-2 toc_section-4">
+                           <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Julia</span></a>
                         </li>
                      </ul>
                   </li>
@@ -125,7 +128,7 @@
          </tr>
       </tbody>
    </table>
-</div><h1 id="tocAnchor-1-1">A (Partial) List of Optimizers in Matlab and Python</h1>
+</div><h1 id="tocAnchor-1-1">A (Partial) List of Optimizers in Matlab, Python, and Julia</h1>
 
 <h2 id="tocAnchor-1-1-1">Matlab</h2>
 <p>The best optimizer in Matlab for most of our problems (nonlinear, differentiable) is <em>fmincon</em>.  It is easy to use, robust, and has a wide variety of options.  If you have a nonlinear differentiable problem that is failing with <em>fmincon</em> this usually means that you’ve formulated the problem poorly or incorrectly.  If you’re problem is nondifferentiable then <em>ga</em> is one of the best options.  Other options for specific needs are discussed below.</p>
@@ -221,6 +224,18 @@
 <h3 id="convex-optimization-1">Convex Optimization</h3>
 <p>See the notes above on <a href="#gurobi">Gurobi</a></p>
 
+<h2 id="tocAnchor-1-1-3">Julia</h2>
+
+<p>Julia has excellent support for algoritnmic differentiation (see for example <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff.jl</a> and <a href="https://github.com/JuliaDiff/ReverseDiff.jl">ReverseDiff.jl</a>).  It also has great support for convex optimization and unconstrained optimization, but support for gradient-based optimization with nonlinear constraints is lacking (there is good support for third-party commercial solvers similar to the Python situation above).  Here are some options:</p>
+
+<ul>
+  <li>Snopt (mentioned above), with a Julia wrapper that we wrote: <a href="https://github.com/byuflowlab/Snopt.jl">Snopt.jl</a>.  This is what we use in our research lab.</li>
+  <li>JuMP with <a href="https://github.com/JuliaOpt/Ipopt.jl">Ipopt.jl</a> is a decent alternative.</li>
+  <li><a href="https://github.com/JuliaNLSolvers/Optim.jl">Optim.jl</a> is a nice package for native Julia solvers.  It has good support for gradient-free methods (Nelder Mead, simulated annealing, particle swarm), and unconstrained gradient-based (conjugate gradient, L-BFGS).  There is one algorithm for nonlinear constrained, but it requires the Hessian.</li>
+</ul>
+
+<h3 id="convex-optimization-2">Convex Optimization</h3>
+<p>Julia has tons of great options here including JuMP with Gurobi, or MOSEK, etc. or Convex.jl.</p>
 
     </div>
 

@@ -100,78 +100,14 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">Syllabus</h1> -->
-      <div id="toc-container">
-   <table class="toc" id="toc">
-      <tbody>
-         <tr>
-            <td>
-               <div id="toctitle">
-                  <h2>Contents</h2>
-               </div>
-               <ul>
-                  <li class="toc_level-1 toc_section-1">
-                     <a href="#tocAnchor-1-1"><span class="tocnumber">1</span> <span class="toctext">Syllabus (Winter 2017)</span></a>
-                     <ul>
-                        <li class="toc_level-2 toc_section-2">
-                           <a href="#tocAnchor-1-1-1"><span class="tocnumber">1.1</span> <span class="toctext">Objective</span></a>
-                        </li>
-                        <li class="toc_level-2 toc_section-3">
-                           <a href="#tocAnchor-1-1-2"><span class="tocnumber">1.2</span> <span class="toctext">Overview</span></a>
-                        </li>
-                        <li class="toc_level-2 toc_section-4">
-                           <a href="#tocAnchor-1-1-3"><span class="tocnumber">1.3</span> <span class="toctext">Prerequisites</span></a>
-                        </li>
-                        <li class="toc_level-2 toc_section-5">
-                           <a href="#tocAnchor-1-1-4"><span class="tocnumber">1.4</span> <span class="toctext">Learning Outcomes</span></a>
-                        </li>
-                        <li class="toc_level-2 toc_section-6">
-                           <a href="#tocAnchor-1-1-5"><span class="tocnumber">1.5</span> <span class="toctext">Course Content</span></a>
-                        </li>
-                        <li class="toc_level-2 toc_section-7">
-                           <a href="#tocAnchor-1-1-6"><span class="tocnumber">1.6</span> <span class="toctext">Course Work</span></a>
-                        </li>
-                        <li class="toc_level-2 toc_section-8">
-                           <a href="#tocAnchor-1-1-7"><span class="tocnumber">1.7</span> <span class="toctext">University Policies</span></a>
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-            </td>
-         </tr>
-      </tbody>
-   </table>
-</div><h1 id="tocAnchor-1-1">Syllabus (Winter 2017)</h1>
+      <h1 id="syllabus-winter-2020">Syllabus (Winter 2020)</h1>
 
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Professor:</strong></td>
-      <td>Dr. Andrew Ning: aning@byu.edu</td>
-    </tr>
-    <tr>
-      <td><strong>Office Hours:</strong></td>
-      <td>M 11-12, T 4-5, W 12-1, Th 3-4, F 11-12</td>
-    </tr>
-    <tr>
-      <td><strong>Course:</strong></td>
-      <td>CB 254: MWF 3-3:50</td>
-    </tr>
-    <tr>
-      <td><strong>TAs:</strong></td>
-      <td>Kevin Moore: kmoore@byu.edu</td>
-    </tr>
-    <tr>
-      <td><strong>TA Office Hours:</strong></td>
-      <td>FB 220: M 1-2, T 10-11, W 1-2, F 1-2</td>
-    </tr>
-  </tbody>
-</table>
+<h4 id="office-hours">Office Hours</h4>
 
-<h2 id="tocAnchor-1-1-1">Objective</h2>
+<p>Professor Ning (EB 360):<br />
+TA:</p>
 
-<p>To engage in deep learning of optimization principles, be able to effectively setup and solve real-world optimization problems, and develop technical and communication skills to prepare you to be amongst the world’s most influential engineers.</p>
-
-<h2 id="tocAnchor-1-1-2">Overview</h2>
+<h4 id="what-is-this-course-about">What is this course about?</h4>
 
 <p>Optimization consists of finding the best feasible selection amongst competing alternatives.  Optimization methods are used in a wide range of applications including:</p>
 
@@ -188,234 +124,70 @@
 
 <p>There is no one optimization algorithm to rule them all, so in this class we will learn about several different classes of algorithms.  You will learn the strengths and limitations of different approaches, and how to frame your analysis in a way that is “optimization-friendly”.  Optimization almost always involves complicated tradeoffs, and computers are useful in managing this complexity and extracting insight.</p>
 
-<p>What you take away from the course will greatly depend on your attitude, diligence, initiative, and willingness to work with and learn from others.</p>
+<h4 id="what-are-the-prerequisites">What are the prerequisites?</h4>
 
-<h2 id="tocAnchor-1-1-3">Prerequisites</h2>
+<p>This course assumes no prior exposure to optimization, but you will need a foundation in mathematics and scientific programming. The main concepts you should know/review from multivariable calculus are partial derivatives, the chain rule, directional derivatives, and the gradient for multivariable functions.  For linear algebra <a href="http://cs229.stanford.edu/section/cs229-linalg.pdf">here</a> is a good review.</p>
 
-<ul>
-  <li>multivariable calculus</li>
-  <li>linear algebra</li>
-  <li>computer programming</li>
-</ul>
+<p>It doesn’t matter what programming language you have experience with as long as you are reasonably comfortable.  You should be familiar with the fundamentals: functions, loops, conditionals, variable types, arrays (vectors), use of numerical libraries.  Familiarity with things like object oriented programming is not needed.</p>
 
-<p>This course assumes no prior exposure to optimization, but you will need a foundation in mathematics and programming.</p>
+<p>You’re welcome to use any programming language you like to complete assignments, though I’d recommend either Matlab, Python, or Julia.  I’ll show examples and provide templates in Matlab as that tends to be what the majority uses.  I won’t be providing examples/templates in other languages but you can translate on your own if you prefer.  Regardless of the language you use, the concepts you’ll learn in this course are translatable to other programming languages or optimization packages.</p>
 
-<p>
-   <strong>What math concepts should I review?</strong>
-</p>
+<h4 id="can-i-take-this-class-as-an-undergraduate">Can I take this class as an undergraduate?</h4>
 
-<p>The main concepts you should review from multivariable calculus are partial derivatives, the chain rule, directional derivatives, and the gradient for multivariable functions.  For linear algebra <a href="http://cs229.stanford.edu/section/cs229-linalg.pdf">here</a> is a good review.  Almost every concept in this PDF is one we will use at some point this semester.</p>
-
-<p>
-   <strong>How much programming experience do I need to take this class?</strong>
-</p>
-
-<p>You should be familiar and comfortable with the basics: functions, loops, conditionals, variable types, arrays (vectors), use of numerical libraries.  Familiarity with object oriented programming is not necessary.  It does not matter too much what language(s) you have experience with as long as you understand the fundamentals.  This year we will use <strong>Matlab</strong>.  The concepts you learn in this course are translatable to other programming languages or optimization packages.</p>
-
-<!-- In this class you can choose to use either **Matlab** or **Python**. -->
-
-<p>While this is not a programming course, many of the concepts are best learned through implementation.  Some of these algorithms are involved and optimization methods are great at exploiting any errors or weakness in implementation.  You will need to develop and refine your skills in code debugging as well as in physical insight.  I <strong>do not</strong> recommend taking this class if you do not have programming experience.  It will be very difficult to get up to speed with programming and stay on top of the optimization concepts at the same time.  Note that programming experience need not necessarily come from a formal course.</p>
-
-<p>
-   <strong>Can I take this class as an undergraduate?</strong>
-</p>
-
-<p>Definitely.  Many undergraduates elect to take this course and do very well, but keep in mind that this is a graduate course and expectations will be consistent with graduate-level work.  Also, the course project is often (but not always) most effective when applied to an ongoing research project.  If you are not involved in research, you may want to join a team with a graduate student.  As compared to an undergraduate class:</p>
+<p>Definitely.  Many undergraduates elect to take this course and do very well (based on past semesters the average undergraduate and graduate grades are statistically identical).  However, keep in mind that this is a graduate course and expectations will be consistent with graduate-level work.  Also, the course project is often, but not always, most effective when applied to an ongoing research project.  If you are not involved in research, you may want to join a team with someone who is.  As compared to an undergraduate class:</p>
 
 <ul>
-  <li>the workload is higher (more time required).</li>
+  <li>the workload is higher, more time is expected in graduate courses (typically 4 hours per credit hour).</li>
   <li>the problems are more difficult and require more open-ended problem solving and debugging skills.</li>
   <li>the homeworks are more like reports—you need to explain your methodology and results and not just “circle your answer”.</li>
-  <li>you need to be more of an independent learner (set your own reading schedule, break up larger assignments and projects, find and use outside resources, etc.).</li>
-  <li>the required level of mathematical understanding is higher.</li>
+  <li>you need to be more of an independent learner (set your own reading/homework schedule, break up larger assignments and projects, find and use outside resources, etc.).</li>
+  <li>the expected level of mathematical understanding and programming ability is higher.</li>
 </ul>
 
-<h2 id="tocAnchor-1-1-4">Learning Outcomes</h2>
+<h4 id="what-textbook-will-we-use">What textbook will we use?</h4>
 
-<p>
-   <strong>1. Define and Use Optimization Terminology and Concepts</strong>
-</p>
+<p>A colleague and I have written a textbook that you can download: <a href="">Multidisciplinary Design Optimization by Joaquim R. R. A. Martins and Andrew Ning</a>.  You may have seen a prior version of this text that we developed and used in years past.  This one is completely different.  A couple of years ago we threw away the former text and started from scratch.  This is the first semester we are using it so please be patient with the inevitable typos and minor mistakes.  Do let me know as you catch mistakes or have feedback on things that could be improved.</p>
 
-<p>Define and use optimization terminology and concepts, and understand how to classify an optimization problem.</p>
+<h4 id="what-will-the-in-class-experience-be-like">What will the in-class experience be like?</h4>
 
-<p>
-   <strong>2. Application of Optimization Methods to Engineering Problems</strong>
-</p>
+<p>Don’t expect a passive experience.  It’s not going to be as great of a learning experience if you just listen to me talk the whole time.  Instead, classes will promote <em>self-discovery</em> where possible.  I’d actually prefer that you do <em>not</em> read the textbook beforehand.  The concepts will stick with you better if you wrestle with them before learning the “right way” to think about them.  To that end, in class I will ask questions, ask you to predict things, draw charts, debate concepts with your neighbor, or solve problems that you haven’t seen before.  After class, I’d recommend using the textbook to review concepts and fill in details.</p>
 
-<p>Apply optimization methods to engineering problems, including developing a model, defining an optimization problem, applying optimization methods, exploring the solution, and interpreting results.  Students will demonstrate the ability to choose and justify optimization techniques that are appropriate for solving realistic engineering problems.</p>
+<p>Please ask lots of questions!  Especially ask the questions you think are “dumb” or “simple”, I guarantee someone else is wondering the same thing and you’re doing them a favor by asking.  Some of the work we will do requires a computer.  If you have access to a laptop it will generally be helpful to bring it, but if not we’ll team up with other classmates.</p>
 
-<p>
-   <strong>3. Unconstrained Optimization Theory for Continuous Problems</strong>
-</p>
+<h4 id="what-is-homework-like-and-when-is-it-due">What is homework like and when is it due?</h4>
 
-<p>Understand and apply unconstrained optimization theory for continuous problems, including the necessary and sufficient optimality conditions and algorithms such as: steepest descent, Newton’s method, conjugate gradient, and quasi-Newton methods.</p>
+<p>There are six homeworks designed to teach the important concepts in the class and to help you succeed on your project and future optimization problems.  Each homework is like a miniature project with a report spanning a two-week period. Each homework is assigned two weeks before the deadline because it is designed to take that long.  If you put off most of the work until a few days before the deadline you will not be as successful.  Homework will typically be due Wednesday at midnight (actually 11:59pm) via Learning Suite.  Homework submission guidelines are discussed in more detail <a href="../schedule/guidelines">here</a>.</p>
 
-<p>
-   <strong>4. Computing Derivatives for Gradient-based Optimization</strong>
-</p>
+<h4 id="what-about-late-work">What about late work?</h4>
 
-<p>Understand and apply methods for computing derivatives such as: finite differencing, symbolic differentiation, complex step, algorithmic differentiation, and analytic methods (direct and adjoint).</p>
+<p>Late homework will be accepted with a penalty of 25% per day.  Last minute issues often happen in life so be sure to start early!  Despite your best planning you will likely have an unexpected event, obligation, or illness pop up.  To help with this, I will give you three free late days.  This policy is designed to help with unexpected issues so please don’t ask for homework extensions or other exceptions (unless you have an extreme or extended event like a hospitalization or death in the family).</p>
 
-<p>
-   <strong>5. Gradient-free and Discrete Optimization Algorithms</strong>
-</p>
+<h4 id="can-i-work-with-others--what-about-student-work-from-prior-years">Can I work with others?  What about student work from prior years?</h4>
 
-<p>Understand and apply gradient-free and discrete optimization algorithms such as: genetic algorithms, particle swarm optimization, branch and bound, exhaustive search, and simulated annealing.</p>
+<p>Working with others on homework is definitely encouraged, but you must do your own work and write-ups.  <strong>Referring to solution manuals or student work from previous years is a violation of department policy and the honor code.</strong></p>
 
-<p>
-   <strong>6. Constrained Optimization Theory for Continuous Problems</strong>
-</p>
+<h4 id="is-there-a-project">Is there a project?</h4>
 
-<p>Understand and apply constrained optimization theory for continuous problems, including the Karush-Kuhn-Tucker conditions and algorithms such as: generalized reduced gradient, sequential quadratic programming, and interior-point methods.</p>
+<p>Yes!  The main thrust of this course is a semester-long project that will allow you to dive deeper into an area or application that you are interested in.  The project is open-ended and you will work in small groups of size 2 or 3.  The end product will be a report, of typical journal paper length, appropriately formatted and describing the problem, your methodology, the results, and your conclusions.  Excellent projects will result in publishable or nearly-publishable work.</p>
 
-<p>
-   <strong>7. Determining a Robust Design</strong>
-</p>
+<p>Your project may be aligned with research you are doing outside of the classroom (in fact I recommend doing so if applicable).  The milestones within the project will consist of a short abstract due early in the semester, a draft due about a month before the end of the semester, an in-class presentation, and a final report due on the last day of class.  More details on the project are found <a href="../schedule/project-guidelines/">here</a>.  Example project reports from past classes can be found on the <a href="../resources">Resources</a> page.</p>
 
-<p>Apply optimization techniques to determine a robust design.</p>
+<h4 id="what-about-exams">What about exams?</h4>
 
-<p>
-   <strong>8. Optimization Software</strong>
-</p>
+<p>There will be periodic quizzes to help you and I gauge understanding and reinforce concepts.  Quizzes will be low weight and will be graded solely on participation.  Schedule a reminder because we won’t open up late quizzes after they are due (it becomes a logistical pain that isn’t justifiable giving the small number of points).  Instead, I will drop two quizzes because we all forget or have emergencies occasionally.</p>
 
-<p>Be able to implement basic optimization algorithms in a computational setting and apply existing optimization software packages to solve engineering problems.</p>
+<p>There are no midterms but there will be a comprehensive final exam.</p>
 
-<!-- See [here](https://learningoutcomes.byu.edu/Instructors/course-instructors/06791/000/ME+EN+575/394998/1135) for a list of expected learning outcomes. -->
+<!-- There will also be a comprehensive final exam with a take-home portion handed out on the last day of class and an in-class portion given during the university assigned final exam time slot.  The take-home portion will require the use of a computer to solve optimization problems and will be open-book and open-notes.  The in-class portion will be closed-book and closed-notes and will assess your understanding of optimization concepts. -->
 
-<h2 id="tocAnchor-1-1-5">Course Content</h2>
+<!-- ### Grading
 
-<p>There will be 7 main modules in the course each lasting one-two weeks. An overview of the topics is listed below.</p>
+An approximate percent grading breakdown is as follows:
 
-<ol>
-  <li>Introduction and Line Search</li>
-  <li>Unconstrained Optimization</li>
-  <li>Computing Gradients</li>
-  <li>Constrained Optimization</li>
-  <li>Gradient-Free Methods</li>
-  <li>Optimization Under Uncertainty</li>
-  <li>Surrogate-based Optimization</li>
-</ol>
-
-<!-- 7. Miscellaneous (Surrogate-based optimization, MDO architectures, integer and mixed integer programming)
- -->
-<!-- 1. Introduction and 1D Optimization
-    - Basic Concepts and Terminology
-    - Optimality Conditions
-    - Bisection
-    - Newton's Method
-    - Wolfe Conditions
-2. Unconstrained Optimization
-    - Gradients and Hessians
-    - Optimality Conditions
-    - Steepest Descent
-    - Conjugate Gradient
-    - Newton and Quasi-Newton Methods
-    - Trust Region Methods
-3. Computing Gradients
-    - Finite difference
-    - Complex step
-    - Automatic differentiation
-    - Adjoint and direct methods
-4. Constrained Optimization
-    - Optimality Conditions
-    - Penalty Methods
-    - Sequential Quadratic Programming
-    - Interior Point Methods
-5. Gradient-Free Methods
-    - Nelder-Mead Simplex
-    - Genetic Algorithms
-    - Particle Swarm Optimization
-    - Multiobjective optimization (for gradient and non-gradient based)
-6. Optimization Under Uncertainty
-    - Uncertainty quantification
-    - Robust optimization
-7. Miscellaneous
-    - Surrogate-based optimization
-    - MDO architectures
-    - Integer and mixed integer programming -->
-
-<h2 id="tocAnchor-1-1-6">Course Work</h2>
-
-<!-- Course content is designed to adhere to the guidelines from the [registrar's office](https://registrar.byu.edu/catalog/2015-2016ucat/GeneralInfo/Registration.php):
-> three hours of work per week per credit hour for the average student who is appropriately prepared; much more time may be required to achieve excellence.  
- -->
-
-<p>A higher workload is expected in graduate courses as compared to undergradaute courses.  As a rule of thumb you should plan on four hours of work per week per credit hour.  Subtracting class time, that means at least 9.5 hours of work outside of class each week.</p>
-
-<!-- The homeworks are designed with two week deadlines, meaning each homework represents about 18 hours of work (including reading and project time). -->
-
-<h3 id="participation">Participation</h3>
-<p>Good: attend class regularly and punctually.<br />
-Better: attend and be attentive in class.<br />
-Best: attend, be attentive, and <strong>actively participate</strong> in the classroom discussion.</p>
-
-<p>Don’t be afraid to ask what you think might be a simple question, usually someone else is wondering the same thing and you are doing them a favor by asking.  Be respectful of your peers and arrive to class on time (but if you are late please don’t feel like you can’t come in).  You may use electronic devices in the classroom only if they are being used appropriately for class activities (e.g., taking notes).</p>
-
-<p>Class time should not be a passive experience.  In addition to asking questions, you should come prepared to work on problems in class. I will often ask you to work individually or with small groups on example problems in class.  Many of these problems will be ones that you haven’t seen and don’t know how to solve.  That may be uncomfortable at first, but this practice will help you to learn concepts more deeply and become better engineering problem solvers.</p>
-
-<p>I provide slides for each lecture.  They are intentionally sparse.  Studies suggest that you will learn and retain information better by taking notes, so I intentionally avoid providing you with detailed notes.  On the other hand, requiring you to copy down lots of information won’t give you space to think in class.  The goal of the slides is to hopefully reach a happy medium.  The lecture slides are used to provide organization and display items that would be time consuming to write down (e.g., images, long equations).  Important details are elaborated on in class, and it is expected that you will be taking good notes.  Some students like to use the slides as a background to write their notes on.</p>
-
-<h3 id="reading">Reading</h3>
-
-<p>All topics have associated reading, and I expect you to complete readings before class.  I cannot, not would it be effective to, cover all the content you need to know in class.  Instead, class time will be used for discussing difficult concepts, diving deeper into or expanding on concepts you were exposed to in your reading, answering questions, working examples together, and testing understanding.  Readings will come from <a href="http://flowlab.groups.et.byu.net/me575/textbook/MDO.pdf"><em>Multidisciplinary Design Optimization</em> (29 MB)</a> by Joaquim R. R. A. Martins and Andrew Ning.</p>
-
-<p>Optional textbooks for the interested learner are also listed under <a href="../resources">Resources</a>.</p>
-
-<h3 id="homework">Homework</h3>
-
-<p>There are six homeworks designed to teach the important concepts in the class and to help you succeed on your project and future optimization problems.  Each homework will be assigned two weeks before its due date and will be submitted in the form of a short report via Learning Suite.  Homework will typically be due every Wednesday at midnight (actually 11:59pm) and will be turned in via Learning Suite.  Homework submission guidelines are linked from the schedule page (<a href="../schedule/guidelines">direct link</a>).  Late homework will be accepted with a penalty of 25% per day.  Last minute issues often happen in life so be sure to start your work early and submit early!</p>
-
-<!-- Because of the 2-week time frame, I expect you to plan ahead and so late homework will not be accepted (except with prior approval for extreme extenuating circumstances)<sup>1</sup>.  We will grade the homework in a timely manner and provide you with feedback to assist in your learning.  Homework submission details are provided in the [Assignments](../assignments) section. -->
-
-<p>Homework will be primarily self-graded.  I will provided detailed solutions/guides, and you will assess your own work.  Reviewing your own work with a guided solution will help you better understand concepts you may have missed, and will allow you to see alternative solution approaches.  Mistakes can be some of our most effective teachers, but to take advantage of the learning opportunity we must review our work, figure out what the mistake was, and learn how to address it.  The grader will spot check certain problems to help ensure grading is applied appropriately and consistently, and to provide feedback on things where more experience is required.</p>
-
-<!-- For some problems, you will also be given the opportunity to rework the problem.   -->
-
-<!-- We will grade the homework in a timely manner and provide you with feedback to assist in your learning. -->
-
-<p>Working with others on homework is certainly encouraged, but you must do your own work and prepare your own reports.  <strong>Use of solutions, homework, or exams from prior students or other sources is a violation of the honor code.</strong></p>
-
-<!-- <span style="font-size: 80%;"><sup>1</sup> Most of you will deal with something this semester: an illness, extracurricular events, scientific conferences, job interviews, midterms, family events, an exceptionally busy week, etc. Many of these will even be unexpected.  These are not valid reasons for an extension.  With a two week deadline I expect you to plan ahead and start early.  Valid reasons for extension are things like hospitalization, prolonged serious illness, death in the family, birth of a child (let me know in advance).  My goal isn't to be harsh, but to help you adjust to the realities of real-world deadlines and improve in your project/time management skills.  I don't like having to enforce deadlines, but I do you a disservice in your career preparation by letting things slide.  I want to help you succeed not just in this class, but in your life in general.</span> -->
-
-<!-- <span style="font-size: 80%;"> -->
-<!-- Also, do not wait until the very last minute to try to submit.  Learning Suite will not let you submit after midnight (actually 11:59 pm).  Some students plan their schedule so that they are working on assignments all the way up to the last minute.  It's not uncommon to have computer/internet/other last minute problems and these are not valid reasons to submit late.  I'm not going to be so harsh that I will turn away your assignment if you have to email it to me a few minutes late, but you will lose points and it won't be worth it.  Just submit with plenty of time to spare. -->
-<!-- </span> -->
-
-<!-- I suggest getting things done early to minimize last minute surprises.   -->
-<!-- Some students struggle with the transition to the workplace because these skills are underdeveloped.   -->
-
-<h3 id="project">Project</h3>
-
-<p>The main thrust of this course is a semester-long project that will allow you to dive deeper into an area or application that you are interested in.  The project is open-ended and you will work in small groups of size 2-3.  The end product will be a report (of typical journal paper length) appropriately formatted and describing the problem, your methodology, the results, and your conclusions.  Excellent projects will result in publishable or nearly-publishable work.</p>
-
-<p>Your project may be aligned with research you are doing outside of the classroom (in fact I recommend doing so if possible).  The milestones within the project will consist of a short abstract due early in the semester, an extended outline due about a month before the end of the semester, an in-class presentation, and a final report due on the last day of class.  More details on the project are found <a href="../schedule/project-guidelines/">here</a>.  Example project reports from past classes can be found on the <a href="../resources">Resources</a> section.</p>
-
-<h3 id="quizzes-and-exams">Quizzes and Exams</h3>
-
-<p>There will be a weekly quiz to engage your thinking on important concepts, assess your understanding, and practice for the exam.  Quizzes are open book and open notes, and should be completed in one sitting (i.e., you can’t close the quiz and come back to it).  I will drop your two lowest quiz scores.</p>
-
-<p>There will also be a comprehensive final exam with a take-home portion handed out on the last day of class and an in-class portion given during the university assigned final exam time slot.  The take-home portion will require the use of a computer to solve optimization problems and will be open-book and open-notes.  The in-class portion will be closed-book and closed-notes and will assess your understanding of optimization concepts.</p>
-
-<h3 id="grading">Grading</h3>
-
-<p>An approximate percent grading breakdown is as follows:</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Homework</td>
-      <td>45%</td>
-    </tr>
-    <tr>
-      <td>Quizzes and Final Exam</td>
-      <td>30%</td>
-    </tr>
-    <tr>
-      <td>Project</td>
-      <td>25%</td>
-    </tr>
-  </tbody>
-</table>
+---- | ----
+Homework | 45%
+Quizzes and Final Exam | 30%
+Project | 25% -->
 
 <!--
 650 total.
@@ -432,107 +204,51 @@ Quizzes: 100 points
 Participation: 50 points
  -->
 
-<h3 id="getting-help">Getting Help</h3>
+<hr />
 
-<p>The TA and I both hold office hours, and want to make ourselves as available as possible.  Office hours will be much less effective if you go in expecting to see homework problems worked out for you. This will rob you of much of the learning the problem was designed for.  The most effective engineers, and the most exciting and rewarding careers, will involve solving problems that are unlike those anyone has solved before.  The goal of office hours (and homework) is to help you to that end.  In other words, we are less interested in getting to “solutions”, and more interesting in developing problem skills and engineering understanding.</p>
+<h3 id="university-and-department-policies">University and Department Policies</h3>
 
-<!-- Even asking for examples of similar problems is usually not the best place to begin if your objective is real learning.   -->
-
-<!-- Instead of asking how to solve the problem or to see a related example, describe where you are stuck and what you think you need help with, ask questions on concepts you don't understand, brainstorm ideas on how to move forward and ask for feedback, try things and don't be afraid to fail.  On some problems you may feel like you don't know where to begin and don't even know what questions to ask.  Simplify the problem and make at least one attempt even if it seems horribly wrong.  Be prepared for the TA or I to ask you lots of questions to probe understanding and help guide you in the discovery process.  After wrestling with the problem and discussing concepts for a while, working out related examples or parts of the homework problem together is entirely appropriate, but this shouldn't be the starting place. -->
-
-<p>In addition to normal office hours, we use Piazza to assist you in asking for and giving help.  Piazza is a discussion forum and will allow you to get help efficiently from other classmates, the TA, and myself.  Rather than emailing questions to the teaching staff, please post your questions on Piazza.  After signing up for an account, you may want to visit your notification preferences.  I prefer batch notifications.</p>
-
-<!-- Finally, we will have a weekly TA-led recitation section.  In this session we will review concepts, work through examples, demonstrate Star-CCM+ tasks, and answer questions.  Attendance is optional.  We try to anticipate common problems/questions to discuss in the session, and answer the questions that you bring.  The primary focus of these sessions will be Star-CCM+ examples to help you with the homework assignments. -->
-
-<h3 id="advice">Advice</h3>
-
-<p>Each homework is assigned two weeks before the deadline because it is designed to take that long.  Plan your time well. If you put off most of the work until a few days before the deadline you will not be as successful.  Some of you will struggle with the scheduling format because you are used to homeworks and readings being divided into smaller chunks for you.  This is a graduate class and I expect you to be able to do your own task management.  As you prepare for the workplace this is a critical skill to develop.</p>
-
-<p>Debugging is one of the most challenging parts of optimization.  Your level of skill with debugging will often be correlated with how long it takes you to complete the homeworks.  There are two aspects of debugging in this context: coding implementation and problem formulation.</p>
-
-<p>The first aspect to debugging is to make sure your code is implemented correctly.  This challenge is common to any programming work.  I suggest that you start simple and test frequently.  Even though it may seem slower to stop and test as you go, it will save you lots of time in the end.  Break algorithms into small pieces.  Determine what the expected output should be for a small piece and thoroughly test it before adding more functionality.  Test boundary cases as well.  Learn how to step line by line through your code, plot outputs, etc.  Formalizing this process is called <a href="https://en.wikipedia.org/wiki/Unit_testing">unit testing</a>.</p>
-
-<p>The second aspect is to appropriately formulate your optimization problem, particularly in your project.  Is your objective function suitable?  Is there a better higher-level objective?  Should your objective actually be a constraint?  Are there other important constraints that you have not considered?  What do you expect the solution to be?  How does the starting point affect your solution?  Have you explored the scaling of the problem?  Can you decompose your problem into a smaller problem to build on (i.e., start with just a few design variables at first, remove some constraints).  Have you explored the behavior of all outputs with respect to all inputs?  Did you provide gradients, and if so did you run a gradient check?  Have you looked at the output messages from the optimizer?</p>
-
-<!-- Two things you'll quickly learn as you move into your first job, if you haven't learned them already, is that there is rarely a "right answer", and working well with others is essential.  Excellent engineers take the time to deeply understand the problem before trying to find solutions, are able to clearly justify their selected methodology, and can carefully present their findings.  Learn from and help your peers.  Get to know the TAs and the instructor in office hours.  Don't be afraid to ask for help.   -->
-
-<!-- Focus less on reaching a preconceived final answer and focus more on understanding the process.   -->
-
-<!-- Strong technical writing skills will be vital in your career and are often under-appreciated by engineering students.  Take advantage of opportunities to practice your writing and oral communication skills and learn how to express ideas clearly.  Scientific programming skills are also highly valued.  Many students understand syntax, but fewer can debug effectively and organize code clearly and logically.   -->
-
-<!-- Worry less about grades and more about learning.  Have fun!  Find things that interest you and take the initiative to dive deeper! -->
-
-<!--
-Homework: 300 points (6 X 50)
-Project: 250 points (20 abstract, 40 draft, 40 presentation, 150 final report)
-Exams: 200 points (Participation 50 Quizes, 150 Final)
-
-Homework: 300 points (6 X 50)
-Project: 250 points (20 abstract, 40 draft, 40 presentation, 150 final report)
-Exams: 200 points (50 Quizes, 50 Midterm, 100 Final)
-
-Homework: 300 points (6 X 50)
-Project: 300 points (20 abstract, 40 draft, 40 presentation, 200 final report)
-Exams: 300 points (25 Participation, 50 Quizes, 75 Midterm, 150 Final)
- -->
-
-<!-- ### Piazza -->
-
-<!-- To assist you in asking for and giving help, we will be using Piazza. Piazza is a discussion forum and will allow you to get help efficiently from other classmates, the TA, and myself.  Rather than emailing questions to the teaching staff, please post your questions on Piazza (we will still have office hours as well).  After signing up for an account, you may want to visit your notification preferences.  Use of Piazza is optional but highly recommended.  All important class announcements will come through Learning Suite, but homework discussion and homework help will all be done through Piazza.   -->
-
-<!-- Our class page can be found at: https://piazza.com/byu/winter2016/meen575/home -->
-
-<!-- ## Schedule
-
-|  Date | Mon | Wed | Fri |
-|---|---|---|---|
-| Jan 4 | 1: Intro<br>&nbsp; | **No class**<br>**See email for tasks** | 2: Line Search<br>&nbsp; |
-| Jan 11 | 2: Line Search<br>**Quiz 1** | 2: Line Search<br>&nbsp; | 3: Unconstrained<br>&nbsp; |
-| Jan 18 | MLK Day <br>**Quiz 2**| 3: Unconstrained <br>**HW 1 due**| 3: Unconstrained<br>&nbsp; |
-| Jan 25 | 3: Unconstrained <br>**Quiz 3** | Case Study<br>**Abstract** | 4: Gradients<br>&nbsp; |
-| Feb 1 | 4: Gradients <br>**Quiz 4** | 4: Gradients<br>**HW 2 due** | 4: Gradients<br>&nbsp; |
-| Feb 8 | 4: Gradients <br>**Quiz 5** | 5: Constrained<br>&nbsp; | 5: Constrained<br>&nbsp; |
-| Feb 15 | 5: Constrained (Tue) <br>**Quiz 6** | 5: Constrained<br>**HW 3 due** | 5: Constrained<br>&nbsp; |
-| Feb 22 | 5: Constrained <br>**Quiz 7** | 5: Constrained<br>&nbsp; | 5: Constrained<br>&nbsp; |
-| Feb 29 | 6: Gradient-Free <br>**Quiz 8** | 6: Gradient-Free<br>**HW 4 due** | 6: Gradient-Free<br>&nbsp; |
-| Mar 7 | 6: Gradient-Free <br>**Quiz 9** | 6: Gradient-Free<br>&nbsp; | 6: Gradient-Free<br>&nbsp; |
-| Mar 14 | 8: OUU <br>**Quiz 10** | No Class<br>**HW 5 due** | 8: OUU<br>&nbsp; |
-| Mar 21 | 8: OUU <br>**Quiz 11** | 9: SBO<br>**Outline** | 9: SBO<br>&nbsp; |
-| Mar 28 | 9: SBO <br>**Quiz 12** | Frameworks<br>&nbsp; |  Review<br>&nbsp; |
-| Apr 4 | Topology Optimization<br>(Ted Blacker, SNL) | **Presentations**<br>**HW 6 due** | **Presentations**<br>&nbsp; |
-| Apr 11 | **Presentations**<br>&nbsp; |&nbsp;<br>**Final Report (Tue)**|| -->
-
-<h2 id="tocAnchor-1-1-7">University Policies</h2>
-
-<h3 id="honor-code">Honor Code</h3>
+<h4 id="honor-code">Honor Code</h4>
 
 <p>In keeping with the principles of the BYU Honor Code, students are expected to be honest in all of their academic work. Academic honesty means, most fundamentally, that any work you present as your own must in fact be your own work and not that of another. Violations of this principle may result in a failing grade in the course and additional disciplinary action by the university. Students are also expected to adhere to the Dress and Grooming Standards. Adherence demonstrates respect for yourself and others and ensures an effective learning and working environment. It is the university’s expectation, and every instructor’s expectation in class, that each student will abide by all Honor Code standards. Please call the Honor Code Office at 422-2847 if you have questions about those standards.</p>
 
-<h3 id="preventing--responding-to-sexual-misconduct">Preventing &amp; Responding to Sexual Misconduct</h3>
+<h4 id="academic-honesty-department">Academic Honesty (Department)</h4>
 
-<p>In accordance with Title IX of the Education Amendments of 1972, Brigham Young University prohibits unlawful sex discrimination against any participant in its education programs or activities. The university also prohibits sexual harassment—including sexual violence—committed by or against students, university employees, and visitors to campus. As outlined in university policy, sexual harassment, dating violence, domestic violence, sexual assault, and stalking are considered forms of “Sexual Misconduct” prohibited by the university.</p>
+<p>As part of an overall teaching/learning approach to aid student learning, the course instructor may make available to students solutions to some prior coursework. However, outside of this appropriate usage, relying on and/or copying solutions (obtained online or from any source) to assigned coursework represents a clear example of turning in work that is not your own.</p>
 
-<p>University policy requires all university employees in a teaching, managerial, or supervisory role to report all incidents of Sexual Misconduct that come to their attention in any way, including but not limited to face-to-face conversations, a written class assignment or paper, class discussion, email, text, or social media post.  Incidents of Sexual Misconduct should be reported to the Title IX Coordinator at t9coordinator@byu.edu or (801) 422-8692.  Reports may also be submitted through EthicsPoint at https://titleix.byu.edu/report or 1-888-238-1062 (24-hours a day).</p>
-
-<p>BYU offers confidential resources for those affected by Sexual Misconduct, including the university’s Victim Advocate, as well as a number of non-confidential resources and services that may be helpful. Additional information about Title IX, the university’s Sexual Misconduct Policy, reporting requirements, and resources can be found at http://titleix.byu.edu or by contacting the university’s Title IX Coordinator.</p>
-
-<h3 id="student-disability">Student Disability</h3>
-
-<p>Brigham Young University is committed to providing a working and learning atmosphere that reasonably accommodates qualified persons with disabilities. If you have any disability which may impair your ability to complete this course successfully, please contact the University Accessibility Center (UAC), 2170 WSC or 422-2767. Reasonable academic accommodations are reviewed for all students who have qualified, documented disabilities. The UAC can also assess students for learning, attention, and emotional concerns. Services are coordinated with the student and instructor by the UAC. If you need assistance or if you feel you have been unlawfully discriminated against on the basis of disability, you may seek resolution through established grievance policy and procedures by contacting the Equal Employment Office at 422-5895, D-285 ASB.</p>
-
-<h3 id="academic-honesty">Academic Honesty</h3>
-
-<p>The first injunction of the Honor Code is the call to “be honest.” Students come to the university not only to improve their minds, gain knowledge, and develop skills that will assist them in their life’s work, but also to build character. “President David O. McKay taught that character is the highest aim of education” (The Aims of a BYU Education, p.6). It is the purpose of the BYU Academic Honesty Policy to assist in fulfilling that aim. BYU students should seek to be totally honest in their dealings with others. They should complete their own work and be evaluated based upon that work. They should avoid academic dishonesty and misconduct in all its forms, including but not limited to plagiarism, fabrication or falsification, cheating, and other academic misconduct.</p>
-
-<h3 id="devotional-attendance">Devotional Attendance</h3>
-
-<p>Brigham Young University’s devotional and forum assemblies are an important part of your BYU experience. President Cecil O. Samuelson said, “We have special and enlightening series of devotional and forum assemblies…that will complement, supplement, and enrich what will also be a very productive period in your classrooms, laboratories, and libraries. We look forward to being with you each Tuesday…and hope that you will regularly attend and bring your friends and associates with you…A large part of what constitutes the unique ‘BYU experience’ is found in these gatherings where the Spirit has been invited and where we have the opportunity to discuss and consider things of ultimate worth and importance that are not afforded to the academic community on almost any other campus” (from the address “The Legacy of Learning”, 30 August, 2005). Your attendance at each forum and devotional is strongly encouraged.</p>
-
-<h3 id="inappropriate-use-of-course-materials">Inappropriate Use Of Course Materials</h3>
+<h4 id="inappropriate-use-of-course-materials">Inappropriate Use Of Course Materials</h4>
 
 <p>All course materials (e.g., outlines, handouts, syllabi, exams, quizzes, PowerPoint presentations, lectures, audio and video recordings, etc.) are proprietary. Students are prohibited from posting or selling any such course materials without the express written permission of the professor teaching this course. To do so is a violation of the Brigham Young University Honor Code.</p>
 
-<h3 id="plagiarism">Plagiarism</h3>
+<h4 id="preventing--responding-to-sexual-misconduct">Preventing &amp; Responding to Sexual Misconduct</h4>
+
+<p>In accordance with Title IX of the Education Amendments of 1972, Brigham Young University prohibits unlawful sex discrimination against any participant in its education programs or activities. The university also prohibits sexual harassment-including sexual violence-committed by or against students, university employees, and visitors to campus. As outlined in university policy, sexual harassment, dating violence, domestic violence, sexual assault, and stalking are considered forms of “Sexual Misconduct” prohibited by the university.</p>
+
+<p>University policy requires all university employees in a teaching, managerial, or supervisory role to report all incidents of Sexual Misconduct that come to their attention in any way, including but not limited to face-to-face conversations, a written class assignment or paper, class discussion, email, text, or social media post. Incidents of Sexual Misconduct should be reported to the Title IX Coordinator at t9coordinator@byu.edu or (801) 422-8692. Reports may also be submitted through EthicsPoint at https://titleix.byu.edu/report or 1-888-238-1062 (24-hours a day).</p>
+
+<p>BYU offers confidential resources for those affected by Sexual Misconduct, including the university’s Victim Advocate, as well as a number of non-confidential resources and services that may be helpful. Additional information about Title IX, the university’s Sexual Misconduct Policy, reporting requirements, and resources can be found at http://titleix.byu.edu or by contacting the university’s Title IX Coordinator.</p>
+
+<h4 id="student-disability">Student Disability</h4>
+
+<p>Brigham Young University is committed to providing a working and learning atmosphere that reasonably accommodates qualified persons with disabilities. If you have any disability which may impair your ability to complete this course successfully, please contact the University Accessibility Center (UAC), 2170 WSC or 422-2767. Reasonable academic accommodations are reviewed for all students who have qualified, documented disabilities. The UAC can also assess students for learning, attention, and emotional concerns. Services are coordinated with the student and instructor by the UAC. If you need assistance or if you feel you have been unlawfully discriminated against on the basis of disability, you may seek resolution through established grievance policy and procedures by contacting the Equal Employment Office at 422-5895, D-285 ASB.</p>
+
+<h4 id="respectful-environment">Respectful Environment</h4>
+
+<p>“Sadly, from time to time, we do hear reports of those who are at best insensitive and at worst insulting in their comments to and about others… We hear derogatory and sometimes even defamatory comments about those with different political, athletic, or ethnic views or experiences. Such behavior is completely out of place at BYU, and I enlist the aid of all to monitor carefully and, if necessary, correct any such that might occur here, however inadvertent or unintentional. “I worry particularly about demeaning comments made about the career or major choices of women or men either directly or about members of the BYU community generally. We must remember that personal agency is a fundamental principle and that none of us has the right or option to criticize the lawful choices of another.” President Cecil O. Samuelson, Annual University Conference, August 24, 2010 “Occasionally, we … hear reports that our female faculty feel disrespected, especially by students, for choosing to work at BYU, even though each one has been approved by the BYU Board of Trustees. Brothers and sisters, these things ought not to be. Not here. Not at a university that shares a constitution with the School of the Prophets.” Vice President John S. Tanner, Annual University Conference, August 24, 2010</p>
+
+<h4 id="devotional-attendance">Devotional Attendance</h4>
+
+<p>Brigham Young University’s devotional and forum assemblies are an important part of your BYU experience. President Cecil O. Samuelson said, “We have special and enlightening series of devotional and forum assemblies…that will complement, supplement, and enrich what will also be a very productive period in your classrooms, laboratories, and libraries. We look forward to being with you each Tuesday…and hope that you will regularly attend and bring your friends and associates with you…A large part of what constitutes the unique ‘BYU experience’ is found in these gatherings where the Spirit has been invited and where we have the opportunity to discuss and consider things of ultimate worth and importance that are not afforded to the academic community on almost any other campus” (from the address “The Legacy of Learning”, 30 August, 2005). Your attendance at each forum and devotional is strongly encouraged.</p>
+
+<h4 id="mental-health">Mental Health</h4>
+
+<p>Mental health concerns and stressful life events can affect students’ academic performance and quality of life. BYU Counseling and Psychological Services (CAPS, 1500 WSC, 801-422-3035, caps.byu.edu) provides individual, couples, and group counseling, as well as stress management services. These services are confidential and are provided by the university at no cost for full-time students. For general information please visit https://caps.byu.edu; for more immediate concerns please visit http://help.byu.edu.</p>
+
+<h4 id="academic-honesty">Academic Honesty</h4>
+
+<p>The first injunction of the Honor Code is the call to “be honest.” Students come to the university not only to improve their minds, gain knowledge, and develop skills that will assist them in their life’s work, but also to build character. “President David O. McKay taught that character is the highest aim of education” (The Aims of a BYU Education, p.6). It is the purpose of the BYU Academic Honesty Policy to assist in fulfilling that aim. BYU students should seek to be totally honest in their dealings with others. They should complete their own work and be evaluated based upon that work. They should avoid academic dishonesty and misconduct in all its forms, including but not limited to plagiarism, fabrication or falsification, cheating, and other academic misconduct.</p>
+
+<h4 id="plagiarism">Plagiarism</h4>
 
 <p>Intentional plagiarism is a form of intellectual theft that violates widely recognized principles of academic integrity as well as the Honor Code. Such plagiarism may subject the student to appropriate disciplinary action administered through the university Honor Code Office, in addition to academic sanctions that may be applied by an instructor. Inadvertent plagiarism, which may not be a violation of the Honor Code, is nevertheless a form of intellectual carelessness that is unacceptable in the academic community. Plagiarism of any kind is completely contrary to the established practices of higher education where all members of the university are expected to acknowledge the original intellectual work of others that is included in their own work. In some cases, plagiarism may also involve violations of copyright law. Intentional Plagiarism-Intentional plagiarism is the deliberate act of representing the words, ideas, or data of another as one’s own without providing proper attribution to the author through quotation, reference, or footnote. Inadvertent Plagiarism-Inadvertent plagiarism involves the inappropriate, but non-deliberate, use of another’s words, ideas, or data without proper attribution. Inadvertent plagiarism usually results from an ignorant failure to follow established rules for documenting sources or from simply not being sufficiently careful in research and writing. Although not a violation of the Honor Code, inadvertent plagiarism is a form of academic misconduct for which an instructor can impose appropriate academic sanctions. Students who are in doubt as to whether they are providing proper attribution have the responsibility to consult with their instructor and obtain guidance. Examples of plagiarism include: Direct Plagiarism-The verbatim copying of an original source without acknowledging the source. Paraphrased Plagiarism-The paraphrasing, without acknowledgement, of ideas from another that the reader might mistake for the author’s own. Plagiarism Mosaic-The borrowing of words, ideas, or data from an original source and blending this original material with one’s own without acknowledging the source. Insufficient Acknowledgement-The partial or incomplete attribution of words, ideas, or data from an original source. Plagiarism may occur with respect to unpublished as well as published material. Copying another student’s work and submitting it as one’s own individual work without proper attribution is a serious form of plagiarism.</p>
 
