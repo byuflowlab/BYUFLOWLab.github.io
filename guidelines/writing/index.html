@@ -94,11 +94,12 @@
       <a class="sidebar-nav-item" href="/people">People</a>
       <a class="sidebar-nav-item" href="/research">Research</a>
       <a class="sidebar-nav-item" href="/teaching">Teaching</a>
-      <a class="sidebar-nav-item" href="/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/guidelines">Guidelines</a>
+      <a class="sidebar-nav-item" href="/codes">Codes</a>
       
     </nav>
 
-    <p>&copy; 2019. All rights reserved.</p>
+    <p>&copy; 2020. All rights reserved.</p>
   </div>
 </div>
 
@@ -217,8 +218,7 @@ For example:
 <h2 id="tocAnchor-1-1-5">Figures</h2>
 
 <ul>
-  <li><strong>Use vector-based graphics whenever possible (e.g., pdf, eps), if not possible, for example with a CFD screenshot, then make sure the bitmap is sufficiently high resolution.</strong>  High-quality figures are crucial to a good paper. Bitmap images are made up of pixels.  That means that if you zoom in enough they will look pixelated.  Vector images, by contrast, are mathematically defined so that you can keep zooming in and the image will always look perfectly sharp.  This is important when viewing graphics on electronic devices as readers will often want to zoom in on an image.  Many of your graphics will be generated through a programming language and those are already mathematically defined so it would be a real shame to save it as a bitmap.<br />
-<!-- The one gotcha with saving PDFs on Matlab is that it creates a full page PDF (maybe that's changed recently).  One alternative is to save as an eps and then in LaTeX use the epstopdf package and the images will be automatically converted to pdfs, and automatically reconverted if the original eps changes.  In Python you can just directly save to pdf. --></li>
+  <li><strong>Use vector-based graphics whenever possible (e.g., pdf, eps), if not possible, for example with a CFD screenshot, then make sure the bitmap is sufficiently high resolution.</strong>  High-quality figures are crucial to a good paper. Bitmap images are made up of pixels.  That means that if you zoom in enough they will look pixelated.  Vector images, by contrast, are mathematically defined so that you can keep zooming in and the image will always look perfectly sharp.  This is important when viewing graphics on electronic devices as readers will often want to zoom in on an image.  Many of your graphics will be generated through a programming language and those are already mathematically defined so it would be a real shame to save it as a bitmap.</li>
   <li><strong>Figure captions should use full sentences, and be descriptive.</strong>  A reader should be able to understand your figure just from the figure and its caption, without having to search through the text.</li>
   <li><strong>Don’t use rainbow colormaps for contour plots.</strong>  The ordering of the rainbow colormap is nonintuitive and does not vary continuously in luminance. The result is an obscuring of details and the perception of artificial boundaries between hues.  This is especially problematic because the default for many contour plots is the rainbow colormap.  Recently, both <a href="http://blogs.mathworks.com/steve/2014/10/20/a-new-colormap-for-matlab-part-2-troubles-with-rainbows/">Matlab</a> and <a href="http://matplotlib.org/users/colormaps.html">matplotlib</a> have changed the default to a colormap that is more perceptually uniform.</li>
   <li><strong>Don’t accept the defaults of your plotting program, rarely are they well suited for publication-quality plots</strong>.  It’s worth creating some nice defaults and saving them in your .matplotlibrc file (or in Export Setup for Matlab).  Usually I try to optimize my figures to a 3 inch width, which is a typical column size in a scientific journal.  Make sure to set the font size is large enough so that all labels are readable.</li>

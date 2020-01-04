@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Codes &middot; FLOW Lab
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134508820-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134508820-1');
+  </script>
+  
+
+
+</head>
+
+
+  <body class="theme-base-0d">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          <img src="/images/logo.png" width="400px" color="white">
+          <!-- FLOW Lab -->
+        </a>
+      </h1>
+      <p class="lead">Flight, Optimization, and Wind Laboratory</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      <a class="sidebar-nav-item" href="/publications">Publications</a>
+      <a class="sidebar-nav-item" href="/posts">Posts</a>
+      <a class="sidebar-nav-item" href="/people">People</a>
+      <a class="sidebar-nav-item" href="/research">Research</a>
+      <a class="sidebar-nav-item" href="/teaching">Teaching</a>
+      <a class="sidebar-nav-item" href="/guidelines">Guidelines</a>
+      <a class="sidebar-nav-item active" href="/codes">Codes</a>
+      
+    </nav>
+
+    <p>&copy; 2020. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="page">
+  <h1 class="page-title">Codes</h1>
+  <h2 id="curated-list">Curated List</h2>
+
+<p>Packages on the curated list must meet a minimum lab standard for documentation, testing, and review.  Guidelines for package development are available <a href="devguide">here</a>.</p>
+
+<p><strong>Aerodynamics</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Package</td>
+      <td>Description</td>
+      <td>Maintainer(s)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/byuflowlab/ccblade.jl">CCBlade.jl</a></td>
+      <td>A blade element momentum method for propellers and wind turbines.</td>
+      <td>Andrew Ning</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Optimization and Math</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Package</td>
+      <td>Description</td>
+      <td>Maintainer(s)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/byuflowlab/FLOWMath.jl">FLOWMath.jl</a></td>
+      <td>A collection of math routines (Brent’s method for root finding, akima spline interpolation, etc.)</td>
+      <td>Andrew Ning and Taylor McDonnell</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Other</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Package</td>
+      <td>Description</td>
+      <td>Maintainer(s)</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/byuflowlab/SixDOF.jl">SixDOF.jl</a></td>
+      <td>A nonlinear six degree of freedom dynamics model, particularly for aircraft</td>
+      <td>Andrew Ning</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="other-code">Other Code</h2>
+
+<p>A full list of open source codes are available on our GitHub organization page in various stages of development: <a href="https://github.com/byuflowlab">https://github.com/byuflowlab</a></p>
+
+<p>We have also created or contributed to many tools in the NREL WISDEM organization: <a href="https://github.com/WISDEM">https://github.com/WISDEM</a></p>
+
+</div>
+
+    </div>
+
+  </body>
+</html>
