@@ -110,27 +110,26 @@
   <li>constraints</li>
 </ul>
 
-<p><strong>Design variables</strong> are the variables that we allow the optimizer to change.  We denote these variables as <script type="math/tex">x</script>, where <script type="math/tex">x</script> is an array (i.e., there can be many design variables).  For example if we were designing the shape of the spoiler on a car, the design variables might be things like the length of the spoiler, the distance away from the car body, and parameters that define its curved profile.</p>
+<p><strong>Design variables</strong> are the variables that we allow the optimizer to change.  We denote these variables as \(x\), where \(x\) is an array (i.e., there can be many design variables).  For example if we were designing the shape of the spoiler on a car, the design variables might be things like the length of the spoiler, the distance away from the car body, and parameters that define its curved profile.</p>
 
-<p>The <strong>objective</strong> is the metric we want to minimize.  We usually denote this function by <script type="math/tex">J</script> or sometimes <script type="math/tex">f</script>.  It is a scalar, meaning a single value (at times it makes sense to have multiple objectives, but the approach is different—we will explore this later in the semester).  By convention we say minimize because we often minimize things in engineering, but in other disciplines, like finance, the default convention may be to maximize.  This does not mean that the algorithms we explore can can only perform minimization, to maximize you simply minimize the negative of the function (<script type="math/tex">-J(x)</script>).  In our car example, the objective of our spoiler design may be to maximize (downward) lift.</p>
+<p>The <strong>objective</strong> is the metric we want to minimize.  We usually denote this function by \(J\) or sometimes \(f\).  It is a scalar, meaning a single value (at times it makes sense to have multiple objectives, but the approach is different—we will explore this later in the semester).  By convention we say minimize because we often minimize things in engineering, but in other disciplines, like finance, the default convention may be to maximize.  This does not mean that the algorithms we explore can can only perform minimization, to maximize you simply minimize the negative of the function (\(-J(x)\)).  In our car example, the objective of our spoiler design may be to maximize (downward) lift.</p>
 
-<p><strong>Constraints</strong> exist in almost any engineering problem, they are conditions that we require the optimizer to satisfy.  We denote them with <script type="math/tex">c</script>, where <script type="math/tex">c</script> is an array because we may have many constraints.  By convention we will define constraints in this form: <script type="math/tex">c(x) \le 0</script>.  This is completely general as a constraint of the form <script type="math/tex">q(x) \ge 0</script> could be rewritten as <script type="math/tex">c(x) = -q(x) \le 0</script>.  In our car example the constraints may be things like a constraint on bending stress, manufacturing tolerances, etc.  Without these constraints, our spoiler may produce a lot of lift but may snap in half or be too difficult to manufacture.</p>
+<p><strong>Constraints</strong> exist in almost any engineering problem, they are conditions that we require the optimizer to satisfy.  We denote them with \(c\), where \(c\) is an array because we may have many constraints.  By convention we will define constraints in this form: \(c(x) \le 0\).  This is completely general as a constraint of the form \(q(x) \ge 0\) could be rewritten as \(c(x) = -q(x) \le 0\).  In our car example the constraints may be things like a constraint on bending stress, manufacturing tolerances, etc.  Without these constraints, our spoiler may produce a lot of lift but may snap in half or be too difficult to manufacture.</p>
 
 <p>In short, we can write all of our optimization problems in this form:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\text{minimize} \quad & J(x) \\
-\text{with respect to} \quad & x \\
-\text{subject to} \quad & c(x) \le 0 \\
-\end{align} %]]></script>
+\[\begin{align}
+\text{minimize} \quad &amp; J(x) \\
+\text{with respect to} \quad &amp; x \\
+\text{subject to} \quad &amp; c(x) \le 0 \\
+\end{align}\]
 
 <p>There are various types of optimization algorithms that you can use to solve this problem, depending on the classification of the problem.  One of our most common scenarios in engineering is problems that are</p>
 
 <ul>
-  <li>nonlinear (meaning that <script type="math/tex">J</script> and <script type="math/tex">c</script> are nonlinear functions of <script type="math/tex">x</script>),</li>
+  <li>nonlinear (meaning that \(J\) and \(c\) are nonlinear functions of \(x\)),</li>
   <li>have constraints,</li>
-  <li>and are differentiable (meaning that <script type="math/tex">\frac{\partial J}{\partial x_j}</script>, and <script type="math/tex">\frac{\partial c_i}{\partial x_j}</script> exist).</li>
+  <li>and are differentiable (meaning that \(\frac{\partial J}{\partial x_j}\), and \(\frac{\partial c_i}{\partial x_j}\) exist).</li>
 </ul>
 
 <p>For these types of problems we use <em>fmincon</em> (in Matlab).  This is the solver we will use the most, but if your problem does not meet these criteria there are other solvers you should use.  For example, if the problem has no constraints, while still being nonlinear and differentiable, you should use <em>fminunc</em>.  If the problem is linear then you should use <em>linprog</em> (or <em>quadprog</em> if there is a quadratic objective and linear constraints).  And if your problem is fundamentally discrete or discontinuous (i.e., not differentiable), there are a variety of other algorithms you can try—we will discuss some of these later in the semester.</p>

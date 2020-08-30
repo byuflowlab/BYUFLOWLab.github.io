@@ -224,7 +224,7 @@ For example:
   <li><strong>Don’t accept the defaults of your plotting program, rarely are they well suited for publication-quality plots</strong>.  It’s worth creating some nice defaults and saving them in your .matplotlibrc file (or in Export Setup for Matlab).  Usually I try to optimize my figures to a 3 inch width, which is a typical column size in a scientific journal.  Make sure to set the font size is large enough so that all labels are readable.</li>
   <li><strong>Save the script and the data you used to generate your figures</strong>.  You <em>will</em> need to regenerate them again later, either for revisions, or for a presentation in which you may want different fonts/colors. Taking a few minutes to do this now will save your hours later.</li>
   <li><strong>Each figure should have a clear message—remove anything extraneous</strong>.  Favor direct labels over legends when possible.  Don’t put in background grids unless there is a clear justification.  Often, the top and right border lines just add unnecessary clutter.</li>
-  <li><strong>Save figures with a transparent background in case you or I need to reuse them in a presentation later</strong>.  In matplotlib you just add <code class="highlighter-rouge">transparent=true</code> or even better, put <code class="highlighter-rouge">savefig.transparent : True</code> in your matplotlibrc file so you don’t have to remember.</li>
+  <li><strong>Save figures with a transparent background in case you or I need to reuse them in a presentation later</strong>.  In matplotlib you just add <code class="language-plaintext highlighter-rouge">transparent=true</code> or even better, put <code class="language-plaintext highlighter-rouge">savefig.transparent : True</code> in your matplotlibrc file so you don’t have to remember.</li>
 </ul>
 
 <h2 id="tocAnchor-1-1-6">LaTeX Logistics</h2>
@@ -240,7 +240,7 @@ For example:
       <li>cleveref—consistently format cross referencing styles Figure, Fig., fig., etc., and change them all easily</li>
     </ul>
   </li>
-  <li>Quote properly: ````quote’’<code class="highlighter-rouge">not</code>“quote”`` (opening backticks and closing single quotes), and use hyphens and dashes properly: - hyphen, – n-dash, — m-dash.</li>
+  <li>Quote properly: ````quote’’<code class="language-plaintext highlighter-rouge">not</code>“quote”`` (opening backticks and closing single quotes), and use hyphens and dashes properly: - hyphen, – n-dash, — m-dash.</li>
   <li>Actual words or units in equations should be typeset with \text (i.e., $V = 30 \text{m/s}$).</li>
   <li>If using an inline equation, rather than a displayed equation, use “/” instead of “\frac”.</li>
 </ul>

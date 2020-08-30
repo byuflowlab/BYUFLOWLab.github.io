@@ -140,18 +140,18 @@
 
 <p>As an aside: one thing that drives me crazy in Fortran is how it handles double precision constants.  If you define a variable like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real(8) :: x
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real(8) :: x
 x = 1.0
 </code></pre></div></div>
 
-<p>x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: <code class="highlighter-rouge">x = 1.0d0</code>.  In practice I actually use something like below for portability:</p>
+<p>x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: <code class="language-plaintext highlighter-rouge">x = 1.0d0</code>.  In practice I actually use something like below for portability:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integer, parameter :: dp = selected_real_kind(15, 307)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integer, parameter :: dp = selected_real_kind(15, 307)
 real(dp) :: x
 x = 1.0_dp
 </code></pre></div></div>
 
-<p>Littering <code class="highlighter-rouge">_dp</code> or <code class="highlighter-rouge">d0</code> all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.</p>
+<p>Littering <code class="language-plaintext highlighter-rouge">_dp</code> or <code class="language-plaintext highlighter-rouge">d0</code> all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.</p>
 
 <p>If I needed speed, but didn’t need OO, how would I decide between Fortran and C?  Usually just by what packages I needed, and which language I thought would be easier to do the integration in.  I still use both Fortran and C quite a bit, but almost always only in connection with Python as I’ll discuss below.  I don’t use C++ very much anymore, unless I want something that can stand alone without Python.  Otherwise, the combination of Python with C I find to be much easier to develop in and just as fast to run (more on this later).</p>
 
@@ -231,18 +231,18 @@ x = 1.0_dp
 
 <p>As an aside: one thing that drives me crazy in Fortran is how it handles double precision constants.  If you define a variable like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real(8) :: x
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>real(8) :: x
 x = 1.0
 </code></pre></div></div>
 
-<p>x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: <code class="highlighter-rouge">x = 1.0d0</code>.  In practice I actually use something like below for portability:</p>
+<p>x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: <code class="language-plaintext highlighter-rouge">x = 1.0d0</code>.  In practice I actually use something like below for portability:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integer, parameter :: dp = selected_real_kind(15, 307)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integer, parameter :: dp = selected_real_kind(15, 307)
 real(dp) :: x
 x = 1.0_dp
 </code></pre></div></div>
 
-<p>Littering <code class="highlighter-rouge">_dp</code> or <code class="highlighter-rouge">d0</code> all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.</p>
+<p>Littering <code class="language-plaintext highlighter-rouge">_dp</code> or <code class="language-plaintext highlighter-rouge">d0</code> all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.</p>
 
 <p>If I needed speed, but didn’t need OO, how would I decide between Fortran and C?  Usually just by what packages I needed, and which language I thought would be easier to do the integration in.  I still use both Fortran and C quite a bit, but almost always only in connection with Python as I’ll discuss below.  I don’t use C++ very much anymore, unless I want something that can stand alone without Python.  Otherwise, the combination of Python with C I find to be much easier to develop in and just as fast to run (more on this later).</p>
 

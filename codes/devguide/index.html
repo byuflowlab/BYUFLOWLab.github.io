@@ -107,7 +107,7 @@
     <div class="content container">
       <div class="page">
   <h1 class="page-title">Code Development Guide</h1>
-  <p>All of our curated code is in Julia.  Only maintainers should push directly to <code class="highlighter-rouge">#master</code>.  Others should work off a branch or fork.  When you have parts that are ready to contribute submit a pull request so the maintainers can review/discuss it.</p>
+  <p>All of our curated code is in Julia.  Only maintainers should push directly to <code class="language-plaintext highlighter-rouge">#master</code>.  Others should work off a branch or fork.  When you have parts that are ready to contribute submit a pull request so the maintainers can review/discuss it.</p>
 
 <!-- ## Motivation -->
 
@@ -131,12 +131,12 @@
   </li>
   <li>Create CI tests:
     <ul>
-      <li>Set up <a href="https://docs.julialang.org/en/v1/stdlib/Test/">unit tests</a>. The pkgtemplate will already have a script started for you. Generally, you should test against known solutions (e.g., analytic solutions). Often we compare floating point numbers so <code class="highlighter-rouge">==</code> is too restrictive.  The <a href="https://docs.julialang.org/en/v1/base/math/#Base.isapprox">isapprox</a> function, with a specified tolerance is useful for this.</li>
+      <li>Set up <a href="https://docs.julialang.org/en/v1/stdlib/Test/">unit tests</a>. The pkgtemplate will already have a script started for you. Generally, you should test against known solutions (e.g., analytic solutions). Often we compare floating point numbers so <code class="language-plaintext highlighter-rouge">==</code> is too restrictive.  The <a href="https://docs.julialang.org/en/v1/base/math/#Base.isapprox">isapprox</a> function, with a specified tolerance is useful for this.</li>
       <li>Create a <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#creating-a-workflow-file">Github Action</a>.  Use the <a href="https://github.com/julia-actions/julia-runtest">julia-runtest action</a>.  See the <a href="https://github.com/byuflowlab/FLOWMath.jl/blob/master/.github/workflows/test.yaml">test script for FLOWMath.jl</a>, which has a few modifications (only reruns tests when .jl files are pushed, sets the versions correctly).</li>
       <li>Add a <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository">badge</a> to your README to show test status.</li>
     </ul>
   </li>
-  <li>Write generic code so as to support algorithmic differentiation.  Almost everything we use ends up in an optimization at some point, and we will want to have numerically exact gradients.  Check that <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff</a> and ReverseDiff work with your code.  To test, wrap your code in a function <code class="highlighter-rouge">f = wrapper(x)</code> that takes in a vector <code class="highlighter-rouge">x</code> for the inputs and returns a vector of outputs.  Then call <code class="highlighter-rouge">J = ForwardDiff.jacobian(wrapper, x)</code>.  If it works, check it against a finite difference check:
+  <li>Write generic code so as to support algorithmic differentiation.  Almost everything we use ends up in an optimization at some point, and we will want to have numerically exact gradients.  Check that <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff</a> and ReverseDiff work with your code.  To test, wrap your code in a function <code class="language-plaintext highlighter-rouge">f = wrapper(x)</code> that takes in a vector <code class="language-plaintext highlighter-rouge">x</code> for the inputs and returns a vector of outputs.  Then call <code class="language-plaintext highlighter-rouge">J = ForwardDiff.jacobian(wrapper, x)</code>.  If it works, check it against a finite difference check:
     <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">import</span> <span class="n">FLOWMath</span>
  <span class="n">J2</span> <span class="o">=</span> <span class="n">FLOWMath</span><span class="o">.</span><span class="n">centraldiff</span><span class="x">(</span><span class="n">wrapper</span><span class="x">,</span> <span class="n">x</span><span class="x">)</span>
 </code></pre></div>    </div>
@@ -146,8 +146,8 @@
     <p>These checks should go in your unit tests.
  Often the main fix needed is that your code is specialized for floats so the dual numbers can’t propgate:</p>
     <ul>
-      <li>instead of <code class="highlighter-rouge">0.0</code> as a default parameter use <code class="highlighter-rouge">zero(x)</code></li>
-      <li>instead of <code class="highlighter-rouge">zeros(n)</code> or <code class="highlighter-rouge">Vector{Float64}(undef, n)</code> use <code class="highlighter-rouge">zeros(typeof(x), n)</code> or <code class="highlighter-rouge">Vector{typeof(x)}(undef, n)</code></li>
+      <li>instead of <code class="language-plaintext highlighter-rouge">0.0</code> as a default parameter use <code class="language-plaintext highlighter-rouge">zero(x)</code></li>
+      <li>instead of <code class="language-plaintext highlighter-rouge">zeros(n)</code> or <code class="language-plaintext highlighter-rouge">Vector{Float64}(undef, n)</code> use <code class="language-plaintext highlighter-rouge">zeros(typeof(x), n)</code> or <code class="language-plaintext highlighter-rouge">Vector{typeof(x)}(undef, n)</code></li>
       <li>use parametric types on your structs (discussed below).</li>
     </ul>
   </li>
@@ -161,7 +161,7 @@
 <ul>
   <li><strong>Don’t</strong> add type annotations for functions arguments unless needed for dispatch.  You can note recommended types in documentation but adding types does not improve performance, and it limits flexibility of usage.  Even if you have a specific struct type or abstract type, don’t restrict it as someone will surely want to use their own type that uses your interface (duck-typing).</li>
   <li><strong>Do</strong> add type annotations for structs.  This is necessary for performance.  But you should do it <strong>parametrically</strong>.  Usually you use need one annotation (TF: type float), but below is a more general case with different types, an abstractarray.
-    <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">MyType</span><span class="x">{</span><span class="n">TF</span><span class="x">,</span> <span class="n">TI</span><span class="x">,</span> <span class="n">TA</span><span class="o">&lt;:</span><span class="kt">AbstractVector</span><span class="x">{</span><span class="n">TF</span><span class="x">}}</span>
+    <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span><span class="nc"> MyType</span><span class="x">{</span><span class="n">TF</span><span class="x">,</span> <span class="n">TI</span><span class="x">,</span> <span class="n">TA</span><span class="o">&lt;:</span><span class="kt">AbstractVector</span><span class="x">{</span><span class="n">TF</span><span class="x">}}</span>
   <span class="n">a</span><span class="o">::</span><span class="n">TF</span>
   <span class="n">b</span><span class="o">::</span><span class="n">TI</span>
   <span class="n">c</span><span class="o">::</span><span class="kt">Vector</span><span class="x">{</span><span class="n">TF</span><span class="x">}</span>

@@ -111,22 +111,22 @@
 
     <p><img src="wakedrag.png" width="600px" /></p>
 
-    <p>What is the drag coefficient of the cylinder based on projected area (i.e., 2D drag coefficient based on diameter)?  Is this a reasonable value (why or why not)?  Solve the problem using one of the two control volumes shown above: 1) a control volume that follows streamlines (blue volume <script type="math/tex">CV_1</script>), or 2) a rectangular control volume (red volume <script type="math/tex">CV_2</script>).</p>
+    <p>What is the drag coefficient of the cylinder based on projected area (i.e., 2D drag coefficient based on diameter)?  Is this a reasonable value (why or why not)?  Solve the problem using one of the two control volumes shown above: 1) a control volume that follows streamlines (blue volume \(CV_1\)), or 2) a rectangular control volume (red volume \(CV_2\)).</p>
   </li>
   <li>
-    <p><em>Control Volume Analysis</em>.  Consider the side view of propeller and bounding streamlines below.  Use a quasi-one-dimensional approximation (i.e., assume that the velocity is uniform across each circular cross-section), and also assume that the flow is incompressible.  Station 1 is far upstream, station 2 is just in front of the rotor disk, station 3 is just behind the rotor disk, and station 4 is far downstream.  The freestream velocity at disk 1 is <script type="math/tex">V_\infty</script>.  The velocity at station 2 will be higher than freestream: <script type="math/tex">V_2 = V_\infty + u</script> where <script type="math/tex">u</script> is some unknown velocity increment.  By convention, we define a nondimensional number called the axial induction factor, which is the ratio of this velocity increment to the freestream velocity: <script type="math/tex">a = u/V_\infty</script>.  In terms of <script type="math/tex">a</script>, the velocity at station 2 is thus <script type="math/tex">V_2 = V_\infty(1 + a)</script> (by definition).  Complete the following:</p>
+    <p><em>Control Volume Analysis</em>.  Consider the side view of propeller and bounding streamlines below.  Use a quasi-one-dimensional approximation (i.e., assume that the velocity is uniform across each circular cross-section), and also assume that the flow is incompressible.  Station 1 is far upstream, station 2 is just in front of the rotor disk, station 3 is just behind the rotor disk, and station 4 is far downstream.  The freestream velocity at disk 1 is \(V_\infty\).  The velocity at station 2 will be higher than freestream: \(V_2 = V_\infty + u\) where \(u\) is some unknown velocity increment.  By convention, we define a nondimensional number called the axial induction factor, which is the ratio of this velocity increment to the freestream velocity: \(a = u/V_\infty\).  In terms of \(a\), the velocity at station 2 is thus \(V_2 = V_\infty(1 + a)\) (by definition).  Complete the following:</p>
 
     <p><img src="adisk.png" width="450px" /></p>
 
     <ul>
-      <li>Find a expression for the far-field velocity <script type="math/tex">V_4</script> in terms of <script type="math/tex">V_\infty</script> and <script type="math/tex">a</script> (note: the same behavior occurs for the downwash of a lifting wing).  You may need to use more than one control volume to solve this problem.</li>
-      <li>Derive an expression for the thrust coefficient (normalized by the freestream dynamic pressure and the disk area) in terms of <script type="math/tex">a</script>.</li>
+      <li>Find a expression for the far-field velocity \(V_4\) in terms of \(V_\infty\) and \(a\) (note: the same behavior occurs for the downwash of a lifting wing).  You may need to use more than one control volume to solve this problem.</li>
+      <li>Derive an expression for the thrust coefficient (normalized by the freestream dynamic pressure and the disk area) in terms of \(a\).</li>
       <li>
-        <p>Derive an expression for the induced (or propulsive) efficiency in terms of <script type="math/tex">a</script>.  The induced efficiency is an ideal efficiency, that ignores viscous flow losses and rotational energy losses.  Efficiency is <script type="math/tex">P_{out}/P_{in}</script>.  There are various derivations out there for efficiency.  All lead to the same result, but some of are quite hand-wavy.  A clear approach is to use a reference frame fixed to the ground with the propeller moving by at <script type="math/tex">V_\infty</script>. The useful power extracted by the propeller is <script type="math/tex">T V_\infty</script>.  The total power into the system, is that into the propeller <script type="math/tex">T V_\infty</script> plus that left in the  kinetic energy of the wake:
- <script type="math/tex">\frac{1}{2}\dot{m}(V_4 - V_\infty)^2</script>
+        <p>Derive an expression for the induced (or propulsive) efficiency in terms of \(a\).  The induced efficiency is an ideal efficiency, that ignores viscous flow losses and rotational energy losses.  Efficiency is \(P_{out}/P_{in}\).  There are various derivations out there for efficiency.  All lead to the same result, but some of are quite hand-wavy.  A clear approach is to use a reference frame fixed to the ground with the propeller moving by at \(V_\infty\). The useful power extracted by the propeller is \(T V_\infty\).  The total power into the system, is that into the propeller \(T V_\infty\) plus that left in the  kinetic energy of the wake:
+ \(\frac{1}{2}\dot{m}(V_4 - V_\infty)^2\)
  Thus:</p>
 
-        <script type="math/tex; mode=display">\eta = \frac{T V_\infty}{T V_\infty + \frac{1}{2}\dot{m}(V_4 - V_\infty)^2}</script>
+\[\eta = \frac{T V_\infty}{T V_\infty + \frac{1}{2}\dot{m}(V_4 - V_\infty)^2}\]
       </li>
       <li>Draw (qualitatively) the velocity and pressure distribution along the axis from station 1 to station 4 and explain the behavior.</li>
     </ul>
@@ -152,7 +152,7 @@
 
     <p>We are going to simulate the leapfrogging vortices in 2D.  If you picture a toroidal vortex intersecting a 2D plane you will have two vortices (like the left pair shown below).  From our understanding of vortices we can see how it is self-propelling.  Consider the left pair of vortices (e.g., one ring vortex).  The top vortex induces a velocity on the bottom vortex towards the right.  Simultaneously, the top vortex induces a velocity on the top vortex to the right.  Thus, it pushes itself forward.  With two vortices next to each other, things become even more interesting.</p>
 
-    <p>In this example, make all vortices of equal strength (<script type="math/tex">\Gamma</script>).  Each vortex is free to move, and would move with the local fluid velocity.  Plot the trajectory of each vortex.  You need to use a small enough time step to ensure stability.  You may need to try smaller time steps to make sure that your simulation is accurate.</p>
+    <p>In this example, make all vortices of equal strength (\(\Gamma\)).  Each vortex is free to move, and would move with the local fluid velocity.  Plot the trajectory of each vortex.  You need to use a small enough time step to ensure stability.  You may need to try smaller time steps to make sure that your simulation is accurate.</p>
 
     <p><!-- Turn in a copy of your code as well. --></p>
 

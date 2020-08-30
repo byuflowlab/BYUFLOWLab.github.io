@@ -126,7 +126,7 @@
   <li>
     <p>Layout all components of your aircraft in order to estimate mass properties that will be input into XFLR5.  I’d recommend doing this in CAD because it will provide more accurate mass properties, will allow you to visualize whether the placement makes sense for construction, and you’ll likely want to have a CAD model anyway for your final report.  However, you’re welcome to do the layout entirely within XFLR5 if you prefer (if so, the relevant tutorial video is #7).  Work with subgroup 3 to input mass properties.  There are multiple ways to do this but one easy way is to “Define a Stability Analysis”, go to the mass/inertia tab, unselect the box for “use plane inertia”, then directly input the mass properties from CAD.  Similarly, the aerodynamic analysis of subgroup 2 will input the center of mass in a similar way (moments of inertia not needed for aerodynamics). Provide views of the aircraft model either in CAD or in XFLR5 with the lumped masses and discuss design rationale.</p>
   </li>
-  <li>Work with subgroup 3 to iterate on the placement of components in order to achieve the desired stability behavior.  After a satisfactory stable layout is determined report the total mass (<script type="math/tex">m</script>), the center of mass relative to the leading edge of the main wing (<script type="math/tex">x_{cg}</script> and <script type="math/tex">z_{cg}</script>), and the nonzero moments of inertia (<script type="math/tex">I_{xx}, I_{yy}, I_{zz}, I_{xz}</script>).  The other two moments of inertia will be zero for a symmetric aircraft.<br />
+  <li>Work with subgroup 3 to iterate on the placement of components in order to achieve the desired stability behavior.  After a satisfactory stable layout is determined report the total mass (\(m\)), the center of mass relative to the leading edge of the main wing (\(x_{cg}\) and \(z_{cg}\)), and the nonzero moments of inertia (\(I_{xx}, I_{yy}, I_{zz}, I_{xz}\)).  The other two moments of inertia will be zero for a symmetric aircraft.<br />
 <!-- Discuss your design decisions. --></li>
 </ol>
 
@@ -161,7 +161,7 @@
     <p>XFLR5 makes it easy to evaluate the impact of various airfoils and wing configurations (see for example video 10).  Perform at least one design study (i.e., change the airfoils, wing sizing, etc.).  Provide evidence and discuss rationale for any changes that were made (or for justifying staying with the current design).  Show dimensioned drawings and discuss rationale of any design changes.</p>
   </li>
   <li>
-    <p>Determine the incidence of your tail so that it is (roughly) trimmed in pitch (<script type="math/tex">C_m = 0</script>) at the design angle of attack.  You can always adjust your elevator to provide pitch trim, but it generally helps to get the tail set so that the nominal position requires zero elevator. Report the incidence of the tail and show the plot of Cm vs (alpha or CL).  Note that this depends on the center of mass location, so coordinate with the other groups.</p>
+    <p>Determine the incidence of your tail so that it is (roughly) trimmed in pitch (\(C_m = 0\)) at the design angle of attack.  You can always adjust your elevator to provide pitch trim, but it generally helps to get the tail set so that the nominal position requires zero elevator. Report the incidence of the tail and show the plot of Cm vs (alpha or CL).  Note that this depends on the center of mass location, so coordinate with the other groups.</p>
   </li>
 </ol>
 
@@ -185,7 +185,7 @@
   <li>Analyze the dynamic stability.
     <ul>
       <li>Plot the open loop eigenvalues and label each mode.</li>
-      <li>Report the following stability derivatives: <script type="math/tex">C_{L,\alpha}, C_{m,\alpha}, C_{n,\beta}, C_{roll,\beta}</script></li>
+      <li>Report the following stability derivatives: \(C_{L,\alpha}, C_{m,\alpha}, C_{n,\beta}, C_{roll,\beta}\)</li>
     </ul>
 
     <p>Discuss the significance of your values.  Are they reasonable? Are there improvements that need to be made?</p>

@@ -235,6 +235,28 @@ th:empty { display: none; }
     width:24%;
 }
 
+/* fix table column widths for course page */
+.class-schedulefour{
+  table-layout: fixed;
+  width: 100%;
+}
+
+.class-schedulefour th:nth-of-type(1) {
+  width:13%;
+}
+
+.class-schedulefour th:nth-of-type(2) {
+  width:29%;
+}
+
+.class-schedulefour th:nth-of-type(3) {
+  width:29%;
+}
+
+.class-schedulefour th:nth-of-type(4) {
+  width:29%;
+}
+
 
 /* fix table column widths for course page */
 .class-schedulefive{
@@ -266,6 +288,11 @@ th:empty { display: none; }
 
 .class-schedule tbody tr td,
 .class-schedule tbody tr th {
+  background-color: #ffffff;
+}
+
+.class-schedulefour tbody tr td,
+.class-schedulefour tbody tr th {
   background-color: #ffffff;
 }
 
