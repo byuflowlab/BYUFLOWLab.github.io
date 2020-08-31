@@ -118,16 +118,13 @@
 <h3 id="main-requirements">Main Requirements</h3>
 
 <ol>
-  <li>Code must be in Julia package format so someone else can easily install it and it must support the latest stable version of Julia (currently 1.3). To create a package I recommend using <a href="https://invenia.github.io/PkgTemplates.jl/stable/">PkgTemplates</a> as it’ll automate a lot of the mundane details. Here is a typical template:
+  <li>Code must be in Julia package format so someone else can easily install it and it must support the latest stable version of Julia. To create a package I recommend using <a href="https://invenia.github.io/PkgTemplates.jl/stable/">PkgTemplates</a> as it’ll automate a lot of the mundane details. Here is a typical template:
     <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="x">(</span><span class="n">user</span><span class="o">=</span><span class="s">"byuflowlab"</span><span class="x">,</span> <span class="n">dir</span><span class="o">=</span><span class="s">"."</span><span class="x">,</span> <span class="n">plugins</span><span class="o">=</span><span class="x">[</span><span class="n">GitHubPages</span><span class="x">()])</span>
 </code></pre></div>    </div>
     <p>Setting the user creates the correct url’s, I usually prefer a local directory for development, and the later is helpful if you are going to use Documenter.jl.</p>
   </li>
   <li>
-    <p>Create a user guide or tutorial.  For simple packages just some code examples may suffice.  For most packages a walkthrough is warranted.  For most cases the recommended format is <a href="https://juliadocs.github.io/Documenter.jl/stable/">Documenter.jl</a> but the format isn’t enforced.  More important than the format is that documentation exists and is clear.  Documenter.jl is particularly useful for this purpose as it can pull from your docstrings, run code, and generate figures.  See for example <a href="https://flow.byu.edu/CCBlade.jl/tutorial/">CCBlade’s guide</a>.</p>
-  </li>
-  <li>
-    <p>Theory must be clearly documented or referenced.  While the previous bullet is mostly user-focused, this type of documentation is more developer focused.  Others in the lab (and future you a year from now) will want to further develop your code and without theory that will be more difficult.  Documenter.jl is also a good format for this, but not the only option.  If the theory is substantial and will end up in a paper I might go directly to a LaTeX document.</p>
+    <p>Good documentation is a must.  <a href="https://juliadocs.github.io/Documenter.jl/stable/">Documenter.jl</a> is the standard format in Julia, but other formats can also work well.  Try to address the <a href="https://documentation.divio.com">four separate purposes of documentation</a>.  That usually means a “Quick Start” tutorial aimed at beginners, some how-to examples to do more advanced things, a reference guide for the API, and a theory document.</p>
   </li>
   <li>Create CI tests:
     <ul>
@@ -136,26 +133,18 @@
       <li>Add a <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow#adding-a-workflow-status-badge-to-your-repository">badge</a> to your README to show test status.</li>
     </ul>
   </li>
-  <li>Write generic code so as to support algorithmic differentiation.  Almost everything we use ends up in an optimization at some point, and we will want to have numerically exact gradients.  Check that <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff</a> and ReverseDiff work with your code.  To test, wrap your code in a function <code class="language-plaintext highlighter-rouge">f = wrapper(x)</code> that takes in a vector <code class="language-plaintext highlighter-rouge">x</code> for the inputs and returns a vector of outputs.  Then call <code class="language-plaintext highlighter-rouge">J = ForwardDiff.jacobian(wrapper, x)</code>.  If it works, check it against a finite difference check:
-    <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">import</span> <span class="n">FLOWMath</span>
- <span class="n">J2</span> <span class="o">=</span> <span class="n">FLOWMath</span><span class="o">.</span><span class="n">centraldiff</span><span class="x">(</span><span class="n">wrapper</span><span class="x">,</span> <span class="n">x</span><span class="x">)</span>
-</code></pre></div>    </div>
-    <p>or better yet if your code is complex safe:</p>
-    <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">J2</span> <span class="o">=</span> <span class="n">FLOWMath</span><span class="o">.</span><span class="n">complexstep</span><span class="x">(</span><span class="n">wrapper</span><span class="x">,</span> <span class="n">x</span><span class="x">)</span>
-</code></pre></div>    </div>
-    <p>These checks should go in your unit tests.
- Often the main fix needed is that your code is specialized for floats so the dual numbers can’t propgate:</p>
+  <li>Write generic code so as to support algorithmic differentiation.  Almost everything we use ends up in an optimization at some point, and we will want to have numerically exact gradients.  Check that <a href="https://github.com/JuliaDiff/ForwardDiff.jl">ForwardDiff</a> and ReverseDiff work with your code.  To test, wrap your code in a function <code class="language-plaintext highlighter-rouge">f = wrapper(x)</code> that takes in a vector <code class="language-plaintext highlighter-rouge">x</code> for the inputs and returns a vector of outputs.  Then call <code class="language-plaintext highlighter-rouge">J = ForwardDiff.jacobian(wrapper, x)</code>.  If it works, check it against finite differencing.  These checks should go in your unit tests.
+ Often the main fix needed is that your code is specialized for floats so the dual numbers can’t propgate:
     <ul>
       <li>instead of <code class="language-plaintext highlighter-rouge">0.0</code> as a default parameter use <code class="language-plaintext highlighter-rouge">zero(x)</code></li>
       <li>instead of <code class="language-plaintext highlighter-rouge">zeros(n)</code> or <code class="language-plaintext highlighter-rouge">Vector{Float64}(undef, n)</code> use <code class="language-plaintext highlighter-rouge">zeros(typeof(x), n)</code> or <code class="language-plaintext highlighter-rouge">Vector{typeof(x)}(undef, n)</code></li>
       <li>use parametric types on your structs (discussed below).</li>
     </ul>
   </li>
-  <li>
-    <p>Creates a CHANGES.md file in which you communicate API or other significant changes.  When appropriate  deprecation warnings in the code can be helpful.</p>
-  </li>
   <li>Send your code to a peer (and generally me as well) for review.  At a minimum they will review it as a user (can they install and understand how to use it), and if appropriate may also review as a developer (is the code clear, are the methods appropriate).</li>
 </ol>
+
+<!-- 6. Creates a CHANGES.md file in which you communicate API or other significant changes.  When appropriate  deprecation warnings in the code can be helpful. -->
 
 <h3 id="other-guidelines">Other Guidelines</h3>
 <ul>
@@ -169,7 +158,7 @@
 <span class="k">end</span>
 </code></pre></div>    </div>
   </li>
-  <li>Don’t use mutable structs.  Don’t use dictionaries.  Besides the performance hit, these objects are stateful meaning you can easily have side ffects that are hard to test for and are the source for lots of bugs.  (there are exceptions, rules are made to be broken, but not without understand the reasoning for the rule and having thought it through carefully).</li>
+  <li>Usually avoid mutable structs and dictionaries.  Besides the performance hit, these objects are stateful meaning you can easily have side effects that are hard to test for and are the source for lots of bugs.  (there are exceptions when thought through carefully).</li>
   <li>If you do modify arguments to a function add ! to the end of the function name and make it very clear what is being modified.</li>
   <li>Use standard style.  Here is a <a href="https://github.com/jrevels/YASGuide">good guide</a>.  Most importantly, use common sense.</li>
   <li>Use @code_warntype to check for type stability.</li>

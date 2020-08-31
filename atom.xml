@@ -4,13 +4,40 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2020-08-29T18:00:49-06:00</updated>
+ <updated>2020-08-31T13:02:00-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Airborne Wind with Vortex Particle Method</title>
+   <link href="http://flow.byu.edu/posts/wind-harvesting"/>
+   <updated>2020-08-16T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/wind-harvesting</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6694076731474739200&quot; height=&quot;949&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Eduardo's Past Three Years</title>
+   <link href="http://flow.byu.edu/posts/eduardo-three-years"/>
+   <updated>2020-08-10T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/eduardo-three-years</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6689985497042944000&quot; height=&quot;797&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>FLOWUnsteady in Google Drive</title>
+   <link href="http://flow.byu.edu/posts/google-drive-vpm"/>
+   <updated>2020-08-02T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/google-drive-vpm</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6689003185174118400&quot; height=&quot;1094&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport</title>
