@@ -1,50 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
- <title>FLOW Lab</title>
- <link href="http://flow.byu.edu/atom.xml" rel="self"/>
- <link href="http://flow.byu.edu/"/>
- <updated>2021-08-25T14:34:51-06:00</updated>
- <id>http://flow.byu.edu</id>
- <author>
-   <name>Andrew Ning</name>
-   <email></email>
- </author>
-
- 
- <entry>
-   <title>Airborne Wind with Vortex Particle Method</title>
-   <link href="http://flow.byu.edu/posts/wind-harvesting"/>
-   <updated>2020-08-16T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/wind-harvesting</id>
-   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6694076731474739200&quot; height=&quot;949&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Eduardo's Past Three Years</title>
-   <link href="http://flow.byu.edu/posts/eduardo-three-years"/>
-   <updated>2020-08-10T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/eduardo-three-years</id>
-   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6689985497042944000&quot; height=&quot;797&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>FLOWUnsteady in Google Drive</title>
-   <link href="http://flow.byu.edu/posts/google-drive-vpm"/>
-   <updated>2020-08-02T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/google-drive-vpm</id>
-   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6689003185174118400&quot; height=&quot;1094&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport</title>
-   <link href="http://flow.byu.edu/posts/electric-stol"/>
-   <updated>2019-09-05T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/electric-stol</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/2ilze6i6aq4srqita1xqdu2sd6m62cqb.gif&quot; alt=&quot;Electric Aircraft Optimization&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://flow.byu.edu/feed.xml" rel="self" type="application/atom+xml" /><link href="http://flow.byu.edu/" rel="alternate" type="text/html" /><updated>2021-08-25T14:34:51-06:00</updated><id>http://flow.byu.edu/feed.xml</id><title type="html">FLOW Lab</title><subtitle>Flight, Optimization, and Wind Laboratory</subtitle><author><name>Andrew Ning</name></author><entry><title type="html">Airborne Wind with Vortex Particle Method</title><link href="http://flow.byu.edu/posts/wind-harvesting" rel="alternate" type="text/html" title="Airborne Wind with Vortex Particle Method" /><published>2020-08-16T00:00:00-06:00</published><updated>2020-08-16T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/wind-harvesting</id><content type="html" xml:base="http://flow.byu.edu/posts/wind-harvesting">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6694076731474739200&quot; height=&quot;949&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;</content><author><name>Judd Mehr and Eduardo Alvarez</name></author><summary type="html"></summary></entry><entry><title type="html">Eduardo’s Past Three Years</title><link href="http://flow.byu.edu/posts/eduardo-three-years" rel="alternate" type="text/html" title="Eduardo’s Past Three Years" /><published>2020-08-10T00:00:00-06:00</published><updated>2020-08-10T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/eduardo-three-years</id><content type="html" xml:base="http://flow.byu.edu/posts/eduardo-three-years">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6689985497042944000&quot; height=&quot;797&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;</content><author><name>Eduardo Alvarez</name></author><summary type="html"></summary></entry><entry><title type="html">FLOWUnsteady in Google Drive</title><link href="http://flow.byu.edu/posts/google-drive-vpm" rel="alternate" type="text/html" title="FLOWUnsteady in Google Drive" /><published>2020-08-02T00:00:00-06:00</published><updated>2020-08-02T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/google-drive-vpm</id><content type="html" xml:base="http://flow.byu.edu/posts/google-drive-vpm">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6689003185174118400&quot; height=&quot;1094&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;</content><author><name>Eduardo Alvarez</name></author><summary type="html"></summary></entry><entry><title type="html">Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport</title><link href="http://flow.byu.edu/posts/electric-stol" rel="alternate" type="text/html" title="Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport" /><published>2019-09-05T00:00:00-06:00</published><updated>2019-09-05T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/electric-stol</id><content type="html" xml:base="http://flow.byu.edu/posts/electric-stol">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/2ilze6i6aq4srqita1xqdu2sd6m62cqb.gif&quot; alt=&quot;Electric Aircraft Optimization&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A trade study investigating the use of distributed electric propulsion on fixed-wing aircraft to shorten takeoff distance. This aircraft configuration could potentially compete with VTOL aircraft in urban air transportation.  The trade study was done using a MDO framework including blade element momentum method, vortex lattice method, linear-beam finite element analysis, classical laminate theory, composite failure, empirically-based blade noise modeling, motor and motor-controller mass models, and gradient-based optimization.&lt;/p&gt;
 
@@ -72,16 +26,7 @@
   year = {2019}
 }
 &lt;/pre&gt;
-&lt;/li&gt;&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Multirotor - Vortex Particle Method</title>
-   <link href="http://flow.byu.edu/posts/multirotor-vpm2"/>
-   <updated>2019-07-01T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/multirotor-vpm2</id>
-   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/SLpnVIBpkps&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/li&gt;&lt;/ol&gt;</content><author><name>Kevin Moore</name></author><summary type="html"></summary></entry><entry><title type="html">Multirotor - Vortex Particle Method</title><link href="http://flow.byu.edu/posts/multirotor-vpm2" rel="alternate" type="text/html" title="Multirotor - Vortex Particle Method" /><published>2019-07-01T00:00:00-06:00</published><updated>2019-07-01T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/multirotor-vpm2</id><content type="html" xml:base="http://flow.byu.edu/posts/multirotor-vpm2">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/SLpnVIBpkps&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;The viscous vortex particle method is a mesh-free Lagrangian CFD method for the numerical solution of Navier-Stokes in their vorticity form. It’s about two orders of magnitude faster than mesh-based CFD (RANS or LES). We are exploring its potential for modeling the complicated aerodynamics interactions in eVTOL aircraft design. All codes are in-house developed at BYU’s FLOW Lab,&lt;/p&gt;
 
@@ -113,16 +58,7 @@
   year = {2019}
 }
 &lt;/pre&gt;
-&lt;/li&gt;&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Development of a Vertical-Axis Wind Turbine Wake Model</title>
-   <link href="http://flow.byu.edu/posts/vawt-wake"/>
-   <updated>2019-06-05T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/vawt-wake</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;/posts/vawtV.gif&quot; alt=&quot;Wake Visualization&quot; /&gt;&lt;/p&gt;
+&lt;/li&gt;&lt;/ol&gt;</content><author><name>Eduardo Alvarez</name></author><summary type="html"></summary></entry><entry><title type="html">Development of a Vertical-Axis Wind Turbine Wake Model</title><link href="http://flow.byu.edu/posts/vawt-wake" rel="alternate" type="text/html" title="Development of a Vertical-Axis Wind Turbine Wake Model" /><published>2019-06-05T00:00:00-06:00</published><updated>2019-06-05T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/vawt-wake</id><content type="html" xml:base="http://flow.byu.edu/posts/vawt-wake">&lt;p&gt;&lt;img src=&quot;/posts/vawtV.gif&quot; alt=&quot;Wake Visualization&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Wind farm designers use mathematical models to describe turbine wakes, and through optimization, turbines can be positioned to minimize the negative wake interference of the wind farm. This method has been conducted by numerous researchers for the well-known horizontal-axis wind turbine, but the same type of research has been much more limited for a vertical-axis wind turbine (VAWT), as shown below. VAWT wake behavior is quite different from that of a horizontal axis turbine.  Preliminary research has shown that VAWTs are capable of being placed closer together and even increasing their overall power production by harnessing the slight wind velocity increases of neighboring turbines.&lt;/p&gt;
 
@@ -146,16 +82,7 @@
   year = {2019}
 }
 &lt;/pre&gt;
-&lt;/li&gt;&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Polynomial Chaos for Wind Farm Power Prediction</title>
-   <link href="http://flow.byu.edu/posts/pc-windfarm"/>
-   <updated>2019-05-28T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/pc-windfarm</id>
-   <content type="html">&lt;center&gt;
+&lt;/li&gt;&lt;/ol&gt;</content><author><name>Eric Tingey</name></author><summary type="html"></summary></entry><entry><title type="html">Polynomial Chaos for Wind Farm Power Prediction</title><link href="http://flow.byu.edu/posts/pc-windfarm" rel="alternate" type="text/html" title="Polynomial Chaos for Wind Farm Power Prediction" /><published>2019-05-28T00:00:00-06:00</published><updated>2019-05-28T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/pc-windfarm</id><content type="html" xml:base="http://flow.byu.edu/posts/pc-windfarm">&lt;center&gt;
 &lt;img src=&quot;/posts/binned.png&quot; alt=&quot;convergence of AEP&quot; width=&quot;300px&quot; /&gt;
 &lt;/center&gt;
 
@@ -189,16 +116,7 @@
   year = {2019}
 }
 &lt;/pre&gt;
-&lt;/li&gt;&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Making Julia as Fast as C++</title>
-   <link href="http://flow.byu.edu/posts/julia-c++"/>
-   <updated>2019-04-18T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/juliacpp</id>
-   <content type="html">&lt;center&gt;
+&lt;/li&gt;&lt;/ol&gt;</content><author><name>Andrew Ning</name></author><summary type="html"></summary></entry><entry><title type="html">Making Julia as Fast as C++</title><link href="http://flow.byu.edu/posts/julia-c++" rel="alternate" type="text/html" title="Making Julia as Fast as C++" /><published>2019-04-18T00:00:00-06:00</published><updated>2019-04-18T00:00:00-06:00</updated><id>http://flow.byu.edu/posts/juliacpp</id><content type="html" xml:base="http://flow.byu.edu/posts/julia-c++">&lt;center&gt;
 &lt;img src=&quot;/posts/vortex00.gif&quot; alt=&quot;Vid here&quot; width=&quot;500px&quot; /&gt;
 &lt;/center&gt;
 
@@ -1597,16 +1515,7 @@ the Modeling of Wake Interaction in Distributed Propulsion. In 2018 Applied
 Aerodynamics Conference (pp. 1–22). American Institute of Aeronautics and
 Astronautics. https://doi.org/10.2514/6.2018-3646 . &lt;a href=&quot;https://scholarsarchive.byu.edu/facpub/2116/&quot;&gt;PDF
 Available&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Coupled Wind Turbine Design and Layout Optimization</title>
-   <link href="http://flow.byu.edu/posts/coupled-turbine-farm"/>
-   <updated>2019-02-13T00:00:00-07:00</updated>
-   <id>http://flow.byu.edu/posts/coupled-turbine.farm</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/prvuhcsgo0qdnwm4zbqugzxhl0wcxols.gif&quot; alt=&quot;animation&quot; /&gt;&lt;/p&gt;
+&lt;/ol&gt;</content><author><name>Eduardo Alvarez</name></author><summary type="html"></summary></entry><entry><title type="html">Coupled Wind Turbine Design and Layout Optimization</title><link href="http://flow.byu.edu/posts/coupled-turbine-farm" rel="alternate" type="text/html" title="Coupled Wind Turbine Design and Layout Optimization" /><published>2019-02-13T00:00:00-07:00</published><updated>2019-02-13T00:00:00-07:00</updated><id>http://flow.byu.edu/posts/coupled-turbine.farm</id><content type="html" xml:base="http://flow.byu.edu/posts/coupled-turbine-farm">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/prvuhcsgo0qdnwm4zbqugzxhl0wcxols.gif&quot; alt=&quot;animation&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As wind turbines extract momentum from the air they leave behind wakes of slower moving air. Downstream turbines interact with these wakes decreasing their power production.  Wake interference is unavoidable (a wind farm has many wind turbines, and wind frequently changes direction), but we would like to minimize it.  Over the past several years, our lab and other researchers, have conducted a variety of studies to try to minimize the power loss from wake effects.  One approach is to use layout optimization (repositioning turbines to reduce wake interference).  Another approach is with turbine control optimization (dynamically reorienting the way the turbines face to leave more momentum behind in the wakes).&lt;/p&gt;
 
@@ -1631,16 +1540,7 @@ Available&lt;/a&gt;&lt;/li&gt;
 &lt;/pre&gt;
 &lt;/li&gt;&lt;/ol&gt;
 
-&lt;p&gt;The animation above shows an accelerated example of one optimization from our paper. In this example, you can see reductions in the cost of energy as the turbine locations change (top left) and the turbine designs change (top middle). While not apparent from the visual, in addition to tower height and rotor diameter, we also change the tower diameter and thickness distributions, turbine rating, and blade chord and twist distributions. The bottom left frame shows the wind direction probabilities that were used for this example, and the bottom middle frame shows the power that the wind farm produces for each incoming wind direction. Near the end of the optimization, there is increased power production from all of the wind directions.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Trajectory Optimization for High Altitude Long Endurance Aircraft</title>
-   <link href="http://flow.byu.edu/posts/hale-trajectory"/>
-   <updated>2018-12-18T00:00:00-07:00</updated>
-   <id>http://flow.byu.edu/posts/traj-martin</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;solar.png&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The animation above shows an accelerated example of one optimization from our paper. In this example, you can see reductions in the cost of energy as the turbine locations change (top left) and the turbine designs change (top middle). While not apparent from the visual, in addition to tower height and rotor diameter, we also change the tower diameter and thickness distributions, turbine rating, and blade chord and twist distributions. The bottom left frame shows the wind direction probabilities that were used for this example, and the bottom middle frame shows the power that the wind farm produces for each incoming wind direction. Near the end of the optimization, there is increased power production from all of the wind directions.&lt;/p&gt;</content><author><name>P.J. Stanley</name></author><summary type="html"></summary></entry><entry><title type="html">Trajectory Optimization for High Altitude Long Endurance Aircraft</title><link href="http://flow.byu.edu/posts/hale-trajectory" rel="alternate" type="text/html" title="Trajectory Optimization for High Altitude Long Endurance Aircraft" /><published>2018-12-18T00:00:00-07:00</published><updated>2018-12-18T00:00:00-07:00</updated><id>http://flow.byu.edu/posts/traj-martin</id><content type="html" xml:base="http://flow.byu.edu/posts/hale-trajectory">&lt;p&gt;&lt;img src=&quot;solar.png&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Our lab has been studying solar powered high altitude long endurance aircraft (HALE) for the past couple of years.  HALE aircraft are intended to fly persistently, or at least for very long periods of time, with various applications including telecommunications (replacing more expensive satellites), surveillance, and weather monitoring.  Persistent flight is challenging and requires high altitudes where wind speeds are reduced, large wingspans and lightweight structures (both of which reduce induced drag, the dominant source of drag at low speeds), and efficient solar capture.  A well known example from a decade ago was the &lt;a href=&quot;https://www.nasa.gov/centers/dryden/history/pastprojects/Helios/index.html&quot;&gt;NASA Helios&lt;/a&gt;.  More recent commercial examples include &lt;a href=&quot;https://www.airbus.com/defence/uav/zephyr.html&quot;&gt;Airbus’ Zephyr&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/notes/mark-zuckerberg/the-technology-behind-aquila/10153916136506634/&quot;&gt;Facebook’s Aquila&lt;/a&gt;, and &lt;a href=&quot;https://www.aurora.aero/odysseus-high-altitude-pseudo-satellite-haps/&quot;&gt;Aurora’s Odysseus&lt;/a&gt;.&lt;/p&gt;
 
@@ -1705,205 +1605,4 @@ Available&lt;/a&gt;&lt;/li&gt;
 &lt;/pre&gt;
 &lt;/li&gt;&lt;/ol&gt;
 
-&lt;p&gt;P.S. For fun, here is a &lt;a href=&quot;http://prismweb.groups.et.byu.net/360/&quot;&gt;3D visualization&lt;/a&gt; Abe put together based on an Aquila-like configuration at winter solstice.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Multirotor - Vortex Particle Method</title>
-   <link href="http://flow.byu.edu/posts/multirotor-vpm"/>
-   <updated>2018-07-12T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/multirotor-vpm</id>
-   <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CP4jI7lLags&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Counter-rotating APC 10x7 propellers ramping up from 0 to 9400 RPM with a constant freestream (advance ratio of 0.35 at 9400 RPM) modeled with a viscous vortex particle method. From the following paper:&lt;/p&gt;
-
-&lt;ol class=&quot;bibliography nonum&quot; reversed=&quot;&quot;&gt;&lt;li&gt;&lt;span id=&quot;Alvarez2018&quot;&gt;Alvarez, E. J., and Ning, A., “Development of a Vortex Particle Code for the Modeling of Wake Interaction in Distributed Propulsion,” &lt;i&gt;AIAA Applied Aerodynamics Conference&lt;/i&gt;, Atlanta, GA, Jun. 2018. doi:10.2514/6.2018-3646&lt;/span&gt;
-&lt;a href=&quot;#nowhere&quot; onclick=&quot;toggle_visibility(&apos;Alvarez2018-bibtex&apos;);&quot;&gt;[BibTeX]&lt;/a&gt; &lt;a href=&quot;http://dx.doi.org/10.2514/6.2018-3646&quot;&gt;[DOI]&lt;/a&gt; &lt;a href=&quot;https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=3148&amp;amp;context=facpub&quot;&gt;[PDF]&lt;/a&gt;  
-
-&lt;pre id=&quot;Alvarez2018-bibtex&quot; class=&quot;bibtex&quot;&gt;@inproceedings{Alvarez2018,
-  address = {Atlanta, GA},
-  author = {Alvarez, Eduardo J. and Ning, Andrew},
-  booktitle = {{AIAA} Applied Aerodynamics Conference},
-  doi = {10.2514/6.2018-3646},
-  month = jun,
-  title = {Development of a Vortex Particle Code for the Modeling of Wake Interaction in Distributed Propulsion},
-  year = {2018}
-}
-&lt;/pre&gt;
-&lt;/li&gt;&lt;/ol&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Julia for the Win</title>
-   <link href="http://flow.byu.edu/posts/julia-ftw"/>
-   <updated>2016-05-16T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/julia-ftw</id>
-   <content type="html">&lt;p&gt;In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see &lt;a href=&quot;http://flow.byu.edu/posts/julia-first-imp&quot;&gt;first impressions&lt;/a&gt;).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.&lt;/p&gt;
-
-&lt;p&gt;The original version was mostly Fortran so I wasn’t necessarily seeking a speed improvement.  For the benefits of working in one language I would be ok with a 20-30% slowdown.  However, an order of magnitude slow down was a lot and it really bogged things down when creating figures and data for the paper.  I had about given up on performance, but two separate encounters with Julia-using colleagues made me revisit the topic once again.  I sent my code to a colleague who had been using Julia for some time.  His PhD student pointed out some suggestions, which I tried, but the impact was negligible.&lt;/p&gt;
-
-&lt;p&gt;Profiling suggested that a lot of time was spent in conversion between PyCall and scipy.  I tried using the lower-level calls in PyCall to be more explicit in the types, but it didn’t help.  I was using PyCall because I needed an N-dimensional root solver and nothing was available in native Julia.  Roots.jl was available, but it only solves 1-dimensional root finding problems.  PyCall allowed me to call Python’s scipy.optimize.root, which was quite convenient.&lt;/p&gt;
-
-&lt;p&gt;When I first wrote this code a year or so ago I directly wrapped the Fortran code hybrd from minpack (using Julia 0.2.x and 0.3.x), which is what is used in Scipy’s root finder.  I later discovered PyCall and that was way more convenient with no real change in computation time.  However, I noted that a lot of improvements were made to ccall and cfunction in 0.4.x so I thought I’d try the direct route again.  I reverted to my direct wrapper of hybrd (with a few minor updates to comply with 0.4.x), to eliminate the Python middleman.  Performance problem solved!   After that change I found that the Julia code was actually 3X faster than the Python/Fortran version!&lt;/p&gt;
-
-&lt;p&gt;The other problem I had was that plotting and just running Julia in general was painfully slow.  I was using a Python-like workflow where I would just run the full script each time (using Sublime Text or the terminal).  I knew that Julia had a REPL, but I couldn’t stand working in the browser as opposed to a text editor.  Sometimes with plotting I would use the REPL, but it was a real pain switching back and forth.  My colleague informed me about &lt;a href=&quot;https://github.com/JunoLab/atom-ink&quot;&gt;Ink&lt;/a&gt; and the &lt;a href=&quot;https://github.com/JunoLab/atom-julia-client&quot;&gt;Julia Client in Atom&lt;/a&gt; and it changed everything.  With this tool I could avoid the recompilation of packages and code that before was occurring on every run.&lt;/p&gt;
-
-&lt;p&gt;I’m now very happy with using Julia and for one of our new major research projects we are going all in.  Everything isn’t perfect.  Some libraries are nonexistent (although wrapping Fortran/C libraries is pretty easy), and the Atom Julia Client is still a bit rough around the edges and could use a debugger.  But overall, working within one language that is both performant and is very easy to work with is a big win for us.&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;font-size: 80%;&quot;&gt;
-P.S. If interested in the mentioned code, I have open-sourced it and it is available on &lt;a href=&quot;https://github.com/byuflowlab/vawt-ac&quot;&gt;GitHub&lt;/a&gt;.  It computes aerodynamic loading for multiple vertical axis wind turbines using an extended version of actuator cylinder theory.  A preprint of the accompanying theory is available on &lt;a href=&quot;/publications&quot;&gt;this website&lt;/a&gt; under “Actuator Cylinder Theory for Multiple Vertical Axis Wind Turbines”.
-&lt;/span&gt;&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Julia First Impressions</title>
-   <link href="http://flow.byu.edu/posts/julia-first-imp"/>
-   <updated>2015-08-26T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/julia-first-imp</id>
-   <content type="html">&lt;p&gt;I’m primarily a Python user, and my primary use is scientific computing.  Over the last few years, I’ve followed Julia’s development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it’s one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.&lt;/p&gt;
-
-&lt;p&gt;I had been working on a new method in vertical axis wind turbine simulation, and thought developing the code for this paper would give me a good chance to try Julia.  I’ll describe my impressions in working with Julia on a real project. This was not a large code, but not small either.  It was around 500 lines of code (not including some of the extra modules I needed to develop that are discussed later), and included reading data from a file, integration, forming matrices, multidimensional root finding, and multiple loops,  Once the journal paper is accepted somewhere, I’ll open source the code. This was done over a month ago.  I updated my version of Julia once or twice during development.  The last version I used was 0.3.10.&lt;/p&gt;
-
-&lt;h1 id=&quot;tldr&quot;&gt;TL;DR&lt;/h1&gt;
-
-&lt;p&gt;Julia was easy to use, and I liked the syntax a lot.  I didn’t think it was quite ready for our usage.  I needed to write/wrap many libraries that are just available in Python or Matlab.  Using the plotting modules was a real pain.  Performance was not particularly impressive, but I spent no effort in optimizing for speed.  Despite the limitations, the future of Julia looks very promising.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-good&quot;&gt;The Good&lt;/h1&gt;
-
-&lt;p&gt;Julia’s syntax is my favorite of any programming language I’ve used.  It’s concise, simple, well-thought-out, and an improvement over both Matlab and Python in my opinion (although there is not a whole lot to complain about in those languages either).  Everything was pretty easy, even calling external Fortran code and reading files.&lt;/p&gt;
-
-&lt;p&gt;Syntax was probably closest to Matlab.  One thing that drives me crazy with Matlab is the one function per file requirement (except for nested functions), which of course isn’t an issue with pretty much any other language.&lt;/p&gt;
-
-&lt;p&gt;Julia uses 1-based indexing.  Although it’s a source of debate, and I’ve read some very good arguments for 0-based, I still prefer 1-based.  Python, C, and Java use 0-based and Matlab and Fortran use 1-based (although you could really use any base in Fortran if you wanted to).  I recognize that in many disciplines, algorithms are 0-based, but not so in my fields (generally).  I find 1-based much more intuitive.  I also like that Julia uses the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;end&lt;/code&gt; keyword for the end of the array, I never cared much for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt; syntax in Python.  Array slicing is similar to Matlab’s, both of which I find superior to that of Python’s (NumPy).&lt;/p&gt;
-
-&lt;p&gt;I thought that I liked Python’s indentation-based grouping, but after using Julia, and going back and forth, I find having an explicit end statement makes code easier to read.&lt;/p&gt;
-
-&lt;p&gt;All of these points are relatively minor though.  What is different and exciting, although I didn’t explore it much yet, is the ability to explicitly define types (or not) and for the compiler to take advantage of types.  The ability to optimize performance within a single language is very appealing.  For the purposes of this paper, optimizing performance wasn’t necessary so I spent no time on it.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-not-so-good&quot;&gt;The Not So Good&lt;/h1&gt;
-
-&lt;p&gt;Development time was hindered a fair amount just because a lot of the routines I’m used having in numpy/scipy or Matlab, weren’t around in Julia.  The main detour for this project, was that there was no n-dimensional root solver.  I found &lt;a href=&quot;https://github.com/JuliaLang/Roots.jl&quot;&gt;Roots&lt;/a&gt;, but unfortunately the only available implementations were for 1D problems.  Fortunately, a good solver exists in Fortran.  I grabbed the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hybrd&lt;/code&gt; routines from minpack (which is also the default method that scipy.optimize.root uses).&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;http://julia.readthedocs.org/en/latest/manual/calling-c-and-fortran-code/&quot;&gt;documentation&lt;/a&gt; for calling C and Fortran code wasn’t that clear, in my opinion, but it was adequate enough that with a little trial and error I was able to make things work.  After I had done it once, I thought that calling Fortran or C from Julia was even easier than doing so in Python (which is already pretty easy).&lt;/p&gt;
-
-&lt;p&gt;While wrapping this external code wasn’t terribly difficult, it did take some time to get the external code and build a fortran shared library, create a proper wrapper to hybrd, wrap a callback function in a generic way, and do a little testing.  In the end it took about 100 lines of code and a couple hours, instead of a one-liner using a built-in function in Matlab or Python.&lt;/p&gt;
-
-&lt;p&gt;I developed a couple of other small functions as well that I normally wouldn’t need to, but weren’t available in any core Julia package (or at least I couldn’t find them).  The added functions were a couple of linear interpolation methods, and a couple trapezoidal integration methods (I did use the built-in quadgk in another part of the code, but also needed a routine that didn’t require a functional form for integration).  These were simple tasks, but did distract from the main development.&lt;/p&gt;
-
-&lt;p&gt;Performance was not impressive.  I had developed a previous version of the code in Python, with the computationally intensive parts written in Fortran and  called as a shared library using f2py.  The Julia code and the Python/Fortran code had different capabilities, but I setup a problem that utilized common capabilities so that the algorithms used in the test were effectively identical.  I did not do any profiling, or make any effort to optimize for speed in any of the languages, but I didn’t try to make things slow either.  To run one simulation (a computation of turbine power) took 0.25 seconds in Python/Fortran and 2.5 seconds in Julia—an order of magnitude difference. I’m not sure why my implementation in Julia was so slow.  I’m not really counting this as a negative against Julia yet because I haven’t explored performance improvements at all.  Once I open-source the code, and module caching in Julia is available, I’ll be interested in exploring this in more detail (To be clear, I did not leave in any modules that I didn’t need, like plotting, in the timing analysis).&lt;/p&gt;
-
-&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
-
-&lt;p&gt;Plotting data was horrendous.  Actually, it wasn’t the plotting that was bad.  I mainly used PyPlot, which of course I was right at home with since it’s just an interface to Python’s matplotlib.pyplot.  The real problem was how Julia imports packages.  Apparently, Julia compiles each package every time the code is executed so just putting in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;using PyPlot&lt;/code&gt; would add 10 seconds or more to the run time.  This was ridiculously painful when I needed to iterate multiple times when trying to debug something.  I didn’t even bother trying to create figures from Julia.  I’d dump the data and then tweak the plots to my liking in Python.  However, for debugging that process didn’t work because the data kept changing so I was forced to do it in Julia.  I found myself avoiding plots and just printing results to the screen if possible, just because it was so painfully slow.&lt;/p&gt;
-
-&lt;p&gt;This is not much of a problem if you use the Julia REPL.  For example, you can use Juno or JuliaBox and then you can execute portions of the code and not have to reload modules.  However, I can develop much faster in my own text editor of choice (was Sublime Text, recently switched to Atom).  There are a whole host of keyboard shortcuts, snippets, and the like that I am used to using.  For a while, I started inputting a bunch of these in Juno.  That mostly worked, but I found Juno a bit buggy at times with plotting and it was cumbersome to use a different editor just for Julia.&lt;/p&gt;
-
-&lt;p&gt;It looks like this won’t be a problem for long.  Following some of the issues on GitHub, you can see that a lot of discussion and work has gone on to allow static compilation and module caching, and it looks like it will be introduced in 0.4.&lt;/p&gt;
-
-&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
-
-&lt;p&gt;Julia is a pleasure to use.  The promise of developing code with speed comparable to C or Fortran, but with the ease of use of Matlab or Python, all within &lt;em&gt;one language&lt;/em&gt; is incredibly appealing.  In my experience, it’s not there yet.  Lots of important scientific libraries are not yet directly available, and module importing is horrendously slow.  I look forward to continued developments, and anticipate that I probably will move most of our work to Julia in the future, but that day is not today.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Scientific Programming Languages</title>
-   <link href="http://flow.byu.edu/posts/sci-prog-lang"/>
-   <updated>2015-08-11T00:00:00-06:00</updated>
-   <id>http://flow.byu.edu/posts/sci-prog-lang</id>
-   <content type="html">&lt;p&gt;I’ve used a number of scientific programming languages over the past 16 years: C++, C, Matlab, Java, Fortran, Python, and Julia, and I wouldn’t name any one as the “best” (I’ve also used Objective-C, JavaScript, and PHP quite a bit, but not for scientific computing).  Usually I try to pick the right tool for the job, not necessarily just the tool I happen to know best (as they say: if all you have is a hammer, everything looks like a nail).  However, my usage has evolved over the years from Matlab-centric, to Python-centric, and I’m contemplating a move to Julia-centric.  Before explaining why, let’s discuss some of the reasons why I might choose one language over the others.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Edit (May 2019)&lt;/strong&gt;: We’ve gone all in with Julia shortly after this post was written (see bottom of post)&lt;/p&gt;
-
-&lt;h1 id=&quot;matlab&quot;&gt;Matlab&lt;/h1&gt;
-
-&lt;p&gt;Matlab is widely used in university settings.  For students it is very affordable, and it is very easy to use.  Matlab is oriented towards scientific computing and it comes pre-packaged with a built-in IDE, debugger, and a large collection of built-in methods and toolboxes.  I did much of my graduate work and PhD Dissertation using Matlab. Most students like it a lot.&lt;/p&gt;
-
-&lt;p&gt;It’s great as a student, particularly an undergraduate student, but as you move to larger problems and/or move out of a university setting its weaknesses become more apparent.  Matlab is quite expensive outside of universities, and it runs very slowly.  The first concern could be addressed with Octave.  Octave is an open-source software designed to mimic Matlab, but it runs even slower and is far less capable in terms of available packages (it’s been years since I’ve used Octave so maybe the gap isn’t so large anymore, but Matlab hasn’t been idle either and has made quite a few performance and capability improvements including a JIT).&lt;/p&gt;
-
-&lt;p&gt;Because of the speed and parallelization issues, a typical workflow for me was  to prototype a code in Matlab, and then if needed rewrite the entire code in either C, C++, or Fortran.  Obviously, rewriting is a pain, but if needed the speedup was usually worth it (usually 1-3 orders of magnitude).  Mex files can be used here, but I found them more painful than helpful with large multi-language projects.&lt;/p&gt;
-
-&lt;p&gt;I haven’t used Matlab for research work in several years (with one exception noted below).  My graduate students rarely use it either.  I do, however, often use it in undergraduate classes because it is widely available and easy for students to use.  I also have most of my undergraduate research assistants use Matlab.  It’s perfectly suited for their problems where high performance is not necessary, and familiarity and ease of use is much more important.  That’s not necessarily a deliberate choice, I’d be happy to use Python with them as well, but Matlab is what they already know from other classes.  For the level of time they have available and the complexity of their problems, it’s just not worth trying to teach them something else.&lt;/p&gt;
-
-&lt;p&gt;There is one exception for my usage, which is that I sometimes still use &lt;em&gt;fmincon&lt;/em&gt; from the Optimization Toolbox (which usually involves some sort of terrible hack to make the wrapping work).  I’ve used a lot of optimization packages for constrained nonconvex problems, and fmincon is still one of the most robust on the types of problems I solve.  These days I primarily use SNOPT through Python, but still find &lt;em&gt;fmincon&lt;/em&gt; useful from time to time.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update (10/1/2015)&lt;/strong&gt;: With Mathworks relatively new &lt;a href=&quot;http://www.mathworks.com/help/matlab/matlab-engine-for-python.html&quot;&gt;Matlab Engine for Python&lt;/a&gt;, connected to fmincon from Python was relatively easy.  I posted an example &lt;a href=&quot;https://bitbucket.org/mdolab/pyoptsparse/pull-requests/13/an-example-bridge-to-fmincon/diff&quot;&gt;here&lt;/a&gt;, to hopefully be integrated with pyopt-sparse later.  Having access to fmincon is great, and makes me once again interested in keeping a Matlab license around.&lt;/p&gt;
-
-&lt;h1 id=&quot;c-c-and-fortran&quot;&gt;C, C++, and Fortran&lt;/h1&gt;
-
-&lt;p&gt;If the end result is a re-write in a compiled language, why not just start there to begin with?  Good question.  I have done that on occasion. The problem is that while these languages have great run times, development time is usually much slower (even when accounting for the re-write), and re-writing may not be necessary.  Development time is usually a much bigger bottleneck as compared to run time, at least for my use cases.&lt;/p&gt;
-
-&lt;p&gt;In languages like Matlab, debugging and inspecting variables, plotting, making small changes and retesting, and using existing functions is just much faster.  All these things can be done in C, C++, and Fortran, but it just takes more work and time to repeatedly compile, integrate existing libraries or functions yourself, debug and plot results, etc.  It is always more important for your algorithms to be correct than to be fast.  Using a language like Matlab allows for rapid development, with more testing and inspecting for a give time allotment.  Once you are confident in a code’s correctness, then you can start thinking about speeding it up, &lt;em&gt;if necessary&lt;/em&gt;, usually by rewriting in one of these compiled languages.  The key point is that rewriting often isn’t necessary.  For example, if my vortex lattice code was running in a tenth of a second in Matlab, that was already good enough for the number of cases I needed to run.  Code can always be pushed off to other computers or clusters to run overnight and on the weekends easily.&lt;/p&gt;
-
-&lt;p&gt;Of all of the languages I am discussing in the post I would say C++ is the most difficult to work with.  Despite its complexity, there are still times when C++ is a good choice.  It’s object-oriented and it’s fast (if done well).  If that is the cross-section you need, like in a CFD code, then it may be the best way to go.  XCode is actually a nice IDE for C++ development.  It has a great static analyzer that eases some of the pain of working with it.&lt;/p&gt;
-
-&lt;p&gt;For people with limited Fortran experience it often has a bad reputation, and in my opinion undeservedly so.  It is true that Fortran 77 and older are pretty horrible to work with. GOTO statements, implicit typing, fixed layout, and so on just made life difficult.  Lots of awesome numerical packages were developed in Fortran 77 (or older), and so the only exposure many people have had to Fortran is looking at the syntax of some of these old codes.&lt;/p&gt;
-
-&lt;p&gt;However, modern Fortran (90 and up) is actually quite nice to work with.  A lot of improvements were made including free-form input, array notation (like Matlab’s), modules, dynamic memory allocation, etc.  Recent versions have even added object-oriented (OO) features.  Fortran is designed for scientific programming (unlike C which is more general), and the syntax is actually easy to use and similar to Matlab’s.  It does requiring specifying all of the types at the beginning of a function or subroutine, which slows down development, especially when your interface to the functions is still evolving quite a bit.&lt;/p&gt;
-
-&lt;p&gt;As an aside: one thing that drives me crazy in Fortran is how it handles double precision constants.  If you define a variable like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;real(8) :: x
-x = 1.0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;x will actually hold a single precision number and not double even though its type is double (compiler-dependent).  Instead you need to specify the constant as a double as well: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x = 1.0d0&lt;/code&gt;.  In practice I actually use something like below for portability:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;integer, parameter :: dp = selected_real_kind(15, 307)
-real(dp) :: x
-x = 1.0_dp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Littering &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_dp&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d0&lt;/code&gt; all over the place is a bit of a pain.  I didn’t know this early on, and it was a big gotcha.  I was working on an optimization application where I needed exact gradients, and the difference between single and double precision in some places was causing my gradients to be very close but just barely off to the point where it caused some numerical issues.  Took me a while to figure this out.&lt;/p&gt;
-
-&lt;p&gt;If I needed speed, but didn’t need OO, how would I decide between Fortran and C?  Usually just by what packages I needed, and which language I thought would be easier to do the integration in.  I still use both Fortran and C quite a bit, but almost always only in connection with Python as I’ll discuss below.  I don’t use C++ very much anymore, unless I want something that can stand alone without Python.  Otherwise, the combination of Python with C I find to be much easier to develop in and just as fast to run (more on this later).&lt;/p&gt;
-
-&lt;h1 id=&quot;java&quot;&gt;Java&lt;/h1&gt;
-
-&lt;p&gt;I used Java quite a bit during graduate school.  Most folks don’t think of Java as a scientific langauge.  My advisor liked Java.  He was ahead of his time in developing interactive modules for teaching.  His course notes (e.g., &lt;a href=&quot;http://adg.stanford.edu/aa241&quot;&gt;http://adg.stanford.edu/aa241&lt;/a&gt;) contained Java applets that allowed you to run interactive examples on wing design, etc., which were super helpful.  Recently, there has been a lot of interest in the scientific community to do similar things with Jupyter notebooks.&lt;/p&gt;
-
-&lt;p&gt;From some CS courses I took, I had developed a pretty deep familiarity with Java.  I also liked object-oriented programming and Java was way easier than C++ for development.  None of the other languages I used (Matlab, C, Fortran) accomodated OOP.  I used Java for several aircraft analysis tools and it worked very nicely. As a bonus you could load Java *.jar files in Matlab and call the functions from Matlab for plotting and other visualizations.&lt;/p&gt;
-
-&lt;p&gt;As a graduate student I also worked on the side for a startup, Complete Solar Solution.  I developed an analysis tool, HelioQuote, for them in Java.  This was a comprehensive tool that would automatically pull in electric rates for an address, download a Google map of their roof, perform an optimization analysis, and layout solar panels on their house that you could then drag and drop around if desired.&lt;/p&gt;
-
-&lt;p&gt;Java was great because it was a full featured programming language, was easy to use, had pretty good GUI support if needed, and actually had surprisingly good performance through an aggressive JIT compiler.  The main problem with Java was numerical support was weak.  There were very few scientific libraries available through Java.  I wrote a bunch of &lt;a href=&quot;https://github.com/andrewning/jMath&quot;&gt;my own methods and interfaces&lt;/a&gt; to do basic, but frequently used stuff like integration, root finding, linear solves, etc.  I used that library quite a bit, but it was very limited compared to what’s available in Matlab or Python.&lt;/p&gt;
-
-&lt;p&gt;Java was pretty nice to work with, but I haven’t used it in years.  After diving into Python I found it superior in every way.  It is an even easier language to work with and has great scientific support.  Its only disadvantage is performance, but this is remedied through its easy connections to C/Fortran.&lt;/p&gt;
-
-&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
-
-&lt;p&gt;I dabbled in Python a bit during graduate school, but really only for random fun side projects (like this &lt;a href=&quot;https://code.google.com/p/movie-content-editor/&quot;&gt;movie filter project&lt;/a&gt; we made as a proof of concept).  As a postdoc I started using Python for everything.  Python is pretty great.  It is a very easy language to use.  It has simplistic syntax like Matlab, but unlike Matlab it allows for objected oriented programming (I know Matlab has some OO features, but they are pretty weak), functional programming, or procedural programming.&lt;/p&gt;
-
-&lt;p&gt;Python is free. This may have saved us some money (not really we already had Matlab licenses at the lab), but the bigger benefit is that it allowed others to use our code.  We had some users/collaborators who did not have Matlab and so developing in Matlab limited our ability to collaborate.  Matlab does have a runtime you can distribute to allow users to run your code, but it doesn’t allow them to develop as well.&lt;/p&gt;
-
-&lt;p&gt;It’s also open-source.  In scientific computing, I’ve needed to dive into the details of certain algorithms many times.  In Python I can do this, in Matlab I can rarely do this.&lt;/p&gt;
-
-&lt;p&gt;One of the main benefits of Python, for me, was performance.  This seems odd to say because Python is not fast.  It’s an interpreted langauge with speeds similar to Matlab’s.  However, Python allows you to wrap C/Fortran code pretty easily.  Now, instead of rewriting my entire code in a compiled language, I would profile, find the bottleneck, and rewrite just that portion in Fortran or C.  This allowed me to approach effectively the same speeds I would get in pure Fortran or C, but with an easy-to-use, rapid development environment in Python for scripting, plotting, debugging, etc.  It also allowed me to easily take advantage of existing C/C++/Fortran libraries.  A wide variety of compiled numerical libraries are already available in numpy, scipy, etc., but for specialized tools (like finite element codes, aircraft panel codes, etc.) I was able to wrap these in Python.  Being able to directly pass variables, instead of trying to read/write input files, made using and integrating these codes much easier—especially for optimization applications.&lt;/p&gt;
-
-&lt;p&gt;This is perhaps the primary use of Python in scientific computing.  It is often referred to as a “glue code”.  Meaning, that most of the work is not actually being done in Python, but Python serves as the glue that links codes together.  I’ve linked a blade element code in Fortran 95, a beam finite element code in C++, a cost model in C, and dozens of other components in pure Python, all with an optimizer written in Fortran 77.  All the interfacing is done in Python making data passing and scripting very easy.&lt;/p&gt;
-
-&lt;p&gt;Python has completely replaced Java and C++ for me and almost completely replaced Matlab as well.  The combination of Python with either Fortran or C gives me the benefits of a fast compiled language with a lightweight, interpreted, easy-to-use interface.  What’s the downside?  The main downside is that I have to work with multiple languages still.  There are some inefficiencies (in terms of development) in switching between languages.&lt;/p&gt;
-
-&lt;p&gt;I should say of course that your mileage may vary.  I don’t work in controls, but as far as I’m aware there is nothing as capable as Simulink and I don’t think the support for controls is as strong in Python as compared to Matlab.  But that’s not my area, just my impression.  For the types of things I do, the only thing I’ve missed are optimization algorithms.  The Optimization Toolbox in Matlab is pretty capable and robust.  Conversely, the optimization tools built into scipy are not very good in my opinion.  Fortunately, this is remedied through the use of &lt;a href=&quot;http://www.pyopt.org&quot;&gt;pyOpt&lt;/a&gt; and now &lt;a href=&quot;https://bitbucket.org/mdolab/pyoptsparse&quot;&gt;pyOptSparse&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;julia&quot;&gt;Julia&lt;/h1&gt;
-
-&lt;p&gt;Julia appears to be the holy-grail of scientific programming languages.  An interpreted, easy-to-use language, &lt;em&gt;and&lt;/em&gt; with speeds comparable to those of C.  In addition, its designed for mathematical computing, including parallelism and cloud computing, and if needed it makes it even easier to call C or Fortran code (no wrappers needed).&lt;/p&gt;
-
-&lt;p&gt;I’ve been testing it with my students and with one of my own projects.  I’ll provide more details in a subsequent post, but in short I’ve concluded that it’s promising but still too early to fully switch.  The surrounding ecosystem is lacking, and so I needed to develop or wrap a lot of methods myself that are just available in Python.  There were also a few other minor issues that slowed down development, and in the end even the run time was disappointing (though I made no effort to optimize and I suspect there are some small changes I could make that would make a significant impact on run time).&lt;/p&gt;
-
-&lt;p&gt;Julia is at a point where I would say it is fully functional for any of our projects, but in terms of development time (and even run time) it wasn’t yet superior to our current workflow in Python with C/Fortran.  I’m definitely rooting for it to get there, and with all the ongoing work by the Julia team I imagine it won’t be long.  Working in multiple languages has been frustrating at times, and I’d love to go back to spending most of my time in a single language.&lt;/p&gt;
-
-&lt;p&gt;I should mention that Python has several JITs that look very promising, notably Numba and Pyston.  However, these are not quite there yet either for the full stack of scipy tools.  Additionally, I often rely on automatic differentiation and I’m quite sure how that would work with a JIT.  Perhaps these will soon reach a point of full usability across the scientific stack to where one could do high-performance development fully in Python.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Edit (May 2019)&lt;/strong&gt;: In our lab we completely switched over to Julia about three years ago (at least for for all new development).  We’ve been very impressed with the performance and happy with the ease of one language.  There were a few growing pains, but once we started using &lt;a href=&quot;https://github.com/timholy/Revise.jl&quot;&gt;Revise.jl&lt;/a&gt;, and text editors with Julia support, the new workflow became more natural.  We also had to learn (or un-learn) styles for better performance.&lt;/p&gt;
-
-&lt;p&gt;I haven’t adopted Julia in teaching yet but would like to.  In many of my classes programming is a tool and not the point of the class so it’s hard to justify taking time out to teach Julia when they already know something else.  In my graduate optimization class it would be a natural fit except that the optimization solver support (for general nonlinear optimization) isn’t quite to the point where I’d be comfortable with a switch.  In our research this isn’t an issue as we use commercial optimizers that we’ve licensed and wrapped in Julia.&lt;/p&gt;
-</content>
- </entry>
- 
-
-</feed>
+&lt;p&gt;P.S. For fun, here is a &lt;a href=&quot;http://prismweb.groups.et.byu.net/360/&quot;&gt;3D visualization&lt;/a&gt; Abe put together based on an Aquila-like configuration at winter solstice.&lt;/p&gt;</content><author><name>Andrew Ning</name></author><summary type="html"></summary></entry></feed>

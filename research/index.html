@@ -11,7 +11,7 @@
 
   <title>
     
-      Current Research Projects &middot; FLOW Lab
+      Research Projects &middot; FLOW Lab
     
   </title>
 
@@ -94,33 +94,256 @@
 
     <div class="content container">
       <div class="page">
-  <h1 class="page-title">Current Research Projects</h1>
-  <h3 id="electric-powered-aircraft-and-aerodynamics-of-distributed-propulsion">Electric Powered Aircraft and Aerodynamics of Distributed Propulsion</h3>
+  <h1 class="page-title">Research Projects</h1>
+  <h2 id="current">Current</h2>
 
-<p><img src="multirotor.png" class="width-half" /></p>
+<h4 id="rapid-development-of-urban-air-mobility-vehicle-concepts-through-full-configuration-multidisciplinary-design-analysis-and-optimization">Rapid development of urban air mobility vehicle concepts through full-configuration multidisciplinary design, analysis, and optimization</h4>
 
-<p>Battery technology and autonomous control have advanced to a point where electric-powered passenger aircraft, with approximately 2–4 passengers (i.e., air taxis), are becoming feasible.  Electric motors scale very differently than gas turbine engines, and have very different power curves, allowing for things like short or even vertical takeoff and landing, and distributed propulsion (many small propellers instead of a few big propellers).  Distributed propulsion systems can allow for greater redundancy, control authority, performance, and maneuverability. However, operating many rotors in close proximity, or spread around the vehicle, creates strong aerodynamic interactions that are not well understood.  We are developing an analysis and design methodology based on a vortex particle method to more accurately capture wake interactions and perform novel design studies for air taxi applications.  Using electric motors affects all systems and thus completely changes the way the aircraft is designed.  We are exploring optimization-driven design studies to improve electric powered aircraft.</p>
+<p><img src="hover_iso.png" class="width-half" /></p>
 
-<h3 id="wind-farm-optimization">Wind Farm Optimization</h3>
+<p>This multi-university-industry collaboration explores a comprehensive trade study of eVTOL configurations and develops an open-source multidisciplinary optimization framework for eVTOL design.  Models span a variety of disciplines including aerodynamics, acoustics, batteries, thermo-elastic-electromagnetic motor design, structural sizing, and vehicle performance.  Our lab is focused on steady and unsteady aerodynamic modeling, as well as optimization.</p>
+
+<ul>
+  <li>Sponsor: NASA</li>
+  <li>Period: 2021–2024</li>
+  <li>Collaborators: John Hwang (UCSD), David Kamensky (UCSD), Alicia Kim (UCSD), Shirley Meng (UCSD), Jeffrey Chambers (Aurora), Adam Grasch (Aurora), Seongkyu Lee (UC Davis), Chris Mi (San Diego State), Tyler Winter (M4 Eng.)</li>
+</ul>
+
+<h4 id="evtol-aeroacoustic-design-framework-development">eVTOL Aeroacoustic Design Framework Development</h4>
+
+<p>TODO</p>
+
+<ul>
+  <li>Sponsor: Air Force Agility Prime STTR</li>
+  <li>Period: 2021–2024</li>
+  <li>Collaborators: Mark Moore (Whisper Aero), Ian Villa (Whisper Aero)</li>
+  <li>Students: Eduardo Alvarez</li>
+</ul>
+
+<h4 id="investigating-wind-farm-wake-interactions-by-leveraging-a-viscous-vortex-particle-method">Investigating Wind Farm Wake Interactions by Leveraging a Viscous Vortex Particle Method</h4>
+
+<p><img src="bigjared.png" class="width-half" /></p>
+
+<p>We’ve been developing a new formulation for a viscous vortex particle method (VPM) that is numerically stable.  A VPM is based on solving the vorticity form of the Navier-Stokes equations, and, using a meshless Lagrangian scheme, can accurately preserve vortical structures and improve computational efficiency by placing particles only where needed.  This makes the method ideally suited for modeling free wakes.  This research is focused on fundamental developments in the VPM methodology and using it to better understand wind farm applications like mixed height wind farms, complex terrain, and partial waking.</p>
+
+<ul>
+  <li>Sponsor: National Science Foundation</li>
+  <li>Period: 2020–2023</li>
+  <li>Students: Eduardo Alvarez, Ryan Barrett, James Cutler</li>
+</ul>
+
+<h4 id="computationally-efficient-atmospheric-data-driven-control-co-design-optimization-framework-with-mixed-fidelity-fluid-and-structure-analysis">Computationally Efficient Atmospheric-Data-Driven Control Co-Design Optimization Framework with Mixed-Fidelity Fluid and Structure Analysis</h4>
+
+<p>TODO</p>
+
+<ul>
+  <li>Sponsor: ARPA-E</li>
+  <li>Period: 2020–2022</li>
+  <li>Collaborators: Onur Bilgen (Rutgers), Joaquim Martins (UMich), Laurent Burlion (Rutgers), Andy Platt (NREL)</li>
+  <li>Students: DG Caprace (Postdoc), Adam Cardoza, Teagan Nakamoto</li>
+</ul>
+
+<h4 id="leveraging-a-viscous-vortex-particle-method-to-analyze-multirotor-aircraft-configurations">Leveraging a Viscous Vortex Particle Method to Analyze Multirotor Aircraft Configurations</h4>
+
+<p><img src="windcraft.png" class="width-half" /></p>
+
+<p>Complex aerodynamic interactions from wakes interacting with wakes, and wakes interacting with lifting surfaces, are becoming more prevalent in emerging aircraft concepts. Over the last three years we have developed, verified, and validated a VPM.  This project is coupling the VPM to an acoustics solver and exploring a challenging airborne wind energy application, modeled as a wing with 8 rotors flying in a circular path.</p>
+
+<ul>
+  <li>Sponsor: NSF Center for Unmanned Aircraft Systems</li>
+  <li>Period: 2019-2021</li>
+  <li>Students: Judd Mehr, Eduardo Alvarez</li>
+</ul>
+
+<h5 id="multidisciplinary-optimization-and-uncertainty-quantification-of-wind-energy-systems">Multidisciplinary Optimization and Uncertainty Quantification of Wind Energy Systems</h5>
 
 <p><img src="windfarm.png" class="width-half" /></p>
 
-<p>The wakes behind wind turbines reduce the potential power production of other turbines in the farm.  This problem is further complicated because the wind speed and direction change frequently both temporally and spatially.  Layout design seeks to reduce wake interactions through optimization.  This is a particularly challenging optimization problem.  The design space is filled with local optima and the problems may have hundreds of design variables and thousands of constraints.  We have been developing wake models that enable efficient optimization procedures and have been exploring design studies of large wind farms, including simultaneous design of the layout, the turbines themselves, and their orientations.</p>
+<p>The design of wind farms involves complex tradeoffs with wake interactions, atmospheric behavior, blade loading and fatigue, turbine design, uncertainty in the wind resource, etc.  We have been developing novel design approaches for wind farm design optimization, and coupled design problems involving layout, turbine design, and steady-state control.</p>
 
-<h3 id="high-altitude-long-endurance-aircraft">High Altitude Long Endurance Aircraft</h3>
+<ul>
+  <li>Sponsor: National Renewable Energy Laboratory</li>
+  <li>Period: 2017–2021</li>
+  <li>Students: PJ Stanley, Jared Thomas, Bryce Ingersoll, James Cutler, Wesley Holt</li>
+</ul>
+
+<h2 id="past">Past</h2>
+
+<h4 id="robust-and-rapid-optimization-of-wind-turbine-blade-and-wind-turbine-system">Robust and Rapid Optimization of Wind Turbine Blade and Wind Turbine System</h4>
+
+<ul>
+  <li>Sponsor: Goldwind</li>
+  <li>Period: 2019-2020</li>
+  <li>Students: PJ Stanley</li>
+</ul>
+
+<h4 id="aerodynamic-investigation-of-closely-spaced-propellers-through-wind-tunnel-testing">Aerodynamic Investigation of Closely Spaced Propellers through Wind Tunnel Testing</h4>
+
+<ul>
+  <li>Sponsor: Utah NASA Space Grant Consortium</li>
+  <li>Period: 2019–2020</li>
+  <li>Collaborator: Dan Maynes</li>
+</ul>
+
+<h4 id="unsteady-aerodynamic-modeling-and-design-of-evtol-aircraft">Unsteady Aerodynamic Modeling and Design of eVTOL Aircraft</h4>
+
+<p><img src="multirotor.png" class="width-half" /></p>
+
+<p>Battery technology and autonomous control have advanced to a point where electric-powered passenger aircraft, with approximately 2–4 passengers (i.e., air taxis), are becoming feasible.  Electric motors scale very differently than gas turbine engines, and have very different power curves, allowing for things like short or even vertical takeoff and landing, and distributed propulsion (many small propellers instead of a few big propellers).  Distributed propulsion systems can allow for greater redundancy, control authority, performance, and maneuverability. However, operating many rotors in close proximity, or spread around the vehicle, creates strong aerodynamic interactions that are not well understood.  We are developing an analysis and design methodology based on a vortex particle method to more accurately capture wake interactions and perform novel design studies for air taxi applications.  Using electric motors affects all systems and thus completely changes the way the aircraft is designed.  We are exploring optimization-driven design studies to improve design strategies for electric powered aircraft.</p>
+
+<ul>
+  <li>Sponsor: BYU High Impact Doctoral Research Assistantship</li>
+  <li>Period: 2017-2020</li>
+  <li>Students: Eduardo Alvarez</li>
+</ul>
+
+<h4 id="optimization-of-heterogeneous-group-of-vehicles-for-achieving-multiple-mission-level-objectives">Optimization of Heterogeneous Group of Vehicles for Achieving Multiple Mission Level Objectives</h4>
+
+<p>Many UAS missions have competing objectives and those missions may be supported by different types of aircraft.  For example, consider a public service unit that needs to simultaneously monitor a wildfire, track a moving suspect, and search for a lost hiker.  We are working on methods to optimally fulfill multiple objectives, that are dynamic (e.g., priorities and tasks may change), and utilize a heterogenous fleet (e.g., fixed wing and rotorcraft).</p>
+
+<ul>
+  <li>Sponsor: NSF Center for Unmanned Aircraft Systems</li>
+  <li>Period: 2016-2019</li>
+  <li>Collaborator: Cammy Peterson (EE EN)</li>
+  <li>Students: Jenna Newcomb</li>
+</ul>
+
+<h4 id="conceptual-design-of-high-altitude-long-endurance-aircraft-using-multidisciplinary-optimization">Conceptual Design of High Altitude Long Endurance Aircraft Using Multidisciplinary Optimization</h4>
+
+<p>Aircraft can be used to provide internet in developing areas of the world at a lower cost than deploying new satellites.  The challenge is that such aircraft need to be persistent (i.e., stay airborne for months at a time).  This drives the aircraft design to very large wing spans in order to reduce lift-dependent drag, and to very high altitudes where wind speeds are low.  The performance requirements are demanding necessitating a multidisciplinary design optimization approach considering tradeoffs in aerodynamic performance, structural dynamics, weight, solar energy capture, battery storage, electric propulsion, and cost.  We are developing design tools and methodologies, and working on different aircraft design concepts and strategies to help make telecommunication access available in more parts of the world.</p>
+
+<ul>
+  <li>Sponsor: Facebook Connectivity Lab</li>
+  <li>Period: 2016–2019</li>
+  <li>Collaborator: John Hedengren (Ch EN)</li>
+  <li>Students: Judd Mehr, Kevin Moore</li>
+</ul>
+
+<h4 id="efficient-high-fidelity-aeroelastic-analysis-and-design-of-long-endurance-aircraft">Efficient High-Fidelity Aeroelastic Analysis and Design of Long Endurance Aircraft</h4>
 
 <p><img src="wingvlm.png" class="width-half" /></p>
 
-<p>Aircraft can be used to provide internet in developing areas of the world at a lower cost than deploying new satellites.  The challenge is that such aircraft need to be persistent (i.e., stay airborne for months at a time).  This drives the aircraft design to very large wing spans in order to reduce lift-dependent drag, and to very high altitudes where wind speeds are low.  Wings that are simultaneously lightweight and large in span, are highly flexible and create unique unsteady aerodynamic and structural dynamic challenges.  We are working on high-fidelity approaches to analyze and design such configurations.  These challenges are applicable not only to flexible aircraft wings, but also to wind turbine blades and other aeroelastic applications.  The performance requirements of HALE aircraft necessitate a multidisciplinary design optimization approach considering tradeoffs in aerodynamic performance, structural dynamics, weight, solar energy capture, battery storage, electric propulsion, and cost.  We are developing design tools and methodologies, and working on different aircraft design concepts and strategies to help make telecommunication access available in more parts of the world.</p>
+<p>Related to the above project, ultra-efficient wings that are simultaneously lightweight and large in span, are highly flexible and create unique unsteady aerodynamic and structural dynamic challenges.  We are working on high-fidelity approaches to analyze and design such configurations.  These challenges are applicable not only to flexible aircraft wings, but also to wind turbine blades and other aeroelastic applications.</p>
 
-<h3 id="wind-turbine-design">Wind Turbine Design</h3>
+<ul>
+  <li>Sponsor: Facebook Connectivity Lab</li>
+  <li>Period: 2016–2019</li>
+  <li>Collaborator: Michael Scott (CE EN)</li>
+  <li>Students: Taylor McDonnell</li>
+</ul>
+
+<h4 id="wind-energy-power-estimates-for-a-novel-vertical-axis-wind-turbine-design">Wind Energy: Power Estimates for a Novel Vertical Axis Wind Turbine Design</h4>
+
+<p>Characterizing the performance of complex vertical axis wind turbine shapes cannot be done with textbook analysis methods.  We are investigating the performance of novel VAWT designs using a combination of wind tunnel testing with a custom-built torque sensor, and 3-dimensional unsteady RANS simulations.</p>
+
+<ul>
+  <li>Sponsor: Twig &amp; Wire</li>
+  <li>Period: 2016</li>
+  <li>Collaborator: Julie Crockett</li>
+  <li>Students: Kevin Moore</li>
+</ul>
+
+<h4 id="large-scale-integrated-and-robust-wind-farm-optimization-enabled-by-coupled-analytic-gradients">Large-Scale, Integrated, and Robust Wind Farm Optimization Enabled by Coupled Analytic Gradients</h4>
+
+<p>Effective wind farm optimization involves a large number of design variables and contains many sources of uncertainty (e.g., wind direction, wind speed, turbulence levels, wake model parameters, etc.).  We are developing methodology for large-scale optimization under uncertainty with applications in improving the robustness of wind farm energy capture.</p>
+
+<ul>
+  <li>Sponsor: National Science Foundation</li>
+  <li>Period: 2015-2017</li>
+  <li>Collaborator: Juan Alonso (Stanford)</li>
+  <li>Students: Santiago Padron (Stanford), Jared Thomas, PJ Stanley</li>
+</ul>
+
+<!-- #### Quantitative Characterization of Essential Tremor for Future Tremor Suppression
+
+Description here
+
+Sponsor: National Institutes of Health
+Period: 2015-2018
+PI: Steven Charles
+Co-PIs: Jon Blotter, Andrew Ning, Mark Hallett -->
+
+<h4 id="vawt-wake-model-development">VAWT Wake Model Development</h4>
 
 <p><img src="vawt.jpg" class="width-half" /></p>
 
-<p>Wind turbines are complex multidisciplinary systems that operate in a fundamentally unsteady environment. Blade design is particularly challenging as the blades are often long and slender, make extensive use of composites, and are subject to cyclic and unsteady loading.  Similarly, towers must be strong and lightweight and drivetrains must withstand all required mechanical loads.  We develop efficient multidisciplinary models to capture complex aerodynamic, structural loading, and economic tradeoffs.  Using optimization we explore novel configurations and wind farms that use more than one type of turbine.</p>
+<p>Vertical axis wind turbines (VAWTs) are a promising technology for offshore applications and in the built environment.  Performance of wind farms is highly dependent on effective integration, and this research is focused on developing engineering wake models for VAWTs to enable farm optimization.</p>
+
+<ul>
+  <li>Sponsor: Internal seed grant</li>
+  <li>Period: 2015-2017</li>
+  <li>Students: Eric Tingey, Dagan Pielstick, Nick Bons</li>
+</ul>
 
 <div style="clear: both;"></div>
 
+<h4 id="systems-engineering-of-wind-turbines">Systems Engineering of Wind Turbines</h4>
+
+<p>Efficient wind farm layout design is a significant challenge, and today’s wind farms underperform energy capture expectations by around 10-20%.  We seek to efficiently combine turbine, layout, and controls optimization in an integrated manner.</p>
+
+<ul>
+  <li>Sponsor: National Renewable Energy Laboratory</li>
+  <li>Period: 2014-2017</li>
+  <li>Students: Eric Tingey, Ryan Barrett, Jared Thomas, P.J. Stanley</li>
+</ul>
+
+<!-- #### Electric Powered Aircraft and Aerodynamics of Distributed Propulsion
+
+<img src="multirotor.png" class="width-half">
+
+Battery technology and autonomous control have advanced to a point where electric-powered passenger aircraft, with approximately 2--4 passengers (i.e., air taxis), are becoming feasible.  Electric motors scale very differently than gas turbine engines, and have very different power curves, allowing for things like short or even vertical takeoff and landing, and distributed propulsion (many small propellers instead of a few big propellers).  Distributed propulsion systems can allow for greater redundancy, control authority, performance, and maneuverability. However, operating many rotors in close proximity, or spread around the vehicle, creates strong aerodynamic interactions that are not well understood.  We are developing an analysis and design methodology based on a vortex particle method to more accurately capture wake interactions and perform novel design studies for air taxi applications.  Using electric motors affects all systems and thus completely changes the way the aircraft is designed.  We are exploring optimization-driven design studies to improve electric powered aircraft.
+
+### Wind Farm Optimization
+
+<img src="windfarm.png" class="width-half">
+
+The wakes behind wind turbines reduce the potential power production of other turbines in the farm.  This problem is further complicated because the wind speed and direction change frequently both temporally and spatially.  Layout design seeks to reduce wake interactions through optimization.  This is a particularly challenging optimization problem.  The design space is filled with local optima and the problems may have hundreds of design variables and thousands of constraints.  We have been developing wake models that enable efficient optimization procedures and have been exploring design studies of large wind farms, including simultaneous design of the layout, the turbines themselves, and their orientations.
+
+
+### High Altitude Long Endurance Aircraft
+
+<img src="wingvlm.png" class="width-half">
+
+Aircraft can be used to provide internet in developing areas of the world at a lower cost than deploying new satellites.  The challenge is that such aircraft need to be persistent (i.e., stay airborne for months at a time).  This drives the aircraft design to very large wing spans in order to reduce lift-dependent drag, and to very high altitudes where wind speeds are low.  Wings that are simultaneously lightweight and large in span, are highly flexible and create unique unsteady aerodynamic and structural dynamic challenges.  We are working on high-fidelity approaches to analyze and design such configurations.  These challenges are applicable not only to flexible aircraft wings, but also to wind turbine blades and other aeroelastic applications.  The performance requirements of HALE aircraft necessitate a multidisciplinary design optimization approach considering tradeoffs in aerodynamic performance, structural dynamics, weight, solar energy capture, battery storage, electric propulsion, and cost.  We are developing design tools and methodologies, and working on different aircraft design concepts and strategies to help make telecommunication access available in more parts of the world.
+
+### Wind Turbine Design
+
+<img src="vawt.jpg" class="width-half">
+
+Wind turbines are complex multidisciplinary systems that operate in a fundamentally unsteady environment. Blade design is particularly challenging as the blades are often long and slender, make extensive use of composites, and are subject to cyclic and unsteady loading.  Similarly, towers must be strong and lightweight and drivetrains must withstand all required mechanical loads.  We develop efficient multidisciplinary models to capture complex aerodynamic, structural loading, and economic tradeoffs.  Using optimization we explore novel configurations and wind farms that use more than one type of turbine.   -->
+
+<div style="clear: both;"></div>
+
+<!-- ### Electric Powered Aircraft and Aerodynamics of Distributed Propulsion
+
+<img src="multirotor.png" class="width-half">
+
+Battery technology and autonomous control have advanced to a point where electric-powered passenger aircraft, with approximately 2--4 passengers (i.e., air taxis), are becoming feasible.  Electric motors scale very differently than gas turbine engines, and have very different power curves, allowing for things like short or even vertical takeoff and landing, and distributed propulsion (many small propellers instead of a few big propellers).  Distributed propulsion systems can allow for greater redundancy, control authority, performance, and maneuverability. However, operating many rotors in close proximity, or spread around the vehicle, creates strong aerodynamic interactions that are not well understood.  We are developing an analysis and design methodology based on a vortex particle method to more accurately capture wake interactions and perform novel design studies for air taxi applications.  Using electric motors affects all systems and thus completely changes the way the aircraft is designed.  We are exploring optimization-driven design studies to improve electric powered aircraft.
+
+### Wind Farm Optimization
+
+<img src="windfarm.png" class="width-half">
+
+The wakes behind wind turbines reduce the potential power production of other turbines in the farm.  This problem is further complicated because the wind speed and direction change frequently both temporally and spatially.  Layout design seeks to reduce wake interactions through optimization.  This is a particularly challenging optimization problem.  The design space is filled with local optima and the problems may have hundreds of design variables and thousands of constraints.  We have been developing wake models that enable efficient optimization procedures and have been exploring design studies of large wind farms, including simultaneous design of the layout, the turbines themselves, and their orientations.
+
+
+### High Altitude Long Endurance Aircraft
+
+<img src="wingvlm.png" class="width-half">
+
+Aircraft can be used to provide internet in developing areas of the world at a lower cost than deploying new satellites.  The challenge is that such aircraft need to be persistent (i.e., stay airborne for months at a time).  This drives the aircraft design to very large wing spans in order to reduce lift-dependent drag, and to very high altitudes where wind speeds are low.  Wings that are simultaneously lightweight and large in span, are highly flexible and create unique unsteady aerodynamic and structural dynamic challenges.  We are working on high-fidelity approaches to analyze and design such configurations.  These challenges are applicable not only to flexible aircraft wings, but also to wind turbine blades and other aeroelastic applications.  The performance requirements of HALE aircraft necessitate a multidisciplinary design optimization approach considering tradeoffs in aerodynamic performance, structural dynamics, weight, solar energy capture, battery storage, electric propulsion, and cost.  We are developing design tools and methodologies, and working on different aircraft design concepts and strategies to help make telecommunication access available in more parts of the world.
+
+### Wind Turbine Design
+
+<img src="vawt.jpg" class="width-half">
+
+Wind turbines are complex multidisciplinary systems that operate in a fundamentally unsteady environment. Blade design is particularly challenging as the blades are often long and slender, make extensive use of composites, and are subject to cyclic and unsteady loading.  Similarly, towers must be strong and lightweight and drivetrains must withstand all required mechanical loads.  We develop efficient multidisciplinary models to capture complex aerodynamic, structural loading, and economic tradeoffs.  Using optimization we explore novel configurations and wind farms that use more than one type of turbine.  
+
+
+
+<div style="clear: both;"></div>
+
+ -->
 
 </div>
 
