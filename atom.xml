@@ -4,13 +4,67 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2021-08-30T10:59:22-06:00</updated>
+ <updated>2021-08-30T21:58:09-06:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>BEM Paper</title>
+   <link href="http://flow.byu.edu/posts/bem-paper"/>
+   <updated>2021-07-30T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/bem-paper</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6825450879324434432&quot; height=&quot;622&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Eduardo Research Update</title>
+   <link href="http://flow.byu.edu/posts/eduardo-latest"/>
+   <updated>2021-03-01T00:00:00-07:00</updated>
+   <id>http://flow.byu.edu/posts/eduardo-latest</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6779795433318420480&quot; height=&quot;1142&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Reformulated VPM</title>
+   <link href="http://flow.byu.edu/posts/reformulated-vpm"/>
+   <updated>2021-02-01T00:00:00-07:00</updated>
+   <id>http://flow.byu.edu/posts/reformulated-vpm</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6767685749157588992&quot; height=&quot;990&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Optimization Book Announcement</title>
+   <link href="http://flow.byu.edu/posts/optimization-book"/>
+   <updated>2021-01-20T00:00:00-07:00</updated>
+   <id>http://flow.byu.edu/posts/optimization-book</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6758135437300154368&quot; height=&quot;679&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>PJ Defense</title>
+   <link href="http://flow.byu.edu/posts/pj-defense"/>
+   <updated>2020-09-30T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/pj-defense</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6714312529692237824&quot; height=&quot;641&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>VPM Paper</title>
+   <link href="http://flow.byu.edu/posts/vpm-paper"/>
+   <updated>2020-08-30T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/vpm-paper</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6711406263634419712&quot; height=&quot;857&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Airborne Wind with Vortex Particle Method</title>
@@ -1640,7 +1694,7 @@ Available&lt;/a&gt;&lt;/li&gt;
    <link href="http://flow.byu.edu/posts/hale-trajectory"/>
    <updated>2018-12-18T00:00:00-07:00</updated>
    <id>http://flow.byu.edu/posts/traj-martin</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;solar.png&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/posts/solar.png&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Our lab has been studying solar powered high altitude long endurance aircraft (HALE) for the past couple of years.  HALE aircraft are intended to fly persistently, or at least for very long periods of time, with various applications including telecommunications (replacing more expensive satellites), surveillance, and weather monitoring.  Persistent flight is challenging and requires high altitudes where wind speeds are reduced, large wingspans and lightweight structures (both of which reduce induced drag, the dominant source of drag at low speeds), and efficient solar capture.  A well known example from a decade ago was the &lt;a href=&quot;https://www.nasa.gov/centers/dryden/history/pastprojects/Helios/index.html&quot;&gt;NASA Helios&lt;/a&gt;.  More recent commercial examples include &lt;a href=&quot;https://www.airbus.com/defence/uav/zephyr.html&quot;&gt;Airbus’ Zephyr&lt;/a&gt;, &lt;a href=&quot;https://www.facebook.com/notes/mark-zuckerberg/the-technology-behind-aquila/10153916136506634/&quot;&gt;Facebook’s Aquila&lt;/a&gt;, and &lt;a href=&quot;https://www.aurora.aero/odysseus-high-altitude-pseudo-satellite-haps/&quot;&gt;Aurora’s Odysseus&lt;/a&gt;.&lt;/p&gt;
 
