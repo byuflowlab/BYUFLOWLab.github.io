@@ -4,13 +4,22 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2022-01-14T17:56:00-07:00</updated>
+ <updated>2022-01-14T17:59:43-07:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Optimization Book Available</title>
+   <link href="http://flow.byu.edu/posts/opt-book"/>
+   <updated>2021-10-15T00:00:00-06:00</updated>
+   <id>http://flow.byu.edu/posts/opt-book</id>
+   <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6853387400052391936&quot; height=&quot;698&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
  
  <entry>
    <title>BEM Paper</title>
