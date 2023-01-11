@@ -87,7 +87,7 @@
       
     </nav>
 
-    <p>&copy; 2022. All rights reserved.</p>
+    <p>&copy; 2023. All rights reserved.</p>
   </div>
 </div>
 
@@ -136,6 +136,7 @@
 
 <h3 id="other-guidelines">Other Guidelines</h3>
 <ul>
+  <li>Become familiar with the <a href="https://docs.julialang.org/en/v1/manual/performance-tips/">Julia performance tips</a></li>
   <li><strong>Don’t</strong> add type annotations for functions arguments unless needed for dispatch.  You can note recommended types in documentation but adding types does not improve performance, and it limits flexibility of usage.  Even if you have a specific struct type or abstract type, don’t restrict it as someone will surely want to use their own type that uses your interface (duck-typing).</li>
   <li><strong>Do</strong> add type annotations for structs.  This is necessary for performance.  But you should do it <strong>parametrically</strong>.  Usually you use need one annotation (TF: type float), but below is a more general case with different types, an abstractarray.
     <div class="language-julia highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span><span class="nc"> MyType</span><span class="x">{</span><span class="n">TF</span><span class="x">,</span> <span class="n">TI</span><span class="x">,</span> <span class="n">TA</span><span class="o">&lt;:</span><span class="kt">AbstractVector</span><span class="x">{</span><span class="n">TF</span><span class="x">}}</span>
@@ -148,7 +149,7 @@
   </li>
   <li>Usually avoid mutable structs and dictionaries.  Besides the performance hit, these objects are stateful meaning you can easily have side effects that are hard to test for and are the source for lots of bugs.  (there are exceptions when thought through carefully).</li>
   <li>If you do modify arguments to a function add ! to the end of the function name and make it very clear what is being modified.</li>
-  <li>Use standard style.  Here is a <a href="https://github.com/jrevels/YASGuide">good guide</a>.  Most importantly, use common sense.</li>
+  <li>Use standard style.  Here is a <a href="https://github.com/invenia/BlueStyle">good guide</a>.  Most importantly, use common sense.</li>
   <li>Use @code_warntype to check for type stability.</li>
 </ul>
 
