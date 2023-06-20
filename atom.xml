@@ -4,7 +4,7 @@
  <title>FLOW Lab</title>
  <link href="http://flow.byu.edu/atom.xml" rel="self"/>
  <link href="http://flow.byu.edu/"/>
- <updated>2023-05-17T10:05:36-06:00</updated>
+ <updated>2023-06-20T11:17:38+02:00</updated>
  <id>http://flow.byu.edu</id>
  <author>
    <name>Andrew Ning</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Optimization Book Available</title>
    <link href="http://flow.byu.edu/posts/opt-book"/>
-   <updated>2021-10-15T00:00:00-06:00</updated>
+   <updated>2021-10-15T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/opt-book</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6853387400052391936&quot; height=&quot;698&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -24,7 +24,7 @@
  <entry>
    <title>BEM Paper</title>
    <link href="http://flow.byu.edu/posts/bem-paper"/>
-   <updated>2021-07-30T00:00:00-06:00</updated>
+   <updated>2021-07-30T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/bem-paper</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6825450879324434432&quot; height=&quot;622&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -33,7 +33,7 @@
  <entry>
    <title>Eduardo Research Update</title>
    <link href="http://flow.byu.edu/posts/eduardo-latest"/>
-   <updated>2021-03-01T00:00:00-07:00</updated>
+   <updated>2021-03-01T00:00:00+01:00</updated>
    <id>http://flow.byu.edu/posts/eduardo-latest</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6779795433318420480&quot; height=&quot;1142&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -42,7 +42,7 @@
  <entry>
    <title>Reformulated VPM</title>
    <link href="http://flow.byu.edu/posts/reformulated-vpm"/>
-   <updated>2021-02-01T00:00:00-07:00</updated>
+   <updated>2021-02-01T00:00:00+01:00</updated>
    <id>http://flow.byu.edu/posts/reformulated-vpm</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6767685749157588992&quot; height=&quot;990&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -51,7 +51,7 @@
  <entry>
    <title>Optimization Book Announcement</title>
    <link href="http://flow.byu.edu/posts/optimization-book"/>
-   <updated>2021-01-20T00:00:00-07:00</updated>
+   <updated>2021-01-20T00:00:00+01:00</updated>
    <id>http://flow.byu.edu/posts/optimization-book</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6758135437300154368&quot; height=&quot;679&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -60,7 +60,7 @@
  <entry>
    <title>PJ Defense</title>
    <link href="http://flow.byu.edu/posts/pj-defense"/>
-   <updated>2020-09-30T00:00:00-06:00</updated>
+   <updated>2020-09-30T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/pj-defense</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6714312529692237824&quot; height=&quot;641&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -69,7 +69,7 @@
  <entry>
    <title>VPM Paper</title>
    <link href="http://flow.byu.edu/posts/vpm-paper"/>
-   <updated>2020-08-30T00:00:00-06:00</updated>
+   <updated>2020-08-30T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/vpm-paper</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6711406263634419712&quot; height=&quot;857&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -78,7 +78,7 @@
  <entry>
    <title>Airborne Wind with Vortex Particle Method</title>
    <link href="http://flow.byu.edu/posts/wind-harvesting"/>
-   <updated>2020-08-16T00:00:00-06:00</updated>
+   <updated>2020-08-16T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/wind-harvesting</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6694076731474739200&quot; height=&quot;949&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -87,7 +87,7 @@
  <entry>
    <title>Eduardo's Past Three Years</title>
    <link href="http://flow.byu.edu/posts/eduardo-three-years"/>
-   <updated>2020-08-10T00:00:00-06:00</updated>
+   <updated>2020-08-10T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/eduardo-three-years</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6689985497042944000&quot; height=&quot;797&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -96,7 +96,7 @@
  <entry>
    <title>FLOWUnsteady in Google Drive</title>
    <link href="http://flow.byu.edu/posts/google-drive-vpm"/>
-   <updated>2020-08-02T00:00:00-06:00</updated>
+   <updated>2020-08-02T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/google-drive-vpm</id>
    <content type="html">&lt;iframe src=&quot;https://www.linkedin.com/embed/feed/update/urn:li:share:6689003185174118400&quot; height=&quot;1094&quot; width=&quot;504&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; title=&quot;Embedded post&quot;&gt;&lt;/iframe&gt;
 </content>
@@ -105,7 +105,7 @@
  <entry>
    <title>Takeoff and Performance Tradeoffs of Retrofit Distributed Electric Propulsion for Urban Transport</title>
    <link href="http://flow.byu.edu/posts/electric-stol"/>
-   <updated>2019-09-05T00:00:00-06:00</updated>
+   <updated>2019-09-05T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/electric-stol</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/2ilze6i6aq4srqita1xqdu2sd6m62cqb.gif&quot; alt=&quot;Electric Aircraft Optimization&quot; /&gt;&lt;/p&gt;
 
@@ -142,7 +142,7 @@
  <entry>
    <title>Multirotor - Vortex Particle Method</title>
    <link href="http://flow.byu.edu/posts/multirotor-vpm2"/>
-   <updated>2019-07-01T00:00:00-06:00</updated>
+   <updated>2019-07-01T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/multirotor-vpm2</id>
    <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/SLpnVIBpkps&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
@@ -183,7 +183,7 @@
  <entry>
    <title>Development of a Vertical-Axis Wind Turbine Wake Model</title>
    <link href="http://flow.byu.edu/posts/vawt-wake"/>
-   <updated>2019-06-05T00:00:00-06:00</updated>
+   <updated>2019-06-05T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/vawt-wake</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/posts/vawtV.gif&quot; alt=&quot;Wake Visualization&quot; /&gt;&lt;/p&gt;
 
@@ -216,7 +216,7 @@
  <entry>
    <title>Polynomial Chaos for Wind Farm Power Prediction</title>
    <link href="http://flow.byu.edu/posts/pc-windfarm"/>
-   <updated>2019-05-28T00:00:00-06:00</updated>
+   <updated>2019-05-28T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/pc-windfarm</id>
    <content type="html">&lt;center&gt;
 &lt;img src=&quot;/posts/binned.png&quot; alt=&quot;convergence of AEP&quot; width=&quot;300px&quot; /&gt;
@@ -259,7 +259,7 @@
  <entry>
    <title>Making Julia as Fast as C++</title>
    <link href="http://flow.byu.edu/posts/julia-c++"/>
-   <updated>2019-04-18T00:00:00-06:00</updated>
+   <updated>2019-04-18T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/juliacpp</id>
    <content type="html">&lt;center&gt;
 &lt;img src=&quot;/posts/vortex00.gif&quot; alt=&quot;Vid here&quot; width=&quot;500px&quot; /&gt;
@@ -1667,7 +1667,7 @@ Available&lt;/a&gt;&lt;/li&gt;
  <entry>
    <title>Coupled Wind Turbine Design and Layout Optimization</title>
    <link href="http://flow.byu.edu/posts/coupled-turbine-farm"/>
-   <updated>2019-02-13T00:00:00-07:00</updated>
+   <updated>2019-02-13T00:00:00+01:00</updated>
    <id>http://flow.byu.edu/posts/coupled-turbine.farm</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;https://byu.box.com/shared/static/prvuhcsgo0qdnwm4zbqugzxhl0wcxols.gif&quot; alt=&quot;animation&quot; /&gt;&lt;/p&gt;
 
@@ -1701,7 +1701,7 @@ Available&lt;/a&gt;&lt;/li&gt;
  <entry>
    <title>Trajectory Optimization for High Altitude Long Endurance Aircraft</title>
    <link href="http://flow.byu.edu/posts/hale-trajectory"/>
-   <updated>2018-12-18T00:00:00-07:00</updated>
+   <updated>2018-12-18T00:00:00+01:00</updated>
    <id>http://flow.byu.edu/posts/traj-martin</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/posts/solar.png&quot; alt=&quot;NASA Helios&quot; /&gt;&lt;/p&gt;
 
@@ -1775,7 +1775,7 @@ Available&lt;/a&gt;&lt;/li&gt;
  <entry>
    <title>Multirotor - Vortex Particle Method</title>
    <link href="http://flow.byu.edu/posts/multirotor-vpm"/>
-   <updated>2018-07-12T00:00:00-06:00</updated>
+   <updated>2018-07-12T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/multirotor-vpm</id>
    <content type="html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CP4jI7lLags&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
@@ -1801,7 +1801,7 @@ Available&lt;/a&gt;&lt;/li&gt;
  <entry>
    <title>Julia for the Win</title>
    <link href="http://flow.byu.edu/posts/julia-ftw"/>
-   <updated>2016-05-16T00:00:00-06:00</updated>
+   <updated>2016-05-16T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/julia-ftw</id>
    <content type="html">&lt;p&gt;In updating a paper to prepare for journal submission I needed to revisit the accompanying Julia code.  I chose Julia at the time because this was a mostly self-contained project and I wanted to give Julia a trial run on something of moderate complexity (see &lt;a href=&quot;http://flow.byu.edu/posts/julia-first-imp&quot;&gt;first impressions&lt;/a&gt;).  I cleaned up the code, added some capabilities, and really tried to improve performance.  I read all the primary documentation on Julia, including the sections on performance, updated to 0.4.x, explicitly declared all types, and profiled quite a bit.  This made some difference, but my code was still about an order of magnitude slower than a Python/Fortran version.&lt;/p&gt;
 
@@ -1824,7 +1824,7 @@ P.S. If interested in the mentioned code, I have open-sourced it and it is avail
  <entry>
    <title>Julia First Impressions</title>
    <link href="http://flow.byu.edu/posts/julia-first-imp"/>
-   <updated>2015-08-26T00:00:00-06:00</updated>
+   <updated>2015-08-26T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/julia-first-imp</id>
    <content type="html">&lt;p&gt;I’m primarily a Python user, and my primary use is scientific computing.  Over the last few years, I’ve followed Julia’s development and looked through documentation and various benchmarks multiple times.  I was intrigued by the potential.  However, it’s one thing to read about a programming language, and another to use it for yourself.  I asked a couple of my undergraduate students to use it for an exploratory project on aircraft design.  These students had some programming experience, and seemed to be able to complete the tasks just fine.  However, those problems were relatively simple and I needed to take Julia for a test drive myself on a larger problem to evaluate whether or not it was something worth switching to, for at least some of our lab projects.&lt;/p&gt;
 
@@ -1875,7 +1875,7 @@ P.S. If interested in the mentioned code, I have open-sourced it and it is avail
  <entry>
    <title>Scientific Programming Languages</title>
    <link href="http://flow.byu.edu/posts/sci-prog-lang"/>
-   <updated>2015-08-11T00:00:00-06:00</updated>
+   <updated>2015-08-11T00:00:00+02:00</updated>
    <id>http://flow.byu.edu/posts/sci-prog-lang</id>
    <content type="html">&lt;p&gt;I’ve used a number of scientific programming languages over the past 16 years: C++, C, Matlab, Java, Fortran, Python, and Julia, and I wouldn’t name any one as the “best” (I’ve also used Objective-C, JavaScript, and PHP quite a bit, but not for scientific computing).  Usually I try to pick the right tool for the job, not necessarily just the tool I happen to know best (as they say: if all you have is a hammer, everything looks like a nail).  However, my usage has evolved over the years from Matlab-centric, to Python-centric, and I’m contemplating a move to Julia-centric.  Before explaining why, let’s discuss some of the reasons why I might choose one language over the others.&lt;/p&gt;
 
