@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW 9 &middot; ME 415
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me415">
+          ME 415
+        </a>
+      </h1>
+      <p class="lead">Flight Vehicle Design</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me415/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me415/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me415/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW 9</h1> -->
+      <h1 id="hw-9-rockets">HW 9: Rockets</h1>
+
+<p>due 12/6/2017 before midnight via Learning Suite
+<span style="float:right;">50 possible points</span></p>
+
+<p>All of these exercises will be done in class (though some of you may need a little extra time outside of class to finish up).  I’d like to give you practice with rocket analyses, while still preserving your out of class time for finishing up your plane and report.</p>
+
+<ol>
+  <li>
+    <p>Basic Sizing of a Rocket Engine.  Some parameters for a liquid-fueled rocket engine are given below:</p>
+
+    <table style="max-width: 500px;">
+      <tbody>
+        <tr>
+          <td>\(\gamma\)</td>
+          <td>ratio of specific heats for combustion gas mixture</td>
+          <td>1.2</td>
+        </tr>
+        <tr>
+          <td>\(M_w\)</td>
+          <td>molecular weight of combustion gas mixture</td>
+          <td>12 (g/mol)</td>
+        </tr>
+        <tr>
+          <td>\(T_{Tc}\)</td>
+          <td>combustion (total) temperature</td>
+          <td>3500 K</td>
+        </tr>
+        <tr>
+          <td>\(P_{Tc}\)</td>
+          <td>combustion (total) pressure</td>
+          <td>20 MPa</td>
+        </tr>
+        <tr>
+          <td>\(I_{sp}\)</td>
+          <td>required specific impulse at altitude</td>
+          <td>400 seconds</td>
+        </tr>
+        <tr>
+          <td>\(T\)</td>
+          <td>required thrust at altitude</td>
+          <td>2 MN</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>nozzle type</td>
+          <td>80% bell nozzle</td>
+        </tr>
+        <tr>
+          <td>\(\sigma_c\)</td>
+          <td>max allowable stress in combustion chamber wall</td>
+          <td>55 MPa</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Design for peak efficiency at an altitude of 12.5 km (shortly after max-Q).  The required thrust and specific impulse apply at this altitude.</p>
+
+    <p>Determine/design the following:</p>
+
+    <ul>
+      <li>the areas (3) at the end of the combustion chamber, throat, and exit.</li>
+      <li>the lengths (3) of the combustion chamber, the converging, and diverging sections of the nozzle.</li>
+      <li>the wall thickness (1) of the combustion chamber assuming a thin-shell cylindrical combustion chamber.</li>
+      <li>Draw your nozzle to scale.</li>
+    </ul>
+
+    <p>Note: These specs correspond to the Space Shuttle Main Engine so you can check some of your numbers (though don’t expect them to be exactly the same, there are important boundary layer losses and multiphase flow losses on a nozzle that we are neglecting).</p>
+  </li>
+  <li>
+    <p>Basic Sizing/Performance of a Rocket.  The worksheet is available online.  I’ve already laid out the methodology so you don’t need to repeat it here.  Just report the four critical values, and include a brief discussion on any lessons learned.</p>
+  </li>
+</ol>
+
+<!-- 3. Orbital Mechanics.  Coming Monday. -->
+
+<!-- 3. You spend the rest of your time finishing your project and report. -->
+
+    </div>
+
+  </body>
+</html>
