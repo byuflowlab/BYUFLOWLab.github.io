@@ -193,7 +193,7 @@ th:empty { display: none; }
 
 @media (min-width: 48em) {
   .layout-top .content {
-    max-width: 58rem;
+    /* max-width: 58rem; */
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -212,6 +212,9 @@ th:empty { display: none; }
 
 }
 
+.wider{
+  max-width: 58rem;
+}
 
 /* fix table column widths for course page */
 .class-schedule{
@@ -301,18 +304,18 @@ th:empty { display: none; }
   background-color: #ffffff;
 }
 
-.two-class tbody tr:nth-child(3n+1) td,
-.two-class tbody tr:nth-child(3n+1) th {
+.two-class tbody tr:nth-child(3n) td,
+.two-class tbody tr:nth-child(3n) th {
   background-color: #f9f9f9;
 }
 
-.three-class tbody tr:nth-child(4n+1) td,
-.three-class tbody tr:nth-child(4n+1) th {
+.three-class tbody tr:nth-child(4n) td,
+.three-class tbody tr:nth-child(4n) th {
   background-color: #f9f9f9;
 }
 
-.four-class tbody tr:nth-child(5n+1) td,
-.four-class tbody tr:nth-child(5n+1) th {
+.four-class tbody tr:nth-child(5n) td,
+.four-class tbody tr:nth-child(5n) th {
   background-color: #f9f9f9;
 }
 

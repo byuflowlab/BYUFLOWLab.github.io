@@ -90,78 +90,72 @@
     <!-- <h1 class="page-title">HW 1</h1> -->
       <h1 id="hw-1-configuration">HW 1: Configuration</h1>
 
-<p>due 9/20/2017 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
+<p>due 1/11/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
 
 <hr />
 
-<p><strong>Reminder</strong>: Project homework is just like any other homework.  You are welcome to work together, but each person must do their own work.  Each person will need to know how to complete the assigned tasks.</p>
-
-<p><strong>Tip</strong>: Your design <em>will</em> evolve over the semester and so you will need to redo calculations.  This will be easier if you perform any computations you might reuse in a programming language or in spreadsheets (with clear comments).</p>
-
-<h4 id="project">Project</h4>
-
+<p><strong>1.1</strong> Here is a list of ten very different aircraft:</p>
 <ol>
-  <li>
-    <p>Choose your team and create a team name.  Report your team name, the team leader, and the names of all members of the team.</p>
-  </li>
-  <li>
-    <p>Choose the configuration for your aircraft (you aren’t locked in).  In making your selection, evaluate at least three different aircraft configurations, and provide justification for your choice.  You aren’t expected to know all the pros and cons of the various design choices, but do some  research to help you understand some of the high-level tradeoffs.  Some design choices to think about include, but are not limited to: tail vs canard vs flying wing, tail type (H, V, T, etc.), pusher vs tractor, fuselage type, materials, basic wing sizing (at least the wingspan), use of winglets or not, etc.  Provide a top view (or even better a 3-view) of the design and some of the primary dimensions.</p>
-  </li>
-  <li>
-    <p>Estimate the total mass of your aircraft in grams, including all electronic components.  At this stage there are some things you can measure directly and others that you will need to estimate.  Electrical components will all be (more or less) the same for all teams, but the airframe mass will differ depending on your specific design.  Make estimates for each component (i.e., wing, horizontal tail, etc.), as opposed to the airframe all at once.  Rough estimates are ok at this stage, but there needs to be a rational basis for the estimates.</p>
-  </li>
+  <li>Boom Overture</li>
+  <li>Joby Aviation</li>
+  <li>Rutan Long-EZ</li>
+  <li>Airbus Zephyr</li>
+  <li>Aurora D8</li>
+  <li>Airbus Beluga</li>
+  <li>Lockeed Martin F-35 JSF</li>
+  <li>Icon A5</li>
+  <li>Scaled Composites White Knight 2</li>
+  <li>Boeing 777X</li>
 </ol>
 
-<h4 id="general">General</h4>
+<p>Choose four to read about in some detail. Write a brief summary (one paragraph max for each) and compare/contrast some of their key performance metrics and intended use cases.</p>
 
-<ol start="4">
-  <li>
-    <p>Consider a commercial transport with the following parameters:</p>
+<p><strong>1.2</strong>  Consider a commercial transport with the following parameters:</p>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>wing span</td>
-          <td>61 m</td>
-        </tr>
-        <tr>
-          <td>reference wing area</td>
-          <td>325 m\(^2\)</td>
-        </tr>
-        <tr>
-          <td>mass</td>
-          <td>200,000 kg</td>
-        </tr>
-        <tr>
-          <td>Mach number</td>
-          <td>0.82</td>
-        </tr>
-        <tr>
-          <td>zero lift drag coefficient</td>
-          <td>0.01</td>
-        </tr>
-        <tr>
-          <td>Oswald efficiency factor</td>
-          <td>0.7</td>
-        </tr>
-      </tbody>
-    </table>
+<table style="max-width: 500px;">
+  <tbody>
+    <tr>
+      <td>wing span (\(b\))</td>
+      <td>61 m</td>
+    </tr>
+    <tr>
+      <td>reference wing area (\(S_{ref}\))</td>
+      <td>325 m\(^2\)</td>
+    </tr>
+    <tr>
+      <td>mass</td>
+      <td>200,000 kg</td>
+    </tr>
+    <tr>
+      <td>Mach number</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <td>zero lift (parasitic) drag coefficient (\({C_D}_p\))</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <td>Oswald efficiency factor (\(e\))</td>
+      <td>0.7</td>
+    </tr>
+  </tbody>
+</table>
 
-    <p>We want to find the optimal altitude to fly at that will maximize specific range (which is the distance flown per unit weight of fuel burn).  Assume a constant Mach number and steady, level flight.  Later in the semester we will learn more about propulsion, but for now we will ignore changes in propulsive efficiency with altitude.  Using that assumption implies that we should maximize the following metric:</p>
+<p>Find the optimal altitude to fly at that will maximize specific range, which is the distance flown per unit weight of fuel burn. Assume a constant Mach number and steady, level flight. Later in the semester we will learn more about propulsion, but for now we will ignore changes in propulsive efficiency with altitude. Using that assumption implies that we should maximize the following metric:</p>
 
 \[V \frac{L}{D}\]
 
-    <p>where \(V\) is the flight speed.  Plot this metric as a function of altitude (interpretation of altitude is often more intuitive if plotted on the y-axis), and determine the optimal altitude.</p>
+<p>where \(V\) is the flight speed.</p>
 
-    <p>During the flight the aircraft will become lighter as it burns fuel.  How would the optimal altitude change over time (stay the same, increase, decrease)?  Why (provide a physical explanation)?</p>
-  </li>
-</ol>
+<p>We haven’t covered all of drag yet, so for now here is the equation you should use (the relevant symbols are noted in the table above):</p>
 
-<!-- 1.  Repeat the same calculations (i.e., in the optimal altitude), but for the  supersonic business jet proposed by [Aerion](http://www.aerionsupersonic.com/) at its supersonic cruise speed.  Remember to include compressibility drag!
-<!-- as a function of Mach number (supersonic speeds only).   -->
+\[D = {C_D}_p q S_{ref} + \frac{L^2}{q \pi b^2 e}\]
 
-<!-- Show also the time of flight as a function of Mach number, assuming cruise the entire time, for a 4500 nmi flight (i.e., San Fransisco to Tokyo).   -->
+<ul>
+  <li>Plot the specific range \(V \frac{L}{D}\) as a function of altitude with altitude on the y-axis (makes the interpretation more intuitive) and determine the optimal altitude.</li>
+  <li>During the flight the aircraft will become lighter as it burns fuel. How would the optimal altitude change over time (stay the same, increase, decrease)? Provide an explanation as to why.</li>
+</ul>
 
     </div>
 
