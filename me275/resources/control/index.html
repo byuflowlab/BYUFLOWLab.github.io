@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Controller &middot; ME 415
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me415">
+          ME 415
+        </a>
+      </h1>
+      <p class="lead">Flight Vehicle Design</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me415/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me415/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me415/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Controller</h1> -->
+      <h2 id="controller-design">Controller Design</h2>
+
+<p>A template for your controller is available here: <a href="https://github.com/byuflowlab/autopilot-me415">https://github.com/byuflowlab/autopilot-me415</a> in the file autopilot.py.  The code is written in Python.  Your code goes in the location noted “edit starting right here!!!!”.  This function is called at a 10 Hz frequency (it is being called for you so don’t try to add your own while loop).  At each time step you will have access to updated GPS information.  At the end of the function you output the control commands you want for that time step: throttle, aileron, elevator, rudder — you can do your own mixing if you have other configurations like a V-tail.</p>
+
+<p>If you want to save data you can add your own instance variables to the object, which will persist. For example, say you wanted to save a history of your latitudes.  You could start an empty list in the <code class="language-plaintext highlighter-rouge">__init__</code> function</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">self</span><span class="p">.</span><span class="n">latitudes</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># initializing empty list
+</span></code></pre></div></div>
+<p>then in the <code class="language-plaintext highlighter-rouge">control</code> function you could append to the list every time step.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">self</span><span class="p">.</span><span class="n">latitudes</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">latitudes</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">currentGPS</span><span class="p">.</span><span class="n">latitude</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>You might also want to add your own custom print commands.  This will be viewable from your laptop during the flight so that you can track what’s going on and abort if necessary.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span> <span class="s">'distance to waypoint = '</span><span class="p">,</span> <span class="n">distance_to_next_waypoint</span>
+<span class="k">print</span> <span class="s">'heading error = '</span><span class="p">,</span> <span class="n">heading_error</span>
+<span class="k">print</span>
+</code></pre></div></div>
+
+<p>We also have provided some commands for you in the <code class="language-plaintext highlighter-rouge">check_status</code> function that will tell you if your altitude is too low/high, if you are going out of bounds, or if you have reached a waypoint.  If you are going out of the altitude range or the established permiter you will need to take over RC and return to safety.</p>
+
+<h2 id="plane-data">Plane Data</h2>
+
+<p>To use Gazebo you’ll need to modify the plane_params.yaml file available at the same link <a href="https://github.com/byuflowlab/autopilot-me415">https://github.com/byuflowlab/autopilot-me415</a>. In order to simulate your plane you need to provide mass, moments of inertia, reference areas/lengths, stall information, motor/prop data, stability derivatives, and control derivatives.</p>
+
+<h2 id="gazebo">Gazebo</h2>
+
+<p>There is a dedicated computer in the Airplane Lab for running Gazebo.  Gazebo allows you to perform software-in-the-loop testing.  You will need to have your autopilot.py and plane_params.yaml files ready.  Instructions for running Gazebo are available on the computer’s desktop in a file called instructions.txt.</p>
+
+    </div>
+
+  </body>
+</html>

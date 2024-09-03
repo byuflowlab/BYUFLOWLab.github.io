@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW 1 &middot; ME 275
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me275">
+          ME 275
+        </a>
+      </h1>
+      <p class="lead">Computaitional Methods</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me275/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me275/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me275/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW 1</h1> -->
+      <h1 id="hw-1">HW 1</h1>
+
+<p>due 9/12/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<p><strong>1.1</strong> One infamous incident involving roundoff error led to the death of 28 Americans.  A patriot missile defense system, used during the Gulf War, was designed to track and intercept incoming scud missiles.  The potential for a roundoff error had been identified, but the software patch arrived the day after the incident (the full report is available at <a href="https://www.gao.gov/assets/imtec-92-26.pdf">GAO/IMTEC-92-26</a>).</p>
+
+<p>When the computer that controlled the defense system was booted up, a clock kept track of time elapsed by incrementing an integer every tenth of a second.  But the value for a tenth of a second was stored as a 24 bit binary number:</p>
+
+\[0.00011001100110011001100 \text{ (base 2)}\]
+
+<p>Because this number is not exactly 0.1, error would accumulate the longer the computer was on.  In this case the computer had been on for over 100 hours (much longer than they originally anticipated).</p>
+
+<p>Assuming the computer was on for 100 hours, and the missiles had a speed of 1670 m/s (near Mach 5), what would be the distance error in the predicted missile location due the internal time error (or in other words how far would the missile travel during the time offset)?</p>
+
+<p><strong>1.2</strong>  In aerospace applications we need a model of atmospheric properties.  The International Standard Atmosphere provides a common reference for temperature and pressure as a function of altitude.  The temperature varies in altitude (where \(T\) is in Kelvin and \(h\) is in km) as:</p>
+
+\[T(h) = \begin{cases}
+288.15 - 6.5 h &amp; 0 &lt; h &lt; 11 \text{ km} \\
+216.65 &amp; 11 &lt; h &lt; 20 \text{ km} \\
+216.65 + h &amp; 20 &lt; h &lt; 32 \text{ km} \\
+228.65 + 2.8 h &amp; 32 &lt; h &lt; 47 \text{ km} \\
+270.65 &amp; 47 &lt; h &lt; 51 \text{ km} \\
+270.65  -2.8 h &amp; 51 &lt; h &lt; 71 \text{ km} \\
+214.65  -2 h &amp; 71 &lt; h &lt; 84 \text{ km} \\
+\end{cases}\]
+
+<p>Plot the temperature as a function of altitude. Normally we put the dependent variable on the \(y\)-axis, but in this case it usually makes interpretation easier to plot altitude on the \(y\) axis (since it is vertical).  Be sure to add appropriate labels and units.</p>
+
+<p><strong>1.3</strong> In robotics applications we frequently want to convert between coordinate systems.  Make a function <code class="language-plaintext highlighter-rouge">polar2cart(r, theta)</code> that converts from polar coordinates to Cartesian where the inputs <code class="language-plaintext highlighter-rouge">r</code> and <code class="language-plaintext highlighter-rouge">theta</code> are scalars and <code class="language-plaintext highlighter-rouge">theta</code> is in degrees.  Then create the inverse function <code class="language-plaintext highlighter-rouge">cart2polar(x, y)</code>.  Check your results by converting from polar to Cartesian then back again.</p>
+
+<p>Now create the same two functions but for numpy array inputs.  Let’s call them <code class="language-plaintext highlighter-rouge">polar2cart_np(r, theta)</code> and <code class="language-plaintext highlighter-rouge">cart2polar_np(x, y)</code>.  Again, check by converting then converting back an array of inputs.</p>
+
+<p><em>Hint</em>: converting from polar to Cartesian is straightforward, but the opposite is a bit trickier.  This is because <code class="language-plaintext highlighter-rouge">atan(z)</code> takes in only one input <code class="language-plaintext highlighter-rouge">z</code>, which represents a ratio <code class="language-plaintext highlighter-rouge">z = y/x</code>.  So if <code class="language-plaintext highlighter-rouge">z</code> is positive we don’t know if <code class="language-plaintext highlighter-rouge">y</code> and <code class="language-plaintext highlighter-rouge">x</code> are both positive (angles between 0 and 90 deg) or they are both negative (angles between 180 to 270 deg).  The function <code class="language-plaintext highlighter-rouge">atan</code> assumes the former, which obviously won’t always be correct for many applications.  Instead, you’ll want to use a two-argument version of atan: <code class="language-plaintext highlighter-rouge">math.atan2(y, x)</code> or <code class="language-plaintext highlighter-rouge">np.arctan2(y, x)</code>.</p>
+
+<p><em>Note</em>: Creating separate names with <code class="language-plaintext highlighter-rouge">_np</code> is not really desirable.  In other programming languages you can <em>overload</em> a function name with different types, but that isn’t really supported in Python.  The usual approach in numpy is to have one function name, but add checks on whether the inputs are scalars or arrays then proceed accordingly.  Not required, but if interested, see if you can make that work.</p>
+
+<p><strong>1.4</strong></p>
+
+<p>a) Create a function <code class="language-plaintext highlighter-rouge">avg(x)</code> that takes in a numpy array <code class="language-plaintext highlighter-rouge">x</code> and returns the average.  Note that <code class="language-plaintext highlighter-rouge">np.mean</code> does this already, but we’re going to write our own for this exercise.</p>
+
+<p>b) Create a new function <code class="language-plaintext highlighter-rouge">mavg(x, c)</code> that takes in a constant <code class="language-plaintext highlighter-rouge">c</code> that multiplies against the average.  Make the default for c = 1 if the user doesn’t enter a value.</p>
+
+<p>c) Create a new function <code class="language-plaintext highlighter-rouge">wavg(x, w)</code> that computes a weighted average:</p>
+
+\[\bar{x} = \frac{\sum_i w_i x_i}{\sum_i w_i}\]
+
+<p>Typically the weights are chosen to sum to one (though that’s just a convenience for interpretation, it doesn’t affect the weighted average).  So as a simple example, let’s say you took 3 classes and got an A (4.0), B (3.0), and a C (2.0).  But the classes have a different number of credits so a simple average doesn’t make sense for your semester GPA.  The credits were 3, 2, and 1 respectively giving a semester GPA (weighted average) of 3.33.</p>
+
+<p>d) Create a function <code class="language-plaintext highlighter-rouge">tavg(filename)</code> that can take in the name of a text file containing multiple columns of data, read the file, and print the average of each column of data.</p>
+
+<p><em>Hint</em>: In CS110, you learned to read files using methods that are well suited for files with text. However, as an engineer, you will more often deal with data files, and NumPy has convenient built-in functions for writing and reading data files (see for example: <a href="https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html#numpy.loadtxt">loadtxt</a>).</p>
+
+<p>e) Finally, Create a function <code class="language-plaintext highlighter-rouge">favg(x, f)</code> that takes in an array <code class="language-plaintext highlighter-rouge">x</code> and a function <code class="language-plaintext highlighter-rouge">f</code> and return the average of <code class="language-plaintext highlighter-rouge">f(x)</code>.</p>
+
+
+    </div>
+
+  </body>
+</html>

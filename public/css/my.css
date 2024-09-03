@@ -301,6 +301,10 @@ th:empty { display: none; }
   background-color: #ffffff;
 }
 
+.two-class tbody tr:nth-child(3n+1) td,
+.two-class tbody tr:nth-child(3n+1) th {
+  background-color: #f9f9f9;
+}
 
 .three-class tbody tr:nth-child(4n+1) td,
 .three-class tbody tr:nth-child(4n+1) th {
