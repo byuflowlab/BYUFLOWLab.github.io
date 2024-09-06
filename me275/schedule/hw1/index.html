@@ -107,16 +107,13 @@
 
 <p>Create a function called <code class="language-plaintext highlighter-rouge">patriot()</code> that returns your answer in meters.</p>
 
-<p><strong>1.2</strong>  In aerospace applications we need a model of atmospheric properties.  The International Standard Atmosphere provides a common reference for temperature and pressure as a function of altitude.  The temperature varies in altitude (where \(T\) is in Kelvin and \(h\) is in km) as:</p>
+<p><strong>1.2</strong>  In aerospace applications we need a model of atmospheric properties.  The International Standard Atmosphere provides a common reference for temperature and pressure as a function of altitude.  The temperature varies in altitude (where \(T\) is in Kelvin and \(h\) is in km) as (we’ll only go up to 47 km for brevity):</p>
 
 \[T(h) = \begin{cases}
 288.15 - 6.5 h &amp; 0 &lt; h &lt; 11 \text{ km} \\
 216.65 &amp; 11 &lt; h &lt; 20 \text{ km} \\
-216.65 + h &amp; 20 &lt; h &lt; 32 \text{ km} \\
-228.65 + 2.8 h &amp; 32 &lt; h &lt; 47 \text{ km} \\
-270.65 &amp; 47 &lt; h &lt; 51 \text{ km} \\
-270.65  -2.8 h &amp; 51 &lt; h &lt; 71 \text{ km} \\
-214.65  -2 h &amp; 71 &lt; h &lt; 84 \text{ km} \\
+216.65 + (h - 20) &amp; 20 &lt; h &lt; 32 \text{ km} \\
+228.65 + 2.8 (h - 32) &amp; 32 &lt; h &lt; 47 \text{ km} \\
 \end{cases}\]
 
 <p>Plot the temperature as a function of altitude. Normally we put the dependent variable on the \(y\)-axis, but in this case it usually makes interpretation easier to plot altitude on the \(y\) axis (since it is vertical).  Be sure to add appropriate labels and units.</p>
