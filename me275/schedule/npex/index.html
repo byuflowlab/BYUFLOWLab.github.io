@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Numpy Exercises &middot; ME 275
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me275">
+          ME 275
+        </a>
+      </h1>
+      <p class="lead">Computaitional Methods</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me275/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me275/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me275/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">Numpy Exercises</h1> -->
+      <p>First make sure to import numpy</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<h3 id="exercises">Exercises</h3>
+
+<p>1) create a linearly spaced array starting at 0, ending at 3, with 30 elements</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py1');">[Show Solution]</a></p>
+<div id="py1" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</code></pre></div>  </div>
+</div>
+
+<p>2) create an array of all threes (length 10)</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py2');">[Show Solution]</a></p>
+<div id="py2" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>  </div>
+</div>
+
+<p>3) create the following matrix as a 2d array</p>
+
+\[\begin{bmatrix}
+4 &amp; 6 &amp; 6  &amp; 9\\
+7 &amp; 4 &amp; 10 &amp;  5\\
+1 &amp; 6  &amp; 4  &amp; 10
+\end{bmatrix}\]
+
+<p><a href="#nowhere" onclick="toggle_visibility('py3');">[Show Solution]</a></p>
+<div id="py3" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+             <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
+</code></pre></div>  </div>
+</div>
+
+<p>4) find the dimensions of the above matrix and store the number of rows and columns</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py4');">[Show Solution]</a></p>
+<div id="py4" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span>
+</code></pre></div>  </div>
+</div>
+
+<p>5) print the element in the second row, third column</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py5');">[Show Solution]</a></p>
+<div id="py5" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># remember that python is 0 based indexing, so the 1 corresponds to second row, and 2 to third column
+</span></code></pre></div>  </div>
+</div>
+
+<p>6) store the third column of the above matrix to a new variable</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py6');">[Show Solution]</a></p>
+<div id="py6" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># the colon means all the rows, instead of a single entry
+</span></code></pre></div>  </div>
+</div>
+
+<p>7) print the last row</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py7');">[Show Solution]</a></p>
+<div id="py7" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>  <span class="c1"># recall that -1 means last entry (and -2 is second to last and so on)
+</span></code></pre></div>  </div>
+</div>
+
+<p>8) multiply the matrix by 2</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py8');">[Show Solution]</a></p>
+<div id="py8" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">B</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">A</span>
+<span class="k">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</code></pre></div>  </div>
+</div>
+
+<p>9) extract all entries from A that are greater than 5 into a vector</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py9');">[Show Solution]</a></p>
+<div id="py9" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">A</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div>  </div>
+</div>
+
+<p>10) define two arrays: a = [1, 2, 3] and b = [2, 2, 2].  See what happens when you multiply them together.</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py10');">[Show Solution]</a></p>
+<div id="py10" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># this behavior is called broadcasting.  same thing will happen with a matrix.  it will do element-by-element multiplication/division/addition/subtraction.
+</span></code></pre></div>  </div>
+</div>
+
+<p>11) print the maximum entry in x</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py11');">[Show Solution]</a></p>
+<div id="py11" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="nb">max</span><span class="p">())</span>
+</code></pre></div>  </div>
+</div>
+
+<p>12) stack the two vectors on top of eachother to create a matrix of size 2x3 (try vstack or concatenate)</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py12');">[Show Solution]</a></p>
+<div id="py12" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+</code></pre></div>  </div>
+</div>
+
+<p>13) transpose the resulting matrix</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py13');">[Show Solution]</a></p>
+<div id="py13" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">T</span>
+</code></pre></div>  </div>
+</div>
+
+<p>14) reverse the order of a</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py14');">[Show Solution]</a></p>
+<div id="py14" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># a stride of -1 means reverse, same as in lists.
+</span><span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">flip</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># or use a built-in method
+</span></code></pre></div>  </div>
+</div>
+
+<p>15) (challenge): calculate the mean squared error between a and b (subtract them, square result, then compute average of result)</p>
+
+<p><a href="#nowhere" onclick="toggle_visibility('py15');">[Show Solution]</a></p>
+<div id="py15" class="solution">
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">np</span><span class="p">.</span><span class="nb">sum</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># or use built in method
+</span></code></pre></div>  </div>
+</div>
+
+    </div>
+
+  </body>
+</html>
