@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW 2 &middot; ME 275
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me275">
+          ME 275
+        </a>
+      </h1>
+      <p class="lead">Computaitional Methods</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me275/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me275/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me275/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW 2</h1> -->
+      <h1 id="hw-2">HW 2</h1>
+
+<p>due 9/19/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<p><strong>2.1</strong> <em>Roundoff error</em> occurs because numbers must be represented with limited precision on a computer.
+Write a function to compute the following quantity for an integer input \(n\):</p>
+
+\[\left| \frac{n}{10} - \sum_{i = 1}^n 0.1 \right|\]
+
+<p>Mathematically the result should be zero, but with finite precision arithmetic it will not be zero because of roundoff error (and the error will get worse as \(n\) increases).</p>
+
+<p>Write a loop that computes the absolute error for \(n = 10, 100, 1000, \dots, 1000000\).
+Plot the roundoff error with \(n\) on the x-axis and roundoff error on the y-axis.  When data spans multiple orders of magnitude, as it does in this case, a log scale is usually preferable.  (see <code class="language-plaintext highlighter-rouge">pyplot.loglog</code>).  Always labels your axes!</p>
+
+<p><strong>2.2</strong> <em>Truncation Error</em>.  One method to calculate \(\pi\) is the Leibniz formula:</p>
+
+\[\pi = 4 \sum_{k = 0}^\infty \frac{(-1)^k}{2k + 1}\]
+
+<p>Because we cannot use an infinite number of terms, the resulting error is called truncation error (note that this is different than roundoff error as it would still exist even if we were able to use exact precision numbers with no rounding).  Create a Python script that uses a loop to estimate \(\pi\) using the above formula for \(n = 0, 1, 2, \ldots, 20\) terms.  For each value of \(n\), compute the relative percent error.  Plot the truncation error on the y-axis with both a linear and log scale (two different figures).  In this case \(n\) doesn’t span a large range, but the error does, so you want a semilog plot (see <code class="language-plaintext highlighter-rouge">pyplot.semilogx</code> and <code class="language-plaintext highlighter-rouge">pyplot.semilogy</code>).</p>
+
+<p><strong>2.3</strong> Iterative algorithms are extremely common in engineering problems.  In this problem we practice with a basic iterative algorithm that allows one to compute the square root of any positive number \(x\):</p>
+
+\[s_{i+1} = \frac{1}{2}\left(s_i + \frac{x}{s_i} \right)\]
+
+<p>The value \(s_i\) is the current estimate for the square root of \(x\) and \(s_{i+1}\) is an updated estimate (from which we can repeat the process again and again).  Side note: this particular form where the new estimate is computed from an explicit function of the current estimate ($s_{i+1} = f(s_i)$) is called <em>fixed-point iteration</em>.</p>
+
+<p>To implement this algorithm, it is perhaps easiest to start with a for loop for some fixed number of iterations.  We won’t know how many iterations are needed to converge beforehand, but we can experiment.  If that seems to be working well, then replace the for loop with a better version: a while loop that stops once the relative error drops below \(10^{-6}\).  In computing the relative error we don’t actually know the exact answer to compare to, which is a common scenario, so we use the new estimate as the “true answer” and compare to the prior value.</p>
+
+<p><strong>2.4</strong> bisection.  free-fall.</p>
+
+<!-- NM 4.12 and 4.15
+
+Hints for 4.15:
+
+In the first sentence, "of O(h)" simply notes that the forward and backward difference derivatives inherently have truncation errors on the order of h. In other words, the difference between the true derivative and the derivative approximated by the forward or backward difference derivative is proportional to h. Similarly, "of O(h2)" simply notes that the centered difference derivative inherently has truncation error on the order of h2. Since h is small, h2 is even smaller, so the centered difference derivative has smaller error (and is therefore more accurate) than the forward and backward difference derivatives. Do you find this to be true for this equation, too?
+Skip the last sentence ("Interpret your results on the basis of the remainder term of the Taylor series expansion"). -->
+
+    </div>
+
+  </body>
+</html>
