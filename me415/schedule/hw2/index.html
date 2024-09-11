@@ -88,47 +88,32 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW 2</h1> -->
-      <h1 id="hw-2-drag-and-airfoils">HW 2: Drag and Airfoils</h1>
+      <h1 id="hw-2-parasitic-drag-and-airfoils">HW 2: Parasitic Drag and Airfoils</h1>
 
-<p>due 9/27/2017 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
-
-<!-- #### Project -->
+<p>due 9/18/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
 
 <ol>
   <li>
-    <p>Create a function to compute the total drag of your aircraft during steady, level flight.</p>
+    <p>Compute the parasitic drag for a large commercial airliner. The flight conditions are M = 0.8, altitude = 35,000 ft.  At this Reynolds number the boundary layer will be mostly turbulent so for all components we’ll assume fully turbulent to be conservative.  Note that the tails uses the same formulas as the wing so might be nice to create a reusable function.  You should compute the drag of each component in isolation to keep things simple for this problem.  In other words, don’t try to subtract out the area of the wing that will be buried in the fuselage.</p>
 
-    <p>Create a plot of the lift-to-drag ratio (L/D) as a function of flight speed.  Find the speed that maximizes L/D (note this may not the best long-term metric, but it uses what you know at this stage to provide a rough estimate of the optimal flight speed). Report the design flight speed (speed that maximizes L/D), the corresponding Reynolds number, the corresponding lift coefficient, and the max L/D.  Check that your numbers are reasonable.</p>
-
-    <p>Aside: It may be instructive to visualize the two main components of drag as a function of flight speed.</p>
-  </li>
-  <li>Assuming compressibility drag is negligible, derive an analytic expression in terms of AR, e, CDp for:
     <ul>
-      <li>the lift coefficient that maximizes L/D</li>
-      <li>the corresponding max L/D</li>
+      <li>The wing has a wingspan of 200 ft, aspect ratio of 9, sweep of 30 degrees, and an airfoil thickness to chord ratio of 12% (assumed constant).</li>
+      <li>The horizontal tails have a span of 70 ft, AR = 4, sweep = 25 degrees, t/c = 10%.</li>
+      <li>The vertical tail has a 30 ft half span (it only extends up), AR = 4, sweep = 35 degrees, t/c = 10%.</li>
+      <li>The fuselage has a total length of 210 ft and a maximum diameter of 20 ft.  The nose cone comprises 20 ft of the length, and the tail cone 30 ft of the length (so 160 ft is regular cylinder).</li>
     </ul>
 
-    <p><!-- (Note that the same expression could work for an aircraft with compressibility drag if you broke up the compressibility drag into a parasitic component and a lift-dependent component with a redefined e). --></p>
-
-    <p>Using the values for AR, e, and CDp for your aircraft and its design speed, compare what you found numerically for both CL and L/D with what you find in this simple analytic expression.  If the values are different explain why.</p>
+    <p>You’ll need to turn in work along with your numbers.  Code is fine as work as long as it is reasonably well commented and spaced such that it is easy to follow.</p>
   </li>
-  <li>Using XFOIL, compare the performance of <em>at least</em> three different appropriate airfoils.  Plot their performance on drag polars and lift curves.  Select (or design) an airfoil that is appropriate for your aircraft’s Reynolds number and lift coefficient range.  Plot the geometry.  Describe the rationale for your design decisions.</li>
+  <li>
+    <p>Download the latest version of <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a> and watch the <a href="https://youtu.be/U7saOcozpi8">first tutorial video</a>.  I realize their tutorial videos correspond to an older version of the software so sometimes you have to poke around the menus a bit.  Not ideal, but  better than nothing.</p>
+
+    <p>Using XFLR5, compare the performance of the following three airfoils: NACA 2412, E212, ESA40.  You can find the latter two, and a bunch more, at the following: <a href="https://m-selig.ae.illinois.edu/ads/coord_database.html">database</a>.  The files for these airfoils are fine as is, but for future reference some files in the database are in slightly different formats and need to be adjusted to the <a href="https://v0xnihili.github.io/xfoil-docs/airfoil-file-formats/">expected format</a>.  Analyze the airfoils at a Reynolds number of 100,000 and a Mach number of 0.  Plot a lift curve (\(c_l\) vs \(\alpha\)), drag polar (\(c_l\) vs \(c_d\)), lift to drag ratio (\(l/d\) vs \(\alpha\)), and a moment curve (\(c_m\) vs \(\alpha\)).  Be sure that you analyze a broad enough angle of attack range to include the zero-lift angle of attack on the low end, and stall (or near-stall) at the high end.  Going much past stall is not helpful as the assumptions of the method will be violated. Screenshots are ok, for future reference you can right click to export the data for further calculations or to make better plots.  Briefly comment (a sentence or two) on the differences observed.</p>
+
+    <p>You often need to adjust the scale on drag polars (right click &gt; current graph &gt; define graph settings). Otherwise, if the drag shoots off to high values (past stall) you can barely see the part of the curve that you actually care about (it just looks flat).</p>
+  </li>
 </ol>
-
-<!-- Use CloudFoil -->
-
-<!-- Some important considerations include: drag, weight, and stall speed. -->
-
-<!-- Report the design Reynolds number and lift coefficient for your airfoil (note that the wing coefficient and airfoil coefficient are not generally the same).   -->
-
-<!-- 
-#### General
-
-{:start="4"}
-1. Repeat the optimal altitude problem from the previous homework, but this time for the supersonic business jet proposed by [Aerion](http://www.aerionsupersonic.com/).  Remember to include compressibility drag! -->
-
-<p><!-- at its supersonic cruise speed --></p>
 
     </div>
 
