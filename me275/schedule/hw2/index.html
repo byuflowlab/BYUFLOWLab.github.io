@@ -95,38 +95,49 @@
 
 <hr />
 
-<p><strong>2.1</strong> <em>Roundoff error</em> occurs because numbers must be represented with limited precision on a computer.
-Write a function to compute the following quantity for an integer input \(n\):</p>
+<ol>
+  <li>
+    <p><em>Roundoff error</em> occurs because numbers must be represented with limited precision on a computer.
+ Write a function to compute the following quantity for an integer input \(n\):</p>
 
 \[f(n) = \left| \frac{n}{10} - \sum_{i = 1}^n 0.1 \right|\]
 
-<p>Mathematically the result should be zero, but with finite precision arithmetic it will not be zero because of roundoff error (and the error will get worse as \(n\) increases).</p>
+    <p>Mathematically the result should be zero, but with finite precision arithmetic it will not be zero because of roundoff error (and the error will get worse as \(n\) increases).</p>
 
-<p>Write a loop that computes the absolute error for \(n = 10, 100, 1000, \dots, 1000000\).
-Plot the roundoff error with \(n\) on the x-axis and roundoff error on the y-axis.  When data spans multiple orders of magnitude, as it does in this case, a log scale is usually preferable.  (see <code class="language-plaintext highlighter-rouge">pyplot.loglog</code>).  Always labels your axes!</p>
-
-<p><strong>2.2</strong> <em>Truncation Error</em>.  One method to calculate \(\pi\) is the Leibniz formula:</p>
+    <p>Write a loop that computes the absolute error for \(n = 10, 100, 1000, \dots, 1000000\).
+ Plot the roundoff error with \(n\) on the x-axis and roundoff error on the y-axis.  When data spans multiple orders of magnitude, as it does in this case, a log scale is usually preferable.  (see <code class="language-plaintext highlighter-rouge">pyplot.loglog</code>).  Always labels your axes!</p>
+  </li>
+  <li>
+    <p><em>Truncation Error</em>.  One method to calculate \(\pi\) is the Leibniz formula:</p>
 
 \[\pi = 4 \sum_{k = 0}^\infty \frac{(-1)^k}{2k + 1}\]
 
-<p>Because we cannot use an infinite number of terms, the resulting error is called truncation error (note that this is different than roundoff error as it would still exist even if we were able to use exact precision numbers with no rounding).  Create a Python script that uses a loop to estimate \(\pi\) using the above formula for \(n = 0, 1, 2, \ldots, 20\) terms.  For each value of \(n\), compute the relative percent error.  Plot the truncation error on the y-axis with both a linear and log scale (two different figures).  In this case \(n\) doesn’t span a large range, but the error does, so you will want a semilog plot (see <code class="language-plaintext highlighter-rouge">pyplot.semilogx</code> and <code class="language-plaintext highlighter-rouge">pyplot.semilogy</code>).</p>
+    <p>Because we cannot use an infinite number of terms, the resulting error is called truncation error (note that this is different than roundoff error as it would still exist even if we were able to use exact precision numbers with no rounding).  Create a Python script that uses a loop to estimate \(\pi\) using the above formula for \(n = 0, 1, 2, \ldots, 20\) terms.  For each value of \(n\), compute the relative percent error.  Plot the truncation percent error on the y-axis.</p>
+  </li>
+</ol>
 
-<p><strong>2.3</strong> Iterative algorithms are extremely common in engineering problems.  We’ll first try a basic iterative algorithm, for which you know the answer, so that you can easily check your answers.  The following algorithm is an old way to compute the square root of any positive number \(x\):</p>
+<!-- 1. Iterative algorithms are extremely common in engineering problems.  We'll first try a basic iterative algorithm, for which you know the answer, so that you can easily check your answers.  The following algorithm is an old way to compute the square root of any positive number $$x$$:
 
-\[s_{i+1} = \frac{1}{2}\left(s_i + \frac{x}{s_i} \right)\]
+    $$
+    s_{i+1} = \frac{1}{2}\left(s_i + \frac{x}{s_i} \right)
+    $$
 
-<p>The value \(s_i\) is the current estimate for the square root of \(x\) and \(s_{i+1}\) is an updated estimate (from which we can repeat the process again and again).  Side note: this method where we update the new estimate from an explicit function of the current estimate (\(s_{i+1} = f(s_i)\)) is called <em>fixed-point iteration</em>.</p>
+    The value $$s_i$$ is the current estimate for the square root of $$x$$ and $$s_{i+1}$$ is an updated estimate (from which we can repeat the process again and again).  Side note: this method where we update the new estimate from an explicit function of the current estimate ($$s_{i+1} = f(s_i)$$) is called *fixed-point iteration*.
 
-<p>To implement this algorithm, it is perhaps easiest to start with a for loop for some fixed number of iterations.  We won’t know how many iterations are needed to converge beforehand, but we can experiment.  If that seems to be working well, then replace the for loop with a better version: a while loop that stops once the relative error drops below \(10^{-6}\).  In computing the relative error we don’t actually know the exact answer to compare to, which is a common scenario, so we use the new estimate as the “true answer” and compare to the prior value.</p>
+    To implement this algorithm, it is perhaps easiest to start with a for loop for some fixed number of iterations.  We won't know how many iterations are needed to converge beforehand, but we can experiment.  If that seems to be working well, then replace the for loop with a better version: a while loop that stops once the relative error drops below $$10^{-6}$$.  In computing the relative error we don't actually know the exact answer to compare to, which is a common scenario, so we use the new estimate as the "true answer" and compare to the prior value. -->
 
-<p><strong>2.4</strong> The equations for projectile motion in two-dimensions (neglecting air resistance) are:</p>
+<ol>
+  <li>
+    <p>The equations for projectile motion in two-dimensions (neglecting air resistance) are:</p>
 
 \[s_x = V\cos(\theta) t\\
-s_y = V\sin(\theta) t - \frac{g}{2}t^2\]
+ s_y = V\sin(\theta) t - \frac{g}{2}t^2\]
 
-<p>where \(s_x\) and \(s_y\) are the x and y position of the projectile (relative to your starting position), \(V\) is the magnitude of the initial velocity, \(t\) is time, and \(g\) is the acceleration of gravity.  Let’s say you fire a projectile at 100 m/s and are aiming at a target 200 meters in \(x\) and 30 meters above you in \(y\).  Determine the angle that you should fire the projectile at.  Hint: you can combine these equations into one equation by solving for \(t\) then plugging into the other, then you will have a one-dimensional residual function.</p>
+    <p>where \(s_x\) and \(s_y\) are the x and y position of the projectile (relative to your starting position), \(V\) is the magnitude of the initial velocity, \(t\) is time, and \(g\) is the acceleration of gravity.  Let’s say you fire a projectile at 100 m/s and are aiming at a target 400 meters in \(x\) and 50 meters up in \(y\).  Determine the angle that you should fire the projectile at.  Hint: combine these equations into one equation by solving for \(t\) then plugging into the other, then you will have a one-dimensional residual function.</p>
 
-<p>Implement a bisection method to solve this.  A skeleton function is provided <a href="../bisection">here</a>.  Also solve this problem with scipy (see <code class="language-plaintext highlighter-rouge">scipy.optimize.root_scalar</code>) to check your answer.</p>
+    <p>Implement a bisection method to solve this.  A skeleton function is provided <a href="../bisection">here</a>.  Also solve this problem with scipy (see <code class="language-plaintext highlighter-rouge">scipy.optimize.root_scalar</code>) to check your answer.</p>
+  </li>
+</ol>
 
     </div>
 
