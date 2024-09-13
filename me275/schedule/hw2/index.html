@@ -113,20 +113,15 @@
 \[\pi = 4 \sum_{k = 0}^\infty \frac{(-1)^k}{2k + 1}\]
 
     <p>Because we cannot use an infinite number of terms, the resulting error is called truncation error (note that this is different than roundoff error as it would still exist even if we were able to use exact precision numbers with no rounding).  Create a Python script that uses a loop to estimate \(\pi\) using the above formula for \(n = 0, 1, 2, \ldots, 20\) terms.  For each value of \(n\), compute the relative percent error.  Plot the truncation percent error on the y-axis.</p>
+
+    <p>&lt;!– 1. Iterative algorithms are extremely common in engineering problems.  We’ll first try a basic iterative algorithm, for which you know the answer, so that you can easily check your answers.  The following algorithm is an old way to compute the square root of any positive number \(x\):</p>
+
+\[s_{i+1} = \frac{1}{2}\left(s_i + \frac{x}{s_i} \right)\]
+
+    <p>The value \(s_i\) is the current estimate for the square root of \(x\) and \(s_{i+1}\) is an updated estimate (from which we can repeat the process again and again).  Side note: this method where we update the new estimate from an explicit function of the current estimate (\(s_{i+1} = f(s_i)\)) is called <em>fixed-point iteration</em>.</p>
+
+    <p>To implement this algorithm, it is perhaps easiest to start with a for loop for some fixed number of iterations.  We won’t know how many iterations are needed to converge beforehand, but we can experiment.  If that seems to be working well, then replace the for loop with a better version: a while loop that stops once the relative error drops below \(10^{-6}\).  In computing the relative error we don’t actually know the exact answer to compare to, which is a common scenario, so we use the new estimate as the “true answer” and compare to the prior value. –&gt;</p>
   </li>
-</ol>
-
-<!-- 1. Iterative algorithms are extremely common in engineering problems.  We'll first try a basic iterative algorithm, for which you know the answer, so that you can easily check your answers.  The following algorithm is an old way to compute the square root of any positive number $$x$$:
-
-    $$
-    s_{i+1} = \frac{1}{2}\left(s_i + \frac{x}{s_i} \right)
-    $$
-
-    The value $$s_i$$ is the current estimate for the square root of $$x$$ and $$s_{i+1}$$ is an updated estimate (from which we can repeat the process again and again).  Side note: this method where we update the new estimate from an explicit function of the current estimate ($$s_{i+1} = f(s_i)$$) is called *fixed-point iteration*.
-
-    To implement this algorithm, it is perhaps easiest to start with a for loop for some fixed number of iterations.  We won't know how many iterations are needed to converge beforehand, but we can experiment.  If that seems to be working well, then replace the for loop with a better version: a while loop that stops once the relative error drops below $$10^{-6}$$.  In computing the relative error we don't actually know the exact answer to compare to, which is a common scenario, so we use the new estimate as the "true answer" and compare to the prior value. -->
-
-<ol>
   <li>
     <p>The equations for projectile motion in two-dimensions (neglecting air resistance) are:</p>
 
