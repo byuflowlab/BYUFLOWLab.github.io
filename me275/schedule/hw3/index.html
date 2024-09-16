@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW 3 &middot; ME 275
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me275">
+          ME 275
+        </a>
+      </h1>
+      <p class="lead">Computaitional Methods</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me275/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me275/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me275/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW 3</h1> -->
+      <h1 id="hw-3">HW 3</h1>
+
+<p>due 9/19/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<ol>
+  <li>
+    <p>something w/ newton’s method</p>
+  </li>
+  <li>
+    <p>On our class website is a data file for water release from the Flaming Gorge Reservoir <a href="https://www.usbr.gov/rsvrWater/HistoricalApp.html">source</a>.  The table lists how much water was released each day (in cubic feet per second), for the past year.  Numerically integrate to determine how much water was released over the whole year (in cubic feet.)</p>
+  </li>
+  <li>
+    <p>In the classic goat grazing problem a farmer has a circular pen, and at the bottom of the pen a goat is tethered to a post as shown in ??. The farmer wishes to figure out how long the rope should be (\(r\)) so that the goat has access to exactly half of the grass in the pen.  We normalize the radii so that the pen has a radius of 1 as shown in ?? (and thus \(r\) is actually the goat’s radius relative to the pen’s radius).  The equation for a circle for each circle is also shown in the figure.</p>
+
+    <p>To find the area available to the goat we can integrate the area between the two curves.  We solve the circle equations for \(y\). The top curve (which comes from the bottom circle) is:</p>
+
+\[y = \sqrt{r^2 - x^2}\]
+
+    <p>and equation for the bottom curve (which comes from the top circle) is \(y\):</p>
+
+\[y = -\sqrt{1 - x^2} + 1\]
+
+    <p>we need to use the negative branch of the sqrt because it is the bottom of the circle.
+ To find the limits of integration we equate the two circle equations to find the intersection points.  Solving for \(x^2\) on the bottom circle’s equation \(x^2 = r^2 - y^2\) and substituting into the top circle’s equation:</p>
+
+\[r^2 - y^2  + (y - 1)^2 = 1\\
+ r^2 - y^2  + y^2 - 2y + 1 = 1\\
+ r^2  - 2y  = 0\\
+ y = r^2/2\]
+
+    <p>We now substitute this back into the bottom circle’s equation to determine values for \(x\):</p>
+
+\[x^2 + \frac{r^4}{4} = r^2\\
+ \Rightarrow x = \pm \sqrt{r^2 - \frac{r^4}{4}}\]
+
+    <p>This gives the two intersection points.</p>
+
+    <p>You should be able to numerically integrate the area for a given value of \(r\).  However, we also can’t explicitly solve for the value of \(r\) so we must add a root finder around the integral function to determine \(r\).</p>
+  </li>
+</ol>
+
+
+    </div>
+
+  </body>
+</html>
