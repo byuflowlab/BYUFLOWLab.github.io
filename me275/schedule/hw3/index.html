@@ -97,38 +97,40 @@
 
 <ol>
   <li>
-    <p>something w/ newton’s method</p>
+    <p>An aircraft or rocket, traveling at supersonic speeds, will produce oblique shock waves.  The equation relating the incoming Mach number \(M_1\), to the shock wave angle \(\beta\), and the turning angle \(\theta\) is shown in the figure and equation below (you don’t really need to know any of these details, just giving some context).  Typically, we know the incoming Mach number (the speed of the aircraft), and the turning angle \(\theta\) (from the shape of the vehicle), and want to solve for the shock angle \(\beta\).  The equation below cannot be solved explicitly for \(\beta\).  It is an implicit equation in \(\beta\) and so we need to use a root-solver.</p>
+
+    <p><img src="../oblique.png" width="200px" class="img-center" /></p>
+
+\[\tan\theta = \frac{2}{\tan\beta}\left(\frac{ {M_1}^2\sin^2(\beta) - 1}{ {M_1}^2[1.4 + \cos(2\beta)] + 2}\right)\]
+
+    <p>From the flow physics we know the minimum and maximum angles:</p>
+
+\[\beta_{min} = \sin^{-1}\left(\frac{1}{M_1}\right)\\
+ \beta_{max} \approx 64^\circ\]
+
+    <p>Use <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html"><code class="language-plaintext highlighter-rouge">scipy.root_scalar</code></a> to solve this problem.  Try both bisection and Newton’s method and compare the number of function calls.</p>
   </li>
   <li>
-    <p>On our class website is a data file for water release from the Flaming Gorge Reservoir <a href="https://www.usbr.gov/rsvrWater/HistoricalApp.html">source</a>.  The table lists how much water was released each day (in cubic feet per second), for the past year.  Numerically integrate to determine how much water was released over the whole year (in cubic feet.)</p>
+    <p>Write your own version of Newton’s method and apply it to the previous problem.  Compare your algorithm’s performnace.</p>
   </li>
   <li>
-    <p>In the classic goat grazing problem a farmer has a circular pen, and at the bottom of the pen a goat is tethered to a post as shown in ??. The farmer wishes to figure out how long the rope should be (\(r\)) so that the goat has access to exactly half of the grass in the pen.  We normalize the radii so that the pen has a radius of 1 as shown in ?? (and thus \(r\) is actually the goat’s radius relative to the pen’s radius).  The equation for a circle for each circle is also shown in the figure.</p>
+    <p>Maybe a elliptic lift - drag integration problem.  Gaussian quadrature and compare to trapz.</p>
+  </li>
+  <li>
+    <p>A hurricane has a swirling velocity, kind of like a flushing toilet.  The follow table lists the tangential velocity \(V_\theta\) as a function of radius from the center of the hurricane.  From fluid mechanics we learn that we can (with some assumptions) relate the pressure to velocity as:</p>
 
-    <p>To find the area available to the goat we can integrate the area between the two curves.  We solve the circle equations for \(y\). The top curve (which comes from the bottom circle) is:</p>
+\[\bar{p}(r) = 1 - \frac{\rho}{p_\infty}\int_r^R \frac{V^2}{r} dr\]
 
-\[y = \sqrt{r^2 - x^2}\]
+    <p>where \(k =\) (\(k\) is just a a couple constants I bundled together for simplicity), and \(\bar{p}\) is a normalized pressure (i.e., \(\bar{p} = 1\) means we’re at the pressure of the surrounding atmosphere).  Use <code class="language-plaintext highlighter-rouge">np.trapz</code> to numerically integrate and determine the pressure as a function of radius.  Plot the resulting pressure distribution.  At the larger radii the pressure should approach 1 (meaning atmospheric pressure).</p>
+  </li>
+  <li>
+    <p>In the goat grazing problem a farmer has a circular pen, and at the bottom of the pen a goat is tethered to a post as shown on the left side of the figure below. The farmer wishes to figure out how long the rope should be (\(r\)) so that the goat has access to exactly half of the grass in the pen.  We normalize the radii so that the pen has a radius of 1 (and thus \(r\) is actually the goat’s radius relative to the pen’s radius).</p>
 
-    <p>and equation for the bottom curve (which comes from the top circle) is \(y\):</p>
+    <p><img src="../goat.png" width="800px" class="img-center" /></p>
 
-\[y = -\sqrt{1 - x^2} + 1\]
+    <p>First we need to figure out how much area is contained in the gray region.  Using a little algebra, which I’ll skip for brevity, allows us to find the equation of the curve above the gray area and an equation below.  We also find the \(x\) location of the intersections.  Given a value for \(r\) we can now numerically integrate to determine the area of the gray region.</p>
 
-    <p>we need to use the negative branch of the sqrt because it is the bottom of the circle.
- To find the limits of integration we equate the two circle equations to find the intersection points.  Solving for \(x^2\) on the bottom circle’s equation \(x^2 = r^2 - y^2\) and substituting into the top circle’s equation:</p>
-
-\[r^2 - y^2  + (y - 1)^2 = 1\\
- r^2 - y^2  + y^2 - 2y + 1 = 1\\
- r^2  - 2y  = 0\\
- y = r^2/2\]
-
-    <p>We now substitute this back into the bottom circle’s equation to determine values for \(x\):</p>
-
-\[x^2 + \frac{r^4}{4} = r^2\\
- \Rightarrow x = \pm \sqrt{r^2 - \frac{r^4}{4}}\]
-
-    <p>This gives the two intersection points.</p>
-
-    <p>You should be able to numerically integrate the area for a given value of \(r\).  However, we also can’t explicitly solve for the value of \(r\) so we must add a root finder around the integral function to determine \(r\).</p>
+    <p>Start with a fixed value of \(r\), say \(r = 1\) just to make sure your integral is working.  But to fully solve the problem we need to determine \(r\) such that the area of the gray region is half of the upper circle (which has a radius of 1).  We can’t explicitly solve for \(r\), and must add a root finder around the integral function to determine \(r\).</p>
   </li>
 </ol>
 

@@ -88,43 +88,62 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW 3</h1> -->
-      <h1 id="hw-3-wing-design">HW 3: Wing Design</h1>
+      <h1 id="hw-3-better-drag-analysis-and-wing-design">HW 3: Better Drag Analysis and Wing Design</h1>
 
-<p>due 10/4/2017 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
+<p>due 9/25/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
 
 <ol>
   <li>
-    <p>Design an appropriate wing for your project.  Make sure the lift distribution provides a high inviscid span efficiency, and the cl distribution provides favorable stall characteristics.  Make sure that is adequate margin between your design CL and the wing CLmax (or equivalently between your design speed and stall speed).  As you resize the wing your drag will change, and thus the optimal CL for maximum L/D will also change.  You may wish to iterate using the analyses you’ve developed in the previous homework.</p>
+    <p>Now that we can evaluate the aerodynamic performance of airfoils we can improve our drag estimation. For this analysis we will use the <a href="https://en.wikipedia.org/wiki/Douglas_DC-3">Douglas DC-3</a>, a very successful plane that helped make air travel popular in the U.S. Some key specs, dimensions, and airfoil schedule are below.</p>
+
+    <table style="max-width: 400px;" class="img-center">
+      <tbody>
+        <tr>
+          <td>wing span</td>
+          <td>29 m</td>
+        </tr>
+        <tr>
+          <td>takeoff mass</td>
+          <td>11,000 kg</td>
+        </tr>
+        <tr>
+          <td>cruise speed</td>
+          <td>93 m/s</td>
+        </tr>
+        <tr>
+          <td>cruise altitude</td>
+          <td>10,000 ft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><img src="../dc3geometry.png" alt="" /></p>
+
+    <ul>
+      <li>Compute the induced drag (inviscid portion of lift-dependent drag).  Assume an inviscid span efficiency of 0.98 (nearly elliptic).</li>
+      <li>Compute the viscous drag (combination of parasitic drag and viscous lift-dependent drag) by integrating the airfoil drag across the wing.  For our purposes we will only use the 5 spanwise locations shown in the figure (a trapezoidal integration should suffice).  The lift coefficient at the five stations from root to tip are \(c_l = 0.275, 0.266, 0.317, 0.363, 0.0\).
+ To find the drag coefficients you will need to use an airfoil analysis (i.e., XFLR5).</li>
+    </ul>
+  </li>
+  <li>
+    <p>Watch the following XFLR5 videos: The first 4:30 of <a href="https://youtu.be/vhykE-mVBO4">design a plane</a>, and <a href="https://youtu.be/bJddlSRSZGY">plane analysis</a>.  We will do something similar later, but for this specific analysis I’d use type 1 (fixed speed), \(V_\infty\) is irrelevant (since we’re just looking at normalized quantities in this problem), viscous is not needed, and inertial properties are also irrelevant.</p>
+
+    <p>Create a wing patterned after the DC-3 wing above, but for simplicity, you can make it a simple trapezoidal (i.e., just define two sections: a root chord of 4.4 m and a tip chord of 1.1 m).  Since we don’t know the twist, let’s leave both at zero. Because we will run an inviscid analysis the specific airfoil is irrelevant, but the program might make you put one in anyway.</p>
+
+    <p>The view we are interested in is the furthest left button (called OpPoint View).  If you right click on a graph and click Current Graph then Define Graph Settings you can alternate between plotting lift (\(c_l \cdot c / mac\)) and the lift coefficient.</p>
 
     <p>Provide the following:</p>
 
     <ul>
-      <li>A description and justification of how design choices were made.</li>
-      <li>A to-scale planform view of the wing along with the rest of the aircraft (even if fuselage/tail sizing is still notional still).</li>
-      <li>A detailed description of the wing (enough detail that someone could build it from your specs alone).</li>
-      <li>The inviscid span efficiency at your design CL.</li>
-      <li>The wing CLmax (not the airfoil section clmax).</li>
-      <li>The L/D at your design speed.</li>
-      <li>The design speed and stall speed.
- <!-- - The approximate location of the wing aerodynamic center using the mean aerodynamic chord. --></li>
+      <li>A plot of the lift distribution at \(C_L = 0.5\) (we’ll assume this is our design lift coefficient). Report the corresponding inviscid span efficiency.</li>
+      <li>A plot of the lift coefficient distribution at \(C_L = 1.2\) (we’ll assume this is our maximum lift coefficient).  % TODO: give them the airfoil clmax instead.</li>
+      <li>Comment on the suitability of this design.  It would be instructive to try to improve the design, by changing twist and chord, but you don’t need to turn anything regarding that.</li>
     </ul>
   </li>
-  <li>
-    <p>Cut your wing using the foam cutter (group effort: one wing per project group).  Take a picture of it and include it in the assignment.  Describe any lessons learned or important details needed to reproduce.</p>
-  </li>
 </ol>
-
-<!-- 3. Perform a more detailed **parasitic** drag anaylsis using strip theory.  For this assignment you only need to analyze your wing and only need to look at parasitic drag (but eventually you will want to analyze the total drag of the full aircraft).  Compare your drag at the design CL with that predicted by the simpler wetted area methods from HW 2.  
-
-    I recommend using [XFLR5](http://www.xflr5.com/xflr5.htm), which has a GUI and some helpful video tutorials [here](https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg).  To get started I'd look at videos 1, 2, 6, 7, 8.
-
-    You could also do this manually.  For a basic wing this is actually probably quicker, but it would be harder to extend for more complete analyses later.  Basically you just run XFOIL at multiple angles of attack, which you've already done (and ideally at multiple Reynolds numbers although for your application this variation will be quite small).  You then integrate the drag across the wing by looking up the precomputed section parasitic drag values as a function of the local lift coefficient.  
-    
-<!-- - Use [AVL](http://web.mit.edu/drela/Public/web/avl/).  Less user friendly but more powerful.  Interface is text file based like XFOIL (both developed by Mark Drela). -->
-
-<!-- 3. Supersonic drag altitude.  Repeat the optimal altitude problem from the previous homework, but this time for the supersonic business jet proposed by [Aerion](http://www.aerionsupersonic.com/).  Remember to include compressibility drag! -->
-
 
     </div>
 
