@@ -88,59 +88,56 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW 3</h1> -->
-      <h1 id="hw-3-better-drag-analysis-and-wing-design">HW 3: Better Drag Analysis and Wing Design</h1>
+      <h1 id="hw-3-improved-aerodynamic-analysis">HW 3: Improved Aerodynamic Analysis</h1>
 
 <p>due 9/25/2024 before midnight via Learning Suite
 <span style="float:right;">25 possible points</span></p>
 
 <hr />
 
+<p>Now that we can evaluate the aerodynamic performance of airfoils we can improve our drag estimation. For this analysis we will use the wing from the <a href="https://en.wikipedia.org/wiki/Douglas_DC-3">Douglas DC-3</a>, a very successful plane that helped make air travel popular in the U.S. Some key specs, dimensions, and airfoil schedule are below (the below picture is simplified for the purposes of this homework both in number of airfoils and chord distribution).</p>
+
+<table style="max-width: 400px;" class="img-center">
+  <tbody>
+    <tr>
+      <td>takeoff mass</td>
+      <td>11,000 kg</td>
+    </tr>
+    <tr>
+      <td>cruise speed</td>
+      <td>93 m/s</td>
+    </tr>
+    <tr>
+      <td>cruise altitude</td>
+      <td>10,000 ft</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="../dc3wing.png" width="800px" class="img-center" /></p>
+
 <ol>
   <li>
-    <p>Now that we can evaluate the aerodynamic performance of airfoils we can improve our drag estimation. For this analysis we will use the <a href="https://en.wikipedia.org/wiki/Douglas_DC-3">Douglas DC-3</a>, a very successful plane that helped make air travel popular in the U.S. Some key specs, dimensions, and airfoil schedule are below.</p>
+    <p>Start with the back-of-the-envelope drag methods.  The drag breakdown in XFLR5 is separated into inviscid and viscous components (as opposed to lift-dependent and parasitic).  Thus, when computing the induced drag use inviscid span efficiency (not Oswald efficiency).  A typical (ideal) value is 0.98.</p>
 
-    <table style="max-width: 400px;" class="img-center">
-      <tbody>
-        <tr>
-          <td>wing span</td>
-          <td>29 m</td>
-        </tr>
-        <tr>
-          <td>takeoff mass</td>
-          <td>11,000 kg</td>
-        </tr>
-        <tr>
-          <td>cruise speed</td>
-          <td>93 m/s</td>
-        </tr>
-        <tr>
-          <td>cruise altitude</td>
-          <td>10,000 ft</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p><img src="../dc3geometry.png" alt="" /></p>
-
-    <ul>
-      <li>Compute the induced drag (inviscid portion of lift-dependent drag).  Assume an inviscid span efficiency of 0.98 (nearly elliptic).</li>
-      <li>Compute the viscous drag (combination of parasitic drag and viscous lift-dependent drag) by integrating the airfoil drag across the wing.  For our purposes we will only use the 5 spanwise locations shown in the figure (a trapezoidal integration should suffice).  The lift coefficient at the five stations from root to tip are \(c_l = 0.275, 0.266, 0.317, 0.363, 0.0\).
- To find the drag coefficients you will need to use an airfoil analysis (i.e., XFLR5).</li>
-    </ul>
+    <p>To get total viscous drag we need to first repeat the drag analysis from the last homework then add the viscous-lift-dependent part, which we can estimate as \({C_D}_{lift, viscous} = K {C_D}_p C_L^2\), where \({C_D}_p\) is the parasitic drag coefficient, and a typical value for \(K\) is 0.38.  For parasitic drag, use a sweep of zero (the Mach number is low enough that the sweep angle wouldn’t make much difference in these calculations), and use an average airfoil thickness.  Note that assuming fully turbulent flow is too conservative for a transport aircraft as we will get significant laminar flow.  Computing the drag for partial laminar flow and partial turbulent is more complicated than we’ll worry about in this class (I derive how to do it in the appendix of the book).  For simplicity in this case, just compute fully turbulent than multiply by 0.8 to account for the laminar flow reduction.  The drag is pretty sensitive to how much laminar flow you can get, which is why aircraft designers work hard to extend the laminar flow region even a few percent.</p>
   </li>
   <li>
-    <p>Watch the following XFLR5 videos: The first 4:30 of <a href="https://youtu.be/vhykE-mVBO4">design a plane</a>, and <a href="https://youtu.be/bJddlSRSZGY">plane analysis</a>.  We will do something similar later, but for this specific analysis I’d use type 1 (fixed speed), \(V_\infty\) is irrelevant (since we’re just looking at normalized quantities in this problem), viscous is not needed, and inertial properties are also irrelevant.</p>
+    <p>Now use XFLR5 to more accurately compute drag using airfoil and lift distribution information.  The most helpful overview videos from the <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">official set</a> are 2, 6–8.  We don’t need to do any of the inertial properties as shown in video 7 (but will in a future homework).  Instead, for the analysis we are doing in this homework we can just enter the mass as a lump sum later in ``define an analysis’’.</p>
 
-    <p>Create a wing patterned after the DC-3 wing above, but for simplicity, you can make it a simple trapezoidal (i.e., just define two sections: a root chord of 4.4 m and a tip chord of 1.1 m).  Since we don’t know the twist, let’s leave both at zero. Because we will run an inviscid analysis the specific airfoil is irrelevant, but the program might make you put one in anyway.</p>
+    <p>Airfoils: you need to do the airfoil batch analysis before you can do the wing analysis.  Type 1.  Make sure to run a wide range of angles of attack and Reynolds numbers.</p>
 
-    <p>The view we are interested in is the furthest left button (called OpPoint View).  If you right click on a graph and click Current Graph then Define Graph Settings you can alternate between plotting lift (\(c_l \cdot c / mac\)) and the lift coefficient.</p>
+    <p>Wing: I prefer type 2, but you could do type 1.  Either way you’ll have to iterate on angle of attack.  Either to find the right speed for a fixed lift (when running type 2), or to find the right lift for a fixed speed (when running type 1). Make sure to choose a viscous option, enter the mass under inertia, and set your atmospheric properties.  When iterating on angle of attack it’ll be helpful to run coarse at first (say every degree or two), then narrow it down and run a finer resolution (like every 0.1 degrees).</p>
 
-    <p>Provide the following:</p>
+    <p>Report the inviscid induced drag (ICD in XFLR5, you’ll need to unnormalize), and viscous drag (VCD, this also includes viscous lift-dependent drag).  Compare to your estimates from part 1.</p>
+  </li>
+  <li>
+    <p>Since we’ve run XFLR5 already, let’s take a look at the lift distribution (see the furthest left button called OpPoint View).  If you right click on a graph and click Current Graph then Define Graph Settings you can alternate between plotting lift (\(c_l \cdot c / mac\)) and the lift coefficient. Provide the following:</p>
 
     <ul>
-      <li>A plot of the lift distribution at \(C_L = 0.5\) (we’ll assume this is our design lift coefficient). Report the corresponding inviscid span efficiency.</li>
-      <li>A plot of the lift coefficient distribution at \(C_L = 1.2\) (we’ll assume this is our maximum lift coefficient).  % TODO: give them the airfoil clmax instead.</li>
-      <li>Comment on the suitability of this design.  It would be instructive to try to improve the design, by changing twist and chord, but you don’t need to turn anything regarding that.</li>
+      <li>A plot of the lift distribution at the design speed. Report the corresponding inviscid span efficiency (called Efficiency in XFLR5).</li>
+      <li>A plot of the lift coefficient distribution such that the airfoil (note lowercase) \({c_l}_{max} = 1.2\), which is around where the NACA 2206 stalls.  Report your wing (note uppercase): \({C_L}_{max}\).</li>
+      <li>It is instructive to change twist and chord and observe the impact on the lift distribution and lift coefficient distribution, though there won’t be anything to turn in.</li>
     </ul>
   </li>
 </ol>
