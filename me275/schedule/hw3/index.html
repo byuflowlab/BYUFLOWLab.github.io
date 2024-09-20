@@ -117,7 +117,7 @@
   <li>
     <p>A simplified representation of the lift distribution along an aircraft wing (force per unit length) can be integrated to find the total lift force:</p>
 
-\[L = 2\int_{-0.5}^{0.5} \sqrt{1 - 4 x^2} dx\]
+\[L = 4\int_{-0.5}^{0.5} \sqrt{1 - 4 x^2} dx\]
 
     <p>Integrate this using <code class="language-plaintext highlighter-rouge">np.trapz</code> (or <code class="language-plaintext highlighter-rouge">np.trapezoid</code> depending on your version of numpy) for a range of linspace discretization points demonstrating convergence (show a plot with number of discretization points on x-axis and the integral on y-axis).  Also evaluate the integral using <code class="language-plaintext highlighter-rouge">scipy.integrate.quad</code> and compare the result (add a dashed line to the plot with the resulting integral).</p>
   </li>
