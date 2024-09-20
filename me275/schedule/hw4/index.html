@@ -11,7 +11,7 @@
 
   <title>
     
-      HW 3 &middot; ME 275
+      HW 4 &middot; ME 275
     
   </title>
 
@@ -87,42 +87,23 @@
 
 
     <div class="content container">
-    <!-- <h1 class="page-title">HW 3</h1> -->
-      <h1 id="hw-3">HW 3</h1>
+    <!-- <h1 class="page-title">HW 4</h1> -->
+      <h1 id="hw-4">HW 4</h1>
 
-<p>due 9/26/2024 before midnight via Learning Suite
+<p>due 10/3/2024 before midnight via Learning Suite
 <span style="float:right;">25 possible points</span></p>
 
 <hr />
 
 <ol>
   <li>
-    <p>An aircraft, traveling at supersonic speeds, will produce oblique shock waves.  The equation relating the incoming Mach number \(M\), to the shock wave angle \(\beta\), and the turning angle \(\theta\) is shown in the figure and equation below (you don’t really need to know any of these details, just giving some context).  Typically, we know the incoming Mach number from the speed of the aircraft and the turning angle \(\theta\) from the shape of the vehicle, and want to solve for the shock angle \(\beta\).  The equation below cannot be solved explicitly for \(\beta\).  It is an implicit equation in \(\beta\) and so we need to use a root-solver.</p>
+    <p>In the goat grazing problem a farmer has a circular pen, and at the bottom of the pen a goat is tethered to a post as shown on the left side of the figure below. The farmer wishes to figure out how long the rope should be (\(r\)) so that the goat has access to exactly half of the grass in the pen.  We normalize the radii so that the pen has a radius of 1 (and thus \(r\) is actually the goat’s radius relative to the pen’s radius).</p>
 
-    <p><img src="../oblique.png" width="200px" class="img-center" /></p>
+    <p><img src="../goat.png" width="800px" class="img-center" /></p>
 
-\[\tan\theta = \frac{2}{\tan\beta}\left(\frac{ {M}^2\sin^2(\beta) - 1}{ {M}^2[1.4 + \cos(2\beta)] + 2}\right)\]
+    <p>First we need to figure out how much area is contained in the gray region.  A little algebra, which I’ll skip for brevity, allows us to find the equation of the curve above the gray area and an equation below.  We also find the \(x\) location of the intersections.  Given a value for \(r\) we can now numerically integrate to determine the area of the gray region.</p>
 
-    <p>From the flow physics we know the minimum and maximum angles:</p>
-
-\[\beta_{min} = \sin^{-1}\left(\frac{1}{M}\right)\\
- \beta_{max} \approx 64^\circ\]
-
-    <p>If \(\theta\) = 15 degrees, and \(M = 2\), find \(\beta\) using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html"><code class="language-plaintext highlighter-rouge">scipy.root_scalar</code></a>.</p>
-  </li>
-  <li>
-    <p>Write your own version of Newton’s method that iterates until the change in \(x\) from one step to the next is less than \(10^{-6}\).  Since we need to provide derivative of the input function, we’ll use a simple function:
-\(f(x) = x^3 - 3x^2 + x - 1\).  Report the root. Try several different starting points and comment on the number of iterations, and its robustness in converging to a solution.</p>
-  </li>
-  <li>
-    <p>A simplified representation of the lift distribution along an aircraft wing (force per unit length) can be integrated to find the total lift force:</p>
-
-\[L = 2\int_{-0.5}^{0.5} \sqrt{1 - 4 x^2} dx\]
-
-    <p>Integrate this using <code class="language-plaintext highlighter-rouge">np.trapz</code> (or <code class="language-plaintext highlighter-rouge">np.trapezoid</code> depending on your version of numpy) for a range of linspace discretization points demonstrating convergence (show a plot with number of discretization points on x-axis and the integral on y-axis).  Also evaluate the integral using <code class="language-plaintext highlighter-rouge">scipy.integrate.quad</code> and compare the result (add a dashed line to the plot with the resulting integral).</p>
-  </li>
-  <li>
-    <p>An accelerometer is placed on the first stage of a rocket launch.  The results are in file accel.dat, which has two columns: time (s) and acceleration (m/s\(^2\)) starting from rest.  Numerically integrate to find velocity as a function of time.  Make a figure with two subplots, with velocity vs. time on top and acceleration vs. time on bottom (see this <a href="https://matplotlib.org/stable/gallery/pyplots/pyplot_two_subplots.html#sphx-glr-gallery-pyplots-pyplot-two-subplots-py">example</a> of pyplot.subplot, although you should label your axes).  Why is the velocity data less noisy than the acceleration data?</p>
+    <p>Start with a fixed value of \(r\), say \(r = 1\) just to make sure your integral is working.  But to fully solve the problem we need to determine \(r\) such that the area of the gray region is half of the upper circle (which has a radius of 1).  We can’t explicitly solve for \(r\), and must add a root finder around the integral function to determine \(r\).</p>
   </li>
 </ol>
 
