@@ -93,27 +93,27 @@
 <p>due 10/2/2024 before midnight via Learning Suite
 <span style="float:right;">25 possible points</span></p>
 
-<p>We will continue with the same wing from the last homework, but add a horizontal tail (see figure below).  Because we’re still leaving out some key components, like the vertical tail and the fuselage, you’ll need to use the “Extra Drag” term in Analysis.  We also won’t worry about individual component masses (again because we’re missing some critical parts), but rather lump all the masses in one total like the last homework.</p>
+<p>We continue with the same wing from the last homework, but will add a horizontal tail (see figure below).  Because we’re still leaving out some key components, like the vertical tail and the fuselage, you’ll need to use the “Extra Drag” term in Analysis.  We also won’t worry about individual component masses (again because we’re missing some critical parts), but rather lump all the masses in one total like the last homework.  Note that this time the flight speed is not given, but rather this is something we will design.  The flight speed given in the last homework is a maximum cruise speed, and not a typical more efficient cruise speed.</p>
 
 <p><img src="../simpledc3.png" width="800px" class="img-center" /></p>
 
 <p>There are two parameters you need to adjust to achieve stability and trim:</p>
 <ul>
   <li>The location of center of mass (relative to wing root leading edge) to achieve a static margin of 20%.</li>
-  <li>The tail incidence (angle) to trim in pitch (\(C_m = 0\)) near max \(L/D\)</li>
+  <li>The tail incidence (angle) to trim in pitch (\(C_m = 0\)) near max \(L/D\).</li>
 </ul>
 
-<p>In addition to reporting the above values, report also the following:</p>
+<p>In addition to reporting the above two values, report also the following:</p>
 <ul>
-  <li>Plot the lift to drag ratio as a function of flight speed, report the \(C_L\) and corresponding flight speed that maximizes \(L/D\).</li>
-  <li>Plot the pitching moment curve (\(C_m\) vs \(\alpha\) or \(C_m\) vs \(C_L\)) noting the speed at which the aircraft trims in pitch.</li>
+  <li>The corresponding flight speed and \(L/D\) for your trim point.</li>
+  <li>A plot of the lift to drag ratio as a function of angle of attack and the pitching moment versus angle of attack.</li>
 </ul>
 
 <p>Tips:</p>
 <ul>
-  <li>We don’t need any new videos relative to last week, although you might find video 12 helpful (Personally I use a more direct approach to determine an appropriate c.g. location, as opposed to trail and error, if interested you can find details in the book).</li>
+  <li>XFLR5 reports XNP, which is the neutral point location (aerodynamic center).  That will be helpful in computing your static margin.</li>
   <li>Remember that positive \(x\) is downstream.  So your tail should be at a positive \(x\) offset distance.</li>
-  <li>The extra drag term asks for \(C_D\) and \(S\).  It just multiplies these two numbers together so I just enter 0.8 for \(C_D\) and \(1\) for \(S\) for convenience.  The choice of \(S\) here doesn’t affect the reference area used anywhere else.</li>
+  <li>The extra drag term asks for \(C_D\) and \(S\).  It just multiplies these two numbers together so I just enter 0.5 for \(C_D\) and \(1\) for \(S\) for convenience (or vice-versa).  The choice of \(S\) here doesn’t affect the reference area used anywhere else.</li>
 </ul>
 
 
