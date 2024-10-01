@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW &middot; ME 275
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me275">
+          ME 275
+        </a>
+      </h1>
+      <p class="lead">Computaitional Methods</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me275/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me275/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me275/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2024. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h1 id="hw-5">HW 5</h1>
+
+<p>due 10/10/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<ol>
+  <li>
+    <p>For the matrices and vectors defined below:</p>
+
+\[A = \begin{bmatrix}
+ 1 &amp; 2 &amp; 3 \\
+ 4 &amp; 5 &amp; 6
+ \end{bmatrix}
+ \quad
+ b =
+ \begin{bmatrix}
+ 8\\
+ 3\\
+ 5
+ \end{bmatrix}
+ \quad
+ C = \begin{bmatrix}
+ 1 &amp; 2\\
+ 3 &amp; 4\\
+ 5 &amp; 6
+ \end{bmatrix}\]
+
+    <p>Compute the following:</p>
+
+\[a)\ A + C^T \quad b)\ 2 A \quad c)\ A b \quad d)\ b^T A^T \quad e)\ A A^T\]
+  </li>
+  <li>
+    <p>Solve the following equations by writing the equation in matrix form and using a linear solver.</p>
+
+\[4 = x_1 + 5 x_2 + 8 x_3 \\
+ 6 x_1 + x_3 - 8 = 0\\
+ 8x_2 - 3x_3 = 3 + 4 x_2 - 6 x_3\]
+  </li>
+  <li>
+    <p>You are building a simple truss to suspend a load of 1000 lbs over a ravine.
+ <img src="../ravine.png" width="600px" class="img-center" /></p>
+
+    <p>Node A is the origin of our coordinate system, node B is at (1, 0), and the location of node C is something we are trying to design.</p>
+
+    <p>a) Solve the problem with node C at (2, 1).</p>
+
+    <p>b) Plot the stress in truss member AC with \(x_c\) varied from 1 (just over node B) to 3.</p>
+  </li>
+  <li>
+    <p>Given the following data points where \(y = f(x)\), we wish to determine a fit for the function \(f\) using linear least squares.  Assume a quadratic function for \(f\), and plot the resulting data as a scatterplot and the curve fit as a solid line.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.0000</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.7895</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5789</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3684</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1579</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9474</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7368</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5263</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3158</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1053</span><span class="p">,</span> <span class="mf">0.1053</span><span class="p">,</span> <span class="mf">0.3158</span><span class="p">,</span> <span class="mf">0.5263</span><span class="p">,</span> <span class="mf">0.7368</span><span class="p">,</span> <span class="mf">0.9474</span><span class="p">,</span> <span class="mf">1.1579</span><span class="p">,</span> <span class="mf">1.3684</span><span class="p">,</span> <span class="mf">1.5789</span><span class="p">,</span> <span class="mf">1.7895</span><span class="p">,</span> <span class="mf">2.0000</span><span class="p">])</span>
+ <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mf">7.7859</span><span class="p">,</span> <span class="mf">5.9142</span><span class="p">,</span> <span class="mf">5.3145</span><span class="p">,</span> <span class="mf">5.4135</span><span class="p">,</span> <span class="mf">1.9367</span><span class="p">,</span> <span class="mf">2.1692</span><span class="p">,</span> <span class="mf">0.9295</span><span class="p">,</span> <span class="mf">1.8957</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4215</span><span class="p">,</span> <span class="mf">0.8553</span><span class="p">,</span> <span class="mf">1.7963</span><span class="p">,</span> <span class="mf">3.0314</span><span class="p">,</span> <span class="mf">4.4279</span><span class="p">,</span> <span class="mf">4.1884</span><span class="p">,</span> <span class="mf">4.0957</span><span class="p">,</span> <span class="mf">6.5956</span><span class="p">,</span> <span class="mf">8.2930</span><span class="p">,</span> <span class="mf">13.9876</span><span class="p">,</span> <span class="mf">13.5700</span><span class="p">,</span> <span class="mf">17.7481</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<!-- 4. (adapted from a Stephen Boyd problem) A computer uses an RGB representation of color (three numbers for the intensity of red, green, and blue).  We will use the vector $$c$$ for this representation, where $$c$$ is of length 3, and each entry is a number between 0 and 1 corresponding to the intensity of red, green, and blue respectively.  The following matrix transforms these color intensities into the amount of power contained in various wavelengths of light.
+    ```python
+    RGB = np.array([
+        [15, 16, 17, 18, 19, 21, 23, 26, 30, 35, 45, 75, 90, 100, 90, 75, 45, 35, 30, 26],
+        [21, 23, 26, 30, 35, 45, 75, 90, 100, 90, 75, 45, 35, 30, 26, 23, 21, 20, 19, 18],
+        [30, 35, 45, 75, 90, 100, 90, 75, 45, 35, 30, 26, 23, 21, 20, 19, 18, 17, 16, 15]
+    ]).T
+    ```
+    In other words, we preselected 20 wavelengths, and ``p = RGB @ c`` produces a vector of length 20 that tells me how much power is in each of these 20 wave lengths.
+
+    We're trying to adjust the colors $$c$$ to match the following light source (which has the following power at the same 20 wavelengths):
+
+    ```python
+    p_desired = np.array([58.2792, 42.3496, 51.5512, 33.3951, 43.2907, 22.5950, 57.9807, 76.0365, 52.9823, 64.0526, 20.9069, 37.9818, 78.3329, 68.0846, 46.1095, 56.7829, 79.4211, 5.9183, 60.2869, 5.0269])
+    ```
+
+    To make this solvable as a linear system we transform our powers at the various wavelengths into how our eye responds to these various wavelengths.
+
+    ```python
+    LMS = 10**np.array([
+        [-.9, -1.1, -1, -.8, -.7, -.6, -.5, -.4, -.3, -.25, -.3, -.4, -.8, -1.2, -1.6, -1.9, -2.4, -2.8, -3.6, -4],
+        [-.8, -.85, -.85, -.6, -.5, -.4, -.3, -.2, -.1, -.15, -.3, -.7, -1.2, -1.7, -2.2, -2.9, -3.5, -4.2, -4.8, -5.5],
+        [-.4, -.3, -.2, -.1, -.3, -.6, -1.2, -1.8, -2.5, -3.2, -4.1, -5, -6, -7, -8, -9, -10, -10.5, -11, -11.5]
+    ])
+    ```
+    In other words, ``LMS @ p`` gives me three numbers that characterize how the three types of cones in our eyes respond to a given light source.  Our goal is to solve for $$c$$, so that the light we produce on the computer matches the color from our desired light source, as perceived by our eyes.  If you input the answer in an RGB converter, you should get a purple color. -->
+
+    </div>
+
+  </body>
+</html>
