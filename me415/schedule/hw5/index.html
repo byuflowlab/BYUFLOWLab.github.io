@@ -11,7 +11,7 @@
 
   <title>
     
-      HW 5 &middot; ME 415
+      HW &middot; ME 415
     
   </title>
 
@@ -87,64 +87,84 @@
 
 
     <div class="content container">
-    <!-- <h1 class="page-title">HW 5</h1> -->
-      <h1 id="hw-5-propulsion">HW 5: Propulsion</h1>
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h1 id="hw-5-dynamic-stability-and-battery">HW 5: Dynamic Stability and Battery</h1>
 
-<p>due 10/25/2017 before midnight via Learning Suite
+<p>due 10/16/2024 before midnight via Learning Suite
 <span style="float:right;">50 possible points</span></p>
-
-<h3 id="motorprop-analysis-and-design">Motor/Prop Analysis and Design</h3>
 
 <ol>
   <li>
-    <p>Characterize your motor performance.  Measure the no-load current, resistance, and Kv value and report these values.  As a sanity check I’d suggest comparing to manufacture specifications for yours and similar motors, but keep in mind that manufacturer data, particularly for small motors, is sometimes unreliable.</p>
+    <p>Model the following simple airplane in XFLR5. Use a NACA 0012 for every airfoil.  Chord and twist is constant along each lifting surface (wing and tails). Report the eigenvalues and identify the corresponding mode (e.g., dutch roll, spiral).  Report the key stability derivatives for static stability: \({C_m}_{,\alpha}, {C_n}_{,\beta}, {C_{roll}}_{, \beta}\).  Just use sea-level properties (though it won’t matter for stability derivatives since they are normalized).  Note that for stability a viscous analysis is optional.  While the drag has a major role in performance, it typically has very little impact on dynamics.</p>
+
+    <p><img src="../dynamic.png" width="800px" class="img-center" /></p>
   </li>
   <li>
-    <p>Compute and plot the efficiency of the motor and propeller as a function of rotation speed.  The analysis tool I provided can already do this, but you should write your own implementation for this part so that you understand what is happening (although you are welcome to look at my code if you get stuck).  Explore a few different flight speeds around your design speed, as well as a few different voltage levels.  Comment on the results.</p>
+    <p>Consider a simplified battery model with just internal resistance and a capacity that is independent of current.  We fit data for the open current voltage and the internal resistance of a Panasonic NCR18650G cell (high specific energy, which is important for aircraft applications).  This fit is only reasonable for a SOC between 0.1 and 0.9 (we won’t operate outside those limits anyway because of degradation and max power requirements).</p>
 
-    <p>Note: we did not measure the data for your exact propeller but there are some props from the same manufacturer and of similar size that will work for this assignment available here: <a href="http://m-selig.ae.illinois.edu/props/propDB.html">UIUC Propeller Data Site</a>.</p>
+\[OCV = 0.39\, SOC^2 + 0.07 \, SOC + 3.7\]
 
-    <p><!-- We do have a test stand designed to measure motor/prop performance in the wind tunnel, but for the purposes of this assignment the differences will be quite small and so we . --></p>
-  </li>
-  <li>
-    <p>Use the simulation tool I provided to characterize the propulsive efficiency of your setup for steady level flight across a range of flight speeds.  Comment on the results.</p>
-  </li>
-  <li>
-    <p>Choose a better motor/prop combination and clearly show through analysis and clear discussion why this is a superior choice.  You can change one, some, or all of the motor, propeller, speed controller, and battery.  <a href="http://www.drivecalc.de">DriveCalc</a> and <a href="http://www.motocalc.com">MotorCalc</a> contain data for a large database of various existing components that you might find useful in your design process.</p>
+\[R = 0.015\, SOC^2 - 0.025 \, SOC + 0.104\]
 
-    <p>Note: you don’t need to actually change your motor, propeller, or battery for your design (although you could if you really wanted to).  The provided components are more than adequate to complete the mission.  The main purpose of this exercise is to help you learn how you might choose your own components for future projects.</p>
+    <p>The capacity of the cell is 3.55 Ah.  The battery pack is arranged as follows (s means series, p means parallel):</p>
+
+    <table style="max-width: 400px;">
+      <tbody>
+        <tr>
+          <td>Submodule</td>
+          <td>1s x 24p cells</td>
+        </tr>
+        <tr>
+          <td>Module</td>
+          <td>20s x 1p submodules</td>
+        </tr>
+        <tr>
+          <td>Pack</td>
+          <td>7s x 2p modules</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Now consider the following simplified aircraft mission:</p>
+
+    <table style="max-width: 600px;">
+      <tbody>
+        <tr>
+          <td><strong>Segment</strong></td>
+          <td><strong>Time (minutes)</strong></td>
+          <td><strong>Power (kW)</strong></td>
+        </tr>
+        <tr>
+          <td>Takeoff and Climb</td>
+          <td>1</td>
+          <td>290</td>
+        </tr>
+        <tr>
+          <td>Cruise</td>
+          <td>35</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td>Aborted Descent and Climb</td>
+          <td>1</td>
+          <td>180</td>
+        </tr>
+        <tr>
+          <td>Reserve Cruise</td>
+          <td>5</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td>Descent and Landing</td>
+          <td>1</td>
+          <td>150</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>For each segment compute the current, battery voltage, efficiency, and the new state of charge at the end of the segment.  Rather than integrating, for simplicity assume that open current voltage and resistance are constant within each segment, defined by the state of the charge at the start of that segment.  Begin the mission with a state of charge of 0.9.</p>
   </li>
 </ol>
-
-<h3 id="build">Build</h3>
-
-<p>Spend at least three hours building your aircraft (this is time spent building, not time on redesign).</p>
-
-<ul>
-  <li>Report how long you (not your group, but you) spent working on the build process, and <em>in detail</em> describe what you accomplished.</li>
-  <li>Provide an overview of overall progress made, lessons learned, and any design changes.</li>
-  <li>Provide a few photos of the plane/process.</li>
-</ul>
-
-<!-- Work on building your aircraft.  The amount you accomplish this week is up to you (of course doing less now means more work later).  You'll want to get it ready for RC flight within a week or two.  However far you get, for the purpose of this assignment you just need to:
-
-- Describe your contributions to the build process (not everyone needs to contribute equally to the build as some may be doing more work on the analysis side, but everyone does need to contribute).
-- Provide a detailed description of overall progress made, lessons learned, and any design changes.
-- Provide a few photos of the plane/process. -->
-
-<hr />
-
-<p><strong>Where do I get the electronic components?</strong></p>
-
-<ul>
-  <li>The autopilot we provide, but they are still being assembled.  You won’t need them to get started with RC testing.  In the meantime we will provide you with a pod that is roughly the same size and weight.  We will also provide a receiver and transmitter.  One autopilot and receiver will be shared with two teams so you will need to design your plane to allow easy access to insert/remove the autopilot and receiver (you need easy access for your batteries anyway so this shouldn’t be prohibitive).  Note: the computers allow multiple profiles so you are just sharing hardware, not software instructions.</li>
-  <li>We have assembled a kit of electronics that you will purchase.  Go the <a href="https://ece.byu.edu/shop">ECE Shop</a> and tell them you want to purchase an ME 415 Kit.  Bring the receipt to the TAs and they will give you your kit.  The cost per team is $70.  This kit includes 2 motors\(^*\), 4 propellers (some spares), 2 electronic speed controllers, 2 batteries (one spare for swapping in field), O-rings for mounting the props to the motors, and some bullet connectors for the battery.</li>
-  <li>
-    <p>While at the ECE Shop purchase some of the 9 gram servos.  These are not included in the kit because the ECE Shop already carries them.  You’ll probably want 3, depending on what control surfaces you intend to use.</p>
-
-    <p>\(^*\)You don’t need to use two motors just because we provided two.  That is a design choice.  The motors were sized such that one should do the job just fine unless your plane is relatively heavy.  Alternatively you can use two at a lower throttle setting.</p>
-  </li>
-</ul>
 
     </div>
 
