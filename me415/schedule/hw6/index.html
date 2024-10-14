@@ -11,7 +11,7 @@
 
   <title>
     
-      HW 6 &middot; ME 415
+      HW &middot; ME 415
     
   </title>
 
@@ -87,44 +87,24 @@
 
 
     <div class="content container">
-    <!-- <h1 class="page-title">HW 6</h1> -->
-      <h1 id="hw-6-performance">HW 6: Performance</h1>
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h1 id="hw-6-electric-propulsion">HW 6: Electric Propulsion</h1>
 
-<p>due 11/1/2017 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
+<p>due 10/23/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
 
-<h2 id="performance">Performance</h2>
+<hr />
 
-<p>Predict some key performance metrics for your aircraft including:</p>
-
+<p>Consider a relatively large RC aircraft with the following components.</p>
 <ul>
-  <li>speed for max range, and the corresponding range</li>
-  <li>speed for max endurance, and the corresponding endurance</li>
-  <li>speed for max climb rate, and the corresponding climb rate</li>
-  <li>speed for max L/D, and the corresponding L/D (you’ve done this before, but your aircraft may have changed).
-<!-- - minimum turn radius -->
-<!-- Compare to the speed for max L/D and the corresponding L/D --></li>
+  <li><strong>Battery</strong>: \(OCV =\) 22.2 V, Q = 5 Ah, R = 0.6 \(\Omega\).  We’ll only assess efficiency at one state of charge so won’t need to worry about changes in open circuit voltage and resistance.</li>
+  <li><strong>Motor</strong>: \(K_v = 800\) RPM/V, \(R = 1.2\ \Omega\), and \(I_0 = 0.2\) A.</li>
+  <li><strong>Propeller</strong>: APC Sport 10 x 8</li>
 </ul>
 
-<p>Discuss your results and what you think is the best metric for your application.  Based on your decision report your design speed and design CL.</p>
+<p>At a flight speed of \(V_\infty = 15\) m/s, plot the efficiency of the propeller, motor, battery, as well as total efficiency (four curves) as a function of propeller rotation speed from 400 rad/s to 600 rad/s.</p>
 
-<h3 id="buildfly">Build/Fly</h3>
-
-<p>Spend at least four hours this week working on building (and ideally some RC flying though it’s not required that you make it to the flying stage).  Note: that is four hours each, not four hours collectively as a team.</p>
-
-<p>Report:</p>
-
-<ul>
-  <li>How much time you personally spent working on building/flying.</li>
-  <li>What you personally accomplished.</li>
-  <li>An overview of what the team accomplished, lessons learned, and areas for future improvement.</li>
-  <li>Photo(s) of the aircraft on the ground (and in flight if you get there).</li>
-</ul>
-
-<!-- This week, finish building your aircraft and get it up in the air under radio control.  Include a photo of the complete aircraft on the ground and some photos of its flight.  You will likely learn quite a bit from flight testing.  Report on what you learned and areas where your aircraft needs to improve. -->
-
-<!-- Ideally you would validate and improve your models by measuring performance in-flight like endurance, climb rate, turn radius, etc.  This can be done by recording your RC flight on the autopilot on-board computer.  Note: this is not required, just a suggestion for improving your design -->
-
+<p><strong>Hints</strong>: It’ll be easiest to work the power chain backwards from propeller, to motor, to battery. Using \(V_\infty\) and \(\Omega\) as inputs you have everything you need to compute all propeller properties by interpolating the propeller data.  Some advance ratios may be outside the range of the provided data, and in those cases you can just use the values at the end point.  You now know the torque (and rotation speed) on the motor and will be able to compute all the motor quantities.  Finally, you now know the power coming into the motor, which must be the power supplied by the battery (note that voltage of battery and voltage of motor are in general not equal), and so can compute all corresponding battery quantities.</p>
 
     </div>
 
