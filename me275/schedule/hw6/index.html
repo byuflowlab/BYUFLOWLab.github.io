@@ -70,7 +70,7 @@
           ME 275
         </a>
       </h1>
-      <p class="lead">Computaitional Methods</p>
+      <p class="lead">Computational Methods</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -97,20 +97,22 @@
 
 <ol>
   <li>
-    <p>Solve the following initial value problem over the interval from \(t\) = 0 to 2 where \(y(0) = 1\). Display all your results on the same graph.</p>
+    <p>Solve the following initial value problem over the interval \(t\) = 0 to 2 where \(y(0) = 1\).</p>
 
 \[\frac{dy}{dt} = y t^2 - 1.1 y\]
 
-    <p>(a) Write your own Euler’s method and use the following step sizes h = 0.5, …, …</p>
+    <p>Display all of the following results on the same graph.</p>
 
-    <p>(b) Use the default solver (RK45) in <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code>.  Set rtol=1e-6 (the default tolerance is pretty coarse).</p>
+    <p>(a) Write your own Euler’s method and use the following step sizes h = 0.5, 0.1, 0.01.</p>
+
+    <p>(b) Use the default solver (RK45) in <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code>.  Start with the default tolerances.  Then plot a second set of results with atol=1e-8 and rtol=1e-8 (the default tolerances lead to good solutions but with very coarse time intervals).</p>
   </li>
   <li>
     <p>The van der Pol equation was originally developed to model electric circuits and has also been used to model biological neurons.</p>
 
 \[{d^2x \over dt^2} - \mu(1-x^2){dx \over dt} + x = 0\]
 
-    <p>Using the initial conditions \(y(0) = y^\prime(0) = 1\), solve this equation from t = 0 to 10 using <code class="language-plaintext highlighter-rouge">solve_ivp</code>.</p>
+    <p>Using the initial conditions \(x(0) = x^\prime(0) = 1\), solve this equation from t = 0 to 10 using <code class="language-plaintext highlighter-rouge">solve_ivp</code>.</p>
   </li>
   <li>
     <p>ping pong problem</p>
