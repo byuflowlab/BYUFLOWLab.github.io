@@ -101,21 +101,48 @@
 
 \[\frac{dy}{dt} = y t^2 - 1.1 y\]
 
-    <p>Display all of the following results on the same graph.</p>
+    <p>Display all of the following results on the same graph (five curves).</p>
 
     <p>(a) Write your own Euler’s method and use the following step sizes h = 0.5, 0.1, 0.01.</p>
 
-    <p>(b) Use the default solver (RK45) in <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code>.  Start with the default tolerances.  Then plot a second set of results with atol=1e-8 and rtol=1e-8 (the default tolerances lead to good solutions but with very coarse time intervals).</p>
+    <p>(b) Use the default solver (RK45) in <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code>.  Start with the default tolerances.  Then plot a second set of results with atol=1e-12 and rtol=1e-12 (the default tolerances lead to ok solutions but with really coarse time intervals).</p>
   </li>
   <li>
     <p>The van der Pol equation was originally developed to model electric circuits and has also been used to model biological neurons.</p>
 
 \[{d^2x \over dt^2} - \mu(1-x^2){dx \over dt} + x = 0\]
 
-    <p>Using the initial conditions \(x(0) = x^\prime(0) = 1\), solve this equation from t = 0 to 10 using <code class="language-plaintext highlighter-rouge">solve_ivp</code>.</p>
+    <p>Using the initial conditions \(x(0) = 1, x^\prime(0) = 2\), and the parameter \(\mu = 2\), solve this equation from t = 0 to 10 using <code class="language-plaintext highlighter-rouge">solve_ivp</code>.</p>
   </li>
   <li>
-    <p>ping pong problem</p>
+    <p>“Game of 7” is a game where you try and bounce a ping pong ball across the table with a precise number of
+bounces. The first time, the ball should bounce once, the second time it should bounce twice, etc. The goal is to get the ball to move from 1 bounce to as many bounces as possible without messing up. For an example, see this <a href="https://www.youtube.com/shorts/zyqROSYvnss">video</a>.  We will build a numerical simulation, and use it to see which initial conditions can lead to the desired number of bounces of a ball across the table.</p>
+
+    <p>Our first step is deriving the equations of motion. More specifically, we can divide the behavior into two different regimes: flying through the air and contacting the table.</p>
+
+    <p>When flying through the air, the ball is subject to gravity and drag (which is proportional to the square of velocity) with proportionality constant \(f\). Drawing a free-body diagram and writing Newton’s second law in both \(x\) and \(y\) directions:</p>
+
+    <p><img src="../pingpong.png" width="400px" class="img-center" /></p>
+
+\[\begin{align}
+ - f \dot{x} \sqrt{\dot{x}^2 + \dot{y}^2} &amp;= m \ddot{x} \\
+ - f \dot{y} \sqrt{\dot{x}^2 + \dot{y}^2} - m g &amp;= m \ddot{y}
+ \end{align}\]
+
+    <p>When the ball is in contact with the ground, we will assume that the ball acts like a mass with stiffness (modeled as a spring with stiffness \(k\)) and damping (modeled as a damper with damping \(b\)). Drawing a free-body diagram and writing Newton’s second law in both \(x\) and \(y\) directions yields the same equations but with the added spring/damping terms in the \(y\) direction:</p>
+
+\[\begin{align}
+ - f \dot{x} \sqrt{\dot{x}^2 + \dot{y}^2} &amp;= m \ddot{x} \\
+ - f \dot{y} \sqrt{\dot{x}^2 + \dot{y}^2} - m g - b \dot{y} - k y &amp;= m \ddot{y}
+ \end{align}\]
+
+    <p>Converting these coupled second-order ODEs into first-order ODEs will result in four coupled equations (where one of the equations has additional terms when in contact with the ground).</p>
+
+    <p>In your ODE function you will need an if/else statement based on whether the ball is in contact with the ground or not.  For simplicity, we’ll neglect the radius of the ball and say we’re in contact with the ground when \(y \le 0\).</p>
+
+    <p>Use the following parameters: \(m\) = 0.0027 kg, \(f\) = 0.0007 kg/m, \(b\) = 0.01 kg/s, \(k\) = 200 N/m.</p>
+
+    <p>For a table length of 1 m, find appropriate initial conditions to get to 3 bounces before leaving the table.  Limit the \(x\) axis of your plot to range from 0 to 1 so that’s it is easy to see the bounces on the table.  The pyplot function <code class="language-plaintext highlighter-rouge">xlim</code> will be helpful.</p>
   </li>
 </ol>
 
