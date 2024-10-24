@@ -88,74 +88,45 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW</h1> -->
-      <h1 id="hw-7">HW 7</h1>
+      <h1 id="hw-8">HW 8</h1>
 
-<p>due 10/31/2024 before midnight via Learning Suite
+<p>due 11/7/2024 before midnight via Learning Suite
 <span style="float:right;">25 possible points</span></p>
 
 <hr />
 
-<p>These first two problems are based on problems in “Applied Numerical Methods with Python” by Steven Chapra and David Clough, the latter is based on problems in “Principles of Statistics for Engineers and Scientists” by William Navidi.</p>
-
 <ol>
   <li>
-    <p>A mass-spring-damper is a common mechanical system model (e.g., vehicle suspension, a bridge, human body, aircraft landing gear).  In class, we considered a case with gravity (e.g., bungee jumper), but we now consider the simpler case without gravity (e.g., horizontal). Newton’s second law results in:</p>
-
-\[m\frac{dx^2}{dt^2} + b \frac{dx}{dt} + k x = 0\]
-
-    <p>where \(m\) is the mass, \(b\) is the damping coefficient, and \(k\) is the spring constant.  Let \(m = 20, k = 20\) and for the damping \(b\) we will try three values: 5, 40, 200.  Assume an initial displacement of 1 and an initial velocity of 0.  Using a standard ODE solver, plot the results from \(t = 0\) to 15, with all three cases on the same plot.</p>
-  </li>
-  <li>
-    <p>A simple model of an epidemic is:</p>
-
-\[\begin{align}
- \frac{dS}{dt} &amp;= - i S I\\
- \frac{dI}{dt} &amp;= i S I - r I\\
- \frac{dR}{dt} &amp;= r I\\
- \end{align}\]
-
-    <p>where \(S\) = susceptible individuals, \(I\) = infected individuals, \(R\) = recovered individuals, \(i\) = infection rate, \(r\) = recovery rate.  A city has 10,000 people all of whom are susceptible.</p>
-
-    <p>(a) If a single infectious individual enters the city at t = 0, compute the progression of the epidemic until the number of infected individuals falls below 10. Use the following parameters: \(i\) = 0.002/7 (the 7 is to convert from infection rate per week to per day) and \(r\) = 0.15. Plot S, I and R as a function of time, all on the same plot.</p>
-
-    <p>(b) Suppose that, after recovery, there is a loss of immunity that causes recovered individuals once again to become susceptible. This reinfection mechanism can be modeled as \(\rho R\), where \(\rho\) is the return rate. To be specific this means you should add \(\rho R\) to the existing \(dS/dt\) term (increasing the number of people who susceptible) and you should subtract \(\rho R\) from the existing \(dR/dt\) term (decreasing by the same amount, the pool of recovered individuals).  Repeat the computations/plot in (a) using \(\rho = 0.03\).</p>
-  </li>
-  <li>
-    <p>A sample of 100 cars driving on the freeway during a morning commute was drawn, and the number of occupants in each car was tabulated as follows:</p>
+    <p>The peak velocity and peak acceleration were recorded for five earthquakes.</p>
 
     <table style="max-width: 500px;">
       <tbody>
         <tr>
-          <td>Occupants</td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
+          <td>Velocity</td>
+          <td>1.54</td>
+          <td>1.60</td>
+          <td>0.95</td>
+          <td>1.30</td>
+          <td>2.92</td>
         </tr>
         <tr>
-          <td>Number of cars</td>
-          <td>70</td>
-          <td>15</td>
-          <td>10</td>
-          <td>3</td>
-          <td>2</td>
+          <td>Acceleration</td>
+          <td>7.64</td>
+          <td>8.04</td>
+          <td>8.04</td>
+          <td>6.37</td>
+          <td>3.25</td>
         </tr>
       </tbody>
     </table>
 
-    <p>a) compute the sample mean</p>
+    <p>a) Compute the correlation coefficient between these two variables.</p>
 
-    <p>b) compute the sample standard deviation</p>
+    <p>b) Create a scatterplot.</p>
 
-    <p>c) compute the median</p>
-
-    <p>d) compute the first and third quartiles (which means 25th percentile and 75th percentile respectively)</p>
-
-    <p>e) what proportion of cars had more than the mean number of occupants?</p>
+    <p>c) Is the correlation coefficient an appropriate summary of this data?  Explain why or why not.</p>
   </li>
 </ol>
-
 
     </div>
 
