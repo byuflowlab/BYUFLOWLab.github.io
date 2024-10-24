@@ -11,7 +11,7 @@
 
   <title>
     
-      HW &middot; ME 415
+      HW &middot; ME 275
     
   </title>
 
@@ -66,18 +66,18 @@
   <div class="container">
     <div class="sidebar-about">
       <h1>
-        <a href="/me415">
-          ME 415
+        <a href="/me275">
+          ME 275
         </a>
       </h1>
-      <p class="lead">Flight Vehicle Design</p>
+      <p class="lead">Computational Methods</p>
     </div>
 
     <nav class="sidebar-nav">
 
-      <a class="sidebar-nav-item" href="/me415/syllabus">Syllabus</a>
-      <a class="sidebar-nav-item" href="/me415/schedule">Schedule</a>
-      <a class="sidebar-nav-item" href="/me415/resources">Resources</a>
+      <a class="sidebar-nav-item" href="/me275/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me275/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me275/resources">Resources</a>
 
     </nav>
 
@@ -90,95 +90,34 @@
     <!-- <h1 class="page-title">HW</h1> -->
       <h1 id="hw-7">HW 7</h1>
 
-<p>due 10/30/2024 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
+<p>due 10/31/2024 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
 
 <hr />
 
+<p>These first two problems come from x.</p>
+
 <ol>
   <li>
-    <p>A transport aircraft has the following properties:</p>
+    <p>A mass-spring-damper is a common mechanical system model, for example: vehicle suspension, a bridge, human body, aircraft landing gear, etc.  In class, we considered a case with gravity (e.g., bungee jumper), but we now consider the simpler case without gravity (e.g., horizontal). Newton’s second law results in:</p>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>span</td>
-          <td>50 m</td>
-        </tr>
-        <tr>
-          <td>Sref</td>
-          <td>300 m\(^2\)</td>
-        </tr>
-        <tr>
-          <td>CDp</td>
-          <td>0.01</td>
-        </tr>
-        <tr>
-          <td>Oswald efficiency</td>
-          <td>0.7</td>
-        </tr>
-        <tr>
-          <td>altitude</td>
-          <td>35,000 ft</td>
-        </tr>
-        <tr>
-          <td>take-off mass</td>
-          <td>200,000 kg</td>
-        </tr>
-        <tr>
-          <td>fuel burned</td>
-          <td>60,000 kg</td>
-        </tr>
-        <tr>
-          <td>specific fuel consumption</td>
-          <td>0.55 hr\(^{-1}\)</td>
-        </tr>
-        <tr>
-          <td>\(M_{cc}\)</td>
-          <td>0.75</td>
-        </tr>
-      </tbody>
-    </table>
+\[m\frac{dx^2}{dt^2} + b \frac{dx}{dt} + k x = 0\]
 
-    <p>a) Plot the lift-to-drag ratio as a function of flight speed.</p>
-
-    <p>b) Plot the range (in km) as a function of flight speed.</p>
-
-    <p>For simplicity, we’ll assume constant altitude, and use a constant weight (average between takeoff and landing).  Sidenote: this fuel represents that burned during a typical mission, but it would need to carry more for reserves.  Because we are varying speed, and are at relatively high Mach numbers, it will be important to include compressibility drag (use 3.41 in the book).  Be sure to use a wide enough range of speeds to clearly see the peaks (where each metric is maximized).</p>
+    <p>where \(m\) is the mass, \(b\) is the damping coefficient, and $k\(is the spring constant.  Let\)m = 20, k = 20\(and for\)b\(we will try three values: 5, 40, 200.  Assume an initial displacement of 1 and an initial velocity of 0.  Using a standard ODE solver, plot the results from\)t = 0$$ to 15, with all three cases on the same plot.</p>
   </li>
   <li>
-    <p>Consider two wings.  Wing A is elliptically loaded.  Wing B has a 5% larger span but with the same root bending moment (and so will not be elliptically loaded).  What is the inviscid span efficiency of Wing B?  What is the ratio of induced drag for Wing B divided by Wing A?</p>
-  </li>
-  <li>
-    <p>Create a flight envelope diagram of true air speed versus altitude for a small electric powered aircraft, i.e., an air taxi, with the specifications provided below.</p>
+    <p>A simple model of an epidemic is:</p>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>mass</td>
-          <td>1,500 kg</td>
-        </tr>
-        <tr>
-          <td>CLmax</td>
-          <td>1.1</td>
-        </tr>
-        <tr>
-          <td>Sref</td>
-          <td>20 m\(^2\)</td>
-        </tr>
-        <tr>
-          <td>max design speed</td>
-          <td>75 m/s (EAS)</td>
-        </tr>
-        <tr>
-          <td>ceiling</td>
-          <td>8,000 ft</td>
-        </tr>
-      </tbody>
-    </table>
+    <p>\(\begin{align}
+ \frac{dS}{dt} &amp;= - i S I\\
+ \frac{dI}{dt} &amp;= i S I - r I\\
+ \frac{dR}{dt} &amp;= r I\\
+ \end{align}\)
+ where \(S\) = susceptible individuals, \(I\) = infected individuals, \(R\) = recovered individuals, \(i\) = infection rate, \(r\) = recovery rate.  A city has 10,000 people all of whom are susceptible.</p>
+
+    <p>(a) If a single infectious individual enters the city at t = 0, compute the progression of the epidemic until the number of infected individuals falls below 10. Use the following parameters: \(i\) = 0.0002 and \(r\) = 0.15. Plot S, I and R as a function of time, all on the same plot.</p>
   </li>
 </ol>
-
 
     </div>
 
