@@ -95,126 +95,106 @@
 
 <hr />
 
+<!-- 1. The peak velocity and peak acceleration were recorded for five earthquakes.
+
+    {:style="max-width: 500px;"}
+    | Velocity | 1.54 | 1.60 | 0.95 | 1.30 | 2.92 |
+    | Acceleration | 7.64 | 8.04 | 8.04 | 6.37 | 3.25 |
+
+    a) Compute the correlation coefficient between these two variables.
+
+    b) Create a scatterplot.
+
+    c) Is the correlation coefficient an appropriate summary of this data?  Explain why or why not. -->
+
+<!-- 1. A blood pressure measurement consists of two numbers: the systolic pressure, which is the maximum pressure taken when the heart is contracting, and the diastolic pressure, which is the minimum pressure taken at the beginning of the heartbeat.  Blood pressures were measured in mmHg for a sample of 16 adults as shown in the table below.
+
+    {:style="max-width: 500px;"}
+    | Systolic | Diastolic | | Systolic | Diastolic |
+    | 134 | 87 | | 133 | 91 |
+    | 115 | 83 | | 112 | 75 |
+    | 113 | 77 | | 107 | 71 |
+    | 123 | 77 | | 110 | 74 |
+    | 119 | 69 | | 108 | 69 |
+    | 118 | 88 | | 105 | 66 |
+    | 130 | 76 | | 157 | 103 |
+    | 116 | 70 | | 154 | 94 |
+
+    a) Construct a scatterplot to verify that a linear model is appropriate.
+
+    b) Create a least squares fit for a line predicted diastolic pressure from systolic pressure.
+
+    c) Predict the diastolic pressure for a patient whose systolic pressure is 125 mmHg. -->
+
 <ol>
   <li>
-    <p>The peak velocity and peak acceleration were recorded for five earthquakes.</p>
+    <p>You’re part of a start-up developing lower-limb protheses and are trying to decide what sizes to produce.  You use a public dataset provided by the US Army, where they have taken various measurements of US Military personnel (we’ll use this dataset, but you should be skeptical that this population is representative of the US population in general).  The data is available [here] (may require you to create an account to download).  The two csv files are what we need (data for males and females).</p>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>Velocity</td>
-          <td>1.54</td>
-          <td>1.60</td>
-          <td>0.95</td>
-          <td>1.30</td>
-          <td>2.92</td>
-        </tr>
-        <tr>
-          <td>Acceleration</td>
-          <td>7.64</td>
-          <td>8.04</td>
-          <td>8.04</td>
-          <td>6.37</td>
-          <td>3.25</td>
-        </tr>
-      </tbody>
-    </table>
+    <p>a) The data we are after is labeled “kneeheightmidpatella”, measured in mm, which is the distance from the bottom of the foot to the middle of the knee. Combine the values from the male and female samples, and plot a histogram.  Choose an appropriate amount of bins so that the distribution is clear.</p>
 
-    <p>a) Compute the correlation coefficient between these two variables.</p>
+    <p>You could use <code class="language-plaintext highlighter-rouge">np.loadfromtxt</code> like we’ve done before, but there’s a lot of columns so it will be much easier to refer to the columns by their title rather than by index number (which is what you’d have to do with loadfromtxt).  The Python library, pandas, is a popular way to work with data like this, but for our purposes we can avoid learning another library and get by with numpy.  The following lines would allow extract this data from the female.csv file.  The first line is a function specifically for reading from csv files (and requires specifying the encoding type the file was saved in).  In the next line we can index the list by name rather than number, where the name corresponds to the labels in the first row of the csv file.</p>
 
-    <p>b) Create a scatterplot.</p>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">dataf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">recfromcsv</span><span class="p">(</span><span class="sh">"</span><span class="s">female.csv</span><span class="sh">"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">ISO-8859-1</span><span class="sh">'</span><span class="p">)</span>
+ <span class="n">knee_f</span> <span class="o">=</span> <span class="n">data_f</span><span class="p">[</span><span class="sh">"</span><span class="s">kneeheightmidpatella</span><span class="sh">"</span><span class="p">]</span>
+</code></pre></div>    </div>
 
-    <p>c) Is the correlation coefficient an appropriate summary of this data?  Explain why or why not.</p>
+    <p>b) You can only make a limited number of protheses sizes in your early startup phase, so let’s focus on people with measurements between 425 and 550 mm. Filter this data out, then your task is to determine four different size ranges, such that each size fits approximately 25% of the participants (hint: percentiles). What is the maximum and minimum range for each of your four sizes?</p>
+
+    <p>c) Let’s also determine if there is a strong correlation between “kneeheightmidpatella” and “stature” (the person’s height, also in mm) with stature as the x-axis.  Create a scatterplot of the data and on the same figure, plot a least squares fit. Report also the corresponding correlation coefficient.</p>
+
+    <p>The remaining problems are from “Principles of Statistics for Engineers and Scientists” by William Navidi.</p>
   </li>
   <li>
-    <p>A blood pressure measurement consists of two numbers: the systolic pressure, which is the maximum pressure taken when the heart is contracting, and the diastolic pressure, which is the minimum pressure taken at the beginning of the heartbeat.  Blood pressures were measured in mmHg for a sample of 16 adults as shown in the table below.</p>
+    <p>Let V be the event that a computer contains a virus, and let W be the event that a computer contains a worm. Suppose P(V) = 0.15, P(W) = 0.05, and P(V or W) = 0.17.</p>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>Systolic</td>
-          <td>Diastolic</td>
-          <td> </td>
-          <td>Systolic</td>
-          <td>Diastolic</td>
-        </tr>
-        <tr>
-          <td>134</td>
-          <td>87</td>
-          <td> </td>
-          <td>133</td>
-          <td>91</td>
-        </tr>
-        <tr>
-          <td>115</td>
-          <td>83</td>
-          <td> </td>
-          <td>112</td>
-          <td>75</td>
-        </tr>
-        <tr>
-          <td>113</td>
-          <td>77</td>
-          <td> </td>
-          <td>107</td>
-          <td>71</td>
-        </tr>
-        <tr>
-          <td>123</td>
-          <td>77</td>
-          <td> </td>
-          <td>110</td>
-          <td>74</td>
-        </tr>
-        <tr>
-          <td>119</td>
-          <td>69</td>
-          <td> </td>
-          <td>108</td>
-          <td>69</td>
-        </tr>
-        <tr>
-          <td>118</td>
-          <td>88</td>
-          <td> </td>
-          <td>105</td>
-          <td>66</td>
-        </tr>
-        <tr>
-          <td>130</td>
-          <td>76</td>
-          <td> </td>
-          <td>157</td>
-          <td>103</td>
-        </tr>
-        <tr>
-          <td>116</td>
-          <td>70</td>
-          <td> </td>
-          <td>154</td>
-          <td>94</td>
-        </tr>
-      </tbody>
-    </table>
+    <p>a. Find the probability that the computer contains both a virus and a worm.</p>
 
-    <p>a) Construct a scatterplot to verify that a linear model is appropriate.</p>
+    <p>b. Find the probability that the computer contains neither a virus nor a worm.</p>
 
-    <p>b) Create a least squares fit for a line predicted diastolic pressure from systolic pressure.</p>
-
-    <p>c) Predict the diastolic pressure for a patient whose systolic pressure is 125 mmHg.</p>
+    <p>c. Find the probability that the computer contains a virus but not a worm.</p>
   </li>
   <li>
-    <p>You’re part of a start-up developing lower-limb protheses and are trying to decide what sizes to produce.  To do so, you use a public dataset provided by the US Army, where they have taken various measurements of US Military personnel (we’ll use this dataset, but you should be skeptical that this population is representative of the US population in general).  Download both the male and female data <a href="https://www.openlab.psu.edu/ansur2/">here</a>.</p>
+    <p>Of all failures of a certain type of computer hard drive, it is determined that in 20% of them only the sector containing the file allocation table is damaged, in 70% of them only nonessential sectors are damaged, and in 10% of the cases both the allocation sector and one or more nonessential sectors are damaged. A failed drive is selected at random and examined.</p>
 
-    <p>a) The data we are after is labeled “kneeheightmidpatella”, measured in mm, which is the distance from the bottom of the foot to the middle of the knee. Combine the datasets from the male and female samples, and plot a histogram.  Make sure the bin size is small enough that the distribution is clear.</p>
+    <p>a. What is the probability that the allocation sector is damaged?
+ <!-- b. What is the probability that a nonessential sector is damaged? --></p>
 
-    <p>b) You can only make a limited number of protheses sizes for now, so let’s neglect the largest and smallest sizes, and only consider people with measurements between 425 and 550 mm. Filter this data out, then your task is to determine four different size ranges, such that each size fits approximately 25% of the participants. What is the maximum and minimum range for each of your four sizes?</p>
+    <p>b. If the drive is found to have a damaged allocation sector, what is the probability that some nonessential sectors are damaged as well?
+ <!-- d. If the drive is found to have a damaged nonessential sector, what is the probability that the allocation sector is damaged as well? -->
+ <!-- e. If the drive is found to have a damaged allocation sector, what is the probability that no nonessential sectors are damaged? --></p>
 
-    <p>c) Let’s determine if there is a correlation between “kneeheightmidpatella” and “stature” (the person’s height, also in mm).  Create a scatterplot of the data and on the same figure, plot a least squares fit.</p>
+    <p>c. If the drive is found to have a damaged nonessential sector, what is the probability that the allocation sector is not damaged?</p>
+  </li>
+  <li>
+    <p>A quality-control program at a plastic bottle production line involves inspecting finished bottles for flaws such as microscopic holes. The proportion of bottles that actually have such a flaw is only 0.0002. If a bottle has a flaw, the probability is 0.995 that it will fail the inspection. If a bottle does not have a flaw, the probability is 0.99 that it will pass the inspection.</p>
 
-    <p>d) What is the corresponding correlation coefficient?</p>
+    <p>a. If a bottle fails inspection, what is the probability that it has a flaw?</p>
+
+    <p>b. If a bottle passes inspection, what is the probability that it does not have a flaw?</p>
+
+    <p>c. Explain why a small probability in part (a) is not a problem, so long as the probability in part (b) is large.</p>
   </li>
 </ol>
+
+<!-- 1. A drag racer has two parachutes, a main and a backup, that are designed to bring the vehicle to a stop after the end of a run. Suppose that the main chute deploys with probability 0.99, and that if the main fails to deploy, the backup deploys with probability 0.98.
+
+    a. What is the probability that one of the two parachutes deploys?
+
+    b. What is the probability that the backup parachutes deploys? -->
+
+<!-- 1. A system consists of four components connected as shown in the following diagram:
+
+    Assume A, B, C, and D function independently. If the probabilities that A, B, C, and D fail are 0.10, 0.05, 0.10, and 0.20, respectively, what is the probability that the system functions? -->
+
+<!-- 1. A flywheel is attached to a crankshaft by 12 bolts, numbered 1 through 12. Each bolt is checked to determine whether it is torqued correctly. Let A be the event that all the bolts are torqued correctly, let B be the event that the #3 bolt is not torqued correctly, let C be the event that exactly one bolt is not torqued correctly, and let D be the event that bolts #5 and #8 are torqued correctly. State whether each of the following pairs of events is mutually exclusive.
+
+    a. A and B
+
+    b. B and D
+
+    c. C and D
+
+    d. B and C -->
 
     </div>
 
