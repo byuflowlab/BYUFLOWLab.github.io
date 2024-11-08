@@ -149,7 +149,11 @@ We will only analyze the first stage, the others stages would follow essentially
 
 <p>The parameter \(\Delta V_{ideal}\) is the velocity change from Tsiolkovsky’s rocket equation ignoring all losses (gravity, drag, steering, etc.).  The listed specific impulse is just an average of sea level and vacuum (which we’ll assume is constant for the entire stage).</p>
 
-<p>The notional design for this stage is shown in the figure at the top of this <a href="https://s3-eu-west-1.amazonaws.com/niavok/ps/saturn_v_first_stage.pdf">spec sheet</a>.  The fuel tanks and rocket body are made of aluminum.  Note that a stacked configuration is used and that about 10 meters of extra length is required below the tanks for the engines.  It is easiest to estimate the required tank size by assuming that the tanks are cylinders and then add on about 3 meters per tank to account for the fact that the round end caps will need to be longer than a pure cylinder and that there will be some ullage volume (that means the tanks won’t be 100% filled).</p>
+<p>The notional design for this stage is shown below:</p>
+
+<p><img src="../tanks.png" height="400px" class="img-center" /></p>
+
+<p>The fuel tanks and rocket body are made of aluminum.  Note that a stacked configuration is used and that about 10 meters of extra length is required below the tanks for the engines.  It is easiest to estimate the required tank size by assuming that the tanks are cylinders and then add on about 3 meters per tank to account for the fact that the round end caps will need to be longer than a pure cylinder and that there will be some ullage volume (that means the tanks won’t be 100% filled).</p>
 
 <p>Because the structural mass depends on the propellant mass, and the propellant mass depends on the structural mass, an iterative process is required (i.e., root finding).  If you’re struggling to know if you’re on the right track, because this is an actual rocket, you could start with the known propellant mass and work your way through the equations checking your numbers against the actual rocket, then fine tune from there.</p>
 
