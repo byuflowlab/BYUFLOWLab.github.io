@@ -88,50 +88,91 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW 8</h1> -->
-      <h1 id="hw-8-controls">HW 8: Controls</h1>
+      <h1 id="hw-8">HW 8</h1>
 
-<p>due 11/15/2017 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
+<p>due 11/13/2024 before midnight via Learning Suite
+<span style="float:right;">15 possible points</span></p>
 
-<!-- ## Controls -->
+<hr />
 
-<p>The first two questions will be worked on collectively as a team, whereas the last question asks about your specific contributions.  For the team parts you should work collectively on one report, but each individual should submit the report so its easier for the TAs to assign credit.  It is not expected that every person works on every part of the autopilot development (it would be wiser to split up tasks), but it is expected that all contribute meaningfully to the autopilot development in some way.  You should spend at least 5.5 hours on your project, leaving an hour for the quiz and a small amount of assigned reading.</p>
+<p>We will be analyzing Saturn V: a 3-stage liquid-fuel rocket.
+We will only analyze the first stage, the others stages would follow essentially the same procedure.  The first stage uses five Rocketdyne F-1 engines with RP-1 (rocket propellant-1) as the fuel and LOX (liquid oxygen) as the oxidizer.</p>
+
+<table style="max-width: 500px;">
+  <tbody>
+    <tr>
+      <td>mass of other stages (+ payload)</td>
+      <td>667,800 kg</td>
+    </tr>
+    <tr>
+      <td>rocket diameter</td>
+      <td>10.1 m</td>
+    </tr>
+    <tr>
+      <td>ideal velocity change   \(\Delta V_{ideal}\)</td>
+      <td>3600 m/s</td>
+    </tr>
+    <tr>
+      <td>specific impulse   \(I_{sp}\)</td>
+      <td>283 s</td>
+    </tr>
+    <tr>
+      <td>oxidizer-to-fuel mass ratio</td>
+      <td>2.27</td>
+    </tr>
+    <tr>
+      <td>one engine mass (there are 5 total)</td>
+      <td>8400 kg</td>
+    </tr>
+    <tr>
+      <td>density of RP-1</td>
+      <td>810 kg/m\(^3\)</td>
+    </tr>
+    <tr>
+      <td>density of LOX</td>
+      <td>1141 kg/m\(^3\)</td>
+    </tr>
+    <tr>
+      <td>tank thickness</td>
+      <td>5 mm</td>
+    </tr>
+    <tr>
+      <td>rocket body thickness</td>
+      <td>2 cm</td>
+    </tr>
+    <tr>
+      <td>density of aluminum</td>
+      <td>2810 kg/m\(^3\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The parameter \(\Delta V_{ideal}\) is the velocity change from Tsiolkovsky’s rocket equation ignoring all losses (gravity, drag, steering, etc.).  The listed specific impulse is just an average of sea level and vacuum (which we’ll assume is constant for the entire stage).</p>
+
+<p>The notional design for this stage is shown in the figure at the top of this <a href="https://s3-eu-west-1.amazonaws.com/niavok/ps/saturn_v_first_stage.pdf">spec sheet</a>.  The fuel tanks and rocket body are made of aluminum.  Note that a stacked configuration is used and that about 10 meters of extra length is required below the tanks for the engines.  It is easiest to estimate the required tank size by assuming that the tanks are cylinders and then add on about 3 meters per tank to account for the fact that the round end caps will need to be longer than a pure cylinder and that there will be some ullage volume (that means the tanks won’t be 100% filled).</p>
+
+<p>Because the structural mass depends on the propellant mass, and the propellant mass depends on the structural mass, an iterative process is required (i.e., root finding).  If you’re struggling to know if you’re on the right track, because this is an actual rocket, you could start with the known propellant mass and work your way through the equations checking your numbers against the actual rocket, then fine tune from there.</p>
+
+<p>Report the following.  Be sure to clearly show your work and assumptions.</p>
 
 <ol>
-  <li>
-    <p>Provide a <strong>detailed</strong> description of your control strategy.  We don’t want to look through your raw code, but words alone won’t be clear enough either.  You might consider using psuedocode, flowcharts, or other types of diagrams (along with words) to clearly describe your control strategy.  If you have multiple controllers then describe each (i.e., one for altitude, one for navigation).  For each controller, describe the parameter you will target and exactly how will you compute this parameter from your sensors (if it is not directly given by the sensors).  Describe the logic of your controller.  Describe any filters, limiters, or other strategies you will use.</p>
-
-    <blockquote>
-      <p>A template for your controller is available here: <a href="https://github.com/byuflowlab/autopilot-me415">https://github.com/byuflowlab/autopilot-me415</a> in autopilot.py (Python).</p>
-    </blockquote>
-  </li>
-  <li>Provide a <strong>detailed</strong> description of the testing strategy you have employed to date.  Some suggested testing approaches include:
-    <ul>
-      <li>flying RC with data collection on to check typical control inputs and responses</li>
-      <li>dynamic simulation of your controller (i.e., using Gazebo)</li>
-      <li>on-the-ground testing of your controller (i.e., walking around with your plane with the autopilot on)</li>
-      <li>in-flight autopilot testing
- <!-- - virtual control (i.e., running an RC flight through the autopilot) --></li>
-    </ul>
-
-    <p>Show your test data and clearly describe the results.  Describe what you’ve learned and the improvements you have made.</p>
-
-    <blockquote>
-      <p>To use Gazebo you’ll need to modify the plane_params.yaml file available at the same link <a href="https://github.com/byuflowlab/autopilot-me415">https://github.com/byuflowlab/autopilot-me415</a>.  You should have all the information already except for the control derivatives.  These are like the stability derivatives except they are the derivatives of the forces/moments with respect to control inputs (rudder, elevator, etc.).  You can estimate these with XFLR5 also.  The relevant tutorials are:</p>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=xmalG5VS47g&amp;index=4&amp;list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">Flapped foil starting at 4:00</a></li>
-        <li><a href="https://www.youtube.com/watch?v=uUQhFh0d4uM&amp;index=11&amp;list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">Flapped wing</a></li>
-        <li><a href="https://www.youtube.com/watch?v=rBkaaNJH7AI&amp;index=19&amp;list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">Control derivatives</a></li>
-      </ul>
-    </blockquote>
-  </li>
-  <li>Report:
-    <ul>
-      <li>The amount of time you spent working on autopilot development (or other relevant project tasks).</li>
-      <li>Describe your specific contributions this week in detail.</li>
-    </ul>
-  </li>
+  <li>The propellant mass.</li>
+  <li>The required body length for this stage.</li>
+  <li>The dry mass (structural mass not counting engines).</li>
 </ol>
+
+<!-- {:style="max-width: 800px;"}
+|mass of other stages (+ payload) | 667,800 kg  | [wikipedia: Saturn V](https://en.wikipedia.org/wiki/Saturn_V) |
+|rocket diameter | 10.1 m | [wikipedia: Saturn V](https://en.wikipedia.org/wiki/Saturn_V)  |
+|ideal velocity change   $$\Delta V_{ideal}$$ | 3600 m/s | computed based on mission  |
+|specific impulse   $$I_{sp}$$ | 283 s | [wikipedia: Rocketdyne F-1](https://en.wikipedia.org/wiki/Rocketdyne_F-1)  |
+|oxidizer-to-fuel mass ratio  | 2.27  | [wikipedia: Rocketdyne F-1](https://en.wikipedia.org/wiki/Rocketdyne_F-1) |
+|one engine mass (there are 5 total) | 8400 kg | [wikipedia: Rocketdyne F-1](https://en.wikipedia.org/wiki/Rocketdyne_F-1)  |
+|density of RP-1  |  810 kg/m$$^3$$ | [wikipedia: RP-1](https://en.wikipedia.org/wiki/RP-1) |
+|density of LOX  | 1141 kg/m$$^3$$ | [wikipedia: LOX](https://en.wikipedia.org/wiki/Liquid_oxygen) |
+|tank thickness | 5 mm | [random internet citizen](https://space.stackexchange.com/questions/13286/whats-the-thickness-and-weight-of-rocket-tanks)  |
+|rocket body thickness | 2 cm  | scaled up from smaller rocket |
+|density of aluminum | 2810 kg/m$$^3$$  | [aluminum density](https://www.thyssenkrupp-materials.co.uk/density-of-aluminium.html) | -->
 
     </div>
 
