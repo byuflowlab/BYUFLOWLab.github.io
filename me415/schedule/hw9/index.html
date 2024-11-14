@@ -11,7 +11,7 @@
 
   <title>
     
-      HW 9 &middot; ME 415
+      HW &middot; ME 415
     
   </title>
 
@@ -87,84 +87,56 @@
 
 
     <div class="content container">
-    <!-- <h1 class="page-title">HW 9</h1> -->
-      <h1 id="hw-9-rockets">HW 9: Rockets</h1>
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h1 id="hw-9">HW 9</h1>
 
-<p>due 12/6/2017 before midnight via Learning Suite
-<span style="float:right;">50 possible points</span></p>
+<p>due 11/20/2024 before midnight via Learning Suite
+<span style="float:right;">15 possible points</span></p>
 
-<p>All of these exercises will be done in class (though some of you may need a little extra time outside of class to finish up).  I’d like to give you practice with rocket analyses, while still preserving your out of class time for finishing up your plane and report.</p>
+<hr />
 
-<ol>
-  <li>
-    <p>Basic Sizing of a Rocket Engine.  Some parameters for a liquid-fueled rocket engine are given below:</p>
+<p>This problem uses the same rocket from the previous homework.  In this case we are interested in the flight trajectory.  The Saturn V does not fly at a straight angle during the first stage and so it would be difficult to provide an accurate estimate using the closed-form rocket equation.  Instead, we need to use numerical integration.  Though we will still ignore drag in this analysis.</p>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>\(\gamma\)</td>
-          <td>ratio of specific heats for combustion gas mixture</td>
-          <td>1.2</td>
-        </tr>
-        <tr>
-          <td>\(M_w\)</td>
-          <td>molecular weight of combustion gas mixture</td>
-          <td>12 (g/mol)</td>
-        </tr>
-        <tr>
-          <td>\(T_{Tc}\)</td>
-          <td>combustion (total) temperature</td>
-          <td>3500 K</td>
-        </tr>
-        <tr>
-          <td>\(P_{Tc}\)</td>
-          <td>combustion (total) pressure</td>
-          <td>20 MPa</td>
-        </tr>
-        <tr>
-          <td>\(I_{sp}\)</td>
-          <td>required specific impulse at altitude</td>
-          <td>400 seconds</td>
-        </tr>
-        <tr>
-          <td>\(T\)</td>
-          <td>required thrust at altitude</td>
-          <td>2 MN</td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td>nozzle type</td>
-          <td>80% bell nozzle</td>
-        </tr>
-        <tr>
-          <td>\(\sigma_c\)</td>
-          <td>max allowable stress in combustion chamber wall</td>
-          <td>55 MPa</td>
-        </tr>
-      </tbody>
-    </table>
+<p>As mentioned the heading angle changes significantly throughout the flight.  I fit a curve to postflight trajectory data and computed the heading angle as a function of time during stage 1.  Note that \(\theta = 0\) corresponds to vertical flight:</p>
 
-    <p>Design for peak efficiency at an altitude of 12.5 km (shortly after max-Q).  The required thrust and specific impulse apply at this altitude.</p>
+<!-- https://history.nasa.gov/afj/ap10fj/pdf/as-505-postflight-trajectory.pdf -->
 
-    <p>Determine/design the following:</p>
+<p>\(\theta = p_1 \arctan\left(p_2 t^{p_3}\right)\)
+where
+\(p_1 = 0.866, p_2 = 2.665 \times 10^{-5}, p_3 = 2.378\)</p>
 
-    <ul>
-      <li>the areas (3) at the end of the combustion chamber, throat, and exit.</li>
-      <li>the lengths (3) of the combustion chamber, the converging, and diverging sections of the nozzle.</li>
-      <li>the wall thickness (1) of the combustion chamber assuming a thin-shell cylindrical combustion chamber.</li>
-      <li>Draw your nozzle to scale.</li>
-    </ul>
+<p>Other parameters you will need:</p>
 
-    <p>Note: These specs correspond to the Space Shuttle Main Engine so you can check some of your numbers (though don’t expect them to be exactly the same, there are important boundary layer losses and multiphase flow losses on a nozzle that we are neglecting).</p>
-  </li>
-  <li>
-    <p>Basic Sizing/Performance of a Rocket.  The worksheet is available online.  I’ve already laid out the methodology so you don’t need to repeat it here.  Just report the four critical values, and include a brief discussion on any lessons learned.</p>
-  </li>
-</ol>
+<table style="max-width: 400px;">
+  <tbody>
+    <tr>
+      <td>thrust</td>
+      <td>35.1 MN</td>
+    </tr>
+    <tr>
+      <td>total rocket mass</td>
+      <td>\(2.97 \times 10^6\) kg</td>
+    </tr>
+    <tr>
+      <td>specific impulse</td>
+      <td>283 s</td>
+    </tr>
+  </tbody>
+</table>
 
-<!-- 3. Orbital Mechanics.  Coming Monday. -->
+<p>You could solve this using any ODE solver (e.g. <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code> in python), or you could write a basic forward Euler method.  This means that you setup a time vector, and a starting point for \(V, m, z, x\), and then execute a for loop.  At iteration (\(i\)) you update those four values using data from the previous iteration (\(i - 1\)).    For example, using the last ODE (and setting \(\Delta t = t^{(i)} - t^{(i-1)}\)):</p>
 
-<!-- 3. You spend the rest of your time finishing your project and report. -->
+\[x^{(i)} = x^{(i-1)} + V^{(i-1)}\sin\theta^{(i-1)} \Delta t\]
+
+<p>Report the following.  Be sure to clearly show your work and assumptions.</p>
+
+<!-- The actual velocity and altitude at the end of stage 1, according to [Apollo 11 data](https://history.nasa.gov/SP-4029/Apollo_11d_Ascent_Phase.htm) are 2400 m/s at 67 km altitude and 100 km forward distance. -->
+
+<ul>
+  <li>Plot the trajectory with forward distance on the \(x\)-axis and altitude on the \(y\)-axis.  (I tabulated the actual <a href="../traj.dat">flight data</a> if you are interested in comparing, first column is the forward distance, and the second column is the altitude).</li>
+  <li>Your final velocity, altitude, and forward distance.</li>
+</ul>
+
 
     </div>
 
