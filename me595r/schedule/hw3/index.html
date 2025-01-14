@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW &middot; ME 595R
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me595r">
+          ME 595R
+        </a>
+      </h1>
+      <p class="lead">Deep Learning for Engineers</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me595r/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me595r/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me595r/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2025. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h2 id="hw-3-physics-informed-neural-network-pinn">HW 3: Physics Informed Neural Network (PINN)</h2>
+
+<p>due 1/30/2025 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<p>Reproduce Appendix A.1 of <a href="https://www.sciencedirect.com/science/article/pii/S0021999118307125?ref=cra_js_challenge&amp;fr=RR-1">this paper</a> using a physics informed neural net (PINN) to solve Burgers’ equation.</p>
+
+<p>Create a figure similar to Fig A6: the top contour plot (but you don’t need all the x’s making data locations) and the rightmost graph that shows a slice through the data at t=0.75 (you just need your prediction, don’t need to plot exact).  I used \(N_u = 100\) and \(N_f = 10,000\). You’ll likely find that you get pretty good prediction but the shock wave isn’t captured as well (rounded instead of sharp).  That’s sufficient for the purpose of this assignment, but if you’re interested in improving that, see the advanced tips below the regular tips.</p>
+
+<p>A few tips:</p>
+<ul>
+  <li>Use a tanh activation function like noted in the paper (or some other continuously differentiable activation function) since we need second derivatives of the neural net.</li>
+  <li>When computing derivatives with <code class="language-plaintext highlighter-rouge">torch.autograd.grad</code> you will need to use the grad outputs option. We have vectors x and t going in, and vector u coming out, where each element of the vectors corresponds to a different data sample. In other words, dui/dxi and dui/dti are independent of every other index i. To compute all these derivatives in one shot, pass a vector of ones in the grad outputs option (i.e., <code class="language-plaintext highlighter-rouge">grad outputs = torch.ones_like(x)</code>). This is called the “seed” for algorithmic differentiation.</li>
+  <li>You also need to set <code class="language-plaintext highlighter-rouge">create_graph=True</code> in the call to <code class="language-plaintext highlighter-rouge">torch.autograd.grad</code> since we will need to backpropgate through these derivatives (i.e., compute derivatives of derivatives)</li>
+  <li>It’s fine to just use Adam for this assignment, even though they mention LBFGS (see advanced tips if interested in the latter).</li>
+  <li>Latin hypercube sampling is helpful for the collocation points to get good coverage. You can use <code class="language-plaintext highlighter-rouge">from scipy.stats import qmc</code>.  Be sure that these sampling points stay fixed during the training.</li>
+  <li>As always with any neural net problem, I’d recommend starting with a smaller number of layers, collocation points, and epochs until things seem to be working properly.</li>
+</ul>
+
+<p>Optional advanced tips if you want to really capture that shock:</p>
+<ul>
+  <li>Change everything to double precision.  There are large derivatives near the shock and the accuracy isn’t good enough with single precision.  For any torch tensor you create you need to set <code class="language-plaintext highlighter-rouge">dtype=torch.float64</code> and for the network you need to change all its weights and biases to double precision also: <code class="language-plaintext highlighter-rouge">model.double()</code> where model is your instantiated network.</li>
+  <li>Use the LBFGS optimizer with the strong wolfe line search option (<code class="language-plaintext highlighter-rouge">line_search_fn="strong_wolfe"</code>).  In the optimization world, we always use second-order methods like BFGS.  But they are not compatible with minibatching and so the DL world almost always uses first-order methods.  In this case we don’t have tons of data, so we don’t need minibatching, and the second-order optimizer will do much better.  It will be much slower per epoch, but you’ll also need way less epochs.  LBFGS with a line search is setup to work differently and you will need to create a closure function when you call <code class="language-plaintext highlighter-rouge">optimizer.step(closure)</code>.  It’s essentially the same as the train function.  Search online or use AI chatbots for examples.  In this case you’ll want to set <code class="language-plaintext highlighter-rouge">optimizer.zero_grad()</code> at the beginning of the closure function.  Adam and all the other optimizers work with closure functions too, they just don’t require it.</li>
+</ul>
+
+
+    </div>
+
+  </body>
+</html>
