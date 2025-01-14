@@ -88,38 +88,14 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW</h1> -->
-      <h2 id="hw-1-vanilla-nn">HW 1: Vanilla NN</h2>
+      <h2 id="hw-2-write-your-own">HW 2: Write Your Own</h2>
 
-<p>due 1/16/2025 before midnight via Learning Suite
+<p>due 1/23/2025 before midnight via Learning Suite
 <span style="float:right;">25 possible points</span></p>
 
 <hr />
 
-<p>Download the <a href="https://archive.ics.uci.edu/dataset/9/auto+mpg">Auto MPG</a> dataset, specifically the file  <code class="language-plaintext highlighter-rouge">auto-mpg.data</code>.  The <code class="language-plaintext highlighter-rouge">auto-mpg.names</code> file describes each of the 9 columns.  Our goal will be to use this data to predict an automobile’s mpg as a function of the other parameters (except for “car name”, which we won’t need).</p>
-
-<p>First, some data preparation.  Some of the rows have missing values —eliminate those rows from your dataset (you can do that beforehand or just in a loop when you read in the file).  Next, normalize the inputs of each column using a standard normal distribution:</p>
-
-\[\hat{x_i} = \frac{x_i - \mu_{x_i}}{\sigma_{x_i}}\]
-
-<p>where \(\mu\) and \(\sigma\) are the mean and standard deviation respectively of the column.
-It is generally desirable for the input data to be zero-centered, and also helps avoid biasing weights towards a particular sign.  It is also usually helpful to normalize so that we don’t bias the influence of some parameters over others just because of their magnitude (i.e., a unit choice).  It is often also helpful to normalize the targets (mpg), though if you do, remember to unnormalize them when plotting/printing results to get back the actual mpg values.</p>
-
-<p>Finally, randomly separate the data into a training set and a testing set (with an 80/20 train/test split).</p>
-
-<p>Setup a neural net.  You can use however many layers you want, but for a problem this size you should be able to do well with three layers (two hidden layers).  You’ll need to experiment some with different layer widths, activation functions, batch sizes, learning rates, and number of epochs.  You should be able to an average absolute error of under 2 mpg on the <em>test set</em>.  You’ll see some scatter in the results for sure, but that’s still pretty decent predictive capability given how little data we have (and no physics).</p>
-
-<p>To turn in:</p>
-<ul>
-  <li>Plot the objective (mean squared error) across each iteration for both the training and testing set on the same plot.</li>
-  <li>Once training is complete, report your average absolute error of the test set in mpg (again you should be able to get under 2, we’ll say under 2.25 to give some buffer).</li>
-</ul>
-
-<p>Not required stuff:</p>
-<ul>
-  <li>Note that while MSE is a reasonable objective, it is not always the most intuitive to interpret so it can be helpful to plot other quantities (like in this case mean absolute error).</li>
-  <li>One way to look at predictive capabilities is to plot the actual mpg and the predictions, both from test set, against each other.  Plot also a straight diagonal line for reference (the line of perfect predictions).</li>
-</ul>
-
+<p>We will use the same dataset as the last homework, but will now write our own (basic) neural net so that we can better understand what’s happening under the hood. I created a <a href="../template.py">template file</a> to help you get started, but you’re welcome to discard it and organize it your own way if you prefer.  Either way, you’ll need to write your own functions or classes for activation, initialization, loss, layers, network, and optimization. For the activation, loss, layers, and networks, you’ll also need to write the backpropagation routines. I’ve done all the data preparation for you (in the template file).  It’s the same stuff we did last time only done manually since we’re just using numpy and not torch (and we’re skipping batching since it’s not really needed on this small dataset). For the optimizer we will just use plain  gradient descent.  It will work fine in this case, but you’ll likely need to use a far smaller learning rate and will correspondingly need to increase the number of epochs.</p>
 
     </div>
 
