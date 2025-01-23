@@ -97,7 +97,9 @@
 
 <p>Reproduce Appendix A.1 of <a href="https://www.sciencedirect.com/science/article/pii/S0021999118307125?ref=cra_js_challenge&amp;fr=RR-1">this paper</a> using a physics informed neural net (PINN) to solve Burgers’ equation.</p>
 
-<p>Create a figure similar to Fig A6: the top contour plot (but you don’t need all the x’s marking data locations) and the rightmost graph that shows a slice through the data at t=0.75 (you just need your prediction, don’t need to plot exact).  I used \(N_u = 100\) and \(N_f = 10,000\). You’ll likely find that you get pretty good prediction but the shock wave isn’t captured as well (rounded instead of sharp).  That’s sufficient for the purpose of this assignment, but if you’re interested in improving that, see the advanced tips below the regular tips.</p>
+<p>Create a figure similar to Fig A6: the top contour plot (but you don’t need all the x’s marking data locations) and the rightmost graph that shows a slice through the data at t=0.75 (you just need your prediction, don’t need to plot “exact”).  I used \(N_u = 100\) and \(N_f = 10,000\). You’ll likely find that you get pretty good prediction but the shock wave isn’t captured as well (rounded instead of sharp).  That’s sufficient for the purpose of this assignment, but if you’re interested in improving that, see the advanced tips below the regular tips.</p>
+
+<p>Note that, like we’ve done in the past, separate train/test datasets are important to make sure the model isn’t overfitting.  In this case the problem is small, so the number of data and collocation points  provides super high coverage over everywhere we are making predictions at, so making a separate testing set won’t matter.  But for larger problems you should definitely have a test set.</p>
 
 <p>A few tips:</p>
 <ul>
@@ -105,8 +107,8 @@
   <li>When computing derivatives with <code class="language-plaintext highlighter-rouge">torch.autograd.grad</code> you will need to use the grad outputs option. We have vectors x and t going in, and vector u coming out, where each element of the vectors corresponds to a different data sample. In other words, dui/dxi and dui/dti are independent of every other index i. To compute all these derivatives in one shot, pass a vector of ones in the grad outputs option (i.e., <code class="language-plaintext highlighter-rouge">grad outputs = torch.ones_like(x)</code>). This is called the “seed” for algorithmic differentiation.</li>
   <li>You also need to set <code class="language-plaintext highlighter-rouge">create_graph=True</code> in the call to <code class="language-plaintext highlighter-rouge">torch.autograd.grad</code> since we will need to backpropgate through these derivatives (i.e., compute derivatives of derivatives)</li>
   <li>It’s fine to just use Adam for this assignment, even though they mention LBFGS (see advanced tips if interested in the latter).</li>
-  <li>Latin hypercube sampling is helpful for the collocation points to get good coverage. You can use <code class="language-plaintext highlighter-rouge">from scipy.stats import qmc</code>.  Be sure that these sampling points stay fixed during the training.</li>
-  <li>As always with any neural net problem, I’d recommend starting with a smaller number of layers, collocation points, and epochs until things seem to be working properly.</li>
+  <li>Latin hypercube sampling is helpful for the collocation points to get good coverage. You can use <code class="language-plaintext highlighter-rouge">from scipy.stats import qmc</code>.  Though I’m sure you could do fine for this small problem with just regular random sampling or even sampling.  Either way, be sure that these sampling points stay fixed during the training.</li>
+  <li>As with any neural net problem, I’d recommend starting with a smaller number of layers, collocation points, and epochs until things seem to be working properly, then scale up.</li>
 </ul>
 
 <p>Optional advanced tips if you want to really capture that shock:</p>
