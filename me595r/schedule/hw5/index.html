@@ -88,24 +88,22 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW</h1> -->
-      <h2 id="hw-4-pinn-part-2">HW 4: PINN part 2</h2>
+      <h2 id="hw-5-neural-ode">HW 5: Neural ODE</h2>
 
-<p>due 2/6/2025 before midnight via Learning Suite
+<p>due 2/13/2025 before midnight via Learning Suite
 <span style="float:right;">25 possible points</span></p>
 
 <hr />
 
-<p>We’re going to build on the same problem as the last homework, but now solve a PDE inverse problem.  In this case we are given some <a href="../burgers.txt">data</a> (the columns correspond to x, t, and u respectively), and we want to learn something about the governing equations.  There are techniques to perhaps learn the underlying equations in a more free-form way, though in this problem we’ll take a simpler approach where we know the governing equation but don’t know the coefficients (e.g., in this case, we’re learning the viscosity corresponding to the data).</p>
+<p>We’re going to use a basic neural ODE to try to predict weather data by reproducing results from this <a href="https://sebastiancallh.github.io/post/neural-ode-weather-forecast/">blog post</a>.  We’re using Python instead of Julia so don’t worry about reading the code, but the figures and some of the descriptions might be helpful.  <a href="https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data">This dataset</a> has historical data for temperature, humidity, wind speed, and pressure from Delhi, India over a period of a little over four years.  It is also separated into training and testing sets.  The training data is corresponds to about the first year and a half, and we’ll use that to make predictions for the remaining approximately two and a half years.</p>
 
-<p>In other words, the governing equation is:</p>
+<p>First, we need to do some data prep. The data provides daily information, but that is pretty noisy so we’re going to make predictions based on months.  So you’ll need to average the data within each month.  You can do that anyway you like, but the <a href="https://pandas.pydata.org">pandas package</a> is one handy way to do these kinds of data operations.  As usual, you’ll also want to normalize the data.</p>
 
-\[\frac{\partial u}{\partial t} + \lambda_1 u \frac{\partial u}{\partial x} + \lambda_2 \frac{\partial^2 u}{\partial t^2} = 0\]
+<p>You’ll want to do incremental training, like shown in the blog, as opposed to trying to training across all the time-series at once.  This type of technique is used in many time-based problems.  If given all the time-series at once the optimizer will often settle towards a solution that just goes through the mean of the data to try to minimize error and will struggle to capture more complex dynamics.</p>
 
-<p>In the process of developing a neural net that can reproduce the data, we’d also like to learn the parameters \(\lambda_1\) and \(\lambda_2\).</p>
+<p>As usual, you’ll need to experiment with the network parameters.  I find that the activation function can make a significant difference on this problem so you may need to venture into new activation functions (list of ones provided in PyTorch is <a href="https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity">here</a>).  While not necessary, you might find that you do better with different learning rates or number of epochs for the different stages of training (and by stages I mean stage 1 with the first 4 time points, stage 2 with the first 8 time points, etc.).</p>
 
-<p>You’ll again formulate this problem as a PINN where you have a data loss and physics loss term, but the data loss comes just from the supplied data. You’ll need to add \(\lambda_1\) and \(\lambda_2\) as design variables in addition to the model parameters.</p>
-
-<p>The true coefficients are \(\lambda_1 = 1\) and \(\lambda_2 = 0.01/\pi\).  I just pulled data from my neural net solution to the last homework.  It’s not an exact solution to the PDE, so even if your neural net in this assignment was perfect you wouldn’t get exact coefficients.  But you should be able to get at least with 0.1 of the first parameter and 0.001 of the second.</p>
+<p>While you certainly don’t need to make animations like the blog post, you will want to plot at the end of each stage.  If things aren’t looking good after the first stage, they’re unlikely to improve with more stages, and you’ll want to see that without waiting for all the stages to complete so you can go back and change hyperparameters.</p>
 
     </div>
 
