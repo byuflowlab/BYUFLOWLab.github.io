@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW &middot; ME 595R
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me595r">
+          ME 595R
+        </a>
+      </h1>
+      <p class="lead">Deep Learning for Engineers</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me595r/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me595r/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me595r/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2025. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h2 id="hw-7-deep-koopman">HW 7: Deep Koopman</h2>
+
+<p>due 2/27/2025 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<p>We’ll use deep learning to learn a koopman operator using the methodology of <a href="https://www.nature.com/articles/s41467-018-07210-0">this paper</a> (though we’ll simplify it somewhat for this homework).  At a minimum you’ll want to refer to figure 1, the subsection “Deep learning to identify Koopman eigenfunctions” under Results, and the subsection “Explicit loss function” under Methods.  We’ll make the following simplifications: we won’t need the auxillary network to learn eigenvalues, and so won’t need to construct a block diagonal K (this is a nice approach for explainability of the results, but we won’t worry about it in this case and will just learn the whole matrix K directly).  I did not add the infinity norm loss in (15), for eq (13) I used the entire time horizon (so eq (13) and (14) use the same sum across time).</p>
+
+<p>The data comes from glycolysis pathway dynamics.  I ran the simulations and pretabulated the data <a href="../kdata.txt">here</a> to save time.  The following commands will load the data:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ntraj</span> <span class="o">=</span> <span class="mi">2148</span>  <span class="c1"># number of trajectories
+</span><span class="n">nt</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># number of time steps
+</span><span class="n">ny</span> <span class="o">=</span> <span class="mi">7</span>  <span class="c1"># number of states
+</span>
+<span class="n">tvec</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="n">nt</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">loadtxt</span><span class="p">(</span><span class="sh">'</span><span class="s">kdata.txt</span><span class="sh">'</span><span class="p">).</span><span class="nf">reshape</span><span class="p">(</span><span class="n">ntraj</span><span class="p">,</span> <span class="n">nt</span><span class="p">,</span> <span class="n">ny</span><span class="p">)</span>
+<span class="n">Ytrain</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[:</span><span class="mi">2048</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>  <span class="c1"># 2048 training trajectories
+</span><span class="n">Ytest</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2048</span><span class="p">:,</span> <span class="p">:,</span> <span class="p">:]</span>  <span class="c1"># 100 testing trajectoreis
+</span></code></pre></div></div>
+
+<p>You should be able to find a linear mapping (matrix K) that reasonably reproduces the dynamics in the testing data set.  Plot the dynamics for the first trajectory in the dataset against your trained model (data with dashed line, and model solid lines).  Only plot the first three states just to keep the plot less busy.</p>
+
+<p>Tips:</p>
+<ul>
+  <li>It’s generally a good idea to start by overfitting the data.  Use only a relatively small number of training trajectories so that things run fast, and make sure you can train the model to reproduce your training data (ignore testing data for now).  Until you can fit the training data there is no point trying to generalize to the testing data.  And by keeping it small you can iterate quickly and make sure your loss functions, etc. are setup properly.</li>
+  <li>I’d then add more training data and modify hyperparameters until you can get good predictions (still with training data).  Then try to generalize to the testing data.  You might not need to use all 2048 data trajectories.  I just keep doubling the number of training data points until I was able to get my test set error down.</li>
+  <li>A GPU (google colab) will be helpful when you start using more data.</li>
+  <li>For the first set of epochs I only train the autoencoder, and then add on the losses for linearity and prediction.</li>
+  <li>If you create a <code class="language-plaintext highlighter-rouge">nn.Parameter</code> for K within your <code class="language-plaintext highlighter-rouge">nn.Module</code> then when you pass <code class="language-plaintext highlighter-rouge">model.parameters()</code> to your optimizer it automatically includes K along with all the model weights and biases.</li>
+  <li>When you initialize K, keep its weights small.  Since \(x_{k+1} = K x_k\), if the entires in \(K\) are large your dynamics will blow up pretty quick.</li>
+  <li>If you’re struggling with generalization (training error is going down but testing error is going up) a few techniques you can try including using more data (if you haven’t already maxed that out), using dropout, adding a penalty on model weights.</li>
+</ul>
+
+    </div>
+
+  </body>
+</html>
