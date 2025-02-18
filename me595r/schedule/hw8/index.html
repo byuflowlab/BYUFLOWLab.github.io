@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      HW &middot; ME 595R
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/my.css">
+  <link rel="stylesheet" href="/public/css/academicons.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/public/css/toc.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/public/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/public/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/apple-touch-icon-152x152.png" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- script -->
+  <script type="text/javascript">  // used to hide/show BibTeX blocks
+  <!--
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+  //-->
+  </script>
+
+  <!-- mathjax -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+
+
+</head>
+
+
+  <body class="theme-base-08 layout-top">
+
+    <div class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/me595r">
+          ME 595R
+        </a>
+      </h1>
+      <p class="lead">Deep Learning for Engineers</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="sidebar-nav-item" href="/me595r/syllabus">Syllabus</a>
+      <a class="sidebar-nav-item" href="/me595r/schedule">Schedule</a>
+      <a class="sidebar-nav-item" href="/me595r/resources">Resources</a>
+
+    </nav>
+
+    <p>&copy; 2025. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+    <!-- <h1 class="page-title">HW</h1> -->
+      <h2 id="hw-8-convolutional-neural-net-for-super-resolution-with-physics">HW 8: Convolutional neural net for super resolution (with physics)</h2>
+
+<p>due 3/13/2025 before midnight via Learning Suite
+<span style="float:right;">25 possible points</span></p>
+
+<hr />
+
+<p>We will use convolutional neural nets to perform super resolution of coarse MRI data using the methodology in this <a href="https://pubs.aip.org/aip/pof/article-abstract/33/7/073603/1076765/Super-resolution-and-denoising-of-fluid-flow-using">paper</a>.  We’ll just focus on the very first case (summarized in Figure 3).  Read the Methodology section (section II) and Known Boundary Condition (III.B.1), which is the case we’ll focus on.  The goal is to reproduce Fig 3c (CNN).</p>
+
+<p>You can download the data in these two files: <a href="../sr_lfdata.npy">sr_lfdata.npy</a>, and <a href="../sr_hfdata.npy">sr_hfdata.npy</a> and load as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="n">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+
+<span class="c1"># load low resolution data, which serves as input to our model
+</span><span class="n">lfdata</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="sh">"</span><span class="s">sr_lfdata.npy</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">lfx</span> <span class="o">=</span> <span class="n">lfdata</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>  <span class="c1"># size 14 x 9  (height x width)
+</span><span class="n">lfy</span> <span class="o">=</span> <span class="n">lfdata</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">lfu</span> <span class="o">=</span> <span class="n">lfdata</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">lfv</span> <span class="o">=</span> <span class="n">lfdata</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+
+<span class="c1"># plot the low resolution data (like fig 3a except we are using MRI noise here rather than Gaussian noise so it will look a bit different)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">pcolormesh</span><span class="p">(</span><span class="n">lfx</span><span class="p">,</span> <span class="n">lfy</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">lfu</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">lfv</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="p">.</span><span class="n">coolwarm</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">colorbar</span><span class="p">()</span>
+
+<span class="c1"># load high resolution grids and mapping from low resolution to high resolution grid
+</span><span class="n">hfdata</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="sh">"</span><span class="s">sr_hfdata.npy</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">Jinv</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>  <span class="c1"># size 77 x 49 (height x width)
+</span><span class="n">dxdxi</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">dxdeta</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">dydxi</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">dydeta</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">hfx</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+<span class="n">hfy</span> <span class="o">=</span> <span class="n">hfdata</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+
+<span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">hfx</span><span class="p">.</span><span class="n">shape</span>  <span class="c1">#(77 x 49)
+</span><span class="n">h</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># grid spacing in high fidelity (needed for derivatives)
+</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>I’ve also done (part of) the differentiation for you in the code below.  The convolution filters shown in Appendix A aren’t actually used because they won’t work at the boundaries of the grid.  We still use central finite differencing in the interior, but use one-sided finite differencing on the edges.  The only difference from finite differencing you’ve done before is that we are using a larger stencil (5 pts for interior, 4 for edges).  Note that the below code takes derivatives in the transformed Cartesian coordinates.  You then need to apply the coordinate transformation using the formulas shown in eq 10a/b using the provided tensors above (Jinv which is written as 1/J in the text, dxdxi, dxdeta, dydxi, dydeta).  Please note that the below assumes a grid given in height x width (not ‘x’ x ‘y’) just to match the ordering in <a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">pytorch convolution layers</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># see https://en.wikipedia.org/wiki/Finite_difference_coefficient
+# or https://web.media.mit.edu/~crtaylor/calculator.html
+</span>
+<span class="c1"># f should be a tensor of size: nbatch x nchannels x height (y or eta) x width (x or xi)
+# This is written in a general way if one had more data, but for this case there is only 1 data sample, and there are only a few channels it might be clearer to you to separate the channels out into separate variables, in which case the below could be simplified (i.e., you remove the first two dimensions from everything so that input is just height x width if you desire).
+</span><span class="k">def</span> <span class="nf">ddxi</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="c1"># 5-pt stencil
+</span>    <span class="n">dfdx_central</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">-</span> <span class="mi">8</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">4</span><span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="c1"># 1-sided 4pt stencil
+</span>    <span class="n">dfdx_left</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">11</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">dfdx_right</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="mi">9</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span><span class="mi">18</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">11</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">torch</span><span class="p">.</span><span class="nf">cat</span><span class="p">((</span><span class="n">dfdx_left</span><span class="p">,</span> <span class="n">dfdx_central</span><span class="p">,</span> <span class="n">dfdx_right</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ddeta</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="c1"># 5-pt stencil
+</span>    <span class="n">dfdy_central</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="mi">8</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">4</span><span class="p">:,</span> <span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">12</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="c1"># 1-sided 4pt stencil
+</span>    <span class="n">dfdy_bot</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">11</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="mi">18</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span><span class="mi">9</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">dfdy_top</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="mi">9</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span><span class="mi">18</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="mi">11</span><span class="o">*</span><span class="n">f</span><span class="p">[:,</span> <span class="p">:,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:,</span> <span class="p">:])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">torch</span><span class="p">.</span><span class="nf">cat</span><span class="p">((</span><span class="n">dfdy_bot</span><span class="p">,</span> <span class="n">dfdy_central</span><span class="p">,</span> <span class="n">dfdy_top</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Tips:</p>
+<ul>
+  <li>Although they used 3 separate networks that each produce 1 output channel (as shown in Fig 1), I just used 1 network with 3 output channels.  I can be effective to learn shared features if output quantities are related.  That would in general require adjusting the layer dimensions since we’ve reduced the available parameters with only 1 network.  In this particular case I found that the default hyperparameters were still sufficient for the 1-network-3-channel-output version.</li>
+  <li>To better understand the two coordinate systems compare figure 2 and figure 9.  Figure 2 is the actual physical space (x and y), and figure 9 is the same grid but mapped to a Cartesian space (\(\xi\) and \(\eta\)).  We do most of our work in the Cartesian space where it is easier to compute finite difference derivatives, impose boundary conditions, and apply convolution filters.  We then just need to map back to the regular space to impose our physics loss function (and plot).  Mapping the velocities and pressures back is automatic as the grid connectivity is the same, and mapping derivatives back is what equations 10 a/b do (referred to earlier).</li>
+  <li>The paper only states some of the boundary conditions, and it does not explicitly state how they are imposed (because they are well known for the audience of this journal). So, I expand on them here.  To impose boundary conditions, we simply set values for the velocities and pressures on the edges (bottom, left, top, right).  The bottom edge (\(\eta\) = 0) is inflow with conditions: \(u = 0, v = 1, dp/d\eta = 0\).  So if u, v, p were tensors of size neta x nxi we would set: <code class="language-plaintext highlighter-rouge">u[0, :] = 0; v[0, :] = 1; p[0, :] = p[1, :]</code>.  The latter forces the pressure gradient to be zero at the inlet (which just means it is at some unknown constant pressure).  The left and right edges are walls with conditions: \(u = 0, v = 0, dp/d\xi = 0\) (the latter is a result from incompressible boundary layer theory).  At the top (outlet) we set \(du/d\eta = 0, dv/d\eta = 0, p = 0\) (the outlet pressure is unknown, but pressure is only defined relative to a reference point so we arbitrarily choose the outlet as a zero reference).</li>
+  <li>There are two ways you could do this: 1) predict results on a 77x49 grid then overwrite all the boundary values predicted by the network, or 2) predict results on a 75x47 grid then zero pad to create the boundaries (see <a href="https://pytorch.org/docs/stable/generated/torch.nn.ConstantPad2d.html">nn.ConstantPad2d</a>).  The size would now be 77x49 and you can then modify those added boundary values as needed (many of the boundary conditions are zero and so won’t require further modification).</li>
+  <li>In your neural network you first step should be to upsample the coarse input using bicubic interpolation like shown in the paper.  That is your best estimate of the flow field on the high dimensional grid, then apply convolutional layers from there.  Using your best estimate will allow the neural net portion to learn a simpler function.  You can upscale using <a href="https://pytorch.org/docs/stable/generated/torch.nn.Upsample.html">nn.Upsample</a> with mode=’bicubic`.  The size you upscale to depends on whether you add boundaries or modify boundaries as discussed in the prior bullet.</li>
+  <li>
+    <p>In the case we are analyzing, the only loss comes from the physics residuals shown in eq (4).  I’ve expanded them in Cartesian coordinates for you below.</p>
+
+\[\frac{du}{dx} + \frac{dv}{dy} = 0\\
+  u\frac{du}{dx} + v\frac{du}{dy} + \frac{1}{\rho}\frac{dp}{dx} - \nu
+  \left(\frac{d^2u}{dx^2} + \frac{d^2u}{dy^2}\right) = 0\\
+  u\frac{dv}{dx} + v\frac{dv}{dy} + \frac{1}{\rho}\frac{dp}{dy} - \nu\left(\frac{d^2v}{dx^2} + \frac{d^2v}{dy^2}\right) = 0\]
+  </li>
+  <li>To plot your final results you can use the following where u and v are your predicted flow fields from your network.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
+  <span class="n">plt</span><span class="p">.</span><span class="nf">pcolormesh</span><span class="p">(</span><span class="n">hfx</span><span class="p">,</span> <span class="n">hfy</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="p">.</span><span class="n">coolwarm</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+  <span class="n">plt</span><span class="p">.</span><span class="nf">colorbar</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>After finishing, it would be worth skimming through section III.C (at least III.C.1).  While we just learned to super resolve 1 data instance through an optimization process.  But if we instead parameterized the inflow, and trained a model with multiple datasets, we could instead learn a model that could super resolve any MRI input without further training (just model evaluation).</li>
+</ul>
+
+    </div>
+
+  </body>
+</html>

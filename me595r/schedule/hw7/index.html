@@ -95,7 +95,7 @@
 
 <hr />
 
-<p>We’ll use deep learning to learn a koopman operator using the methodology of <a href="https://www.nature.com/articles/s41467-018-07210-0">this paper</a> (though we’ll simplify it somewhat for this homework).  At a minimum you’ll want to refer to figure 1, the subsection “Deep learning to identify Koopman eigenfunctions” under Results, and the subsection “Explicit loss function” under Methods.  We’ll make the following simplifications: we won’t need the auxillary network to learn eigenvalues, and so won’t need to construct a block diagonal K (this is a nice approach for explainability of the results, but we won’t worry about it in this case and will just learn the whole matrix K directly).  I did not add the infinity norm loss in (15), for eq (13) I used the entire time horizon (so eq (13) and (14) use the same sum across time).</p>
+<p>We’ll use deep learning to learn a Koopman operator using the methodology of <a href="https://www.nature.com/articles/s41467-018-07210-0">this paper</a> (though we’ll simplify it somewhat for this homework).  At a minimum you’ll want to refer to figure 1, the subsection “Deep learning to identify Koopman eigenfunctions” under Results, and the subsection “Explicit loss function” under Methods.  We’ll make the following simplifications: we won’t need the auxilliary network to learn eigenvalues, and so won’t need to construct a block diagonal K (this is a nice approach for explainability of the results, but we won’t worry about it in this case and will just learn the whole matrix K directly).  I did not add the infinity norm loss in (15), for eq (13) I used the entire time horizon (so eq (13) and (14) use the same sum across time).</p>
 
 <p>The data comes from glycolysis pathway dynamics.  I ran the simulations and pretabulated the data <a href="../kdata.txt">here</a> to save time.  The following commands will load the data:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ntraj</span> <span class="o">=</span> <span class="mi">2148</span>  <span class="c1"># number of trajectories
@@ -117,7 +117,7 @@
   <li>A GPU (google colab) will be helpful when you start using more data.</li>
   <li>For the first set of epochs I only train the autoencoder, and then add on the losses for linearity and prediction.</li>
   <li>If you create a <code class="language-plaintext highlighter-rouge">nn.Parameter</code> for K within your <code class="language-plaintext highlighter-rouge">nn.Module</code> then when you pass <code class="language-plaintext highlighter-rouge">model.parameters()</code> to your optimizer it automatically includes K along with all the model weights and biases.</li>
-  <li>When you initialize K, keep its weights small.  Since \(x_{k+1} = K x_k\), if the entires in \(K\) are large your dynamics will blow up pretty quick.</li>
+  <li>When you initialize K, keep its weights small.  Since \(x_{k+1} = K x_k\), if the entires in \(K\) are large your dynamics will blow up quickly.</li>
   <li>If you’re struggling with generalization (training error is going down but testing error is going up) a few techniques you can try including using more data (if you haven’t already maxed that out), using dropout, adding a penalty on model weights.</li>
 </ul>
 
