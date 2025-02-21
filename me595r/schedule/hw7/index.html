@@ -116,7 +116,7 @@
   <li>I’d then add more training data and modify hyperparameters until you can get good predictions (still with training data).  Then try to generalize to the testing data.  You might not need to use all 2048 data trajectories.  I just keep doubling the number of training data points until I was able to get my test set error down.</li>
   <li>A GPU (google colab) will be helpful when you start using more data.</li>
   <li>For the first set of epochs I only train the autoencoder, and then add on the losses for linearity and prediction.</li>
-  <li>If you create a <code class="language-plaintext highlighter-rouge">nn.Parameter</code> for K within your <code class="language-plaintext highlighter-rouge">nn.Module</code> then when you pass <code class="language-plaintext highlighter-rouge">model.parameters()</code> to your optimizer it automatically includes K along with all the model weights and biases.</li>
+  <li>If you create a <code class="language-plaintext highlighter-rouge">nn.Parameter</code> for K within your <code class="language-plaintext highlighter-rouge">nn.Module</code> then when you pass <code class="language-plaintext highlighter-rouge">model.parameters()</code> to your optimizer it automatically includes K along with all the model weights and biases.  Or, even easier, you can create a linear layer with bias=False.</li>
   <li>When you initialize K, keep its weights small.  Since \(x_{k+1} = K x_k\), if the entires in \(K\) are large your dynamics will blow up quickly.</li>
   <li>If you’re struggling with generalization (training error is going down but testing error is going up) a few techniques you can try including using more data (if you haven’t already maxed that out), using dropout, adding a penalty on model weights.</li>
 </ul>
