@@ -109,14 +109,14 @@
   </li>
   <li>
     <p>Write your own version of Newton’s method that iterates until the change in \(x\) from one step to the next is less than \(10^{-6}\).  Since we need to provide derivative of the input function, we’ll use a simple function:
-\(f(x) = x^3 - 3x^2 + x - 1\).  Report the root. Try several different starting points and notice the number of iterations and its robustness (or lack thereof) in converging to a solution.</p>
+\(f(x) = x^3 - 3x^2 + x - 1\).  Report the root. Try several starting points and notice the number of iterations and its robustness (or lack thereof) in converging to a solution.</p>
   </li>
   <li>
     <p>A simplified representation of the lift distribution along an aircraft wing (force per unit length) can be integrated to find the total lift force:</p>
 
 \[L = 4\int_{-0.5}^{0.5} \sqrt{1 - 4 x^2} dx\]
 
-    <p>Integrate this using <code class="language-plaintext highlighter-rouge">np.trapz</code> (or <code class="language-plaintext highlighter-rouge">np.trapezoid</code> depending on your version of numpy) for a range of linspace discretization points demonstrating convergence (show a plot with number of discretization points on x-axis and the integral on y-axis).  Also evaluate the integral using <code class="language-plaintext highlighter-rouge">scipy.integrate.quad</code> and compare the result (add a dashed line to the plot with the resulting integral).</p>
+    <p>Integrate this using <code class="language-plaintext highlighter-rouge">np.trapezoid</code> or <code class="language-plaintext highlighter-rouge">scipy.integrate.trapezoid</code> for a range of linspace discretization points demonstrating convergence (show a plot with number of discretization points on x-axis and the integral on y-axis).  Also evaluate the integral using <code class="language-plaintext highlighter-rouge">scipy.integrate.quad</code> and compare the result (add a dashed line to the plot with the resulting integral).</p>
   </li>
   <li>
     <p>An accelerometer is placed on the first stage of a rocket launch.  The results are in file <a href="../accel.dat">accel.dat</a> (may need to right click and save as), which has two columns: time (s) and acceleration (m/s\(^2\)) starting from rest.  Numerically integrate to find velocity as a function of time.  Make a figure with two subplots, with velocity vs. time on top and acceleration vs. time on bottom (see this <a href="https://matplotlib.org/stable/gallery/pyplots/pyplot_two_subplots.html#sphx-glr-gallery-pyplots-pyplot-two-subplots-py">example</a> of pyplot.subplot, although you should label your axes).  Why is the velocity data less noisy than the acceleration data?</p>
