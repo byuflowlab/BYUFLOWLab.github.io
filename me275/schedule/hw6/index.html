@@ -102,7 +102,7 @@
 
     <p>(a) Write your own Euler’s method and use the following step sizes h = 0.5, 0.1, 0.01.</p>
 
-    <p>(b) Use the default solver (RK45) in <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code>.  Start with the default tolerances.  Then plot a second set of results with atol=1e-12 and rtol=1e-12 (the default tolerances lead to ok solutions but with really coarse time intervals).</p>
+    <p>(b) Use the default solver (RK45) in <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code>.  Start with the defaults.  Then plot a second set of results using either the t_eval option (store solution at more times) or the atol, rtol options (tighten tolerances) so that the plotted solution is smooth.</p>
   </li>
   <li>
     <p>The van der Pol equation was originally developed to model electric circuits and has also been used to model biological neurons.</p>
