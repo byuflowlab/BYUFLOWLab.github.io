@@ -97,6 +97,11 @@
 <ol>
   <li>
     <p>A certain type of stainless steel powder is supposed to have a mean particle diameter of \(\mu\) = 15 \(\mu\)m. A random sample of 87 particles had a mean diameter of 15.2 \(\mu\)m, with a standard deviation of 1.8 \(\mu\)m. A test is made of \(H_0\): \(\mu\) = 15 versus \(H_a\) : \(\mu \ne\) 15.  Find the p-value.</p>
+
+    <p><a href="#nowhere" onclick="toggle_visibility('py1');">[Show Solution]</a></p>
+    <div id="py1" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">p = 0.30002701885400107</code>, cannot conclude that mean particle diameter has deviated.</p>
+    </div>
   </li>
   <li>
     <p>You purchased a filling machine for candy bags that is supposed to fill each bag with 16 oz of candy. Assume that the weights of filled bags are approximately normally distributed. A random sample of 10 bags yields the following data (in oz):</p>
@@ -106,6 +111,13 @@
     <p>a) Find a 95% confidence interval for the upper bound on the fill weight.</p>
 
     <p>b) Can you conclude that the mean fill weight is actually less than 16 oz?</p>
+
+    <p><a href="#nowhere" onclick="toggle_visibility('py2');">[Show Solution]</a></p>
+    <div id="py2" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">upper_bound = 15.962633034102968</code></p>
+
+      <p><code class="language-plaintext highlighter-rouge">p = 0.011446733722292404</code>, appears likely that mean fill weight is actually less than 16 oz.</p>
+    </div>
   </li>
   <li>
     <p>The article “Utility of Pretest Probability and Exercise Treadmill Test in Korean Women with Suspected Coronary Artery Disease” (Y. Kim, W. Shim, et al., Journal of Women’s Health, 2015:617–622) presents a study of health outcomes in women with symptoms of heart disease. In a sample of 110 women whose test results suggested the presence of coronary artery disease, the mean peak systolic blood pressure was 169.9 mmHg, with a standard deviation of 24.8 mmHg. In a sample of 225 women whose test results suggested an absence of coronary artery disease, the mean peak systolic blood pressure was 163.3 mmHg, with a standard deviation of 25.8 mmHg.  <!-- (7.1, 10) --></p>
@@ -113,6 +125,13 @@
     <p>a) Find a 95% confidence interval for the difference in systolic blood pressure between these two groups of women.</p>
 
     <p>b) Can you conclude that the mean systolic blood pressure differs between these two groups of women?</p>
+
+    <p><a href="#nowhere" onclick="toggle_visibility('py3');">[Show Solution]</a></p>
+    <div id="py3" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">conf_interval = [0.8690999212837536, 12.330900078716235]</code></p>
+
+      <p><code class="language-plaintext highlighter-rouge">p = 0.023995856808685323</code>, it does appear as if blood pressure differs</p>
+    </div>
   </li>
   <li>
     <p>In a study of the relationship of the shape of a tablet to its dissolution time, 6 disk-shaped ibuprofen tablets and 8 oval-shaped ibuprofen tablets were dissolved in water. The dissolve times, in seconds, were as follows:  <!-- 7.3, 10 --></p>
@@ -122,6 +141,11 @@
     <p>Oval: 268.8, 260.0, 273.5, 253.9, 278.5, 289.4, 261.6, 280.2</p>
 
     <p>Can you conclude that the mean dissolve times differ between the two shapes?</p>
+
+    <p><a href="#nowhere" onclick="toggle_visibility('py4');">[Show Solution]</a></p>
+    <div id="py4" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">p = 0.01678438316396713</code>, yes it appears that there is a significant difference in dissolve times.</p>
+    </div>
 
     <p><!-- 7.4, 2 --></p>
   </li>
@@ -189,6 +213,11 @@
     </table>
 
     <p>Find a 95% confidence interval for the increase in breathing rate due to exercise.</p>
+
+    <p><a href="#nowhere" onclick="toggle_visibility('py5');">[Show Solution]</a></p>
+    <div id="py5" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">conf_interval = [17.371052533037737, 21.42894746696226]</code></p>
+    </div>
   </li>
 </ol>
 
@@ -272,23 +301,26 @@ Answer:
       </tbody>
     </table>
 
-    <p>Answer:</p>
-
-    <p><code class="language-plaintext highlighter-rouge">p = 0.07841963856563927</code>, high enough that we probably shouldn’t reject the null hypothesis, but it seems suspect.  would probably want to do further testing.</p>
+    <p><a href="#nowhere" onclick="toggle_visibility('py6');">[Show Solution]</a></p>
+    <div id="py6" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">p = 0.07841963856563927</code>, high enough that we probably shouldn’t reject the null hypothesis, but it seems suspect.  would probably want to do further testing.</p>
+    </div>
   </li>
   <li>
     <p>Many companies have been experimenting with telecommuting, allowing employees to work at home on their computers. Among other things, telecommuting is supposed to reduce the number of sick days taken. Suppose that at one firm, it is known that over the past few years employees have taken a mean of 5.4 sick days. This year, the firm introduces telecommuting. Management chooses a simple random sample of 80 employees to follow in detail, and, at the end of the year, these employees average 4.5 sick days with a standard deviation of 2.7 days. Let \(\mu\) represent the mean number of sick days for all employees of the firm.  Find the P-value for testing \(H_0\) : \(\mu \ge\) 5.4 versus \(H_a\): \(\mu &lt;\) 5.4.   <!-- 6.1, 1 --></p>
 
-    <p>Answer:</p>
-
-    <p><code class="language-plaintext highlighter-rouge">p = 0.0014345563960383046</code>.  quite small. would be unlikely to get such a sample if the null hypothesis were true, so we will reject it.</p>
+    <p><a href="#nowhere" onclick="toggle_visibility('py7');">[Show Solution]</a></p>
+    <div id="py7" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">p = 0.0014345563960383046</code>.  quite small. would be unlikely to get such a sample if the null hypothesis were true, so we will reject it.</p>
+    </div>
   </li>
   <li>
     <p>The article “Wired: Energy Drinks, Jock Identity, Masculine Norms, and Risk Taking” (K. Miller, Journal of American College Health, 2008:481–489) reports that in a sample of 413 male college students, the average number of energy drinks consumed per month was 2.49 with a standard deviation of 4.87, and in a sample of 382 female college students, the average was 1.22 with a standard deviation of 3.24. Can you conclude that the mean number of energy drinks is greater for male students than for female students? &lt;!– 7.1, 12&gt;</p>
 
-    <p>Answer:</p>
-
-    <p><code class="language-plaintext highlighter-rouge">p = 6.549014480716764e-06</code>.  extremely small p value.  we are highly confident that the mean number of energy drinks is higher for male students.</p>
+    <p><a href="#nowhere" onclick="toggle_visibility('py8');">[Show Solution]</a></p>
+    <div id="py8" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">p = 6.549014480716764e-06</code>.  extremely small p value.  we are highly confident that the mean number of energy drinks is higher for male students..</p>
+    </div>
   </li>
   <li>
     <p>In an experiment involving the breaking strength of a certain type of thread used in personal flotation devices, one batch of thread was subjected to a heat treatment for 60 seconds and another batch was treated for 120 seconds. The breaking strengths (in N) of ten threads in each batch were measured. The results were: <!-- (7.3, 1) --></p>
@@ -299,9 +331,10 @@ Answer:
 
     <p>Find a 99% confidence interval for the difference in the mean strengths between threads treated for 60 seconds and those treated for 120 seconds.</p>
 
-    <p>Answer:</p>
-
-    <p><code class="language-plaintext highlighter-rouge">(1.8661029986715194, 15.533897001328487)</code></p>
+    <p><a href="#nowhere" onclick="toggle_visibility('py9');">[Show Solution]</a></p>
+    <div id="py9" class="solution">
+      <p><code class="language-plaintext highlighter-rouge">(1.8661029986715194, 15.533897001328487)</code></p>
+    </div>
   </li>
 </ol>
 
