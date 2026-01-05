@@ -81,7 +81,7 @@
 
     </nav>
 
-    <p>&copy; 2025. All rights reserved.</p>
+    <p>&copy; 2026. All rights reserved.</p>
   </div>
 </div>
 
@@ -89,31 +89,51 @@
     <div class="content container">
     <!-- <h1 class="page-title">Syllabus</h1> -->
       <h2 id="syllabus">Syllabus</h2>
-<h4 id="andrew-ning--winter-2025">Andrew Ning | Winter 2025</h4>
+<h4 id="andrew-ning--winter-2026">Andrew Ning | Winter 2026</h4>
 
 <hr />
 
 <h4 id="what-is-this-course-about">What is this course about?</h4>
 
-<p>Amongst the various machine learning algorithms, neural nets have emerged as uniquely powerful and versatile.  Their application in an engineering context often differs from traditional usage as there are critical physics constraints that need to be satisfied. Large volumes of data can be used to learn such constraints, but often such copious data isn’t available in engineering contexts.  Even when such data is available, there usually exists important structure in engineering relationships (e.g., differential equations) that we can use to dramatically improve accuracy and/or speed of training.  So in a sentence this class is about the emerging field at the intersection of neural nets and engineering.</p>
+<p>Amongst the various machine learning algorithms, neural nets have emerged as uniquely powerful and versatile. Their application in an engineering context often differs from traditional usage as there are critical physics constraints that need to be satisfied and well-developed mathematical algorithms we can leverage. Large volumes of data can be used to learn such constraints/procedures, but often such copious data isn’t available in engineering contexts. Even when such data is available, there usually exists important structure in engineering relationships (e.g., differential equations) that we can use to dramatically improve accuracy and/or speed of training. This class is about the emerging field at the intersection of neural nets and engineering.</p>
+
+<h4 id="what-are-the-learning-outcomes">What are the learning outcomes?</h4>
+
+<ul>
+  <li>Mathematical Foundations: Explain and apply the mathematical foundations of deep learning, including backpropagation, optimization, and cross-validation.</li>
+  <li>Architectures: Design and implement engineering-focused architectures such as physics-informed neural networks (PINNs), neural ODEs, neural Koopman models, convolutional networks, graph networks, Kolmogorov-Arnold networks, and neural operators.</li>
+  <li>Incorporate Physics: Develop and train models that integrate prior knowledge, domain constraints, physical laws, differential equations, and/or other engineering and mathematical relationships.</li>
+  <li>Evaluate Model Suitability: Evaluate and verify model performance measures such as accuracy, uncertainty, generalization, interpretability, and scalability.</li>
+  <li>Assess Emerging Methods: Critically assess contemporary research in deep learning for scientific and engineering domains, including emerging architectures and methodologies.</li>
+  <li>Engineering Project: Formulate and execute a research or engineering project using advanced deep learning methods, demonstrating creativity, rigor, and domain relevance.</li>
+  <li>Software Tools: Utilize modern software tools and frameworks (e.g., PyTorch) and hardware accelerators (e.g., GPUs) to build scalable and reproducible deep learning workflows.</li>
+</ul>
 
 <h4 id="what-are-the-prerequisites">What are the prerequisites?</h4>
 
-<p>There are no listed prerequisites, but you should be comfortable with numerical methods, programming, and math.  We will be using Python as that is the language now used for undergraduate numerical methods courses in Mechanical, Electrical, and Chemical Engineering as well as the intro CS programming courses.  If you are familiar with a different language, that’s fine, but you should run through Python tutorials on your own to get comfortable with the syntax/workflow.  We do not assume prior exposure to machine/deep learning.</p>
+<p>You should be comfortable with numerical methods, computer programming, and math (multivariable calculus, linear algebra, ordinary differential equations).  We will be using Python as that is the language used for undergraduate numerical methods courses in Mechanical, Electrical, and Chemical Engineering as well as the intro CS programming courses.  If you are familiar with a different language, that’s fine, but you should run through Python tutorials on your own to get comfortable with the syntax/workflow.  We do not assume prior exposure to machine/deep learning.</p>
+
+<!--
+#### Is this course cross-listed?
+
+There should be a course number cross listed through the EE Department, though that does not mean that if you are an EE student that you need to register for the EE number.  The option is provided because graduate requirements in our respective departments require a certain number of courses to come from ones own department and so having that flexibility is helpful for some students. -->
+
+<h4 id="will-i-be-fine-to-take-this-course-as-an-undergraduate">Will I be fine to take this course as an undergraduate?</h4>
+
+<p>The workload of graduate courses is higher than that of undergraduate courses (approximately 4 hrs work per credit hour instead of 3).  And the expected proficiency in computing and math is higher than that of undergraduate courses.  That said, undergraduates who have the time, and meet the prerequisites, tend to do just as well as the graduate students.  As an alternative, some undergraduates might be interested in taking one of the Senior-level engineering machine learning classes: EC EN 471 Machine Learning: Foundations and Applications or CH EN 426 Machine Learning for Engineers.  These courses cover a broader range of simpler machine learning algorithms including a short intro to some neural networks.  They would also provide helpful experience in the general workflow of machine learning, which we also learn in this course.  But again, they are not prerequisites and so we do not assume any prior experience.</p>
+
+<h4 id="how-is-this-course-related-to-the-optimization-class-me-575">How is this course related to the optimization class (ME 575)?</h4>
+
+<p>They are quite different, though mutually reinforcing, and could be taken in any order. In optimization, you learn a broad set of optimization algorithms appropriate for a wide range of problems.  Neural nets are often mentioned in an optimization course, but only at a very basic introductory level.  Conversely, in deep learning we use a small subset of relatively simplistic optimization algorithms, but we explore many neural net architectures and approaches suitable for a wide range of deep learning applications.</p>
 
 <h4 id="what-will-the-in-class-experience-be-like">What will the in-class experience be like?</h4>
 
-<!-- Most classes will be oriented around self-discovery.  I'd recommend that you read the textbook or watch videos *after* lectures.  The concepts will stick with you better if you wrestle with them before learning the "right way".   -->
-
 <p>It is well established that active learning helps us learn better than passive approaches.
-To that end, in class I will ask lots of questions, ask you to predict things, draw charts, debate concepts with your neighbor, or solve problems that you haven’t seen before.  It can be a little uncomfortable to wrestle with things before understanding, but this helps concepts stick much better.
-You should also ask lots of questions!</p>
-
-<p>This is a new class, so please be patient and expect some rough edges!</p>
+To that end, in class I will pose questions, ask you to predict things, discuss concepts with your neighbor, or attempt problems that you haven’t seen before.  It can be a little uncomfortable to wrestle with things before understanding, but this helps concepts stick much better.  I would encourage you to ask lots of questions!</p>
 
 <h4 id="what-textbook-will-we-use">What textbook will we use?</h4>
 
-<p>There isn’t an existing textbook we can use since this field is so new.  The in-class presentations will be our primary source.  I’ll post annotated slides, but I’d recommend you also take your own notes.  Some supplementary readings will come from scholarly papers and various websites.  There are textbooks that cover some of the topics and these are linked in the reading.</p>
+<p>There isn’t an existing textbook we can use since this field is so new.  The in-class presentations will be our primary source and annotated slides will be posted (though I’d highly recommend you also take your own notes).  I have in-class recordings from last year available on Learning Suite (though the content will likely not be identical), and hope to create better publicly available videos for most topics this year.  Some supplementary readings will come from scholarly papers and various websites.  There are also textbook chapters that cover some topics and these are linked in the reading (these longer chapters are considered optional reading).</p>
 
 <h4 id="what-are-the-assignments">What are the assignments?</h4>
 
@@ -127,13 +147,13 @@ You should also ask lots of questions!</p>
 
 <p>Late homework will be accepted with a penalty of 20% per day.  Last minute issues often happen in life so be sure to start your work early and submit early!  Despite your best planning you will likely have an unexpected event, obligation, or illness pop up.  To help with this, I will give you three free late days (total per semester, not per assignment).  This policy is designed to help with unexpected issues, so we generally won’t grant other extensions unless of course there are prolonged/significant disruptions.</p>
 
-<p>We won’t re-open late quizzes as it is hard to do fairly, but instead will drop two quizzes because we all forget or have occasional emergencies.</p>
+<p>We won’t re-open late quizzes but instead will drop two quizzes because we all forget or have occasional emergencies.</p>
 
 <h4 id="how-do-i-get-help-can-i-work-with-others--ai">How do I get help? Can I work with others?  AI?</h4>
 
-<p>In addition to TA support, I will setup a Slack group for the class.  It is a helpful way to post questions and get comments, suggestions, and tips from myself, the TAs, and fellow classmates.  Note that joining the Slack group isn’t required (I will post any official announcements via Learning Suite), but is highly recommended.</p>
+<p>In addition to TA support, I will setup a Slack group for the class.  It is a helpful way to post questions and get comments, suggestions, and tips from myself, the TAs, and fellow classmates.  Note that joining the Slack group isn’t required (I will post any official announcements via Learning Suite), but is recommended.</p>
 
-<p>I would also recommend making good use of AI chatbots like ChatGPT or Copilot.  These AI tools are particularly helpful with PyTorch.  But of course like all AI chatbots you need to take care with the responses.  Never blindly copy and paste code, but instead go through each line so that 1) you understand and learn from it, and 2) you make sure it does what you actually want to do (often you’ll need to make some small changes).  You’ll likely have more success if you break up the problem into smaller pieces and ask for help on these smaller tasks (a good debugging strategy in general).  When code comes up that you don’t understand you should consult the PyTorch documentation, ask the AI chatbots (they are also usually pretty good at explaining PyTorch code), or ask a question on Slack.</p>
+<p>AI tools are particularly helpful with Python and PyTorch and I encourage their usage.  But like all AI chatbots you need to take care with the responses.  Never just copy and paste code, but instead go through each line (perhaps type it yourself) so that 1) you understand and learn from it, and 2) you make sure it does what you actually want to do (often you’ll need to make some small changes).  You’ll likely have more success if you break up the problem into smaller pieces and ask for help on these smaller tasks (a good debugging strategy in general).  When code comes up that you don’t understand you should consult the PyTorch documentation, ask the AI chatbots (they are also usually pretty good at explaining PyTorch code), or ask a question on Slack.</p>
 
 <p>Finally, keep in mind that while working with others on homework is definitely encouraged, you must do your own analysis and your own write-ups.  Whether working with classmates, TAs, or AI, it is not appropriate to merely seek out solutions but rather to use these resources to learn and build up understanding.</p>
 
