@@ -90,9 +90,6 @@
     <!-- <h1 class="page-title">HW</h1> -->
       <h2 id="hw-7-deep-koopman">HW 7: Deep Koopman</h2>
 
-<p>due 2/27/2025 before midnight via Learning Suite
-<span style="float:right;">25 possible points</span></p>
-
 <hr />
 
 <p>We’ll use deep learning to learn a Koopman operator using the methodology of <a href="https://www.nature.com/articles/s41467-018-07210-0">this paper</a> (though we’ll simplify it somewhat for this homework).  At a minimum you’ll want to refer to figure 1, the subsection “Deep learning to identify Koopman eigenfunctions” under Results, and the subsection “Explicit loss function” under Methods.  We’ll make the following simplifications: we won’t need the auxiliary network to learn eigenvalues, and so won’t need to construct a block diagonal K (this is a nice approach for better accuracy and for explainability of the results, but we won’t worry about it in this case and will just learn the whole matrix K directly).  I did not add the infinity norm loss in (15), for eq (13) I used the entire time horizon (so eq (13) and (14) use the same sum across time).</p>
