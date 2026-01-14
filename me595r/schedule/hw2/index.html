@@ -92,7 +92,40 @@
 
 <hr />
 
-<p>We will use the same dataset as the last homework, but will now write our own (basic) neural net so that we can better understand what’s happening under the hood. I created a <a href="../template.py">template file</a> to help you get started, but you’re welcome to discard it and organize it your own way if you prefer.  Either way, you’ll need to write your own functions or classes for activation, initialization, loss, layers, network, and optimization. For the activation, loss, layers, and networks, you’ll also need to write the backpropagation routines. I’ve done all the data preparation for you (in the template file).  It’s the same stuff we did last time only done manually since we’re just using numpy and not torch (and we’re skipping batching since it’s not really needed on this small dataset). For the optimizer we will just use plain  gradient descent.  It will work fine in this case, but you’ll likely need to use a far smaller learning rate and will correspondingly need to increase the number of epochs.</p>
+<p>We will use the same dataset as the last homework, but will now write our own (basic) neural net so that we can better understand what’s happening under the hood. I created a <a href="../template.py">template file</a> to help you get started, but you’re welcome to discard it and organize it your own way if you prefer.  Either way, you’ll need to write your own functions or classes for activation, initialization, loss, layers, network, and optimization. For the activation, loss, layers, and networks, you’ll also need to write the backpropagation routines. I’ve done all the data preparation for you (in the template file).  It’s the same stuff we did last time only done manually since we’re just using numpy and not torch (and we’re skipping batching since it’s not really needed on this small dataset). For the optimizer we will just use plain gradient descent.  It will work fine in this case, but you’ll likely need to use a far smaller learning rate and will correspondingly need to increase the number of epochs.</p>
+
+<h4 id="debugging">Debugging</h4>
+
+<p>This homework can be tricky so I’ve provided an example below to help you debug.  This example does not represent realistic data or a reasonably sized network, but is just a small example to facilitate checking that your calculations.  I set <code class="language-plaintext highlighter-rouge">np.random.seed(0)</code> to aid in reproducibility, but just to be sure, I’ve also printed the weights and biases below.  In this example I created 2 layers. The first one goes from 2 nodes to 3 nodes.  The second one from 3 nodes down to 1 node.
+Initial weights and biases:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l1</span><span class="p">.</span><span class="n">W</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.34710014</span> <span class="mf">0.45232547</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.38122103</span> <span class="mf">0.34461438</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.26794282</span> <span class="mf">0.4084993</span> <span class="p">]]</span>
+<span class="n">l1</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span><span class="p">]]</span>
+<span class="n">l2</span><span class="p">.</span><span class="n">W</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.30942088</span> <span class="mf">0.63057874</span> <span class="mf">0.68141247</span><span class="p">]]</span>
+<span class="n">l2</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<p>I initialized my first layer with 2 inputs and 10 data points all set to one.  I also set my outputs to ones.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="n">ns</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">ns</span><span class="p">))</span>
+</code></pre></div></div>
+<p>For those weights and “data”, I get the following MSE loss: <code class="language-plaintext highlighter-rouge">0.02755316457552718</code> with <code class="language-plaintext highlighter-rouge">yhat = array([[1.16599146, ...</code> (repeated 10 times since I made all the data the same)</p>
+
+<p>My derivatives are as follows:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Wbar</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.10272245</span> <span class="mf">0.10272245</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.20934137</span> <span class="mf">0.20934137</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.2262173</span>  <span class="mf">0.2262173</span> <span class="p">]]</span>
+<span class="n">bbar</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.10272245</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.20934137</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.2262173</span> <span class="p">]]</span>
+<span class="n">Wbar</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.26539565</span> <span class="mf">0.24096496</span> <span class="mf">0.22456723</span><span class="p">]]</span>
+<span class="n">bbar</span> <span class="o">=</span>  <span class="p">[[</span><span class="mf">0.33198292</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<p>just for completness, the derivative of the last Zbar before the loss function (or we could call it Xbar if you consider the identity function as the last activation) is <code class="language-plaintext highlighter-rouge">0.03319829</code> repeated 10 times in an array.</p>
 
     </div>
 
