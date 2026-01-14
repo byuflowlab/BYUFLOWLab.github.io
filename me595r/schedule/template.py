@@ -16,7 +16,7 @@ identity_back = lambda xbar, z: xbar
 
 
 # ---------- initialization -----------
-def glorot(nin, nout):
+def initialization(nin, nout):
    # TODO
     return W, b
 # -------------------------------------
