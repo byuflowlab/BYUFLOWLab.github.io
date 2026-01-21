@@ -96,7 +96,7 @@
 
 <p>Create a figure similar to Fig A6: the top contour plot (but you don’t need all the x’s marking data locations) and the rightmost graph that shows a slice through the data at t=0.75 (you just need your prediction, don’t need to plot “exact”).  I used \(N_u = 100\) and \(N_f = 10,000\). You’ll likely find that you get pretty good prediction but the shock wave isn’t captured as well (rounded instead of sharp).  That’s sufficient for the purpose of this assignment, but if you’re interested in improving that, see the advanced tips below the regular tips.</p>
 
-<p>Note that, like we’ve done in the past, separate train/test datasets are important to make sure the model isn’t overfitting.  In this case the problem is small, so the number of data and collocation points  provides super high coverage everywhere we are making predictions at, so making a separate testing set won’t matter.  But for larger problems you should definitely have a test set.</p>
+<p>In this case the problem is very small, so the number of data and collocation points provides super high coverage everywhere we are making predictions at.  So while creating separate train/test datasets is still, in general, very important, in this particular problem a separate testing set won’t be needed (again for larger problems you should definitely have a test set).</p>
 
 <p>A few tips:</p>
 <ul>
