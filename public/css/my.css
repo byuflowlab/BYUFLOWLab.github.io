@@ -357,3 +357,10 @@ img.banner {
   border-radius: 0px;
   margin: 0;
 }
+
+
+.theme-base-08 .content a,
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142;
+  text-decoration: underline;
+}
