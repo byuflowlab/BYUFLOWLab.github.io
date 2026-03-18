@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Learning for Engineers Architecture Decision Guide</title>
+<style>
+  :root {
+    --bg:#ffffff; --bg2:#f5f5f0; --bg3:#eeeee8;
+    --tx:#1a1a1a; --tx2:#555; --tx3:#888;
+    --bd:rgba(0,0,0,0.12); --bd2:rgba(0,0,0,0.06);
+    --blue:#185FA5; --blue-bg:#E6F1FB; --blue-tx:#0C447C;
+    --green:#0F6E56; --green-bg:#E1F5EE; --green-tx:#085041;
+    --coral:#993C1D; --coral-bg:#FAECE7; --coral-tx:#712B13;
+    --purple:#534AB7; --purple-bg:#EEEDFE; --purple-tx:#3C3489;
+    --amber:#854F0B; --amber-bg:#FAEEDA; --amber-tx:#633806;
+    --radius:10px; --radius-sm:6px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  @media(prefers-color-scheme:dark){:root{
+    --bg:#1a1a1a;--bg2:#252523;--bg3:#2f2f2c;
+    --tx:#e8e6dc;--tx2:#a8a69e;--tx3:#706f6a;
+    --bd:rgba(255,255,255,0.12);--bd2:rgba(255,255,255,0.06);
+    --blue:#85B7EB;--blue-bg:#0C447C;--blue-tx:#B5D4F4;
+    --green:#5DCAA5;--green-bg:#085041;--green-tx:#9FE1CB;
+    --coral:#F0997B;--coral-bg:#712B13;--coral-tx:#F5C4B3;
+    --purple:#AFA9EC;--purple-bg:#3C3489;--purple-tx:#CECBF6;
+    --amber:#FAC775;--amber-bg:#633806;--amber-tx:#FAEEDA;
+  }}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font);color:var(--tx);background:var(--bg);line-height:1.6;padding:2rem;max-width:920px;margin:0 auto}
+  h1{font-size:22px;font-weight:600;margin-bottom:4px}
+  .subtitle{font-size:14px;color:var(--tx2);margin-bottom:24px}
+  .qcard{background:var(--bg2);border-radius:var(--radius);padding:16px 20px;margin-bottom:12px}
+  .qcard h3{font-size:14px;font-weight:500;color:var(--tx2);margin-bottom:10px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opt{font-size:13px;padding:6px 14px;border-radius:var(--radius-sm);border:1px solid var(--bd);background:var(--bg);cursor:pointer;transition:all .15s;user-select:none}
+  .opt:hover{border-color:var(--blue)}
+  .opt.sel{border-color:var(--blue);background:var(--blue-bg);color:var(--blue-tx);font-weight:500}
+  .legend{display:flex;gap:18px;margin:20px 0 12px;font-size:12px;color:var(--tx2);flex-wrap:wrap}
+  .legend span{display:flex;align-items:center;gap:5px}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0}
+  .dot-s{background:var(--green)}.dot-l{background:var(--coral)}.dot-c{background:var(--purple)}
+  .results{margin-top:8px}
+  .arch{background:var(--bg);border:1px solid var(--bd);border-radius:var(--radius);padding:16px 20px;margin-bottom:10px;transition:border .2s}
+  .arch.top{border-color:var(--blue);border-width:2px}
+  .arch .name{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .tag{font-size:11px;padding:2px 8px;border-radius:var(--radius-sm);background:var(--bg2);color:var(--tx2);font-weight:500}
+  .tag-match{background:var(--green-bg);color:var(--green-tx)}
+  .arch .when{font-size:13px;color:var(--tx);margin-top:6px;font-style:italic}
+  .arch .desc{font-size:13px;color:var(--tx2);margin-top:4px}
+  .arch .meta{font-size:12px;color:var(--tx3);margin-top:8px;display:flex;flex-direction:column;gap:4px}
+  .arch .meta>span{display:flex;align-items:flex-start;gap:6px}
+  .arch .meta .dot{margin-top:5px}
+  .arch .examples{font-size:12px;color:var(--tx2);margin-top:8px;padding-top:8px;border-top:1px solid var(--bd2)}
+  .arch .examples b{font-weight:500;color:var(--tx3)}
+  .reset{font-size:13px;color:var(--blue);cursor:pointer;border:none;background:none;margin-top:12px;padding:4px 0}
+  .reset:hover{text-decoration:underline}
+  .note{font-size:12px;color:var(--tx3);margin-top:16px;padding:12px 16px;background:var(--bg2);border-radius:var(--radius-sm)}
+  .combo-section{margin-top:28px}
+  .combo-section h2{font-size:16px;font-weight:600;margin-bottom:12px}
+  .combo{background:var(--bg);border:1px solid var(--bd);border-radius:var(--radius);padding:14px 18px;margin-bottom:8px}
+  .combo .combo-name{font-size:14px;font-weight:600;color:var(--purple)}
+  .combo .combo-desc{font-size:13px;color:var(--tx2);margin-top:4px}
+  .combo .combo-use{font-size:12px;color:var(--tx3);margin-top:4px}
+  footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--bd2);font-size:12px;color:var(--tx3)}
+  @media(max-width:600px){body{padding:1rem}.opts{gap:6px}.opt{padding:5px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+
+<h1>Deep learning architecture decision guide</h1>
+<p class="subtitle">Select your problem characteristics to filter and rank architectures. Click any filter to toggle it.</p>
+
+<div id="questions"></div>
+
+<div class="legend">
+  <span><span class="dot dot-s"></span> Strength</span>
+  <span><span class="dot dot-l"></span> Limitation</span>
+  <span><span class="dot dot-c"></span> Combines with</span>
+</div>
+
+<div class="results" id="results"></div>
+<div id="note" class="note"></div>
+
+<!-- ============================================================
+     COMMON ARCHITECTURE COMBINATIONS
+     ============================================================ -->
+<div class="combo-section" id="combos">
+  <h2>Common architecture combinations</h2>
+
+  <div class="combo">
+    <div class="combo-name">Autoencoder + Neural ODE</div>
+    <div class="combo-desc">Compress high-dimensional state to a latent space, then learn continuous-time dynamics in that space (Latent Neural ODE).</div>
+    <div class="combo-use"><b>Use for:</b> Reduced-order modeling of CFD, climate, or structural dynamics when full-order simulation is too expensive.</div>
+  </div>
+
+  <div class="combo">
+    <div class="combo-name">Autoencoder + Neural Koopman</div>
+    <div class="combo-desc">Encoder lifts state to coordinates where dynamics are linear (z&#x2096;&#x208A;&#x2081; = Kz&#x2096;). Enables spectral analysis and linear control design.</div>
+    <div class="combo-use"><b>Use for:</b> Modal decomposition of fluid flows, vibration analysis, MPC/LQR control in the latent space.</div>
+  </div>
+
+  <div class="combo">
+    <div class="combo-name">CNN / GNN encoder + latent dynamics</div>
+    <div class="combo-desc">Use CNN (regular grids) or GNN (meshes) to encode spatial fields, then propagate in latent space with ODE, Koopman, or transformer.</div>
+    <div class="combo-use"><b>Use for:</b> Spatiotemporal forecasting — weather, turbulence, structural response under dynamic loads.</div>
+  </div>
+
+  <div class="combo">
+    <div class="combo-name">GNN + PINN loss</div>
+    <div class="combo-desc">GNN handles irregular mesh topology while a physics-informed loss enforces PDE residuals at each node.</div>
+    <div class="combo-use"><b>Use for:</b> Mesh-based simulation surrogates that generalize across geometries (MeshGraphNets-style).</div>
+  </div>
+
+  <div class="combo">
+    <div class="combo-name">FNO / DeepONet + physics loss</div>
+    <div class="combo-desc">Neural operator learns the solution map between function spaces; physics loss regularizes to ensure PDE consistency.</div>
+    <div class="combo-use"><b>Use for:</b> Fast surrogates for parametric PDEs (varying BCs, geometry, material properties) with physical guarantees.</div>
+  </div>
+
+  <div class="combo">
+    <div class="combo-name">KAN as drop-in MLP replacement</div>
+    <div class="combo-desc">Replace MLP layers inside PINNs, autoencoders, or DeepONet with KAN layers for improved interpretability.</div>
+    <div class="combo-use"><b>Use for:</b> Problems where extracting a symbolic governing equation from the learned model is valuable.</div>
+  </div>
+</div>
+
+<!-- <footer>
+  Last updated: <span id="updated"></span>
+</footer> -->
+<!-- document.getElementById('updated').textContent = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long'}); -->
+
+<script>
+
+/* ============================================================
+   QUESTIONS — edit opts to add/remove filter choices
+   ============================================================ */
+const QS = [
+  { id:'data', q:'What kind of data are you working with?',
+    opts:['Tabular / sensor','Images / spatial fields','Mesh / graph','Time series / ODEs','Operator mapping (func \u2192 func)'] },
+  { id:'physics', q:'Do you have known governing equations?',
+    opts:['Yes, strong PDE/ODE priors','Partial / approximate','No, data-driven only'] },
+  { id:'goal', q:'What is your primary goal?',
+    opts:['Forward prediction','Inverse / parameter ID','Dimensionality reduction','Control / dynamics','Surrogate modeling'] },
+];
+
+/* index maps — keep in sync with opts above */
+const DM={'Tabular / sensor':0,'Images / spatial fields':1,'Mesh / graph':2,'Time series / ODEs':3,'Operator mapping (func \u2192 func)':4};
+const PM={'Yes, strong PDE/ODE priors':0,'Partial / approximate':1,'No, data-driven only':2};
+const GM={'Forward prediction':0,'Inverse / parameter ID':1,'Dimensionality reduction':2,'Control / dynamics':3,'Surrogate modeling':4};
+
+/* ============================================================
+   ARCHITECTURES — edit / add entries here
+   Each entry:
+     name     — display name
+     tags     — short category labels
+     when     — one-sentence "use when..." guidance
+     desc     — brief technical description
+     str      — key strength
+     lim      — key limitation
+     comb     — what it combines with
+     examples — concrete engineering applications
+     data     — array of matching data-type indices
+     physics  — array of matching physics indices
+     goal     — array of matching goal indices
+   ============================================================ */
+const ARCHS = [
+  { name:'Multilayer perceptron (MLP)', tags:['baseline'],
+    when:'Start here for tabular data or as the building block inside larger architectures.',
+    desc:'Universal function approximator. Fully connected layers with nonlinear activations.',
+    str:'Simple, fast, well-understood; strong baseline',
+    lim:'No inductive bias for spatial, temporal, or physical structure',
+    comb:'Backbone inside PINNs, DeepONet, autoencoders; replaceable by KAN',
+    examples:'Curve fitting, sensor regression, material property prediction, surrogate for simple input\u2013output maps',
+    data:[0,1,2,3,4], physics:[2], goal:[0,1,2,3,4] },
+
+  { name:'Physics-informed neural network (PINN)', tags:['physics'],
+    when:'Use when you know the governing PDE/ODE and have sparse or no labeled simulation data.',
+    desc:'Embeds PDE/ODE residuals in the loss function. The network learns a solution that satisfies known physics.',
+    str:'Works with very sparse data; solutions are physics-consistent by construction',
+    lim:'Training instability for stiff/multiscale PDEs; loss balancing is delicate',
+    comb:'MLP or KAN backbone; + Neural ODE for temporal; + transfer learning across geometries',
+    examples:'Heat transfer with sparse sensors, identifying thermal conductivity (inverse), flow around new geometries',
+    data:[0,3], physics:[0,1], goal:[0,1,4] },
+
+  { name:'Neural ODE', tags:['dynamics'],
+    when:'Use when modeling continuous-time dynamical systems, especially with irregular time sampling.',
+    desc:'Parameterizes dx/dt = f(x,t;\u03b8) with a neural net. Uses adaptive ODE solvers for forward pass.',
+    str:'Continuous-time dynamics; memory-efficient adjoint training; adaptive time stepping',
+    lim:'Slow backprop via adjoint method; struggles with stiff systems',
+    comb:'Latent Neural ODE (autoencoder \u2192 ODE in latent space); + PINN loss; augmented Neural ODE',
+    examples:'Learning dynamics from trajectory data, pharmacokinetics, continuous normalizing flows, climate sub-models',
+    data:[3], physics:[0,1,2], goal:[0,3] },
+
+  { name:'Autoencoder (AE / VAE)', tags:['reduction'],
+    when:'Use when you need to compress high-dimensional state to a low-dimensional latent space.',
+    desc:'Encoder\u2013decoder architecture. VAE variant adds probabilistic structure for generation and uncertainty.',
+    str:'Nonlinear dimensionality reduction; latent representations transfer to downstream tasks',
+    lim:'Reconstruction loss can blur fine-scale details; VAE posterior collapse',
+    comb:'Latent space + Neural ODE or Koopman for dynamics; CNN/GNN encoder for spatial data',
+    examples:'Reduced-order models for CFD, anomaly detection, generative design exploration, latent-space control',
+    data:[0,1,2,3,4], physics:[1,2], goal:[2,3,4] },
+
+  { name:'Neural Koopman operator', tags:['dynamics','linear'],
+    when:'Use when you want linear dynamics in a learned coordinate system \u2014 great for control and spectral analysis.',
+    desc:'Learns a nonlinear lifting map so that dynamics become linear: z\u2096\u208A\u2081 = Kz\u2096. Related to DMD.',
+    str:'Linear prediction and control in latent space; interpretable spectral modes',
+    lim:'Requires good encoder architecture; finite-dimensional truncation of infinite-dimensional operator',
+    comb:'Autoencoder for lifting; + PINN regularization; + LQR / MPC in latent space',
+    examples:'Fluid flow modal decomposition, power system stability, robotic control, vibration analysis',
+    data:[0,3], physics:[0,1,2], goal:[0,3] },
+
+  { name:'Convolutional neural network (CNN)', tags:['spatial'],
+    when:'Use when data lives on a regular grid (images, 2D/3D simulation fields) and local patterns matter.',
+    desc:'Learned local spatial filters with weight sharing. Translation equivariant by construction.',
+    str:'Strong spatial inductive bias; very parameter-efficient on grids; huge ecosystem',
+    lim:'Requires fixed regular grid topology; cannot handle irregular meshes directly',
+    comb:'CNN encoder + latent dynamics (ODE/Koopman); U-Net for field-to-field maps; + physics loss',
+    examples:'Flow field super-resolution, image-based defect detection, weather prediction on regular grids',
+    data:[1], physics:[1,2], goal:[0,2,4] },
+
+  { name:'Graph neural network (GNN)', tags:['spatial','mesh'],
+    when:'Use when data lives on an irregular mesh, molecular graph, or network with varying connectivity.',
+    desc:'Message-passing on graph structure. Each node aggregates features from its neighbors iteratively.',
+    str:'Handles arbitrary domains, varying mesh connectivity, and complex geometries',
+    lim:'Scalability to very large graphs; over-smoothing with depth; message-passing bottleneck',
+    comb:'GNN encoder + Neural ODE; GNN + PINN loss; MeshGraphNets for learned simulation',
+    examples:'FEM mesh surrogates, molecular property prediction, structural mechanics, multi-body dynamics',
+    data:[2], physics:[0,1,2], goal:[0,1,4] },
+
+  { name:'Kolmogorov\u2013Arnold network (KAN)', tags:['interpretable'],
+    when:'Use when interpretability matters \u2014 KANs can discover and extract symbolic expressions from data.',
+    desc:'Learnable univariate functions on edges (not nodes). Motivated by the Kolmogorov\u2013Arnold representation theorem.',
+    str:'Interpretable activation functions; can recover closed-form expressions; compact for smooth functions',
+    lim:'Newer architecture with less ecosystem support; scaling to large problems still under investigation',
+    comb:'Drop-in MLP replacement inside PINNs, autoencoders, or DeepONet for symbolic discovery',
+    examples:'Discovering governing equations from data, compact surrogate models, physics-informed symbolic regression',
+    data:[0,3], physics:[0,1,2], goal:[0,1] },
+
+  { name:'Fourier neural operator (FNO)', tags:['operator'],
+    when:'Use when learning a map between function spaces on regular grids \u2014 train once, evaluate at any resolution.',
+    desc:'Global spectral convolutions in Fourier space. Resolution-invariant after training.',
+    str:'Very fast inference; resolution-independent generalization; captures global structure via spectral bias',
+    lim:'Requires uniform grid; struggles with sharp discontinuities and localized features',
+    comb:'FNO backbone + PINN loss for physics; FNO + adaptive mesh refinement; cascaded FNO for multiscale',
+    examples:'Weather forecasting (FourCastNet), Navier\u2013Stokes surrogates, subsurface flow, turbulence modeling',
+    data:[1,4], physics:[0,1,2], goal:[0,4] },
+
+  { name:'DeepONet', tags:['operator'],
+    when:'Use when mapping input functions to output functions with flexible input geometry (not limited to grids).',
+    desc:'Branch network encodes the input function; trunk network encodes the evaluation coordinates. Their product approximates the output.',
+    str:'Flexible input sampling; theoretically grounded (universal approximation for operators)',
+    lim:'Needs many paired function samples; training can be expensive; architecture design matters',
+    comb:'Physics-informed DeepONet; + GNN branch for mesh inputs; multi-output DeepONet',
+    examples:'Parametric PDE surrogates, mapping BCs to solutions, heat source \u2192 temperature field, structural loading \u2192 stress',
+    data:[0,1,2,4], physics:[0,1,2], goal:[0,1,4] },
+
+  { name:'Transformer / attention', tags:['sequence','scalable'],
+    when:'Use when long-range dependencies matter and you have enough data to train attention layers.',
+    desc:'Self-attention computes pairwise interactions across the full sequence or spatial domain.',
+    str:'Captures long-range interactions; highly scalable; flexible input modalities',
+    lim:'Quadratic cost in sequence length (without approximation); very data-hungry',
+    comb:'Vision transformer for spatial fields; temporal transformer + PINN loss; cross-attention for multi-physics',
+    examples:'Large-scale weather (Pangu-Weather), protein structure, long-horizon time series, multi-fidelity fusion',
+    data:[0,1,3,4], physics:[1,2], goal:[0,4] },
+
+  { name:'Recurrent network (LSTM / GRU)', tags:['sequence'],
+    when:'Use as a simpler sequential baseline before reaching for transformers or Neural ODEs.',
+    desc:'Hidden state evolves step-by-step through the sequence. Gating mechanisms manage long-term memory.',
+    str:'Natural for sequential data; simpler to train than transformers on small datasets',
+    lim:'No parallelism across time steps; vanishing gradients on very long sequences',
+    comb:'LSTM encoder + Koopman propagator; LSTM + physics loss; seq-to-seq for surrogate modeling',
+    examples:'Sensor time-series forecasting, structural health monitoring, battery degradation, process control',
+    data:[0,3], physics:[1,2], goal:[0,3] },
+];
+
+/* ============================================================
+   RENDERING — you probably don't need to edit below this line
+   ============================================================ */
+let sel = {data:null, physics:null, goal:null};
+
+function render(){
+  const qDiv = document.getElementById('questions');
+  qDiv.innerHTML = '';
+  QS.forEach(q => {
+    const c = document.createElement('div');
+    c.className = 'qcard';
+    c.innerHTML = '<h3>'+q.q+'</h3><div class="opts">'+q.opts.map(o =>
+      '<div class="opt'+(sel[q.id]===o?' sel':'')+'" data-qid="'+q.id+'" data-val="'+o.replace(/"/g,'&quot;')+'">'+o+'</div>'
+    ).join('')+'</div>';
+    qDiv.appendChild(c);
+  });
+  document.querySelectorAll('.opt').forEach(el => {
+    el.addEventListener('click', function(){ pick(this.dataset.qid, this.dataset.val); });
+  });
+  score();
+}
+
+function pick(qid, val){
+  sel[qid] = sel[qid]===val ? null : val;
+  render();
+}
+
+function score(){
+  const rDiv = document.getElementById('results');
+  const nDiv = document.getElementById('note');
+  const any = sel.data||sel.physics||sel.goal;
+
+  const scored = ARCHS.map(a => {
+    let s = 0;
+    if(sel.data){   s += a.data.includes(DM[sel.data]) ? 3 : -2; }
+    if(sel.physics){ s += a.physics.includes(PM[sel.physics]) ? 2 : -1; }
+    if(sel.goal){    s += a.goal.includes(GM[sel.goal]) ? 2 : -1; }
+    return {...a, score:s};
+  });
+
+  scored.sort((a,b) => b.score - a.score);
+  const maxS = scored[0].score;
+  const show = any ? scored.filter(a => a.score > 0) : scored;
+
+  rDiv.innerHTML = show.map(a =>
+    '<div class="arch'+(a.score===maxS&&any?' top':'')+'">'+
+      '<div class="name">'+a.name+' '+
+        a.tags.map(t=>'<span class="tag">'+t+'</span>').join(' ')+
+        (a.score===maxS&&any?' <span class="tag tag-match">best match</span>':'')+
+      '</div>'+
+      '<div class="when">'+a.when+'</div>'+
+      '<div class="desc">'+a.desc+'</div>'+
+      '<div class="meta">'+
+        '<span><span class="dot dot-s"></span>'+a.str+'</span>'+
+        '<span><span class="dot dot-l"></span>'+a.lim+'</span>'+
+        '<span><span class="dot dot-c"></span>'+a.comb+'</span>'+
+      '</div>'+
+      '<div class="examples"><b>Engineering examples:</b> '+a.examples+'</div>'+
+    '</div>'
+  ).join('');
+
+  if(any){
+    rDiv.innerHTML += '<button class="reset" onclick="sel={data:null,physics:null,goal:null};render()">Clear all filters</button>';
+    nDiv.textContent = 'Tip: most real engineering problems benefit from combining 2\u20133 architectures. See the combinations section below for common patterns.';
+  } else {
+    nDiv.textContent = 'Select one or more criteria above to filter and rank architectures for your problem.';
+  }
+}
+
+render();
+</script>
+</body>
+</html>
