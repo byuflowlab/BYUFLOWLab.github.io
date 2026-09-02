@@ -88,75 +88,224 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW 1</h1> -->
-      <h1 id="hw-1-configuration">HW 1: Configuration</h1>
+      <h1 id="hw-1-atmosphere-and-parasitic-drag">HW 1: Atmosphere and Parasitic Drag</h1>
 
 <hr />
 
-<ol>
-  <li>Here is a list of ten very different aircraft:
-    <ol>
-      <li>Boom Overture</li>
-      <li>Joby Aviation</li>
-      <li>Rutan Long-EZ</li>
-      <li>Airbus Zephyr</li>
-      <li>Aurora D8</li>
-      <li>Airbus Beluga</li>
-      <li>Lockeed Martin F-35 JSF</li>
-      <li>Icon A5</li>
-      <li>Scaled Composites White Knight 2</li>
-      <li>Boeing 777X</li>
-    </ol>
+<p>Download and install <a href="https://github.com/byuflowlab/flightlab">flightlab</a> (see instructions on the README).  We’ll be using this for many of the homework problems and for our project.</p>
 
-    <p>Choose four to read about in some detail. Write a brief summary (one paragraph max for each) and compare/contrast some of their key performance metrics and intended use cases.</p>
-  </li>
-  <li>
-    <p>Consider a commercial transport with the following parameters:</p>
+<h2 id="p1a--build-canonical-rc-1-in-the-workbench">P1a — Build canonical RC-1 in the workbench</h2>
 
-    <table style="max-width: 500px;">
-      <tbody>
-        <tr>
-          <td>wing span (\(b\))</td>
-          <td>61 m</td>
-        </tr>
-        <tr>
-          <td>reference wing area (\(S_{ref}\))</td>
-          <td>325 m\(^2\)</td>
-        </tr>
-        <tr>
-          <td>mass</td>
-          <td>200,000 kg</td>
-        </tr>
-        <tr>
-          <td>Mach number</td>
-          <td>0.82</td>
-        </tr>
-        <tr>
-          <td>zero lift (parasitic) drag coefficient (\({C_D}_p\))</td>
-          <td>0.01</td>
-        </tr>
-        <tr>
-          <td>Oswald efficiency factor (\(e\))</td>
-          <td>0.7</td>
-        </tr>
-      </tbody>
-    </table>
+<p>Open the workbench and choose <strong>New starter design</strong>. Rename the project <code class="language-plaintext highlighter-rouge">RC-1 canonical</code>.
+RC-1 is the name we’ll give to a (deliberately medicore)
+RC plane design that we’ll reuse throughout most of the homeworks.
+Use the main wing as the coefficient reference.</p>
 
-    <p>Find the optimal altitude to fly at that will maximize specific range, which is the distance flown per unit weight of fuel burn. Assume a constant Mach number and steady, level flight. Later in the semester we will learn more about propulsion, but for now we will ignore changes in propulsive efficiency with altitude. Using that assumption implies that we should maximize the following metric:</p>
+<h3 id="lifting-surfaces">Lifting surfaces</h3>
 
-\[V \frac{L}{D}\]
+<p>All coordinates use x aft, y right, and z up. Horizontal surfaces are mirrored.</p>
 
-    <p>where \(V\) is the flight speed.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Surface and role</th>
+      <th>Station 1: x, y, z, chord, twist</th>
+      <th>Station 2: x, y, z, chord, twist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Main wing; wing; fixed</td>
+      <td>0, 0, 0, 0.160, 0°</td>
+      <td>0, 0.600, 0, 0.160, 0°</td>
+    </tr>
+    <tr>
+      <td>Horizontal tail; tail; elevator</td>
+      <td>0.565, 0, 0.010, 0.100, 0°</td>
+      <td>0.565, 0.170, 0.010, 0.100, 0°</td>
+    </tr>
+    <tr>
+      <td>Vertical tail; fin; fixed, not mirrored</td>
+      <td>0.560, 0, 0.010, 0.120, 0°</td>
+      <td>0.560, 0, 0.160, 0.120, 0°</td>
+    </tr>
+  </tbody>
+</table>
 
-    <p>We haven’t covered all of drag yet, so for now here is the equation you should use (the relevant symbols are noted in the table above):</p>
+<p>Assign NACA 2412 to the wing and NACA 0009 to both tails. For the horizontal tail, use an
+elevator hinge at 75% chord and limits of ±20°. Check that the workbench reports wing area
+0.192 m², span 1.200 m, mean chord 0.160 m, and aspect ratio 7.50.</p>
 
-\[D = {C_D}_p q S_{ref} + \frac{L^2}{q \pi b^2 e}\]
+<h3 id="bodies-initial-mass-and-cases">Bodies, initial mass, and cases</h3>
 
-    <ul>
-      <li>Plot the specific range \(V \frac{L}{D}\) as a function of altitude with altitude on the y-axis (makes the interpretation more intuitive) and determine the optimal altitude.</li>
-      <li>During the flight the aircraft will become lighter as it burns fuel. How would the optimal altitude change over time (stay the same, increase, decrease)? Provide an explanation as to why.</li>
-    </ul>
-  </li>
-</ol>
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Model</th>
+      <th style="text-align: right">Length</th>
+      <th style="text-align: right">Width</th>
+      <th style="text-align: right">Height/diameter</th>
+      <th style="text-align: right">x nose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fuselage pod</td>
+      <td><code class="language-plaintext highlighter-rouge">streamlined_body</code></td>
+      <td style="text-align: right">0.400 m</td>
+      <td style="text-align: right">0.110 m</td>
+      <td style="text-align: right">height 0.100 m</td>
+      <td style="text-align: right">−0.130 m</td>
+    </tr>
+    <tr>
+      <td>Tail boom</td>
+      <td><code class="language-plaintext highlighter-rouge">streamlined_body</code></td>
+      <td style="text-align: right">0.295 m</td>
+      <td style="text-align: right">—</td>
+      <td style="text-align: right">diameter 0.010 m</td>
+      <td style="text-align: right">0.270 m</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Streamlined body uses the simple empirical drag estimation methods discussed in class.
+For now, in the <strong>mass</strong> menu use one placeholder point mass for the entire aircraft of 0.750 kg at x=0.048 m.
+In <strong>Propulsion</strong>, turn off <em>Include battery and propulsor hardware in mass properties</em> so the starter catalog
+components are not double counted.  Create these 1-g cases at 1,400 m under <strong>flight cases</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Case</th>
+      <th style="text-align: right">Speed</th>
+      <th style="text-align: right">Interference</th>
+      <th style="text-align: right">Protuberance</th>
+      <th style="text-align: right">Transition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Launch</td>
+      <td style="text-align: right">9.1 m/s</td>
+      <td style="text-align: right">0.05</td>
+      <td style="text-align: right">0.10</td>
+      <td style="text-align: right">natural</td>
+    </tr>
+    <tr>
+      <td>Cruise</td>
+      <td style="text-align: right">12.0 m/s</td>
+      <td style="text-align: right">0.05</td>
+      <td style="text-align: right">0.10</td>
+      <td style="text-align: right">natural</td>
+    </tr>
+    <tr>
+      <td>Fast</td>
+      <td style="text-align: right">16.0 m/s</td>
+      <td style="text-align: right">0.05</td>
+      <td style="text-align: right">0.10</td>
+      <td style="text-align: right">natural</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Choose <code class="language-plaintext highlighter-rouge">natural</code> in the transition column.  The workbench will show upper and lower transition
+x/c as 1.0, meaning no artificial boundary layer trip is imposed.
+You can leave everything else at their defaults.</p>
+
+<p>Run <strong>Analysis</strong> for Launch, Cruise, and Fast. Trim means static equilibrium: lift equals the
+required weight and the pitching moment is zero. The solver is changing the angle of the elevator so that the pitching moment of the aircraft is zero (notice how the Cm curve crossse zero at the trim point).
+For all three cases report trimmed angle of attack, lift coefficient,
+pitch-control deflection, and L/D.</p>
+
+<p>Take a look at the relative contributions to parasitic drag.</p>
+
+<h2 id="p1b-pod-shape-study">P1b: Pod-shape study</h2>
+
+<p>Save the canonical project as <code class="language-plaintext highlighter-rouge">rc1-hw1.flightlab.json</code>, then use a short script based on the code shown in the workbench’s <strong>Python</strong> tab.</p>
+
+<p>The baseline pod is short and wide, representing packaging constraints imposed by its battery, electronics, and payload. If those components could be reconfigured, we could perhaps use a thinner pod with the same volume.  Sweep the pod length from 0.25 to 0.695 m (beyond this point the pod runs past the tail position and we’d have to change its location also).  At every length preserve both total volume and the width-to-height ratio.</p>
+
+\[V = Lwh = 0.400(0.110)(0.100)=0.00440\ \mathrm{m^3},
+\qquad w/h=1.10 .\]
+
+<p>Thus, for each trial length, calculate the required width and height before running the Cruise
+design point. Hold every other input fixed.
+Plot total drag versus pod length.</p>
+
+<h2 id="problem-2a--rc-vs-transport-aircraft">Problem 2a — RC vs transport aircraft</h2>
+
+<p>Below are some specs for two very different aircraft and flight conditions.
+In this problem we won’t use flightlab (it is designed for electric RC-style aircraft only). You just need a short
+script using a standard-atmosphere model and basic relationships from the textbook.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th style="text-align: right">RC-1</th>
+      <th style="text-align: right">787-like transport</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mass</td>
+      <td style="text-align: right">0.750 kg</td>
+      <td style="text-align: right">230,000 kg at beginning of cruise</td>
+    </tr>
+    <tr>
+      <td>Altitude</td>
+      <td style="text-align: right">1,400 m</td>
+      <td style="text-align: right">10,000 m</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td style="text-align: right">12.0 m/s TAS</td>
+      <td style="text-align: right">Mach 0.85</td>
+    </tr>
+    <tr>
+      <td>Wing area</td>
+      <td style="text-align: right">0.192 m²</td>
+      <td style="text-align: right">377.0 m²</td>
+    </tr>
+    <tr>
+      <td>Mean chord</td>
+      <td style="text-align: right">0.160 m</td>
+      <td style="text-align: right">6.27 m</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Compare Mach number, chord Reynolds number, and required level-flight lift coefficient for both
+aircraft at the conditions above. Briefly note which parameters are relatively similary and which are massively different between the two operating points.</p>
+
+<h2 id="problem-2b--why-does-a-transport-step-climb">Problem 2b — Why does a transport step-climb?</h2>
+
+<p>An electric RC aircraft mass stays effectively constant as a battery discharges. A long-range transport,
+on the other hand, may burn a substantial fraction of its mass during cruise. In this problem
+we will investigate how that changes the desired cruise altitude.</p>
+
+<p>Suppose the transport burns fuel until its mass is 170,000 kg while its geometry and
+configuration remain unchanged. If it stays at 10,000 m and Mach 0.85, calculate its new
+required lift coefficient.</p>
+
+<p>A simple idealized cruise schedule instead holds Mach number and lift coefficient at their
+beginning-of-cruise values. Using the ideal-gas and speed-of-sound relationships. you can show that dynaic pressure is</p>
+
+\[q=\frac{1}{2}\rho(Ma)^2=\frac{\gamma}{2}pM^2.\]
+
+<p>Thus, at fixed Mach number, dynamic pressure is proportional to atmospheric pressure. Calculate the altitude at the end of cruise when the mass has decreased to 170,000 kg (in order to maintain the initial lift coefficient).</p>
+
+<p>Consider why a real transport follows discrete step climbs rather than a continuous ideal schedule.</p>
+
+<!-- Plot ideal cruise altitude versus aircraft mass, with altitude
+on the vertical axis. At 170,000 kg also report true airspeed, dynamic pressure, and chord
+Reynolds number. -->
+
+<!-- Finally, explain why the ideal altitude increases as fuel is burned, why this effect is much
+more important for the transport than for RC-1, and why a real transport follows discrete
+step climbs rather than this continuous ideal schedule. Mention at least two real constraints
+or effects omitted from this simple model. -->
 
     </div>
 
