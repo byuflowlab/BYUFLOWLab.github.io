@@ -92,9 +92,9 @@
 
 <hr />
 
-<p>Download and install <a href="https://github.com/byuflowlab/flightlab">flightlab</a> (see instructions on the README).  We’ll be using this for many of the homework problems and for our project.</p>
+<p>Download flightlab for <a href="https://github.com/byuflowlab/flightlab/blob/main/student_setup/downloads/FlightLab-macOS.zip">macOS</a> or <a href="https://github.com/byuflowlab/flightlab/blob/main/student_setup/downloads/FlightLab-Windows.zip">Windows</a>.   Unzip it and read the Start Here file.  We’ll be using this for many of the homework problems and for our project.  I’ll be updating the code periodically, but every time you launch flightlab it will automatically check for and download any updates.</p>
 
-<h2 id="p1a--build-canonical-rc-1-in-the-workbench">P1a — Build canonical RC-1 in the workbench</h2>
+<h2 id="p1--build-canonical-rc-1-in-the-workbench">P1 — Build canonical RC-1 in the workbench</h2>
 
 <p>Open the workbench and choose <strong>New starter design</strong>. Rename the project <code class="language-plaintext highlighter-rouge">RC-1 canonical</code>.
 RC-1 is the name we’ll give to a (deliberately medicore)
@@ -220,24 +220,28 @@ pitch-control deflection, and L/D.</p>
 
 <p>Take a look at the relative contributions to parasitic drag.</p>
 
-<h2 id="p1b-pod-shape-study">P1b: Pod-shape study</h2>
+<!-- 
+## P1b: Pod-shape study
 
-<p>Save the canonical project as <code class="language-plaintext highlighter-rouge">rc1-hw1.flightlab.json</code>, then use a short script based on the code shown in the workbench’s <strong>Python</strong> tab.</p>
+Save the canonical project as `rc1-hw1.flightlab.json`, then use a short script based on the code shown in the workbench's **Python** tab.
 
-<p>The baseline pod is short and wide, representing packaging constraints imposed by its battery, electronics, and payload. If those components could be reconfigured, we could perhaps use a thinner pod with the same volume.  Sweep the pod length from 0.25 to 0.695 m (beyond this point the pod runs past the tail position and we’d have to change its location also).  At every length preserve both total volume and the width-to-height ratio.</p>
+The baseline pod is short and wide, representing packaging constraints imposed by its battery, electronics, and payload. If those components could be reconfigured, we could perhaps use a thinner pod with the same volume.  Sweep the pod length from 0.25 to 0.695 m (beyond this point the pod runs past the tail position and we'd have to change its location also).  At every length preserve both total volume and the width-to-height ratio.
 
-\[V = Lwh = 0.400(0.110)(0.100)=0.00440\ \mathrm{m^3},
-\qquad w/h=1.10 .\]
+$$
+V = Lwh = 0.400(0.110)(0.100)=0.00440\ \mathrm{m^3},
+\qquad w/h=1.10 .
+$$
 
-<p>Thus, for each trial length, calculate the required width and height before running the Cruise
+Thus, for each trial length, calculate the required width and height before running the Cruise
 design point. Hold every other input fixed.
-Plot total drag versus pod length.</p>
+Plot total drag versus pod length. 
+-->
 
 <h2 id="problem-2a--rc-vs-transport-aircraft">Problem 2a — RC vs transport aircraft</h2>
 
 <p>Below are some specs for two very different aircraft and flight conditions.
-In this problem we won’t use flightlab (it is designed for electric RC-style aircraft only). You just need a short
-script using a standard-atmosphere model and basic relationships from the textbook.</p>
+You won’t be using flightlab for this problem, just a short
+script using basic relationships from the textbook.</p>
 
 <table>
   <thead>
