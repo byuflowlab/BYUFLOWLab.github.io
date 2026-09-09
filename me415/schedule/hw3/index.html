@@ -88,7 +88,76 @@
 
     <div class="content container">
     <!-- <h1 class="page-title">HW 3</h1> -->
-      <h1 id="hw-3-improved-aerodynamic-analysis">HW 3: Improved Aerodynamic Analysis</h1>
+      <h1 id="hw-3-wing-design">HW 3: Wing Design</h1>
+
+<hr />
+
+<ol>
+  <li>
+    <p>Open <code class="language-plaintext highlighter-rouge">rc1-hw1.flightlab.json</code> and make four project copies. Keep span 1.200 m, area
+0.192 m², airfoil, tail geometry, bodies, mass, and flight cases fixed. Replace only the two
+main-wing stations:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Candidate</th>
+          <th style="text-align: right">Root chord</th>
+          <th style="text-align: right">Tip chord</th>
+          <th style="text-align: right">Root twist</th>
+          <th style="text-align: right">Tip twist</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A: baseline</td>
+          <td style="text-align: right">0.1600 m</td>
+          <td style="text-align: right">0.1600 m</td>
+          <td style="text-align: right">0°</td>
+          <td style="text-align: right">0°</td>
+        </tr>
+        <tr>
+          <td>B: tapered</td>
+          <td style="text-align: right">0.2133 m</td>
+          <td style="text-align: right">0.1067 m</td>
+          <td style="text-align: right">0°</td>
+          <td style="text-align: right">0°</td>
+        </tr>
+        <tr>
+          <td>C: washout</td>
+          <td style="text-align: right">0.1600 m</td>
+          <td style="text-align: right">0.1600 m</td>
+          <td style="text-align: right">0°</td>
+          <td style="text-align: right">−3°</td>
+        </tr>
+        <tr>
+          <td>D: tapered + washout</td>
+          <td style="text-align: right">0.2133 m</td>
+          <td style="text-align: right">0.1067 m</td>
+          <td style="text-align: right">0°</td>
+          <td style="text-align: right">−3°</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>First verify that the area of every candidate is unchnaged. Run <strong>Analysis</strong> for the 9.1 m/s Launch case. For each candidate report trim angle, pitch-control deflection, span efficiency, induced-drag coefficient, and L/D.
+ Download the spanwise CSV.</p>
+
+    <p>Select the best candidate using the following critiera:</p>
+
+    <ol>
+      <li>the predicted first-stall station must be at or inboard of 75% semispan</li>
+      <li>the Launch case must trim within the ±20° elevator limit</li>
+      <li>among qualifying candidates, choose the one with the highest span efficiency</li>
+    </ol>
+
+    <p>Run the selected candidate once at the 16.0 m/s Fast case and verify trim. Report its L/D
+ change and induced-drag change relative to baseline.</p>
+  </li>
+  <li>
+    <p>Let’s again consider a large commercial airliner.  In the last homework we estimated parasitic drag using some simplified methods.  In flightlab, we do things a little more accurately by integrating drag as predicted by the airfoil analysis.  We won’t do that in this problem, but take it to be X.  Compute the (inviscid) induced drag.  Compute also compressibility drag using the simple drag divergence and wave drag equations in the text.  Report the relative fraction of parasitic drag, induced drag, and compressibility drag.  Make one plot of wave drag from Mach 0.75 to 0.90.</p>
+  </li>
+</ol>
 
 <hr />
 
