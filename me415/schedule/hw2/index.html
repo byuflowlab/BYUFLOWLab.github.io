@@ -94,25 +94,24 @@
 
 <ol>
   <li>
-    <p>Compute the parasitic drag for a large commercial airliner. The flight conditions are M = 0.8, altitude = 35,000 ft.  At this Reynolds number the boundary layer will be mostly turbulent so for all components we’ll assume fully turbulent to be conservative.  Note that the tails uses the same formulas as the wing so might be nice to create a reusable function.  You should compute the drag of each component in isolation to keep things simple for this problem.  In other words, don’t try to subtract out the area of the wing that will be buried in the fuselage.</p>
+    <p>The following are all hand-calcs or short scripts.  Compute the parasitic drag for a large commercial airliner (we will compute just the wing and fuselage). The flight conditions are Mach = 0.8, altitude = 35,000 ft. At this Reynolds number the boundary layer will be mostly turbulent so for all components we’ll assume fully turbulent to be conservative. You should compute the drag of each component in isolation to keep things simple for this problem. In other words, don’t try to subtract out the area of the wing that will be buried in the fuselage.</p>
 
     <ul>
       <li>The wing has a wingspan of 200 ft, aspect ratio of 9, sweep of 30 degrees, and an airfoil thickness to chord ratio of 12% (assumed constant).</li>
-      <li>The horizontal tails have a span of 70 ft, AR = 4, sweep = 25 degrees, t/c = 10%.</li>
-      <li>The vertical tail has a 30 ft half span (it only extends up), AR = 4, sweep = 35 degrees, t/c = 10%.</li>
-      <li>The fuselage has a total length of 210 ft and a maximum diameter of 20 ft.  The nose cone comprises 20 ft of the length, and the tail cone 30 ft of the length (so 160 ft is regular cylinder).</li>
+      <li>The fuselage has a total length of 210 ft and a maximum diameter of 20 ft. The nose cone comprises 20 ft of the length, and the tail cone 30 ft of the length (so 160 ft is regular cylinder).</li>
     </ul>
-
-    <p>You’ll need to turn in work along with your numbers.  Code is fine as work as long as it is reasonably well commented and spaced such that it is easy to follow.</p>
   </li>
   <li>
-    <p>Download the latest version of <a href="http://www.xflr5.com/xflr5.htm">XFLR5</a> and watch the <a href="https://youtu.be/U7saOcozpi8">first tutorial video</a>.  I realize their tutorial videos correspond to an older version of the software so sometimes you have to poke around the menus a bit.  Not ideal, but better than not having any tutorial videos.</p>
+    <p>Open <code class="language-plaintext highlighter-rouge">flightlab</code> and use the <strong>Airfoils</strong> tab. Compare the performance of the following three airfoils: NACA 2412, E212, ESA40.  You can find the last one, and a bunch more, at the following: <a href="https://m-selig.ae.illinois.edu/ads/coord_database.html">database</a>.  The files for these airfoils are fine as is, but for future reference some files in the database are in slightly different formats and need to be adjusted to the <a href="https://v0xnihili.github.io/xfoil-docs/airfoil-file-formats/">standard format</a>.  Analyze the airfoils at a Reynolds number of 100,000 and a Mach number of 0.  Start with natural transition (<code class="language-plaintext highlighter-rouge">x/c=1.0</code>).  Download the CSV files to enable you to to plot the following graphs.</p>
 
-    <p>Using XFLR5, compare the performance of the following three airfoils: NACA 2412, E212, ESA40.  You can find the latter two, and a bunch more, at the following: <a href="https://m-selig.ae.illinois.edu/ads/coord_database.html">database</a>.  The files for these airfoils are fine as is, but for future reference some files in the database are in slightly different formats and need to be adjusted to the <a href="https://v0xnihili.github.io/xfoil-docs/airfoil-file-formats/">expected format</a>.  Analyze the airfoils at a Reynolds number of 100,000 and a Mach number of 0.  Plot a lift curve (\(c_l\) vs \(\alpha\)), drag polar (\(c_l\) vs \(c_d\)), lift to drag ratio (\(l/d\) vs \(\alpha\)), and a moment curve (\(c_m\) vs \(\alpha\)).  Be sure that you analyze a broad enough angle of attack range to include the zero-lift angle of attack on the low end, and stall (or near-stall) at the high end.  Going much past stall is not helpful as the assumptions of the method will be violated. Screenshots are ok, for future reference you can right click to export the data for further calculations or to make better plots.  Briefly comment (a sentence or two) on the differences observed.</p>
+    <p>In the first set of graphs plot all 3 airfoils on one graph using natural transition: a lift curve (\(c_l\) vs \(\alpha\)), drag polar (\(c_l\) vs \(c_d\)), lift to drag ratio (\(l/d\) vs \(\alpha\)), and a moment curve (\(c_m\) vs \(\alpha\)).  Briefly comment (a sentence or two) on the differences observed.</p>
 
-    <p>You often need to adjust the scale on drag polars (right click &gt; current graph &gt; define graph settings). Otherwise, if the drag shoots off to high values (past stall) you can barely see the part of the curve that you actually care about (it just looks flat).</p>
+    <p>In the second graph plot the drag polar for just the NACA 2412 but with two curves: one with natural transition and a second curve using a forced transition at 5% chord (<code class="language-plaintext highlighter-rouge">x/c=0.05</code>).</p>
+
+    <p>Be sure that you analyze a broad enough angle of attack range to include the zero-lift angle of attack on the low end, and stall (or near-stall) at the high end.  Going much past stall is not helpful as the assumptions of the method will be violated. When you plot the drag polars set an appropriate upper limit on the drag axis. Otherwise, if the drag shoots off to high values (past stall) you can barely see the part of the curve that you actually care about (it just looks flat).  In contrast, moment cofficient only varies across a narrow range so the default axes may make it look much less flat than it really is.  Often it is plotted on the same range as lift coefficient.</p>
   </li>
 </ol>
+
 
     </div>
 
