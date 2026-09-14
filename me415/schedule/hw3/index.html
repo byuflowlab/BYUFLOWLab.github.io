@@ -142,19 +142,20 @@
       </tbody>
     </table>
 
-    <p>First verify that the area of every candidate is unchanged. Run <strong>Analysis</strong> for the 12.0 m/s Cruise case and the 9.1 m/s Launch case. For each candidate report: span efficiency at Cruise; and at Launch report the trim \(C_L\), the estimated aircraft \(C_{L_{max}}\), and the spanwise location (distance from the root) where stall first occurs.  The stall location can be read from the <em>Section lift at first local stall</em> plot (where the \(c_l\) curve touches the \(c_{l_{max}}\) curve), or more precisely from the downloaded spanwise CSV by comparing the <code class="language-plaintext highlighter-rouge">section_cl_at_estimated_stall</code> and <code class="language-plaintext highlighter-rouge">section_cl_max</code> columns.  Summarize in one table with the four criteria as columns and mark each as pass or fail for each candidate.</p>
+    <p>First verify that the area of every candidate is unchanged. Run <strong>Analysis</strong> for the 12.0 m/s Cruise case and the 9.1 m/s Launch case. 
+ <!-- For each candidate report: span efficiency at Cruise; and at Launch report the trim $$C_L$$, the estimated aircraft $$C_{L_{max}}$$, and the spanwise location (distance from the root) where stall first occurs.  The stall location can be read from the *Section lift at first local stall* plot (where the $$c_l$$ curve touches the $$c_{l_{max}}$$ curve), or more precisely from the downloaded spanwise CSV by comparing the `section_cl_at_estimated_stall` and `section_cl_max` columns.   -->
+ Check all four criteria for each candidate.</p>
 
-    <p>For these next three questions you don’t need to turn anything in, but should think through them:</p>
     <ul>
       <li>Compare A and B and make sure you understand the impact of taper on the lift and cl distribution.</li>
-      <li>Compare A and C and make sure you understand the ipmact of twist on the lift and cl distribution.</li>
+      <li>Compare A and C and make sure you understand the impact of twist on the lift and cl distribution.</li>
     </ul>
 
     <p><strong>(b) Your design.</strong>  None of the three candidates satisfy all of the criteria.  Choose your own root chord, tip chord, and tip twist (still two stations, root twist 0°) that meets every criterion.  For a linearly tapered wing with taper ratio \(\lambda = c_{tip}/c_{root}\), keeping the span and area fixed requires</p>
 
 \[c_{root} = \frac{2 S}{b (1 + \lambda)}, \qquad c_{tip} = \lambda c_{root}.\]
 
-    <p>Expect to iterate a few times.  Report your final geometry, the values for all four criteria, and include the loading and section-lift plots for your design.  Finally, run your design at the 16.0 m/s Fast case, verify that it still trims, and report its span efficiency and L/D.</p>
+    <p>You may need to iterate a few times.  Report your final geometry, the values for all four criteria, and include the loading and section-lift plots for your design.  Finally, run your design at the 16.0 m/s Fast case, verify that it still trims, and report its span efficiency and L/D.</p>
   </li>
   <li>
     <p>Let’s again consider a large commercial airliner.  In the last homework we estimated parasitic drag using some simplified methods.  In flightlab the same method is used for fuselage-like objects, but for lifting surfaces we take a better route by integrating the drag across the surface using the airfoil analyses.  We won’t go through those details here, but will just take the parasitic drag coefficient to be \({C_D}_p = 0.012\).  This now includes the tails, nacelles, pylons, and markups, yet is only a little above the wing + fuselage estimate from the last homework because the fully turbulent assumption there was overly conservative.  The rest of the specs are the same 787-like transport from HW 1, with a couple of additions:</p>
@@ -204,7 +205,7 @@
 
     <p>Compute the (inviscid) induced drag coefficient, taking \(e_{inv} = 0.98\) (which, as you saw in the previous problem, is representative of a well-designed wing).  Compute also the compressibility drag coefficient using the drag divergence and wave drag equations in the text.  Compare the drag divergence Mach number to the cruise Mach number.  Report the relative fraction of parasitic drag, induced drag, and compressibility drag.</p>
 
-    <p>Then make one plot of compressibility drag coefficient versus Mach number from 0.75 to 0.90 with \(C_L\) fixed at its Mach 0.85 value.</p>
+    <p>Then make one plot of compressibility drag coefficient versus Mach number from 0.75 to 0.90 with altitude fixed for simplicity.</p>
 
     <p><!-- two curves: one holding $$C_L$$ fixed at its Mach 0.85 value, and one where the aircraft stays at the same altitude and mass so that $$C_L$$ changes with Mach number (recall from HW 1 that $$q = \frac{\gamma}{2} p M^2$$).  Briefly explain why the two curves differ. --></p>
   </li>
