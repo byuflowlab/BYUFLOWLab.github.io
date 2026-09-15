@@ -1,0 +1,391 @@
+{
+  "name": "RC-1 canonical",
+  "surfaces": [
+    {
+      "name": "Main wing",
+      "orientation": "horizontal",
+      "purpose": "wing",
+      "trim_control": "fixed",
+      "symmetric": true,
+      "stations": [
+        {
+          "x_le": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "chord": 0.16,
+          "twist_deg": 0.0,
+          "airfoil": "naca2412"
+        },
+        {
+          "x_le": 0.0,
+          "y": 0.6,
+          "z": 0.0,
+          "chord": 0.16,
+          "twist_deg": 0.0,
+          "airfoil": "naca2412"
+        }
+      ],
+      "control_hinge_fraction": 0.75,
+      "control_min_deg": -25.0,
+      "control_max_deg": 25.0
+    },
+    {
+      "name": "Horizontal tail",
+      "orientation": "horizontal",
+      "purpose": "tail",
+      "trim_control": "elevator",
+      "symmetric": true,
+      "stations": [
+        {
+          "x_le": 0.565,
+          "y": 0.0,
+          "z": 0.01,
+          "chord": 0.1,
+          "twist_deg": 0.0,
+          "airfoil": "naca0009"
+        },
+        {
+          "x_le": 0.565,
+          "y": 0.17,
+          "z": 0.01,
+          "chord": 0.1,
+          "twist_deg": 0.0,
+          "airfoil": "naca0009"
+        }
+      ],
+      "control_hinge_fraction": 0.75,
+      "control_min_deg": -20.0,
+      "control_max_deg": 20.0
+    },
+    {
+      "name": "Vertical tail",
+      "orientation": "vertical",
+      "purpose": "fin",
+      "trim_control": "fixed",
+      "symmetric": false,
+      "stations": [
+        {
+          "x_le": 0.56,
+          "y": 0.0,
+          "z": 0.01,
+          "chord": 0.12,
+          "twist_deg": 0.0,
+          "airfoil": "naca0009"
+        },
+        {
+          "x_le": 0.56,
+          "y": 0.0,
+          "z": 0.16,
+          "chord": 0.12,
+          "twist_deg": 0.0,
+          "airfoil": "naca0009"
+        }
+      ],
+      "control_hinge_fraction": 0.75,
+      "control_min_deg": -25.0,
+      "control_max_deg": 25.0
+    }
+  ],
+  "reference": {
+    "mode": "surface",
+    "surface": "Main wing",
+    "surfaces": [],
+    "area": null,
+    "span": null,
+    "chord": null
+  },
+  "bodies": [
+    {
+      "name": "Fuselage pod",
+      "length": 0.4,
+      "width": 0.11,
+      "height": 0.1,
+      "diameter": null,
+      "x_nose": -0.13,
+      "y": 0.0,
+      "z": 0.0,
+      "count": 1,
+      "drag_model": "streamlined_body",
+      "cone_fraction": 0.4
+    },
+    {
+      "name": "Tail boom",
+      "length": 0.295,
+      "width": null,
+      "height": null,
+      "diameter": 0.01,
+      "x_nose": 0.27,
+      "y": 0.0,
+      "z": 0.0,
+      "count": 1,
+      "drag_model": "streamlined_body",
+      "cone_fraction": 0.4
+    }
+  ],
+  "masses": [
+    {
+      "name": "Complete aircraft placeholder",
+      "mass": 0.75,
+      "x": 0.048,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "Launch",
+      "speed": 9.1,
+      "altitude": 1400.0,
+      "load_factor": 1.0,
+      "alpha_deg": 2.0,
+      "interference": 0.05,
+      "protuberance": 0.1,
+      "f_other": 0.0,
+      "cooling": 0.0,
+      "n_crit": 9.0,
+      "xtr_upper": 1.0,
+      "xtr_lower": 1.0
+    },
+    {
+      "name": "Cruise",
+      "speed": 12.0,
+      "altitude": 1400.0,
+      "load_factor": 1.0,
+      "alpha_deg": 2.0,
+      "interference": 0.05,
+      "protuberance": 0.1,
+      "f_other": 0.0,
+      "cooling": 0.0,
+      "n_crit": 9.0,
+      "xtr_upper": 1.0,
+      "xtr_lower": 1.0
+    },
+    {
+      "name": "Fast",
+      "speed": 16.0,
+      "altitude": 1400.0,
+      "load_factor": 1.0,
+      "alpha_deg": 2.0,
+      "interference": 0.05,
+      "protuberance": 0.1,
+      "f_other": 0.0,
+      "cooling": 0.0,
+      "n_crit": 9.0,
+      "xtr_upper": 1.0,
+      "xtr_lower": 1.0
+    }
+  ],
+  "airfoils": {},
+  "propulsion": {
+    "battery": "B3S1300",
+    "state_of_charge": 0.9,
+    "battery_x": 0.02,
+    "battery_y": 0.0,
+    "battery_z": 0.0,
+    "include_component_masses": false,
+    "propulsors": [
+      {
+        "name": "Propulsor 1",
+        "motor": "M1000",
+        "propeller": "P10x7",
+        "esc": "ESC30",
+        "throttle": 1.0,
+        "x": -0.08,
+        "y": 0.0,
+        "z": 0.0,
+        "pitch_deg": 0.0,
+        "yaw_deg": 0.0
+      }
+    ]
+  },
+  "structure": {
+    "surface": "",
+    "spar_height": 0.03,
+    "allowable_stress": 300000000.0,
+    "ultimate_factor": 1.5,
+    "elastic_modulus": 70000000000.0,
+    "cap_width": 0.02
+  },
+  "motors": {
+    "M820": {
+      "key": "M820",
+      "name": "EMAX XA2212-820, 820 Kv",
+      "Kv_rpm": 820.0,
+      "resistance": 0.2,
+      "current_no_load": 0.6,
+      "current_max": 16.0,
+      "mass": 0.057,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Lowest Kv here: turns a large propeller slowly, which is the efficient way to make thrust at low speed."
+    },
+    "M1000": {
+      "key": "M1000",
+      "name": "generic A2212-13T, 1000 Kv",
+      "Kv_rpm": 1000.0,
+      "resistance": 0.1,
+      "current_no_load": 0.85,
+      "current_max": 13.0,
+      "mass": 0.05,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. The cheapest and most widely stocked motor of this class, and RC-1's baseline. Note the low current limit."
+    },
+    "M1250": {
+      "key": "M1250",
+      "name": "SunnySky X2216-11, 1250 Kv",
+      "Kv_rpm": 1250.0,
+      "resistance": 0.06,
+      "current_no_load": 1.1,
+      "current_max": 26.0,
+      "mass": 0.068,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Highest peak efficiency in the catalog, and 18 g heavier than the lightest. Whether that is worth it depends on the mission, which is the point."
+    },
+    "M1400": {
+      "key": "M1400",
+      "name": "generic A2212-10T, 1400 Kv",
+      "Kv_rpm": 1400.0,
+      "resistance": 0.085,
+      "current_no_load": 1.45,
+      "current_max": 15.0,
+      "mass": 0.05,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Highest Kv and the WORST peak efficiency, because peak efficiency ranks with I0*R/V and this motor's no-load current is high. Students expect the opposite."
+    }
+  },
+  "batteries": {
+    "B2S1300": {
+      "key": "B2S1300",
+      "name": "2S 7.4 V 1300 mAh 45C LiPo",
+      "cells_series": 2,
+      "cells_parallel": 1,
+      "capacity_ah": 1.3,
+      "mass": 0.075,
+      "c_rating": 45.0,
+      "cell_resistance": 0.01,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "provisional": true,
+      "notes": "Widely stocked hobby pack. Mass is the vendor figure; cell_resistance is an ESTIMATE to be measured."
+    },
+    "B3S2200": {
+      "key": "B3S2200",
+      "name": "3S 11.1 V 2200 mAh 50C LiPo",
+      "cells_series": 3,
+      "cells_parallel": 1,
+      "capacity_ah": 2.2,
+      "mass": 0.185,
+      "c_rating": 50.0,
+      "cell_resistance": 0.008,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "provisional": true,
+      "notes": "70 g heavier than B3S1300 for 69% more energy. Whether that is a good trade is the endurance-versus-mass question, and it depends on the mission. cell_resistance is an ESTIMATE."
+    },
+    "B3S1300": {
+      "key": "B3S1300",
+      "name": "3S 11.1 V 1300 mAh 45C LiPo",
+      "cells_series": 3,
+      "cells_parallel": 1,
+      "capacity_ah": 1.3,
+      "mass": 0.115,
+      "c_rating": 45.0,
+      "cell_resistance": 0.012,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "provisional": true,
+      "notes": "RC-1's baseline pack; its 115 g matches the battery row of the RC-1 component mass table. cell_resistance is an ESTIMATE."
+    }
+  },
+  "escs": {
+    "ESC30": {
+      "key": "ESC30",
+      "name": "30 A brushless ESC with 5 V BEC",
+      "current_max": 30.0,
+      "mass": 0.025,
+      "efficiency": 0.95,
+      "provisional": true
+    },
+    "ESC40": {
+      "key": "ESC40",
+      "name": "40 A brushless ESC with 5 V BEC",
+      "current_max": 40.0,
+      "mass": 0.038,
+      "efficiency": 0.96,
+      "provisional": true
+    }
+  },
+  "propellers": {
+    "P8x6": {
+      "key": "P8x6",
+      "name": "APC 8x6E",
+      "mass": 0.01,
+      "data": "apce_8x6",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder"
+    },
+    "P9x6": {
+      "key": "P9x6",
+      "name": "APC 9x6E",
+      "mass": 0.012,
+      "data": "apce_9x6",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder"
+    },
+    "P10x5": {
+      "key": "P10x5",
+      "name": "APC 10x5E",
+      "mass": 0.014,
+      "data": "apce_10x5",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder. Same diameter as P10x7 and less pitch, making it a controlled pitch comparison."
+    },
+    "P10x7": {
+      "key": "P10x7",
+      "name": "APC 10x7E",
+      "mass": 0.014,
+      "data": "apce_10x7",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder. RC-1's baseline propeller, and the one on the thrust stand."
+    },
+    "P11x7": {
+      "key": "P11x7",
+      "name": "APC 11x7E",
+      "mass": 0.017,
+      "data": "apce_11x7",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder"
+    }
+  },
+  "notes": "Canonical RC-1 configuration for ME 415 HW 1.",
+  "format_version": 3
+}
