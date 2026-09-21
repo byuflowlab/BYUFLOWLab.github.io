@@ -94,18 +94,18 @@
 
 <ol>
   <li>
-    <p>In this problem we explore how chord and twist distributions shape the lift distribution and the lift coefficient distribution of a wing.  Download and open <a href="../rc1-hw1.flightlab.json">rc1-hw1.flightlab.json</a>, which is the configuration from hw 1. Keep span 1.200 m, area 0.192 m², airfoil, tail geometry, bodies, mass, and flight cases fixed. Only the chord and twist of the two main-wing stations will change.  In flightlab a positive twist is nose up, so a negative tip twist is washout.</p>
+    <p>Download and open <a href="../rc1-hw1.flightlab.json">rc1-hw1.flightlab.json</a>, which is the configuration from hw 1. Keep span 1.200 m, area 0.192 m², airfoil, tail geometry, bodies, mass, and flight cases fixed. Only the chord and twist of the two main-wing stations will change.  In flightlab a positive twist is nose up, so a negative tip twist is washout.</p>
 
-    <p>In the text, we describe aspects of good wing design, and in this problem we’ll turn those into some specific design criteria:</p>
+    <p>Wing design criteria for this problem:</p>
 
     <ul>
-      <li><strong>Near-elliptic loading.</strong>  Inviscid span efficiency at Cruise of at least 0.975, with the load distribution shifted <em>inboard</em> of the same-lift ellipse rather than outboard.</li>
-      <li><strong>Taper for structures.</strong>  Tip chord no more than 40% of the root chord.  We haven’t covered wing structures yet, so for now use this as a replacement.</li>
+      <li><strong>Near-elliptic loading.</strong>  Inviscid span efficiency at Cruise of at least 0.975, with the load distribution shifted <em>inboard</em> of the same-lift ellipse.</li>
+      <li><strong>Taper for structures.</strong>  Tip chord no more than 40% of the root chord.</li>
       <li><strong>Inboard stall.</strong>  The first section to reach its \(c_{l_{max}}\) must be inboard of 60% of the semispan (within 0.36 m of the root).</li>
       <li><strong>Stall margin.</strong>  The Launch speed should be at least 15% above the stall speed.  Since \(V \propto 1/\sqrt{C_L}\), this means the estimated aircraft \(C_{L_{max}}\) must be at least \(1.15^2 \approx 1.32\) times the trim \(C_L\) at Launch.</li>
     </ul>
 
-    <p><strong>(a) Three candidates.</strong>  Replace the two main-wing stations with each of the following:</p>
+    <p><strong>(a) Three candidates.</strong>  Analyze all three designs (the first is the original in hw1)</p>
 
     <table>
       <thead>
@@ -205,7 +205,7 @@
 
     <p>Compute the (inviscid) induced drag coefficient, taking \(e_{inv} = 0.98\) (which, as you saw in the previous problem, is representative of a well-designed wing).  Compute also the compressibility drag coefficient using the drag divergence and wave drag equations in the text.  Compare the drag divergence Mach number to the cruise Mach number.  Report the relative fraction of parasitic drag, induced drag, and compressibility drag.</p>
 
-    <p>Then make one plot of compressibility drag coefficient versus Mach number from 0.75 to 0.90 with altitude fixed for simplicity.</p>
+    <p><!-- Then make one plot of compressibility drag coefficient versus Mach number from 0.75 to 0.90 with altitude fixed for simplicity. --></p>
 
     <p><!-- two curves: one holding $$C_L$$ fixed at its Mach 0.85 value, and one where the aircraft stays at the same altitude and mass so that $$C_L$$ changes with Mach number (recall from HW 1 that $$q = \frac{\gamma}{2} p M^2$$).  Briefly explain why the two curves differ. --></p>
   </li>
