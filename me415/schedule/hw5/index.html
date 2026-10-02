@@ -11,7 +11,7 @@
 
   <title>
     
-      HW &middot; ME 415
+      HW 5 &middot; ME 415
     
   </title>
 
@@ -87,83 +87,74 @@
 
 
     <div class="content container">
-    <!-- <h1 class="page-title">HW</h1> -->
-      <h1 id="hw-5-dynamic-stability-and-battery">HW 5: Dynamic Stability and Battery</h1>
+    <!-- <h1 class="page-title">HW 5</h1> -->
+      <h1 id="hw-5-battery">HW 5: Battery</h1>
 
 <hr />
 
-<ol>
-  <li>
-    <p>Model the following simple airplane in XFLR5. Use a NACA 0012 for every airfoil.  Chord and twist is constant along each lifting surface (wing and tails). Report the eigenvalues and identify the corresponding mode (e.g., dutch roll, spiral).  Report the key stability derivatives for static stability: \({C_m}_{,\alpha}, {C_n}_{,\beta}, {C_{roll}}_{, \beta}\).  Just use sea-level properties (though it won’t matter for stability derivatives since they are normalized).  Note that for stability a viscous analysis is optional.  While the drag has a major role in performance, it typically has very little impact on dynamics.  The most helpful <a href="https://www.youtube.com/playlist?list=PLtl5ylS6jdP6uOxzSJKPnUsvMbkmalfKg">videos</a> for this problem are the first few minutes of 12, the first half of 13, and 14.</p>
-
-    <p><img src="../dynamic.png" width="800px" class="img-center" /></p>
-  </li>
-  <li>
-    <p>Consider a simplified battery model with just internal resistance and a capacity that is independent of current.  We fit data for the open current voltage and the internal resistance of a Panasonic NCR18650G cell (high specific energy, which is important for aircraft applications).  This fit is only reasonable for a SOC between 0.1 and 0.9 (we won’t operate outside those limits anyway because of degradation and max power requirements).</p>
+<p>Consider a simplified battery model with just internal resistance and a capacity that is independent of current.  We fit data for the open circuit voltage and the internal resistance of a Panasonic NCR18650G cell (high specific energy, which is important for aircraft applications).  This fit is only reasonable for a SOC between 0.1 and 0.9 (we won’t operate outside those limits anyway because of degradation and max power requirements).</p>
 
 \[OCV = 0.39\, SOC^2 + 0.07 \, SOC + 3.7 \text{ Volts}\]
 
 \[R = 0.015\, SOC^2 - 0.025 \, SOC + 0.104 \text{ Ohms}\]
 
-    <p>The capacity of the cell is 3.55 Ah.  The battery pack is arranged as follows (s means series, p means parallel):</p>
+<p>The capacity of the cell is 3.55 Ah.  The battery pack is arranged as follows (s means series, p means parallel):</p>
 
-    <table style="max-width: 400px;">
-      <tbody>
-        <tr>
-          <td>Submodule</td>
-          <td>1s x 24p cells</td>
-        </tr>
-        <tr>
-          <td>Module</td>
-          <td>20s x 1p submodules</td>
-        </tr>
-        <tr>
-          <td>Pack</td>
-          <td>7s x 2p modules</td>
-        </tr>
-      </tbody>
-    </table>
+<table style="max-width: 400px;">
+  <tbody>
+    <tr>
+      <td>Submodule</td>
+      <td>1s x 24p cells</td>
+    </tr>
+    <tr>
+      <td>Module</td>
+      <td>20s x 1p submodules</td>
+    </tr>
+    <tr>
+      <td>Pack</td>
+      <td>7s x 2p modules</td>
+    </tr>
+  </tbody>
+</table>
 
-    <p>Now consider the following simplified aircraft mission:</p>
+<p>Now consider the following simplified aircraft mission for an eVTOL aircraft:</p>
 
-    <table style="max-width: 600px;">
-      <tbody>
-        <tr>
-          <td><strong>Segment</strong></td>
-          <td><strong>Time (minutes)</strong></td>
-          <td><strong>Power (kW)</strong></td>
-        </tr>
-        <tr>
-          <td>Takeoff and Climb</td>
-          <td>1</td>
-          <td>290</td>
-        </tr>
-        <tr>
-          <td>Cruise</td>
-          <td>35</td>
-          <td>75</td>
-        </tr>
-        <tr>
-          <td>Aborted Descent and Climb</td>
-          <td>1</td>
-          <td>180</td>
-        </tr>
-        <tr>
-          <td>Reserve Cruise</td>
-          <td>5</td>
-          <td>75</td>
-        </tr>
-        <tr>
-          <td>Descent and Landing</td>
-          <td>1</td>
-          <td>150</td>
-        </tr>
-      </tbody>
-    </table>
+<table style="max-width: 600px;">
+  <tbody>
+    <tr>
+      <td><strong>Segment</strong></td>
+      <td><strong>Time (minutes)</strong></td>
+      <td><strong>Power (kW)</strong></td>
+    </tr>
+    <tr>
+      <td>Takeoff and Climb</td>
+      <td>1</td>
+      <td>250</td>
+    </tr>
+    <tr>
+      <td>Cruise</td>
+      <td>35</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Aborted Descent and Climb</td>
+      <td>1</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <td>Reserve Cruise</td>
+      <td>5</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>Descent and Landing</td>
+      <td>1</td>
+      <td>150</td>
+    </tr>
+  </tbody>
+</table>
 
-    <p>For each segment compute the current, battery voltage, efficiency, and the new state of charge at the end of the segment.  Rather than integrating, for simplicity assume that open current voltage and resistance are constant within each segment, defined by the state of the charge at the start of that segment.  Begin the mission with a state of charge of 0.9.</p>
-  </li>
-</ol>
+<p>For each segment compute the pack current, voltage, efficiency, and the new state of charge at the end of the segment.  Rather than integrating, for simplicity assume that open circuit voltage and resistance are constant within each segment, defined by the state of the charge at the start of that segment.  Begin the mission with a state of charge of 0.9.</p>
 
     </div>
 
