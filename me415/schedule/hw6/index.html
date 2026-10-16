@@ -92,16 +92,163 @@
 
 <hr />
 
-<p>Consider a relatively large RC aircraft with the following components.</p>
+<p>For the starter design in FlightLab, choose an appropriate propeller, motor and battery (from the list provided in FlightLab).  Some of the key metrics are listed below.</p>
 <ul>
-  <li><strong>Battery</strong>: \(OCV =\) 22.2 V, Q = 5 Ah, R = 0.6 \(\Omega\).  We’ll only assess efficiency at one state of charge so won’t need to worry about changes in open circuit voltage and resistance.</li>
-  <li><strong>Motor</strong>: \(K_v = 800\) RPM/V, \(R = 1.2\ \Omega\), and \(I_0 = 0.2\) A.</li>
-  <li><strong>Propeller</strong>: APC Sport 10 x 8</li>
+  <li>aircraft mass: 0.80 kg (weight 7.85 N)</li>
+  <li>cruise speed: 12 m/s</li>
+  <li>air density: 1.07 kg/m^3</li>
+  <li>drag at cruise: 0.81 N</li>
+  <li>hand launch: static thrust of at least 0.4 * weight = 3.1 N (0.5 is a more typical rule of thumb but this smaller value makes the problem simpler in this case)</li>
+  <li>mission: 1 minute at full throttle, 15 minutes of cruise, use at most 80% of battery’s rated capacity.</li>
 </ul>
 
-<p>At a flight speed of \(V_\infty = 15\) m/s, plot the efficiency of the propeller, motor, battery, as well as total efficiency (four curves) as a function of propeller rotation speed from 400 rad/s to 600 rad/s.</p>
+<p>All of these parts are listed in FlightLab but are repeated below.</p>
 
-<p><strong>Hints</strong>: It’ll be easiest to work the power chain backwards from propeller, to motor, to battery. Using \(V_\infty\) and \(\Omega\) as inputs you have everything you need to compute all propeller properties by interpolating the propeller data.  Some advance ratios may be outside the range of the provided data, and in those cases you can just use the values at the end point.  You now know the torque (and rotation speed) on the motor and will be able to compute all the motor quantities.  Finally, you now know the power coming into the motor, which must be the power supplied by the battery (note that voltage of battery and voltage of motor are in general not equal), and so can compute all corresponding battery quantities.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Motor</th>
+      <th>Kv (RPM/V)</th>
+      <th>R (ohm)</th>
+      <th>I0 (A)</th>
+      <th>current limit (A)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SunnySky X2216 II KV1100</td>
+      <td>1100</td>
+      <td>0.073</td>
+      <td>0.90</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>SunnySky X2208 KV1260</td>
+      <td>1260</td>
+      <td>0.122</td>
+      <td>0.40</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>SunnySky X2216 II KV1400</td>
+      <td>1400</td>
+      <td>0.055</td>
+      <td>1.30</td>
+      <td>33</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Battery</th>
+      <th>cells</th>
+      <th>capacity (mAh)</th>
+      <th>internal resistance (ohm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Turnigy 2S 1500 mAh</td>
+      <td>2</td>
+      <td>1500</td>
+      <td>0.020</td>
+    </tr>
+    <tr>
+      <td>Turnigy 3S 1000 mAh</td>
+      <td>3</td>
+      <td>1000</td>
+      <td>0.039</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Propeller</th>
+      <th>diameter (in)</th>
+      <th>pitch (in)</th>
+      <th>rpm limit</th>
+      <th>UIUC data file</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APC 8x6E</td>
+      <td>8</td>
+      <td>6</td>
+      <td>23,750</td>
+      <td><code class="language-plaintext highlighter-rouge">apce_8x6_2799rd_5015.txt</code></td>
+    </tr>
+    <tr>
+      <td>APC 9x4.7SF</td>
+      <td>9</td>
+      <td>4.7</td>
+      <td>7,200</td>
+      <td><code class="language-plaintext highlighter-rouge">apcsf_9x4.7_kt1034_5013.txt</code></td>
+    </tr>
+    <tr>
+      <td>APC 10x4.7SF</td>
+      <td>10</td>
+      <td>4.7</td>
+      <td>6,500</td>
+      <td><code class="language-plaintext highlighter-rouge">apcsf_10x4.7_rd0838_4997.txt</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use the UIUC data file listed for each propeller (the runs are at different Reynolds numbers, these three are near the middle of the measured range and cover the cruise condition).  Interpolate within the table.</p>
+
+<!-- - Speed controller: ideal.  At throttle setting t the motor sees Vm = t * Vbatt, and the battery supplies Ibatt = t * Im (power is conserved through the controller). -->
+
+<h2 id="61-rough-size-by-hand">6.1: Rough Size by Hand</h2>
+
+<p>In this first problem we’ll do some rough sizing by hand (using code).</p>
+
+<ul>
+  <li>(a) <strong>Propeller</strong>. For each of the 3 propellers:
+    <ul>
+      <li>use the CT curve to figure out the rotation speed required to produce the cruise thrust (0.81 N, one propeller)</li>
+      <li>look up the efficiency corresponding to that advance ratio</li>
+      <li>choose the one with the highest efficiency at your requisite thrust</li>
+    </ul>
+  </li>
+  <li>(b) <strong>Motor</strong>. Now that you know the rotation speed and torque your motor must provide, you can choose a motor that will be efficient at those conditions.  For each of the 3 motors:
+    <ul>
+      <li>Compute the current, supply voltage to the motor (Vm), and efficiency.</li>
+      <li>choose the one with the highest efficiency</li>
+    </ul>
+  </li>
+  <li>
+    <p>(c) <strong>Battery</strong>.  You need some extra capacity to climb, so let’s design the cruise at roughly 70% throttle.  That means your battery voltage will need to be at least Vm/0.7.  Determine roughly how many cells you need in your battery for that voltage level (assume 3.7 V per cell as a typical nominal voltage for LiPo batteries).</p>
+  </li>
+  <li>(d) <strong>Endurance</strong>. Calculate the current for the battery (not the same as the motor since we are not at full throttle).  The speed controller passes power through (minus a small efficiency loss we ignore in these hand calcs), so we can compute battery current directly from the known required power.  Then we can determine battery voltage.  The 70% in (c) was only a target for choosing the cell count, the actual cruise throttle is t = Vm / Vb (equivalently Ibatt / Im).  Then determine how much of your battery capacity you would use during 15 minutes of cruise.  We would want to repeat a similar process to determine usage during the full throttle period, but we’ll let FlightLab handle it now that we have a better feel for the math.</li>
+</ul>
+
+<!-- Side note: We've already narrowed down the options for you to limit the search space, but in general you would need to do that.  A rough procedure you could use:
+
+1. *Propeller size from the cruise thrust.*  Most propellers have peak efficiency near J = 0.4 to 0.7.  From the flight speed you can then determine a typical rotation speed. Near that peak the thrust coefficient is about 0.05.  You can then solve for the diameter that provides your cruise thrust.
+2. *Power.*  Shaft power is T V/ηp with ηp ≈ 0.65 near the peak.  Battery power is that divided by the motor and controller efficiencies, roughly 0.75 together.
+3. *Voltage and Kv.*  Kv is the motor's no-load speed per volt, and you want the cruise rpm at about 70% throttle, so Kv × Vbatt ≈ rpm / 0.7.  The propeller fixes that product; how you split it between cells and Kv is the choice, and two things bound it.  Current: for a given power, more cells means less current (P = V I), and small connectors, wiring, and controllers are happiest below a few tens of amps, so bigger airplanes go to more cells.  Availability: motors come in a limited set of Kv values, so pick the cell count that lands you on one.  Here 5300 rpm at 70% throttle needs Kv × Vbatt ≈ 7600: Kv ≈ 1000 on 2S (7.4 V) or about 700 on 3S (11.1 V).  Expect to use a Kv 10 to 20% above these estimates because a loaded motor runs below Kv times its voltage (the IR drop), which puts 2S on the catalog's motors.
+4. *Current and limits.*  Cruise current is the battery power over the battery voltage, about 3 A here.  Full throttle at zero airspeed draws several times that, and that number sets the motor, controller, and battery C rating you need.
+
+That narrows a catalog of hundreds of parts to a handful, which is where this assignment starts. -->
+
+<h2 id="62-verify-in-flightlab">6.2 Verify in FlightLab</h2>
+
+<p>Use the new starter design (you’ll need to click it as it starts with the multi-panel design).  On the Propulsion tab set the battery state of charge to 0.4.  FlightLab’s battery voltage depends on state of charge, and 0.4 puts it at the nominal 3.7 V per cell we used in this example.  Load up your propulsion system choices and run the propulsion analysis.</p>
+
+<p>Compare the cruise row with your numbers from 6.1.
+<!-- : rotation speed, motor current and voltage, throttle, and the propeller and motor efficiencies.   -->
+They should be pretty close but not exactly the same (FlightLab interpolates across Reynolds numbers in the propeller data, includes a loss of efficiency from the speed controller, and the drag and thrust requirement changes a bit since FlightLab updates the aircraft mass as the propulsion components change).</p>
+
+<p>From the full-throttle row and the warnings, check that the motor current does not exceed its limit (such a combination can still be a valid design choice if you limit the throttle in your flight controller settings so that the current limit is never exceeded), that the rpm does not exceed the propeller’s limit, and that you obtain sufficient thrust for a hand launch.</p>
+
+<p>Finally, check the mission using FlightLab’s battery currents for both segments.  The static full-throttle gives the battery current during the launch minute, combine that with the cruise battery current reported by FlightLab to find the charge used in 1 minute at full throttle plus 15 minutes of cruise, and confirm it is no more than 80% of the battery’s rated capacity.</p>
+
+<p>In general, you would probably want to test some other variations from here, but we’ll forgo that for this assignment.</p>
 
     </div>
 
