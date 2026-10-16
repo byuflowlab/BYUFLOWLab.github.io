@@ -242,12 +242,12 @@ That narrows a catalog of hundreds of parts to a handful, which is where this as
 <!-- : rotation speed, motor current and voltage, throttle, and the propeller and motor efficiencies.   -->
 They should be quite close but not exactly the same (FlightLab interpolates across Reynolds numbers in the propeller data, includes a loss of efficiency from the speed controller, and the drag, and thus the required thrust, changes a bit because FlightLab updates the aircraft mass as the propulsion components change).</p>
 
-<p>That’s all we’ll do in this homework, but when you are designing your own system you’ll want to do some more checks, and potentially some more iterating (finding the best component one at a time doesn’t necessarily lead to the best combination overall).  Some additional checks you should consider:</p>
+<p>That’s all we’ll do in this homework, but when you are designing your own system you’ll want to do some more checks, and potentially some more iterating (finding the best component one at a time doesn’t necessarily lead to the best combination overall).  Some additional checks you might consider:</p>
 <ul>
   <li>at full throttle, check that the motor current does not exceed its limit, and check that the propeller rpm does not exceed its limit (or determine a limit on throttle to set in the transmitter).  Motor current is highest at zero airspeed, but propeller rpm is highest at high airspeed where the propeller unloads, so check the whole speed range, not just the static case.  FlightLab’s warnings cover both.</li>
-  <li>check that you have sufficient thrust for a hand launch (full throttle, static case).  As a rule of thumb you probably want static thrust near 0.5 W or more.</li>
+  <li>check the speed controller’s current rating and the battery’s maximum current (its C rating times its capacity) against the full-throttle current</li>
+  <li>check that you have sufficient thrust for a hand launch (full throttle, static case).  As a rule of thumb you probably want static thrust equal to about half the aircraft weight or more.</li>
   <li>check that you have sufficient energy for several flight attempts while using less than 80% of your battery capacity.  In 6.1(d) we only checked cruise.  Add a minute or two at full throttle to account for hand launches and climbs.</li>
-  <li>check the speed controller’s current rating and the battery’s maximum current (its C rating times its capacity) against the full-throttle current, not just the motor’s limit.</li>
   <li>check that thrust minus drag at your climb speed gives an acceptable rate of climb</li>
   <li>the propulsion components are a large fraction of the aircraft mass and the battery is usually the heaviest single item, so revisit the mass and CG (and trim) after choosing them, and weigh an extra battery cell against the drag its mass adds.</li>
 </ul>
