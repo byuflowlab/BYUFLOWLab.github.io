@@ -11,7 +11,7 @@
 
   <title>
     
-      HW &middot; ME 415
+      HW 8 &middot; ME 415
     
   </title>
 
@@ -87,7 +87,7 @@
 
 
     <div class="content container">
-    <!-- <h1 class="page-title">HW</h1> -->
+    <!-- <h1 class="page-title">HW 8</h1> -->
       <h1 id="hw-8">HW 8</h1>
 
 <hr />
@@ -150,31 +150,17 @@ We will only analyze the first stage, the others stages would follow essentially
 
 <p><img src="../tanks.png" height="400px" class="img-center" /></p>
 
-<p>The fuel tanks and rocket body are made of aluminum.  Note that a stacked configuration is used and that about 10 meters of extra length is required below the tanks for the engines.  It is easiest to estimate the required tank size by assuming that the tanks are cylinders and then add on about 3 meters per tank to account for the fact that the round end caps will need to be longer than a pure cylinder and that there will be some ullage volume (that means the tanks won’t be 100% filled).
-<!-- For simplicity, I'd treat the diameter of the tanks as the same as that of the rocket body (it's a really small difference). --></p>
+<p>The fuel tanks and rocket body are made of aluminum.  The tanks sit inside the body, so the structural mass includes both the tank walls (5 mm, closed cylinders with end caps) and the body wall (2 cm, an open tube).  Note that a stacked configuration is used and that about 10 meters of extra length is required below the tanks for the engines.  This 10 meters counts toward the body length of the stage (and thus the body mass), but does not require any additional tank material.  It is easiest to estimate the required tank size by assuming that the tanks are cylinders with the same diameter as the rocket body, computing the cylinder length needed to hold the propellant volume, and then adding about 3 meters per tank to account for the fact that the round end caps will need to be longer than a pure cylinder and that there will be some ullage volume (that means the tanks won’t be 100% filled).  Use this lengthened tank when estimating the tank mass as well.</p>
 
-<p>Because the structural mass depends on the propellant mass, and the propellant mass depends on the structural mass, an iterative process is required (i.e., root finding).  If you’re struggling to know if you’re on the right track, because this is an actual rocket, you could start with the known propellant mass and work your way through the equations checking your numbers against the actual rocket, then iterate from there.</p>
+<p>Because the structural mass depends on the propellant mass, and the propellant mass depends on the structural mass, an iterative process is required (i.e., root finding).  If you’re struggling to know if you’re on the right track, because this is an actual rocket, you could start with the known propellant mass and work your way through the equations checking your numbers against the actual rocket.  But don’t stop at that (still requires some iteration for consistency with the equations).</p>
 
-<p>Report the following for stage 1.  Be sure to clearly show your work and assumptions.</p>
+<p>Report the following for stage 1.</p>
 
 <ol>
   <li>The propellant mass.</li>
   <li>The required body length for this stage.</li>
   <li>The dry mass (structural mass including engines, i.e., no propellant).</li>
 </ol>
-
-<!-- {:style="max-width: 800px;"}
-|mass of other stages (+ payload) | 667,800 kg  | [wikipedia: Saturn V](https://en.wikipedia.org/wiki/Saturn_V) |
-|rocket diameter | 10.1 m | [wikipedia: Saturn V](https://en.wikipedia.org/wiki/Saturn_V)  |
-|ideal velocity change   $$\Delta V_{ideal}$$ | 3600 m/s | computed based on mission  |
-|specific impulse   $$I_{sp}$$ | 283 s | [wikipedia: Rocketdyne F-1](https://en.wikipedia.org/wiki/Rocketdyne_F-1)  |
-|oxidizer-to-fuel mass ratio  | 2.27  | [wikipedia: Rocketdyne F-1](https://en.wikipedia.org/wiki/Rocketdyne_F-1) |
-|one engine mass (there are 5 total) | 8400 kg | [wikipedia: Rocketdyne F-1](https://en.wikipedia.org/wiki/Rocketdyne_F-1)  |
-|density of RP-1  |  810 kg/m$$^3$$ | [wikipedia: RP-1](https://en.wikipedia.org/wiki/RP-1) |
-|density of LOX  | 1141 kg/m$$^3$$ | [wikipedia: LOX](https://en.wikipedia.org/wiki/Liquid_oxygen) |
-|tank thickness | 5 mm | [random internet citizen](https://space.stackexchange.com/questions/13286/whats-the-thickness-and-weight-of-rocket-tanks)  |
-|rocket body thickness | 2 cm  | scaled up from smaller rocket |
-|density of aluminum | 2810 kg/m$$^3$$  | [aluminum density](https://www.thyssenkrupp-materials.co.uk/density-of-aluminium.html) | -->
 
     </div>
 
