@@ -92,7 +92,7 @@
 
 <hr />
 
-<p>We revisit the Saturn V, but this ftime ocused on the flight trajectory. We can’t use the analytic rocket equation because the flight angle, thrust, drag, and specific impulse change in time.  Instead, we need to use numerical integration.  The ODEs you need to integrate (for \(V, m, z, x\)), including drag, are given at the end of the Tsiolkovsky Rocket Equation section of the textbook.</p>
+<p>We revisit the Saturn V, but this time focused on the flight trajectory. We can’t use the analytic rocket equation because the flight angle, thrust, and drag change in time.  Instead, we need to use numerical integration.  The ODEs you need to integrate (for \(V, m, z, x\)) are given at the end of the Tsiolkovsky Rocket Equation section of the textbook.</p>
 
 <p>As mentioned, the heading angle (the angle of the velocity vector measured from vertical) changes significantly throughout the flight.  I fit a curve to postflight trajectory data from Apollo 10 and computed the heading angle as a function of time during stage 1.  In this fit \(\theta\) is in radians, \(t\) is the time since liftoff in seconds, and \(\theta = 0\) corresponds to vertical flight:</p>
 
@@ -102,14 +102,14 @@
 where
 \(p_1 = 0.866, p_2 = 2.665 \times 10^{-5}, p_3 = 2.378\)</p>
 
-<p>The thrust also changes during the flight.  Each of the five engines burns propellant at a nearly constant rate of 2647 kg/s, but the specific impulse increases as the rocket climbs because the atmospheric pressure \(p\) drops.  A linear fit to the flight data gives specific impulse, in seconds:</p>
+<p>The thrust also changes during the flight.  From the thrust equation we expect the thrust to increase linearly as the atmospheric pressure \(p\) drops.  A linear fit to the flight data for the thrust of one engine, in MN, is:</p>
 
 <!-- Saturn V Launch Vehicle Flight Evaluation Report, AS-505 Apollo 10 Mission, MPR-SAT-FE-69-7
-https://ibiblio.org/apollo/Documents/lvfea-AS505-Apollo10.pdf (Isp: Figure 5-3, masses and flow rate: Table 20-1, event times: Section 5.1) -->
+https://ibiblio.org/apollo/Documents/lvfea-AS505-Apollo10.pdf (thrust: Figure 5-3, masses and flow rate: Table 20-1, event times: Section 5.1) -->
 
-\[I_{sp} = 305.0 - 40.6 \frac{p}{p_{sl}}\]
+\[T = 7.94 - 1.11 \frac{p}{p_{sl}}\]
 
-<p>where \(p_{sl}\) is the sea-level pressure (so the specific impulse is 264.4 s on the pad and 305.0 s in vacuum).  The thrust can then be computed from the propellant flow rate and the specific impulse.  All five engines burn until \(t = 135.2\) s, when the center engine is shut down.  The other four continue until \(t = 161.6\) s, which is the end of the stage 1 burn.</p>
+<p>where \(p_{sl}\) is the sea-level pressure.  Each engine burns propellant at a nearly constant rate of 2647 kg/s.  All five engines burn until \(t = 135.2\) s, when the center engine is shut down to limit the acceleration.  The other four continue until \(t = 161.6\) s, which is the end of the stage 1 burn.</p>
 
 <p>The total rocket mass at liftoff is \(2.90 \times 10^6\) kg.<br />
 <!-- As a check, you should find that about $$2.07 \times 10^6$$ kg of propellant is burned during stage 1. --></p>
@@ -151,11 +151,15 @@ https://www.ibiblio.org/apollo/Documents/Apollo%20Mission%20SA%20501%20Prelimina
   </tbody>
 </table>
 
-<p>Interpolate linearly between these points, and use the end values outside of this range (this is what <code class="language-plaintext highlighter-rouge">numpy.interp</code> does).  As a check, the drag should peak at about 2.1 MN near \(t = 72\) s.</p>
+<p>Interpolate linearly between these points, and use the end values outside of this range (this is what <code class="language-plaintext highlighter-rouge">numpy.interp</code> does).  As a check, the drag should peak at about 2.1 MN near \(t = 73\) s.</p>
 
-<p>You could solve this using any ODE solver (e.g. <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code> in python), or you could write a basic forward Euler method.  This means that you set up a time vector, and a starting point for \(V, m, z, x\) (the rocket starts at rest on the pad), and then execute a for loop.  At iteration (\(i\)) you update those four values using data from the previous iteration (\(i - 1\)).    For example, using the last ODE (and setting \(\Delta t = t^{(i)} - t^{(i-1)}\)):</p>
+<p>You could solve this using any ODE solver (e.g. <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code> in python), or you could write a basic forward Euler method.</p>
 
-\[x^{(i)} = x^{(i-1)} + V^{(i-1)}\sin\theta^{(i-1)} \Delta t\]
+<!-- This means that you set up a time vector, and a starting point for $$V, m, z, x$$ (the rocket starts at rest on the pad), and then execute a for loop.  At iteration ($$i$$) you update those four values using data from the previous iteration ($$i - 1$$).    For example, using the last ODE (and setting $$\Delta t = t^{(i)} - t^{(i-1)}$$):
+
+$$
+x^{(i)} = x^{(i-1)} + V^{(i-1)}\sin\theta^{(i-1)} \Delta t
+$$ -->
 
 <p>Report the following.  Be sure to show your work.</p>
 
