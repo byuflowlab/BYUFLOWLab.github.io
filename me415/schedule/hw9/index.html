@@ -92,50 +92,79 @@
 
 <hr />
 
-<p>This problem uses the same rocket from the previous homework.  In this case we are interested in the flight trajectory.  The Saturn V does not fly at a straight angle during the first stage and so it would be difficult to provide an accurate estimate using the closed-form rocket equation.  Instead, we need to use numerical integration.  Though we will still ignore drag in this analysis.</p>
+<p>We revisit the Saturn V, but this ftime ocused on the flight trajectory. We can’t use the analytic rocket equation because the flight angle, thrust, drag, and specific impulse change in time.  Instead, we need to use numerical integration.  The ODEs you need to integrate (for \(V, m, z, x\)), including drag, are given at the end of the Tsiolkovsky Rocket Equation section of the textbook.</p>
 
-<p>As mentioned the heading angle changes significantly throughout the flight.  I fit a curve to postflight trajectory data and computed the heading angle as a function of time during stage 1.  Note that \(\theta = 0\) corresponds to vertical flight:</p>
+<p>As mentioned, the heading angle (the angle of the velocity vector measured from vertical) changes significantly throughout the flight.  I fit a curve to postflight trajectory data from Apollo 10 and computed the heading angle as a function of time during stage 1.  In this fit \(\theta\) is in radians, \(t\) is the time since liftoff in seconds, and \(\theta = 0\) corresponds to vertical flight:</p>
 
-<!-- https://history.nasa.gov/afj/ap10fj/pdf/as-505-postflight-trajectory.pdf -->
+<!-- https://apollojournals.org/afj/ap10fj/pdf/as-505-postflight-trajectory.pdf (Table B-I, B-III) -->
 
 <p>\(\theta = p_1 \arctan\left(p_2 t^{p_3}\right)\)
 where
 \(p_1 = 0.866, p_2 = 2.665 \times 10^{-5}, p_3 = 2.378\)</p>
 
-<p>Other parameters you will need:</p>
+<p>The thrust also changes during the flight.  Each of the five engines burns propellant at a nearly constant rate of 2647 kg/s, but the specific impulse increases as the rocket climbs because the atmospheric pressure \(p\) drops.  A linear fit to the flight data gives specific impulse, in seconds:</p>
 
-<table style="max-width: 400px;">
+<!-- Saturn V Launch Vehicle Flight Evaluation Report, AS-505 Apollo 10 Mission, MPR-SAT-FE-69-7
+https://ibiblio.org/apollo/Documents/lvfea-AS505-Apollo10.pdf (Isp: Figure 5-3, masses and flow rate: Table 20-1, event times: Section 5.1) -->
+
+\[I_{sp} = 305.0 - 40.6 \frac{p}{p_{sl}}\]
+
+<p>where \(p_{sl}\) is the sea-level pressure (so the specific impulse is 264.4 s on the pad and 305.0 s in vacuum).  The thrust can then be computed from the propellant flow rate and the specific impulse.  All five engines burn until \(t = 135.2\) s, when the center engine is shut down.  The other four continue until \(t = 161.6\) s, which is the end of the stage 1 burn.</p>
+
+<p>The total rocket mass at liftoff is \(2.90 \times 10^6\) kg.<br />
+<!-- As a check, you should find that about $$2.07 \times 10^6$$ kg of propellant is burned during stage 1. --></p>
+
+<p>For the drag use a reference area of \(S_{ref} = 79.5\) m\(^2\) (the cross-sectional area of the first stage).  The density and speed of sound change with altitude.  For these, and for the pressure above, you can use the curve fit to the standard atmosphere from the textbook (it is intended for altitudes below 47 km, but above that the air is so thin that the differences are negligible).  The drag coefficient changes significantly with Mach number.  The values below are from a NASA preflight trajectory analysis of the Saturn V:</p>
+
+<!-- Apollo Mission SA 501 Preliminary Mission Profile, TRW Space Technology Laboratories for NASA MSC, 22 Feb 1965
+(NASA-CR-103858), Figure 3-2, reference area 855.3 ft^2.  The rise in C_D toward M = 0 in that figure is left out (about a 1 m/s effect).
+https://www.ibiblio.org/apollo/Documents/Apollo%20Mission%20SA%20501%20Preliminary%20Mission%20Profile.pdf -->
+
+<table style="max-width: 600px;">
   <tbody>
     <tr>
-      <td>thrust</td>
-      <td>35.1 MN</td>
+      <td>\(M\)</td>
+      <td>0.53</td>
+      <td>0.75</td>
+      <td>1.0</td>
+      <td>1.25</td>
+      <td>1.5</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
     </tr>
     <tr>
-      <td>propellant mass</td>
-      <td>\(2.1 \times 10^6\) kg</td>
-    </tr>
-    <tr>
-      <td>total rocket mass</td>
-      <td>\(2.97 \times 10^6\) kg</td>
-    </tr>
-    <tr>
-      <td>specific impulse</td>
-      <td>283 s</td>
+      <td>\(C_D\)</td>
+      <td>0.35</td>
+      <td>0.51</td>
+      <td>0.85</td>
+      <td>0.85</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.43</td>
+      <td>0.34</td>
+      <td>0.27</td>
+      <td>0.17</td>
     </tr>
   </tbody>
 </table>
 
-<p>You could solve this using any ODE solver (e.g. <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code> in python), or you could write a basic forward Euler method.  This means that you setup a time vector, and a starting point for \(V, m, z, x\), and then execute a for loop.  At iteration (\(i\)) you update those four values using data from the previous iteration (\(i - 1\)).    For example, using the last ODE (and setting \(\Delta t = t^{(i)} - t^{(i-1)}\)):</p>
+<p>Interpolate linearly between these points, and use the end values outside of this range (this is what <code class="language-plaintext highlighter-rouge">numpy.interp</code> does).  As a check, the drag should peak at about 2.1 MN near \(t = 72\) s.</p>
+
+<p>You could solve this using any ODE solver (e.g. <code class="language-plaintext highlighter-rouge">scipy.integrate.solve_ivp</code> in python), or you could write a basic forward Euler method.  This means that you set up a time vector, and a starting point for \(V, m, z, x\) (the rocket starts at rest on the pad), and then execute a for loop.  At iteration (\(i\)) you update those four values using data from the previous iteration (\(i - 1\)).    For example, using the last ODE (and setting \(\Delta t = t^{(i)} - t^{(i-1)}\)):</p>
 
 \[x^{(i)} = x^{(i-1)} + V^{(i-1)}\sin\theta^{(i-1)} \Delta t\]
 
-<p>Report the following.  Be sure to clearly show your work and assumptions.</p>
+<p>Report the following.  Be sure to show your work.</p>
 
 <!-- The actual velocity and altitude at the end of stage 1, according to [Apollo 11 data](https://history.nasa.gov/SP-4029/Apollo_11d_Ascent_Phase.htm) are 2400 m/s at 67 km altitude and 100 km forward distance. -->
 
 <ul>
-  <li>Plot the trajectory with forward distance on the \(x\)-axis and altitude on the \(y\)-axis.  (I tabulated the actual <a href="../traj.dat">flight data</a> if you are interested in comparing, first column is the forward distance, and the second column is the altitude).</li>
-  <li>Your final velocity, altitude, and forward distance.</li>
+  <li>Plot the trajectory with forward distance on the \(x\)-axis and altitude on the \(y\)-axis.  (I tabulated the actual <a href="../traj.dat">flight data</a> if you are interested in comparing.  The first column is the forward distance and the second column is the altitude, both in meters, at roughly one-second intervals from liftoff to the end of the stage 1 burn.)</li>
+  <li>Your velocity, altitude, and forward distance at the end of the stage 1 burn.
+<!-- - The maximum dynamic pressure (max-q), and the time and altitude at which it occurs.  (For comparison, in the actual flight max-q was 33.2 kPa at 82.6 s and an altitude of 13.2 km.) --></li>
 </ul>
 
 
